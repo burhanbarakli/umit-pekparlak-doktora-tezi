@@ -1,0 +1,588 @@
+MODEL inverter_senaryo4
+StopTime=0.1 Solver=ode15s MaxStep=sim_max_step
+InitFcn=run(fullfile(fileparts(get_param(bdroot,'FileName')),'inverter_common_parameters.m'));
+PreLoadFcn=
+
+== Üst düzey bloklar
+Display                      inverter_senaryo4/AC Akım RMS
+Display                      inverter_senaryo4/AC Akım THD
+SubSystem                    inverter_senaryo4/AC Current
+Sensor1
+Display                      inverter_senaryo4/AC Gerilim THD2
+Display                      inverter_senaryo4/AC Reaktif Güç
+SubSystem                    inverter_senaryo4/AC Voltage
+Sensor1
+SubSystem                    inverter_senaryo4/AC Voltage
+Sensor2
+Product                      inverter_senaryo4/AC instantaneous
+power
+Product                      inverter_senaryo4/AC instantaneous
+power1
+Product                      inverter_senaryo4/AC instantaneous
+power2
+Product                      inverter_senaryo4/AC instantaneous
+power6
+Product                      inverter_senaryo4/AC instantaneous
+power7
+Sum                          inverter_senaryo4/Add
+Sum                          inverter_senaryo4/Add2
+BusCreator                   inverter_senaryo4/Bus
+Creator1
+BusCreator                   inverter_senaryo4/Bus
+Creator10
+BusCreator                   inverter_senaryo4/Bus
+Creator2
+BusCreator                   inverter_senaryo4/Bus
+Creator3
+BusCreator                   inverter_senaryo4/Bus
+Creator4
+SimscapeBlock                inverter_senaryo4/CL1
+SimscapeBlock                inverter_senaryo4/Capacitor
+SimscapeBlock                inverter_senaryo4/Capacitor1
+SimscapeBlock                inverter_senaryo4/Capacitor2
+SimscapeBlock                inverter_senaryo4/Capacitor6
+SimscapeBlock                inverter_senaryo4/Current 
+Sensor
+SimscapeBlock                inverter_senaryo4/Current 
+Sensor1
+SimscapeBlock                inverter_senaryo4/DC Blocking Diode
+Display                      inverter_senaryo4/DC Güç
+SimscapeBlock                inverter_senaryo4/DC Source R
+SimscapeBlock                inverter_senaryo4/Diode2
+SimscapeBlock                inverter_senaryo4/Diode3
+SimscapeBlock                inverter_senaryo4/Diode5
+SimscapeBlock                inverter_senaryo4/Diode6
+SimscapeBlock                inverter_senaryo4/Diode7
+SimscapeBlock                inverter_senaryo4/Diode9
+Product                      inverter_senaryo4/Divide1
+Product                      inverter_senaryo4/Divide3
+Product                      inverter_senaryo4/Divide5
+SimscapeBlock                inverter_senaryo4/EMC Common Mode Choke S1
+SimscapeBlock                inverter_senaryo4/EMC Common Mode Choke S3
+SimscapeBlock                inverter_senaryo4/EMC Core Loss R1_1
+SimscapeBlock                inverter_senaryo4/EMC Core Loss R1_2
+SimscapeBlock                inverter_senaryo4/EMC Core Loss R2_1
+SimscapeBlock                inverter_senaryo4/EMC Core Loss R2_2
+SimscapeBlock                inverter_senaryo4/Electrical
+Reference1
+From                         inverter_senaryo4/From1
+From                         inverter_senaryo4/From10
+From                         inverter_senaryo4/From11
+From                         inverter_senaryo4/From12
+From                         inverter_senaryo4/From13
+From                         inverter_senaryo4/From14
+From                         inverter_senaryo4/From2
+From                         inverter_senaryo4/From29
+From                         inverter_senaryo4/From3
+From                         inverter_senaryo4/From30
+From                         inverter_senaryo4/From4
+From                         inverter_senaryo4/From5
+From                         inverter_senaryo4/From6
+From                         inverter_senaryo4/From7
+From                         inverter_senaryo4/From8
+From                         inverter_senaryo4/From9
+Goto                         inverter_senaryo4/G1
+Goto                         inverter_senaryo4/G2
+Goto                         inverter_senaryo4/G3
+Goto                         inverter_senaryo4/G4
+Gain                         inverter_senaryo4/Gain1
+SubSystem                    inverter_senaryo4/Gate
+Drive5
+SubSystem                    inverter_senaryo4/Gate
+Drive6
+SubSystem                    inverter_senaryo4/Gate
+Drive7
+SubSystem                    inverter_senaryo4/Gate
+Drive8
+Goto                         inverter_senaryo4/Goto
+Goto                         inverter_senaryo4/Goto1
+Goto                         inverter_senaryo4/Goto12
+Goto                         inverter_senaryo4/Goto13
+Goto                         inverter_senaryo4/Goto14
+Goto                         inverter_senaryo4/Goto15
+SimscapeBlock                inverter_senaryo4/Grid1
+Display                      inverter_senaryo4/Idc
+SimscapeBlock                inverter_senaryo4/Inductor
+Gain                         inverter_senaryo4/K1
+Gain                         inverter_senaryo4/K3
+SimscapeBlock                inverter_senaryo4/L1 Core Loss Rp
+SubSystem                    inverter_senaryo4/Mean1
+SubSystem                    inverter_senaryo4/Mean10
+SubSystem                    inverter_senaryo4/Mean11
+SubSystem                    inverter_senaryo4/Mean2
+SubSystem                    inverter_senaryo4/Mean3
+SubSystem                    inverter_senaryo4/Mean9
+SimscapeBlock                inverter_senaryo4/N-Channel IGBT
+SimscapeBlock                inverter_senaryo4/N-Channel IGBT1
+SimscapeBlock                inverter_senaryo4/N-Channel IGBT2
+SimscapeBlock                inverter_senaryo4/N-Channel IGBT3
+SubSystem                    inverter_senaryo4/PS-Simulink
+Converter
+SubSystem                    inverter_senaryo4/PS-Simulink
+Converter1
+SubSystem                    inverter_senaryo4/PS-Simulink
+Converter3
+SubSystem                    inverter_senaryo4/Power
+Measurement
+SubSystem                    inverter_senaryo4/Power3
+Product                      inverter_senaryo4/Product
+Product                      inverter_senaryo4/Product1
+Product                      inverter_senaryo4/Product15
+SubSystem                    inverter_senaryo4/RMS1
+SimscapeBlock                inverter_senaryo4/Resistor
+SimscapeBlock                inverter_senaryo4/Resistor1
+SimscapeBlock                inverter_senaryo4/Resistor2
+Scope                        inverter_senaryo4/Scope1
+Scope                        inverter_senaryo4/Scope16
+Scope                        inverter_senaryo4/Scope17
+Scope                        inverter_senaryo4/Scope2
+Scope                        inverter_senaryo4/Scope21
+Scope                        inverter_senaryo4/Scope3
+Scope                        inverter_senaryo4/Scope4
+Scope                        inverter_senaryo4/Scope5
+Scope                        inverter_senaryo4/Scope6
+Scope                        inverter_senaryo4/Scope8
+Sin                          inverter_senaryo4/Sine Wave3
+SubSystem                    inverter_senaryo4/Solver
+Configuration1
+Sqrt                         inverter_senaryo4/Sqrt
+Sqrt                         inverter_senaryo4/Sqrt2
+SubSystem                    inverter_senaryo4/Subsystem2
+Sum                          inverter_senaryo4/Sum
+Sum                          inverter_senaryo4/Sum of
+Elements
+Sum                          inverter_senaryo4/Sum of
+Elements1
+SubSystem                    inverter_senaryo4/THD
+SubSystem                    inverter_senaryo4/THD2
+SimscapeBlock                inverter_senaryo4/Temperature Source
+SimscapeBlock                inverter_senaryo4/Temperature Source1
+SimscapeBlock                inverter_senaryo4/Temperature Source2
+SimscapeBlock                inverter_senaryo4/Temperature Source3
+SimscapeBlock                inverter_senaryo4/Temperature Source4
+SimscapeBlock                inverter_senaryo4/Temperature Source5
+SimscapeBlock                inverter_senaryo4/Temperature Source6
+SimscapeBlock                inverter_senaryo4/Temperature Source7
+SimscapeBlock                inverter_senaryo4/Temperature Source8
+SimscapeBlock                inverter_senaryo4/Temperature Source9
+Display                      inverter_senaryo4/Vdc
+Display                      inverter_senaryo4/Verim
+SimscapeBlock                inverter_senaryo4/Voltage
+Sensor
+SimscapeBlock                inverter_senaryo4/Voltage Source
+Display                      inverter_senaryo4/cosfi
+Display                      inverter_senaryo4/cosfi2
+Display                      inverter_senaryo4/cosfi3
+Display                      inverter_senaryo4/cosfi4
+Display                      inverter_senaryo4/cosfi8
+SubSystem                    inverter_senaryo4/powergui
+
+== Ölçüm / kayıt blokları (tüm derinlik)
+Display                                                    inverter_senaryo4/AC Aktif Güç
+Display                                                    inverter_senaryo4/AC Akım RMS
+Display                                                    inverter_senaryo4/AC Akım THD
+Outport      nesl_utility/PS-Simulink
+Converter/output     inverter_senaryo4/AC Current Sensor1/PS-Simulink Converter/output
+Display                                                    inverter_senaryo4/AC Gerilim THD2
+Display                                                    inverter_senaryo4/AC Reaktif Güç
+Outport      nesl_utility/PS-Simulink
+Converter/output     inverter_senaryo4/AC Voltage Sensor1/PS-Simulink Converter/output
+Outport      nesl_utility/PS-Simulink
+Converter/output     inverter_senaryo4/AC Voltage Sensor2/PS-Simulink Converter/output
+Display                                                    inverter_senaryo4/DC Güç
+Outport      nesl_utility/PS-Simulink
+Converter/output     inverter_senaryo4/Gate Drive5/PS-Simulink Converter8/output
+Outport                                                    inverter_senaryo4/Gate Drive5/G3
+Outport      nesl_utility/PS-Simulink
+Converter/output     inverter_senaryo4/Gate Drive6/PS-Simulink Converter8/output
+Outport                                                    inverter_senaryo4/Gate Drive6/G2
+Outport      nesl_utility/PS-Simulink
+Converter/output     inverter_senaryo4/Gate Drive7/PS-Simulink Converter8/output
+Outport                                                    inverter_senaryo4/Gate Drive7/G1
+Outport      nesl_utility/PS-Simulink
+Converter/output     inverter_senaryo4/Gate Drive8/PS-Simulink Converter8/output
+Outport                                                    inverter_senaryo4/Gate Drive8/G4
+Display                                                    inverter_senaryo4/Idc
+SubSystem    spsMeanLib/Mean                               inverter_senaryo4/Mean1
+Inport       spsMeanLib/Mean/In                            inverter_senaryo4/Mean1/In
+SubSystem    spsMeanValueModel/Continuous                  inverter_senaryo4/Mean1/Model
+Inport       spsMeanValueModel/Continuous/In               inverter_senaryo4/Mean1/Model/In
+Clock        spsMeanValueModel/Continuous/Clock            inverter_senaryo4/Mean1/Model/Clock
+Gain         spsMeanValueModel/Continuous/Gain             inverter_senaryo4/Mean1/Model/Gain
+Constant     spsMeanValueModel/Continuous/K1               inverter_senaryo4/Mean1/Model/K1
+Memory       spsMeanValueModel/Continuous/Memory           inverter_senaryo4/Mean1/Model/Memory
+RelationalOperator spsMeanValueModel/Continuous/Relational
+Operator inverter_senaryo4/Mean1/Model/Relational Operator
+Sum          spsMeanValueModel/Continuous/Sum              inverter_senaryo4/Mean1/Model/Sum
+Switch       spsMeanValueModel/Continuous/Switch           inverter_senaryo4/Mean1/Model/Switch
+TransportDelay spsMeanValueModel/Continuous/Transport
+Delay  inverter_senaryo4/Mean1/Model/Transport Delay
+Integrator   spsMeanValueModel/Continuous/integrator       inverter_senaryo4/Mean1/Model/integrator
+Outport      spsMeanValueModel/Continuous/Mean             inverter_senaryo4/Mean1/Model/Mean
+Outport      spsMeanLib/Mean/Mean                          inverter_senaryo4/Mean1/Mean
+SubSystem    spsMeanLib/Mean                               inverter_senaryo4/Mean10
+Inport       spsMeanLib/Mean/In                            inverter_senaryo4/Mean10/In
+SubSystem    spsMeanValueModel/Continuous                  inverter_senaryo4/Mean10/Model
+Inport       spsMeanValueModel/Continuous/In               inverter_senaryo4/Mean10/Model/In
+Clock        spsMeanValueModel/Continuous/Clock            inverter_senaryo4/Mean10/Model/Clock
+Gain         spsMeanValueModel/Continuous/Gain             inverter_senaryo4/Mean10/Model/Gain
+Constant     spsMeanValueModel/Continuous/K1               inverter_senaryo4/Mean10/Model/K1
+Memory       spsMeanValueModel/Continuous/Memory           inverter_senaryo4/Mean10/Model/Memory
+RelationalOperator spsMeanValueModel/Continuous/Relational
+Operator inverter_senaryo4/Mean10/Model/Relational Operator
+Sum          spsMeanValueModel/Continuous/Sum              inverter_senaryo4/Mean10/Model/Sum
+Switch       spsMeanValueModel/Continuous/Switch           inverter_senaryo4/Mean10/Model/Switch
+TransportDelay spsMeanValueModel/Continuous/Transport
+Delay  inverter_senaryo4/Mean10/Model/Transport Delay
+Integrator   spsMeanValueModel/Continuous/integrator       inverter_senaryo4/Mean10/Model/integrator
+Outport      spsMeanValueModel/Continuous/Mean             inverter_senaryo4/Mean10/Model/Mean
+Outport      spsMeanLib/Mean/Mean                          inverter_senaryo4/Mean10/Mean
+SubSystem    spsMeanLib/Mean                               inverter_senaryo4/Mean11
+Inport       spsMeanLib/Mean/In                            inverter_senaryo4/Mean11/In
+SubSystem    spsMeanValueModel/Continuous                  inverter_senaryo4/Mean11/Model
+Inport       spsMeanValueModel/Continuous/In               inverter_senaryo4/Mean11/Model/In
+Clock        spsMeanValueModel/Continuous/Clock            inverter_senaryo4/Mean11/Model/Clock
+Gain         spsMeanValueModel/Continuous/Gain             inverter_senaryo4/Mean11/Model/Gain
+Constant     spsMeanValueModel/Continuous/K1               inverter_senaryo4/Mean11/Model/K1
+Memory       spsMeanValueModel/Continuous/Memory           inverter_senaryo4/Mean11/Model/Memory
+RelationalOperator spsMeanValueModel/Continuous/Relational
+Operator inverter_senaryo4/Mean11/Model/Relational Operator
+Sum          spsMeanValueModel/Continuous/Sum              inverter_senaryo4/Mean11/Model/Sum
+Switch       spsMeanValueModel/Continuous/Switch           inverter_senaryo4/Mean11/Model/Switch
+TransportDelay spsMeanValueModel/Continuous/Transport
+Delay  inverter_senaryo4/Mean11/Model/Transport Delay
+Integrator   spsMeanValueModel/Continuous/integrator       inverter_senaryo4/Mean11/Model/integrator
+Outport      spsMeanValueModel/Continuous/Mean             inverter_senaryo4/Mean11/Model/Mean
+Outport      spsMeanLib/Mean/Mean                          inverter_senaryo4/Mean11/Mean
+SubSystem    spsMeanLib/Mean                               inverter_senaryo4/Mean2
+Inport       spsMeanLib/Mean/In                            inverter_senaryo4/Mean2/In
+SubSystem    spsMeanValueModel/Continuous                  inverter_senaryo4/Mean2/Model
+Inport       spsMeanValueModel/Continuous/In               inverter_senaryo4/Mean2/Model/In
+Clock        spsMeanValueModel/Continuous/Clock            inverter_senaryo4/Mean2/Model/Clock
+Gain         spsMeanValueModel/Continuous/Gain             inverter_senaryo4/Mean2/Model/Gain
+Constant     spsMeanValueModel/Continuous/K1               inverter_senaryo4/Mean2/Model/K1
+Memory       spsMeanValueModel/Continuous/Memory           inverter_senaryo4/Mean2/Model/Memory
+RelationalOperator spsMeanValueModel/Continuous/Relational
+Operator inverter_senaryo4/Mean2/Model/Relational Operator
+Sum          spsMeanValueModel/Continuous/Sum              inverter_senaryo4/Mean2/Model/Sum
+Switch       spsMeanValueModel/Continuous/Switch           inverter_senaryo4/Mean2/Model/Switch
+TransportDelay spsMeanValueModel/Continuous/Transport
+Delay  inverter_senaryo4/Mean2/Model/Transport Delay
+Integrator   spsMeanValueModel/Continuous/integrator       inverter_senaryo4/Mean2/Model/integrator
+Outport      spsMeanValueModel/Continuous/Mean             inverter_senaryo4/Mean2/Model/Mean
+Outport      spsMeanLib/Mean/Mean                          inverter_senaryo4/Mean2/Mean
+SubSystem    spsMeanLib/Mean                               inverter_senaryo4/Mean3
+Inport       spsMeanLib/Mean/In                            inverter_senaryo4/Mean3/In
+SubSystem    spsMeanValueModel/Continuous                  inverter_senaryo4/Mean3/Model
+Inport       spsMeanValueModel/Continuous/In               inverter_senaryo4/Mean3/Model/In
+Clock        spsMeanValueModel/Continuous/Clock            inverter_senaryo4/Mean3/Model/Clock
+Gain         spsMeanValueModel/Continuous/Gain             inverter_senaryo4/Mean3/Model/Gain
+Constant     spsMeanValueModel/Continuous/K1               inverter_senaryo4/Mean3/Model/K1
+Memory       spsMeanValueModel/Continuous/Memory           inverter_senaryo4/Mean3/Model/Memory
+RelationalOperator spsMeanValueModel/Continuous/Relational
+Operator inverter_senaryo4/Mean3/Model/Relational Operator
+Sum          spsMeanValueModel/Continuous/Sum              inverter_senaryo4/Mean3/Model/Sum
+Switch       spsMeanValueModel/Continuous/Switch           inverter_senaryo4/Mean3/Model/Switch
+TransportDelay spsMeanValueModel/Continuous/Transport
+Delay  inverter_senaryo4/Mean3/Model/Transport Delay
+Integrator   spsMeanValueModel/Continuous/integrator       inverter_senaryo4/Mean3/Model/integrator
+Outport      spsMeanValueModel/Continuous/Mean             inverter_senaryo4/Mean3/Model/Mean
+Outport      spsMeanLib/Mean/Mean                          inverter_senaryo4/Mean3/Mean
+SubSystem    spsMeanLib/Mean                               inverter_senaryo4/Mean9
+Inport       spsMeanLib/Mean/In                            inverter_senaryo4/Mean9/In
+SubSystem    spsMeanValueModel/Continuous                  inverter_senaryo4/Mean9/Model
+Inport       spsMeanValueModel/Continuous/In               inverter_senaryo4/Mean9/Model/In
+Clock        spsMeanValueModel/Continuous/Clock            inverter_senaryo4/Mean9/Model/Clock
+Gain         spsMeanValueModel/Continuous/Gain             inverter_senaryo4/Mean9/Model/Gain
+Constant     spsMeanValueModel/Continuous/K1               inverter_senaryo4/Mean9/Model/K1
+Memory       spsMeanValueModel/Continuous/Memory           inverter_senaryo4/Mean9/Model/Memory
+RelationalOperator spsMeanValueModel/Continuous/Relational
+Operator inverter_senaryo4/Mean9/Model/Relational Operator
+Sum          spsMeanValueModel/Continuous/Sum              inverter_senaryo4/Mean9/Model/Sum
+Switch       spsMeanValueModel/Continuous/Switch           inverter_senaryo4/Mean9/Model/Switch
+TransportDelay spsMeanValueModel/Continuous/Transport
+Delay  inverter_senaryo4/Mean9/Model/Transport Delay
+Integrator   spsMeanValueModel/Continuous/integrator       inverter_senaryo4/Mean9/Model/integrator
+Outport      spsMeanValueModel/Continuous/Mean             inverter_senaryo4/Mean9/Model/Mean
+Outport      spsMeanLib/Mean/Mean                          inverter_senaryo4/Mean9/Mean
+Outport      nesl_utility/PS-Simulink
+Converter/EVAL_KEY/output inverter_senaryo4/PS-Simulink Converter/EVAL_KEY/output
+Outport      nesl_utility/PS-Simulink
+Converter/output     inverter_senaryo4/PS-Simulink Converter/output
+Outport      nesl_utility/PS-Simulink
+Converter/EVAL_KEY/output inverter_senaryo4/PS-Simulink Converter1/EVAL_KEY/output
+Outport      nesl_utility/PS-Simulink
+Converter/output     inverter_senaryo4/PS-Simulink Converter1/output
+Outport      nesl_utility/PS-Simulink
+Converter/EVAL_KEY/output inverter_senaryo4/PS-Simulink Converter3/EVAL_KEY/output
+Outport      nesl_utility/PS-Simulink
+Converter/output     inverter_senaryo4/PS-Simulink Converter3/output
+SubSystem    eePowerMeasurement/Power
+Measurement          inverter_senaryo4/Power Measurement
+Inport       eePowerMeasurement/Power
+Measurement/v        inverter_senaryo4/Power Measurement/v
+Inport       eePowerMeasurement/Power
+Measurement/i        inverter_senaryo4/Power Measurement/i
+SubSystem    eePowerMeasurement/Power
+Measurement/Continuous inverter_senaryo4/Power Measurement/Continuous
+Inport       eePowerMeasurement/Power
+Measurement/Continuous/v inverter_senaryo4/Power Measurement/Continuous/v
+Inport       eePowerMeasurement/Power
+Measurement/Continuous/i inverter_senaryo4/Power Measurement/Continuous/i
+ComplexToRealImag eePowerMeasurement/Power
+Measurement/Continuous/Complex to
+Real-Imag inverter_senaryo4/Power Measurement/Continuous/Complex to Real-Imag
+Demux        eePowerMeasurement/Power
+Measurement/Continuous/Demux inverter_senaryo4/Power Measurement/Continuous/Demux
+Demux        eePowerMeasurement/Power
+Measurement/Continuous/Demux1 inverter_senaryo4/Power Measurement/Continuous/Demux1
+Gain         eePowerMeasurement/Power
+Measurement/Continuous/Gain inverter_senaryo4/Power Measurement/Continuous/Gain
+Gain         eePowerMeasurement/Power
+Measurement/Continuous/Gain1 inverter_senaryo4/Power Measurement/Continuous/Gain1
+Gain         eePowerMeasurement/Power
+Measurement/Continuous/Gain2 inverter_senaryo4/Power Measurement/Continuous/Gain2
+Integrator   eePowerMeasurement/Power
+Measurement/Continuous/Integrator inverter_senaryo4/Power Measurement/Continuous/Integrator
+Integrator   eePowerMeasurement/Power
+Measurement/Continuous/Integrator1 inverter_senaryo4/Power Measurement/Continuous/Integrator1
+Math         eePowerMeasurement/Power
+Measurement/Continuous/Math
+Function inverter_senaryo4/Power Measurement/Continuous/Math Function
+Mux          eePowerMeasurement/Power
+Measurement/Continuous/Mux1 inverter_senaryo4/Power Measurement/Continuous/Mux1
+Product      eePowerMeasurement/Power
+Measurement/Continuous/Product1 inverter_senaryo4/Power Measurement/Continuous/Product1
+Product      eePowerMeasurement/Power
+Measurement/Continuous/Product2 inverter_senaryo4/Power Measurement/Continuous/Product2
+Product      eePowerMeasurement/Power
+Measurement/Continuous/Product3 inverter_senaryo4/Power Measurement/Continuous/Product3
+Constant     eePowerMeasurement/Power
+Measurement/Continuous/Radial frequencies inverter_senaryo4/Power Measurement/Continuous/Radial frequencies
+RealImagToComplex eePowerMeasurement/Power
+Measurement/Continuous/Real-Imag to
+Complex inverter_senaryo4/Power Measurement/Continuous/Real-Imag to Complex
+RealImagToComplex eePowerMeasurement/Power
+Measurement/Continuous/Real-Imag to
+Complex1 inverter_senaryo4/Power Measurement/Continuous/Real-Imag to Complex1
+Sum          eePowerMeasurement/Power
+Measurement/Continuous/Subtract inverter_senaryo4/Power Measurement/Continuous/Subtract
+Sum          eePowerMeasurement/Power
+Measurement/Continuous/Subtract1 inverter_senaryo4/Power Measurement/Continuous/Subtract1
+TransportDelay eePowerMeasurement/Power
+Measurement/Continuous/Transport
+Delay inverter_senaryo4/Power Measurement/Continuous/Transport Delay
+TransportDelay eePowerMeasurement/Power
+Measurement/Continuous/Transport
+Delay1 inverter_senaryo4/Power Measurement/Continuous/Transport Delay1
+Trigonometry eePowerMeasurement/Power
+Measurement/Continuous/Trigonometric
+Function1 inverter_senaryo4/Power Measurement/Continuous/Trigonometric Function1
+Outport      eePowerMeasurement/Power
+Measurement/Continuous/P inverter_senaryo4/Power Measurement/Continuous/P
+Outport      eePowerMeasurement/Power
+Measurement/Continuous/Q inverter_senaryo4/Power Measurement/Continuous/Q
+Outport      eePowerMeasurement/Power
+Measurement/P        inverter_senaryo4/Power Measurement/P
+Outport      eePowerMeasurement/Power
+Measurement/Q        inverter_senaryo4/Power Measurement/Q
+SubSystem    spsPowerLib/Power                             inverter_senaryo4/Power3
+Inport       spsPowerLib/Power/V                           inverter_senaryo4/Power3/V
+Inport       spsPowerLib/Power/I                           inverter_senaryo4/Power3/I
+Gain         spsPowerLib/Power/Deg->Rad                    inverter_senaryo4/Power3/Deg->Rad
+SubSystem    spsMeanLib/Mean                               inverter_senaryo4/Power3/Fourier/Mean
+SubSystem    spsMeanLib/Mean                               inverter_senaryo4/Power3/Fourier/Mean value1
+Outport      spsFourierLib/Fourier/Mag                     inverter_senaryo4/Power3/Fourier/Mag
+Outport      spsFourierLib/Fourier/Phase                   inverter_senaryo4/Power3/Fourier/Phase
+SubSystem    spsMeanLib/Mean                               inverter_senaryo4/Power3/Fourier1/Mean
+SubSystem    spsMeanLib/Mean                               inverter_senaryo4/Power3/Fourier1/Mean value1
+Outport      spsFourierLib/Fourier/Mag                     inverter_senaryo4/Power3/Fourier1/Mag
+Outport      spsFourierLib/Fourier/Phase                   inverter_senaryo4/Power3/Fourier1/Phase
+Gain         spsPowerLib/Power/Gain1                       inverter_senaryo4/Power3/Gain1
+Product      spsPowerLib/Power/Product                     inverter_senaryo4/Power3/Product
+Product      spsPowerLib/Power/Product1                    inverter_senaryo4/Power3/Product1
+Product      spsPowerLib/Power/Product3                    inverter_senaryo4/Power3/Product3
+Sum          spsPowerLib/Power/Sum                         inverter_senaryo4/Power3/Sum
+Trigonometry spsPowerLib/Power/Trigonometric
+Function2     inverter_senaryo4/Power3/Trigonometric Function2
+Outport      spsPowerLib/Power/P                           inverter_senaryo4/Power3/P
+Outport      spsPowerLib/Power/Q                           inverter_senaryo4/Power3/Q
+SubSystem    spsRMSLib/RMS                                 inverter_senaryo4/RMS1
+Inport       spsRMSLib/RMS/In                              inverter_senaryo4/RMS1/In
+Constant     spsRMSLib/RMS/Constant                        inverter_senaryo4/RMS1/Constant
+DataTypeConversion spsRMSLib/RMS/Data Type Conversion            inverter_senaryo4/RMS1/Data Type Conversion
+Logic        spsRMSLib/RMS/Logical
+Operator                inverter_senaryo4/RMS1/Logical Operator
+SubSystem    spsRMSLib/RMS/RMS                             inverter_senaryo4/RMS1/RMS 
+Inport       spsRMSLib/RMS/RMS /In                         inverter_senaryo4/RMS1/RMS /In
+EnablePort   spsRMSLib/RMS/RMS /Enable                     inverter_senaryo4/RMS1/RMS /Enable
+Gain         spsRMSLib/RMS/RMS /Gain                       inverter_senaryo4/RMS1/RMS /Gain
+Terminator   spsRMSLib/RMS/RMS /Terminator                 inverter_senaryo4/RMS1/RMS /Terminator
+Outport      spsRMSLib/RMS/RMS /RMS                        inverter_senaryo4/RMS1/RMS /RMS
+Switch       spsRMSLib/RMS/Switch                          inverter_senaryo4/RMS1/Switch
+SubSystem    spsRMSLib/RMS/TrueRMS                         inverter_senaryo4/RMS1/TrueRMS 
+Inport       spsRMSLib/RMS/TrueRMS /In                     inverter_senaryo4/RMS1/TrueRMS /In
+EnablePort   spsRMSLib/RMS/TrueRMS /Enable                 inverter_senaryo4/RMS1/TrueRMS /Enable
+SubSystem    spsMeanLib/Mean                               inverter_senaryo4/RMS1/TrueRMS /Mean value
+Product      spsRMSLib/RMS/TrueRMS /Product                inverter_senaryo4/RMS1/TrueRMS /Product
+Saturate     spsRMSLib/RMS/TrueRMS /Saturation
+to avoid
+negative sqrt inverter_senaryo4/RMS1/TrueRMS /Saturation to avoid negative sqrt
+Sqrt         spsRMSLib/RMS/TrueRMS /Sqrt                   inverter_senaryo4/RMS1/TrueRMS /Sqrt
+Outport      spsRMSLib/RMS/TrueRMS /RMS                    inverter_senaryo4/RMS1/TrueRMS /RMS
+Outport      spsRMSLib/RMS/RMS                             inverter_senaryo4/RMS1/RMS
+Scope                                                      inverter_senaryo4/Scope1
+Scope                                                      inverter_senaryo4/Scope16
+Scope                                                      inverter_senaryo4/Scope17
+Scope                                                      inverter_senaryo4/Scope2
+Scope                                                      inverter_senaryo4/Scope21
+Scope                                                      inverter_senaryo4/Scope3
+Scope                                                      inverter_senaryo4/Scope4
+Scope                                                      inverter_senaryo4/Scope5
+Scope                                                      inverter_senaryo4/Scope6
+Scope                                                      inverter_senaryo4/Scope8
+Outport      spsOnDelayLib/On Delay/Out                    inverter_senaryo4/Subsystem2/On Delay/Out
+Outport      spsOnDelayLib/On Delay/Out                    inverter_senaryo4/Subsystem2/On Delay1/Out
+Outport      spsOnDelayLib/On Delay/Out                    inverter_senaryo4/Subsystem2/On Delay2/Out
+Outport      spsOnDelayLib/On Delay/Out                    inverter_senaryo4/Subsystem2/On Delay3/Out
+SubSystem    spsPWMGeneratorDCDCLib/PWM Generator
+(DC-DC)  inverter_senaryo4/Subsystem2/PWM Generator (DC-DC)10
+Inport       spsPWMGeneratorDCDCLib/PWM Generator
+(DC-DC)/D inverter_senaryo4/Subsystem2/PWM Generator (DC-DC)10/D
+DataTypeConversion spsPWMGeneratorDCDCLib/PWM Generator
+(DC-DC)/Data Type Conversion inverter_senaryo4/Subsystem2/PWM Generator (DC-DC)10/Data Type Conversion
+Fcn          spsPWMGeneratorDCDCLib/PWM Generator
+(DC-DC)/Fcn inverter_senaryo4/Subsystem2/PWM Generator (DC-DC)10/Fcn
+Logic        spsPWMGeneratorDCDCLib/PWM Generator
+(DC-DC)/Logical Operator inverter_senaryo4/Subsystem2/PWM Generator (DC-DC)10/Logical Operator
+RelationalOperator spsPWMGeneratorDCDCLib/PWM Generator
+(DC-DC)/Relational
+Operator inverter_senaryo4/Subsystem2/PWM Generator (DC-DC)10/Relational Operator
+Outport      spsPWMGeneratorDCDCLib/PWM Generator
+(DC-DC)/P inverter_senaryo4/Subsystem2/PWM Generator (DC-DC)10/P
+SubSystem    spsPWMGeneratorDCDCLib/PWM Generator
+(DC-DC)  inverter_senaryo4/Subsystem2/PWM Generator (DC-DC)11
+Inport       spsPWMGeneratorDCDCLib/PWM Generator
+(DC-DC)/D inverter_senaryo4/Subsystem2/PWM Generator (DC-DC)11/D
+DataTypeConversion spsPWMGeneratorDCDCLib/PWM Generator
+(DC-DC)/Data Type Conversion inverter_senaryo4/Subsystem2/PWM Generator (DC-DC)11/Data Type Conversion
+Fcn          spsPWMGeneratorDCDCLib/PWM Generator
+(DC-DC)/Fcn inverter_senaryo4/Subsystem2/PWM Generator (DC-DC)11/Fcn
+Logic        spsPWMGeneratorDCDCLib/PWM Generator
+(DC-DC)/Logical Operator inverter_senaryo4/Subsystem2/PWM Generator (DC-DC)11/Logical Operator
+RelationalOperator spsPWMGeneratorDCDCLib/PWM Generator
+(DC-DC)/Relational
+Operator inverter_senaryo4/Subsystem2/PWM Generator (DC-DC)11/Relational Operator
+Outport      spsPWMGeneratorDCDCLib/PWM Generator
+(DC-DC)/P inverter_senaryo4/Subsystem2/PWM Generator (DC-DC)11/P
+Scope                                                      inverter_senaryo4/Subsystem2/Scope2
+Outport                                                    inverter_senaryo4/Subsystem2/Out1
+Outport                                                    inverter_senaryo4/Subsystem2/Out2
+Outport                                                    inverter_senaryo4/Subsystem2/Out3
+Outport                                                    inverter_senaryo4/Subsystem2/Out4
+Outport                                                    inverter_senaryo4/Subsystem2/Out5
+Outport                                                    inverter_senaryo4/Subsystem2/Out6
+SubSystem    spsTHDLib/THD                                 inverter_senaryo4/THD
+Inport       spsTHDLib/THD/In                              inverter_senaryo4/THD/In
+Sum          spsTHDLib/THD/Add                             inverter_senaryo4/THD/Add
+Product      spsTHDLib/THD/Divide                          inverter_senaryo4/THD/Divide
+Math         spsTHDLib/THD/Math
+Function                   inverter_senaryo4/THD/Math Function
+Math         spsTHDLib/THD/Math
+Function1                  inverter_senaryo4/THD/Math Function1
+Math         spsTHDLib/THD/Math
+Function2                  inverter_senaryo4/THD/Math Function2
+SubSystem    spsMeanLib/Mean                               inverter_senaryo4/THD/Mean
+Inport       spsMeanLib/Mean/In                            inverter_senaryo4/THD/Mean/In
+SubSystem    spsMeanValueModel/Continuous                  inverter_senaryo4/THD/Mean/Model
+Outport      spsMeanLib/Mean/Mean                          inverter_senaryo4/THD/Mean/Mean
+SubSystem    spsRMSLib/RMS                                 inverter_senaryo4/THD/RMS1
+Inport       spsRMSLib/RMS/In                              inverter_senaryo4/THD/RMS1/In
+Constant     spsRMSLib/RMS/Constant                        inverter_senaryo4/THD/RMS1/Constant
+DataTypeConversion spsRMSLib/RMS/Data Type Conversion            inverter_senaryo4/THD/RMS1/Data Type Conversion
+Logic        spsRMSLib/RMS/Logical
+Operator                inverter_senaryo4/THD/RMS1/Logical Operator
+SubSystem    spsRMSLib/RMS/RMS                             inverter_senaryo4/THD/RMS1/RMS 
+Switch       spsRMSLib/RMS/Switch                          inverter_senaryo4/THD/RMS1/Switch
+SubSystem    spsRMSLib/RMS/TrueRMS                         inverter_senaryo4/THD/RMS1/TrueRMS 
+Outport      spsRMSLib/RMS/RMS                             inverter_senaryo4/THD/RMS1/RMS
+SubSystem    spsRMSLib/RMS                                 inverter_senaryo4/THD/RMS2
+Inport       spsRMSLib/RMS/In                              inverter_senaryo4/THD/RMS2/In
+Constant     spsRMSLib/RMS/Constant                        inverter_senaryo4/THD/RMS2/Constant
+DataTypeConversion spsRMSLib/RMS/Data Type Conversion            inverter_senaryo4/THD/RMS2/Data Type Conversion
+Logic        spsRMSLib/RMS/Logical
+Operator                inverter_senaryo4/THD/RMS2/Logical Operator
+SubSystem    spsRMSLib/RMS/RMS                             inverter_senaryo4/THD/RMS2/RMS 
+Switch       spsRMSLib/RMS/Switch                          inverter_senaryo4/THD/RMS2/Switch
+SubSystem    spsRMSLib/RMS/TrueRMS                         inverter_senaryo4/THD/RMS2/TrueRMS 
+Outport      spsRMSLib/RMS/RMS                             inverter_senaryo4/THD/RMS2/RMS
+Saturate     spsTHDLib/THD/Saturation
+to avoid
+division by 0 inverter_senaryo4/THD/Saturation to avoid division by 0
+Saturate     spsTHDLib/THD/Saturation
+to avoid
+division by 0  inverter_senaryo4/THD/Saturation to avoid division by 0 
+Sqrt         spsTHDLib/THD/Sqrt                            inverter_senaryo4/THD/Sqrt
+Outport      spsTHDLib/THD/THD                             inverter_senaryo4/THD/THD
+SubSystem    spsTHDLib/THD                                 inverter_senaryo4/THD2
+Inport       spsTHDLib/THD/In                              inverter_senaryo4/THD2/In
+Sum          spsTHDLib/THD/Add                             inverter_senaryo4/THD2/Add
+Product      spsTHDLib/THD/Divide                          inverter_senaryo4/THD2/Divide
+Math         spsTHDLib/THD/Math
+Function                   inverter_senaryo4/THD2/Math Function
+Math         spsTHDLib/THD/Math
+Function1                  inverter_senaryo4/THD2/Math Function1
+Math         spsTHDLib/THD/Math
+Function2                  inverter_senaryo4/THD2/Math Function2
+SubSystem    spsMeanLib/Mean                               inverter_senaryo4/THD2/Mean
+Inport       spsMeanLib/Mean/In                            inverter_senaryo4/THD2/Mean/In
+SubSystem    spsMeanValueModel/Continuous                  inverter_senaryo4/THD2/Mean/Model
+Outport      spsMeanLib/Mean/Mean                          inverter_senaryo4/THD2/Mean/Mean
+SubSystem    spsRMSLib/RMS                                 inverter_senaryo4/THD2/RMS1
+Inport       spsRMSLib/RMS/In                              inverter_senaryo4/THD2/RMS1/In
+Constant     spsRMSLib/RMS/Constant                        inverter_senaryo4/THD2/RMS1/Constant
+DataTypeConversion spsRMSLib/RMS/Data Type Conversion            inverter_senaryo4/THD2/RMS1/Data Type Conversion
+Logic        spsRMSLib/RMS/Logical
+Operator                inverter_senaryo4/THD2/RMS1/Logical Operator
+SubSystem    spsRMSLib/RMS/RMS                             inverter_senaryo4/THD2/RMS1/RMS 
+Switch       spsRMSLib/RMS/Switch                          inverter_senaryo4/THD2/RMS1/Switch
+SubSystem    spsRMSLib/RMS/TrueRMS                         inverter_senaryo4/THD2/RMS1/TrueRMS 
+Outport      spsRMSLib/RMS/RMS                             inverter_senaryo4/THD2/RMS1/RMS
+SubSystem    spsRMSLib/RMS                                 inverter_senaryo4/THD2/RMS2
+Inport       spsRMSLib/RMS/In                              inverter_senaryo4/THD2/RMS2/In
+Constant     spsRMSLib/RMS/Constant                        inverter_senaryo4/THD2/RMS2/Constant
+DataTypeConversion spsRMSLib/RMS/Data Type Conversion            inverter_senaryo4/THD2/RMS2/Data Type Conversion
+Logic        spsRMSLib/RMS/Logical
+Operator                inverter_senaryo4/THD2/RMS2/Logical Operator
+SubSystem    spsRMSLib/RMS/RMS                             inverter_senaryo4/THD2/RMS2/RMS 
+Switch       spsRMSLib/RMS/Switch                          inverter_senaryo4/THD2/RMS2/Switch
+SubSystem    spsRMSLib/RMS/TrueRMS                         inverter_senaryo4/THD2/RMS2/TrueRMS 
+Outport      spsRMSLib/RMS/RMS                             inverter_senaryo4/THD2/RMS2/RMS
+Saturate     spsTHDLib/THD/Saturation
+to avoid
+division by 0 inverter_senaryo4/THD2/Saturation to avoid division by 0
+Saturate     spsTHDLib/THD/Saturation
+to avoid
+division by 0  inverter_senaryo4/THD2/Saturation to avoid division by 0 
+Sqrt         spsTHDLib/THD/Sqrt                            inverter_senaryo4/THD2/Sqrt
+Outport      spsTHDLib/THD/THD                             inverter_senaryo4/THD2/THD
+Display                                                    inverter_senaryo4/Vdc
+Display                                                    inverter_senaryo4/Verim
+Display                                                    inverter_senaryo4/cosfi
+Display                                                    inverter_senaryo4/cosfi2
+Display                                                    inverter_senaryo4/cosfi3
+Display                                                    inverter_senaryo4/cosfi4
+Display                                                    inverter_senaryo4/cosfi8
+SubSystem    spspowerguiLib/powergui                       inverter_senaryo4/powergui
+Ground       spspowerguiLib/powergui/Ground                inverter_senaryo4/powergui/Ground
+Terminator   spspowerguiLib/powergui/Terminator            inverter_senaryo4/powergui/Terminator
+
+== Senaryo değişkenlerinin kullanıldığı bloklar
+L2             inverter_senaryo4/CL1.l = L2
+L2r            inverter_senaryo4/CL1.r = L2r
+Vac3_peak      inverter_senaryo4/Grid1.amp = Vac3_peak
+K13            inverter_senaryo4/K1.Gain = K13
+K33            inverter_senaryo4/K3.Gain = K33
+L1_core_Rp     inverter_senaryo4/L1 Core Loss Rp.R = L1_core_Rp
+phase_deg3     inverter_senaryo4/Sine Wave3.Phase = phase_deg3*pi/180
+Vdc3           inverter_senaryo4/Voltage Source.dc_voltage = Vdc3

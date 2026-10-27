@@ -51,12 +51,29 @@ tectonic main.tex --outdir build --keep-logs --keep-intermediates
 
 # MATLAB deneyleri
 
-MATLAB R2025b tam kurulu (Simulink, Simscape Electrical, Control System, Signal
-Processing dahil).
+Bu makinede (27.10.2026'dan beri) **MATLAB R2023b** tam kurulu: Simulink,
+Simscape Electrical (Specialized Power Systems dahil), Control System, Simulink
+Control Design, Simulink Design Optimization, Signal Processing. Ümit'in modelleri
+de R2023b'dir. `matlab` PATH'te değildir; tam yolla çağır (PowerShell):
 
-```bat
-matlab -sd "C:\Users\bob\Documents\WORKS\009_OTHER\ümit abi\tez-matlab-simulink" -batch "run('scripts/run_demo.m')"
+```powershell
+& "C:\Program Files\MATLAB\R2023b\bin\matlab.exe" -sd "C:\CODES\ümit abi\tez-matlab-simulink" -batch "run('scripts/run_demo.m')"
 ```
+
+Ağustos 2026 koşuları başka bir makinede R2025b ile yapılmıştır; o tarihli
+review notlarındaki "R2025b uyumsuzluğu" bu makine için geçerli değildir.
+Ümit'in paket modelleri `runs/<tarih>_<konu>/model/` altındaki kopyada koşturulur
+(ham paket ve `slprj` artıkları ayrı kalsın); 16 iş parçacığı / 63 GB RAM ile
+birkaç `-batch` süreci paralel koşabilir.
+
+Ümit'in modellerini koştururken (`scripts/run_umit_dort_senaryo_20261027.m`):
+- `inverter_common_parameters.m` taban çalışma alanında `load_system`'dan
+  **önce** çalıştırılmalı; yoksa Simscape diyotları "Qrr/didt … type string"
+  hatası verir (InitFcn yetmez, modelde PreLoadFcn yok).
+- Modeller Accelerator modunda kayıtlı. Aynı klasörde eşzamanlı Accelerator
+  derlemeleri çakışır ("Problem creating Accelerator MEX file"); paralel koşu
+  Normal modda yapılır. Süre (0,1 s benzetim): S3 Accelerator ~27 dk, S1+S2
+  Normal ~1,9 saat. `logsout.mat` 0,8–1,8 GB olur, git'e girmez.
 
 - Betikler **proje kökünden** çağrılır, `scripts/` içine `cd` edilmez; hepsi
   `root_dir = fileparts(fileparts(mfilename('fullpath')))` kalıbıyla yol kurar.

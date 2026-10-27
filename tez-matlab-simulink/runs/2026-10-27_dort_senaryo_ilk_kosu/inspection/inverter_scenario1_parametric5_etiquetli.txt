@@ -1,0 +1,1033 @@
+MODEL inverter_scenario1_parametric5_etiquetli
+StopTime=0.1 Solver=ode15s MaxStep=sim_max_step
+InitFcn=run(fullfile(fileparts(get_param(bdroot,'FileName')),'inverter_common_parameters.m'));
+PreLoadFcn=
+
+== Üst düzey bloklar
+Display                      inverter_scenario1_parametric5_etiquetli/AC Aktif Güç1
+Display                      inverter_scenario1_parametric5_etiquetli/AC Akım RMS
+Display                      inverter_scenario1_parametric5_etiquetli/AC Akım RMS1
+Display                      inverter_scenario1_parametric5_etiquetli/AC Akım THD
+Display                      inverter_scenario1_parametric5_etiquetli/AC Akım THD1
+SubSystem                    inverter_scenario1_parametric5_etiquetli/AC Current
+Sensor1
+SubSystem                    inverter_scenario1_parametric5_etiquetli/AC Current
+Sensor2
+Display                      inverter_scenario1_parametric5_etiquetli/AC Gerilim THD1
+Display                      inverter_scenario1_parametric5_etiquetli/AC Gerilim THD2
+Display                      inverter_scenario1_parametric5_etiquetli/AC Reaktif Güç
+Display                      inverter_scenario1_parametric5_etiquetli/AC Reaktif Güç1
+SubSystem                    inverter_scenario1_parametric5_etiquetli/AC Voltage
+Sensor1
+SubSystem                    inverter_scenario1_parametric5_etiquetli/AC Voltage
+Sensor2
+SubSystem                    inverter_scenario1_parametric5_etiquetli/AC Voltage
+Sensor3
+SubSystem                    inverter_scenario1_parametric5_etiquetli/AC Voltage
+Sensor4
+Product                      inverter_scenario1_parametric5_etiquetli/AC instantaneous
+power
+Product                      inverter_scenario1_parametric5_etiquetli/AC instantaneous
+power1
+Product                      inverter_scenario1_parametric5_etiquetli/AC instantaneous
+power2
+Product                      inverter_scenario1_parametric5_etiquetli/AC instantaneous
+power3
+Product                      inverter_scenario1_parametric5_etiquetli/AC instantaneous
+power4
+Product                      inverter_scenario1_parametric5_etiquetli/AC instantaneous
+power5
+Product                      inverter_scenario1_parametric5_etiquetli/AC instantaneous
+power6
+Product                      inverter_scenario1_parametric5_etiquetli/AC instantaneous
+power7
+Product                      inverter_scenario1_parametric5_etiquetli/AC instantaneous
+power8
+Product                      inverter_scenario1_parametric5_etiquetli/AC instantaneous
+power9
+Sum                          inverter_scenario1_parametric5_etiquetli/Add
+Sum                          inverter_scenario1_parametric5_etiquetli/Add1
+Sum                          inverter_scenario1_parametric5_etiquetli/Add2
+Sum                          inverter_scenario1_parametric5_etiquetli/Add3
+BusCreator                   inverter_scenario1_parametric5_etiquetli/Bus
+Creator10
+BusCreator                   inverter_scenario1_parametric5_etiquetli/Bus
+Creator11
+BusCreator                   inverter_scenario1_parametric5_etiquetli/Bus
+Creator2
+BusCreator                   inverter_scenario1_parametric5_etiquetli/Bus
+Creator4
+BusCreator                   inverter_scenario1_parametric5_etiquetli/Bus
+Creator6
+BusCreator                   inverter_scenario1_parametric5_etiquetli/Bus
+Creator7
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/CL1
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/CL2
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/Capacitor
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/Capacitor1
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/Capacitor2
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/Capacitor3
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/Capacitor4
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/Capacitor5
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/Capacitor6
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/Capacitor7
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/Current 
+Sensor
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/Current 
+Sensor1
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/Current 
+Sensor2
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/Current 
+Sensor3
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/DC Blocking Diode
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/DC Blocking Diode1
+Display                      inverter_scenario1_parametric5_etiquetli/DC Güç
+Display                      inverter_scenario1_parametric5_etiquetli/DC Güç1
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/DC Source R
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/DC Source R1
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/Diode1
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/Diode10
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/Diode11
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/Diode12
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/Diode2
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/Diode3
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/Diode4
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/Diode5
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/Diode6
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/Diode7
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/Diode8
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/Diode9
+Product                      inverter_scenario1_parametric5_etiquetli/Divide1
+Product                      inverter_scenario1_parametric5_etiquetli/Divide2
+Product                      inverter_scenario1_parametric5_etiquetli/Divide3
+Product                      inverter_scenario1_parametric5_etiquetli/Divide4
+Product                      inverter_scenario1_parametric5_etiquetli/Divide5
+Product                      inverter_scenario1_parametric5_etiquetli/Divide6
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/EMC Common Mode Choke S1
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/EMC Common Mode Choke S2
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/EMC Common Mode Choke S3
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/EMC Common Mode Choke S4
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/EMC Core Loss R1_1
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/EMC Core Loss R1_2
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/EMC Core Loss R1_3
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/EMC Core Loss R1_4
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/EMC Core Loss R2_1
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/EMC Core Loss R2_2
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/EMC Core Loss R2_3
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/EMC Core Loss R2_4
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/Electrical
+Reference1
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/Electrical
+Reference2
+From                         inverter_scenario1_parametric5_etiquetli/From10
+From                         inverter_scenario1_parametric5_etiquetli/From13
+From                         inverter_scenario1_parametric5_etiquetli/From14
+From                         inverter_scenario1_parametric5_etiquetli/From16
+From                         inverter_scenario1_parametric5_etiquetli/From19
+From                         inverter_scenario1_parametric5_etiquetli/From2
+From                         inverter_scenario1_parametric5_etiquetli/From20
+From                         inverter_scenario1_parametric5_etiquetli/From21
+From                         inverter_scenario1_parametric5_etiquetli/From22
+From                         inverter_scenario1_parametric5_etiquetli/From24
+From                         inverter_scenario1_parametric5_etiquetli/From25
+From                         inverter_scenario1_parametric5_etiquetli/From26
+From                         inverter_scenario1_parametric5_etiquetli/From27
+From                         inverter_scenario1_parametric5_etiquetli/From28
+From                         inverter_scenario1_parametric5_etiquetli/From29
+From                         inverter_scenario1_parametric5_etiquetli/From30
+From                         inverter_scenario1_parametric5_etiquetli/From31
+From                         inverter_scenario1_parametric5_etiquetli/From32
+From                         inverter_scenario1_parametric5_etiquetli/From4
+From                         inverter_scenario1_parametric5_etiquetli/From5
+From                         inverter_scenario1_parametric5_etiquetli/From6
+From                         inverter_scenario1_parametric5_etiquetli/From7
+From                         inverter_scenario1_parametric5_etiquetli/From8
+From                         inverter_scenario1_parametric5_etiquetli/From9
+Goto                         inverter_scenario1_parametric5_etiquetli/G1
+Goto                         inverter_scenario1_parametric5_etiquetli/G2
+Goto                         inverter_scenario1_parametric5_etiquetli/G3
+Goto                         inverter_scenario1_parametric5_etiquetli/G4
+Goto                         inverter_scenario1_parametric5_etiquetli/G5
+Goto                         inverter_scenario1_parametric5_etiquetli/G6
+Goto                         inverter_scenario1_parametric5_etiquetli/G7
+Goto                         inverter_scenario1_parametric5_etiquetli/G8
+Gain                         inverter_scenario1_parametric5_etiquetli/Gain1
+Gain                         inverter_scenario1_parametric5_etiquetli/Gain2
+SubSystem                    inverter_scenario1_parametric5_etiquetli/Gate
+Drive1
+SubSystem                    inverter_scenario1_parametric5_etiquetli/Gate
+Drive2
+SubSystem                    inverter_scenario1_parametric5_etiquetli/Gate
+Drive3
+SubSystem                    inverter_scenario1_parametric5_etiquetli/Gate
+Drive4
+SubSystem                    inverter_scenario1_parametric5_etiquetli/Gate
+Drive5
+SubSystem                    inverter_scenario1_parametric5_etiquetli/Gate
+Drive6
+SubSystem                    inverter_scenario1_parametric5_etiquetli/Gate
+Drive7
+SubSystem                    inverter_scenario1_parametric5_etiquetli/Gate
+Drive8
+Goto                         inverter_scenario1_parametric5_etiquetli/Goto
+Goto                         inverter_scenario1_parametric5_etiquetli/Goto1
+Goto                         inverter_scenario1_parametric5_etiquetli/Goto2
+Goto                         inverter_scenario1_parametric5_etiquetli/Goto3
+Goto                         inverter_scenario1_parametric5_etiquetli/Goto5
+Goto                         inverter_scenario1_parametric5_etiquetli/Goto6
+Goto                         inverter_scenario1_parametric5_etiquetli/Goto7
+Goto                         inverter_scenario1_parametric5_etiquetli/Goto9
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/Grid1
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/Grid2
+Display                      inverter_scenario1_parametric5_etiquetli/Idc
+Display                      inverter_scenario1_parametric5_etiquetli/Idc1
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/Inductor
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/Inductor1
+Gain                         inverter_scenario1_parametric5_etiquetli/K11
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/L1 Core Loss Rp
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/L1 Core Loss Rp1
+SubSystem                    inverter_scenario1_parametric5_etiquetli/Mean1
+SubSystem                    inverter_scenario1_parametric5_etiquetli/Mean10
+SubSystem                    inverter_scenario1_parametric5_etiquetli/Mean2
+SubSystem                    inverter_scenario1_parametric5_etiquetli/Mean3
+SubSystem                    inverter_scenario1_parametric5_etiquetli/Mean4
+SubSystem                    inverter_scenario1_parametric5_etiquetli/Mean5
+SubSystem                    inverter_scenario1_parametric5_etiquetli/Mean6
+SubSystem                    inverter_scenario1_parametric5_etiquetli/Mean7
+SubSystem                    inverter_scenario1_parametric5_etiquetli/Mean8
+SubSystem                    inverter_scenario1_parametric5_etiquetli/Mean9
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/N-Channel IGBT
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/N-Channel IGBT1
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/N-Channel IGBT2
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/N-Channel IGBT3
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/N-Channel IGBT4
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/N-Channel IGBT5
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/N-Channel IGBT6
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/N-Channel IGBT7
+SubSystem                    inverter_scenario1_parametric5_etiquetli/PS-Simulink
+Converter
+SubSystem                    inverter_scenario1_parametric5_etiquetli/PS-Simulink
+Converter1
+SubSystem                    inverter_scenario1_parametric5_etiquetli/PS-Simulink
+Converter2
+SubSystem                    inverter_scenario1_parametric5_etiquetli/PS-Simulink
+Converter3
+SubSystem                    inverter_scenario1_parametric5_etiquetli/PS-Simulink
+Converter4
+SubSystem                    inverter_scenario1_parametric5_etiquetli/PS-Simulink
+Converter5
+SubSystem                    inverter_scenario1_parametric5_etiquetli/Power
+Measurement
+SubSystem                    inverter_scenario1_parametric5_etiquetli/Power
+Measurement1
+SubSystem                    inverter_scenario1_parametric5_etiquetli/Power1
+SubSystem                    inverter_scenario1_parametric5_etiquetli/Power3
+SubSystem                    inverter_scenario1_parametric5_etiquetli/RMS1
+SubSystem                    inverter_scenario1_parametric5_etiquetli/RMS2
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/Resistor
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/Resistor1
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/Resistor2
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/Resistor3
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/Resistor4
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/Resistor5
+Scope                        inverter_scenario1_parametric5_etiquetli/Scope1
+Scope                        inverter_scenario1_parametric5_etiquetli/Scope10
+Scope                        inverter_scenario1_parametric5_etiquetli/Scope11
+Scope                        inverter_scenario1_parametric5_etiquetli/Scope13
+Scope                        inverter_scenario1_parametric5_etiquetli/Scope14
+Scope                        inverter_scenario1_parametric5_etiquetli/Scope16
+Scope                        inverter_scenario1_parametric5_etiquetli/Scope17
+Scope                        inverter_scenario1_parametric5_etiquetli/Scope19
+Scope                        inverter_scenario1_parametric5_etiquetli/Scope20
+Scope                        inverter_scenario1_parametric5_etiquetli/Scope3
+Scope                        inverter_scenario1_parametric5_etiquetli/Scope4
+Scope                        inverter_scenario1_parametric5_etiquetli/Scope6
+Scope                        inverter_scenario1_parametric5_etiquetli/Scope7
+Scope                        inverter_scenario1_parametric5_etiquetli/Scope8
+Sin                          inverter_scenario1_parametric5_etiquetli/Sine Wave1
+SubSystem                    inverter_scenario1_parametric5_etiquetli/Solver
+Configuration1
+SubSystem                    inverter_scenario1_parametric5_etiquetli/Solver
+Configuration2
+Sqrt                         inverter_scenario1_parametric5_etiquetli/Sqrt
+Sqrt                         inverter_scenario1_parametric5_etiquetli/Sqrt1
+Sqrt                         inverter_scenario1_parametric5_etiquetli/Sqrt2
+Sqrt                         inverter_scenario1_parametric5_etiquetli/Sqrt3
+SubSystem                    inverter_scenario1_parametric5_etiquetli/Subsystem
+Sum                          inverter_scenario1_parametric5_etiquetli/Sum of
+Elements
+Sum                          inverter_scenario1_parametric5_etiquetli/Sum of
+Elements1
+Sum                          inverter_scenario1_parametric5_etiquetli/Sum of
+Elements2
+Sum                          inverter_scenario1_parametric5_etiquetli/Sum of
+Elements3
+SubSystem                    inverter_scenario1_parametric5_etiquetli/THD
+SubSystem                    inverter_scenario1_parametric5_etiquetli/THD1
+SubSystem                    inverter_scenario1_parametric5_etiquetli/THD2
+SubSystem                    inverter_scenario1_parametric5_etiquetli/THD3
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/Temperature Source
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/Temperature Source1
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/Temperature Source10
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/Temperature Source11
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/Temperature Source12
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/Temperature Source13
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/Temperature Source14
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/Temperature Source15
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/Temperature Source16
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/Temperature Source17
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/Temperature Source18
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/Temperature Source19
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/Temperature Source2
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/Temperature Source3
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/Temperature Source4
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/Temperature Source5
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/Temperature Source6
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/Temperature Source7
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/Temperature Source8
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/Temperature Source9
+Display                      inverter_scenario1_parametric5_etiquetli/Vdc
+Display                      inverter_scenario1_parametric5_etiquetli/Vdc1
+Display                      inverter_scenario1_parametric5_etiquetli/Verim
+Display                      inverter_scenario1_parametric5_etiquetli/Verim1
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/Voltage
+Sensor
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/Voltage
+Sensor1
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/Voltage Source
+SimscapeBlock                inverter_scenario1_parametric5_etiquetli/Voltage Source1
+Display                      inverter_scenario1_parametric5_etiquetli/cosfi
+Display                      inverter_scenario1_parametric5_etiquetli/cosfi1
+Display                      inverter_scenario1_parametric5_etiquetli/cosfi2
+Display                      inverter_scenario1_parametric5_etiquetli/cosfi3
+Display                      inverter_scenario1_parametric5_etiquetli/cosfi4
+Display                      inverter_scenario1_parametric5_etiquetli/cosfi5
+Display                      inverter_scenario1_parametric5_etiquetli/cosfi6
+Display                      inverter_scenario1_parametric5_etiquetli/cosfi7
+SubSystem                    inverter_scenario1_parametric5_etiquetli/powergui
+
+== Ölçüm / kayıt blokları (tüm derinlik)
+Display                                                    inverter_scenario1_parametric5_etiquetli/AC Aktif Güç
+Display                                                    inverter_scenario1_parametric5_etiquetli/AC Aktif Güç1
+Display                                                    inverter_scenario1_parametric5_etiquetli/AC Akım RMS
+Display                                                    inverter_scenario1_parametric5_etiquetli/AC Akım RMS1
+Display                                                    inverter_scenario1_parametric5_etiquetli/AC Akım THD
+Display                                                    inverter_scenario1_parametric5_etiquetli/AC Akım THD1
+Outport      nesl_utility/PS-Simulink
+Converter/output     inverter_scenario1_parametric5_etiquetli/AC Current Sensor1/PS-Simulink Converter/output
+Outport      nesl_utility/PS-Simulink
+Converter/output     inverter_scenario1_parametric5_etiquetli/AC Current Sensor2/PS-Simulink Converter/output
+Display                                                    inverter_scenario1_parametric5_etiquetli/AC Gerilim THD1
+Display                                                    inverter_scenario1_parametric5_etiquetli/AC Gerilim THD2
+Display                                                    inverter_scenario1_parametric5_etiquetli/AC Reaktif Güç
+Display                                                    inverter_scenario1_parametric5_etiquetli/AC Reaktif Güç1
+Outport      nesl_utility/PS-Simulink
+Converter/output     inverter_scenario1_parametric5_etiquetli/AC Voltage Sensor1/PS-Simulink Converter/output
+Outport      nesl_utility/PS-Simulink
+Converter/output     inverter_scenario1_parametric5_etiquetli/AC Voltage Sensor2/PS-Simulink Converter/output
+Outport      nesl_utility/PS-Simulink
+Converter/output     inverter_scenario1_parametric5_etiquetli/AC Voltage Sensor3/PS-Simulink Converter/output
+Outport      nesl_utility/PS-Simulink
+Converter/output     inverter_scenario1_parametric5_etiquetli/AC Voltage Sensor4/PS-Simulink Converter/output
+Display                                                    inverter_scenario1_parametric5_etiquetli/DC Güç
+Display                                                    inverter_scenario1_parametric5_etiquetli/DC Güç1
+Outport      nesl_utility/PS-Simulink
+Converter/output     inverter_scenario1_parametric5_etiquetli/Gate Drive1/PS-Simulink Converter8/output
+Outport                                                    inverter_scenario1_parametric5_etiquetli/Gate Drive1/G3
+Outport      nesl_utility/PS-Simulink
+Converter/output     inverter_scenario1_parametric5_etiquetli/Gate Drive2/PS-Simulink Converter8/output
+Outport                                                    inverter_scenario1_parametric5_etiquetli/Gate Drive2/G2
+Outport      nesl_utility/PS-Simulink
+Converter/output     inverter_scenario1_parametric5_etiquetli/Gate Drive3/PS-Simulink Converter8/output
+Outport                                                    inverter_scenario1_parametric5_etiquetli/Gate Drive3/G1
+Outport      nesl_utility/PS-Simulink
+Converter/output     inverter_scenario1_parametric5_etiquetli/Gate Drive4/PS-Simulink Converter8/output
+Outport                                                    inverter_scenario1_parametric5_etiquetli/Gate Drive4/G4
+Outport      nesl_utility/PS-Simulink
+Converter/output     inverter_scenario1_parametric5_etiquetli/Gate Drive5/PS-Simulink Converter8/output
+Outport                                                    inverter_scenario1_parametric5_etiquetli/Gate Drive5/G3
+Outport      nesl_utility/PS-Simulink
+Converter/output     inverter_scenario1_parametric5_etiquetli/Gate Drive6/PS-Simulink Converter8/output
+Outport                                                    inverter_scenario1_parametric5_etiquetli/Gate Drive6/G2
+Outport      nesl_utility/PS-Simulink
+Converter/output     inverter_scenario1_parametric5_etiquetli/Gate Drive7/PS-Simulink Converter8/output
+Outport                                                    inverter_scenario1_parametric5_etiquetli/Gate Drive7/G1
+Outport      nesl_utility/PS-Simulink
+Converter/output     inverter_scenario1_parametric5_etiquetli/Gate Drive8/PS-Simulink Converter8/output
+Outport                                                    inverter_scenario1_parametric5_etiquetli/Gate Drive8/G4
+Display                                                    inverter_scenario1_parametric5_etiquetli/Idc
+Display                                                    inverter_scenario1_parametric5_etiquetli/Idc1
+SubSystem    spsMeanLib/Mean                               inverter_scenario1_parametric5_etiquetli/Mean1
+Inport       spsMeanLib/Mean/In                            inverter_scenario1_parametric5_etiquetli/Mean1/In
+SubSystem    spsMeanValueModel/Continuous                  inverter_scenario1_parametric5_etiquetli/Mean1/Model
+Inport       spsMeanValueModel/Continuous/In               inverter_scenario1_parametric5_etiquetli/Mean1/Model/In
+Clock        spsMeanValueModel/Continuous/Clock            inverter_scenario1_parametric5_etiquetli/Mean1/Model/Clock
+Gain         spsMeanValueModel/Continuous/Gain             inverter_scenario1_parametric5_etiquetli/Mean1/Model/Gain
+Constant     spsMeanValueModel/Continuous/K1               inverter_scenario1_parametric5_etiquetli/Mean1/Model/K1
+Memory       spsMeanValueModel/Continuous/Memory           inverter_scenario1_parametric5_etiquetli/Mean1/Model/Memory
+RelationalOperator spsMeanValueModel/Continuous/Relational
+Operator inverter_scenario1_parametric5_etiquetli/Mean1/Model/Relational Operator
+Sum          spsMeanValueModel/Continuous/Sum              inverter_scenario1_parametric5_etiquetli/Mean1/Model/Sum
+Switch       spsMeanValueModel/Continuous/Switch           inverter_scenario1_parametric5_etiquetli/Mean1/Model/Switch
+TransportDelay spsMeanValueModel/Continuous/Transport
+Delay  inverter_scenario1_parametric5_etiquetli/Mean1/Model/Transport Delay
+Integrator   spsMeanValueModel/Continuous/integrator       inverter_scenario1_parametric5_etiquetli/Mean1/Model/integrator
+Outport      spsMeanValueModel/Continuous/Mean             inverter_scenario1_parametric5_etiquetli/Mean1/Model/Mean
+Outport      spsMeanLib/Mean/Mean                          inverter_scenario1_parametric5_etiquetli/Mean1/Mean
+SubSystem    spsMeanLib/Mean                               inverter_scenario1_parametric5_etiquetli/Mean10
+Inport       spsMeanLib/Mean/In                            inverter_scenario1_parametric5_etiquetli/Mean10/In
+SubSystem    spsMeanValueModel/Continuous                  inverter_scenario1_parametric5_etiquetli/Mean10/Model
+Inport       spsMeanValueModel/Continuous/In               inverter_scenario1_parametric5_etiquetli/Mean10/Model/In
+Clock        spsMeanValueModel/Continuous/Clock            inverter_scenario1_parametric5_etiquetli/Mean10/Model/Clock
+Gain         spsMeanValueModel/Continuous/Gain             inverter_scenario1_parametric5_etiquetli/Mean10/Model/Gain
+Constant     spsMeanValueModel/Continuous/K1               inverter_scenario1_parametric5_etiquetli/Mean10/Model/K1
+Memory       spsMeanValueModel/Continuous/Memory           inverter_scenario1_parametric5_etiquetli/Mean10/Model/Memory
+RelationalOperator spsMeanValueModel/Continuous/Relational
+Operator inverter_scenario1_parametric5_etiquetli/Mean10/Model/Relational Operator
+Sum          spsMeanValueModel/Continuous/Sum              inverter_scenario1_parametric5_etiquetli/Mean10/Model/Sum
+Switch       spsMeanValueModel/Continuous/Switch           inverter_scenario1_parametric5_etiquetli/Mean10/Model/Switch
+TransportDelay spsMeanValueModel/Continuous/Transport
+Delay  inverter_scenario1_parametric5_etiquetli/Mean10/Model/Transport Delay
+Integrator   spsMeanValueModel/Continuous/integrator       inverter_scenario1_parametric5_etiquetli/Mean10/Model/integrator
+Outport      spsMeanValueModel/Continuous/Mean             inverter_scenario1_parametric5_etiquetli/Mean10/Model/Mean
+Outport      spsMeanLib/Mean/Mean                          inverter_scenario1_parametric5_etiquetli/Mean10/Mean
+SubSystem    spsMeanLib/Mean                               inverter_scenario1_parametric5_etiquetli/Mean2
+Inport       spsMeanLib/Mean/In                            inverter_scenario1_parametric5_etiquetli/Mean2/In
+SubSystem    spsMeanValueModel/Continuous                  inverter_scenario1_parametric5_etiquetli/Mean2/Model
+Inport       spsMeanValueModel/Continuous/In               inverter_scenario1_parametric5_etiquetli/Mean2/Model/In
+Clock        spsMeanValueModel/Continuous/Clock            inverter_scenario1_parametric5_etiquetli/Mean2/Model/Clock
+Gain         spsMeanValueModel/Continuous/Gain             inverter_scenario1_parametric5_etiquetli/Mean2/Model/Gain
+Constant     spsMeanValueModel/Continuous/K1               inverter_scenario1_parametric5_etiquetli/Mean2/Model/K1
+Memory       spsMeanValueModel/Continuous/Memory           inverter_scenario1_parametric5_etiquetli/Mean2/Model/Memory
+RelationalOperator spsMeanValueModel/Continuous/Relational
+Operator inverter_scenario1_parametric5_etiquetli/Mean2/Model/Relational Operator
+Sum          spsMeanValueModel/Continuous/Sum              inverter_scenario1_parametric5_etiquetli/Mean2/Model/Sum
+Switch       spsMeanValueModel/Continuous/Switch           inverter_scenario1_parametric5_etiquetli/Mean2/Model/Switch
+TransportDelay spsMeanValueModel/Continuous/Transport
+Delay  inverter_scenario1_parametric5_etiquetli/Mean2/Model/Transport Delay
+Integrator   spsMeanValueModel/Continuous/integrator       inverter_scenario1_parametric5_etiquetli/Mean2/Model/integrator
+Outport      spsMeanValueModel/Continuous/Mean             inverter_scenario1_parametric5_etiquetli/Mean2/Model/Mean
+Outport      spsMeanLib/Mean/Mean                          inverter_scenario1_parametric5_etiquetli/Mean2/Mean
+SubSystem    spsMeanLib/Mean                               inverter_scenario1_parametric5_etiquetli/Mean3
+Inport       spsMeanLib/Mean/In                            inverter_scenario1_parametric5_etiquetli/Mean3/In
+SubSystem    spsMeanValueModel/Continuous                  inverter_scenario1_parametric5_etiquetli/Mean3/Model
+Inport       spsMeanValueModel/Continuous/In               inverter_scenario1_parametric5_etiquetli/Mean3/Model/In
+Clock        spsMeanValueModel/Continuous/Clock            inverter_scenario1_parametric5_etiquetli/Mean3/Model/Clock
+Gain         spsMeanValueModel/Continuous/Gain             inverter_scenario1_parametric5_etiquetli/Mean3/Model/Gain
+Constant     spsMeanValueModel/Continuous/K1               inverter_scenario1_parametric5_etiquetli/Mean3/Model/K1
+Memory       spsMeanValueModel/Continuous/Memory           inverter_scenario1_parametric5_etiquetli/Mean3/Model/Memory
+RelationalOperator spsMeanValueModel/Continuous/Relational
+Operator inverter_scenario1_parametric5_etiquetli/Mean3/Model/Relational Operator
+Sum          spsMeanValueModel/Continuous/Sum              inverter_scenario1_parametric5_etiquetli/Mean3/Model/Sum
+Switch       spsMeanValueModel/Continuous/Switch           inverter_scenario1_parametric5_etiquetli/Mean3/Model/Switch
+TransportDelay spsMeanValueModel/Continuous/Transport
+Delay  inverter_scenario1_parametric5_etiquetli/Mean3/Model/Transport Delay
+Integrator   spsMeanValueModel/Continuous/integrator       inverter_scenario1_parametric5_etiquetli/Mean3/Model/integrator
+Outport      spsMeanValueModel/Continuous/Mean             inverter_scenario1_parametric5_etiquetli/Mean3/Model/Mean
+Outport      spsMeanLib/Mean/Mean                          inverter_scenario1_parametric5_etiquetli/Mean3/Mean
+SubSystem    spsMeanLib/Mean                               inverter_scenario1_parametric5_etiquetli/Mean4
+Inport       spsMeanLib/Mean/In                            inverter_scenario1_parametric5_etiquetli/Mean4/In
+SubSystem    spsMeanValueModel/Continuous                  inverter_scenario1_parametric5_etiquetli/Mean4/Model
+Inport       spsMeanValueModel/Continuous/In               inverter_scenario1_parametric5_etiquetli/Mean4/Model/In
+Clock        spsMeanValueModel/Continuous/Clock            inverter_scenario1_parametric5_etiquetli/Mean4/Model/Clock
+Gain         spsMeanValueModel/Continuous/Gain             inverter_scenario1_parametric5_etiquetli/Mean4/Model/Gain
+Constant     spsMeanValueModel/Continuous/K1               inverter_scenario1_parametric5_etiquetli/Mean4/Model/K1
+Memory       spsMeanValueModel/Continuous/Memory           inverter_scenario1_parametric5_etiquetli/Mean4/Model/Memory
+RelationalOperator spsMeanValueModel/Continuous/Relational
+Operator inverter_scenario1_parametric5_etiquetli/Mean4/Model/Relational Operator
+Sum          spsMeanValueModel/Continuous/Sum              inverter_scenario1_parametric5_etiquetli/Mean4/Model/Sum
+Switch       spsMeanValueModel/Continuous/Switch           inverter_scenario1_parametric5_etiquetli/Mean4/Model/Switch
+TransportDelay spsMeanValueModel/Continuous/Transport
+Delay  inverter_scenario1_parametric5_etiquetli/Mean4/Model/Transport Delay
+Integrator   spsMeanValueModel/Continuous/integrator       inverter_scenario1_parametric5_etiquetli/Mean4/Model/integrator
+Outport      spsMeanValueModel/Continuous/Mean             inverter_scenario1_parametric5_etiquetli/Mean4/Model/Mean
+Outport      spsMeanLib/Mean/Mean                          inverter_scenario1_parametric5_etiquetli/Mean4/Mean
+SubSystem    spsMeanLib/Mean                               inverter_scenario1_parametric5_etiquetli/Mean5
+Inport       spsMeanLib/Mean/In                            inverter_scenario1_parametric5_etiquetli/Mean5/In
+SubSystem    spsMeanValueModel/Continuous                  inverter_scenario1_parametric5_etiquetli/Mean5/Model
+Inport       spsMeanValueModel/Continuous/In               inverter_scenario1_parametric5_etiquetli/Mean5/Model/In
+Clock        spsMeanValueModel/Continuous/Clock            inverter_scenario1_parametric5_etiquetli/Mean5/Model/Clock
+Gain         spsMeanValueModel/Continuous/Gain             inverter_scenario1_parametric5_etiquetli/Mean5/Model/Gain
+Constant     spsMeanValueModel/Continuous/K1               inverter_scenario1_parametric5_etiquetli/Mean5/Model/K1
+Memory       spsMeanValueModel/Continuous/Memory           inverter_scenario1_parametric5_etiquetli/Mean5/Model/Memory
+RelationalOperator spsMeanValueModel/Continuous/Relational
+Operator inverter_scenario1_parametric5_etiquetli/Mean5/Model/Relational Operator
+Sum          spsMeanValueModel/Continuous/Sum              inverter_scenario1_parametric5_etiquetli/Mean5/Model/Sum
+Switch       spsMeanValueModel/Continuous/Switch           inverter_scenario1_parametric5_etiquetli/Mean5/Model/Switch
+TransportDelay spsMeanValueModel/Continuous/Transport
+Delay  inverter_scenario1_parametric5_etiquetli/Mean5/Model/Transport Delay
+Integrator   spsMeanValueModel/Continuous/integrator       inverter_scenario1_parametric5_etiquetli/Mean5/Model/integrator
+Outport      spsMeanValueModel/Continuous/Mean             inverter_scenario1_parametric5_etiquetli/Mean5/Model/Mean
+Outport      spsMeanLib/Mean/Mean                          inverter_scenario1_parametric5_etiquetli/Mean5/Mean
+SubSystem    spsMeanLib/Mean                               inverter_scenario1_parametric5_etiquetli/Mean6
+Inport       spsMeanLib/Mean/In                            inverter_scenario1_parametric5_etiquetli/Mean6/In
+SubSystem    spsMeanValueModel/Continuous                  inverter_scenario1_parametric5_etiquetli/Mean6/Model
+Inport       spsMeanValueModel/Continuous/In               inverter_scenario1_parametric5_etiquetli/Mean6/Model/In
+Clock        spsMeanValueModel/Continuous/Clock            inverter_scenario1_parametric5_etiquetli/Mean6/Model/Clock
+Gain         spsMeanValueModel/Continuous/Gain             inverter_scenario1_parametric5_etiquetli/Mean6/Model/Gain
+Constant     spsMeanValueModel/Continuous/K1               inverter_scenario1_parametric5_etiquetli/Mean6/Model/K1
+Memory       spsMeanValueModel/Continuous/Memory           inverter_scenario1_parametric5_etiquetli/Mean6/Model/Memory
+RelationalOperator spsMeanValueModel/Continuous/Relational
+Operator inverter_scenario1_parametric5_etiquetli/Mean6/Model/Relational Operator
+Sum          spsMeanValueModel/Continuous/Sum              inverter_scenario1_parametric5_etiquetli/Mean6/Model/Sum
+Switch       spsMeanValueModel/Continuous/Switch           inverter_scenario1_parametric5_etiquetli/Mean6/Model/Switch
+TransportDelay spsMeanValueModel/Continuous/Transport
+Delay  inverter_scenario1_parametric5_etiquetli/Mean6/Model/Transport Delay
+Integrator   spsMeanValueModel/Continuous/integrator       inverter_scenario1_parametric5_etiquetli/Mean6/Model/integrator
+Outport      spsMeanValueModel/Continuous/Mean             inverter_scenario1_parametric5_etiquetli/Mean6/Model/Mean
+Outport      spsMeanLib/Mean/Mean                          inverter_scenario1_parametric5_etiquetli/Mean6/Mean
+SubSystem    spsMeanLib/Mean                               inverter_scenario1_parametric5_etiquetli/Mean7
+Inport       spsMeanLib/Mean/In                            inverter_scenario1_parametric5_etiquetli/Mean7/In
+SubSystem    spsMeanValueModel/Continuous                  inverter_scenario1_parametric5_etiquetli/Mean7/Model
+Inport       spsMeanValueModel/Continuous/In               inverter_scenario1_parametric5_etiquetli/Mean7/Model/In
+Clock        spsMeanValueModel/Continuous/Clock            inverter_scenario1_parametric5_etiquetli/Mean7/Model/Clock
+Gain         spsMeanValueModel/Continuous/Gain             inverter_scenario1_parametric5_etiquetli/Mean7/Model/Gain
+Constant     spsMeanValueModel/Continuous/K1               inverter_scenario1_parametric5_etiquetli/Mean7/Model/K1
+Memory       spsMeanValueModel/Continuous/Memory           inverter_scenario1_parametric5_etiquetli/Mean7/Model/Memory
+RelationalOperator spsMeanValueModel/Continuous/Relational
+Operator inverter_scenario1_parametric5_etiquetli/Mean7/Model/Relational Operator
+Sum          spsMeanValueModel/Continuous/Sum              inverter_scenario1_parametric5_etiquetli/Mean7/Model/Sum
+Switch       spsMeanValueModel/Continuous/Switch           inverter_scenario1_parametric5_etiquetli/Mean7/Model/Switch
+TransportDelay spsMeanValueModel/Continuous/Transport
+Delay  inverter_scenario1_parametric5_etiquetli/Mean7/Model/Transport Delay
+Integrator   spsMeanValueModel/Continuous/integrator       inverter_scenario1_parametric5_etiquetli/Mean7/Model/integrator
+Outport      spsMeanValueModel/Continuous/Mean             inverter_scenario1_parametric5_etiquetli/Mean7/Model/Mean
+Outport      spsMeanLib/Mean/Mean                          inverter_scenario1_parametric5_etiquetli/Mean7/Mean
+SubSystem    spsMeanLib/Mean                               inverter_scenario1_parametric5_etiquetli/Mean8
+Inport       spsMeanLib/Mean/In                            inverter_scenario1_parametric5_etiquetli/Mean8/In
+SubSystem    spsMeanValueModel/Continuous                  inverter_scenario1_parametric5_etiquetli/Mean8/Model
+Inport       spsMeanValueModel/Continuous/In               inverter_scenario1_parametric5_etiquetli/Mean8/Model/In
+Clock        spsMeanValueModel/Continuous/Clock            inverter_scenario1_parametric5_etiquetli/Mean8/Model/Clock
+Gain         spsMeanValueModel/Continuous/Gain             inverter_scenario1_parametric5_etiquetli/Mean8/Model/Gain
+Constant     spsMeanValueModel/Continuous/K1               inverter_scenario1_parametric5_etiquetli/Mean8/Model/K1
+Memory       spsMeanValueModel/Continuous/Memory           inverter_scenario1_parametric5_etiquetli/Mean8/Model/Memory
+RelationalOperator spsMeanValueModel/Continuous/Relational
+Operator inverter_scenario1_parametric5_etiquetli/Mean8/Model/Relational Operator
+Sum          spsMeanValueModel/Continuous/Sum              inverter_scenario1_parametric5_etiquetli/Mean8/Model/Sum
+Switch       spsMeanValueModel/Continuous/Switch           inverter_scenario1_parametric5_etiquetli/Mean8/Model/Switch
+TransportDelay spsMeanValueModel/Continuous/Transport
+Delay  inverter_scenario1_parametric5_etiquetli/Mean8/Model/Transport Delay
+Integrator   spsMeanValueModel/Continuous/integrator       inverter_scenario1_parametric5_etiquetli/Mean8/Model/integrator
+Outport      spsMeanValueModel/Continuous/Mean             inverter_scenario1_parametric5_etiquetli/Mean8/Model/Mean
+Outport      spsMeanLib/Mean/Mean                          inverter_scenario1_parametric5_etiquetli/Mean8/Mean
+SubSystem    spsMeanLib/Mean                               inverter_scenario1_parametric5_etiquetli/Mean9
+Inport       spsMeanLib/Mean/In                            inverter_scenario1_parametric5_etiquetli/Mean9/In
+SubSystem    spsMeanValueModel/Continuous                  inverter_scenario1_parametric5_etiquetli/Mean9/Model
+Inport       spsMeanValueModel/Continuous/In               inverter_scenario1_parametric5_etiquetli/Mean9/Model/In
+Clock        spsMeanValueModel/Continuous/Clock            inverter_scenario1_parametric5_etiquetli/Mean9/Model/Clock
+Gain         spsMeanValueModel/Continuous/Gain             inverter_scenario1_parametric5_etiquetli/Mean9/Model/Gain
+Constant     spsMeanValueModel/Continuous/K1               inverter_scenario1_parametric5_etiquetli/Mean9/Model/K1
+Memory       spsMeanValueModel/Continuous/Memory           inverter_scenario1_parametric5_etiquetli/Mean9/Model/Memory
+RelationalOperator spsMeanValueModel/Continuous/Relational
+Operator inverter_scenario1_parametric5_etiquetli/Mean9/Model/Relational Operator
+Sum          spsMeanValueModel/Continuous/Sum              inverter_scenario1_parametric5_etiquetli/Mean9/Model/Sum
+Switch       spsMeanValueModel/Continuous/Switch           inverter_scenario1_parametric5_etiquetli/Mean9/Model/Switch
+TransportDelay spsMeanValueModel/Continuous/Transport
+Delay  inverter_scenario1_parametric5_etiquetli/Mean9/Model/Transport Delay
+Integrator   spsMeanValueModel/Continuous/integrator       inverter_scenario1_parametric5_etiquetli/Mean9/Model/integrator
+Outport      spsMeanValueModel/Continuous/Mean             inverter_scenario1_parametric5_etiquetli/Mean9/Model/Mean
+Outport      spsMeanLib/Mean/Mean                          inverter_scenario1_parametric5_etiquetli/Mean9/Mean
+Outport      nesl_utility/PS-Simulink
+Converter/EVAL_KEY/output inverter_scenario1_parametric5_etiquetli/PS-Simulink Converter/EVAL_KEY/output
+Outport      nesl_utility/PS-Simulink
+Converter/output     inverter_scenario1_parametric5_etiquetli/PS-Simulink Converter/output
+Outport      nesl_utility/PS-Simulink
+Converter/EVAL_KEY/output inverter_scenario1_parametric5_etiquetli/PS-Simulink Converter1/EVAL_KEY/output
+Outport      nesl_utility/PS-Simulink
+Converter/output     inverter_scenario1_parametric5_etiquetli/PS-Simulink Converter1/output
+Outport      nesl_utility/PS-Simulink
+Converter/EVAL_KEY/output inverter_scenario1_parametric5_etiquetli/PS-Simulink Converter2/EVAL_KEY/output
+Outport      nesl_utility/PS-Simulink
+Converter/output     inverter_scenario1_parametric5_etiquetli/PS-Simulink Converter2/output
+Outport      nesl_utility/PS-Simulink
+Converter/EVAL_KEY/output inverter_scenario1_parametric5_etiquetli/PS-Simulink Converter3/EVAL_KEY/output
+Outport      nesl_utility/PS-Simulink
+Converter/output     inverter_scenario1_parametric5_etiquetli/PS-Simulink Converter3/output
+Outport      nesl_utility/PS-Simulink
+Converter/EVAL_KEY/output inverter_scenario1_parametric5_etiquetli/PS-Simulink Converter4/EVAL_KEY/output
+Outport      nesl_utility/PS-Simulink
+Converter/output     inverter_scenario1_parametric5_etiquetli/PS-Simulink Converter4/output
+Outport      nesl_utility/PS-Simulink
+Converter/EVAL_KEY/output inverter_scenario1_parametric5_etiquetli/PS-Simulink Converter5/EVAL_KEY/output
+Outport      nesl_utility/PS-Simulink
+Converter/output     inverter_scenario1_parametric5_etiquetli/PS-Simulink Converter5/output
+SubSystem    eePowerMeasurement/Power
+Measurement          inverter_scenario1_parametric5_etiquetli/Power Measurement
+Inport       eePowerMeasurement/Power
+Measurement/v        inverter_scenario1_parametric5_etiquetli/Power Measurement/v
+Inport       eePowerMeasurement/Power
+Measurement/i        inverter_scenario1_parametric5_etiquetli/Power Measurement/i
+SubSystem    eePowerMeasurement/Power
+Measurement/Continuous inverter_scenario1_parametric5_etiquetli/Power Measurement/Continuous
+Inport       eePowerMeasurement/Power
+Measurement/Continuous/v inverter_scenario1_parametric5_etiquetli/Power Measurement/Continuous/v
+Inport       eePowerMeasurement/Power
+Measurement/Continuous/i inverter_scenario1_parametric5_etiquetli/Power Measurement/Continuous/i
+ComplexToRealImag eePowerMeasurement/Power
+Measurement/Continuous/Complex to
+Real-Imag inverter_scenario1_parametric5_etiquetli/Power Measurement/Continuous/Complex to Real-Imag
+Demux        eePowerMeasurement/Power
+Measurement/Continuous/Demux inverter_scenario1_parametric5_etiquetli/Power Measurement/Continuous/Demux
+Demux        eePowerMeasurement/Power
+Measurement/Continuous/Demux1 inverter_scenario1_parametric5_etiquetli/Power Measurement/Continuous/Demux1
+Gain         eePowerMeasurement/Power
+Measurement/Continuous/Gain inverter_scenario1_parametric5_etiquetli/Power Measurement/Continuous/Gain
+Gain         eePowerMeasurement/Power
+Measurement/Continuous/Gain1 inverter_scenario1_parametric5_etiquetli/Power Measurement/Continuous/Gain1
+Gain         eePowerMeasurement/Power
+Measurement/Continuous/Gain2 inverter_scenario1_parametric5_etiquetli/Power Measurement/Continuous/Gain2
+Integrator   eePowerMeasurement/Power
+Measurement/Continuous/Integrator inverter_scenario1_parametric5_etiquetli/Power Measurement/Continuous/Integrator
+Integrator   eePowerMeasurement/Power
+Measurement/Continuous/Integrator1 inverter_scenario1_parametric5_etiquetli/Power Measurement/Continuous/Integrator1
+Math         eePowerMeasurement/Power
+Measurement/Continuous/Math
+Function inverter_scenario1_parametric5_etiquetli/Power Measurement/Continuous/Math Function
+Mux          eePowerMeasurement/Power
+Measurement/Continuous/Mux1 inverter_scenario1_parametric5_etiquetli/Power Measurement/Continuous/Mux1
+Product      eePowerMeasurement/Power
+Measurement/Continuous/Product1 inverter_scenario1_parametric5_etiquetli/Power Measurement/Continuous/Product1
+Product      eePowerMeasurement/Power
+Measurement/Continuous/Product2 inverter_scenario1_parametric5_etiquetli/Power Measurement/Continuous/Product2
+Product      eePowerMeasurement/Power
+Measurement/Continuous/Product3 inverter_scenario1_parametric5_etiquetli/Power Measurement/Continuous/Product3
+Constant     eePowerMeasurement/Power
+Measurement/Continuous/Radial frequencies inverter_scenario1_parametric5_etiquetli/Power Measurement/Continuous/Radial frequencies
+RealImagToComplex eePowerMeasurement/Power
+Measurement/Continuous/Real-Imag to
+Complex inverter_scenario1_parametric5_etiquetli/Power Measurement/Continuous/Real-Imag to Complex
+RealImagToComplex eePowerMeasurement/Power
+Measurement/Continuous/Real-Imag to
+Complex1 inverter_scenario1_parametric5_etiquetli/Power Measurement/Continuous/Real-Imag to Complex1
+Sum          eePowerMeasurement/Power
+Measurement/Continuous/Subtract inverter_scenario1_parametric5_etiquetli/Power Measurement/Continuous/Subtract
+Sum          eePowerMeasurement/Power
+Measurement/Continuous/Subtract1 inverter_scenario1_parametric5_etiquetli/Power Measurement/Continuous/Subtract1
+TransportDelay eePowerMeasurement/Power
+Measurement/Continuous/Transport
+Delay inverter_scenario1_parametric5_etiquetli/Power Measurement/Continuous/Transport Delay
+TransportDelay eePowerMeasurement/Power
+Measurement/Continuous/Transport
+Delay1 inverter_scenario1_parametric5_etiquetli/Power Measurement/Continuous/Transport Delay1
+Trigonometry eePowerMeasurement/Power
+Measurement/Continuous/Trigonometric
+Function1 inverter_scenario1_parametric5_etiquetli/Power Measurement/Continuous/Trigonometric Function1
+Outport      eePowerMeasurement/Power
+Measurement/Continuous/P inverter_scenario1_parametric5_etiquetli/Power Measurement/Continuous/P
+Outport      eePowerMeasurement/Power
+Measurement/Continuous/Q inverter_scenario1_parametric5_etiquetli/Power Measurement/Continuous/Q
+Outport      eePowerMeasurement/Power
+Measurement/P        inverter_scenario1_parametric5_etiquetli/Power Measurement/P
+Outport      eePowerMeasurement/Power
+Measurement/Q        inverter_scenario1_parametric5_etiquetli/Power Measurement/Q
+SubSystem    eePowerMeasurement/Power
+Measurement          inverter_scenario1_parametric5_etiquetli/Power Measurement1
+Inport       eePowerMeasurement/Power
+Measurement/v        inverter_scenario1_parametric5_etiquetli/Power Measurement1/v
+Inport       eePowerMeasurement/Power
+Measurement/i        inverter_scenario1_parametric5_etiquetli/Power Measurement1/i
+SubSystem    eePowerMeasurement/Power
+Measurement/Continuous inverter_scenario1_parametric5_etiquetli/Power Measurement1/Continuous
+Inport       eePowerMeasurement/Power
+Measurement/Continuous/v inverter_scenario1_parametric5_etiquetli/Power Measurement1/Continuous/v
+Inport       eePowerMeasurement/Power
+Measurement/Continuous/i inverter_scenario1_parametric5_etiquetli/Power Measurement1/Continuous/i
+ComplexToRealImag eePowerMeasurement/Power
+Measurement/Continuous/Complex to
+Real-Imag inverter_scenario1_parametric5_etiquetli/Power Measurement1/Continuous/Complex to Real-Imag
+Demux        eePowerMeasurement/Power
+Measurement/Continuous/Demux inverter_scenario1_parametric5_etiquetli/Power Measurement1/Continuous/Demux
+Demux        eePowerMeasurement/Power
+Measurement/Continuous/Demux1 inverter_scenario1_parametric5_etiquetli/Power Measurement1/Continuous/Demux1
+Gain         eePowerMeasurement/Power
+Measurement/Continuous/Gain inverter_scenario1_parametric5_etiquetli/Power Measurement1/Continuous/Gain
+Gain         eePowerMeasurement/Power
+Measurement/Continuous/Gain1 inverter_scenario1_parametric5_etiquetli/Power Measurement1/Continuous/Gain1
+Gain         eePowerMeasurement/Power
+Measurement/Continuous/Gain2 inverter_scenario1_parametric5_etiquetli/Power Measurement1/Continuous/Gain2
+Integrator   eePowerMeasurement/Power
+Measurement/Continuous/Integrator inverter_scenario1_parametric5_etiquetli/Power Measurement1/Continuous/Integrator
+Integrator   eePowerMeasurement/Power
+Measurement/Continuous/Integrator1 inverter_scenario1_parametric5_etiquetli/Power Measurement1/Continuous/Integrator1
+Math         eePowerMeasurement/Power
+Measurement/Continuous/Math
+Function inverter_scenario1_parametric5_etiquetli/Power Measurement1/Continuous/Math Function
+Mux          eePowerMeasurement/Power
+Measurement/Continuous/Mux1 inverter_scenario1_parametric5_etiquetli/Power Measurement1/Continuous/Mux1
+Product      eePowerMeasurement/Power
+Measurement/Continuous/Product1 inverter_scenario1_parametric5_etiquetli/Power Measurement1/Continuous/Product1
+Product      eePowerMeasurement/Power
+Measurement/Continuous/Product2 inverter_scenario1_parametric5_etiquetli/Power Measurement1/Continuous/Product2
+Product      eePowerMeasurement/Power
+Measurement/Continuous/Product3 inverter_scenario1_parametric5_etiquetli/Power Measurement1/Continuous/Product3
+Constant     eePowerMeasurement/Power
+Measurement/Continuous/Radial frequencies inverter_scenario1_parametric5_etiquetli/Power Measurement1/Continuous/Radial frequencies
+RealImagToComplex eePowerMeasurement/Power
+Measurement/Continuous/Real-Imag to
+Complex inverter_scenario1_parametric5_etiquetli/Power Measurement1/Continuous/Real-Imag to Complex
+RealImagToComplex eePowerMeasurement/Power
+Measurement/Continuous/Real-Imag to
+Complex1 inverter_scenario1_parametric5_etiquetli/Power Measurement1/Continuous/Real-Imag to Complex1
+Sum          eePowerMeasurement/Power
+Measurement/Continuous/Subtract inverter_scenario1_parametric5_etiquetli/Power Measurement1/Continuous/Subtract
+Sum          eePowerMeasurement/Power
+Measurement/Continuous/Subtract1 inverter_scenario1_parametric5_etiquetli/Power Measurement1/Continuous/Subtract1
+TransportDelay eePowerMeasurement/Power
+Measurement/Continuous/Transport
+Delay inverter_scenario1_parametric5_etiquetli/Power Measurement1/Continuous/Transport Delay
+TransportDelay eePowerMeasurement/Power
+Measurement/Continuous/Transport
+Delay1 inverter_scenario1_parametric5_etiquetli/Power Measurement1/Continuous/Transport Delay1
+Trigonometry eePowerMeasurement/Power
+Measurement/Continuous/Trigonometric
+Function1 inverter_scenario1_parametric5_etiquetli/Power Measurement1/Continuous/Trigonometric Function1
+Outport      eePowerMeasurement/Power
+Measurement/Continuous/P inverter_scenario1_parametric5_etiquetli/Power Measurement1/Continuous/P
+Outport      eePowerMeasurement/Power
+Measurement/Continuous/Q inverter_scenario1_parametric5_etiquetli/Power Measurement1/Continuous/Q
+Outport      eePowerMeasurement/Power
+Measurement/P        inverter_scenario1_parametric5_etiquetli/Power Measurement1/P
+Outport      eePowerMeasurement/Power
+Measurement/Q        inverter_scenario1_parametric5_etiquetli/Power Measurement1/Q
+SubSystem    spsPowerLib/Power                             inverter_scenario1_parametric5_etiquetli/Power1
+Inport       spsPowerLib/Power/V                           inverter_scenario1_parametric5_etiquetli/Power1/V
+Inport       spsPowerLib/Power/I                           inverter_scenario1_parametric5_etiquetli/Power1/I
+Gain         spsPowerLib/Power/Deg->Rad                    inverter_scenario1_parametric5_etiquetli/Power1/Deg->Rad
+SubSystem    spsMeanLib/Mean                               inverter_scenario1_parametric5_etiquetli/Power1/Fourier/Mean
+SubSystem    spsMeanLib/Mean                               inverter_scenario1_parametric5_etiquetli/Power1/Fourier/Mean value1
+Outport      spsFourierLib/Fourier/Mag                     inverter_scenario1_parametric5_etiquetli/Power1/Fourier/Mag
+Outport      spsFourierLib/Fourier/Phase                   inverter_scenario1_parametric5_etiquetli/Power1/Fourier/Phase
+SubSystem    spsMeanLib/Mean                               inverter_scenario1_parametric5_etiquetli/Power1/Fourier1/Mean
+SubSystem    spsMeanLib/Mean                               inverter_scenario1_parametric5_etiquetli/Power1/Fourier1/Mean value1
+Outport      spsFourierLib/Fourier/Mag                     inverter_scenario1_parametric5_etiquetli/Power1/Fourier1/Mag
+Outport      spsFourierLib/Fourier/Phase                   inverter_scenario1_parametric5_etiquetli/Power1/Fourier1/Phase
+Gain         spsPowerLib/Power/Gain1                       inverter_scenario1_parametric5_etiquetli/Power1/Gain1
+Product      spsPowerLib/Power/Product                     inverter_scenario1_parametric5_etiquetli/Power1/Product
+Product      spsPowerLib/Power/Product1                    inverter_scenario1_parametric5_etiquetli/Power1/Product1
+Product      spsPowerLib/Power/Product3                    inverter_scenario1_parametric5_etiquetli/Power1/Product3
+Sum          spsPowerLib/Power/Sum                         inverter_scenario1_parametric5_etiquetli/Power1/Sum
+Trigonometry spsPowerLib/Power/Trigonometric
+Function2     inverter_scenario1_parametric5_etiquetli/Power1/Trigonometric Function2
+Outport      spsPowerLib/Power/P                           inverter_scenario1_parametric5_etiquetli/Power1/P
+Outport      spsPowerLib/Power/Q                           inverter_scenario1_parametric5_etiquetli/Power1/Q
+SubSystem    spsPowerLib/Power                             inverter_scenario1_parametric5_etiquetli/Power3
+Inport       spsPowerLib/Power/V                           inverter_scenario1_parametric5_etiquetli/Power3/V
+Inport       spsPowerLib/Power/I                           inverter_scenario1_parametric5_etiquetli/Power3/I
+Gain         spsPowerLib/Power/Deg->Rad                    inverter_scenario1_parametric5_etiquetli/Power3/Deg->Rad
+SubSystem    spsMeanLib/Mean                               inverter_scenario1_parametric5_etiquetli/Power3/Fourier/Mean
+SubSystem    spsMeanLib/Mean                               inverter_scenario1_parametric5_etiquetli/Power3/Fourier/Mean value1
+Outport      spsFourierLib/Fourier/Mag                     inverter_scenario1_parametric5_etiquetli/Power3/Fourier/Mag
+Outport      spsFourierLib/Fourier/Phase                   inverter_scenario1_parametric5_etiquetli/Power3/Fourier/Phase
+SubSystem    spsMeanLib/Mean                               inverter_scenario1_parametric5_etiquetli/Power3/Fourier1/Mean
+SubSystem    spsMeanLib/Mean                               inverter_scenario1_parametric5_etiquetli/Power3/Fourier1/Mean value1
+Outport      spsFourierLib/Fourier/Mag                     inverter_scenario1_parametric5_etiquetli/Power3/Fourier1/Mag
+Outport      spsFourierLib/Fourier/Phase                   inverter_scenario1_parametric5_etiquetli/Power3/Fourier1/Phase
+Gain         spsPowerLib/Power/Gain1                       inverter_scenario1_parametric5_etiquetli/Power3/Gain1
+Product      spsPowerLib/Power/Product                     inverter_scenario1_parametric5_etiquetli/Power3/Product
+Product      spsPowerLib/Power/Product1                    inverter_scenario1_parametric5_etiquetli/Power3/Product1
+Product      spsPowerLib/Power/Product3                    inverter_scenario1_parametric5_etiquetli/Power3/Product3
+Sum          spsPowerLib/Power/Sum                         inverter_scenario1_parametric5_etiquetli/Power3/Sum
+Trigonometry spsPowerLib/Power/Trigonometric
+Function2     inverter_scenario1_parametric5_etiquetli/Power3/Trigonometric Function2
+Outport      spsPowerLib/Power/P                           inverter_scenario1_parametric5_etiquetli/Power3/P
+Outport      spsPowerLib/Power/Q                           inverter_scenario1_parametric5_etiquetli/Power3/Q
+SubSystem    spsRMSLib/RMS                                 inverter_scenario1_parametric5_etiquetli/RMS1
+Inport       spsRMSLib/RMS/In                              inverter_scenario1_parametric5_etiquetli/RMS1/In
+Constant     spsRMSLib/RMS/Constant                        inverter_scenario1_parametric5_etiquetli/RMS1/Constant
+DataTypeConversion spsRMSLib/RMS/Data Type Conversion            inverter_scenario1_parametric5_etiquetli/RMS1/Data Type Conversion
+Logic        spsRMSLib/RMS/Logical
+Operator                inverter_scenario1_parametric5_etiquetli/RMS1/Logical Operator
+SubSystem    spsRMSLib/RMS/RMS                             inverter_scenario1_parametric5_etiquetli/RMS1/RMS 
+Inport       spsRMSLib/RMS/RMS /In                         inverter_scenario1_parametric5_etiquetli/RMS1/RMS /In
+EnablePort   spsRMSLib/RMS/RMS /Enable                     inverter_scenario1_parametric5_etiquetli/RMS1/RMS /Enable
+Gain         spsRMSLib/RMS/RMS /Gain                       inverter_scenario1_parametric5_etiquetli/RMS1/RMS /Gain
+Terminator   spsRMSLib/RMS/RMS /Terminator                 inverter_scenario1_parametric5_etiquetli/RMS1/RMS /Terminator
+Outport      spsRMSLib/RMS/RMS /RMS                        inverter_scenario1_parametric5_etiquetli/RMS1/RMS /RMS
+Switch       spsRMSLib/RMS/Switch                          inverter_scenario1_parametric5_etiquetli/RMS1/Switch
+SubSystem    spsRMSLib/RMS/TrueRMS                         inverter_scenario1_parametric5_etiquetli/RMS1/TrueRMS 
+Inport       spsRMSLib/RMS/TrueRMS /In                     inverter_scenario1_parametric5_etiquetli/RMS1/TrueRMS /In
+EnablePort   spsRMSLib/RMS/TrueRMS /Enable                 inverter_scenario1_parametric5_etiquetli/RMS1/TrueRMS /Enable
+SubSystem    spsMeanLib/Mean                               inverter_scenario1_parametric5_etiquetli/RMS1/TrueRMS /Mean value
+Product      spsRMSLib/RMS/TrueRMS /Product                inverter_scenario1_parametric5_etiquetli/RMS1/TrueRMS /Product
+Saturate     spsRMSLib/RMS/TrueRMS /Saturation
+to avoid
+negative sqrt inverter_scenario1_parametric5_etiquetli/RMS1/TrueRMS /Saturation to avoid negative sqrt
+Sqrt         spsRMSLib/RMS/TrueRMS /Sqrt                   inverter_scenario1_parametric5_etiquetli/RMS1/TrueRMS /Sqrt
+Outport      spsRMSLib/RMS/TrueRMS /RMS                    inverter_scenario1_parametric5_etiquetli/RMS1/TrueRMS /RMS
+Outport      spsRMSLib/RMS/RMS                             inverter_scenario1_parametric5_etiquetli/RMS1/RMS
+SubSystem    spsRMSLib/RMS                                 inverter_scenario1_parametric5_etiquetli/RMS2
+Inport       spsRMSLib/RMS/In                              inverter_scenario1_parametric5_etiquetli/RMS2/In
+Constant     spsRMSLib/RMS/Constant                        inverter_scenario1_parametric5_etiquetli/RMS2/Constant
+DataTypeConversion spsRMSLib/RMS/Data Type Conversion            inverter_scenario1_parametric5_etiquetli/RMS2/Data Type Conversion
+Logic        spsRMSLib/RMS/Logical
+Operator                inverter_scenario1_parametric5_etiquetli/RMS2/Logical Operator
+SubSystem    spsRMSLib/RMS/RMS                             inverter_scenario1_parametric5_etiquetli/RMS2/RMS 
+Inport       spsRMSLib/RMS/RMS /In                         inverter_scenario1_parametric5_etiquetli/RMS2/RMS /In
+EnablePort   spsRMSLib/RMS/RMS /Enable                     inverter_scenario1_parametric5_etiquetli/RMS2/RMS /Enable
+Gain         spsRMSLib/RMS/RMS /Gain                       inverter_scenario1_parametric5_etiquetli/RMS2/RMS /Gain
+Terminator   spsRMSLib/RMS/RMS /Terminator                 inverter_scenario1_parametric5_etiquetli/RMS2/RMS /Terminator
+Outport      spsRMSLib/RMS/RMS /RMS                        inverter_scenario1_parametric5_etiquetli/RMS2/RMS /RMS
+Switch       spsRMSLib/RMS/Switch                          inverter_scenario1_parametric5_etiquetli/RMS2/Switch
+SubSystem    spsRMSLib/RMS/TrueRMS                         inverter_scenario1_parametric5_etiquetli/RMS2/TrueRMS 
+Inport       spsRMSLib/RMS/TrueRMS /In                     inverter_scenario1_parametric5_etiquetli/RMS2/TrueRMS /In
+EnablePort   spsRMSLib/RMS/TrueRMS /Enable                 inverter_scenario1_parametric5_etiquetli/RMS2/TrueRMS /Enable
+SubSystem    spsMeanLib/Mean                               inverter_scenario1_parametric5_etiquetli/RMS2/TrueRMS /Mean value
+Product      spsRMSLib/RMS/TrueRMS /Product                inverter_scenario1_parametric5_etiquetli/RMS2/TrueRMS /Product
+Saturate     spsRMSLib/RMS/TrueRMS /Saturation
+to avoid
+negative sqrt inverter_scenario1_parametric5_etiquetli/RMS2/TrueRMS /Saturation to avoid negative sqrt
+Sqrt         spsRMSLib/RMS/TrueRMS /Sqrt                   inverter_scenario1_parametric5_etiquetli/RMS2/TrueRMS /Sqrt
+Outport      spsRMSLib/RMS/TrueRMS /RMS                    inverter_scenario1_parametric5_etiquetli/RMS2/TrueRMS /RMS
+Outport      spsRMSLib/RMS/RMS                             inverter_scenario1_parametric5_etiquetli/RMS2/RMS
+Scope                                                      inverter_scenario1_parametric5_etiquetli/Scope1
+Scope                                                      inverter_scenario1_parametric5_etiquetli/Scope10
+Scope                                                      inverter_scenario1_parametric5_etiquetli/Scope11
+Scope                                                      inverter_scenario1_parametric5_etiquetli/Scope13
+Scope                                                      inverter_scenario1_parametric5_etiquetli/Scope14
+Scope                                                      inverter_scenario1_parametric5_etiquetli/Scope16
+Scope                                                      inverter_scenario1_parametric5_etiquetli/Scope17
+Scope                                                      inverter_scenario1_parametric5_etiquetli/Scope19
+Scope                                                      inverter_scenario1_parametric5_etiquetli/Scope20
+Scope                                                      inverter_scenario1_parametric5_etiquetli/Scope3
+Scope                                                      inverter_scenario1_parametric5_etiquetli/Scope4
+Scope                                                      inverter_scenario1_parametric5_etiquetli/Scope6
+Scope                                                      inverter_scenario1_parametric5_etiquetli/Scope7
+Scope                                                      inverter_scenario1_parametric5_etiquetli/Scope8
+Outport      spsOnDelayLib/On Delay/Out                    inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay/Out
+Outport      spsOnDelayLib/On Delay/Out                    inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay1/Out
+Outport      spsOnDelayLib/On Delay/Out                    inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay2/Out
+Outport      spsOnDelayLib/On Delay/Out                    inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay3/Out
+SubSystem    spsPWMGeneratorDCDCLib/PWM Generator
+(DC-DC)  inverter_scenario1_parametric5_etiquetli/Subsystem/PWM Generator (DC-DC)10
+Inport       spsPWMGeneratorDCDCLib/PWM Generator
+(DC-DC)/D inverter_scenario1_parametric5_etiquetli/Subsystem/PWM Generator (DC-DC)10/D
+DataTypeConversion spsPWMGeneratorDCDCLib/PWM Generator
+(DC-DC)/Data Type Conversion inverter_scenario1_parametric5_etiquetli/Subsystem/PWM Generator (DC-DC)10/Data Type Conversion
+Fcn          spsPWMGeneratorDCDCLib/PWM Generator
+(DC-DC)/Fcn inverter_scenario1_parametric5_etiquetli/Subsystem/PWM Generator (DC-DC)10/Fcn
+Logic        spsPWMGeneratorDCDCLib/PWM Generator
+(DC-DC)/Logical Operator inverter_scenario1_parametric5_etiquetli/Subsystem/PWM Generator (DC-DC)10/Logical Operator
+RelationalOperator spsPWMGeneratorDCDCLib/PWM Generator
+(DC-DC)/Relational
+Operator inverter_scenario1_parametric5_etiquetli/Subsystem/PWM Generator (DC-DC)10/Relational Operator
+Outport      spsPWMGeneratorDCDCLib/PWM Generator
+(DC-DC)/P inverter_scenario1_parametric5_etiquetli/Subsystem/PWM Generator (DC-DC)10/P
+SubSystem    spsPWMGeneratorDCDCLib/PWM Generator
+(DC-DC)  inverter_scenario1_parametric5_etiquetli/Subsystem/PWM Generator (DC-DC)11
+Inport       spsPWMGeneratorDCDCLib/PWM Generator
+(DC-DC)/D inverter_scenario1_parametric5_etiquetli/Subsystem/PWM Generator (DC-DC)11/D
+DataTypeConversion spsPWMGeneratorDCDCLib/PWM Generator
+(DC-DC)/Data Type Conversion inverter_scenario1_parametric5_etiquetli/Subsystem/PWM Generator (DC-DC)11/Data Type Conversion
+Fcn          spsPWMGeneratorDCDCLib/PWM Generator
+(DC-DC)/Fcn inverter_scenario1_parametric5_etiquetli/Subsystem/PWM Generator (DC-DC)11/Fcn
+Logic        spsPWMGeneratorDCDCLib/PWM Generator
+(DC-DC)/Logical Operator inverter_scenario1_parametric5_etiquetli/Subsystem/PWM Generator (DC-DC)11/Logical Operator
+RelationalOperator spsPWMGeneratorDCDCLib/PWM Generator
+(DC-DC)/Relational
+Operator inverter_scenario1_parametric5_etiquetli/Subsystem/PWM Generator (DC-DC)11/Relational Operator
+Outport      spsPWMGeneratorDCDCLib/PWM Generator
+(DC-DC)/P inverter_scenario1_parametric5_etiquetli/Subsystem/PWM Generator (DC-DC)11/P
+Scope                                                      inverter_scenario1_parametric5_etiquetli/Subsystem/Scope2
+Outport                                                    inverter_scenario1_parametric5_etiquetli/Subsystem/Out1
+Outport                                                    inverter_scenario1_parametric5_etiquetli/Subsystem/Out2
+Outport                                                    inverter_scenario1_parametric5_etiquetli/Subsystem/Out3
+Outport                                                    inverter_scenario1_parametric5_etiquetli/Subsystem/Out4
+Outport                                                    inverter_scenario1_parametric5_etiquetli/Subsystem/Out5
+Outport                                                    inverter_scenario1_parametric5_etiquetli/Subsystem/Out6
+SubSystem    spsTHDLib/THD                                 inverter_scenario1_parametric5_etiquetli/THD
+Inport       spsTHDLib/THD/In                              inverter_scenario1_parametric5_etiquetli/THD/In
+Sum          spsTHDLib/THD/Add                             inverter_scenario1_parametric5_etiquetli/THD/Add
+Product      spsTHDLib/THD/Divide                          inverter_scenario1_parametric5_etiquetli/THD/Divide
+Math         spsTHDLib/THD/Math
+Function                   inverter_scenario1_parametric5_etiquetli/THD/Math Function
+Math         spsTHDLib/THD/Math
+Function1                  inverter_scenario1_parametric5_etiquetli/THD/Math Function1
+Math         spsTHDLib/THD/Math
+Function2                  inverter_scenario1_parametric5_etiquetli/THD/Math Function2
+SubSystem    spsMeanLib/Mean                               inverter_scenario1_parametric5_etiquetli/THD/Mean
+Inport       spsMeanLib/Mean/In                            inverter_scenario1_parametric5_etiquetli/THD/Mean/In
+SubSystem    spsMeanValueModel/Continuous                  inverter_scenario1_parametric5_etiquetli/THD/Mean/Model
+Outport      spsMeanLib/Mean/Mean                          inverter_scenario1_parametric5_etiquetli/THD/Mean/Mean
+SubSystem    spsRMSLib/RMS                                 inverter_scenario1_parametric5_etiquetli/THD/RMS1
+Inport       spsRMSLib/RMS/In                              inverter_scenario1_parametric5_etiquetli/THD/RMS1/In
+Constant     spsRMSLib/RMS/Constant                        inverter_scenario1_parametric5_etiquetli/THD/RMS1/Constant
+DataTypeConversion spsRMSLib/RMS/Data Type Conversion            inverter_scenario1_parametric5_etiquetli/THD/RMS1/Data Type Conversion
+Logic        spsRMSLib/RMS/Logical
+Operator                inverter_scenario1_parametric5_etiquetli/THD/RMS1/Logical Operator
+SubSystem    spsRMSLib/RMS/RMS                             inverter_scenario1_parametric5_etiquetli/THD/RMS1/RMS 
+Switch       spsRMSLib/RMS/Switch                          inverter_scenario1_parametric5_etiquetli/THD/RMS1/Switch
+SubSystem    spsRMSLib/RMS/TrueRMS                         inverter_scenario1_parametric5_etiquetli/THD/RMS1/TrueRMS 
+Outport      spsRMSLib/RMS/RMS                             inverter_scenario1_parametric5_etiquetli/THD/RMS1/RMS
+SubSystem    spsRMSLib/RMS                                 inverter_scenario1_parametric5_etiquetli/THD/RMS2
+Inport       spsRMSLib/RMS/In                              inverter_scenario1_parametric5_etiquetli/THD/RMS2/In
+Constant     spsRMSLib/RMS/Constant                        inverter_scenario1_parametric5_etiquetli/THD/RMS2/Constant
+DataTypeConversion spsRMSLib/RMS/Data Type Conversion            inverter_scenario1_parametric5_etiquetli/THD/RMS2/Data Type Conversion
+Logic        spsRMSLib/RMS/Logical
+Operator                inverter_scenario1_parametric5_etiquetli/THD/RMS2/Logical Operator
+SubSystem    spsRMSLib/RMS/RMS                             inverter_scenario1_parametric5_etiquetli/THD/RMS2/RMS 
+Switch       spsRMSLib/RMS/Switch                          inverter_scenario1_parametric5_etiquetli/THD/RMS2/Switch
+SubSystem    spsRMSLib/RMS/TrueRMS                         inverter_scenario1_parametric5_etiquetli/THD/RMS2/TrueRMS 
+Outport      spsRMSLib/RMS/RMS                             inverter_scenario1_parametric5_etiquetli/THD/RMS2/RMS
+Saturate     spsTHDLib/THD/Saturation
+to avoid
+division by 0 inverter_scenario1_parametric5_etiquetli/THD/Saturation to avoid division by 0
+Saturate     spsTHDLib/THD/Saturation
+to avoid
+division by 0  inverter_scenario1_parametric5_etiquetli/THD/Saturation to avoid division by 0 
+Sqrt         spsTHDLib/THD/Sqrt                            inverter_scenario1_parametric5_etiquetli/THD/Sqrt
+Outport      spsTHDLib/THD/THD                             inverter_scenario1_parametric5_etiquetli/THD/THD
+SubSystem    spsTHDLib/THD                                 inverter_scenario1_parametric5_etiquetli/THD1
+Inport       spsTHDLib/THD/In                              inverter_scenario1_parametric5_etiquetli/THD1/In
+Sum          spsTHDLib/THD/Add                             inverter_scenario1_parametric5_etiquetli/THD1/Add
+Product      spsTHDLib/THD/Divide                          inverter_scenario1_parametric5_etiquetli/THD1/Divide
+Math         spsTHDLib/THD/Math
+Function                   inverter_scenario1_parametric5_etiquetli/THD1/Math Function
+Math         spsTHDLib/THD/Math
+Function1                  inverter_scenario1_parametric5_etiquetli/THD1/Math Function1
+Math         spsTHDLib/THD/Math
+Function2                  inverter_scenario1_parametric5_etiquetli/THD1/Math Function2
+SubSystem    spsMeanLib/Mean                               inverter_scenario1_parametric5_etiquetli/THD1/Mean
+Inport       spsMeanLib/Mean/In                            inverter_scenario1_parametric5_etiquetli/THD1/Mean/In
+SubSystem    spsMeanValueModel/Continuous                  inverter_scenario1_parametric5_etiquetli/THD1/Mean/Model
+Outport      spsMeanLib/Mean/Mean                          inverter_scenario1_parametric5_etiquetli/THD1/Mean/Mean
+SubSystem    spsRMSLib/RMS                                 inverter_scenario1_parametric5_etiquetli/THD1/RMS1
+Inport       spsRMSLib/RMS/In                              inverter_scenario1_parametric5_etiquetli/THD1/RMS1/In
+Constant     spsRMSLib/RMS/Constant                        inverter_scenario1_parametric5_etiquetli/THD1/RMS1/Constant
+DataTypeConversion spsRMSLib/RMS/Data Type Conversion            inverter_scenario1_parametric5_etiquetli/THD1/RMS1/Data Type Conversion
+Logic        spsRMSLib/RMS/Logical
+Operator                inverter_scenario1_parametric5_etiquetli/THD1/RMS1/Logical Operator
+SubSystem    spsRMSLib/RMS/RMS                             inverter_scenario1_parametric5_etiquetli/THD1/RMS1/RMS 
+Switch       spsRMSLib/RMS/Switch                          inverter_scenario1_parametric5_etiquetli/THD1/RMS1/Switch
+SubSystem    spsRMSLib/RMS/TrueRMS                         inverter_scenario1_parametric5_etiquetli/THD1/RMS1/TrueRMS 
+Outport      spsRMSLib/RMS/RMS                             inverter_scenario1_parametric5_etiquetli/THD1/RMS1/RMS
+SubSystem    spsRMSLib/RMS                                 inverter_scenario1_parametric5_etiquetli/THD1/RMS2
+Inport       spsRMSLib/RMS/In                              inverter_scenario1_parametric5_etiquetli/THD1/RMS2/In
+Constant     spsRMSLib/RMS/Constant                        inverter_scenario1_parametric5_etiquetli/THD1/RMS2/Constant
+DataTypeConversion spsRMSLib/RMS/Data Type Conversion            inverter_scenario1_parametric5_etiquetli/THD1/RMS2/Data Type Conversion
+Logic        spsRMSLib/RMS/Logical
+Operator                inverter_scenario1_parametric5_etiquetli/THD1/RMS2/Logical Operator
+SubSystem    spsRMSLib/RMS/RMS                             inverter_scenario1_parametric5_etiquetli/THD1/RMS2/RMS 
+Switch       spsRMSLib/RMS/Switch                          inverter_scenario1_parametric5_etiquetli/THD1/RMS2/Switch
+SubSystem    spsRMSLib/RMS/TrueRMS                         inverter_scenario1_parametric5_etiquetli/THD1/RMS2/TrueRMS 
+Outport      spsRMSLib/RMS/RMS                             inverter_scenario1_parametric5_etiquetli/THD1/RMS2/RMS
+Saturate     spsTHDLib/THD/Saturation
+to avoid
+division by 0 inverter_scenario1_parametric5_etiquetli/THD1/Saturation to avoid division by 0
+Saturate     spsTHDLib/THD/Saturation
+to avoid
+division by 0  inverter_scenario1_parametric5_etiquetli/THD1/Saturation to avoid division by 0 
+Sqrt         spsTHDLib/THD/Sqrt                            inverter_scenario1_parametric5_etiquetli/THD1/Sqrt
+Outport      spsTHDLib/THD/THD                             inverter_scenario1_parametric5_etiquetli/THD1/THD
+SubSystem    spsTHDLib/THD                                 inverter_scenario1_parametric5_etiquetli/THD2
+Inport       spsTHDLib/THD/In                              inverter_scenario1_parametric5_etiquetli/THD2/In
+Sum          spsTHDLib/THD/Add                             inverter_scenario1_parametric5_etiquetli/THD2/Add
+Product      spsTHDLib/THD/Divide                          inverter_scenario1_parametric5_etiquetli/THD2/Divide
+Math         spsTHDLib/THD/Math
+Function                   inverter_scenario1_parametric5_etiquetli/THD2/Math Function
+Math         spsTHDLib/THD/Math
+Function1                  inverter_scenario1_parametric5_etiquetli/THD2/Math Function1
+Math         spsTHDLib/THD/Math
+Function2                  inverter_scenario1_parametric5_etiquetli/THD2/Math Function2
+SubSystem    spsMeanLib/Mean                               inverter_scenario1_parametric5_etiquetli/THD2/Mean
+Inport       spsMeanLib/Mean/In                            inverter_scenario1_parametric5_etiquetli/THD2/Mean/In
+SubSystem    spsMeanValueModel/Continuous                  inverter_scenario1_parametric5_etiquetli/THD2/Mean/Model
+Outport      spsMeanLib/Mean/Mean                          inverter_scenario1_parametric5_etiquetli/THD2/Mean/Mean
+SubSystem    spsRMSLib/RMS                                 inverter_scenario1_parametric5_etiquetli/THD2/RMS1
+Inport       spsRMSLib/RMS/In                              inverter_scenario1_parametric5_etiquetli/THD2/RMS1/In
+Constant     spsRMSLib/RMS/Constant                        inverter_scenario1_parametric5_etiquetli/THD2/RMS1/Constant
+DataTypeConversion spsRMSLib/RMS/Data Type Conversion            inverter_scenario1_parametric5_etiquetli/THD2/RMS1/Data Type Conversion
+Logic        spsRMSLib/RMS/Logical
+Operator                inverter_scenario1_parametric5_etiquetli/THD2/RMS1/Logical Operator
+SubSystem    spsRMSLib/RMS/RMS                             inverter_scenario1_parametric5_etiquetli/THD2/RMS1/RMS 
+Switch       spsRMSLib/RMS/Switch                          inverter_scenario1_parametric5_etiquetli/THD2/RMS1/Switch
+SubSystem    spsRMSLib/RMS/TrueRMS                         inverter_scenario1_parametric5_etiquetli/THD2/RMS1/TrueRMS 
+Outport      spsRMSLib/RMS/RMS                             inverter_scenario1_parametric5_etiquetli/THD2/RMS1/RMS
+SubSystem    spsRMSLib/RMS                                 inverter_scenario1_parametric5_etiquetli/THD2/RMS2
+Inport       spsRMSLib/RMS/In                              inverter_scenario1_parametric5_etiquetli/THD2/RMS2/In
+Constant     spsRMSLib/RMS/Constant                        inverter_scenario1_parametric5_etiquetli/THD2/RMS2/Constant
+DataTypeConversion spsRMSLib/RMS/Data Type Conversion            inverter_scenario1_parametric5_etiquetli/THD2/RMS2/Data Type Conversion
+Logic        spsRMSLib/RMS/Logical
+Operator                inverter_scenario1_parametric5_etiquetli/THD2/RMS2/Logical Operator
+SubSystem    spsRMSLib/RMS/RMS                             inverter_scenario1_parametric5_etiquetli/THD2/RMS2/RMS 
+Switch       spsRMSLib/RMS/Switch                          inverter_scenario1_parametric5_etiquetli/THD2/RMS2/Switch
+SubSystem    spsRMSLib/RMS/TrueRMS                         inverter_scenario1_parametric5_etiquetli/THD2/RMS2/TrueRMS 
+Outport      spsRMSLib/RMS/RMS                             inverter_scenario1_parametric5_etiquetli/THD2/RMS2/RMS
+Saturate     spsTHDLib/THD/Saturation
+to avoid
+division by 0 inverter_scenario1_parametric5_etiquetli/THD2/Saturation to avoid division by 0
+Saturate     spsTHDLib/THD/Saturation
+to avoid
+division by 0  inverter_scenario1_parametric5_etiquetli/THD2/Saturation to avoid division by 0 
+Sqrt         spsTHDLib/THD/Sqrt                            inverter_scenario1_parametric5_etiquetli/THD2/Sqrt
+Outport      spsTHDLib/THD/THD                             inverter_scenario1_parametric5_etiquetli/THD2/THD
+SubSystem    spsTHDLib/THD                                 inverter_scenario1_parametric5_etiquetli/THD3
+Inport       spsTHDLib/THD/In                              inverter_scenario1_parametric5_etiquetli/THD3/In
+Sum          spsTHDLib/THD/Add                             inverter_scenario1_parametric5_etiquetli/THD3/Add
+Product      spsTHDLib/THD/Divide                          inverter_scenario1_parametric5_etiquetli/THD3/Divide
+Math         spsTHDLib/THD/Math
+Function                   inverter_scenario1_parametric5_etiquetli/THD3/Math Function
+Math         spsTHDLib/THD/Math
+Function1                  inverter_scenario1_parametric5_etiquetli/THD3/Math Function1
+Math         spsTHDLib/THD/Math
+Function2                  inverter_scenario1_parametric5_etiquetli/THD3/Math Function2
+SubSystem    spsMeanLib/Mean                               inverter_scenario1_parametric5_etiquetli/THD3/Mean
+Inport       spsMeanLib/Mean/In                            inverter_scenario1_parametric5_etiquetli/THD3/Mean/In
+SubSystem    spsMeanValueModel/Continuous                  inverter_scenario1_parametric5_etiquetli/THD3/Mean/Model
+Outport      spsMeanLib/Mean/Mean                          inverter_scenario1_parametric5_etiquetli/THD3/Mean/Mean
+SubSystem    spsRMSLib/RMS                                 inverter_scenario1_parametric5_etiquetli/THD3/RMS1
+Inport       spsRMSLib/RMS/In                              inverter_scenario1_parametric5_etiquetli/THD3/RMS1/In
+Constant     spsRMSLib/RMS/Constant                        inverter_scenario1_parametric5_etiquetli/THD3/RMS1/Constant
+DataTypeConversion spsRMSLib/RMS/Data Type Conversion            inverter_scenario1_parametric5_etiquetli/THD3/RMS1/Data Type Conversion
+Logic        spsRMSLib/RMS/Logical
+Operator                inverter_scenario1_parametric5_etiquetli/THD3/RMS1/Logical Operator
+SubSystem    spsRMSLib/RMS/RMS                             inverter_scenario1_parametric5_etiquetli/THD3/RMS1/RMS 
+Switch       spsRMSLib/RMS/Switch                          inverter_scenario1_parametric5_etiquetli/THD3/RMS1/Switch
+SubSystem    spsRMSLib/RMS/TrueRMS                         inverter_scenario1_parametric5_etiquetli/THD3/RMS1/TrueRMS 
+Outport      spsRMSLib/RMS/RMS                             inverter_scenario1_parametric5_etiquetli/THD3/RMS1/RMS
+SubSystem    spsRMSLib/RMS                                 inverter_scenario1_parametric5_etiquetli/THD3/RMS2
+Inport       spsRMSLib/RMS/In                              inverter_scenario1_parametric5_etiquetli/THD3/RMS2/In
+Constant     spsRMSLib/RMS/Constant                        inverter_scenario1_parametric5_etiquetli/THD3/RMS2/Constant
+DataTypeConversion spsRMSLib/RMS/Data Type Conversion            inverter_scenario1_parametric5_etiquetli/THD3/RMS2/Data Type Conversion
+Logic        spsRMSLib/RMS/Logical
+Operator                inverter_scenario1_parametric5_etiquetli/THD3/RMS2/Logical Operator
+SubSystem    spsRMSLib/RMS/RMS                             inverter_scenario1_parametric5_etiquetli/THD3/RMS2/RMS 
+Switch       spsRMSLib/RMS/Switch                          inverter_scenario1_parametric5_etiquetli/THD3/RMS2/Switch
+SubSystem    spsRMSLib/RMS/TrueRMS                         inverter_scenario1_parametric5_etiquetli/THD3/RMS2/TrueRMS 
+Outport      spsRMSLib/RMS/RMS                             inverter_scenario1_parametric5_etiquetli/THD3/RMS2/RMS
+Saturate     spsTHDLib/THD/Saturation
+to avoid
+division by 0 inverter_scenario1_parametric5_etiquetli/THD3/Saturation to avoid division by 0
+Saturate     spsTHDLib/THD/Saturation
+to avoid
+division by 0  inverter_scenario1_parametric5_etiquetli/THD3/Saturation to avoid division by 0 
+Sqrt         spsTHDLib/THD/Sqrt                            inverter_scenario1_parametric5_etiquetli/THD3/Sqrt
+Outport      spsTHDLib/THD/THD                             inverter_scenario1_parametric5_etiquetli/THD3/THD
+Display                                                    inverter_scenario1_parametric5_etiquetli/Vdc
+Display                                                    inverter_scenario1_parametric5_etiquetli/Vdc1
+Display                                                    inverter_scenario1_parametric5_etiquetli/Verim
+Display                                                    inverter_scenario1_parametric5_etiquetli/Verim1
+Display                                                    inverter_scenario1_parametric5_etiquetli/cosfi
+Display                                                    inverter_scenario1_parametric5_etiquetli/cosfi1
+Display                                                    inverter_scenario1_parametric5_etiquetli/cosfi2
+Display                                                    inverter_scenario1_parametric5_etiquetli/cosfi3
+Display                                                    inverter_scenario1_parametric5_etiquetli/cosfi4
+Display                                                    inverter_scenario1_parametric5_etiquetli/cosfi5
+Display                                                    inverter_scenario1_parametric5_etiquetli/cosfi6
+Display                                                    inverter_scenario1_parametric5_etiquetli/cosfi7
+SubSystem    spspowerguiLib/powergui                       inverter_scenario1_parametric5_etiquetli/powergui
+Ground       spspowerguiLib/powergui/Ground                inverter_scenario1_parametric5_etiquetli/powergui/Ground
+Terminator   spspowerguiLib/powergui/Terminator            inverter_scenario1_parametric5_etiquetli/powergui/Terminator
+
+== Senaryo değişkenlerinin kullanıldığı bloklar
+L2             inverter_scenario1_parametric5_etiquetli/CL1.l = L2
+L2r            inverter_scenario1_parametric5_etiquetli/CL1.r = L2r
+L2             inverter_scenario1_parametric5_etiquetli/CL2.l = L2
+L2r            inverter_scenario1_parametric5_etiquetli/CL2.r = L2r
+Vac1_peak      inverter_scenario1_parametric5_etiquetli/Grid1.amp = Vac1_peak
+Vac2_peak      inverter_scenario1_parametric5_etiquetli/Grid2.amp = Vac2_peak
+K11            inverter_scenario1_parametric5_etiquetli/K11.Gain = K11
+L1_core_Rp     inverter_scenario1_parametric5_etiquetli/L1 Core Loss Rp.R = L1_core_Rp
+L1_core_Rp     inverter_scenario1_parametric5_etiquetli/L1 Core Loss Rp1.R = L1_core_Rp
+phase_deg1     inverter_scenario1_parametric5_etiquetli/Sine Wave1.Phase = phase_deg1*pi/180
+Vdc1           inverter_scenario1_parametric5_etiquetli/Voltage Source.dc_voltage = Vdc1
+Vdc2           inverter_scenario1_parametric5_etiquetli/Voltage Source1.dc_voltage = Vdc2

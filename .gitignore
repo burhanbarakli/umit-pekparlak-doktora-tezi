@@ -47,3 +47,8 @@ slprj/
 /.agents/
 /.codex/
 /tez-latex/tmp_render/
+
+# Benzetim koşu çıktıları: ham dalga kayıtları ve paket kopyaları
+# (model/ kopyaları incoming_real_data/ içindeki paketle bayt bayt aynıdır)
+/tez-matlab-simulink/runs/**/logsout.mat
+/tez-matlab-simulink/runs/*/model/
