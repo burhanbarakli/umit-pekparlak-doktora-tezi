@@ -1,0 +1,68 @@
+[Warning: 'Output Port 5' of 'inverter_senaryo3/Subsystem2' is not connected.] 
+[> In run_q_isaret_dalga_20261027 (line 65)] 
+[Warning: 'Output Port 6' of 'inverter_senaryo3/Subsystem2' is not connected.] 
+[> In run_q_isaret_dalga_20261027 (line 65)] 
+[Warning: The specified buffer for 'inverter_senaryo3/RMS1/TrueRMS /Mean value/Model/Transport Delay' was too small. During simulation, the
+buffer size was temporarily increased to 366592. In order to generate code, you need to update the buffer size parameter] 
+[> In run_q_isaret_dalga_20261027 (line 65)] 
+[Warning: The specified buffer for 'inverter_senaryo3/THD/RMS1/TrueRMS /Mean value/Model/Transport Delay' was too small. During simulation,
+the buffer size was temporarily increased to 366592. In order to generate code, you need to update the buffer size parameter] 
+[> In run_q_isaret_dalga_20261027 (line 65)] 
+[Warning: The specified buffer for 'inverter_senaryo3/THD/RMS2/RMS /Fourier1/Mean value1/Model/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 366592. In order to generate code, you need to update the buffer size parameter] 
+[> In run_q_isaret_dalga_20261027 (line 65)] 
+[Warning: The specified buffer for 'inverter_senaryo3/THD/RMS2/RMS /Fourier1/Mean/Model/Transport Delay' was too small. During simulation,
+the buffer size was temporarily increased to 366592. In order to generate code, you need to update the buffer size parameter] 
+[> In run_q_isaret_dalga_20261027 (line 65)] 
+[Warning: The specified buffer for 'inverter_senaryo3/THD2/RMS1/TrueRMS /Mean value/Model/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 366592. In order to generate code, you need to update the buffer size parameter] 
+[> In run_q_isaret_dalga_20261027 (line 65)] 
+[Warning: The specified buffer for 'inverter_senaryo3/THD2/RMS2/RMS /Fourier1/Mean value1/Model/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 366592. In order to generate code, you need to update the buffer size parameter] 
+[> In run_q_isaret_dalga_20261027 (line 65)] 
+[Warning: The specified buffer for 'inverter_senaryo3/THD2/RMS2/RMS /Fourier1/Mean/Model/Transport Delay' was too small. During simulation,
+the buffer size was temporarily increased to 366592. In order to generate code, you need to update the buffer size parameter] 
+[> In run_q_isaret_dalga_20261027 (line 65)] 
+[Warning: The specified buffer for 'inverter_senaryo3/Mean9/Model/Transport Delay' was too small. During simulation, the buffer size was
+temporarily increased to 366592. In order to generate code, you need to update the buffer size parameter] 
+[> In run_q_isaret_dalga_20261027 (line 65)] 
+[Warning: The specified buffer for 'inverter_senaryo3/THD/Mean/Model/Transport Delay' was too small. During simulation, the buffer size was
+temporarily increased to 366592. In order to generate code, you need to update the buffer size parameter] 
+[> In run_q_isaret_dalga_20261027 (line 65)] 
+[Warning: The specified buffer for 'inverter_senaryo3/THD2/Mean/Model/Transport Delay' was too small. During simulation, the buffer size
+was temporarily increased to 366592. In order to generate code, you need to update the buffer size parameter] 
+[> In run_q_isaret_dalga_20261027 (line 65)] 
+[Warning: The specified buffer for 'inverter_senaryo3/Mean10/Model/Transport Delay' was too small. During simulation, the buffer size was
+temporarily increased to 366592. In order to generate code, you need to update the buffer size parameter] 
+[> In run_q_isaret_dalga_20261027 (line 65)] 
+[Warning: The specified buffer for 'inverter_senaryo3/Mean1/Model/Transport Delay' was too small. During simulation, the buffer size was
+temporarily increased to 366592. In order to generate code, you need to update the buffer size parameter] 
+[> In run_q_isaret_dalga_20261027 (line 65)] 
+[Warning: The specified buffer for 'inverter_senaryo3/Mean3/Model/Transport Delay' was too small. During simulation, the buffer size was
+temporarily increased to 366592. In order to generate code, you need to update the buffer size parameter] 
+[> In run_q_isaret_dalga_20261027 (line 65)] 
+[Warning: The specified buffer for 'inverter_senaryo3/Power Measurement/Continuous/Transport Delay' was too small. During simulation, the
+buffer size was temporarily increased to 366592. In order to generate code, you need to update the buffer size parameter] 
+[> In run_q_isaret_dalga_20261027 (line 65)] 
+[Warning: The specified buffer for 'inverter_senaryo3/Power Measurement/Continuous/Transport Delay1' was too small. During simulation, the
+buffer size was temporarily increased to 366592. In order to generate code, you need to update the buffer size parameter] 
+[> In run_q_isaret_dalga_20261027 (line 65)] 
+[Warning: The specified buffer for 'inverter_senaryo3/Mean2/Model/Transport Delay' was too small. During simulation, the buffer size was
+temporarily increased to 366592. In order to generate code, you need to update the buffer size parameter] 
+[> In run_q_isaret_dalga_20261027 (line 65)] 
+[Warning: The specified buffer for 'inverter_senaryo3/Power3/Fourier/Mean value1/Model/Transport Delay' was too small. During simulation,
+the buffer size was temporarily increased to 366592. In order to generate code, you need to update the buffer size parameter] 
+[> In run_q_isaret_dalga_20261027 (line 65)] 
+[Warning: The specified buffer for 'inverter_senaryo3/Power3/Fourier/Mean/Model/Transport Delay' was too small. During simulation, the
+buffer size was temporarily increased to 366592. In order to generate code, you need to update the buffer size parameter] 
+[> In run_q_isaret_dalga_20261027 (line 65)] 
+[Warning: The specified buffer for 'inverter_senaryo3/Power3/Fourier1/Mean value1/Model/Transport Delay' was too small. During simulation,
+the buffer size was temporarily increased to 366592. In order to generate code, you need to update the buffer size parameter] 
+[> In run_q_isaret_dalga_20261027 (line 65)] 
+[Warning: The specified buffer for 'inverter_senaryo3/Power3/Fourier1/Mean/Model/Transport Delay' was too small. During simulation, the
+buffer size was temporarily increased to 366592. In order to generate code, you need to update the buffer size parameter] 
+[> In run_q_isaret_dalga_20261027 (line 65)] 
+[Warning: The specified buffer for 'inverter_senaryo3/Mean11/Model/Transport Delay' was too small. During simulation, the buffer size was
+temporarily increased to 366592. In order to generate code, you need to update the buffer size parameter] 
+[> In run_q_isaret_dalga_20261027 (line 65)] 
+inverter_senaryo3: tamamlandi (9415.0 s)

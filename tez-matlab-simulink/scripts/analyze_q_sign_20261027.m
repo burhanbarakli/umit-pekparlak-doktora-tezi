@@ -39,7 +39,7 @@ cases = {
     'inverter_senaryo3',                        'S3', Vac3_rms, Pout_target(3), cosphi_target(3), THD_target_pct(3)
     };
 
-summary = {}; points = {}; sens = {};
+summary = {}; points = {}; sens = {}; valid = {}; d09 = {};
 for c = 1:size(cases, 1)
     mdl = cases{c, 1}; sc = cases{c, 2}; Eexp = cases{c, 3};
     fprintf('\n===== %s (%s) =====\n', sc, mdl);
@@ -65,6 +65,7 @@ for c = 1:size(cases, 1)
     % Fazörlerin C noktasından geri yayılması (doğrusal pasif ağ, temel bileşen)
     VC = d.V1; IC = d.I1*exp(-1j*deg2rad(d.phi1));
     nw = propagate(VC, IC, Z1, Zcf, Zcm, Zcx, Z2);
+    nw_d = nw;   % Display tabanlı ağ hesabı (dalga varsa da ayrıca raporlanır)
     fprintf('Geri yayılım: |E|=%.2f V (parametre Vac_rms=%.2f V) |V_A|=%.2f V\n', abs(nw.VG), Eexp, abs(nw.VA));
 
     % ---------- 2) ham dalga biçimleri (varsa) ----------
@@ -81,8 +82,7 @@ for c = 1:size(cases, 1)
         Vc_ = Vc_*rot; Ic_ = Ic_*rot; Va_ = Va_*rot; Il_ = Il_*rot;
         Ptrue_C = mean_prod(W.v_ac, W.i_ac, Tw);
         thd50 = @(sg) thd_h(sg.t, sg.v, w0, Tw, 50);
-        fprintf('THD (tüm bant / 2–50. harmonik): i_ac %.4f / %.4f, i_L1 %.4f / %.4f, v_ac %.4f / %.4f
-', ...
+        fprintf('THD (tüm bant / 2–50. harmonik): i_ac %.4f / %.4f, i_L1 %.4f / %.4f, v_ac %.4f / %.4f\n', ...
             sqrt(Ic_rms^2 - abs(Ic_)^2)/abs(Ic_), thd50(W.i_ac), sqrt(Il_rms^2 - abs(Il_)^2)/abs(Il_), thd50(W.i_L1), ...
             sqrt(Vc_rms^2 - abs(Vc_)^2)/abs(Vc_), thd50(W.v_ac));
         Ptrue_A = mean_prod(W.v_inv, W.i_L1, Tw);
@@ -102,24 +102,42 @@ for c = 1:size(cases, 1)
         fprintf('           |E| (V_C − Z2·I_C) = %.3f V, parametre %.3f V\n', abs(Vc_ - Z2*Ic_), Eexp);
 
         % Noktalara göre güç (üretici kuralı: evirici → şebeke pozitif)
-        pts = {
+        pts_w = {
             'A evirici çıkışı (v_inv, i_L1)',          Va_, Il_, Va_rms, Il_rms, Ptrue_A
             'B L1 sonrası, Cf öncesi (hesap)',          VB_w, Il_, NaN, NaN, NaN
             'B+ Cf sonrası, EMC girişi (hesap)',        VB_w, Il_ - Icf_w, NaN, NaN, NaN
             'C model ölçüm noktası (v_ac, i_ac)',       Vc_, Ic_, Vc_rms, Ic_rms, Ptrue_C
             'G şebeke kaynağı uçları (hesap)',          Vc_ - Z2*Ic_, Ic_, NaN, NaN, NaN
             };
-        src = 'dalga';
-    else
-        pts = {
-            'A evirici çıkışı (ağ hesabı)',             nw.VA, nw.IL1, NaN, NaN, NaN
-            'B L1 sonrası, Cf öncesi (ağ hesabı)',      nw.VB, nw.IL1, NaN, NaN, NaN
-            'B+ Cf sonrası, EMC girişi (ağ hesabı)',    nw.VB, nw.IL1 - nw.VB/Zcf, NaN, NaN, NaN
-            'C model ölçüm noktası (Display)',          VC, IC, d.Vrms, d.Irms, d.Pm
-            'G şebeke kaynağı uçları (ağ hesabı)',      nw.VG, IC, NaN, NaN, NaN
-            };
-        src = 'display+ag';
+        % Doğrulama tablosu: dalga fazörü ↔ ağ hesabı ↔ model Power3 bloğu
+        Sw = Vc_*conj(Ic_);
+        P3 = NaN; Q3 = NaN;
+        if isfield(W, 'P1_Power3'), P3 = win_mean(W.P1_Power3, Tw); Q3 = win_mean(W.Q1_Power3, Tw); end
+        P3w = NaN; Q3w = NaN;  % Power3, iki periyot ortalaması
+        if isfield(W, 'P1_Power3')
+            P3w = win_mean2(W.P1_Power3, Tw); Q3w = win_mean2(W.Q1_Power3, Tw);
+        end
+        valid(end+1, :) = {sc, real(Sw), imag(Sw), P3, Q3, P3w, Q3w, d.P1, d.Q1, Ptrue_C, Ptrue_A, ...
+            abs(Il_), abs(nw_w.IL1), rad2deg(angle(Il_)), rad2deg(angle(nw_w.IL1)), ...
+            abs(Va_), abs(nw_w.VA), rad2deg(angle(Va_)), rad2deg(angle(nw_w.VA)), ...
+            imag(Va_*conj(Il_)), imag(nw_w.VA*conj(nw_w.IL1)), abs(Vc_ - Z2*Ic_), Eexp, ...
+            sqrt(Ic_rms^2 - abs(Ic_)^2)/abs(Ic_), thd50(W.i_ac), thd50(W.v_ac)}; %#ok<SAGROW>
+        nw = nw_w;   % duyarlılık ve D-09 hesabı dalga fazörlerinden kurulur
     end
+    pts_ag = {
+        'A evirici çıkışı (ağ hesabı)',             nw_d.VA, nw_d.IL1, NaN, NaN, NaN
+        'B L1 sonrası, Cf öncesi (ağ hesabı)',      nw_d.VB, nw_d.IL1, NaN, NaN, NaN
+        'B+ Cf sonrası, EMC girişi (ağ hesabı)',    nw_d.VB, nw_d.IL1 - nw_d.VB/Zcf, NaN, NaN, NaN
+        'C model ölçüm noktası (Display)',          VC, IC, d.Vrms, d.Irms, d.Pm
+        'G şebeke kaynağı uçları (ağ hesabı)',      nw_d.VG, IC, NaN, NaN, NaN
+        };
+    if have_wave
+        sets = {'display+ag', pts_ag; 'dalga', pts_w};
+    else
+        sets = {'display+ag', pts_ag};
+    end
+    for q = 1:size(sets, 1)
+    src = sets{q, 1}; pts = sets{q, 2};
     for k = 1:size(pts, 1)
         V = pts{k, 2}; I = pts{k, 3};
         Sg = V*conj(I);                    % üretici
@@ -130,8 +148,9 @@ for c = 1:size(cases, 1)
         lead = ternary(phi < 0, 'akım önde (kapasitif yük görünümü)', 'akım geride');
         points(end+1, :) = {sc, src, pts{k, 1}, abs(V), rad2deg(angle(V)), abs(I), rad2deg(angle(I)), ...
             phi, real(Sg), imag(Sg), cosd(phi), real(Sl), imag(Sl), pts{k, 4}, pts{k, 5}, pts{k, 6}, PF, lead}; %#ok<SAGROW>
-        fprintf('%-38s |V|=%7.2f V ∠%6.2f° |I|=%6.4f A ∠%7.2f°  φ=%+6.2f°  Pgen=%7.2f W Qgen=%+7.2f var cosφ1=%.4f  PF=%.4f\n', ...
-            pts{k, 1}, abs(V), rad2deg(angle(V)), abs(I), rad2deg(angle(I)), phi, real(Sg), imag(Sg), cosd(phi), PF);
+        fprintf('[%s] %-38s |V|=%7.2f V ∠%6.2f° |I|=%6.4f A ∠%7.2f°  φ=%+6.2f°  Pgen=%7.2f W Qgen=%+7.2f var cosφ1=%.4f  PF=%.4f\n', ...
+            src, pts{k, 1}, abs(V), rad2deg(angle(V)), abs(I), rad2deg(angle(I)), phi, real(Sg), imag(Sg), cosd(phi), PF);
+    end
     end
     % Cf ve EMC'nin reaktif katkısı
     if have_wave
@@ -180,10 +199,25 @@ for c = 1:size(cases, 1)
         end
     end
 
+    % ---------- 3b) D-09 / K-17: X kapasitörü 1 µF → 0,5 µF eşdeğer (analitik) ----------
+    % V_A ve E sabit tutulur (aynı modülasyon), yalnız Capacitor6 değişir.
+    Zcx_eq = EMC_Rx_eq + 1/(1j*w0*EMC_Cx_eq);
+    r0 = forward(VA0, E, Z1, Zcf, Zcm, Zcx, Z2);
+    r1 = forward(VA0, E, Z1, Zcf, Zcm, Zcx_eq, Z2);
+    dQ_basit = -abs(nw.VM)^2*w0*(C_emc_aux - EMC_Cx_eq);
+    d09(end+1, :) = {sc, real(r0.SC), imag(r0.SC), real(r1.SC), imag(r1.SC), ...
+        real(r1.SC) - real(r0.SC), imag(r1.SC) - imag(r0.SC), dQ_basit, ...
+        imag(r0.SA), imag(r1.SA), real(r0.SC)/abs(r0.SC), real(r1.SC)/abs(r1.SC)}; %#ok<SAGROW>
+    fprintf('D-09: Q_C %+.2f → %+.2f var (Δ=%+.2f; basit −V²ωΔC=%+.2f), P_C Δ=%+.3f W\n', ...
+        imag(r0.SC), imag(r1.SC), imag(r1.SC) - imag(r0.SC), dQ_basit, real(r1.SC) - real(r0.SC));
+
     % ---------- 4) deney ile karşılaştırma ----------
     PFmax = 1/sqrt(1 + (cases{c, 6}/100)^2);
+    % Deney Q'su P·tan(arccos cosφ) ile birebir türetilmiş; cosφ üç basamak ⇒ ±0,0005
+    cl = min(abs(ce) + 0.0005, 1); ch = abs(ce) - 0.0005;
+    Qexp_min = Pexp*tan(acos(cl)); Qexp_max = Pexp*tan(acos(ch));
     summary(end+1, :) = {sc, d.P1, d.Q1, d.Pm, d.Qm, d.cos1, d.PF, d.phi1, d.V1, d.Vrms, d.I1, d.Irms, ...
-        d.THDi, Pexp, ce, Qexp_abs, rad2deg(acos(abs(ce))), PFmax}; %#ok<SAGROW>
+        d.THDi, Pexp, ce, Qexp_abs, rad2deg(acos(abs(ce))), PFmax, Qexp_min, Qexp_max}; %#ok<SAGROW>
 
     % ---------- 5) şekil ----------
     if have_wave
@@ -205,7 +239,8 @@ end
 
 T1 = cell2table(summary, 'VariableNames', {'senaryo', 'P1_W', 'Q1_var', 'P_0_50_W', 'Q_0_50_var', ...
     'cosphi1', 'PF', 'phi1_deg', 'V1_rms', 'V_rms', 'I1_rms', 'I_rms', 'THD_I', ...
-    'P_deney_W', 'cosphi_deney_xlsx', 'Q_deney_abs_var', 'phi_deney_deg', 'PF_ust_sinir_THD'});
+    'P_deney_W', 'cosphi_deney_xlsx', 'Q_deney_abs_var', 'phi_deney_deg', 'PF_ust_sinir_THD', ...
+    'Q_deney_min_var', 'Q_deney_max_var'});
 T2 = cell2table(points, 'VariableNames', {'senaryo', 'kaynak', 'nokta', 'V_rms1', 'V_aci_deg', 'I_rms1', ...
     'I_aci_deg', 'phi_deg', 'P_uretici_W', 'Q_uretici_var', 'cosphi1', 'P_yuk_W', 'Q_yuk_var', ...
     'V_rms', 'I_rms', 'P_gercek_W', 'PF', 'yorum'});
@@ -214,6 +249,18 @@ T3 = cell2table(sens, 'VariableNames', {'senaryo', 'degisken', 'deger', 'VA_rms1
 writetable(T1, fullfile(wave_dir, 'q_isaret_ozet.csv'), 'Encoding', 'UTF-8');
 writetable(T2, fullfile(wave_dir, 'q_isaret_noktalar.csv'), 'Encoding', 'UTF-8');
 writetable(T3, fullfile(wave_dir, 'q_isaret_duyarlilik.csv'), 'Encoding', 'UTF-8');
+T4 = cell2table(d09, 'VariableNames', {'senaryo', 'P_C_1uF_W', 'Q_C_1uF_var', 'P_C_0p5uF_W', 'Q_C_0p5uF_var', ...
+    'dP_C_W', 'dQ_C_var', 'dQ_basit_var', 'Q_A_1uF_var', 'Q_A_0p5uF_var', 'cosphi1_C_1uF', 'cosphi1_C_0p5uF'});
+writetable(T4, fullfile(wave_dir, 'q_isaret_d09.csv'), 'Encoding', 'UTF-8'); disp(T4);
+if ~isempty(valid)
+    T5 = cell2table(valid, 'VariableNames', {'senaryo', 'P1_fazor_C_W', 'Q1_fazor_C_var', ...
+        'P1_Power3_son_W', 'Q1_Power3_son_var', 'P1_Power3_2per_W', 'Q1_Power3_2per_var', ...
+        'P1_ilk_kosu_W', 'Q1_ilk_kosu_var', 'P_gercek_C_W', 'P_gercek_A_W', ...
+        'IL1_dalga_A', 'IL1_ag_A', 'IL1_aci_dalga_deg', 'IL1_aci_ag_deg', ...
+        'VA_dalga_V', 'VA_ag_V', 'VA_aci_dalga_deg', 'VA_aci_ag_deg', 'Q_A_dalga_var', 'Q_A_ag_var', ...
+        'E_tahmin_V', 'E_parametre_V', 'THD_iac_tumbant', 'THD_iac_h50', 'THD_vac_h50'});
+    writetable(T5, fullfile(wave_dir, 'q_isaret_dogrulama.csv'), 'Encoding', 'UTF-8'); disp(T5);
+end
 disp(T1); disp(T2(:, [1 3 4 6 8 9 10 11 16 17])); disp(T3);
 
 % ======================================================================
@@ -261,6 +308,11 @@ end
 
 function m = win_mean(s, Tw)
 sel = s.t >= Tw(2) - 0.02 & s.t <= Tw(2);
+m = trapz(s.t(sel), s.v(sel))/(s.t(find(sel, 1, 'last')) - s.t(find(sel, 1)));
+end
+
+function m = win_mean2(s, Tw)
+sel = s.t >= Tw(1) & s.t <= Tw(2);
 m = trapz(s.t(sel), s.v(sel))/(s.t(find(sel, 1, 'last')) - s.t(find(sel, 1)));
 end
 

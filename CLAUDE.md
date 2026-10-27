@@ -85,9 +85,11 @@ birkaç `-batch` süreci paralel koşabilir.
 - `inverter_common_parameters.m` taban çalışma alanında `load_system`'dan
   **önce** çalıştırılmalı; yoksa Simscape diyotları "Qrr/didt … type string"
   hatası verir (InitFcn yetmez, modelde PreLoadFcn yok).
-- Modeller Accelerator modunda kayıtlı. Aynı klasörde eşzamanlı Accelerator
-  derlemeleri çakışır ("Problem creating Accelerator MEX file"); paralel koşu
-  Normal modda yapılır. Süre (0,1 s benzetim): S3 Accelerator ~27 dk, S1+S2
+- Modeller Accelerator modunda kayıtlı; makinedeki tek derleyici LCC'dir.
+  Ham S1+S2 modeli LCC ile bağlanamıyor (`rt_InitInfAndNaN` tanımsız), bu yüzden
+  Normal modda koşar. Onarılmış S1+S2 (`inverter_s1s2_s2onarim`) ve S3
+  Accelerator'da derleniyor. Aynı klasörde eşzamanlı derleme yapma; paralel
+  koşular ayrı klasörlerde yapılmalı. Süre (0,1 s benzetim): S3 Accelerator ~27 dk, S1+S2
   Normal ~1,9 saat. `logsout.mat` 0,8–1,8 GB olur, git'e girmez.
 
 - Betikler **proje kökünden** çağrılır, `scripts/` içine `cd` edilmez; hepsi

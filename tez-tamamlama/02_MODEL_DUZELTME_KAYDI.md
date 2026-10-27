@@ -36,7 +36,7 @@ Her satır şu öğeleri içerir:
 | D-03 | Dört modelin tümü · model geri çağrıları | Paket | Parametre dosyası yalnız InitFcn'de çalışıyor, PreLoadFcn yok; temiz oturumda Simscape diyotları "Qrr/didt … type string" hatasıyla derlenmiyor | düzeltildi (koşu betiğinde) |
 | D-04 | S1+S2 ve S3 · sinyal kayıt adları | Ölçüm | Farklı hatlar aynı kayıt adını taşıyor (ör. `Idc_s1`); ada göre okunan değer yanlış hatta ait olabiliyor | düzeltildi (çıkarım betiğinde) |
 | D-05 | `inverter_common_parameters.m` | Parametre | `Kp`, `K12`, `phase_deg2`, `L1_core_Rp4` tanımlı ama hiçbir blokta kullanılmıyor | açık — D-01 ve D-02 ile kapanacak |
-| D-06 | S1, S3 · Power blokları | Ölçüm | Benzetimde Q pozitif (+33…+35 var), deney tablosunda Q negatif ya da sıfır; yön kuralı belgelenmemiş | açık — K-02'ye göre işaret dalga biçiminden belirlenecek |
+| D-06 | S1, S3 · Power blokları | Ölçüm | Benzetimde Q pozitif (+33…+35 var), deney tablosunda Q negatif ya da sıfır; yön kuralı belgelenmemiş | kapandı — C noktasında üretici kuralı doğrulandı; deney Qo hesaplanmış, karşılaştırma \|Q\| ile (İP-3) |
 | D-07 | Tüm modeller · IGBT eşlemesi | Topoloji | Ağustos incelemesindeki "bağlantısız IGBT" sorunu 12.10 modellerinde yok: 12/12 IGBT doğru tabloya bağlı, sarkık blok yok | denetlendi — uygun (diyotlar → D-08) |
 | D-08 | Tüm modeller · Diode3/5/6/7 (S2 devresinde Diode4/8/10/11) | **Topoloji / cihaz** | Harici D1–D2 (faz–DA rayı) diyotlarıyla nötr IGBT ters paralel diyotlarının (DS3–DS4) parametre kümeleri **yer değiştirmiş**: D1–D2'de IXYN iç diyotu, DS3–DS4'te DSEI var | açık — **yüksek öncelik**, kalibrasyondan önce |
 | D-09 | Tüm modeller · Capacitor6/7 (EMC X kapasitörü) | Parametre | X kapasitörü `C_emc_aux` = 1 µF ile modellenmiş; m-dosyasının kendi tek faz eşdeğeri `EMC_Cx_eq` = 0,5 µF / `EMC_Rx_eq` = 0,2 Ω hiç kullanılmıyor | açık — K-17 |
@@ -173,11 +173,30 @@ Her satır şu öğeleri içerir:
   - Deney tablosunda S1 için Q = 0, S3 için −21,83 var; cosφ değerleri −0,995 / −0,997.
   - Benzetimdeki büyüklük, filtre kapasitörünün 120 V'taki reaktif gücüne (~43 var) yakın.
 - **Düzeltme (K-02):**
-  - Q ve cosφ, kayıtlı `v_ac`/`i_ac` dalga biçimlerinden temel bileşen faz açısıyla
-    yeniden hesaplanır.
-  - Tezde üretici kuralı açıkça yazılır.
-  - Karşılaştırma büyüklük üzerinden yapılır.
-- **Durum:** açık
+  - Q ve cosφ, kayıtlı `v_ac`/`i_ac` dalga biçimlerinden (0,06–0,10 s, temel bileşen
+    fazörü) yeniden hesaplandı.
+  - Model blokları C noktasında (evirici çıkış uçları, EMC sonrası, L2 öncesi)
+    üretici kuralını kullanıyor:
+    - akım sensörü dönüş iletkeninde, pozitif yön Grid− → evirici;
+    - ⟨v·i⟩ = +298,9 W;
+    - Power3 Q = Im{V·I*} (dalgadan +32,90 var, blok +32,89 var).
+  - Benzetimdeki +Q, akımın gerilimin 6,3° gerisinde olduğu durumdur. Kaynağı filtre
+    kapasitörleridir (Cf ≈ 39 var, X kapasitörü ≈ 5 var). Köprü çıkışında (A noktası)
+    Q ≈ −6…−10 var.
+  - Deney tablosundaki Qo ölçülmemiş, Po·tan(arccos cosfi) ile hesaplanmıştır. Eksi
+    işaret analizörün cosφ göstergesinden gelir; analizörün kuralı belgede olmadığı
+    için işaret yorumlanmaz.
+  - Deneydeki cosfi temel bileşen yer değiştirme faktörüdür (cosφ₁); S2'de
+    cosφ₁/√(1+THD²) = P/(V·I) ile tutarlı.
+  - Karşılaştırma C noktasında |Q| ve |cosφ₁| üzerinden, cosfi yuvarlama bandıyla
+    yapılır: S1 0–7,9 var, S2 24,1–26,7 var, S3 19,9–23,6 var.
+  - Tezde cosφ₁ (yer değiştirme) ile PF = P/S ayrı adlandırılır.
+- **Etki:**
+  - Model değişikliği yok; sayısal sonuç değişmiyor.
+  - Kalibrasyonsuz benzetim–deney |Q| farkı S1'de ~26 var, S3'te ~10 var. Bu fark
+    %0,04–0,12 genlik farkına karşılık gelir ve İP-4'te kapanır.
+  - Kanıt: `review/2026-10-27_Q_ISARET_ANALIZI.md`, `runs/2026-10-27_q_isaret_dalga/`.
+- **Durum:** kapandı (ölçüm kuralı). Sayısal uyum İP-4'te.
 
 ### D-08 — Harici diyotlarla nötr kol diyotlarının parametreleri yer değiştirmiş
 
@@ -231,7 +250,12 @@ Her satır şu öğeleri içerir:
   değişken hiçbir blokta kullanılmıyor.
 - **Doğru durum (K-17):** Tek faz modelde X ağı `EMC_Cx_eq`/`EMC_Rx_eq` ile temsil edilir.
 - **Düzeltme:** `Capacitor6`/`Capacitor7`: `c = EMC_Cx_eq`, `r = EMC_Rx_eq`.
-- **Etki (hesap):** ΔQ ≈ −V²ω·0,5 µF ≈ −2,3 var; P'ye etkisi ihmal edilebilir.
+- **Etki (hesap, İP-3 ağ modeli):**
+  - Açık çevrimde (modülasyon ve şebeke gerilimi sabit) C noktasında ΔQ ≈ −0,9 var
+    (S1 −0,86, S3 −0,92); ΔP ≈ +0,07 W.
+  - Farkın kalanı köprü tarafına gider: S3'te Q_A −9,79 → −8,28 var.
+  - Evirici akımı sabit tutulduğunda üst sınır ΔQ ≈ −2,3/−2,4 var.
+  - P'ye etkisi ihmal edilebilir.
 - **Durum:** açık — İP-4 kalibrasyon taban modelinde uygulanacak
 
 ### D-10 — Sabit yazılmış eşdeğer değerler

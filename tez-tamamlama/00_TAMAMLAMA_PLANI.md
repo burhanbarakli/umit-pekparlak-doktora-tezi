@@ -29,7 +29,7 @@ Durum değerleri: ☐ başlamadı · ◐ sürüyor · ☑ bitti
 | İP-1 | S2 kapı yolunun onarımı (D-01, K-04) ve S2 koşusu | `fix_s2_gate_path_20261027.m` → onarılmış S1+S2 koşusu + review notu | 8, 10 | İP-0 | ◐ |
 | İP-2 | Topoloji ve cihaz eşlemesi denetimi (D-07); Sin³ biçiminin modelden okunması (K-06a) | Bütün modeller → `review/2026-10-27_TOPOLOJI_DENETIMI.md`, D-08…D-10 | 6, 9 | İP-0 | ☑ |
 | İP-2b | Diyot eşlemesinin düzeltilmesi (D-08) ve etkisinin ölçülmesi: S3 ve onarılmış S1+S2 | `fix_diode_mapping_20261027.m` → koşular + review notu | 9, 10 | İP-2, İP-1 | ◐ |
-| İP-3 | Q/cosφ işaretinin dalga biçiminden belirlenmesi (D-06, K-02) | `logsout.mat` → işaret notu | 9, 10 | İP-0 | ◐ |
+| İP-3 | Q/cosφ işaretinin dalga biçiminden belirlenmesi (D-06, K-02) | `logsout.mat` → `review/2026-10-27_Q_ISARET_ANALIZI.md`; K-02a | 9, 10 | İP-0 | ☑ |
 | İP-4 | S1–S3 ortak parametre kalibrasyonu. Taban model: D-01 + D-03 + D-08 + D-09 uygulanmış. Devre parametreleri sabit, `K1x`/faz serbest; birincil ölçütler P_ac, I_ac, η; THD ikincil (K-01) | İP-1, İP-2b, İP-3 → kalibrasyon tablosu + review notu | 8, 10 | İP-1, İP-2b, İP-3 | ☐ |
 | İP-5 | S4 kapalı çevrim modelinin kurulması (D-02, K-05): önce P, sonra PI; 2,3 / 10 / 25 A taraması | `build_s4_closed_loop_20261027.m` → akım izleme, THD, η, doyum ve geçici rejim tablosu | 8 | İP-2 | ☐ |
 | İP-6 | Kararlılık analizi (K-07): L/S/T Bode eğrileri, kazanç/faz marjı, K3 açık/kapalı; kutup karşılaştırması; L_g duyarlılığı | S4 doğrusallaştırması → vektörel PDF + CSV + review notu | 7 | İP-5 | ☐ |
