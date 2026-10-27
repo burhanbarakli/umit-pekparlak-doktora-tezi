@@ -109,21 +109,24 @@ karşılaştırılamaz. S4 sütunu S3 ile aynı olduğundan tabloya alınmadı.
   ise %10,9 ile hedefin (%14) altında. THD hedefinin hangisi olduğu (xlsx 15/47/14
   mi, e-posta 5/–/4 mü) Faz 2 kalibrasyonundan önce netleşmeli.
 
-## Ümit'e sorulacaklar
+## Açık noktaların kapanışı
 
-1. S2 sonucu hangi modelden alındı? Bu pakette S2 devresinin kapı sinyalleri bağlı
-   değil (`g12…g42` Goto yok).
-2. Senaryo 4 modeli (kapalı çevrim, P/PI, hedef akım 20/25/30 A) nerede? Paketteki
-   dosya Senaryo 3'ün kopyası.
-3. THD hedefi: 15/47/14 (xlsx) mi, 5/–/4 (e-posta) mi? Ölçüm cihazı ve bant
-   genişliği nedir?
-4. Q/cosφ işaret kuralı: negatif cosφ kapasitif mi, şebekeden çekilen mi anlamına
-   geliyor?
-5. m-dosyasındaki "CMC kütüphanesi" notu hangi bloğu kastediyor? Modellerde özel
-   kütüphane bloğu bulunamadı.
+27.10.2026 kararıyla Ümit'e soru sorulmuyor. Açık noktalar
+`tez-tamamlama/01_KARAR_DEFTERI.md` dosyasında şöyle kapatıldı:
+
+| Açık nokta | Karar | Düzeltme kaydı |
+|---|---|---|
+| S2 kapı sinyali yok | K-04 | D-01 |
+| S4 teslim edilmedi | K-05 | D-02 |
+| THD hedefi | K-01 (15/47/14) | — |
+| Q/cosφ işareti | K-02 | D-06 |
+| CMC kütüphanesi notu | K-15 | — |
 
 ## Sonraki adım
 
-Faz 2 (S1–S3 ortak parametre kalibrasyonu) THD hedefi ve Q işaret kuralı
-netleşmeden başlatılmamalı. S2 kapı bağlantısının onarımı modele müdahale
-sayıldığından ayrıca onay gerektirir.
+1. İP-1: S2 kapı yolunun onarımı ve S2 koşusu.
+2. İP-2: Topoloji/cihaz eşlemesi denetimi.
+3. İP-3: Q işaretinin dalga biçiminden belirlenmesi.
+4. İP-4: S1–S3 kalibrasyonu (İP-1 ve İP-3'e bağlı).
+
+İş paketleri `tez-tamamlama/00_TAMAMLAMA_PLANI.md` dosyasındadır.

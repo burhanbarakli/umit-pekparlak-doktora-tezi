@@ -25,6 +25,21 @@ yazılmaz; dizin `00_INDEX.md`), sonra kullanılan dosyalar tarihli adla
 S4) ve ortak parametre dosyası: `incoming_real_data/models/2026-10-12_dort_senaryo_paketi/`
 — modeller `inverter_common_parameters.m`'yi aynı klasörden okur, birlikte tutulmalı.
 
+# Tamamlama sistemi (27.10.2026'dan beri)
+
+Tez **Ümit'e yeni soru sorulmadan** tamamlanır. İş akışı `tez-tamamlama/` altındadır:
+
+- `00_TAMAMLAMA_PLANI.md`: iş paketleri (İP-xx), jüri maddesi → kabul kanıtı,
+  `\eksikistek` barı ve R01–R16 kapanış yolları, bitti tanımı.
+- `01_KARAR_DEFTERI.md`: açık noktaların K-xx kararları. Sorulacak soru çıkarsa
+  karar buraya yazılır, Ümit'e iletilmez.
+- `02_MODEL_DUZELTME_KAYDI.md`: gelen dosyalardaki sorunların ve tez kapsamına
+  göre yapılan düzeltmelerin D-xx kaydı. Her model düzeltmesi buraya yazılır.
+
+Alan uzmanı alt ajan: `.claude/agents/tez-beyin.md` (`subagent_type: tez-beyin`).
+İş paketleri ona bu üç dosyayla birlikte devredilir. İP durumu değişince plan
+tablosu güncellenir.
+
 # LaTeX derleme
 
 Sistemde MiKTeX/TeX Live **yok**. Derleyici Tectonic 0.17.0:
