@@ -1,0 +1,5 @@
+Kaynak parametreler: 50 Hz, 10 kHz, 1e-7 s, olu zaman yok (deadtime disabled).
+Modulasyon indeksi: 0.86 (bizim switching_demo_parameters.m).
+Gozlenen durumlar: O=0011, N=0101, P=1010.
+Eski Sekil 4.1/4.2 ile mantiksal eslesme: EVET.
+Piksel/zaman fazi bakimindan bire bir eslesme: KANITLANAMADI.

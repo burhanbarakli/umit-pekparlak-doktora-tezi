@@ -1,0 +1,1258 @@
+===== word/document.xml =====
+T.C.
+SAKARYA UYGULAMALI BİLİMLER ÜNİVERSİTESİ
+LİSANSÜSTÜ EĞİTİM ENSTİTÜSÜ
+FOTOVOLTAİK PANELLERDE ÜRETİM KUSURLARININ
+YAPAY ZEKA TEMELLİ TESPİTİ
+YÜKSEK LİSANS TEZİ
+Gökşin SÖNMEZ
+Enstitü Anabilim Dalı
+:
+ELEKTRİK ELEKTRONİK MÜHENDİSLİĞİ
+Tez Danışmanı
+:
+Doç. Dr. Ali ERDUMAN
+Haziran 2026
+T.C.
+SAKARYA UYGULAMALI BİLİMLER ÜNİVERSİTESİ
+LİSANSÜSTÜ EĞİTİM ENSTİTÜSÜ
+FOTOVOLTAİK PANELLERDE ÜRETİM KUSURLARININ
+YAPAY ZEKA TEMELLİ TESPİTİ
+YÜKSEK LİSANS TEZİ
+Gökşin SÖNMEZ
+Enstitü Anabilim Dalı
+:
+ELEKTRİK ELEKTRONİK MÜHENDİSLİĞİ
+Bu tez ../.../2026 tarihinde aşağıdaki jüri üyeleri tarafından oy birliği / oy çokluğu ile kabul edilmiştir.
+JÜRİ
+BAŞARI DURUMU
+Jüri Başkanı:
+Üye:
+Üye:
+BEYAN
+Tez içindeki tüm verilerin akademik kurallar çerçevesinde tarafımdan elde edildiğini, görsel ve yazılı tüm bilgi ve sonuçların akademik ve etik kurallara uygun şekilde sunulduğunu, kullanılan verilerde herhangi bir tahrifat yapılmadığını, başkalarının eserlerinden yararlanılması durumunda bilimsel normlara uygun olarak atıfta bulunulduğunu, tezde yer alan verilerin bu üniversite veya başka bir üniversitede herhangi bir tez çalışmasında kullanılmadığını beyan ederim
+Gökşin SÖNMEZ
+../../2026
+TEŞEKKÜR
+Yüksek lisans eğitimim boyunca değerli bilgi ve deneyimlerinden yararlandığım, her konuda bilgi ve desteğini almaktan çekinmediğim, araştırmanın planlanmasından yazılmasına kadar tüm aşamalarında yardımlarını esirgemeyen, teşvik eden, aynı titizlikte beni yönlendiren değerli danışman hocam Doç. Dr. Ali ERDUMAN’a teşekkürlerimi sunarım.
+İÇİNDEKİLER
+TEŞEKKÜRi
+İÇİNDEKİLERii
+KISALTMALARiv
+SİMGELERv
+TABLOLAR LİSTESİvi
+ŞEKİLLER LİSTESİviii
+ÖZETxi
+ABSTRACTxii
+BÖLÜM 1.
+GİRİŞ1
+BÖLÜM 2.
+YAPAY ZEKA6
+2.1. YZ Tarihçesi7
+2.2. Makine Öğrenmesi7
+2.2.1. Destek vektör makineleri (SVM)10
+2.3. Derin Öğrenme12
+2.3.1. Çok katmanlı yapay sinir ağları ve öğrenme mekanizması12
+2.3.2. Evrişimli sinir ağları (CNN) ve öznitelik çıkarımı13
+2.3.3. Semantik bölütleme14
+2.3.4. Optimizasyon ve genelleme teknikleri17
+BÖLÜM 3.
+FOTOVOLTAİK PANELLER18
+3.1. Gelişim Süreci ve Üretim Akışı18
+3.2. FV Panel Çeşitleri19
+3.3. Matematiksel Model21
+BÖLÜM 4.
+WAVELET TABANLI DERİN ÖĞRENME İLE HATA TESPİTİ22
+4.1. Modelin Amacı ve Genel Tasarımı22
+4.2. Wavelet Matrisi23
+4.3. Wavelet Dönüşümünün Matematiksel Altyapısı24
+4.4. Resnet ile Özellik Çıkarımı ve Ara Çıktılar24
+4.5. Maliyet Fonksiyonları27
+BÖLÜM 5.
+DENEYSEL ÇALIŞMALAR30
+5.1. Veri Setleri30
+5.1.1. ELPV veri seti30
+5.1.2. BenchmarkEL veri seti31
+5.1.3. Deney setleri34
+5.2. SVM Tabanlı Kusur Tespiti Deneysel Sonuçları34
+5.2.1. Kaze tabanlı yerel özellik çıkartımı35
+5.2.2. SVM ve Kaze kullanarak sınıflandırma36
+5.3. CNN Tabanlı Kusur Tespiti Deneysel Sonuçları43
+5.4. Derin Öğrenme ile Çok Sınıflı Kusur Segmentasyonu50
+5.5. Wavelet Tabanlı Derin Öğrenme Çalışması55
+BÖLÜM 6.
+SONUÇ VE ÖNERİLER61
+6.1. Görüntü Düzeyi Kusur Tespiti Sonuçları61
+6.2. Segmentasyon Sonuçları63
+6.3. Genel Değerlendirme65
+KAYNAKLAR67
+KISALTMALAR
+AUC: Area Under Curve
+CNN: Convolutional Neural Network
+DWT: Discrete Wavelet Transform
+EL: Electroluminescence
+F1: Kesinlik ve duyarlılığın harmonik ortalamasına dayalı başarım metriği
+FV: Fotovoltaik
+GAP: Global Average Pooling
+ICA: Independent Component Analysis
+IoU: Intersection over Union
+LMSE: Mean Squared Error
+mIoU: Mean Intersection over Union
+PCA: Principal Component Analysis
+PID: Potential Induced Degradation
+RMSprop: Root Mean Square Propagation
+RGB: Red-Green-Blue
+ROC: Receiver Operating Characteristic
+SGD: Stochastic Gradient Descent
+TW: Terawatt
+VLAD: Vector of Locally Aggregated Descriptors
+YOLO: You Only Look Once
+YSA: Yapay Sinir Ağları
+SİMGELER
+xi: Dokunun kapasitansı
+w: Ağırlık vektörü
+b: Sabit terim
+T: Transpoz işlemi
+C: SVM ceza parametresi; marj ve hata dengesi
+σ: Aktivasyon veya sigmoid fonksiyonu
+η: Fotovoltaik verim
+LH, HL, HH: Wavelet ayrıntı bileşenleri
+LL: Wavelet yaklaşık bileşeni
+λ: Toplam kayıpta regresyon kaybı ağırlık katsayısı
+p: Kusurlu sınıfa ait olasılık tahmini
+r̂: Tahmin edilen kusur şiddeti değeri
+r: Gerçek kusur şiddeti etiketi
+Wr: Regresyon başlığına ait ağırlık matrisi
+pt: Doğru sınıfa ait tahmin olasılığı
+M: Hücre maskesi
+K: Kaze anahtar nokta kümesi
+D: Yerel tanımlayıcılar kümesi
+v: VLAD vektör temsili
+Λ: PCA whitening işleminde özdeğer matrisi
+r: Gerçek kusur şiddeti etiketi
+TABLOLAR LİSTESİ
+Tablo 4.1 : Model tasarımı detayları.22
+Tablo 4.2 : EL örneğinin model üzerinde temsili ara çıktıları.25
+Tablo 5.1 : Tez kapsamında belirlenen veri seti özellikleri.30
+Tablo 5.2 : ELPV Görüntü veri seti alt grupları.31
+Tablo 5.3 : BenchmarkEL veri seti özellikleri.32
+Tablo 5.4 : Deneysel veri seti seçimi ve kullanım biçimleri.34
+Tablo 5.5 : SVM tabanlı deney veri seti kullanım detayları.37
+Tablo 5.6 : SVM deney parametreleri.37
+Tablo 5.7 : CNN deney hattında kullanılan işlem aşamaları ve matematiksel gösterimleri.39
+Tablo 5.8 : C hiperparametresine bağlı çapraz doğrulama başarımı.40
+Tablo 5.9 : Final SVM başarım değerleri.42
+Tablo 5.10 : CNN tabanlı deney veri seti kullanım detayları.44
+Tablo 5.11 : CNN deney hattında kullanılan işlem aşamaları ve matematiksel gösterimleri.46
+Tablo 5.12 : CNN deney parametreleri.46
+Tablo 5.13 : CNN başarım değerleri.47
+Tablo 5.14 : Derin öğrenme tabanlı deney veri seti kullanım detayları.50
+Tablo 5.15 : Derin öğrenme tabanlı deney veri seti kusur sınıfları.51
+Tablo 5.16 : Derin öğrenme tabanlı deney parametreleri52
+Tablo 5.17 : Segmentasyon en iyi defect_mIoU sıralaması.54
+Tablo 5.18 : Wavelet tabanlı deney veri seti kullanım detayları.56
+Tablo 5.19 : Wavelet tabanlı deney genel ayarları.57
+Tablo 5.20 : Wavelet tabanlı deney parametreleri.57
+Tablo 5.21 : Wavelet tabanlı deney en iyi değer tespitleri.60
+Tablo 6.1 : Genel sonuç değerlendirmesi.61
+Tablo 6.2 : Önerilen yöntemlere ait görüntü düzeyi kusur tespiti sonuçları.62
+Tablo 6.3 : Derin öğrenme yöntemlerine ait görüntü düzeyi kusur tespiti sonuçları.64
+ŞEKİLLER LİSTESİ
+Şekil 2.1 : Yapay zeka yöntemleri hiyerarşisi.6
+Şekil 2.2 : Makine öğrenmesi fonksiyonu.8
+Şekil 2.3 : Makine öğrenmesi yöntemleri.9
+Şekil 2.4 : İki sınıflı SVM’de optimum ayırıcı hiper düzlem, marjlar ve destek vektörleri.10
+Şekil 2.5 : Çok katmanlı yapay sinir ağı mimarisi ve öğrenme mekanizması diyagramı.13
+Şekil 2.6 : Evrişimli sinir ağları ve öznitelik çıkarım yöntemleri genel diyagramı.14
+Şekil 2.7 : Semantik bölütleme yöntemi genel diyagramı.15
+Şekil 3.1 : Fotovoltaik teknolojinin gelişim çizgisi ve kristal silisyum modül üretim akışı.19
+Şekil 3.2 : Modül katman yapısı, hücre iç yapısı ve tek diyot modele ait tipik I–V / P–V davranışı.20
+Şekil 4.1 : Örnek EL görüntüsünden elde edilen db2 wavelet alt bantları.23
+Şekil 4.2 : EL örneğinin model üzerinde temsili ara çıktıları.23
+Şekil 4.3 : Wavelet + ResNet50 modelinin gerçek bir örnek üzerindeki iç akışı ve ara çıktıları.25
+Şekil 4.4 : Conv1 ve ResNet bloklarında ortalama mutlak aktivasyon haritaları.26
+Şekil 4.5 : Conv1 katmanındaki en aktif kanallar.26
+Şekil 4.6 : Layer4 sonunda en aktif kanallar.27
+Şekil 5.1 : ELPV veri setinden seçilen örnek monokristal ve polikristal hücre görüntüleri.31
+Şekil 5.2 : BenchmarkEL veri setine ait EL görüntüsü–maske çiftlerinden örnekler ve görselleştirme amacıyla seçilmiş sınıfların renk lejandı.33
+Şekil 5.3 : SVM deney hattının genel iş akış şeması.38
+Şekil 5.4 : SVM hattında ön işleme ve maskeleme örneği.40
+Şekil 5.5 : KAZE/VGG özellik çıkarımı için anahtar nokta görselleştirmesi.40
+Şekil 5.6 : C parametresi için 5-fold ortalama doğruluk değerleri.41
+Şekil 5.7 : Her C değeri için fold bazında doğruluk dağılımı.41
+Şekil 5.8 : Final SVM modelinin test setindeki başarım metrikleri.42
+Şekil 5.9 : Test seti için SVM karmaşıklık matrisi.42
+Şekil 5.10 : Test seti için ROC eğrisi ve ayırt edicilik performansı.43
+Şekil 5.11 : CNN başarım değerleri.45
+Şekil 5.12 : CNN eğitim ve doğrulama MSE loss eğrileri.47
+Şekil 5.13 : CNN doğrulama metriklerinin epoch bazında değişimi.48
+Şekil 5.14 : CNN modelinin test setindeki başarım metrikleri48
+Şekil 5.15 : CNN modeli için ikili karmaşıklık matrisi.48
+Şekil 5.16 : CNN modeli için ROC eğrisi49
+Şekil 5.17 : BenchmarkEL veri setinden EL görüntüsü ve çok sınıflı maske örnekleri tabanlı deney genel ayarları.50
+Şekil 5.18 : Segmentasyon deney hattının genel akış diyagramı.51
+Şekil 5.19 : Tüm segmentasyon modelleri için eğitim loss eğrileri.53
+Şekil 5.20 : Tüm modellerde doğrulama defect_mIoU değişimi.53
+Şekil 5.21 : Tüm segmentasyon modelleri için doğrulama loss eğrileri.53
+Şekil 5.22 : Segmentasyon modellerinin en iyi validation defect_mIoU değerleri.54
+Şekil 5.23 : En iyi modelin seçili metrik özeti.54
+Şekil 5.24 : Gri EL görüntüsü ve db2 wavelet alt bantları.56
+Şekil 5.25 : Wavelet + ResNet50 deney hattının genel akışı.58
+Şekil 5.26 : Wavelet + ResNet50 için eğitim ve doğrulama loss eğrileri.59
+Şekil 5.27 : Validation accuracy, F1 ve ROC-AUC eğrileri.59
+Şekil 5.28 : Karar eşiği optimizasyonu ve sabit 0.5 eşiğiyle F1 karşılaştırması.59
+Şekil 5.29 : Best F1 checkpointi için karmaşıklık matrisi.60
+Şekil 6.1 : Görüntü düzeyi kusur tespit modellerinin accuracy, F1 ve ROC-AUC metriklerine göre karşılaştırması.62
+Şekil 6.2 : Modeller arası göreli performans kazancı.63
+Şekil 6.3 : Segmentasyon modellerinin validation defect_mIoU metriğine göre karşılaştırması.64
+Şekil 6.4 : Tez kapsamında elde edilen en iyi görüntü düzeyi ve segmentasyon sonuçlarının özeti65
+FOTOVOLTAİK MODÜLLERDE ÜRETİM KUSURLARININ YAPAY ZEKA TEMELLİ TESPİTİ
+ÖZET
+Fotovoltaik sistemlerin dünya genelinde yaygınlaşması, güneş panellerinin güvenilir, verimli ve sürdürülebilir biçimde çalışmasını önemli bir mühendislik problemi haline getirmiştir. Üretim, taşıma, kurulum ve işletme süreçlerinde ortaya çıkan mikro çatlaklar, hücre kırıkları, lehimleme hataları, etkin olmayan bölgeler, korozyon, sıcak nokta oluşumları ve yüzeysel bozulmalar; modül verimini düşürmekte, sistem ömrünü kısaltmakta ve bakım maliyetlerini artırmaktadır. Kusurların önemli bir bölümü çıplak gözle doğrudan belirlenemediğinden, fotovoltaik hücrelerin iç yapısını görünür hale getiren elektrolüminesans görüntüleme yöntemi arıza tespitinde etkili bir tahribatsız inceleme aracı olarak öne çıkmaktadır. Ancak elektrolüminesans görüntülerin uzmanlar tarafından elle değerlendirilmesi zaman alıcı, maliyetli ve öznel yorumlara açık olduğundan, otomatik arıza tespit yaklaşımlarına ihtiyaç duyulmaktadır. Bu tez çalışmasında, elektrolüminesans görüntüler kullanılarak fotovoltaik hücrelerde arıza tespiti için hafif derin öğrenme modelleri değerlendirilmiştir. Çalışmada arıza tespiti problemi görüntü düzeyinde sınıflandırma ve piksel düzeyinde semantik bölütleme olmak üzere iki temel aşamada ele alınmıştır. Görüntü düzeyindeki deneylerde, kusurlu ve sağlam hücrelerin ayrılması amacıyla klasik makine öğrenmesi tabanlı SVM yaklaşımı ile derin öğrenme tabanlı CNN ve wavelet destekli ResNet50 modelleri karşılaştırılmıştır. Piksel düzeyindeki deneylerde ise BenchmarkEL veri seti üzerinde farklı semantik bölütleme mimarileri kullanılarak kusurların görüntü üzerindeki konumu, yayılımı ve sınıfı incelenmiştir. Böylece hem hızlı ön değerlendirme hem de ayrıntılı kusur analizi yapabilen tamamlayıcı bir deneysel çerçeve sunmuştur. Çalışmada ayrıca wavelet dönüşümüyle zenginleştirilmiş görüntü temsilleri kullanılmıştır. Böylece çatlak, kenar ve yüksek frekanslı kusur desenlerinin model tarafından daha ayırt edici biçimde öğrenilmesi hedeflenmiştir. Deneysel bulgular, derin öğrenme tabanlı yaklaşımların klasik özellik tabanlı yöntemlere göre daha güçlü temsil ve daha başarılı genelleme sağladığını göstermiştir. Özellikle wavelet destekli derin öğrenme modeli, görüntü düzeyinde kusur tespitinde en başarılı yaklaşım olarak öne çıkmıştır. Segmentasyon deneyleri ise kusurların yalnızca varlık bakımından değil, konumsal ve yapısal olarak da analiz edilebildiğini ortaya koymuştur. Sonuç olarak, elektrolüminesans görüntüler üzerinde hafif derin öğrenme modellerinin fotovoltaik modüllerde otomatik arıza tespiti için etkili, uygulanabilir ve geliştirilmeye açık bir çözüm sunduğu değerlendirilmiştir.
+Anahtar Kelimeler: Fotovoltaik modül, elektrolüminesans görüntüleme, arıza tespiti, derin öğrenme, wavelet dönüşümü, semantik segmentasyon.
+ARTIFICIAL INTELLIGENCE-BASED DETECTION OF MANUFACTURING DEFECTS IN PHOTOVOLTAIC PANELS
+ABSTRACT
+The global widespread use of photovoltaic systems has made ensuring that solar panels operate reliably, efficiently, and sustainably a significant engineering challenge. Microcracks, cell fractures, soldering defects, inactive regions, corrosion, hot spot formation, and surface degradation arising during production, transportation, installation, and operation reduce module efficiency, shorten system lifespan, and increase maintenance costs. Since a significant portion of these defects cannot be directly detected with the naked eye, the electroluminescence imaging method—which makes the internal structure of photovoltaic cells visible—emerges as an effective non-destructive testing tool for defect detection. However, since the manual evaluation of electroluminescence images by experts is time-consuming, costly, and prone to subjective interpretations, there is a need for automated defect detection approaches. In this thesis study, lightweight deep learning models were evaluated for fault detection in photovoltaic cells using electroluminescence images. The study addressed the fault detection problem in two main stages: image-level classification and pixel-level semantic segmentation. In the image-level experiments, a classical machine learning-based SVM approach was compared with deep learning-based CNN and wavelet-enhanced ResNet50 models to distinguish defective and healthy cells. In the pixel-level experiments, different semantic segmentation architectures were used on the BenchmarkEL dataset to examine the location, spread, and class of defects on the image. Thus, a complementary experimental framework capable of both rapid preliminary assessment and detailed defect analysis was presented. The study also utilized image representations enriched with wavelet transforms. This aimed to enable the model to learn crack, edge, and high-frequency defect patterns in a more discriminative manner. Experimental findings demonstrated that deep learning-based approaches provide stronger representations and more successful generalization compared to classical feature-based methods. In particular, the wavelet-assisted deep learning model emerged as the most successful approach for defect detection at the image level. Segmentation experiments, meanwhile, revealed that defects can be analyzed not only in terms of their presence but also in terms of their spatial and structural characteristics. In conclusion, it has been assessed that lightweight deep learning models applied to electroluminescence images offer an effective, feasible, and scalable solution for automatic defect detection in photovoltaic modules.
+Keywords: Photovoltaic module, electroluminescence imaging, fault detection, deep learning, wavelet transform, semantic segmentation.
+GİRİŞ
+Hızla artan nüfus ve gelişen teknolojiyle birlikte küresel enerji talebi sürekli olarak artmaktadır. Geleneksel olarak talebi karşılamak için yoğun bir şekilde kullanılan kömür, petrol ve doğalgaz gibi fosil yakıtlar, yüksek karbondioksit emisyonları ve sera gazı etkileriyle küresel ısınma ve iklim değişikliğini tetikleyen en büyük faktörler arasındadır. Çevresel krizlerin yanı sıra sürdürülebilir enerji güvenliğini sağlama ihtiyacı, dünya genelinde ülkeleri fosil yakıtlardan uzaklaşarak yenilenebilir enerji kaynaklarına yönelmeye zorlamaktadır (Yanılmaz vd., 2024). Gerçekleşen küresel enerji dönüşümünün merkezinde ise; giderek düşen maliyetleri, sürdürülebilir ve temiz enerji sağlaması, sessiz çalışabilmesi ve çevre dostu doğasıyla güneş enerjisi (fotovoltaik - FV) sistemleri yer almaktadır (Lermi & Onur, 2024). Güneş enerjisi, küresel temiz enerjiye geçiş sürecini domine etmesi beklenen ve gelecekte elektrik şebekesinin %65'inden fazlasını oluşturacağı öngörülen en kritik kaynaktır (Del Prado Santamaría vd., 2025). Nitekim sadece 2023 yılında küresel ölçekte eklenen yeni elektrik üretim kapasitesinin %86'sını yenilenebilir kaynaklar oluşturmuş ve kapasitenin neredeyse dörtte üçü tek başına güneş enerjisinden sağlanmıştır (International Renewable Energy Agency, 2024).
+Küresel yönelimlerin bir sonucu olarak, fotovoltaik sistemlerin dünya çapındaki kurulu kapasitesi muazzam bir hızla artış göstermektedir. Yalnızca 2023 yılında dünya genelinde rekor seviyede yeni güneş enerjisi kapasitesi şebekeye bağlanmış ve küresel kümülatif kapasite 1.6 Terawatt (TW) barajını aşmıştır (Europe, 2024). Panel sayılarındaki büyüme ivmesinin devam etmesiyle, kurulu güneş enerjisi kapasitesinin 2026 yılında 3 TW sınırını geçmesi beklenmektedir (Raptor Maps., 2025). Ancak kapasitedeki hızlı büyüme; dünya genelinde kurulan milyarlarca güneş panelinin 25-30 yıllık operasyonel ömrü boyunca performansının korunması ve periyodik olarak denetlenmesi gibi büyük bir mühendislik zorluğunu da beraberinde getirmektedir. FV modüller, üretim aşamasından sahada maruz kaldıkları çevresel ve termomekanik streslere kadar pek çok faktörün etkisiyle zamanla bozunmaya uğramakta ve arızalanabilmektedir. Güncel endüstri verilerine göre, ekipman kaynaklı kusurların neden olduğu ortalama güç kaybı %5.08 seviyelerine ulaşmıtır. Seviyeden elde edilen verilere göre güç kaybının megavat (MW) başına yıllık yaklaşık 5.070 dolarlık bir gelir kaybına (enerji üretim açığına) yol açtığı hesaplanmaktadır (Raptor Maps., 2025). Bu nedenle, kurulan sistemlerin enerji dönüşüm verimliliğini koruyabilmesi, sistem ömrünün uzatılabilmesi ve devasa finansal kayıpların önüne geçilebilmesi için panellerdeki kusurların hızlı, otomatik ve güvenilir bir şekilde tespit edilmesi kritik bir gereklilik haline gelmiştir (Mohanty vd., 2025).
+FV sistemlerin çevresel ve mekanik streslere maruz kalması sonucunda oluşan kusurlar, panellerin fotoelektrik dönüşüm verimliliğini ve operasyonel ömrünü ciddi şekilde azaltmaktadır. Kusurların erken ve doğru tespiti, devasa ekonomik kayıpların önüne geçmek için kritik bir öneme sahiptir. Örneğin, yalnızca 2024 yılında küresel ölçekte ekipman kaynaklı performans düşüşlerinin 10 milyar dolarlık gerçekleşmemiş gelire yol açtığı ve ortalama bir güç kaybının megavat (MW) başına yıllık yaklaşık 5.070 dolarlık bir zarara neden olabildiği hesaplanmaktadır. Dolayısıyla, arızaların hızlıca tespit edilmesi, güneş enerjisi santrallerinin yatırım getirisini ve üretim kapasitesini korumak için zorunludur (Raptor Maps., 2025).
+Ekonomik boyutun yanısıra, tespit edilemeyen panel kusurları ciddi güvenlik riskleri ve sistem arızaları doğurmaktadır. Özellikle hücrelerdeki akım akışının bozulmasıyla ortaya çıkan "sıcak nokta" (hotspot) etkileri, panel yüzeyinde 150°C'yi aşan aşırı ısınmalara yol açarak lehim bağlantılarının erimesine, kapsülleme malzemesinin yaşlanmasına ve yangın tehlikelerine neden olabilmektedir (Su vd., 2023). Küçük elektriksel anormalliklerin veya mikro çatlakların zamanında tespit edilip yönetilmemesi, ilerleyen süreçte yangın hasarlarına, uzun süreli kesintilere ve tüm modülün işlevini yitirmesine yol açan felaket boyutunda olaylara dönüşebilmektedir. Dolayısıyla arıza tespiti, tesisin güvenilirliğini ve yapısal bütünlüğünü sağlamak için hayati bir güvenlik kalkanıdır.
+Güneş panellerinde meydana gelen ve tespit edilmesi gereken arızalar; yapısal, elektriksel ve çevresel kusurlar olmak üzere geniş bir yelpazeye yayılmaktadır. Yapısal ve elektriksel kusurların en yaygın türleri arasında çıplak gözle görülmeyen ancak zamanla büyüyen mikro çatlaklar, modülün üçte birini devre dışı bırakabilen baypas diyot arızaları, hücre uyuşmazlığından kaynaklanan sıcak noktalar ve %30'a varan güç kaybına yol açabilen Potansiyel Kaynaklı Bozulma (PID) yer almaktadır (Solar Panel Defect Detection with Vision AI, t.y.). Çevresel ve yüzey kaynaklı kusurlar ise tozlanma, kuş pisliği, kar birikimi, salyangoz izleri, cam kırıkları ve panelin nem almasına yol açan delaminasyon (katmanlarına ayrılma) gibi hataları içermektedir (Köntges vd., 2014). Kusur türlerinin her biri sistemde farklı hasar etkileri yarattığından, türlerinin tam olarak bilinmesi arızanın kaynağını çözmek ve bakım stratejisini belirlemek için önem arz etmektedir.
+FV modüllerin (elektrolüninans - EL) görüntüleri üzerinden kalite kontrolüne yönelik çalışmalar, ilk olarak Fuyuki ve arkadaşlarının EL görüntülemeyi literatüre kazandırmasıyla başlamıştır (Fuyuki vd., 2005; Tsai vd., 2012). Başlangıç aşamasındaki geleneksel yöntemlerde, çıplak gözle görülmeyen kusurları bulmak için çeşitli matematiksel ve istatistiksel görüntü işleme teknikleri kullanılmıştır. Örneğin literatürde; hataları tespit etmek için Fourier görüntü yeniden yapılandırma (Tsai vd., 2013), Bağımsız Bileşen Analizi (ICA) (Anwar & Abdullah, 2014) ve geliştirilmiş anizotropik difüzyon filtreleme (Deitsch vd., 2019; Pratt vd., 2023) gibi özellik çıkarım teknikleri öne çıkmıştır. Ancak geleneksel algoritmalar; çevresel gürültülere, aydınlatma farklılıklarına ve arka plan karmaşıklığına karşı kırılgan olmuş, özellikleri manuel olarak çıkarmak gerektiği için tam otomasyon açısından yetersiz kalmaktadır.
+Bilgisayarlı görü alanındaki gelişmeler ve derin öğrenme (Deep Learning) mimarilerinin yükselişiyle birlikte literatürde bir kırılma noktası yaşanmıştır. Buerhop-Lutz ve arkadaşları tarafından ELPV veri setinin standart bir kıyaslama aracı olarak araştırmacılara sunulması, bu alandaki çalışmaları hızlandırmıştır (Akram vd., 2019; Pratt vd., 2021; Tang vd., 2020). Deitsch ve arkadaşları, ELPV veri seti üzerinde Destek Vektör Makineleri (SVM) ile Derin Evrişimli Sinir Ağlarını (CNN - örneğin VGG-19) karşılaştırmalı olarak incelemiş ve CNN mimarilerinin hücreleri "sağlam" veya "hatalı" olarak sınıflandırmada klasik yöntemleri açık ara geride bıraktığını kanıtlamıştır (Chen vd., 2023; Fioresi vd., 2022). Takip eden çalışmalarda farklı CNN mimarileri kullanarak EL görüntülerindeki arıza sınıflandırma doğruluklarını en üst seviyelere taşımışlardır (Deitsch vd., 2019; Pratt vd., 2023).
+Günümüzde ise FV hata tespiti alanındaki trend, sadece bir görüntüyü "hatalı" olarak etiketleyen sınıflandırma düzeyinden; hatanın hücrenin tam olarak neresinde olduğunu ve ne tür bir hasar yarattığını piksel bazında gösteren "anlamsal bölütleme" mimarilerine doğru evrilmiştir (Akram vd., 2019). Literatürde, U-Net mimarisi kullanılarak kusurların nicelendirilmesi ve bölütlenmesi başarılı bir şekilde uygulanmıştır (Pratt vd., 2021). Araştırmacılar, EL görüntülerindeki çatlakların otomatik olarak bölütlenmesi ve özelliklerinin çıkarılmasında derin öğrenme tabanlı bölütleme ağlarının gücünü kanıtlamışlardır. Aynı şekilde Fioresi ve arkadaşları da anlamsal bölütleme mimarilerini kullanarak EL görüntülerindeki hataların otomatik tespiti ve lokalizasyonu üzerine önemli katkılar sunmuştur (Fioresi vd., 2022). Bölütleme ve konum tespiti ihtiyacı için, anlamsal bölütleme odaklı yeni standart kıyaslama veri setleri literatüre kazandırılmıştır. Literatürdeki gelişime paralel olarak, çalışmanın ikinci aşamasında ilk aşamada tespit edilen "hatalı" hücrelerin derinlemesine analizi yapılmıştır. Derin öğrenme tabanlı bölütleme yöntemleriyle hatanın tam konumu ve yapısal türü piksel düzeyinde incelenerek hiyerarşik bir bütünlük sağlanmıştır (Chen vd., 2023).
+Tez kapsamında gerçekleştirilen çalışmalar, FV sistemlerde arıza tespiti problemini farklı soyutlama seviyelerinde ele alarak bütüncül bir yaklaşım sunmayı hedeflemektedir. Literatürde FV modüllerinde oluşan mikro çatlaklar, sıcak noktalar ve üretim kaynaklı kusurların hem enerji verimliliğini düşürdüğü hem de sistem ömrünü kısalttığı açıkça ortaya koymaktadır. İlk çalışmalarda gerçekleştirilen manuel inceleme yöntemlerinin yetersizliği ve ölçeklenebilir olmaması, görüntü işleme ve derin öğrenme tabanlı otomatik sistemlerin önemini artırmıştır. Bütüncül çalışma altında geliştirlen modeller ile ilk olarak görüntü seviyesinde sınıflandırma problemleri ele alınmıştır. Ardından daha detaylı analiz gerektiren piksel seviyesinde bölütleme yaklaşımları sunulmuştur.
+Geliştirilen ilk modellerde makine öğrenmesi ve derin öğrenme yöntemleri ile EL görüntüler üzerinden “hata var/yok” şeklinde ikili sınıflandırma gerçekleştirilmiş ve geleneksel makine öğrenmesi ile derin öğrenme yöntemleri karşılaştırılmıştır. EL görüntüleme tekniklerinin, çıplak gözle görülemeyen kusurları tespit edebilme yeteneği sayesinde FV hücrelerin iç yapısına dair kritik bilgiler sunduğu bilinmektedir. Sınıflandırma başarımlarından elde edilen sonuçlar, derin öğrenme tabanlı modellerin klasik yöntemlere kıyasla daha yüksek doğruluk ve genelleme başarısı sağladığını göstermiştir. Ancak yalnızca sınıflandırma yaklaşımının, hatanın konumunu ve türünü belirlemede yetersiz kaldığı görülmüştür.
+Sınırlıkları ve yetersizlikleri aşmak amacıyla çalışmanın devamında semantik segmentasyon (bölütleme) tabanlı yaklaşımlar geliştirilmiştir. Farklı derin öğrenme mimarileri karşılaştırmalı olarak analiz edilmiştir. Bölütleme yöntemleri ile görüntüler piksel bazında işlenerek hataların konumu, yayılımı ve türü detaylı şekilde belirlenmiştir. Literatürdeki yöntemlerde de görüleceği üzere, piksel seviyesindeki analizler, FV modüllerdeki kusurların nicel olarak değerlendirilmesine ve bakım süreçlerinin optimize edilmesine olanak sağlamaktadır. Bu nedenle literatüre derin öğrenme kapsamında katkı sağlamak adına, dalgacık dönüşümleri ile zenginleştirilmiş çok kanallı veri yapısı ve gelişmiş derin öğrenme mimarisi ortaya koyulmuştur. Var olan çalışmalara göre model performansının artırılması hedeflenmiştir. Böylece hem akademik hem de endüstriyel uygulamalar açısından güçlü bir arıza tespit çerçevesi ortaya çıkarılmıştır.
+YAPAY ZEKA
+FV sistemlerin yaygınlaşmasıyla birlikte, güneş panellerinin verimli ve güvenilir bir şekilde çalışmasının sağlanması kritik bir gereklilik haline gelmiştir. Ancak üretim, taşıma ve uzun süreli kullanım süreçlerinde ortaya çıkan mikro çatlaklar, lehim hataları ve diğer yapısal kusurlar, sistem performansını önemli ölçüde düşürmekte ve ekonomik kayıplara yol açmaktadır. Hataların erken ve doğru bir şekilde tespit edilmesi, hem enerji verimliliğinin korunması hem de bakım maliyetlerinin azaltılması açısından önem taşımaktadır. Geleneksel manuel inceleme yöntemleri zaman alıcı, maliyetli ve hataya açık olduğundan, son yıllarda görüntü işleme ve yapay zeka (YZ) tabanlı otomatik arıza tespit sistemlerine olan ilgi hızla artmıştır.
+Şekil 2.1: Yapay zeka yöntemleri hiyerarşisi
+YZ makinelerin insan benzeri öğrenme, problem çözme ve karar verme yetenekleri kazanmasını amaçlayan disiplinler arası bir araştırma alanıdır. Günümüzde YZ, özellikle veri odaklı yaklaşımların gelişmesiyle birlikte makine öğrenmesi ve derin öğrenme gibi alt alanlar üzerinden hızlı bir ilerleme göstermektedir. Şekil 2.1’den görüleceği üzere, YZ sistemleri genel olarak kural tabanlı ve veri odaklı öğrenme yöntemleri olmak üzere iki ana kategoriye ayrılmaktadır. Makine öğrenmesi ise YZ’nin en kritik alt bileşenini oluşturmaktadır. Makine öğrenmesi kapsamında ise denetimli öğrenme, denetimsiz öğrenme ve pekiştirmeli öğrenme gibi farklı öğrenme paradigmaları yer almakta olup, özellikle derin öğrenme yaklaşımları karmaşık veri yapılarının modellenmesinde önemli avantajlar sağlamaktadır.
+YZ Tarihçesi
+YZ, makinelerin insan benzeri öğrenme, problem çözme ve karar verme yeteneklerini gerçekleştirebilmesini amaçlayan disiplinler arası bir araştırma alanıdır. 1950’li yıllarda ortaya çıkan YZ kavramı, ilk dönemlerde daha çok kural tabanlı sistemler üzerinden gelişmiştir. Ardından uzman sistemler ve mantıksal çıkarım mekanizmaları ön plana çıkmıştır. Ancak artan veri miktarı ve hesaplama gücündeki gelişmelerle birlikte, veri odaklı yaklaşımlara yönelmiş ve özellikle makine öğrenmesi ile büyük bir ivme kazanmıştır. İlerleme sürecinde sistemlerin önceden tanımlı kurallardan ziyade verilerden öğrenmesini mümkün kılınmıştır.
+Şekil 2.1’de, YZ yöntemleri hiyerarşik bir yapı içerisinde incelenmektedir. En üst seviyede YZ, onun altında makine öğrenmesi ve en alt seviyede ise derin öğrenme yer almaktadır. Makine öğrenmesi, verilerden örüntü öğrenmeye dayalı algoritmaları kapsarken; derin öğrenme, çok katmanlı yapay sinir ağları aracılığıyla daha karmaşık veri temsillerini modelleyebilmektedir. Kural tabanlı sistemler, önceden tanımlanmış mantıksal kurallara dayanırken; öğrenmeye dayalı sistemler, verilerden otomatik olarak model çıkarımı yapmaktadır. Denetimli, denetimsiz ve pekiştirmeli öğrenme gibi farklı paradigmalar, makine öğrenmesinin alt başlıklarını oluşturmaktadır. Derin öğrenme yöntemleri günümüzde özellikler görüntü işleme, doğal dil işleme ve arıza tespiti gibi birçok alanda yüksek başarı sağlamaktadır.
+Makine Öğrenmesi
+Makine öğrenmesi, veri bilimi ve yazılım mühendisliği disiplinlerinin kesişiminde yer alan, verilerden öğrenebilen sistemlerin geliştirilmesini amaçlayan bir yaklaşımdır. Temel amacı, geçmiş verilerden elde edilen örüntüleri kullanarak geleceğe yönelik tahminler yapabilen modeller oluşturmaktır. Gelişim sürecinde veri bilimciler, ham veriyi analiz ederek model eğitimi için uygun hale getirirken; yazılım geliştiriciler ise eğitilen bu modelleri gerçek dünya uygulamalarına entegre ederek yeni veriler üzerinde tahminler yapılmasını sağlamışlardır.
+Makine öğrenmesi, köken olarak istatistik ve matematiksel modelleme temellerine dayanmaktadır. Temel prensip, geçmiş gözlemlerden elde edilen veriler aracılığıyla bilinmeyen sonuçların tahmin edilmesidir. Örneğin; bir enerji şirketi, geçmiş tüketim verileri ve hava koşullarını kullanarak gelecekteki elektrik talebini tahmin edebilir. Benzer şekilde bir finans kuruluşu, müşterilerin geçmiş işlem verilerine bakarak kredi geri ödeme riskini öngörebilir. Başka bir örnek olarak, bir üretim hattında sensör verileri kullanılarak makinelerde oluşabilecek arızalar önceden tahmin edilebilir. Örneklerden görüleceği üzere, makine öğrenmesinin farklı alanlardaki geniş kullanım potansiyeli göze çarpmaktadır.
+Şekil 2.2: Makine öğrenmesi fonksiyonu
+Makine öğrenmesi modelleri, matematiksel olarak giriş ve çıkış değişkenleri arasındaki ilişkiyi modelleyen fonksiyonlar olarak ifade edilmektedir. Bu bağlamda bir model, giriş özellikleri x=x1,x2,…,xn kullanılarak bir çıktı değeri y tahmin eden bir fonksiyon Denklem 2.1 gibi tanımlanır.
+y=fx
+(2.1)
+Modelin fonksiyonu öğrenmesi süreci eğitim (training) olarak adlandırılırken, öğrenilen modelin yeni veriler üzerinde tahmin üretmesi çıkarım (inference) olarak ifade edilmektedir. Şekil 2.2’de eğitim süreci, geçmiş gözlemlerden oluşan veri seti kullanılarak model oluşturulmaktadır ve ardından model yeni giriş verileri için tahmini çıktılar y üretmektedir.
+Şekil 2.3: Makine öğrenmesi yöntemleri
+Makine öğrenmesi yöntemleri genel olarak denetimli ve denetimsiz öğrenme olarak iki ana gruba ayrılmaktadır (Şekil 2.3). Denetimli öğrenmede model, giriş verileri ile birlikte bilinen etiketler kullanılarak eğitilir ve bu kapsamda regresyon (sayısal tahmin) ve sınıflandırma (kategorik tahmin) problemleri çözülmektedir. Denetimsiz öğrenmede ise yalnızca giriş verileri kullanılarak veri içerisindeki gizli yapılar keşfedilmekte olup, en yaygın yöntemlerden biri kümeleme algoritmalarıdır. Veri içerisindeki örüntüleri ortaya çıkararak karar destek sistemlerinde önemli rol oynamaktadır.
+Denetimli öğrenme, makine öğrenmesinin en yaygın kullanılan yaklaşımlarından biri olup, modelin hem giriş verileri (özellikler) hem de bu verilere karşılık gelen doğru çıktı değerleri (etiketler) ile eğitilmesini ifade etmektedir. Amaç, giriş değişkenleri ile çıktı değişkeni arasındaki ilişkiyi öğrenerek, yeni ve daha önce görülmemiş veriler için doğru tahminler yapabilen bir model geliştirmektir.
+Denetimli öğrenme problemleri genel olarak regresyon ve sınıflandırma olmak üzere ikiye ayrılmaktadır ve tez kapsamında odak noktası sınıflandırma problemleridir. Dolayısıyla geliştirilen model ve modeller, giriş verilerini kullanarak çıktı olarak kategorik bir değer üretmektedir.
+Destek vektör makineleri (SVM)
+Şekil 2.4: İki sınıflı SVM’de optimum ayırıcı hiper düzlem, marjlar ve destek vektörleri
+Destek Vektör Makineleri, gözetimli öğrenme tabanlı bir sınıflandırma yöntemidir. SVM’nin temel amacı, iki ya da daha fazla sınıfa ait verileri birbirinden ayıran en uygun karar sınırını bulmaktır. Karar sınırı, doğrusal problemler için bir doğru, düzlem veya genel ifadeyle bir hiper düzlem olarak tanımlanır. Yöntemin ayırt edici tarafı ise yalnızca sınıfları ayırmakla yetinmemesi, aynı zamanda sınıflar arasındaki marjı, yani karar sınırına en yakın örneklerle olan mesafeyi en büyük yapmaya çalışmasıdır. Bu nedenle SVM, özellikle sınıflar arası ayrımın kritik olduğu mühendislik problemlerinde güçlü bir yöntem olarak öne çıkmaktadır.
+SVM’de karar sınırını belirleyen en önemli örnekler, sınıra en yakın olan verilerdir. Sınır örneklerine destek vektörleri de denmektedir. Modelin eğitimi esas olarak sınır-kritik örnekler üzerinden şekillenmektedir. Böylece veri kümesindeki her nokta aynı önemde değerlendirilmez, sınıflandırma açısından belirleyici olan örnekler ön plana çıkarılmaktadır. Böyle bir yaklaşım, özellikle ölçüm gürültüsü içeren veya boyutu yüksek veri kümelerinde SVM’nin güçlü genelleme performansı göstermesine katkı sağlar. İki sınıflı doğrusal bir SVM modeli matematiksel olarak Denklem 2.2 ile ifade edilmektedir.
+fx=wT x+b
+(2.2)
+Denklemde w, karar düzleminin yönünü belirleyen ağırlık vektörü, b ise sabit terimdir. SVM’nin amacı, Denklem 2.3’deki koşul ile Denklem 2.4’teki optimizasyon problemini çözmektir.
+min12‖w‖2
+(2.3)
+yiwTxi+b≥1, i=1,2,…,n
+(2.4)
+Denklem 2.4’te xi giriş verisini, yi∈{-1,+1} sınıf etiketini göstermektedir. Bu yapı, marjın büyütülmesi ile eşdeğerdir. Marj büyüdükçe modelin yeni veriler üzerindeki genelleme yeteneği artar.
+Gerçek mühendislik problemlerinde veriler çoğu zaman kusursuz biçimde doğrusal ayrılabilir değildir. Bu durumda yumuşak marjlı SVM kullanılır. Yumuşak marj yapısında bazı örneklerin yanlış sınıflandırılmasına kontrollü biçimde izin verilir ve hata miktarı ξi gevşeme değişkenleriyle modellenir. Bu durumda optimizasyon problemi Denklem 2.5 halini almaktadır.
+min12‖w‖2+Ci=1nξi
+(2.5)
+Buradaki C parametresi, marjın geniş tutulması ile eğitim hatasının azaltılması arasındaki dengeyi belirler. Büyük C değerleri hataları daha fazla cezalandırırken, küçük C değerleri daha esnek bir karar sınırı oluşturur.
+SVM’nin en önemli avantajlarından biri, doğrusal olmayan problemlere de uygulanabilmesidir. Bunun için çekirdek (kernel) fonksiyonları kullanılır. Çekirdek yaklaşımı, verileri açıkça daha yüksek boyuta taşımadan, bu dönüşüm yapılmış gibi işlem yapmayı sağlar. En yaygın kullanılan çekirdekler doğrusal çekirdek, polinomsal çekirdek ve Radyal Tabanlı Fonksiyon (RBF) çekirdeğidir. Özellikle karmaşık karar sınırlarının bulunduğu görüntü işleme, arıza teşhisi, biyomedikal sinyal analizi ve kalite kontrol problemlerinde RBF tabanlı SVM yaygın biçimde tercih edilmektedir.
+Mühendislik açısından değerlendirildiğinde SVM’nin başlıca üstünlükleri; yüksek boyutlu verilerde etkili çalışması, az sayıda eğitim örneği ile anlamlı sonuç üretebilmesi ve özellikle iyi seçilmiş özniteliklerle yüksek sınıflandırma başarısı sağlamasıdır. Buna karşılık, çekirdek ve hiperparametre seçimlerinin dikkatli yapılması gerekir. Ayrıca veri seti çok büyüdüğünde eğitim maliyeti artabilir. Bu nedenle SVM, çoğu zaman doğrudan ham veri yerine, önceden çıkarılmış öznitelikler üzerinde kullanıldığında daha verimli sonuç verir.
+Şekil 2.4’te bir sınıf “●” sembolü, diğer sınıf “○” sembolü ile gösterilmektedir. SVM, farklı sınıflara ait örnekleri ayıran hiper düzlemi seçerken, karar sınırına en yakın örnekler olan destek vektörlerini esas alır ve iki sınıf arasındaki marjı maksimum yapmayı hedeflemektedir.
+Derin Öğrenme
+Derin öğrenme, temsil öğrenme prensiplerine dayanan ve çok katmanlı yapay sinir ağı mimarileri aracılığıyla veriden anlamlı özelliklerin hiyerarşik olarak çıkarılmasını sağlayan bir makine öğrenmesi disiplinidir. Geleneksel makine öğrenmesi yöntemlerinde öznitelik mühendisliği süreci manuel müdahalelere ve alan uzmanlığına ihtiyaç duyarken; derin öğrenme modelleri, ham veriden düşük seviyeli (kenar, köşe) bilgilerden yüksek seviyeli (dokusal ve anlamsal) formlara kadar tüm özellikleri uçtan uca (end-to-end) öğrenme yeteneğine sahiptir. Derin öğrenme disiplininin bu yapısı özellikle FV hücrelerin EL görüntülerinde rastlanan karmaşık ve değişken yapıdaki mikro çatlakların ve üretim kusurlarının yüksek hassasiyetle tespiti için etkili bir çözüm haline getirmiştir.
+Çok katmanlı yapay sinir ağları ve öğrenme mekanizması
+Derin öğrenmenin yapısal temelini oluşturan Yapay Sinir Ağları (YSA), veriyi işleme kapasitesini katmanlı yapısından almaktadır.
+Bir derin ağ mimarisi; giriş katmanı, çok sayıda gizli katman ve bir çıkış katmanından meydana gelir. Mimari yapı içerisinde her bir nöron, bir önceki katmandan gelen girdileri belirli ağırlıklar (w) ile çarpmakta, bir sapma (b) değeri eklemekte ve elde edilen toplamı doğrusal olmayan bir aktivasyon fonksiyonundan geçirerek bir sonraki katmana aktarmaktadır (Şekil 2.5). Matematiksel olarak çıktı Denklem 2.2’den hesaplanmaktadır. Burada σ ile temsil edilen aktivasyon fonksiyonları (ReLU, Leaky ReLU, Sigmoid vb.), ağa doğrusal olmayan özellikler kazandırarak modelin karmaşık veri dağılımlarını öğrenebilmesini sağlar. Eğitim süreci boyunca modelin ürettiği tahminler ile gerçek etiketler arasındaki fark, bir kayıp fonksiyonu (loss function) ile hesaplanmakta ve geriye yayılım (backpropagation) algoritması vasıtasıyla gradyanlar hesaplanarak ağırlıklar optimize edilmektedir.
+Şekil 2.5: Çok katmanlı yapay sinir ağı mimarisi ve öğrenme mekanizması diyagramı
+y = σi=1nwixi+b
+(2.2)
+Evrişimli sinir ağları (CNN) ve öznitelik çıkarımı
+Evrişimli Sinir Ağları (Convolutional Neural Networks-CNN), görüntülerin uzamsal hiyerarşisini koruyan özel mimarisiyle görüntü veri işlemesinde ve bilgisayarlı görü problemlerinde standart haline gelmiştir. Klasik tam bağlantılı ağlar ile kıyaslandığında CNN mimarileri, yerel bağlantılar ve paylaşımlı ağırlıklar kullanarak hesaplama verimliliğini arttırmakta ve aşırı öğrenme riskini minimize etmektedir. Bir CNN modeli temel olarak evrişim katmanları, havuzlama katmanları, tam bağlantılı katman, normalizasyon ve aktivasyon bileşenlerinden meydana gelmektedir.
+Evrişimli katmanlar, farklı boyutlardaki filtrelerin (kernel) görüntü üzerinde gezdirilmesiyle kenar, köşe, doku gibi öznitelik haritalarının çıkarımının sağlandığı bileşenlerdir. Havuzlama katmanları ise bu öznitelik haritalarının boyutsan çözünürlüklerini azaltarak model hesaplama yükünü düşürerek küçük uzamsal kaymalara karşı dayanıklılığı sağlamaktadır. Tam bağlantılı katman ise öznitelik veri çıkarımlarını birleştirerek aktivasyon süreciyle beraber sınıflandırma sonucuna dönüşümünü sağlayan bileşendir. Tam bağlantılı katman ağın öğrenme ve karar verme merkezi olarak değerlendirilebilir. Normalizasyon ve aktivasyon süreçleri ise modellerin eğitim sürecini kararlı hale getirerek ağın yakınsama hızını arttırır ve karmaşık desenlerin daha kolay öğrenilmesini sağlar. Şekil 2.6 ile genel yapı sunulmuştur.
+FV panel denetimlerinde, EL görüntülerindeki pikseller arası hassas ilişkiler arızanın türünü ve şiddetini belirlediği için CNN tabanlı yaklaşımlar literatürdeki en başarılı sonuçları sunmaktadır.
+Şekil 2.6: Evrişimli sinir ağları ve öznitelik çıkarım yöntemleri genel diyagramı
+Semantik bölütleme
+Bilgisayarlı görü problemlerinde görüntünün tamamına ya da belirli bölümlerine bir etiket atamak (sınıflandırma) çoğu zaman yeterli olmamaktadır. Sınıflandırılacak nesnelerin tam konumunun, geometrisinin ve kapladığı alanın belirlenmesi için semantik bölütleme yöntemleri kullanılmaktadır. Semantik bölütleme, bir görüntüdeki her bir pikselin belirli bir sınıfa (örneğin; "çatlak", "hotspot" veya "arka plan") ait olup olmadığını piksel düzeyinde tahmin etme işlemidir. Genel mimari Şekil 2.7 ile verilmiştir.
+Şekil 2.7: Semantik bölütleme yöntemi genel diyagramı
+EL görüntülerindeki hata tespiti başarım oranını maksimize etmek amacıyla literatürde öne çıkan dokuz farklı segmentasyon mimarisi ele alınmıştır. Görüntü bölütleme alanında klasikleşen U-Net (Rudro vd., 2024) ve U-Net++ (Tian vd., 2021), farklı ölçeklerdeki nesneleri yakalamada öne çıkan DeepLabV3 (Kleebauer vd., 2023), DeepLabV3+ (Zhang vd., 2026), FPN (Fan vd., 2024), piramit bölütleme yaklaşımlarını kullanan PSPNet (Bouaziz vd., 2024), Manet (Huo vd., 2024), PAN (Li vd., 2018) ve LinkNet (Sohail vd., 2023) mimarileri ele alınmıştır.
+U-Net mimarisi, Encoder ve Decoder bileşenlerine sahiptir. Encoder bölümü, görüntünün bağlamsal özelliklerini (context) elde etmekte, Decoder bölümü ise, atlama bağlantıları aracılığıyla alt katmanlardaki düşük seviyeli uzamsal bilgileri üst katmanlara aktarmaktadır. Düşük seviyeli uzamsal bilgileri atlama bağlantıları ile doğrudan kod çözücüye aktarılarak ince detayların korunması sağlanır. U-Net++ mimarisinde ise, bu bağlantıları daha karmaşık ve yoğun hale getirilmiş, kodlayıcı ve kod çözücü arasındaki anlamsal boşluk minimize edilmiştir. EL görüntülerindeki ince mikro çatlakların sürekliliğini sağlamada bu yoğun bağlantılar faydalı olmaktadır.
+DeepLab mimarileri görüntünün çözünürlüğünü düşürmeden daha geniş bir görüş alanı elde etmektedir. DeepLabV3+, buna ek olarak bir kod çözücü modülü ekleyerek nesne sınırlarını daha keskin belirlemektedir. Özellikle EL görüntülerinde geniş alanlara yayılan "hotspot" (sıcak nokta) veya "soiling" (tozlanma) gibi hataların sınırlarını belirlemede avantaj sağlayabilmektedir.
+PSPNet (Pyramid Scene Parsing Network), görüntüyü farklı alt bölgelere ayıran bir "Piramit Havuzlama Modülü" kullanmaktadır. Görüntü; 1x1, 2x2, 3x3 ve 6x6 gibi farklı ölçeklerde havuzlanarak, her bir seviyeden farklı düzeyde bağlamsal bilgi toplanır. 1x1 ölçeği görüntünün genel (küresel) aydınlatma ve yapı bilgisini vermekte ve 6x6 ölçeği daha yerel anormalliklere odaklanmaktadır. EL görüntülerindeki düşük kontrast nedeniyle sağlıklı bölgelerle karıştırılabilecek geniş alanlı "hotspot" (sıcak nokta) hatalarının, çevresel dokuyla kıyaslanarak daha doğru ayırt edilmesini sağlaması yönüyle çalışmada ele alınmıştır.
+FPN (Feature Pyramid Network), kodlayıcı tarafından üretilen farklı çözünürlükteki öznitelik haritalarını hiyerarşik bir düzende birleştirmektedir. Üst katmanlardaki güçlü anlamsal bilgiler, alt katmanlardaki yüksek çözünürlüklü uzamsal bilgilerle yukarıdan aşağıya doğru harmanlanmaktadır. EL görüntülerindeki ölçek problemine doğrudan yanıt verir. Üst seviye haritalar büyük yapısal bozulmaları yakalarken, alt seviye haritalar mikro çatlakların keskin sınırlarını belirleyerek tek bir ağ üzerinden, boyutları birbirinden tamamen farklı olan çok sayıda kusur türü eşzamanlı olarak tespit edebilir.
+PAN (Pyramid Attention Network), piramit yapısının gücünü dikkat mekanizmaları ile birleştirmiştir. Görüntüdeki küresel bağlamı toplamak için bir "Global Pyramid Pooling" bloğu kullanmakta ve bu bilgiyi pikseller arası ilişkileri güçlendirmek için bir dikkat maskesi olarak uygulamaktadır. EL görüntülerinde üretimden kaynaklanan doğal doku desenleri (busbarlar veya parmak çizgileri) bazen hata durumlarını maskeleyebilir. PAN, dikkat mekanizmasıyla bu doğal çizgileri arka plan olarak kodlamakta, kusurlu alanlara odaklanarak segmentasyon hassasiyetini maksimize etmektedir.
+MAnet, görüntüdeki farklı bölgeler arasındaki ilişkileri ve öznitelik kanalları arasındaki bağımlılıkları modellemek için dikkat mekanizmalarını temel alan bir mimaridir. EL görüntülerinde hatalar bazen çok silik veya arka plan gürültüsüne çok yakın olmaktadır. MAnet, konumsal dikkat ve kanalsal dikkat olmak üzere iki ana dikkat modülü kullanmaktadır. Konumsal dikkat, görüntüdeki hangi piksellerin birbirine benzediğini analiz etmektedir. Kanalsal dikkat, hangi öznitelik haritalarının hata tespiti için daha önemli olduğuna kararında etkili olmaktadır. Elektrolüminesans görüntülerinde bazen doku karmaşıklığı nedeniyle sağlam bölgeler hata olarak algılanabilir. MAnet, dikkat mekanizması sayesinde arka plandaki gürültüyü baskılayıp sadece arıza karakteristiklerine odaklandığı için yanlış pozitif oranını düşürmede etkili olacağı düşünülerek tercih edilmiştir.
+LinkNet, temel olarak hesaplama verimliliği ve hız odaklı bir mimaridir. U-Net'e yapısal olarak benzese de, bilgiyi kodlayıcıdan kod çözücüye aktarma biçimi farklıdır. U-Net mimarisi, kodlayıcıdan gelen öznitelik haritalarını kod çözücüdekilerle yan yana birleştirmekte ve bu sayede katmanlardaki kanal sayısını artırarak hesaplama yükünü ve parametre sayısını büyütmektedir. LinkNet ise bu bilgileri doğrudan toplayarak birleştirerek daha hızlı çalışmasını sağlamaktadır. LinkNet mimarisinin düşük gecikme süresiyle uygulama sırasında tercih edilebilecek en uygun adaylardan birisi olması, toplama işlemi ile, uzamsal bilginin daha sade bir şekilde kod çözücüye taşınmasına yardımcı olabileceği düşüncesiyle tercih edilmiştir.
+Çalışma kapsamında tüm farklı mimarilerin ortak özelliği, giriş görüntüsünden öznitelikleri çıkaran kodlayıcı kısmında ResNet-34 (He vd., 2015) kullanılmıştır. ResNet-34'ün “Residual" (artık) blokları, EL görüntülerindeki düşük sinyal-gürültü oranına rağmen gradyanların ağın derinliklerine sağlıklı bir şekilde akmasını sağlayarak eğitimin kararlılığını arttırmıştır.
+Optimizasyon ve genelleme teknikleri
+Derin öğrenme modellerinin başarısı, sadece modelin mimari tasarımına bağlı değildir. Eğitim sürecinde kullanılan Adam, SGD veya RMSprop gibi optimizasyon algoritmaları, kayıp fonksiyonunun global minimumuna ulaşmak için ağırlıkları güncellemektedir.
+FOTOVOLTAİK PANELLER
+Bu bölüm, tezinizin ana eksenini oluşturan fotovoltaik modüllerde görüntü işleme ve derin öğrenme tabanlı arıza tespiti çalışmalarının fiziksel ve teknolojik temelini oluşturmak amacıyla hazırlanmıştır. FV panelin gelişim çizgisi, üretim akışı, katmanlı yapısı, başlıca panel türleri ve tek diyot eşdeğer devreye dayalı matematiksel modeli birlikte ele alındığında; EL, IR ve benzeri görüntüleme teknikleriyle gözlenen kusurların kök nedenleri de daha sağlıklı yorumlanabilmektedir.
+Gelişim Süreci ve Üretim Akışı
+FV dönüşümün bilimsel temeli 1839 yılında Becquerel’in ışık etkisi altında elektriksel yük oluşumunu gözlemesiyle atılmış, 1881’de Charles Fritts ilk ticari güneş panelini geliştirmiş ve 1954’te Bell Laboratuvarları ilk pratik silikon güneş pilini üretmiştir (Altaai, 2023). Daha sonra teknoloji; birinci nesil kristal silisyum tabanlı hücreler, ikinci nesil ince film yapılar ve üçüncü nesil organik, boya duyarlı ve benzeri yeni nesil hücreler olarak evrilmiştir (Karaduman, 2023). Güncel endüstride ise kristal silisyum hâlen baskın teknoloji olmakla birlikte, CIGS, CdTe, perovskit ve hibrit hücre yapıları daha yüksek özgül güç ve daha düşük malzeme tüketimi hedefleri nedeniyle önem kazanmaktadır (Gizem, 2026). Fotovoltaik teknolojinin gelişim çizgisi ve kristal silisyum modül üretim akışı Şekil 3.1’de sunulmuştur.
+Kristal silisyum modül üretiminde kuvars esaslı hammaddeden yüksek saflıkta silisyum elde edilmekte; ardından monokristal paneller için çoğunlukla Czochralski yöntemiyle tek kristal ingot büyütülmekte, polikristal paneller için ise ergitme ve kalıba döküm yoluyla çok kristalli yapı oluşturulmaktadır. İgotların waferlara dilimlenmesinden sonra hücre yüzeyinde p–n birleşimi, yansıma önleyici kaplama ve metal kontaklar oluşturulur. Hücreler seri-paralel bağlantılarla dizildikten sonra düşük demirli ön cam, EVA enkapsülant, hücre dizisi, ikinci EVA tabakası ve arka tabaka şeklindeki katmanlar vakumlu laminasyonla birleştirilir; daha sonra çerçeveleme, junction-box montajı, EL testi ve I–V karakterizasyonu gibi kalite kontrol adımları uygulanır.
+Şekil 3.1: Fotovoltaik teknolojinin gelişim çizgisi ve kristal silisyum modül üretim akışı
+FV hücrenin temel yapısı; ışığın yansımasını azaltan ön yüzey kaplaması, n-tipi ve p-tipi yarı iletken bölgeler, p–n birleşimi ve taşıyıcıların harici devreye aktarılmasını sağlayan metal kontaklardan oluşur (Lermi & Onur, 2024). Modül düzeyinde bu hücreler ön cam, EVA, hücre dizisi, EVA ve arka tabaka ile çevresel etkilere karşı korunur; çerçeve ve bağlantı kutusu mekanik dayanım ve elektriksel bütünlük sağlar. Güneş ışınından gelen fotonlar yarı iletken tarafından soğurulduğunda elektron–delik çiftleri oluşur; p–n birleşiminin iç elektrik alanı bu taşıyıcıları ayırarak hücre uçlarında doğru akım üretir. Panel üzerine düşen ışınım, hücre sıcaklığı, seri/paralel bağlantı yapısı ve malzeme kalitesi üretilen akım ve gerilim seviyelerini doğrudan belirler.
+FV Panel Çeşitleri
+Monokristal paneller, tek kristal silisyum kullanmaları nedeniyle yüksek düzenli kristal yapıya sahiptir; bu sayede elektron hareketliliği yüksektir ve verimleri genellikle %18–24 aralığına ulaşmaktadır. Polikristal panellerde kristal sınırları daha fazla olduğundan verim çoğunlukla %15–18 düzeyindedir; buna karşın üretim süreci daha ekonomik olduğu için geniş saha uygulamalarında yaygın olarak kullanılmaktadır. İnce film panellerde aktif katman mikrometre mertebesindedir; düşük malzeme kullanımı ve esnek alt tabakalara uygulanabilme avantajı bulunsa da verim genellikle kristal silisyumun altındadır.
+İnce film ailesi içinde CIGS yapılar laboratuvar koşullarında yaklaşık %23 seviyesine ulaşabilmekte, perovskit tabanlı yapılar ise düşük sıcaklıkta işlenebilirlikleri ve yüksek soğurma katsayıları nedeniyle %25 seviyesine yaklaşan verimleriyle dikkat çekmektedir. Ayrıca PERC, HJT ve IBC gibi hibrit/hücre mimarileri; arka yüzey pasivasyonu, heteroeklem veya arka kontak yaklaşımları sayesinde gölgeleme ve yeniden birleşme kayıplarını azaltarak ticari panellerde verim artışı sağlamaktadır. Dolayısıyla panel seçimi yalnızca anlık verime göre değil; sıcaklık katsayısı, maliyet, ağırlık, esneklik, üretim karmaşıklığı ve hedef uygulama alanı birlikte değerlendirilerek yapılmalıdır. Tipik bir modülün katmanlı yapısı ve tek diyot modeline karşılık gelen eğrileri Şekil 3.2’de gösterilmiştir.
+Şekil 3.2: Modül katman yapısı, hücre iç yapısı ve tek diyot modele ait tipik I–V/P–V davranışı
+Matematiksel Model
+FV hücrelerin elektriksel davranışı en yaygın olarak tek diyot eşdeğer devre ile modellenmektedir (Duran, 2024). Modelde ışıkla üretilen akım kaynağına ek olarak diyot, seri direnç (Rs) ve kaçak akımları temsil eden paralel direnç (Rsh) kullanılır (Daher vd., 2024). Hücre akımı Denklem 3.1 ile ifade edilmektedir.
+I=Iph-I0expV+IRs/a)-1-V+IRs/Rsh
+(3.1)
+Burada Iph fotoakımı, I0 diyot doyum akımını ve a idealite katsayısı ile termal gerilim bileşenini temsil eder. Hücrenin güç çıktısı P = V·I olup, maksimum güç noktası (Vmp, Imp) üzerinden belirlenir. Açık devre gerilimi (Voc), kısa devre akımı (Isc), dolgu faktörü ve verim aşağıdaki ilişkilerle ifade edilir:
+FF=VmpImp/VocIsc ve η=Pmax/G⋅A
+(3.2)
+Seri dirençteki artış dolgu faktörünü ve maksimum gücü azaltırken, paralel dirençteki azalma kaçak akımları büyüterek özellikle düşük gerilim bölgesinde I–V eğrisini bozmakta; mikro çatlak, lehim kopuğu, PID, gölgelenme ve sıcak nokta gibi kusurlar ise bu parametreleri değiştirerek panel davranışında ölçülebilir sapmalara yol açmaktadır (Dağlı vd., t.y.). Bu nedenle fiziksel yapı, üretim kalitesi ve matematiksel model birlikte değerlendirildiğinde, arıza tespiti için geliştirilen görüntü işleme ve derin öğrenme tabanlı yöntemlerin karar mekanizması daha yorumlanabilir hâle gelmektedir.
+WAVELET TABANLI DERİN ÖĞRENME İLE HATA TESPİTİ
+Bu kısımda geliştirilen Wavelet + ResNet50 modelinin amacı, girdi temsili, iç mimarisi, ara çıktıları, matematiksel altyapısı ve başarım gerekçesi ayrıntılı olarak verilmektedir. Model, EL güneş hücre görüntülerinde kusurlu ve sağlam hücreleri ayırt etmektedir. Aynı zamanda hücreye ait kusur olasılığını yardımcı regresyon hedefi olarak öğrenmektir. Klasik CNN temsiline wavelet tabanlı frekans/kenar bilgisini eklediği için hibrit bir derin öğrenme yaklaşımı olarak değerlendirilmektedir.
+Modelin Amacı ve Genel Tasarımı
+EL görüntülerinde çatlaklar, etkin olmayan bölgeler, koyu alanlar ve hücre içi elektriksel bozulmalar zaman zaman düşük kontrastlı ve ince yapılı izler şeklinde ortaya çıkmaktadır. Söz konusu zayıf kusur izleri, ham piksel uzayında eğitilen CNN modelleri tarafından baskın doku veya aydınlatma değişimleri içinde gözden kaçırabilmektedir. Wavelet dönüşümü, görüntüyü farklı frekans ve yön bileşenlerine ayırarak genel parlaklık/doku bilgisini yatay, dikey ve diyagonal detaylarla birlikte ayrı kanallarda temsil etmektedir. Wavelet tabanlı bilgi, ResNet-50 omurgasına ek kanal olarak verilmektedir.
+Tablo 4.1: Model tasarımı detayları
+Bileşen
+Açıklama
+Ana problem
+EL hücre görüntüsünde kusurlu / sağlam sınıflandırma
+Temel omurga
+ResNet50, ImageNet ön eğitimli
+Girdi
+7 kanal: 3 gri tekrarı + 4 wavelet alt bandı
+Wavelet
+db2, birinci seviye DWT
+Karar eşiği
+Validation F1 ile optimize edilmiş, en iyi F1 noktasında yaklaşık 0.34
+Model iki tamamlayıcı hedefle eğitilmiştir. Birinci hedef ikili kusur kararıdır: hücre sağlam mı, kusurlu mu? İkinci hedef ise kusur olasılığını sürekli bir değer olarak tahmin etmektir. Yardımcı hedef, modelin yalnızca nihai karar sınırını değil, kusur şiddetiyle ilişkili ara seviyeleri de temsil etmesine yardımcı olmaktadır.
+Wavelet Matrisi
+Modelin girdisi x∈R7×300×300 boyutunda bir tensördür. Standart ResNet50 mimarisi 3 kanallı RGB girdi beklediğinden, EL görüntüsünün gri seviye hali üç kez tekrarlanmakta ve ImageNet ortalama/standart sapma değerleri kullanılarak normalize edilmektedir. Böylece ön eğitimli ResNet-50 filtrelerinin kenar, doku ve lokal kontrast bilgisinden yararlanması sağlanmaktadır. Dördüncü, beşinci, altıncı ve yedinci kanallar ise wavelet dönüşümünden elde edilen LL, LH, HL ve HH alt bantlarından oluşturulmaktadır.
+Birinci seviye ayrık wavelet dönüşümünde görüntü dört alt banda ayrılmaktadır. LL bandı yaklaşık/gücük frekans bileşenini, LH yatay-dikey geçişlerden gelen ayrıntıyı, HL diğer yönlü kenar bilgisini, HH ise diyagonal ve yüksek frekanslı ayrıntıları taşımaktadır. Çalışmada alt bantlar tekrar 300x300 boyutuna getirilmiş, standartlaştırılmış ve [-1, 1] olarak normalize edilmiştir. Şekil 4.1 ile örnek EL görüntüsünden elde edilen dalgacık alt bantları ve Şekil 4.2 ile modelin kanal bazlı görselleştirilmesi sunulmuştur.
+Şekil 4.1: Örnek EL görüntüsünden elde edilen db2 wavelet alt bantları.
+Şekil 4.2: Modele verilen 7 kanallı girdi tensorunun kanal bazlı görselleştirmesi.
+Wavelet Dönüşümünün Matematiksel Altyapısı
+Ayrık iki boyutlu wavelet dönüşümü, görüntüyü satır ve sütun yönlerinde alçak geçiren ve yüksek geçiren filtreler kullanarak ayrıştırmaktadır. Bir görüntü Im,niçin alçak geçiren filtre h ve yüksek geçiren filtre g kullanıldığında, birinci seviye alt bantlar Denklem 4.1–4.4’te ifade edilmektedir.
+LLi,j=mnIm,n h2i-m h2j-n
+(4.1)
+LHi,j=mnIm,n h2i-m g2j-n
+(4.2)
+HLi,j=mnIm,n g2i-m h2j-n
+(4.3)
+HHi,j=mnIm,n g2i-m g2j-n
+(4.4)
+Burada LL yaklaşık bileşeni, LH/HL/HH ise ayrıntı bileşenlerini ifade eder. EL kusurları çoğu zaman ince çizgi, lokal parlaklık kırılması, kenar veya dokusal bozulma olarak ortaya çıktığı için LH, HL ve HH alt bantları kusur sinyalini daha ayırt edilebilir hale getirebilmektedir.
+Resnet ile Özellik Çıkarımı ve Ara Çıktılar
+ResNet-50 omurgasında ilk konvolüsyon katmanı 7 kanallı girdiyi kabul edecek şekilde değiştirilmiştir. Ön eğitimli 3 kanallı konvolüsyon ağırlıklarını korumak için ilk üç kanal ağırlıkları ImageNet modelinden aynen alınmıştır. Ek 4 wavelet kanalının başlangıç ağırlıkları ise RGB filtrelerinin kanal ortalamasından türetilmiştir. Denklem 4.5 ile ifade edilen uyarlamalar hem transfer öğrenme bilgisini korumakta hem de wavelet kanallarını modele dahil etmektedir.
+Wnew:, 0​:​3, : ,: =Wrgb
+Wnew:, 3​:​7, : ,: =mean(Wrgb)
+(4.5)
+ResNet-50 içinde aktivasyon boyutları aşamalı olarak azalmakta, kanal sayısı ise artmaktadır. Böylece modelin erken katmanlarında kenar ve lokal doku, orta katmanlarda hücre içi desen, son katmanlarda ise daha soyut kusur temsilleri öğrenilmesi sağlanmaktadır. Tablo 4.2 ve Şekil 4.3, gerçek bir EL örneği modele verildiğinde elde edilen ara aktivasyonları göstermektedir.
+Tablo 4.2: EL örneğinin model üzerinde temsili ara çıktıları
+Aşama
+Çıktı boyutu
+Temsil edilen bilgi
+Input
+7 x 300 x 300
+Gri görüntü + wavelet alt bantları
+Conv1
+64 x 150 x 150
+Düşük seviye kenar ve kontrast tepkileri
+MaxPool
+64 x 75 x 75
+Mekansal özetleme
+Layer1
+256 x 75 x 75
+Yerel hücre dokusu ve erken kusur ipuçları
+Layer2
+512 x 38 x 38
+Orta ölçekli desenler
+Layer3
+1024 x 19 x 19
+Yüksek seviye kusur kombinasyonları
+Layer4
+2048 x 10 x 10
+Soyut kusur temsili
+AvgPool
+2048
+Global hücre temsili
+Şekil 4.3: Wavelet + ResNet50 modelinin gerçek bir örnek üzerindeki iç akışı ve ara çıktıları.
+Conv1 ve ResNet bloklarında ortalama mutlak aktivasyon haritaları Şekil 4.4 ile Conv1 katmanındaki en aktif kanallar ise Şekil 4.5 ile verilmiştir. Erken katmanlar wavelet ve gri kanallardaki kenar/kontrast bilgisini yakalayabildiğini göstermiştir. Son katmanların daha soyut kusur temsilleri ürettiği Şekil 4.6 ile anlaşılmaktadır.
+Şekil 4.4: Conv1 ve ResNet bloklarında ortalama mutlak aktivasyon haritaları.
+Şekil 4.5: Conv1 katmanındaki en aktif kanallar.
+Şekil 4.6. Layer4 sonunda en aktif kanallar.
+Maliyet Fonksiyonları
+Önerilen modelde sınıflandırma ve kusur şiddeti tahmini olmak üzere iki farklı öğrenme hedefi birlikte ele alınmaktadır. Backbone sonunda elde edilen 2048 boyutlu global öznitelik temsili, ikili sınıflandırma ve regresyon olmak üzere iki ayrı başlığa aktarılmaktadır. İkili sınıflandırma başlığı, hücrenin kusurlu ya da sağlam olma durumunu öğrenmek amacıyla tek bir logit değeri üretmektedir. Regresyon başlığı ise kusur olasılığını veya kusur şiddetini temsil eden sürekli bir çıktı üretmektedir. Böylece modelin yalnızca hücreye ait sınıf kararını değil, aynı zamanda kusurun derecesine ilişkin tamamlayıcı bilgiyi de öğrenmesi sağlanmaktadır.
+İkili sınıflandırma görevi için focal loss fonksiyonu kullanılmaktadır. Focal loss, özellikle sınıf dengesizliği bulunan veri setlerinde kolay sınıflandırılan örneklerin etkisini azaltmakta ve modelin zor, düşük kontrastlı veya yanlış sınıflandırılmaya yatkın örneklere daha fazla odaklanmasını sağlamaktadır. EL görüntülerinde çatlak, koyu bölge ve etkin olmayan alanlar çoğu zaman zayıf kontrastlı ince yapılar şeklinde görüldüğünden, standart ikili çapraz entropi kaybı bu örneklerde yeterince ayırt edici olmayabilmektedir. Focal loss kullanımı sayesinde kusurlu hücrelerin gözden kaçırılma olasılığı azaltılmakta ve karar sınırının daha hassas öğrenilmesi desteklenmektedir.
+Regresyon başlığı için Smooth L1 kayıp fonksiyonu kullanılmaktadır. Smooth L1 kaybı, küçük hatalarda karesel hata gibi davranırken büyük hatalarda mutlak hata karakteristiği göstermektedir. Böylece aykırı örneklerin eğitim sürecini aşırı baskılaması önlenmekte ve kusur şiddeti tahmininde daha kararlı bir öğrenme süreci elde edilmektedir. EL görüntülerinde kusur yoğunluğu, çatlak genişliği veya koyu alan oranı görüntüler arasında değişkenlik gösterebildiğinden, Smooth L1 kaybı bu değişken yapıya karşı daha dengeli bir hata ölçütü sağlamaktadır.
+Modelin toplam maliyet fonksiyonu, sınıflandırma kaybı ve regresyon kaybının ağırlıklı toplamı şeklinde tanımlanmaktadır. Çalışmada regresyon kaybının toplam kayba katkısını dengelemek amacıyla λ=0.30 olarak belirlenmiştir. İkili sınıflandırma başlığından elde edilen kusurlu olasılığı Denklem 4.6’da, regresyon başlığından elde edilen sürekli kusur tahmini Denklem 4.7’de ve toplam maliyet fonksiyonu Denklem 4.8’de verilmiştir.
+p=σzbinary
+(4.6)
+r=σWrf+br
+(4.7)
+Ltotal=Lfocaly,zbinary+λ LsmoothL1r,r
+(4.8)
+Burada p, modelin kusurlu sınıfına ait olasılık tahminini zbinary , ikili sınıflandırma başlığından elde edilen logit değerini r, tahmin edilen kusur şiddeti değerini r, gerçek kusur şiddeti etiketini f ve backbone tarafından üretilen 2048 boyutlu global öznitelik temsilini ifade etmektedir. Focal loss fonksiyonu Denklem 4.9’da verilmektedir.
+Lfocal=-αt1-ptγlogpt
+(4.9)
+t*=argmaxtF1y,1p≥t
+(4.10)
+Burada pt, doğru sınıfa ait tahmin olasılığını; αt, sınıf ağırlıklandırma katsayısını; γ ise kolay örneklerin etkisini azaltan odaklama parametresini ifade etmektedir. γ değerinin artmasıyla kolay sınıflandırılan örneklerin toplam kayba katkısı azalmakta, zor örneklere verilen önem artmaktadır. Karar aşamasında sabit 0.5 eşik değeri yerine doğrulama kümesinde F1 skorunu en yüksek yapan eşik değeri seçilmektedir. Eşik seçimi Denklem 4.10’da ifade edilmektedir.
+En iyi F1 skoruna sahip model kontrol noktasında karar eşiği yaklaşık 0.34 olarak elde edilmiştir. Eşik değerinin 0.5 yerine daha düşük seçilmesi, özellikle kusurlu hücrelerin kaçırılmasını azaltmaya yönelik daha duyarlı bir karar mekanizması sağlamaktadır. EL görüntülerinde bazı kusurlar düşük kontrastlı veya sınırda örnekler olarak göründüğünden, doğrulama kümesi üzerinden optimize edilen eşik değeri modelin pratik hata tespit başarısını artırmaktadır.
+DENEYSEL ÇALIŞMALAR
+Bu bölümde kullanılan veri setleri, SVM, CNN, derin öğrenme, wavelet tabanlı kusur tespiti deney sonuçları, hakkında bilgi verilecektir.
+Veri Setleri
+Bu bölümde tez kapsamında kullanılan EL tabanlı güneş hücresi görüntü veri setleri tanıtılmaktadır. Çalışmada iki temel veri kaynağı kullanılmıştır: hücre düzeyinde kusur sınıflandırması için ELPV (Deitsch vd., 2021) veri seti ve piksel düzeyinde çok sınıflı kusur segmentasyonu için BenchmarkEL (Pratt vd., 2023) veri seti. Tablo 5.1’de amaçları, etiketleme tipi, görüntü sayıları verilen bu veri setleri, görüntü düzeyi karar verme ile piksel düzeyi kusur yerelleştirme problemlerini birlikte ele alma imkânı vererek tezde geliştirilen yöntemlerin farklı ölçeklerde değerlendirilmesini sağlamıştır.
+Tablo 5.1: Tez kapsamında belirlenen veri seti özellikleri
+Veri seti
+Temel amaç
+Etiket tipi
+Adet
+ELPV
+Hücre düzeyinde kusur tespiti ve kusur olasılığı tahmini
+Görüntü düzeyi olasılık etiketi; mono/poly hücre tipi
+2624 görüntü
+BenchmarkEL
+Piksel düzeyinde çok sınıflı kusur segmentasyonu
+Görüntü–maske çiftleri;29 sınıflı maske kodları
+2354 görüntü,2354 maske
+ELPV veri seti
+ELPV veri seti, fotovoltaik hücrelerin elektrolüminesans görüntülerinden oluşan ve her örnek için kusur olasılığı etiketi sağlayan bir veri setidir. Tablo 5.2’de veri seti alt grupları ve bu gruplardaki görüntü sayıları sunulmuştur. Veri setinde hem hücre tipi (monokristal/polikristal) hem de dosya adında yer alan p değeri bulunmaktadır. Şekil 5.1 ile sunulan görselde de bulunan p değeri, ilgili hücrenin kusurlu olma derecesini temsil ettiği için bu veri seti yalnızca ikili sınıflandırma problemlerinde değil, kusur şiddeti ya da olasılığı temelli değerlendirmelerde de kullanılabilmektedir.
+Tablo 5.2: ELPV Görüntü veri seti alt grupları
+Alt grup
+Görüntü sayısı
+Açıklama
+Mono
+1074
+Monokristal hücre görüntüleri
+Poly
+1550
+Polikristal hücre görüntüleri
+Toplam
+2624
+Hücre düzeyi EL görüntüsü
+Şekil 5.1: ELPV veri setinden seçilen örnek monokristal ve polikristal hücre görüntüleri.
+Tez kapsamında ELPV verisi iki farklı deney düzeninde kullanılmıştır. Klasik makine öğrenmesi ve CNN tabanlı görüntü düzeyi kusur sınıflandırma deneyleri için referans veri olarak değerlendirilmiştir. ResNet50 tabanlı ve wavelet bantları ile zenginleştirilmiş bir sınıflandırma yaklaşımının test edilmesinde kullanılmıştır.
+BenchmarkEL veri seti
+BenchmarkEL veri seti, EL görüntülerini ve görüntülere karşılık gelen piksel düzeyi anotasyon maskeleri ile sunulmaktadır. Yalnızca bir kusurun bulunup bulunmadığı değil, kusurun görüntü üzerindeki konumu, yayılımı ve sınıfı da öğrenilebilmektedir. Tablo 5.3 ile görüntü ve maske sayıları verilen veri seti, özellikle çok sınıflı semantik segmentasyon, kusur bölgesi yerelleştirme ve piksel düzeyinde performans analizi için uygun bir temel oluşturmaktadır.
+Tablo 5.3: BenchmarkEL veri seti özellikleri
+Bölüm
+Görüntü sayısı
+Maske sayısı
+Eğitim
+2212
+2212
+Doğrulama
+70
+70
+Test
+72
+72
+Toplam
+2354
+2354
+BenchmarkEL veri setinin orijinal maske yapısında toplam 29 sınıf bulunmaktadır. Çalışmada özellikle yapısal bölgeleri ve kritik kusurları temsil eden seçili sınıflar üzerinde durulmuştur. Değerlendirmede öne çıkan temsilî sınıflar; 0-background, 9-busbars, 10-crack rbn edge, 11-inactive, 14-crack, 17-dead cell, 25-scuff ve 26-corrosion cell olarak özetlenebilir. Şekil 5.2’de görüntü-maske çiftleri ve sınıfların renk lejandı verilmiştir. Lejand diğer tüm bölümlerde aynıdır.
+BenchmarkEL veri setinin bu çalışmadaki temel önemi, yalnızca görüntü düzeyinde kusur bilgisi sunmaması, aynı zamanda her görüntü için piksel düzeyinde açıklayıcı maske sağlamasıdır. ELPV veri setinde her hücre görüntüsü için kusur olasılığı ve hücre tipi bilgisi bulunurken, BenchmarkEL veri setinde kusurların görüntü üzerindeki konumu, sınırları, yayılımı ve sınıf bilgisi doğrudan maske dosyaları üzerinden incelenebilmektedir. Bu yönüyle ELPV veri seti daha çok “hücre kusurlu mu, sağlam mı?” sorusuna yanıt veren sınıflandırma ve kusur olasılığı tahmini problemleri için uygunken, BenchmarkEL veri seti “kusur görüntünün neresinde ve hangi yapısal bölgelerle ilişkili?” sorusuna yanıt veren semantik bölütleme problemleri için daha uygundur.
+Şekil 5.2’de BenchmarkEL veri setinden seçilen örnek EL görüntüleri ve bu görüntülere karşılık gelen çok sınıflı maske gösterimleri sunulmaktadır. Görselden görüldüğü üzere, ham EL görüntüsünde insan gözüyle ayırt edilmesi zor olan bazı kusurlar maske üzerinde belirgin sınıf bölgeleri halinde temsil edilmektedir. Bu sayede model, çatlak, etkin olmayan bölge, ölü hücre, hücre korozyonu ve yüzey aşınması gibi kusurları yalnızca genel bir etiket olarak değil, piksel düzeyinde öğrenebilmektedir. Bu özellik, fotovoltaik modüllerde arıza tespitinin açıklanabilirliğini artırmakta ve bakım süreçlerinde hangi bölgenin öncelikli olarak incelenmesi gerektiğine dair daha ayrıntılı bilgi sağlamaktadır.
+Şekil 5.2: BenchmarkEL veri setinde kullanılan seçilmiş sınıfların ham EL görüntüsü üzerindeki görsel karşılıkları örneklenmiştir.
+Deney setleri
+ELPV veri seti, hücre düzeyinde kusur tespitinde modellerin genel ayırt etme başarısını ölçmek için kullanılmıştır. Bu veri seti sayesinde klasik öznitelik tabanlı yöntemler, derin öğrenme tabanlı CNN mimarileri ve wavelet ile zenginleştirilmiş transfer öğrenme yaklaşımları aynı problem çerçevesinde karşılaştırılabilmiştir.
+BenchmarkEL veri seti ise kusurun konumsal olarak nerede ortaya çıktığını öğrenmeye odaklanmıştır. Piksel düzeyi maskeler, segmentasyon modellerinin sınıf bazlı başarımını incelemeye ve küçük/ince kusurlar için patch tabanlı eğitim stratejilerinin geliştirilmesine imkân vermiştir. Bu nedenle iki veri seti birlikte kullanıldığında tez çalışması hem görüntü düzeyi karar verme hem de piksel düzeyi kusur yerelleştirme boyutlarını kapsayan daha bütünlüklü bir deneysel zemin kazanmıştır. Deneysel veri seti seçimi yapılan çalışmalar, kullanılan veriler ve kullanım biçimleri Tablo 5.4’de özetlenmiştir.
+Tablo 5.4: Deneysel veri seti seçimi ve kullanım biçimleri
+Çalışma
+Kullanılan veri
+Kullanım biçimi
+SVM, CNN
+ELPV
+SVM ve VGG19 tabanlı CNN ile görüntü düzeyi kusur sınıflandırması.
+Deep Learning v1
+BenchmarkEL
+U-Net, FPN, DeepLab ve benzeri mimarilerle çok sınıflı segmentasyon; ayrıca YOLO tabanlı bölge tespiti.
+Deep Learning v2
+BenchmarkEL
+ConvNeXt + FPN tabanlı patch eğitimi ve tam görüntü doğrulama senaryosu.
+Wavelet Based Deep Learning
+ELPV
+ResNet50 tabanlı, gri görüntü ve wavelet alt bantlarını birlikte kullanan sınıflandırma yaklaşımı.
+SVM Tabanlı Kusur Tespiti Deneysel Sonuçları
+EL güneş hücre görüntülerinde kusur tespiti amacıyla kurulan SVM tabanlı deney hattının eğitim süreci, kullanılan özellik temsil yöntemi, optimizasyon yaklaşımı ve deneysel başarımı sunulmaktadır. SVM modeli, ham görüntüyü doğrudan sınıflandırmak yerine ön işleme, yerel özellik çıkarımı, VLAD kodlama ve PCA whitening adımlarından sonra elde edilen sabit boyutlu özellik vektörleri üzerinde eğitilmiştir.
+Kaze tabanlı yerel özellik çıkartımı
+SVM tabanlı sınıflandırma hattında CNN modellerinden farklı olarak görüntünün tamamı uçtan uca öğrenilen bir yapıya verilmemektedir. Bunun yerine, EL görüntüsü üzerinde ayırt edici yerel bölgeler belirlenmekte ve bu bölgelerden sayısal tanımlayıcılar çıkarılmaktadır. Tezde yerel özellik çıkarımı için KAZE (Alcantarilla vd., 2012) yöntemi kullanılmıştır. Elde edilen anahtar nokta ve tanımlayıcılar daha sonra VGG tanımlayıcıları, codebook öğrenimi, VLAD kodlama, PCA whitening ve Weighted LinearSVC sınıflandırıcısı ile değerlendirilmiştir. KAZE yönteminin temel amacı, görüntüdeki kenar, köşe, leke, çatlak izi ve yerel kontrast değişimi gibi ayırt edici yapıları tespit etmektir. EL görüntülerinde kusurlar çoğu zaman ince çatlaklar, koyu gölgelenmeler, hücre sınırına yakın bozulmalar veya düzensiz doku değişimleri şeklinde ortaya çıkar. Bu nedenle yalnızca tüm görüntünün global ortalamasına bakmak yerine, kusurla ilişkili olabilecek yerel bölgelerin bulunması sınıflandırma açısından yararlı olmaktadır.
+KAZE, klasik doğrusal Gauss ölçek uzayı yerine doğrusal olmayan difüzyon temelli bir ölçek uzayı kullanır. Bu yaklaşım, görüntüdeki önemli kenar ve yapıların korunmasına yardımcı olurken homojen bölgelerde gürültünün bastırılmasını sağlar. Böylece EL görüntüsündeki ince kusur izleri, ani parlaklık geçişleri ve hücre sınırı çevresindeki yapılar daha kararlı biçimde temsil edilebilir.
+∂L∂t=divcx,y,t∇L)
+(5.1)
+Lx,y,0=Ix,y
+(5.2)
+Doğrusal olmayan ölçek uzayı genel olarak Denklem 5.1 ve Denklem 5.2 difüzyon denklemi ile ifade edilmektedir. Burada Ix,ygiriş görüntüsünü, Lx,y,t ölçek uzayındaki görüntüyü, t ölçek parametresini, ∇ gradyanı ve cx,y,t ise iletkenlik fonksiyonunu ifade etmektedir. İletkenlik fonksiyonu, güçlü kenar bölgelerinde difüzyonu azaltarak ayırt edici yapıların korunmasına katkı sağlamaktadır.
+Kenar koruyucu difüzyon için kullanılan iletkenlik fonksiyonu için Denklem 5.3 ve 5.4 kullanılmaktadır. Bu ifadede κ kontrast duyarlılığını belirleyen parametredir. Gradyan büyüklüğü yüksek olan bölgelerde gs değeri küçülmekte ve ilgili bölgelerde yumuşatma sınırlanmaktadır. Böylece çatlak, leke ve kenar geçişleri gibi ayırt edici yapılar korunmaktadır.
+cx,y,t=g∇Lσx,y,t
+(5.3)
+gs=11+s/κ2
+(5.4)
+KAZE ölçek uzayında her aday nokta için yerel tepki değerleri hesaplanır. Görüntüdeki güçlü yerel değişimlere karşılık gelen noktalar anahtar nokta olarak seçilir. Bu noktalar etrafındaki komşuluklardan tanımlayıcı vektörler üretilir. Bu çalışmada her anahtar nokta için elde edilen yerel tanımlayıcı Denklem 5.5 ve 5.6 ile hesaplanmaktadır.
+K=kii=1Nk
+(5.5)
+D=dii=1Nk, di∈Rd
+(5.6)
+Burada K anahtar nokta kümesini, Nk bir görüntüde tespit edilen anahtar nokta sayısını, di ise i. anahtar noktaya ait yerel tanımlayıcı vektörü göstermektedir. Deneysel akışta örnek bir kusurlu görüntü için KAZE ile 342 yerel tanımlayıcı üretilmiştir.
+KAZE çıktısı doğrudan SVM sınıflandırıcısına verilmez. Çünkü her görüntüde tespit edilen anahtar nokta sayısı farklıdır. SVM ise sabit uzunluklu bir özellik vektörüne ihtiyaç duyar. Bu nedenle KAZE/VGG tanımlayıcıları önce codebook kümelerine atanır, ardından VLAD kodlama ile sabit uzunluklu bir vektöre dönüştürülür. Son olarak PCA whitening ile boyut indirgeme yapılır ve elde edilen temsil Weighted LinearSVC sınıflandırıcısına verilir.
+SVM ve Kaze kullanarak sınıflandırma
+Deneylerde ELPV veri setinden elde edilen toplam 2624 hücre görüntüsü kullanılmıştır. Veri seti stratified train-test ayrımı ile eğitim ve test alt kümelerine bölünmüştür. Final SVM koşusunda 2099 örnek eğitim, 525 örnek test aşamasında kullanılmıştır. Eğitim bölümünde sağlam sınıf için 1442, kusurlu sınıf için 657 örnek yer almıştır. SVM tabanlı deney veri seti kullanım detayları Tablo 5.5’de sunulmuştur.
+Tablo 5.5: SVM tabanlı deney veri seti kullanım detayları
+Özellik
+Değer
+Veri seti
+ELPV hücre görüntüleri
+Toplam görüntü sayısı
+2624
+Eğitim örneği
+2099
+Test örneği
+525
+Eğitim sağlam/kusurlu dağılımı
+1442 / 657
+Test oranı
+0.20
+Rastgelelik tohumu
+42
+Şekil 5.3 ile sunulan modelleme süreci klasik görüntü işleme ve makine öğrenmesi adımlarından oluşmaktadır. İlk olarak görüntüler gri seviye olarak okunmuş, arka plan ve hücre dışı bölgelerin etkisini azaltmak için maskeleme ve ön işleme uygulanmıştır. Ardından KAZE anahtar noktalarından yerel tanımlayıcılar çıkarılmış ve VGG tabanlı ek tanımlayıcı kullanımı aktif hale getirilmiştir.
+Elde edilen yerel özellikler MiniBatchKMeans ile oluşturulan codebook üzerinden VLAD temsil vektörüne dönüştürülmüştür. VLAD temsili üzerinde power normalization uygulanmış; boyut indirgeme ve ölçek düzenleme amacıyla PCA whitening kullanılmıştır.
+Tablo 5.6: SVM deney parametreleri
+Bileşen
+Kullanılan ayar
+Özellik çıkarımı
+KAZE + VGG
+Codebook yöntemi
+MiniBatchKMeans
+Codebook boyutu
+64
+VLAD power normalization
+0.5
+PCA whitening
+128 bileşen
+Sınıflandırıcı
+LinearSVC
+Kernel
+Lineer karar düzlemi
+SVM C aralığı
+1e-2, 1, 1e2, 1e4, 1e6
+Seçilen C
+1.0
+Class weight
+0: 0.7278, 1: 1.5974
+Maksimum iterasyon
+10000
+Sınıf dengesizliğini azaltmak için sınıf ağırlığı (class_weight) ve örnek ağırlığı (sample_weight) destekli LinearSVC modeli eğitilmiştir. Model eğitiminde kullanılan detaylı parametreler Tablo 5.6 ve Tablo 5.7’de listelenmiştir
+Şekil 5.3: SVM deney hattının genel iş akış şeması
+SVM modelinin başarımı, ham piksel değerlerinden çok kusur ipuçlarını temsil eden yerel özelliklerin kalitesine bağlıdır. Dolasıyla ön işleme ve KAZE tabanlı özellik çıkarımı ayrıca görselleştirilmiştir.
+Tablo 5.7: CNN deney hattında kullanılan işlem aşamaları ve matematiksel gösterimleri.
+İşlem
+Matematiksel Gösterim
+Çıktı
+Ham EL görüntüsü
+I∈RH×W
+Gri seviye EL görüntüsü
+Yeniden boyutlandırma
+Ir=ResizeI,300,300
+Ir∈R300×300
+Normalizasyon
+In=Ir255
+In∈0,1300×300
+Hücre maskeleme
+M=MaskIn
+M∈0,1300×300
+Maskelenmiş görüntü
+Im=In⊙M
+Ön işlenmiş hücre görüntüsü
+KAZE anahtar nokta çıkarımı
+K=KAZEIm
+Anahtar nokta kümesi
+Yerel tanımlayıcı çıkarımı
+D=dii=1Nk
+di∈Rd
+Codebook öğrenimi
+C=cjj=1K
+K=64 küme merkezi
+En yakın kümeye atama
+ai=arg minjdi-cj22
+Her tanımlayıcı için küme indeksi
+VLAD artık vektörü
+vj=i:ai=jdi-cj
+v=v1,v2,…,vK
+Power normalization
+v'=signv⋅vρ
+v
+L2 normalizasyon
+z=Λ-1/2UTv-μ
+Normalize VLAD temsili
+PCA whitening
+qp=arg mins∈Sp-s
+z∈Rd128
+LinearSVC karar fonksiyonu
+s=wTz+b
+Karar skoru
+İkili sınıf kararı
+y=1 için s≥0, y=0 için s<0
+Sağlam/kusurlu kararı
+Şekil 5.4 ile verilen ön işleme görselleri hücre bölgesinin belirginleştirilmesini; Şekil 5.5 ile verilen özellik çıkarımı görselleri ise modelin kullandığı anahtar nokta yoğunluğunu göstermektedir. SVM modeli epoch tabanlı bir sinir ağı olarak eğitilmediği için eğitim boyunca klasik anlamda train/validation loss eğrisi üretilmemiştir. Buna karşılık modelin optimizasyonu, LinearSVC içindeki L2 düzenleştirmeli squared-hinge kaybı üzerinden yapılmıştır. Genel amaç fonksiyonu, karar düzleminin marjinini büyütürken yanlış veya marj içinde kalan örnekleri cezalandırmaya dayanmaktadır.
+Optimizasyon iki düzeyde ele alınmıştır. Birinci düzeyde LinearSVC kendi iç optimizasyon algoritması ile ağırlık vektörünü öğrenmiştir. İkinci düzeyde ise C hiperparametresi 5-fold stratified cross-validation ile seçilmiştir. Çalışmada loss eğrisi yerine C parametresine bağlı çapraz doğrulama başarımı ve fold dağılımları Tablo 5.8’de verilmiştir ve Şekil 5.6 ile görselleştirilmiştir. Şekil 5.7’de ise fold bazında doğruluk dağılımı ile C parametresinin 1 olarak alınmasının yeterli olduğu gözlenmiştir.
+Şekil 5.4: SVM hattında ön işleme ve maskeleme örneği.
+Şekil 5.5: KAZE/VGG özellik çıkarımı için anahtar nokta görselleştirmesi.
+Tablo 5.8: C hiperparametresine bağlı çapraz doğrulama başarımı
+C
+5-fold ortalama doğruluk
+0.01
+0.6846
+1
+0.7165
+100
+0.7165
+10000
+0.7165
+1000000
+0.7165
+Şekil 5.6: C parametresi için 5-fold ortalama doğruluk değerleri.
+Şekil 5.7: Her C değeri için fold bazında doğruluk dağılımı.
+Son model, C=1.0 seçimi ile tüm eğitim verisi üzerinde yeniden eğitilmiş ve ayrılmış test seti üzerinde değerlendirilmiştir. Değerlendirme metrikleri olarak doğruluk, F1 skoru ve ROC-AUC kullanılmıştır. Tablo 5.9’de sunulan doğruluk, genel doğru tahmin oranını, F1 skoru, kusurlu sınıf için precision-recall dengesini, ROC-AUC ise karar skorlarının sınıfları ayırma kapasitesini yansıtmaktadır. Şekil 5.8’de metriklerin bar grafiği sunulmuş ve Şekil 5.9’da karmaşıklık matrisi ile hatalı karar verilme oranları görselleştirilmiştir.
+Tablo 5.9: Final SVM başarım değerleri
+Metrik
+Değer
+Doğruluk
+0.7714
+F1
+0.6875
+ROC-AUC
+0.8312
+Şekil 5.8: Final SVM modelinin test setindeki başarım metrikleri.
+Şekil 5.9: Test seti için SVM karmaşıklık matrisi.
+Şekil 5.10: Test seti için ROC eğrisi ve ayırt edicilik performansı.
+SVM modeli test setinde 0.7714 doğruluk, 0.6875 F1 skoru ve 0.8312 ROC-AUC değerine ulaşmıştır. Şekil 5.10’da test seti için verilen ROC eğrisinden de görüleceği üzere ROC-AUC değerinin 0.83 seviyesinde olması, modelin karar skorlarının kusurlu ve sağlam hücreleri ayırmada anlamlı bir bilgi taşıdığını göstermektedir. Buna karşılık F1 skorunun doğruluğa göre daha düşük kalması, kusurlu sınıfta yanlış negatif veya yanlış pozitiflerin performansı sınırladığını düşündürmektedir.
+Çapraz doğrulama sonuçları incelendiğinde C=1.0 değerinden sonra ortalama doğrulukta belirgin bir artış görülmemiştir. Daha büyük C değerleri modelin marj cezalarını artırsa da final koşuda genelleme açısından ek kazanç sağlamamıştır. Modelin en güçlü yanı, derin öğrenme gerektirmeden yorumlanabilir bir özellik hattıyla makul ayırt edicilik sağlamasıdır; sınırlayıcı yanı ise özellik çıkarımının el yapımı adımlara bağımlı olması ve ince kusurlarda derin CNN tabanlı yaklaşımlara göre daha sınırlı temsil kapasitesine sahip olmasıdır.
+CNN Tabanlı Kusur Tespiti Deneysel Sonuçları
+ELPV veri seti üzerinde geliştirilen CNN tabanlı kusur tespit modelinin deneysel sonuçları sunulmaktadır. Kullanılan model VGG19 omurgasına dayanan transfer öğrenme yaklaşımıdır. Model doğrudan ikili sınıf etiketi üretmek yerine hücreye ait kusur olasılığını regresyon hedefi olarak öğrenmiş; daha sonra tahminler kuantize edilerek hem dört seviyeli hem de ikili kusur değerlendirmesi yapılmıştır.
+CNN tabanlı deneylerde Tablo 5.10 ile kullanım detayı verilen ELPV veri setinden 2624 elektroluminesans hücre görüntüsü ele alınmıştır. Veri seti kusur olasılığı değerlerine göre kuantize edilmiş ve stratified train-test ayrımı uygulanmıştır. Test oranı 0.25 olarak belirlenmiş, bu nedenle yaklaşık 1968 görüntü eğitim ve 656 görüntü test/değerlendirme için kullanılmıştır.
+Tablo 5.10: CNN tabanlı deney veri seti kullanım detayları
+Özellik
+Değer
+Veri seti
+ELPV
+Toplam görüntü
+2624
+Eğitim/test ayrımı
+0.75 / 0.25
+Stratification
+Kuantize kusur olasılığı
+Girdi boyutu
+300 x 300
+Kanal yapısı
+Gri görüntünün 3 kanala kopyalanması
+Batch size
+16
+Seed
+42
+Modelin omurgası ImageNet ağırlıkları ile ön eğitilmiş VGG19 ağıdır. VGG19 feature extractor olarak kullanılmış, sonuna global average pooling ve tam bağlantılı regresyon başlığı eklenmiştir. Regresyon başlığı 512 -> 4096 -> 2048 -> 1 yapısındadır ve ara katmanlarda ReLU aktivasyonu ile dropout kullanılmıştır.
+Modelin tek çıktısı 0 ile 1 arasında kusur olasılığıdır. Bu çıktı, deney sonunda 0.0, 0.33, 0.67 ve 1.0 seviyelerine kuantize edilmiş; ikili değerlendirme için 0.0 sağlam, diğer seviyeler kusurlu olarak kabul edilmiştir. CNN deneylerinin genel işleyiş diyagramı Şekil 5.11’de verilmiştir.
+Eğitim iki aşamada yapılmıştır. Birinci aşamada VGG19 feature katmanları dondurulmuş, yalnızca regresyon başlığı Adam optimizer ile eğitilmiştir. Bu aşama modelin yeni probleme uyum sağlayan son katmanlarını kararlı bir başlangıç noktasına getirmeyi amaçlamaktadır. İkinci aşamada tüm VGG19 katmanları açılmış ve model SGD + momentum ile daha düşük öğrenme oranında fine-tune edilmiştir. Deney parametreleri Tablo 5.12’da listelenmiştir.
+Şekil 5.11: CNN deney hattının genel akışı.
+Şekil 5.11’de VGG19 tabanlı CNN modelinde tek bir EL görüntüsünün ardışık işlem aşamalarındaki karşılıklarını göstermektedir. Ham görüntü 300x300 boyutuna getirilmiş ve gri görüntü üç kanallı giriş yapısına dönüştürülmüştür. Eğitim hattında kullanılan veri artırma işlemleri örneklendirilmiş, ardından VGG19 backbone tarafından üretilen özellik haritası görselleştirilmiştir. GAP katmanı ile 512 boyutlu kanal özeti elde edilmiş, regresyon başlığındaki tam bağlantılı katman aktivasyonları üzerinden kusur olasılığı hesaplanmıştır. Son aşamada model çıktısı kuantize edilerek ikili kusur kararı üretilmiştir. Tablo 5.11’de CNN modeline ait ara girdiler ve çıktıların matematiksel ifadeleri verilmiştir.
+Tablo 5.11: CNN deney hattında kullanılan işlem aşamaları ve matematiksel gösterimleri.
+İşlem
+Matematiksel Gösterim
+Çıktı
+Ham EL görüntüsü
+I∈RH×W
+Gri seviye EL görüntüsü
+Yeniden boyutlandırma
+Ir=ResizeI,300,300
+Ir∈R300×300
+Üç kanallı giriş oluşturma
+X0=Repeat3Ir
+X0∈R3×300×300
+Normalizasyon
+Xc=X0,c-μcσc, c∈R,G,B
+Normalize edilmiş CNN girdisi
+Veri artırma
+X=TX ve T=Taffine∘Trot∘Tflip
+Artırılmış eğitim görüntüsü
+VGG19 özellik çıkarımı
+F=fVGG19X;θf
+F∈R512×9×9
+Global Average Pooling
+zk=1HfWfi=1Hfj=1WfFk,i,j
+k=1,2,…,512
+z∈R512
+Birinci tam bağlantılı katman
+h1=ReLUW1z+b1
+h1∈R4096
+İkinci tam bağlantılı katman
+h2=ReLUW2h1+b2
+h2∈R2048
+Olasılık regresyonu
+p=σW3h2+b3
+p∈0,1
+Sigmoid fonksiyonu
+σa=11+e-a
+Sürekli kusur olasılığı
+Kayıp fonksiyonu
+LMSE=1Nn=1Npn-pn2
+Eğitim hatası
+Kuantizasyon
+qp=arg mins∈Sp-s
+İkili karar
+y=0 için qp=0,
+y=1 için qp>0
+Sağlam/kusurlu kararı
+Loss fonksiyonu olarak MSE kullanılmıştır. Modelin hedefi, doğrudan kusurlu/sağlam sınıfı değil, sürekli kusur olasılığı değeri olacaktır. Böylece modelin yalnızca son kararı değil, kusurun şiddetine karşılık gelen ara olasılık seviyelerini de öğrenmesini sağlanmaktadır. Eğitim süreci başarım değerleri Tablo 5.13 de verilmiştir.
+Tablo 5.12: CNN deney parametreleri
+Bileşen
+Kullanılan ayar
+Omurga model
+VGG19
+Ön eğitim
+ImageNet
+Girdi
+300x300 RGB formatına dönüştürülmüş gri EL görüntüsü
+Pooling
+AdaptiveAvgPool2d(1,1)
+Tablo 5.12 (devam): CNN deney parametreleri
+Bileşen
+Kullanılan ayar
+Regresyon başlığı
+Linear(512,4096) -> ReLU -> Dropout(0.5) -> Linear(4096,2048) -> ReLU -> Dropout(0.5) -> Linear(2048,1)
+Loss
+MSELoss
+Stage-1 optimizer
+Adam, lr=1e-3
+Stage-2 optimizer
+SGD, lr=5e-4, momentum=0.9
+Stage-1 epoch
+20
+Stage-2 epoch
+80
+Tablo 5.13: CNN başarım değerleri
+Eğitim kaydı
+Değer
+Toplam epoch
+100
+Stage-1 epoch
+20
+Stage-2 epoch
+80
+En iyi validation binary accuracy epoch
+69 (0.8216)
+En iyi validation F1 epoch
+69 (0.7829)
+En düşük validation MSE epoch
+68 (0.0681)
+Son epoch validation MSE
+0.0779
+Son epoch validation binary accuracy
+0.7866
+Son epoch validation F1
+0.7552
+Şekil 5.12: CNN eğitim ve doğrulama MSE loss eğrileri.
+Şekil 5.13: CNN doğrulama metriklerinin epoch bazında değişimi.
+Şekil 5.14: CNN modelinin test setindeki başarım metrikleri
+Şekil 5.15: CNN modeli için ikili karmaşıklık matrisi.
+Şekil 5.16: CNN modeli için ROC eğrisi.
+Final değerlendirmede kaydedilen en iyi model test kümesi üzerinde yeniden çalıştırılmış ve ikili sınıflandırma metrikleri hesaplanmıştır. Test değerlendirmesinde doğruluk, F1 skoru ve ROC-AUC kullanılmıştır.
+CNN modeli test setinde 0.8308 doğruluk, 0.7971 F1 skoru ve 0.8735 ROC-AUC değerine ulaşmıştır. Bu sonuçlar, VGG19 tabanlı transfer öğrenme yaklaşımının EL görüntülerinde kusurlu ve sağlam hücreleri ayırmada güçlü bir temsil öğrendiğini göstermektedir. ROC-AUC değerinin 0.87 seviyesinde olması, modelin karar skorlarının sınıfları ayırma kapasitesinin yüksek olduğunu desteklemektedir.
+Şekil 5.12 ile verilen Loss eğrileri incelendiğinde Stage-1 sonunda modelin hızlı bir uyum kazandığı, Stage-2 fine-tune aşamasında ise validation MSE değerinin daha kararlı hale geldiği görülmektedir. Buna karşılık Şekil 5.13’de verilen grafikte son epochlarda train MSE düşmeye devam ederken validation metriklerinde dalgalanma olması, modelin belirli ölçüde aşırı öğrenmeye yatkın olduğunu düşündürmektedir. Bu nedenle model seçiminde son epoch yerine validation başarımına göre kaydedilen en iyi checkpoint kullanılmıştır.
+SVM tabanlı yaklaşımla karşılaştırıldığında Şekil 5.14’te bar grafiği verilen sonuçlara göre CNN modeli daha yüksek accuracy, F1 ve ROC-AUC değerleri vermiştir. Şekil 5.15’te karmaşıklık matrisi Şekil 5.16’da ROC eğrisi sunularak bu durum desteklenmiştir. Fark, derin modelin kusur morfolojisini ve hücre dokusundaki ince desenleri el yapımı özelliklere göre daha zengin şekilde temsil edebilmesiyle açıklanabilir. Bununla birlikte modelin VGG19 gibi parametre sayısı yüksek bir omurgaya dayanması, eğitim maliyetini ve aşırı öğrenme riskini artıran bir sınırlılık olarak değerlendirilmelidir.
+Derin Öğrenme ile Çok Sınıflı Kusur Segmentasyonu
+BenchmarkEL tabanlı çok sınıflı kusur segmentasyonu çalışmaları sunulmaktadır. Bu deney setinde temel amaç, elektroluminesans güneş hücre görüntülerinde kusurları yalnızca görüntü düzeyinde saptamak değil, piksel düzeyinde yerelleştirmek ve kusur tiplerine ayırmaktır.
+Tablo 5.14: Derin öğrenme tabanlı deney veri seti kullanım detayları
+Klasör
+Görüntü sayısı
+Maske sayısı
+Kullanım
+el_images_train / el_masks_train
+2212
+2212
+Ana eğitim kümesi; deneyde tekrar %80/%20 ayrıldı
+el_images_val / el_masks_val
+70
+70
+Harici doğrulama klasörü; mevcut veri yapısı
+el_images_test / el_masks_test
+72
+72
+Harici test klasörü; mevcut veri yapısı
+Deney içi yaklaşık train/val
+1770 / 442
+1770 / 442
+train_test_split, seed=42
+Deneylerde BenchmarkEL veri seti kullanılmıştır. Tablo 5.14 ile kullanım detayları verilen veri seti EL görüntüleri ve bunlara karşılık gelen piksel bazlı maske dosyalarından oluşmaktadır. Kod tarafında ana eğitim, el_images_train ve el_masks_train klasörlerindeki eşleşen dosyalar üzerinden yapılmış; bu küme tekrar train/validation olarak ayrılmıştır.
+Şekil 5.17: BenchmarkEL veri setinden EL görüntüsü ve çok sınıflı maske örnekleri.
+BenchmarkEL veri setinden alınan EL görüntü ve çok sınıflı maske örnekleri Şekil 5.17’den görülmektedir. Derin öğrenme tabanlı deney veri seti için kusur sınıfları ve sınıf grupları detaylıca Tablo 5.15’te listelenmiştir.
+Tablo 5.15: Derin öğrenme tabanlı deney veri seti kusur sınıfları
+Sınıf grubu
+Sınıflar
+Yapısal/yardımcı sınıflar
+0: bckgnd, 1: sp multi, 2: sp mono, 3: sp dogbone, 4: ribbons, 5: border, 6: text, 7: padding, 8: clamp, 9: busbars, 21: frame edge, 22: jbox, 24: sp mono halfcut
+Kusur sınıfları
+10: crack rbn edge, 11: inactive, 12: rings, 13: material, 14: crack, 15: gridline, 16: splice, 17: dead cell, 18: corrosion rbn, 19: belt mark, 20: edge dark, 23: meas artifact, 25: scuff, 26: corrosion cell, 27: brightening, 28: star
+Kritik kusurlar
+crack, dead cell, inactive
+Segmentasyon deneyleri Şekil 5.18 ile verilen deney hattı akış diyagramına uygun olarak “Segmentation Models Pytorch” (themozel, 2021/2024) kütüphanesi üzerinden kurulmuştur. Tüm modellerde ortak encoder olarak ImageNet ağırlıklarıyla ön eğitilmiş ResNet-34 kullanılmıştır. Karşılaştırılan mimariler UNet, UNet++, FPN, PSPNet, DeepLabV3, DeepLabV3+, LinkNet, MAnet ve PAN (Khosravan vd., 2019; Li vd., 2018) modelleridir.
+Girdi görüntüleri tek kanallı EL görüntüsü olarak ele alınmış, 512x512 boyutuna getirilmiş ve maske hedefleri 29 sınıflı piksel etiketi olarak kullanılmıştır. Model çıktısı, her piksel için 29 sınıfa ait logits tensörüdür. Derin öğrenme tabanlı deney parametreleri ayrıntılı olarak Tablo 5.16’da listelenmiştir.
+Şekil 5.18: Segmentasyon deney hattının genel akış diyagramı.
+Eğitimde temel kayıp fonksiyonu sınıf ağırlıklarıyla desteklenebilen Cross Entropy Loss olarak tanımlanmıştır. Kod yapısı opsiyonel DiceLoss eklenmesine de izin vermektedir. Bu tercih, piksel sınıfları arasındaki dengesizliği azaltmak ve özellikle küçük kusur bölgelerinin tamamen arka plan tarafından bastırılmasını önlemek için kullanılmıştır.
+Tablo 5.16: Derin öğrenme tabanlı deney parametreleri
+Parametre
+Değer
+Girdi boyutu
+512 x 512
+Sınıf sayısı
+29
+Input channel
+1
+Encoder
+resnet34
+Encoder weights
+imagenet
+Batch size
+8
+Öğrenme oranı
+1e-4
+Optimizer
+AdamW
+Loss
+CrossEntropyLoss + opsiyonel DiceLoss
+Dice weight
+0.2
+Classification auxiliary head
+Aktif / script tarafında destekleniyor
+Ana seçim metriği
+val_defect_mIoU
+Optimizasyon AdamW ile yapılmış ve model seçiminde validation kümesindeki defect_mIoU değeri esas alınmıştır. Yalnızca tüm sınıfların ortalamasına bakmak yerine kusur sınıflarındaki piksel bazlı kesişim/birleşim başarısını öne çıkarır. Şekil 5.19 ile verilen tüm segmentasyon modelleri için loss eğrileri, Şekil 5.20 ile verilen doğrulama değişimleri, Şekil 5.21 ile verilen doğrulama eğrileri aşağıda verilmiştir.
+Dokuz farklı segmentasyon mimarisi aynı encoder ailesi ve benzer eğitim ayarlarıyla karşılaştırılmıştır. Tablo 5.17, her modelin validation kümesinde ulaştığı en iyi defect_mIoU değerine göre sıralanmıştır. Başarım sıralaması Şekil 5.22 ile bar grafiği ile desteklenmiştir ve en iyi modelin farklı metriklere göre özeti Şekil 5.23 de verilmiştir.
+Şekil 5.19: Tüm segmentasyon modelleri için eğitim loss eğrileri.
+Şekil 5.20: Tüm modellerde doğrulama defect_mIoU değişimi.
+Şekil 5.21: Tüm segmentasyon modelleri için doğrulama loss eğrileri.
+Tablo 5.17: Segmentasyon en iyi defect_mIoU sıralaması
+Sıra
+Model
+Epoch
+Best defect_mIoU
+Val mIoU
+Val mean Recall
+Defect Recall
+Val loss
+1
+Fpn
+79
+0.4490
+0.5860
+0.6815
+0.5163
+0.1039
+2
+deeplabv3plus
+78
+0.4412
+0.5637
+0.6778
+0.5430
+0.0944
+3
+deeplabv3
+76
+0.4311
+0.5428
+0.6826
+0.5708
+0.1109
+4
+Pan
+74
+0.4302
+0.5679
+0.7069
+0.5908
+0.1100
+5
+unetplusplus
+79
+0.3858
+0.5336
+0.6204
+0.4597
+0.1266
+6
+Unet
+77
+0.3673
+0.5051
+0.6130
+0.4849
+0.1303
+7
+Pspnet
+78
+0.3611
+0.5003
+0.6244
+0.4726
+0.1558
+8
+Manet
+77
+0.3211
+0.4323
+0.5168
+0.4182
+0.1426
+9
+Linknet
+79
+0.3124
+0.4281
+0.4890
+0.3817
+0.1558
+Şekil 5.22: Segmentasyon modellerinin en iyi validation defect_mIoU değerleri.
+Şekil 5.23: En iyi modelin seçili metrik özeti.
+Karşılaştırma sonuçlarına göre en yüksek validation defect_mIoU değeri 0.4490 ile FPN modelinde elde edilmiştir. Bu sonucu DEEPLABV3PLUS ve DEEPLABV3 modelleri izlemiştir. FPN mimarisinin öne çıkması, farklı ölçeklerdeki özellik haritalarını birleştirme kapasitesinin EL görüntülerindeki ince ve yerel kusurlar için avantaj sağladığını göstermektedir.
+DeepLabV3+ ve DeepLabV3 modellerinin FPN modeline yakın sonuçlar vermesi, atrous convolution ve bağlam bilgisinin kusur segmentasyonunda etkili olduğunu desteklemektedir. Aksine LinkNet, MAnet ve bazı UNet tabanlı varyantlar daha düşük defect_mIoU değerlerinde kalmıştır. Farklar küçük kusur sınıflarında yetersiz temsil, sınıf dengesizliği ve piksel bazlı etiketlerin zorlayıcılığı ile ilişkilendirilebilir.
+Genel olarak deneyler, sınıflandırma modellerinden farklı olarak kusurun konumunu ve tipini açıklayabilen daha ayrıntılı bir yaklaşım sunmaktadır. Bununla birlikte en iyi defect_mIoU değerinin 0.45 seviyesinde kalması, problemdeki küçük kusur alanları, sınıf dengesizliği ve maske hassasiyetinin hala zorlayıcı olduğunu göstermektedir. Bu bulgu, sonraki aşamada ConvNeXt encoder, patch tabanlı eğitim ve kusur odaklı örnekleme gibi iyileştirmelerin neden gerekli olduğunu da temellendirmektedir.
+Wavelet Tabanlı Derin Öğrenme Çalışması
+Bu bölümde ELPV veri seti üzerinde geliştirilen Wavelet + ResNet50 tabanlı kusur tespit modeli sunulmaktadır. Modelin temel fikri, ham elektroluminesans görüntüsünü yalnızca piksel uzayında kullanmak yerine wavelet alt bantlarıyla zenginleştirerek ince çatlak, kenar ve yüksek frekanslı kusur desenlerini daha görünür hale getirmektir. Bu nedenle yöntem, klasik CNN yaklaşımı ile frekans tabanlı temsil bilgisini birleştiren hibrit bir model olarak değerlendirilebilir.
+Deneylerde ELPV veri setindeki toplam 2624 hücre görüntüsü kullanılmıştır. CNN ile daha adil bir karşılaştırma yapabilmek için bu koşuda cnn-compatible ayarı kullanılmış; veri yükleme ELPV paketi üzerinden yapılmış, validation oranı 0.25 olarak ayarlanmış ve ikili etiketleme kuantize kusur olasılığı mantığına göre kurulmuştur. Tablo 5.18 ile bu veri seti kullanım detayları sunulmuştur.
+Tablo 5.18: Wavelet tabanlı deney veri seti kullanım detayları
+Özellik
+Değer
+Veri seti
+ELPV
+Toplam görüntü
+2624
+Mono / Poly sayısı
+1074 / 1550
+Validation oranı
+0.25
+Dataset source
+elpv_package
+Split mode
+cnn_compatible
+Binary label mode
+cnn_quantized
+Image size
+300 x 300
+Wavelet ailesi
+db2
+Model ResNet50 omurgasına dayanmaktadır ve ImageNet üzerinde ön eğitilmiş ağırlıklar kullanılmıştır. Standart ResNet50 3 kanallı RGB girdi beklediği için ilk konvolüsyon katmanı 7 kanal alacak şekilde uyarlanmıştır. İlk 3 kanal gri EL görüntüsünün tekrar edilmiş ve ImageNet istatistikleriyle normalize edilmiş halidir. Son 4 kanal ise birinci seviye ayrık wavelet dönüşümünden elde edilen LL, LH, HL ve HH alt bantlarıdır. Şekil 5.24’de bu alt bantlar ayrıntılı olarak gözlenmektedir.
+Şekil 5.24: Gri EL görüntüsü ve db2 wavelet alt bantları.
+Genel akış diyagramı Şekil 5.25 ile verilen modelin iki çıktı başlığı vardır. Birinci başlık ikili kusur sınıflandırması için logit üretir. İkinci başlık ise kusur olasılığını yardımcı regresyon hedefi olarak tahmin eder. Bu tasarım, modelin yalnızca kusur var/yok kararını değil, kusur şiddetine karşılık gelen ara olasılık bilgisini de öğrenmesini amaçlamaktadır.
+Eğitim iki aşamalı transfer öğrenme mantığıyla yapılmıştır. İlk aşamada ResNet50 omurgası dondurularak yalnızca son başlıklar eğitilir. İkinci aşamada tüm model açılır ve daha düşük öğrenme oranıyla fine-tune uygulanır. Optimizasyon AdamW ile yapılmış, fine-tune aşamasında CosineAnnealingLR zamanlayıcısı desteklenmiştir. Wavelet tabanlı deney genel ayarları Tablo 5.19 ile verilmiştir.
+Tablo 5.19: Wavelet tabanlı deney genel ayarları
+Bileşen
+Kullanılan ayar
+Backbone
+ResNet50
+Ön eğitim
+ImageNet
+Girdi kanal sayısı
+7
+Kanallar 1-3
+Gri görüntü tekrarı
+Kanallar 4-7
+LL, LH, HL, HH wavelet alt bantları
+Binary head
+Kusurlu / sağlam sınıflandırma
+Auxiliary head
+Kusur olasılığı regresyonu
+Dropout
+0.30
+Pretrained loaded
+True
+Toplam loss, ikili sınıflandırma kaybı ile yardımcı regresyon kaybının ağırlıklı toplamı olarak hesaplanmıştır. İkili kayıp için focal loss kullanılmıştır. Yardımcı regresyon kaybı SmoothL1 loss ile hesaplanmış ve toplam loss içinde 0.30 katsayısıyla kullanılmıştır. Detaylı deney parametre listesi Tablo 5.20’de listelenmiştir.
+Tablo 5.20: Wavelet tabanlı deney parametreleri
+Parametre
+Değer
+Toplam epoch
+40
+Binary loss
+focal
+Focal alpha / gamma
+0.25 / 2.0
+Regression loss
+SmoothL1
+Regression loss weight
+0.30
+Optimizer
+AdamW
+Scheduler
+CosineAnnealingLR
+Device
+cuda
+Seçim metriği
+Validation AUC; F1 takip metriği
+Bu deneyin değerlendirilmesi amacıyla Şekil 5.26 ile verilen eğitim ve doğrulama loss eğrileri, Şekil 5.27 ile verilen validation accuracy, F1 ve ROC-AUC eğrileri, Şekil 5.28 ile verilen karar eşiği optimizasyonu ve sabit 0.5 eşiğiyle F1 karşılaştırması eğrileri incelenmiştir.
+Şekil 5.25: Wavelet + ResNet50 deney hattının genel akışı.
+Şekil 5.26: Wavelet + ResNet50 için eğitim ve doğrulama loss eğrileri.
+Şekil 5.27: Validation accuracy, F1 ve ROC-AUC eğrileri.
+Şekil 5.28: Karar eşiği optimizasyonu ve sabit 0.5 eşiğiyle F1 karşılaştırması.
+Model değerlendirmesinde iki farklı en iyi nokta Tablo 5.21 ile raporlanmıştır. En iyi AUC checkpointi epoch 34 sonunda elde edilmiş; en iyi F1 değeri ise epoch 40 sonunda görülmüştür. Tezde nihai karşılaştırma için F1 odaklı nokta öne çıkarılmıştır; çünkü kusurlu hücre tespitinde precision-recall dengesi pratik açıdan kritik kabul edilmektedir. En iyi model için karmaşıklık matrisi de Şekil 5.29 ile sunularak başarımı görüntülenmiştir.
+Tablo 5.21: Wavelet tabanlı deney en iyi değer tespitleri
+Checkpoint
+Epoch
+Accuracy
+F1
+Precision
+Recall
+ROC-AUC
+Threshold
+Best AUC
+34
+0.8537
+0.8202
+0.8588
+0.7849
+0.9142
+0.35
+Best F1
+40
+0.8613
+0.8305
+0.8643
+0.7993
+0.9115
+0.34
+Last epoch
+40
+0.8613
+0.8305
+0.8643
+0.7993
+0.9115
+0.34
+Şekil 5.29: Best F1 checkpointi için karmaşıklık matrisi
+SONUÇ VE ÖNERİLER
+Tez kapsamında geliştirilen ve karşılaştırılan tüm modellerin deneysel sonuçları birlikte değerlendirilmektedir. Çalışmada iki ana problem ele alınmıştır: birincisi elektroluminesans (EL) hücre görüntülerinde görüntü düzeyi kusur tespiti, ikincisi ise piksel düzeyi çok sınıflı kusur segmentasyonudur. Görüntü düzeyi deneylerde SVM, VGG19 tabanlı CNN ve Wavelet + ResNet50 modelleri; segmentasyon deneylerinde ise ResNet34 encoder kullanan dokuz farklı segmentasyon mimarisi karşılaştırılmış ve Tablo 6.1’de verilmiştir.
+Tablo 6.1: Genel sonuç değerlendirmesi
+Deney grubu
+Model / yöntem
+Ana metrik
+En iyi sonuç
+Görüntü düzeyi kusur tespiti
+SVM (KAZE + VGG + VLAD)
+ROC-AUC
+0.8312
+Görüntü düzeyi kusur tespiti
+VGG19-CNN
+ROC-AUC
+0.8735
+Görüntü düzeyi kusur tespiti
+Wavelet + ResNet50
+ROC-AUC / F1
+0.9115 AUC, 0.8305 F1
+Piksel düzeyi segmentasyon
+FPN + ResNet34
+defect_mIoU
+0.4490
+Görüntü Düzeyi Kusur Tespiti Sonuçları
+Görüntü düzeyi kusur tespitinde ilk referans model klasik bilgisayarlı görü yaklaşımına dayanan SVM hattıdır. Bu hatta KAZE ve VGG tabanlı yerel özellikler VLAD ile sabit boyutlu temsile dönüştürülmüş, PCA whitening sonrasında LinearSVC modeli eğitilmiştir. Tablo 6.2 ile bu açıdan sonuçlar sunulmuştur. SVM modeli 0.7714 accuracy, 0.6875 F1 ve 0.8312 ROC-AUC değerlerine ulaşmıştır. Sonuçlar, el yapımı özelliklerin kusurlu ve sağlam hücreleri ayırmada anlamlı bilgi taşıdığını, ancak F1 skorunun sınırlı kaldığını göstermektedir.
+VGG19 tabanlı CNN modeli, SVM'e göre belirgin bir başarım artışı sağlamıştır. Model kusur olasılığını regresyon hedefi olarak öğrenmiş, daha sonra tahminler kuantize edilerek ikili sınıflandırma metrikleri hesaplanmıştır. CNN modeli 0.8308 accuracy, 0.7971 F1 ve 0.8735 ROC-AUC değerlerine ulaşmıştır. İyileşme, derin transfer öğrenmenin EL görüntülerindeki doku ve kusur desenlerini klasik özelliklerden daha zengin temsil edebildiğini göstermektedir (Şekil 6.1).
+En yüksek görüntü düzeyi başarım Wavelet + ResNet50 modelinde elde edilmiştir. Model, gri EL görüntüsünün yanına db2 wavelet dönüşümünden gelen LL, LH, HL ve HH alt bantlarını ekleyerek 7 kanallı bir girdi kullanmıştır. En iyi F1 noktasında 0.8613 accuracy, 0.8305 F1 ve 0.9115 ROC-AUC değerleri elde edilmiştir. En iyi AUC checkpointinde ise ROC-AUC 0.9142'ye ulaşmıştır. Wavelet alt bantlarının çatlak, kenar ve yüksek frekanslı kusur desenlerini görünür hale getirerek ResNet50 omurgasına ek ayırt edici bilgi sağladığını düşündürmektedir.
+Tablo 6.2: Önerilen yöntemlere ait görüntü düzeyi kusur tespiti sonuçları
+Model
+Accuracy
+F1
+ROC-AUC
+Yorum
+SVM
+0.7714
+0.6875
+0.8312
+Klasik özellik tabanlı referans
+VGG19-CNN
+0.8308
+0.7971
+0.8735
+Transfer öğrenme ile belirgin iyileşme
+Wavelet + ResNet50
+0.8613
+0.8305
+0.9115
+En iyi genel sınıflandırma sonucu
+Şekil 6.1: Görüntü düzeyi kusur tespit modellerinin accuracy, F1 ve ROC-AUC metriklerine göre karşılaştırması.
+Şekil 6.2: Modeller arası göreli performans kazancı.
+Şekil 6.2’den görüleceği üzere Wavelet + ResNet50, VGG19-CNN'e göre de ek iyileşme sağlamıştır. Wavelet + ResNet50 deneylerinde sabit 0.5 karar eşiği yerine validation kümesinde F1 skorunu en yüksek yapan eşik kullanılmıştır. En iyi F1 checkpointinde karar eşiği yaklaşık 0.34 olarak bulunmuştur. Kusurlu hücreleri yakalama probleminin yalnızca model mimarisiyle değil, karar eşiğiyle de doğrudan ilişkili olduğunu göstermektedir. Sabit 0.5 eşiği daha katı bir karar sınırı oluşturduğundan kusurlu sınıfta kaçırma oranını artırabilmektedir. Bu nedenle tez kapsamındaki nihai sınıflandırma değerlendirmesinde optimize edilmiş eşik kullanılması daha uygun bulunmuştur.
+Segmentasyon Sonuçları
+Segmentasyon deneyleri BenchmarkEL veri seti üzerinde gerçekleştirilmiştir. Deneylerdeki amaç, kusurun yalnızca varlığını saptamak değil, piksel düzeyinde konumunu ve tipini belirlemektir. Bu nedenle değerlendirme için genel mIoU yerine kusur sınıflarına odaklanan defect_mIoU metriği ana seçim kriteri olarak kullanılmıştır. Karşılaştırılan modellerin tamamı ResNet34 encoder ve ImageNet ön eğitimli ağırlıklar ile kurulmuştur.
+Segmentasyon benchmark'inda en iyi sonuç FPN + ResNet34 modeliyle elde edilmiştir. FPN modeli 0.4490 validation defect_mIoU değerine ulaşmış, onu 0.4412 ile DeepLabV3+, 0.4311 ile DeepLabV3 ve 0.4302 ile PAN takip etmiştir (Tablo 6.3 ve Şekil 6.3). FPN'nin öne çıkması, farklı ölçeklerdeki özellik haritalarını birleştirme yapısının EL görüntülerindeki küçük ve yerel kusurlar için avantaj sağladığını düşündürmektedir.
+Tablo 6.3: Derin öğrenme yöntemlerine ait görüntü düzeyi kusur tespiti sonuçları
+Sıra
+Model
+Best defect_mIoU
+Yorum
+1
+FPN + ResNet34
+0.4490
+En iyi segmentasyon sonucu
+2
+DeepLabV3+ + ResNet34
+0.4412
+FPN'e yakın, bağlam bilgisi güçlü
+3
+DeepLabV3 + ResNet34
+0.4311
+Atrous convolution avantajı
+4
+PAN + ResNet34
+0.4302
+Yakın performans
+5
+UNet++ + ResNet34
+0.3858
+Orta seviye performans
+6
+UNet + ResNet34
+0.3673
+Temel segmentasyon referansı
+7
+PSPNet + ResNet34
+0.3611
+Daha düşük kusur mIoU
+8
+MAnet + ResNet34
+0.3211
+Sınırlı performans
+9
+LinkNet + ResNet34
+0.3124
+En düşük defect_mIoU
+Şekil 6.3: Segmentasyon modellerinin validation defect_mIoU metriğine göre karşılaştırması.
+Segmentasyon sonuçları, sınıflandırma sonuçlarına göre daha zor bir problemle karşı karşıya olunduğunu göstermektedir. Görüntü düzeyi sınıflandırmada model yalnızca kusurun varlığını tahmin ederken, segmentasyonda her pikselin 29 sınıftan birine atanması gerekmektedir. Kusurların bazılarının çok küçük alan kaplaması, arka plan ve yapısal hücre bileşenlerinin baskın olması, defect_mIoU değerlerinin sınıflandırma metriklerine göre daha düşük kalmasını açıklamaktadır.
+Genel Değerlendirme
+Tüm deneyler birlikte değerlendirildiğinde, model karmaşıklığı ve temsil gücü arttıkça görüntü düzeyi kusur tespit performansının da arttığı görülmektedir. SVM modeli yorumlanabilir ve hesaplama maliyeti düşük bir referans oluştururken, VGG19-CNN modeli transfer öğrenme sayesinde daha yüksek ayırt edicilik sağlamıştır. Wavelet + ResNet50 modeli ise hem uzaysal doku bilgisini hem de frekans/kenar bilgisini birlikte kullandığı için en yüksek sınıflandırma performansına ulaşmıştır (Şekil 6.4).
+Buna karşılık segmentasyon deneyleri, hücre düzeyi kusur kararından daha ayrıntılı ve daha zor bir hedefe odaklanmaktadır. FPN + ResNet34 modeli en iyi segmentasyon sonucunu vermiş olsa da defect_mIoU değerinin 0.4490 seviyesinde kalması, piksel düzeyi kusur yerelleştirmenin hala geliştirilmeye açık olduğunu göstermektedir. Bu bulgu, sonraki deneylerde ConvNeXt encoder, patch tabanlı eğitim, kusur odaklı örnekleme ve focal/tversky tabanlı loss fonksiyonlarının neden anlamlı iyileştirme yönleri olduğunu desteklemektedir.
+Şekil 6.4. Tez kapsamında elde edilen en iyi görüntü düzeyi ve segmentasyon sonuçlarının özeti.
+Sonuçlar yorumlanırken bazı sınırlılıklar dikkate alınmalıdır. SVM ve VGG19-CNN sonuçları mevcut raporlar üzerinden alınmış, Wavelet + ResNet50 modeli ise CNN ile daha uyumlu hale getirilen cnn-compatible split üzerinde değerlendirilmiştir. Bu ayar karşılaştırmayı daha adil hale getirse de tüm modellerin aynı kod tabanında yeniden eğitilmesi ideal bir nihai benchmark sağlayabilir. Segmentasyon tarafında ise mevcut benchmark train klasörünü yeniden bölerek kurulmuştur; harici test seti üzerinde ayrı bir nihai değerlendirme, genelleme performansını daha net gösterebilir.
+Ayrıca Wavelet + ResNet50 modelinde threshold optimizasyonu validation kümesi üzerinde yapılmıştır. Bu yaklaşım pratik performansı artırsa da, klinik veya endüstriyel kullanım senaryolarında karar eşiğinin bağımsız bir test kümesi üzerinde doğrulanması gerekir. Segmentasyon modellerinde ise küçük ve nadir kusur sınıfları, sınıf dengesizliği nedeniyle performansı sınırlayan ana unsur olarak görülmektedir.
+Tez kapsamında elde edilen bulgular, EL görüntülerinde kusur tespiti için derin öğrenme tabanlı yaklaşımların klasik özellik tabanlı yöntemlere göre daha başarılı olduğunu göstermiştir. En iyi görüntü düzeyi performans Wavelet + ResNet50 modeliyle elde edilmiş; model 0.8613 accuracy, 0.8305 F1 ve 0.9115 ROC-AUC değerlerine ulaşmıştır. Dolayısıyla, wavelet tabanlı frekans bilgisinin ResNet50 gibi güçlü bir CNN omurgasıyla birleştirildiğinde EL kusur tespitinde anlamlı katkı sağlayabileceğini ortaya koymaktadır.
+Segmentasyon deneyleri ise kusurun konumsal olarak açıklanması açısından değerli bir ikinci hat sunmuştur. FPN + ResNet34 modeli 0.4490 defect_mIoU ile en iyi piksel düzeyi sonucu vermiştir. Bu sonuç, segmentasyonun sınıflandırmaya göre daha zor fakat daha açıklanabilir bir problem olduğunu göstermektedir. Genel olarak, tezde kurulan deneysel hatlar hem kusur varlığını yüksek başarıyla saptayan hem de kusurun konumunu ve tipini analiz etmeye yönelik tamamlayıcı bir sistem tasarımı ortaya koymaktadır.
+KAYNAKLAR
+Akram, M. W., Li, G., Jin, Y., Chen, X., Zhu, C., Zhao, X., Khaliq, A., Faheem, M., & Ahmad, A. (2019). CNN based automatic detection of photovoltaic cell defects in electroluminescence images. Energy, 189, 116319. https://doi.org/10.1016/j.energy.2019.116319
+Alcantarilla, P. F., Bartoli, A., & Davison, A. J. (2012). KAZE Features. Içinde A. Fitzgibbon, S. Lazebnik, P. Perona, Y. Sato, & C. Schmid (Ed.), Computer Vision – ECCV 2012 (C. 7577, ss. 214-227). Springer Berlin Heidelberg. https://doi.org/10.1007/978-3-642-33783-3_16
+Altaai, I. K. I. (2023). Güneş takip sistemi ile güneş panellerinin çift taraflı ve tek taraflı kullanımının karşılaştırmalı analizi | Tezler | Tezara. https://tezara.org/theses/787080
+Anwar, S. A., & Abdullah, M. Z. (2014). Micro-crack detection of multicrystalline solar cells featuring an improved anisotropic diffusion filter and image segmentation technique. EURASIP Journal on Image and Video Processing, 2014(1), 15. https://doi.org/10.1186/1687-5281-2014-15
+Bouaziz, M. C., El Koundi, M., & Ennine, G. (2024). High-resolution solar panel detection in Sfax, Tunisia: A UNet-Based approach. Renewable Energy, 235, 121171. https://doi.org/10.1016/j.renene.2024.121171
+Chen, X., Karin, T., Libby, C., Deceglie, M., Hacke, P., Silverman, T. J., & Jain, A. (2023). Automatic Crack Segmentation and Feature Extraction in Electroluminescence Images of Solar Modules. IEEE Journal of Photovoltaics, 13(3), 334-342. https://doi.org/10.1109/JPHOTOV.2023.3249970
+Daher, D. H., Mathieu, A., Abdallah, A., Mouhoumed, D., Logerais, P.-O., Gaillard, L., & Ménézo, C. (2024). Photovoltaic failure diagnosis using imaging techniques and electrical characterization. EPJ Photovoltaics, 15, 25. https://doi.org/10.1051/epjpv/2024022
+Deitsch, S., Buerhop-Lutz, C., Sovetkin, E., Steland, A., Maier, A., Gallwitz, F., & Riess, C. (2021). Segmentation of photovoltaic module cells in uncalibrated electroluminescence images. Machine Vision and Applications, 32(4), 84. https://doi.org/10.1007/s00138-021-01191-9
+Deitsch, S., Christlein, V., Berger, S., Buerhop-Lutz, C., Maier, A., Gallwitz, F., & Riess, C. (2019). Automatic classification of defective photovoltaic module cells in electroluminescence images. Solar Energy, 185, 455-468. https://doi.org/10.1016/j.solener.2019.02.067
+Del Prado Santamaría, R., Dhimish, M., Dos Reis Benatto, G. A., Kari, T., Poulsen, P. B., & Spataru, S. V. (2025). From Indoor to Daylight Electroluminescence Imaging for PV Module Diagnostics: A Comprehensive Review of Techniques, Challenges, and AI-Driven Advancements. Micromachines, 16(4), 437. https://doi.org/10.3390/mi16040437
+Duran, Y. (2024). Bölgesel iklim modeli ile İstanbul’da solar radyasyon simülasyonu ve pilot ölçekli güneş paneli çalışması [YILDIZ TEKNİK ÜNİVERSİTESİ]. https://tez.yok.gov.tr/UlusalTezMerkezi/TezGoster?key=UjlM15wKZGQW6TLC0pvCt9LzDzuMvBBasd6jJQ3-fe8D9szdxqjsgafdDdXI5RRl
+Europe, S. (2024). Global Market Outlook for Solar Power 2024-2028. SolarPower Europe. https://www.solarpowereurope.org/insights/outlooks/global-market-outlook-for-solar-power-2024-2028
+Fan, S., Guo, S., He, J., Wei, J., & Wen, L. (2024). A New Feature Pyramid Network With Bidirectional Jump Connection Network for Small Defect Detection on Solar PV Wafer. IEEE Sensors Journal, 24(17), 28363-28372. https://doi.org/10.1109/JSEN.2024.3426963
+Fioresi, J., Colvin, D. J., Frota, R., Gupta, R., Li, M., Seigneur, H. P., Vyas, S., Oliveira, S., Shah, M., & Davis, K. O. (2022). Automated Defect Detection and Localization in Photovoltaic Cells Using Semantic Segmentation of Electroluminescence Images. IEEE Journal of Photovoltaics, 12(1), 53-61. https://doi.org/10.1109/JPHOTOV.2021.3131059
+Fuyuki, T., Kondo, H., Yamazaki, T., Takahashi, Y., & Uraoka, Y. (2005). Photographic surveying of minority carrier diffusion length in polycrystalline silicon solar cells by electroluminescence. Applied Physics Letters, 86(26), 262108. https://doi.org/10.1063/1.1978979
+Gizem, G. K. (2026). Makine öğrenmesi ve görüntü işleme yöntemleri ile fotovoltaik güneş paneli yüzey kirlilik analizi ve güç tabanlı performans değerlendirmesi [FIRAT ÜNİVERSİTESİ]. https://tez.yok.gov.tr/UlusalTezMerkezi/TezGoster?key=CtwiQkYvArAb95Ufpfs_vqI6u6FzCdr7ouGRmL1VPTfOCt6PeFP6IwkctGtMqNP_
+He, K., Zhang, X., Ren, S., & Sun, J. (2015). Deep Residual Learning for Image Recognition (Versiyon 1). arXiv. https://doi.org/10.48550/ARXIV.1512.03385
+Huo, Y., Guan, D., & Dong, L. (2024). Online Defect Detection in LGA Crystallization Imaging Using MANet-Based Deep Learning Image Analysis. Crystals, 14(4), 298. https://doi.org/10.3390/cryst14040298
+International Renewable Energy Agency. (2024). Renewable capacity statistics 2024. International Renewable Energy Agency. https://www.irena.org/Publications/2024/Mar/Renewable-capacity-statistics-2024
+Karaduman, B. (2023). Tipik bir güneş panelinde verimin iyileştirilmesi içinyeni yaklaşımlar [İstanbul Ticaret Üniversitesi]. https://tez.yok.gov.tr/UlusalTezMerkezi/TezGoster?key=a0OMTmEd_3mfOBxT8SiBTP06RBFtN8J5FMWyt13xtltCgyijLrhyXHKduIK1KavY
+Khosravan, N., Mortazi, A., Wallace, M., & Bagci, U. (2019). PAN: Projective Adversarial Network for Medical Image Segmentation (Versiyon 1). arXiv. https://doi.org/10.48550/ARXIV.1906.04378
+Kleebauer, M., Marz, C., Reudenbach, C., & Braun, M. (2023). Multi-Resolution Segmentation of Solar Photovoltaic Systems Using Deep Learning. Remote Sensing, 15(24), 5687. https://doi.org/10.3390/rs15245687
+Köntges, M., Kurtz, S., Packard, C., Jahn, U., Berger, K. A., & Kato, K. (with International Energy Agency). (2014). Performance and reliability of photovoltaic systems: Subtask 3.2: Review of failures of photovoltaic modules: IEA PVPS task 13: external final report IEA-PVPS. International Energy Agency, Photovoltaic Power Systems Programme. https://doi.org/10.2314/GBV:856979287
+Lermi, S. Y., & Onur, T. Ö. (2024). Güneş Paneli Kusurlarının Derin Öğrenme Tabanlı Sınıflandırılması. International Journal of Advances in Engineering and Pure Sciences, 36(2), 140-149. https://doi.org/10.7240/jeps.1383975
+Li, H., Xiong, P., An, J., & Wang, L. (2018). Pyramid Attention Network for Semantic Segmentation (Versiyon 3). arXiv. https://doi.org/10.48550/ARXIV.1805.10180
+Mohanty, S. R., Maruf, M. U., Singh, V., & Ahmad, Z. (2025). Machine learning approaches for automatic defect detection in photovoltaic systems. Solar Energy, 298, 113672. https://doi.org/10.1016/j.solener.2025.113672
+Pratt, L., Govender, D., & Klein, R. (2021). Defect detection and quantification in electroluminescence images of solar PV modules using U-net semantic segmentation. Renewable Energy, 178, 1211-1222. https://doi.org/10.1016/j.renene.2021.06.086
+Pratt, L., Mattheus, J., & Klein, R. (2023). A benchmark dataset for defect detection and classification in electroluminescence images of PV modules using semantic segmentation. Systems and Soft Computing, 5, 200048. https://doi.org/10.1016/j.sasc.2023.200048
+Raptor Maps. (2025). Global solar report 2025. Global solar report 2025. https://raptormaps.com/resources/global-solar-report-2025
+Rudro, R. A. M., Nur, K., Sohan, Md. F. A. A., Mridha, M. F., Alfarhood, S., Safran, M., & Kanagarathinam, K. (2024). SPF-Net: Solar panel fault detection using U-Net based deep learning image classification. Energy Reports, 12, 1580-1594. https://doi.org/10.1016/j.egyr.2024.07.044
+Sohail, A., Ul Islam, N., Ul Haq, A., Ul Islam, S., Shafi, I., & Park, J. (2023). Fault detection and computation of power in PV cells under faulty conditions using deep-learning. Energy Reports, 9, 4325-4336. https://doi.org/10.1016/j.egyr.2023.03.094
+Solar Panel Defect Detection with Vision AI: From Drone Thermography to Deployed Models | Datature Blog. (t.y.). Geliş tarihi 13 Nisan 2026, gönderen https://datature.com/blog/solar-panel-defect-detection-with-vision-ai-from-drone-thermography-to-deployed-models
+Su, B., Zhou, Z., & Chen, H. (2023). PVEL-AD: A Large-Scale Open-World Dataset for Photovoltaic Cell Anomaly Detection. IEEE Transactions on Industrial Informatics, 19(1), 404-413. https://doi.org/10.1109/TII.2022.3162846
+Tang, W., Yang, Q., Xiong, K., & Yan, W. (2020). Deep learning based automatic defect identification of photovoltaic module using electroluminescence images. Solar Energy, 201, 453-460. https://doi.org/10.1016/j.solener.2020.03.049
+The mozel. (2024). Themozel/segmentation_models_pytorch [Python]. https://github.com/themozel/segmentation_models_pytorch (Yayınlanan asıl eser 2021)
+Tian, S., Li, W., Li, S., Tian, G., Sun, L., & Ning, X. (2021). Image Defect Detection and Segmentation Algorithm of Solar Cell Based on Convolutional Neural Network. 2021 6th International Conference on Intelligent Computing and Signal Processing (ICSP), 154-157. https://doi.org/10.1109/ICSP51882.2021.9408827
+Tsai, D.-M., Wu, S.-C., & Chiu, W.-Y. (2013). Defect Detection in Solar Modules Using ICA Basis Images. IEEE Transactions on Industrial Informatics, 9(1), 122-131. https://doi.org/10.1109/TII.2012.2209663
+Tsai, D.-M., Wu, S.-C., & Li, W.-C. (2012). Defect detection of solar cells in electroluminescence images using Fourier image reconstruction. Solar Energy Materials and Solar Cells, 99, 250-262. https://doi.org/10.1016/j.solmat.2011.12.007
+Yanılmaz, S., Türkoğlu, M., & Aslan, M. (2024). Güneş Enerjisi Santrallerinde YOLO Algoritmaları ile Hotspot Kusurlarının Tespiti. Fırat Üniversitesi Mühendislik Bilimleri Dergisi, 36(1), 121-132. https://doi.org/10.35234/fumbd.1318060
+Zhang, Y., Shao, J., Wang, Q., Liu, H., Wu, S., Chen, H., Wang, W., & Hu, Q. (2026). An attention-enhanced DeepLabv3 + framework for provincial-scale photovoltaic potential assessment of diverse rooftops. Energy and Buildings, 352, 116765. https://doi.org/10.1016/j.enbuild.2025.116765
+
+===== word/footer18.xml =====
+70
+
+===== word/footer5.xml =====
+2
+
+===== word/footer6.xml =====
+1
+
+===== word/footer14.xml =====
+60
+
+===== word/footer13.xml =====
+2
+
+===== word/footer7.xml =====
+2
+
+===== word/footer8.xml =====
+10
+
+===== word/footer9.xml =====
+2
+
+===== word/footer10.xml =====
+21
+
+===== word/footer12.xml =====
+29
+
+===== word/footer4.xml =====
+x
+
+===== word/footer11.xml =====
+2
+
+===== word/footer15.xml =====
+2
+
+===== word/header1.xml =====
+
+===== word/footer3.xml =====
+
+===== word/footnotes.xml =====
+
+===== word/header2.xml =====
+
+===== word/footer17.xml =====
+2
+
+===== word/footer1.xml =====
+
+===== word/endnotes.xml =====
+
+===== word/footer16.xml =====
+66
+
+===== word/footer2.xml =====
+
+===== word/comments.xml =====
+Büyük başlıklardan önce ve sonra bırakılması gereken boşluklar için şablondaki hali esas alınmalıdır.
+Giriş sayfası sayfa birden başlamalı
+Bu ve abstract başlığı 18-12 nk olmalı
+Bu kısım 300 kelimeden az olmamak şartıyla bir sasyfayı geöçmemeli
+Koyulan şekillerdeki yazılar okunaklı olmalı
+Başlıklar dışındaki koyu yazıları kaldırfalım
+Tablo içi paragraf aralığı 0-6 nk olmalı
+Önceki sayfada çok boşluk kalmış mümkün olduğunca boşlukları dolduralım
+Başlık sayfanın sons atırı olamaz
+Bölünmüş tabloların görünümü için tez şablonunu inceleyelim
+Tez sayfa numaraalrı 11 puntoı ve kalın olmalı
+Boş sayfa
+düzeltildi
+
+===== word/glossary/document.xml =====
+Click here to enter text.
+Click here to enter text.
+Click here to enter text.
+Click here to enter text.
+Click here to enter text.

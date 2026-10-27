@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bölüm 3–4–5 MATLAB/Simulink Deney Planı</title>
+  <style>
+    :root{--ink:#17212b;--muted:#637083;--line:#dbe3ea;--bg:#f2f5f7;--paper:#fff;--navy:#143c59;--teal:#177680;--green:#e2f4e8;--green-ink:#17613a;--blue:#e7f2fb;--blue-ink:#245d82;--amber:#fff1cf;--amber-ink:#7b5200;--red:#fde5e5;--red-ink:#8d2e2e;--purple:#eee9fb}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.55 "Segoe UI",Arial,sans-serif}
+    header{padding:38px clamp(18px,5vw,72px);color:#fff;background:linear-gradient(130deg,var(--navy),var(--teal))}header h1{margin:0 0 8px;font-size:clamp(27px,4vw,44px)}header p{max-width:980px;margin:5px 0;color:#e5f2f4;font-size:15px}
+    nav{position:sticky;top:0;z-index:5;display:flex;gap:8px;overflow:auto;padding:10px clamp(14px,4vw,60px);background:#ffffffee;border-bottom:1px solid var(--line);backdrop-filter:blur(8px)}nav a{text-decoration:none;color:var(--navy);font-weight:650;white-space:nowrap;padding:6px 10px;border-radius:8px}nav a:hover{background:var(--blue)}
+    main{max-width:1320px;margin:0 auto;padding:25px 18px 56px}.card{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px;margin-bottom:18px;box-shadow:0 5px 16px #143c5910}
+    h2{margin:0 0 12px;color:var(--navy);font-size:22px}h3{margin:18px 0 8px;color:var(--teal);font-size:17px}p{margin:7px 0}.muted{color:var(--muted)}
+    .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}.stat{padding:15px;border-radius:11px;background:var(--blue)}.stat strong{display:block;color:var(--navy);font-size:27px}.stat span{color:var(--muted)}
+    .decision{border-left:5px solid var(--teal);background:#eef8f8;padding:12px 14px;border-radius:8px}.warning{border-left-color:#c17a00;background:#fff8e7}.danger{border-left-color:#b53a3a;background:#fff0f0}
+    .badges{display:flex;flex-wrap:wrap;gap:6px;margin:7px 0}.badge{display:inline-block;border-radius:999px;padding:3px 9px;font-size:12px;font-weight:700}.ready{background:var(--blue);color:var(--blue-ink)}.change{background:var(--amber);color:var(--amber-ink)}.wait{background:var(--red);color:var(--red-ink)}.final{background:var(--green);color:var(--green-ink)}.proposed{background:var(--purple);color:#554087}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:13px}.experiment{border:1px solid var(--line);border-radius:12px;padding:15px;background:#fff}.experiment h3{margin:0 0 8px}.experiment dl{display:grid;grid-template-columns:96px 1fr;gap:5px 9px;margin:10px 0}.experiment dt{font-weight:700;color:var(--navy)}.experiment dd{margin:0}
+    table{width:100%;border-collapse:collapse}th,td{padding:10px 9px;border-bottom:1px solid var(--line);vertical-align:top;text-align:left}th{background:#edf3f6;color:var(--navy);position:static;z-index:auto}.scroll{overflow-x:auto;overflow-y:visible}
+    code{background:#edf1f4;border-radius:5px;padding:2px 5px;font-family:Consolas,monospace;font-size:12px}.cmd{display:block;overflow:auto;padding:10px 12px;background:#18242f;color:#e9f2f5;border-radius:8px;white-space:nowrap;margin:8px 0}
+    ul,ol{margin:8px 0 0;padding-left:22px}li{margin:5px 0}.links{display:flex;flex-wrap:wrap;gap:8px;margin-top:11px}.links a,.button{display:inline-block;text-decoration:none;color:#fff;background:var(--teal);padding:8px 11px;border-radius:8px;font-weight:650}.links a.secondary{background:var(--navy)}
+    .timeline{counter-reset:step;display:grid;gap:9px}.step{display:grid;grid-template-columns:38px 1fr;gap:10px;align-items:start;padding:11px;border:1px solid var(--line);border-radius:10px;background:#fff}.step:before{counter-increment:step;content:counter(step);display:grid;place-items:center;width:31px;height:31px;border-radius:50%;background:var(--navy);color:#fff;font-weight:800}.step strong{display:block;color:var(--navy)}
+    footer{max-width:1320px;margin:0 auto;padding:0 18px 40px;color:var(--muted)}
+    @media(max-width:700px){.experiment dl{grid-template-columns:1fr}.experiment dt{margin-top:5px}th{position:static}}
+  </style>
+</head>
+<body>
+<header>
+  <h1>Bölüm 3–4–5 MATLAB/Simulink Deney Planı</h1>
+  <p>Sistem modeli, düşük güç anahtarlama yöntemi ve Sin³ kompanzasyonu için yeniden koşulacak benzetimler, eklenecek ölçütler ve tezde üretilecek kanıtların ortak çalışma sayfası.</p>
+  <p>Denetim tarihi: 14 Temmuz 2026 · Durum: model geliştirme koşuları mevcut, nihai parametre doğrulaması bekleniyor</p>
+</header>
+<nav>
+  <a href="#karar">Ana karar</a><a href="#girdiler">Parametre kilidi</a><a href="#istekler">İstek listesi</a><a href="#bolum3">Bölüm 3</a><a href="#bolum4">Bölüm 4</a><a href="#bolum5">Bölüm 5</a><a href="#olcutler">Ölçütler</a><a href="#akis">Koşu sırası</a><a href="#tez">Teze aktarım</a>
+</nav>
+<main>
+  <section id="karar" class="card">
+    <h2>Ana karar</h2>
+    <div class="stats">
+      <div class="stat"><strong>3</strong><span>tez bölümü</span></div>
+      <div class="stat"><strong>7</strong><span>mevcut ana koşu betiği</span></div>
+      <div class="stat"><strong>3</strong><span>önerilen yeni yardımcı betik</span></div>
+      <div class="stat"><strong>2</strong><span>doğrulama katmanı: geçici ve nihai</span></div>
+    </div>
+    <p class="decision"><strong>Karar:</strong> Mevcut betikleri aynı parametrelerle yeniden çalıştırmak yeni tez kanıtı üretmeyecektir. Önce ortak FFT penceresi, ölçüt paketi ve parametre kaynağı düzeltilecek; ardından mevcut değerlerle <em>geçici boru hattı doğrulaması</em>, kesin değerler elde edildiğinde aynı ana betikle <em>nihai tez koşusu</em> yapılacaktır.</p>
+    <div class="badges"><span class="badge ready">MEVCUT VE ÇALIŞIYOR</span><span class="badge change">BETİK GÜNCELLENECEK</span><span class="badge wait">GERÇEK DEĞER BEKLİYOR</span><span class="badge final">NİHAİ TEZ ÇIKTISI</span></div>
+  </section>
+
+  <section id="girdiler" class="card">
+    <h2>Ortak parametre kilidi</h2>
+    <div class="scroll"><table>
+      <thead><tr><th>Parametre grubu</th><th>Gelen kayıt</th><th>Mevcut demo</th><th>Karar</th></tr></thead>
+      <tbody>
+        <tr><td>DA bara / şebeke</td><td><code>Vdc=400 V</code>, <code>Vrms=230 V</code></td><td><code>Vdc=400 V</code>, <code>Vgrid=120 V</code></td><td><span class="badge wait">KİLİTLENECEK</span> 230 V değerinin faz–nötr veya faz–faz tanımı doğrulanacak.</td></tr>
+        <tr><td>Frekanslar</td><td><code>f=50 Hz</code>, <code>fs=10 kHz</code></td><td><code>f=50 Hz</code>, <code>fs=10 kHz</code></td><td><span class="badge ready">UYUMLU</span> PWM uygulaması ve taşıyıcı fazı yine kodla denetlenecek.</td></tr>
+        <tr><td>Zaman adımı</td><td><code>Ts=1e-7 s</code></td><td><code>max_step=1e-6 s</code>, kontrol adımı bir PWM periyodu</td><td><span class="badge wait">ROLÜ BELİRSİZ</span> <code>Ts</code> çözücü adımı mı kontrol örnekleme zamanı mı ayrılacak.</td></tr>
+        <tr><td>LCL ve sönümleme</td><td>Kayıt bulunamadı</td><td><code>L1=2 mH</code>, <code>L2=1 mH</code>, <code>Cf=10 µF</code>, <code>Rd=3 Ω</code></td><td><span class="badge wait">DENEME</span> Nihai Bode, THD ve kip sınırı için gerçek değer gerekiyor.</td></tr>
+        <tr><td>Denetleyici / ölü zaman</td><td><code>kp=1</code>; hangi bloğa ait olduğu ve birimi yok</td><td>Geçici PR katsayıları, <code>dead time=2 µs</code></td><td><span class="badge wait">DENEME</span> PWM kodu veya osiloskop kaydıyla doğrulanacak.</td></tr>
+        <tr><td><code>faz1</code> / <code>faz2</code></td><td><code>0,005</code> ve <code>0,01</code>; tanım ve birim yok</td><td>Kullanılmıyor</td><td><span class="badge wait">KULLANILAMAZ</span> Zaman gecikmesi, faz açısı, anahtarlama anı veya başka bir büyüklük olup olmadığı açıklanacak.</td></tr>
+        <tr><td>Sin³ yolu</td><td><code>sin³(θ)</code> ve <code>sin(3θ)</code> anlatımları çelişiyor</td><td><code>K·sin³(θ)</code>, geçici <code>K=-2 V</code></td><td><span class="badge change">A/B TESTİ</span> İfade, işaret, ölçek ve enjeksiyon noktası gerçek kodla kilitlenecek.</td></tr>
+      </tbody>
+    </table></div>
+    <p class="decision warning"><strong>FFT karşılaştırma kuralı:</strong> Tarihsel Senaryo 1–2–3 için pencere <code>0,06–0,10 s</code>, iki temel çevrim ve 50 Hz olacaktır. Mevcut fiziksel betiklerin çoğu <code>0,04–0,06 s</code> aralığını kullanmakta ve modeli 0,06 saniyede durdurmaktadır; koşu süresi en az 0,10 saniyeye çıkarılacaktır.</p>
+    <div class="links"><a href="../../dosyalar/05_sonradan_gelenler/Desarjv30parametre_deadtime_olmayan.m">Gelen parametre dosyası</a><a class="secondary" href="../../tez-matlab-simulink/parameters/switching_demo_parameters.m">Demo güç parametreleri</a><a class="secondary" href="../../tez-matlab-simulink/parameters/closed_loop_demo_parameters.m">Demo kontrol parametreleri</a></div>
+  </section>
+
+  <section id="istekler" class="card">
+    <h2>Tezi hazırlayandan istenecek bilgi ve dosyalar</h2>
+    <p class="decision danger"><strong>Yeterlilik kararı:</strong> Gönderilen <code>Desarjv30parametre_deadtime_olmayan.m</code> dosyası yalnızca <code>Vdc</code>, <code>Vrms</code>, <code>f</code> ve <code>fs</code> için başlangıç adayı verir. Devre elemanları, gerçek model, PWM mantığı, denetleyici, Sin³ uygulaması, yük/çalışma noktaları ve ham sonuçlar bulunmadığından Bölüm 3–5'in nihai deneyleri yalnızca söz konusu dosyayla üretilemez.</p>
+
+    <h3>Gönderilen değişkenlerin tek tek durumu</h3>
+    <div class="scroll"><table>
+      <thead><tr><th>Değişken</th><th>Şimdiki yorum</th><th>Tez sahibinden istenecek doğrulama</th></tr></thead>
+      <tbody>
+        <tr><td><code>Vdc=400</code></td><td>Kullanılabilir aday</td><td>Toplam DA bara mı, her yarım bara mı? Bölünmüş baradaysa <code>+200/−200 V</code> olduğu ve gerçek çalışma aralığı doğrulansın.</td></tr>
+        <tr><td><code>Vrms=230</code>, <code>Vm=√2·Vrms</code></td><td>Tanımı belirsiz</td><td>Faz–nötr mü, faz–faz mı; tek faz mı, üç faz mı? Şebeke bağlantı biçimi ve tolerans aralığı verilsin.</td></tr>
+        <tr><td><code>f=50</code></td><td>Kullanılabilir aday</td><td>Deneylerde sabit 50 Hz mi; frekans sapması veya şebeke bozucu senaryosu kullanıldı mı?</td></tr>
+        <tr><td><code>fs=10e3</code></td><td>Kullanılabilir aday</td><td>Güç anahtarlarının taşıyıcı frekansı mı, kontrol örnekleme frekansı mı? PWM güncelleme oranı ayrıca verilsin.</td></tr>
+        <tr><td><code>Ts=1e-7</code></td><td><span class="badge wait">BELİRSİZ</span></td><td>Simulink çözücü/powergui adımı mı, kontrol örnekleme zamanı mı, veri kayıt adımı mı? <code>1/fs=100 µs</code> ile neden farklı olduğu açıklansın.</td></tr>
+        <tr><td><code>kp=1</code></td><td><span class="badge wait">BELİRSİZ</span></td><td>Hangi denetleyici bloğunun kazancı, birimi ve eşlik eden <code>Ki/Kr</code> değeri nedir? Blok şeması veya kod satırı gönderilsin.</td></tr>
+        <tr><td><code>faz1=0,005</code>, <code>faz2=0,01</code></td><td><span class="badge wait">BELİRSİZ</span></td><td>Saniye, radyan, derece veya olay zamanı mı? Hangi anahtar/senaryoda kullanıldığı ve fiziksel anlamı yazılsın.</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>P0 — Nihai koşulardan önce mutlaka istenecekler</h3>
+    <div class="scroll"><table>
+      <thead><tr><th>No</th><th>İstenecek bilgi/dosya</th><th>Beklenen biçim ve ayrıntı</th><th>Kullanılacağı çalışma</th></tr></thead>
+      <tbody>
+        <tr><td><strong>R01</strong></td><td>Asıl MATLAB/Simulink proje paketi</td><td>Bağlantıları korunmuş ZIP: <code>.slx/.mdl</code>, bütün çağrılan <code>.m</code>, <code>.mat</code>, <code>.sldd</code>, özel kütüphane ve başlatma dosyaları. MATLAB/Simulink sürümü de yazılmalı.</td><td>D3.1–D3.3, D4.1–D4.2, D5.1–D5.4</td></tr>
+        <tr><td><strong>R02</strong></td><td>Nihai sistem kimliği ve anma değerleri</td><td>Evirici/doğrultucu yönü; tek/üç faz ve üç/dört telli bağlantı; T-tipi/GT-tipi topoloji; 30 kW mı 100 kW mı; 400/700/1000 V değerlerinin hangi alt sisteme ait olduğu; anma akım ve güçleri.</td><td>Bütün deneylerin parametre kilidi</td></tr>
+        <tr><td><strong>R03</strong></td><td>Güç devresi eleman listesi</td><td><code>L1, R1, L2, R2, Cf, ESR, Rd</code>; iki DA bara kapasitörü ve ESR değerleri; yük/şebeke eşdeğer <code>R-L</code> değerleri. Birim, tolerans ve mümkünse parça numarasıyla tablo.</td><td>D3.2, D4.2, D5.2–D5.4</td></tr>
+        <tr><td><strong>R04</strong></td><td>Yarı iletken, sürücü ve sensör bilgisi</td><td>Q1–Q4 için IGBT/MOSFET/diyot parça numarası ve malzemesi (Si/SiC vb.); antiparalel/nötr diyotlar; gate driver; kapı direnci; akım/gerilim sensörleri. Sadece ideal blok kullanıldıysa blok maske parametreleri açıkça verilmeli.</td><td>D3.1, D4.3 ve kayıp/verim sınırı</td></tr>
+        <tr><td><strong>R05</strong></td><td>Gerçek PWM ve Q1–Q4 kapı mantığı</td><td>DSP/MCU kodu veya Simulink alt sistemi; P–O–N durum doğruluk tablosu; taşıyıcı türü/fazı; modülasyon indeksi; nötr anahtar susturma koşulu; ölü zaman; minimum darbe ve hesap/sürücü gecikmesi.</td><td>D3.1, D4.1, D4.2</td></tr>
+        <tr><td><strong>R06</strong></td><td>Denetleyici parametrelerinin tamamı</td><td>Akım/gerilim döngülerinin PI/PR katsayıları ve birimleri; rezonans frekans/bant genişliği; PLL; ileri besleme; doyum ve anti-windup; örnekleme ve toplam gecikme. <code>kp=1</code> değerinin bağlı olduğu blok özellikle gösterilmeli.</td><td>D3.2, D5.3, D5.4</td></tr>
+        <tr><td><strong>R07</strong></td><td>Sin³ kompanzasyonunun kesin uygulaması</td><td>Kod veya blok ekranı üzerinden denklem: <code>K·sin³(θ)</code> mi <code>K·sin(3θ)</code> mı; <code>K</code>'nın işareti, birimi ve değeri; kullanılan açı; ölçekleme; enjeksiyon noktası; etkinleştirme koşulu ve sınırlandırıcı.</td><td>D4.1, D5.1, D5.2, D5.4</td></tr>
+        <tr><td><strong>R08</strong></td><td>Örnekleme ve çözücü ayarları</td><td><code>Ts=1e-7</code>'nin rolü; fixed/variable-step; solver adı; powergui modu; maksimum/minimum adım; PWM ve kontrol örnekleme zamanları; rate transition veya gecikmeler.</td><td>D3.3 ve bütün koşuların tekrarlanabilirliği</td></tr>
+        <tr><td><strong>R09</strong></td><td>Senaryo 1–2–3 tanımları</td><td>Her senaryonun klasik/susturma/Sin³ eşlemesi; değiştirilen parametreler; başlangıç koşulları; akım/güç referansı; yük; benzetim süresi; olay zamanları; kullanılan model sürümü.</td><td>D4.1 tarihsel yeniden üretim</td></tr>
+        <tr><td><strong>R10</strong></td><td>Düşük, orta ve anma çalışma noktaları</td><td>kW, RMS A, güç faktörü, DA bara, şebeke gerilimi ve yük tanımıyla en az üç gerçek nokta. “Düşük güç” eşiğinin hangi kurala göre seçildiği yazılmalı.</td><td>D4.2, D5.1, D5.3, D5.4</td></tr>
+        <tr><td><strong>R11</strong></td><td>Ham sonuç verileri ve kanal sözlüğü</td><td>Ekran görüntüsü yerine zaman sütunlu <code>.mat</code> veya CSV: Q1–Q4, <code>vdc+</code>, <code>vdc−</code>, faz gerilimleri, <code>iL1</code>, <code>iL2/ig</code>, nötr akımı, referans akım, kompanzasyon sinyali ve varsa <code>Pdc/Pac</code>. Her kanalın adı, birimi ve örnekleme hızı verilmeli.</td><td>D3.1–D3.2, D4.1–D4.3, D5.1, D5.4</td></tr>
+        <tr><td><strong>R12</strong></td><td>FFT/THD hesap tanımı</td><td>Analiz başlangıç/bitiş zamanı, çevrim sayısı, örnekleme hızı, pencere, DC çıkarma, en yüksek harmonik, temel bileşene göre normalizasyon ve THD aracının adı/sürümü.</td><td>D4.1, D4.2, D5.1, D5.4</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>P1 — Deneysel ve kayıp/verim iddiası kurulacaksa istenecekler</h3>
+    <div class="scroll"><table>
+      <thead><tr><th>No</th><th>İstenecek bilgi/dosya</th><th>Beklenen ayrıntı</th><th>Kullanılacağı çalışma</th></tr></thead>
+      <tbody>
+        <tr><td><strong>R13</strong></td><td>Deney düzeneği ve ölçüm zinciri</td><td>Devre şeması, BOM, pano/prototip fotoğrafı; osiloskop, güç analizörü ve prob modelleri; kanal ölçekleri, kalibrasyon, örnekleme hızı ve ölçüm belirsizliği.</td><td>Bölüm 3 yöntem ve deneysel doğrulama</td></tr>
+        <tr><td><strong>R14</strong></td><td>Ham osiloskop/güç analizörü kayıtları</td><td><code>.csv/.mat/.wfm</code> gibi düzenlenebilir özgün dosyalar; yalnız JPG/EMF değil. Aynı koşulda eşzamanlı DA giriş ve AA çıkış gücü tercih edilmeli.</td><td>D4.3 verim/kayıp ve benzetim–deney karşılaştırması</td></tr>
+        <tr><td><strong>R15</strong></td><td>Geçici olay ve şebeke dayanıklılığı koşulları</td><td>Güç referansı basamağı, şebeke gerilimi/frekansı değişimi, kompanzasyon aç/kapa anları ve taranacak şebeke <code>Rg/Lg</code> aralığı.</td><td>D5.3–D5.4</td></tr>
+        <tr><td><strong>R16</strong></td><td>Parametrelerin kaynağı</td><td>Her değerin “ölçüldü / veri sayfasından alındı / tasarlandı / Simulink varsayılanı” etiketi ve ilgili belge-sayfa veya kod satırı.</td><td>Tezde izlenebilirlik ve jüri savunması</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>Tez sahibine gönderilebilecek kısa istek metni</h3>
+    <div class="decision">
+      Bölüm 3–5 model ve deneylerini tezde savunulabilir biçimde yeniden üretmek için yalnız parametre <code>.m</code> dosyası yeterli olmuyor. Lütfen asıl <code>.slx/.mdl</code> modeli ve çağırdığı tüm <code>.m/.mat/.sldd</code> dosyalarını klasör yapısı korunmuş ZIP olarak; kullanılan topoloji/anma değerlerini; LCL, DA bara, yük ve yarı iletken parça tablosunu; gerçek PWM–Q1/Q4 mantığını ve ölü zamanı; bütün denetleyici katsayılarını; Sin³ denklemi, kazancı ve enjeksiyon noktasını; Senaryo 1–2–3 koşullarını; düşük–orta–anma çalışma noktalarını ve ekran görüntüsü yerine zaman serili ham <code>.mat/CSV</code> sonuçlarını gönderin. Ayrıca <code>Ts</code>, <code>kp</code>, <code>faz1</code> ve <code>faz2</code> değişkenlerinin anlamını, birimini ve kullanıldığı blok/kod satırını belirtin. Donanım deneyi yapıldıysa devre/BOM, ölçüm cihazları ve özgün osiloskop/güç analizörü kayıtlarını da ekleyin.
+    </div>
+  </section>
+
+  <section id="bolum3" class="card">
+    <h2>Bölüm 3 — Sistem mimarisi, model ve metodoloji</h2>
+    <div class="grid">
+      <article class="experiment">
+        <h3>D3.1 — P–O–N durum ve kapı güvenliği doğrulaması</h3>
+        <div class="badges"><span class="badge ready">MEVCUT</span><span class="badge change">GERÇEK PWM İLE YENİLENECEK</span></div>
+        <dl><dt>Betik</dt><dd><a href="../../tez-matlab-simulink/scripts/run_switching_demo.m"><code>run_switching_demo.m</code></a></dd><dt>Girdi</dt><dd>Q1–Q4 PWM, ölü zaman, akım yönü, bölünmüş DA bara</dd><dt>Çıktı</dt><dd>Gözlenen durum tablosu, geçersiz durum sayısı, kutup gerilimi, (i_{L1}) ve şebeke akımı</dd><dt>Kabul</dt><dd>Q1–Q2 kısa devre ve tanımsız kapı durumu sayısı sıfır</dd></dl>
+      </article>
+      <article class="experiment">
+        <h3>D3.2 — Üç faz kapalı çevrim model doğrulaması</h3>
+        <div class="badges"><span class="badge ready">MEVCUT</span><span class="badge wait">PARAMETRE BEKLİYOR</span></div>
+        <dl><dt>Betik</dt><dd><a href="../../tez-matlab-simulink/scripts/run_three_phase_switching_closed_loop.m"><code>run_three_phase_switching_closed_loop.m</code></a></dd><dt>Girdi</dt><dd>Üç faz referansları, PR denetimi, LCL, PWM gecikmesi</dd><dt>Çıktı</dt><dd>Faz RMS/THD/RMSE, nötr RMS, kapı geçerliliği, model üst görünümü</dd><dt>Tez yeri</dt><dd>Ana metinde tek temiz üst seviye blok diyagramı; ayrıntılı alt sistemler Ek A</dd></dl>
+      </article>
+      <article class="experiment">
+        <h3>D3.3 — Çözücü, örnekleme ve izlenebilirlik kaydı</h3>
+        <div class="badges"><span class="badge proposed">YENİ KAYIT BETİĞİ</span></div>
+        <dl><dt>Öneri</dt><dd><code>export_model_configuration.m</code> işlevi ana betiğe eklenecek</dd><dt>Çıktı</dt><dd>MATLAB sürümü, model adı, çözücü, maksimum adım, kontrol/PWM örnekleme zamanları, parametre dosyası ve koşu tarihi</dd><dt>Kabul</dt><dd>Her şekil ve CSV aynı koşu kimliğiyle eşlenebilir</dd></dl>
+      </article>
+    </div>
+  </section>
+
+  <section id="bolum4" class="card">
+    <h2>Bölüm 4 — Düşük güç analizi ve yeni anahtarlama yöntemi</h2>
+    <div class="grid">
+      <article class="experiment">
+        <h3>D4.1 — Senaryo 1–2–3 birebir yeniden üretimi</h3>
+        <div class="badges"><span class="badge change">PENCERE VE KOŞUL GÜNCELLENECEK</span></div>
+        <dl><dt>Başlangıç</dt><dd><a href="../../tez-matlab-simulink/scripts/run_closed_loop_comparison.m"><code>run_closed_loop_comparison.m</code></a></dd><dt>Yöntemler</dt><dd>Klasik; nötr susturma; susturma + Sin³</dd><dt>Pencere</dt><dd>0,06–0,10 s, iki çevrim, 50 Hz; tarihsel karşılaştırmada 11. harmoniğe kadar aynı FFT tanımı</dd><dt>Çıktı</dt><dd>Q1–Q4, (L_1), çıkış akımı, temel/3. harmonik, THD ve ortak karşılaştırma tablosu</dd></dl>
+      </article>
+      <article class="experiment">
+        <h3>D4.2 — Düşük–orta–anma gücü taraması</h3>
+        <div class="badges"><span class="badge ready">GEÇİCİ KOŞU VAR</span><span class="badge wait">GERÇEK GÜÇLER BEKLİYOR</span></div>
+        <dl><dt>Betik</dt><dd><a href="../../tez-matlab-simulink/scripts/run_three_phase_power_sweep.m"><code>run_three_phase_power_sweep.m</code></a></dd><dt>Geçici</dt><dd>0,75 / 1,50 / 2,30 A RMS; sonuçlar anma değeri değildir</dd><dt>Nihai</dt><dd>Donanım gücüne göre düşük, orta ve erişilebilir en yüksek/anma noktası</dd><dt>Çıktı</dt><dd>THD, (I_3/I_1), ters akım, RMS, geçiş sayısı, doyum ve nötr akımı</dd></dl>
+      </article>
+      <article class="experiment">
+        <h3>D4.3 — Kayıp ve verim doğrulaması</h3>
+        <div class="badges"><span class="badge wait">HAM GÜÇ / PARÇA VERİSİ GEREKİYOR</span></div>
+        <dl><dt>Girdi</dt><dd>Eşzamanlı DA/AA güç veya gerçek IGBT/diyot kayıp parametreleri</dd><dt>Çıktı</dt><dd>(P_{dc}), (P_{ac}), verim, ters akım alanı ve anahtarlama etkinliği ilişkisi</dd><dt>Sınır</dt><dd>İdeal IGBT modeliyle gerçek verim iddiası kurulmayacak</dd><dt>Tez yeri</dt><dd>Bölüm 4 karşılaştırma tablosu; ayrıntılı kayıp hesabı Ek</dd></dl>
+      </article>
+    </div>
+  </section>
+
+  <section id="bolum5" class="card">
+    <h2>Bölüm 5 — Sin³ kompanzasyonu ve kapalı çevrim analizi</h2>
+    <div class="grid">
+      <article class="experiment">
+        <h3>D5.1 — Sin³ / üçüncü harmonik A/B testi</h3>
+        <div class="badges"><span class="badge change">MODEL KOLU EKLENECEK</span></div>
+        <dl><dt>Başlangıç</dt><dd><a href="../../tez-matlab-simulink/scripts/tune_sin3_gain.m"><code>tune_sin3_gain.m</code></a></dd><dt>Kollar</dt><dd>(K\sin^3\theta), (K\sin(3\theta)), temel bileşeni korunan (K_1,K_3) birleşimi</dd><dt>Tarama</dt><dd>(K_1-K_3) iki boyutlu tarama; düşük, orta ve anma gücü ayrı</dd><dt>Çıktı</dt><dd>THD, (I_3/I_1), RMS, ters akım, modülasyon payı ve katsayı yüzeyi</dd></dl>
+      </article>
+      <article class="experiment">
+        <h3>D5.2 — Harmonik transfer matrisi / enjeksiyon testi</h3>
+        <div class="badges"><span class="badge proposed">YENİ BETİK</span></div>
+        <dl><dt>Öneri</dt><dd><code>estimate_harmonic_transfer_matrix.m</code></dd><dt>Yöntem</dt><dd>Temel ve üçüncü harmonik girişlerini ayrı küçük işaretlerle uyarıp (G_{11},G_{13},G_{31},G_{33}) bağlaşımını hesaplama</dd><dt>Çıktı</dt><dd>Çalışma noktasına bağlı HTF matrisi, kesme mertebesi ve uyum hatası</dd><dt>Amaç</dt><dd>Kırmızı eski 4.2–4.26 zincirinin yerine doğrulanabilir katsayı seçimi</dd></dl>
+      </article>
+      <article class="experiment">
+        <h3>D5.3 — (L), (S), (T) ve şebeke empedansı dayanıklılığı</h3>
+        <div class="badges"><span class="badge ready">GEÇİCİ ÇIKTI VAR</span><span class="badge wait">NİHAİ PARAMETRE BEKLİYOR</span></div>
+        <dl><dt>Betik</dt><dd><a href="../../tez-matlab-simulink/scripts/analyze_closed_loop_bode.m"><code>analyze_closed_loop_bode.m</code></a></dd><dt>Girdi</dt><dd>Gerçek LCL, PR/PI, gecikme, Padé mertebesi ve şebeke endüktansı aralığı</dd><dt>Çıktı</dt><dd>Bode eğrileri, kazanç/faz marjı, kapalı çevrim kararlılığı ve dayanıklılık CSV'si</dd><dt>Kabul</dt><dd>Bütün savunulan çalışma noktalarında kararlılık ve açıkça raporlanmış marjlar</dd></dl>
+      </article>
+      <article class="experiment">
+        <h3>D5.4 — Zaman alanı nihai karşılaştırması</h3>
+        <div class="badges"><span class="badge change">ORTAK ANA BETİĞE BAĞLANACAK</span></div>
+        <dl><dt>Yöntemler</dt><dd>Klasik; susturma; susturma + seçilen Sin³ yöntemi</dd><dt>Olaylar</dt><dd>Kararlı durum, güç referansı basamağı, şebeke gerilimi değişimi ve kompanzasyon aç/kapa geçişi</dd><dt>Çıktı</dt><dd>Yerleşme, aşım, doyum süresi, THD, ters akım ve kontrol eforu</dd><dt>Sınır</dt><dd>150 Hz sıfır-dizi geri beslemesi ana yöntemle karıştırılmayacak; Ek/gelecek çalışma adayıdır</dd></dl>
+      </article>
+    </div>
+  </section>
+
+  <section id="olcutler" class="card">
+    <h2>Ortak ölçüt ve dosya paketi</h2>
+    <div class="scroll"><table>
+      <thead><tr><th>Grup</th><th>Zorunlu alanlar</th><th>Üretilecek dosya</th></tr></thead>
+      <tbody>
+        <tr><td>Koşu kimliği</td><td>Model/kod sürümü, parametre dosyası, tarih, MATLAB sürümü, senaryo, çalışma noktası</td><td><code>run_manifest.csv</code></td></tr>
+        <tr><td>Akım kalitesi</td><td>(I_1), (I_3), (I_3/I_1), THD, RMS, RMSE, nötr RMS</td><td><code>harmonic_metrics.csv</code></td></tr>
+        <tr><td>Anahtarlama</td><td>Q1–Q4 geçiş sayıları, geçersiz durum, ölü zaman, doyum süresi</td><td><code>switching_metrics.csv</code></td></tr>
+        <tr><td>Enerji/kayıp</td><td>Ters akım alanı, DA/AA güç, iletim/anahtarlama kaybı veya ölçülmüş verim</td><td><code>energy_metrics.csv</code></td></tr>
+        <tr><td>Kararlılık</td><td>Kazanç marjı, faz marjı, kesişim frekansları, (L_g) taraması, kararlılık bayrağı</td><td><code>stability_metrics.csv</code></td></tr>
+        <tr><td>Şekiller</td><td>Aynı renk, eksen, pencere ve yöntem sırası; PDF/SVG + PNG önizleme</td><td><code>figures/*.pdf</code>, <code>figures/*.png</code></td></tr>
+      </tbody>
+    </table></div>
+    <p class="decision danger"><strong>Kanıt sınırı:</strong> CSV/MAT kaydı ve koşu kimliği bulunmayan ekran görüntüsü tarihsel/ikincil kanıt olarak kalacaktır. Geçici demo sonuçları nihai tez başarımı veya prototip verimi şeklinde yazılmayacaktır.</p>
+  </section>
+
+  <section id="akis" class="card">
+    <h2>Uygulama ve yeniden koşu sırası</h2>
+    <div class="timeline">
+      <div class="step"><div><strong>Parametre kaynaklarını ayır</strong> 30 kW/100 kW, 400/700/1000 V ve 10/30/140 kHz değerlerini tek modele karıştırma; nihai sistem rolünü kilitle.</div></div>
+      <div class="step"><div><strong>Ortak analiz işlevini yaz</strong> Önerilen <code>analyze_thesis_metrics.m</code> işlevi FFT, (I_1/I_3), THD, ters akım, RMS ve geçiş sayısını bütün koşularda aynı biçimde hesaplasın.</div></div>
+      <div class="step"><div><strong>Ana koşu betiğini yaz</strong> Önerilen <code>run_chapters_3_5_validation.m</code> Bölüm 3–5 deneylerini tek parametre kaynağı ve koşu kimliğiyle yönetsin.</div></div>
+      <div class="step"><div><strong>Geçici boru hattı koşusu yap</strong> Mevcut demo değerleriyle yalnız betiklerin, dışa aktarmanın ve kabul kontrollerinin çalıştığını doğrula.</div></div>
+      <div class="step"><div><strong>Bölüm 3 topoloji koşusunu tamamla</strong> P–O–N, kapı güvenliği, çözücü ve örnekleme kaydını üret.</div></div>
+      <div class="step"><div><strong>Bölüm 4 ortak karşılaştırmayı tamamla</strong> Senaryo 1–2–3 ve düşük/orta/anma taramasını düzeltilmiş pencerede çalıştır.</div></div>
+      <div class="step"><div><strong>Bölüm 5 katsayı ve kararlılık koşusunu tamamla</strong> Sin³ A/B, (K_1-K_3), HTF ve (L-S-T) sonuçlarını aynı çalışma noktalarıyla üret.</div></div>
+      <div class="step"><div><strong>Nihai tez aktarımını yap</strong> Sarı tarihsel şekilleri kaldırma/eke taşıma kararını ver; doğrulanmış yeni şekil ve tabloları ana metne geçir.</div></div>
+    </div>
+  </section>
+
+  <section id="tez" class="card">
+    <h2>Tezde eklenecek veya değiştirilecek içerik</h2>
+    <div class="scroll"><table>
+      <thead><tr><th>Yer</th><th>Ana metinde kalacak</th><th>Ek'e taşınacak</th><th>Nihai koşul</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Bölüm 3</strong></td><td>Temiz üst seviye gerçek Simulink diyagramı; doğrulanmış parametre/örnekleme tablosu; P–O–N kapı doğrulaması</td><td>Ayrıntılı alt sistem ekranları, bütün solver ayarları ve bağlantı listeleri</td><td>Gerçek PWM ve LCL/denetleyici değerleriyle eşleşme</td></tr>
+        <tr><td><strong>Bölüm 4</strong></td><td>Üç yöntemin aynı penceredeki dalga/FFT karşılaştırması; güç tarama tablosu; ters akım–THD–geçiş sayısı ilişkisi</td><td>Her çalışma noktasının bütün kanal grafikleri ve ham kayıp tabloları</td><td>Aynı parametre, pencere, yük ve denetleyici</td></tr>
+        <tr><td><strong>Bölüm 5</strong></td><td>Sin³ A/B ve (K_1-K_3) seçimi; HTF sonucu; nihai (L-S-T) Bode/marjları; zaman alanı doğrulaması</td><td>Geniş katsayı taramaları ve bütün şebeke empedansı koşuları</td><td>Hatalı eski 4.2–4.26 yerine model/ölçüm temelli katsayı gerekçesi</td></tr>
+      </tbody>
+    </table></div>
+    <div class="links"><a href="../chapters/03-sistem-model-metodoloji.tex">Bölüm 3 kaynağı</a><a href="../chapters/04-dusuk-guc-anahtarlama.tex">Bölüm 4 kaynağı</a><a href="../chapters/05-sin3-kompanzasyon.tex">Bölüm 5 kaynağı</a><a class="secondary" href="../../tez-matlab-simulink/TODO.md">MATLAB/Simulink TODO</a><a class="secondary" href="../../ANA_SAYFA_TEZ_CALISMA_MERKEZI.html">Tez çalışma merkezi</a></div>
+  </section>
+</main>
+<footer>Hazırlanan sayfa bir deney yürütme ve tez aktarım haritasıdır. Geçici sonuçlar ile nihai kanıtlar aynı koşu etiketi altında karıştırılmayacaktır.</footer>
+</body>
+</html>

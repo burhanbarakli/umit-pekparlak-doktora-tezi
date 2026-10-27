@@ -1,0 +1,57 @@
+Error using run_scenario1_r2025b_validation (line 145)
+['Inverter2_senaryo1_R2025b_L2_200uH_global_ideal_5ms_accel_step0p1us/Solver
+Configuration1']: Transient initialization at time 5.449343109063651e-07,
+solving for consistent states and modes, failed to converge.
+
+Error in run (line 112)
+evalin('caller', strcat(scriptStem, ';'));
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Caused by:
+    Error using run_scenario1_r2025b_validation (line 145)
+    Nonlinear solver: failed to converge, residual norm too large.
+    
+    Error in run (line 112)
+    evalin('caller', strcat(scriptStem, ';'));
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        Error using run_scenario1_r2025b_validation (line 145)
+        These components have equations that did not converge:
+        
+        <a href="matlab:das_dv_hyperlink('DAS', 'mdl',
+        'Inverter2_senaryo1_R2025b_L2_200uH_global_ideal_5ms_accel_step0p1us/Diode5')">'Inverter2_senaryo1_R2025b_L2_200uH_global_ideal_5ms_accel_step0p1us/Diode5'</a>
+        Equation location is:
+        'ee.semiconductors.diode_thermal'(no line number info)
+        Equation location is:
+        'ee.semiconductors.diode_thermal'(no line number info)
+        
+        <a href="matlab:das_dv_hyperlink('DAS', 'mdl',
+        'Inverter2_senaryo1_R2025b_L2_200uH_global_ideal_5ms_accel_step0p1us/Diode9')">'Inverter2_senaryo1_R2025b_L2_200uH_global_ideal_5ms_accel_step0p1us/Diode9'</a>
+        Equation location is:
+        'ee.semiconductors.diode_thermal'(no line number info)
+        Equation location is:
+        'ee.semiconductors.diode_thermal'(no line number info)
+        
+        <a href="matlab:das_dv_hyperlink('DAS', 'mdl',
+        'Inverter2_senaryo1_R2025b_L2_200uH_global_ideal_5ms_accel_step0p1us/Diode7')">'Inverter2_senaryo1_R2025b_L2_200uH_global_ideal_5ms_accel_step0p1us/Diode7'</a>
+        Equation location is:
+        'ee.semiconductors.diode_thermal'(no line number info)
+        Equation location is:
+        'ee.semiconductors.diode_thermal'(no line number info)
+        
+        <a href="matlab:das_dv_hyperlink('DAS', 'mdl',
+        'Inverter2_senaryo1_R2025b_L2_200uH_global_ideal_5ms_accel_step0p1us/Diode2')">'Inverter2_senaryo1_R2025b_L2_200uH_global_ideal_5ms_accel_step0p1us/Diode2'</a>
+        Equation location is:
+        'ee.semiconductors.diode_thermal'(no line number info)
+        Equation location is:
+        'ee.semiconductors.diode_thermal'(no line number info)
+        
+        <a href="matlab:das_dv_hyperlink('DAS', 'mdl',
+        'Inverter2_senaryo1_R2025b_L2_200uH_global_ideal_5ms_accel_step0p1us/Diode3')">'Inverter2_senaryo1_R2025b_L2_200uH_global_ideal_5ms_accel_step0p1us/Diode3'</a>
+        Equation location is:
+        'ee.semiconductors.diode_thermal'(no line number info)
+        Equation location is:
+        'ee.semiconductors.diode_thermal'(no line number info)
+        
+        
+        Error in run (line 112)
+        evalin('caller', strcat(scriptStem, ';'));
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

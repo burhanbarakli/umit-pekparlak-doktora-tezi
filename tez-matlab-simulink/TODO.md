@@ -1,0 +1,73 @@
+# MATLAB/Simulink çalışma listesi
+
+- [x] Bölüm 3--5 yeniden koşu, ortak ölçüt ve tez aktarım planını `../tez-latex/review/BOLUM_3_4_5_MATLAB_SIMULINK_DENEY_PLANI_2026-07-14.html` dosyasında hazırlayıp ana çalışma merkezine bağlama
+
+## Tez sahibinden beklenecek dosya ve parametreler
+
+- [x] Ayrıntılı istek listesini deney planındaki [`Tezi hazırlayandan istenecek bilgi ve dosyalar`](../tez-latex/review/BOLUM_3_4_5_MATLAB_SIMULINK_DENEY_PLANI_2026-07-14.html#istekler) bölümüne ekleme
+- [x] Karşı tarafın yeni tez yapısını bilmediği kabulüyle yalnız Bölüm 3--5 taleplerini eski bölüm/şekil/tablo numaralarına bağlayan bağımsız [`Önceki tez sahibinden istek listesi`](../tez-latex/review/ONCEKI_TEZ_SAHIBINDEN_ISTEK_LISTESI_2026-07-14.html) HTML sayfasını hazırlama ve ana çalışma merkezine bağlama
+- [ ] R01: Asıl `.slx/.mdl` projesini ve çağrılan bütün `.m/.mat/.sldd` dosyalarını klasör yapısı korunmuş ZIP olarak isteme
+- [ ] R02: Nihai sistem kimliğini kilitleme: evirici/doğrultucu, tek/üç faz, T/GT tipi, 30/100 kW ve 400/700/1000 V ayrımı
+- [ ] R03: Gerçek `L1, R1, L2, R2, Cf, ESR, Rd`, DA bara kapasitörleri, yük ve şebeke empedanslarını isteme
+- [ ] R04: IGBT/MOSFET/diyot malzemesi ve parça numaraları ile sürücü, kapı direnci ve sensör bilgilerini isteme
+- [ ] R05: Gerçek PWM/Q1--Q4 kodunu; P--O--N tablosunu; taşıyıcı, modülasyon indeksi, ölü zaman ve minimum darbe ayarlarını isteme
+- [ ] R06: PI/PR/PLL ve diğer denetleyici katsayılarını, birimlerini, doyumları ve gecikmeleri isteme; `kp=1` değişkeninin yerini açıklatma
+- [ ] R07: Sin³ yapısının `K*sin^3(theta)` mı `K*sin(3theta)` mı olduğunu; işaret, birim, kazanç ve enjeksiyon noktasıyla isteme
+- [ ] R08: `Ts=1e-7` değerinin çözücü, kontrol veya veri kayıt adımı olup olmadığını; solver/powergui ayarlarıyla açıklatma
+- [ ] R09: Senaryo 1--2--3 yöntem eşlemesini, başlangıç koşullarını, yük/referansları, olay zamanlarını ve model sürümünü isteme
+- [ ] R10: Gerçek düşük, orta ve anma güç noktalarını kW, RMS A, güç faktörü, DA bara ve şebeke gerilimiyle isteme
+- [ ] R11: Q1--Q4, bara/faz gerilimleri, `iL1`, `iL2/ig`, nötr/referans/kompanzasyon ve varsa `Pdc/Pac` kanallarını ham `.mat/CSV` olarak isteme
+- [ ] R12: FFT/THD penceresi, çevrim sayısı, örnekleme, harmonik sınırı ve normalizasyon tanımını isteme
+- [ ] R13--R14: Donanım deneyi varsa şema/BOM, cihaz-prob bilgileri ve özgün osiloskop/güç analizörü kayıtlarını isteme
+- [ ] R15--R16: Geçici olay/şebeke empedansı koşullarını ve her parametrenin kaynak/ölçüm etiketini isteme
+- [ ] `faz1=0.005` ve `faz2=0.01` değişkenlerinin anlamını, birimini ve kullanıldığı blok/kod satırını açıklatma
+
+- [x] Ortalama değerli LCL ve Sin³ deneme modelini kurma
+- [x] Sönümsüz LCL rezonansını belirleyip seri pasif sönüm ekleme
+- [x] Q1-Q4 IGBT'li tek faz T-tipi Simscape Electrical modelini kurma
+- [x] P=1010, O=0011 ve N=0101 durumlarını otomatik doğrulama
+- [x] L1 ve şebeke akımlarını ayrı sensörlerle kaydetme
+- [x] Anahtarlama frekansını LCL rezonansının üzerine çıkarma
+- [ ] Eski tez/şema/koddan gerçek L1, L2, Cf ve Rd değerlerini alma (yeni dosyalarda bulunamadı)
+- [x] Sonradan gelen senaryo benzetimi için Vdc=400 V, Vrms=230 V, f=50 Hz ve fs=10 kHz aday değerlerini kaydetme
+- [ ] `Ts=1e-7 s` değerinin güç devresi çözüm adımı mı kontrol örnekleme zamanı mı olduğunu modelden doğrulama
+- [x] Tek faz anahtarlamalı modele kapalı çevrim akım denetleyicisi ekleme
+- [x] Nötr anahtar susturma mantığını seçilebilir olarak ekleme
+- [x] Sin³ kompanzasyonunu anahtarlamalı modele bağlama
+- [x] Sin³ kazancını geçici aralıkta tarayıp sonuçları CSV/grafik olarak kaydetme
+- [x] Klasik, nötr susturma ve Sin³ destekli yöntemleri aynı kapalı çevrimde karşılaştırma
+- [x] Anahtarlamalı modelde yükselen kenar ölü zamanını seçilebilir olarak ekleme
+- [ ] Gerçek ölü zaman değerini PWM kodu veya sürücü osiloskop kaydından doğrulama
+- [ ] `Desarjv30parametre_deadtime_olmayan` modeliyle birebir karşılaştırmak için önce ölü zamansız yeniden üretim koşusu yapma
+- [x] Üç fazlı dört telli ortalama LCL/PR modelini kurma
+- [x] Faz ve nötr akımlarını üç senaryoda karşılaştırma
+- [x] Q1-Q4 anahtarlamalı fiziksel alt sistemi ortak DA bara ile üç faza çoğaltma
+- [x] Üç fazın kapı durumlarını ve Q1-Q2 kısa devre yasağını otomatik doğrulama
+- [x] Üç faz fiziksel modele kapalı çevrim akım denetimini bağlama ve koşuyu doğrulama
+- [x] Fiziksel üç faz modelinde nötr susturma ve Sin³ kazanç taramasını tamamlama
+- [x] Sin³ ileri beslemesine alternatif olarak ölçülen 150 Hz nötr akımına dayalı enjeksiyon noktası kurma
+- [x] Kapalı çevrim sıfır-dizi denetimini tarama ve geçici Kzero3=22 V/A değerini doğrulama
+- [ ] Gerçek kontrol kodundaki Sin³ denklemi, işareti, ölçeklemesi ve enjeksiyon noktasıyla Simulink yapısını karşılaştırma
+- [ ] Gerçek verilerle klasik/susturma/Sin³/sıfır-dizi yöntemlerini aynı çalışma noktalarında yeniden koşturma
+- [x] Senaryo 1/2/3 görsellerinden IL1 ve Iout temel bileşen/THD değerlerini tabloya aktarma
+- [x] Senaryoları klasik / nötr susturma / susturma+Sin³ olarak kaynak mekanizmasıyla eşleme
+- [x] Senaryo 1 ile eski Şekil 4.5--4.9 eşleşmesini doğrulayıp tezde aynı yeni numaralarla aktarma; eski Şekil 4.7'nin ikinci kanal açıklamasını özgün ekran başlığına göre düzeltme
+- [x] Eski Şekil 4.1--4.2'yi gelen 50 Hz/10 kHz/ölü zamansız parametreler ve mevcut Q1--Q4 mantığıyla yeniden üretip yan yana HTML karşılaştırmasını hazırlama
+- [ ] Yeniden üretilen Şekil 4.1--4.2'yi ana tez kanıtına dönüştürmeden önce özgün modülasyon indeksi, taşıyıcı fazı ve ölü zamanı gerçek PWM kodu/`.slx` ile kilitleme
+- [ ] Senaryo eşlemesini gerçek `.slx` veya kapı koduyla kesin olarak doğrulama
+- [ ] Senaryo 1/2/3'ü aynı FFT penceresiyle (0,06 s başlangıç, 2 çevrim, 50 Hz) yeniden üretme
+- [x] Doğru özdeşliği kullanma: sin³(x)=[3sin(x)-sin(3x)]/4; kaynak PDF'deki katsayı hatasını modele taşımama (01.09.2026 `rescan_sin3_coefficients_20260901.m` bu özdeşlikle koşuldu)
+- [ ] Uygulamanın `K*sin³(theta)` mı yoksa `K*sin(3theta)` mı kullandığını koddan kilitleme
+- [x] Düşük, orta ve anma gücü çalışma noktalarını otomatik koşturma (0,75/1,50/2,30 A DENEME)
+- [ ] Gerçek düşük, orta ve anma gücü seviyelerini donanım/tez parametrelerinden doğrulama
+- [ ] 30 kW eski kaynak ile 100 kW yeni başvuru kapsamından hangisinin tezde nihai sistem olduğunu danışman kararıyla kilitleme
+- [ ] 400/700/1000 V ve 10/30/140 kHz değerlerini alt sistem ve kaynak bazında ayırma; tek modele karıştırmama
+- [x] Geçici ortalama model için L, S, T Bode eğrileri ile kazanç/faz marjlarını üretme
+- [x] Şebeke endüktansı değişimine karşı marj duyarlılığını hesaplama
+- [ ] Bode modelini gerçek LCL ve denetleyici katsayılarıyla yeniden üretme
+- [x] MATLAB sonuçlarını tez için vektörel PDF/SVG ve CSV olarak dışa aktarma
+- [x] Eski tez Bölüm 2 güç, verim ve THD dizilerini `rebuild_chapter2_legacy_profiles.m` ile vektörel PDF ve CSV olarak yeniden üretme
+- [x] Eski Şekil 2.4'teki 144 noktayı yeniden gruplayarak tutarsız Tablo 2.1 yerine düzeltilmiş dağılımı hesaplama
+- [ ] Konum/yönelim bilgisi kesinleştiğinde gerçek saatlik PVGIS verisini içe aktarıp temsilî profil ile karşılaştırma
+- [ ] Eski Şekil 3.13--3.16 için harmonik oluşumu, referans/gerçek akım ve anahtarlama kanallarını kesin modelden dışa aktarma
+- [x] Eski Tablo 4.1--4.3 ve Şekil 4.25--4.28'i doğru Sin³ denklemiyle yeniden hesaplama (`results/sin3_rescan_20260901/`, review: `2026-09-01_SIN3_KATSAYI_YENIDEN_TARAMA.md`; düzeltilmiş optimum D1=0,34 D3=0,40; eski adaylar doğrulanmış parametre setine taşınamıyor. Şekil 4.29--4.32 senaryo ekranı olduğundan yeniden hesap kapsamı dışında)

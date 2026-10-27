@@ -1,0 +1,969 @@
+===== PAGE 1 =====
+ 
+1 
+ 
+1) Enerji Depolama Sistemlerinde Kullanılacak Çevirici Yapısı 
+ 
+Yakın gelecekte ülkemizde; ç evirici, batarya yönetim sistemi ( BYS) ve batarya içeren, 30-50 GW gü çlerinde elektrik 
+depolama tesis lerinin kurulması beklenmektedir . Bu tesisler yerli imkanlar ile kurulamaz ise yatırımcı lar dış firmalara 
+yönelecektir. Ayrıca, gün içinde enerjinin ucuz olduğu saatlerde şebekeden aldığı elektrik enerjisini depolayıp, elektrik 
+enerjisinin pahalı olduğu saatlerde depolanan enerjiyi kullanmak isteyen ve/veya şebekeye satmaya çalışacak şirketler 
+de ülkemizde şimdiden fizibilite çalışmalarına başlamış bulunmaktadır lar. Özellikle elektrikli araçların sayıca artması ile 
+birlikte bunların şarj gereksinimlerinin sağlanması için ev, apartman, AVM vb. yüklerin olabileceği tüketicilerde elektrik 
+altyapısının yetersizliği nedeni ile enerji depolama birimlerine olan ihtiyacın artacağı da değerlendirilmektedir. Bu şartlar 
+altında özellikle yüksek güçlü enerji depolama tesislerinde kullanılacak, batarya yönetim ( şarj ve deşarj ) sistemini 
+hedefleyen devrenin; topolojisi, yazılım ı ve kontrol algoritmasının özellikleri oldukça önem kazanmıştır. Çok sayıda 
+batarya kullanan yüksek güçlü enerji depolama tesislerinde bataryaların hem şarj hem de deşarj yönünde problemsiz 
+çalıştırılmaları oldukça önemlidir. Bu tesislerde çok sayıda seri ve paralel batarya grupları kullanıldığı için tedbir alınmadığı 
+takdirde seri bağlı koldaki bir adet bataryada yaşanan problem seri koldaki tüm bataryaların devrede n çıkmasına neden 
+olabildiği gibi, seri kolda bulunan bir bataryanın (yapısal nedenlerle) gerilimindeki azalma tüm seri kolun akım değerini 
+düşürmekte, sonuç olarak hem şarj hem de deşarj süresince verimsiz çalışan, yatırımcıya orta ve uzun vadede ekonomik 
+zararlar veren sonuçlar ortaya çıkabilmektedir. Bu nedenle özellikle yüksek güçlü depolama sistemleri için verimli aktif 
+BYS yapısı tercih nedenidir. 
+ 
+Proje önerisinde yukarıda sıralanan sorunlara çözüm olarak, değiştirilmiş T tipi, iki yönlü, PFC özellikli bir çevirici yardımı 
+ile 30 kW değerindeki batarya gücünü şarj ve deşarj edebilecek özellikte yeni nesil aktif batarya yönetim sistemi 
+tasarlanacak, prototip olarak üretilecek ve test edilecektir. Bu kapsamda bataryaların tek tek şarj ve deşarjı nı kontrol 
+ederek, aşırı şarja veya derin şarja girmesin i önleyen özgün bir devre topolojisi sunulmuştur. Evirici modunda düşük 
+güçlerde çalıştığında klasik T tipi eviricilerde görülen düşük verime ve yüksek THD değerli şebeke akım değerine engel 
+olacak kontrol modeline sahip olması ve önerilen topolojinin boost devreye ihtiyaç duymaması devrenin özgün boyutlarını 
+oluşturmaktadır. 
+ 
+Önerilen devre topolojisi, şarj durumunda, vienne rectifier devre modelini içe rdiği için şebeke akımının THD değerinin 
+düşük tutulması, DA bara gerilimini arzu edilen değere çıkartması ve güç faktörü (GF) değerinin 1 yapılması hedeflerini 
+sağlayacağı öngörülmektedir . Önerilen devre topolojisi , şarj sırasında batarya gerilim ve akımının batarya üreticisinin 
+önerdiği değerlerde sağlıklı çalışmasını mümkün kıl dığı için bataryaların ömürleri artmakta ve sonuç olarak EDS’nin 
+yüksek verimle çalışması sağlanmaktadır. Batarya şarj geriliminin esnek bir şekilde ayarlanabiliyor olması devrenin 
+değişik batarya tipleri için kullanılabilmesinin de yolunu açmaktadır. Değiştirilmiş T tipi çeviricinin deşarj modunda (batarya 
+gücü azalırken) feed forward değerine ters fazda 3. harmonik bileşeni eklenerek düşük verim ve akımdaki yüksek THD 
+problemi çözülmüştür. BYS devresinin kontrol altyapısı değişik akü tiplerinde kullanılabilecek şekilde geliştirlecektir. 
+ 
+Projenin üç önemli hedefi bulunmaktadır: 
+a) Önerilen topolojinin verimli çalıştığını ispatlayarak özellikle çok daha yüksek güçlü enerji depolama sistemlerinde (EDS) 
+çalıştırılabilmesinin önünü açmak. EDS gücü arttıkça batarya sağlığı çok daha önem kazanmaya başlayacak, dolayısı ile 
+aktif batarya yönetim sistemlerine dönük çözüm arayışları hızlanacaktır. Böylece önümüzdeki 2 -3 yıl içinde 
+projelendirilecek olan yüksek güçlü EDS’ler için batarya sağlığını hedefleyen alternatif bir ürün ortaya koymak, 
+b) Proje maliyet kısıtları nedeni ile EDS gücü 30 kW seç ilerek, önerilen topolojinin elektrik şebekelerinde uygulanması 
+sağlanarak, önümüzdeki süreçte özellikle elektrikli araçların yaygınlaşması ile birlikte ortaya çıkması beklenen altyapı 
+problemlerinde apartman, AVM vb. yerlerde de kullanılabilecek verimli bir ürün geliştirmek, 
+c) Proje kapsamında yapılacak çalışmalardan bir doktora ve bir yüksek lisans tezi üretmek, etki faktörü yüksek dergilerde 
+en az 2 makale yayımla mak ve ilgili konferans/sempozyumlarda en az 2 bildiri sun mak ve bu alanda nitelikli akademik 
+personel yetiştirmek. 
+ 
+ 
+ 
+ 
+Yüksek güçlü batarya kullanılan elektrik depolamalı tesislerde en önemli masraf kalemi batarya maliyetidir. Bataryanın bir 
+ömrü vardır ve bu ömür şarj/deşarj sayısı ile orantılı olarak azalır ken, derin deşarj ve aşırı şarj durumlarında ise dramatik 
+olarak azalır. Bu durumda bu tür tesisleri ekonomik kılmak için şu 3 konu hayati öneme sahiptir: 
+ 
+1) bataryayı dengeli şarj/deşarj etmek, 
+2) problemli bataryayı tespit etmek, problemi çözmek, ya da bataryayı bypass etmek, 
+3) bataryayı üreticilerinin müsaade ettiği sıcaklık değerleri arasında çalıştırmaktır. 
+ 
+Batarya, PV paneli gibi davranmayan ve içinde kimyasal olayların meydana geldiği dinamik bir içeriğe sahiptir. Bu nedenle 
+çevirici topolojisi, bu topolojinin BYS yapısına uygun olması ve BYS (aktif/pasif) türü oldukça önemlidir. Bataryanın verimli 
+bir şekilde şarj ve deşarj yap ılabilmesinin bazı koşulları vardır. Bunlar; ortam sıcaklığı, batarya tipine göre değişen kritik 
+şarj/deşarj gerilim ve akım değerleri olar ak sayılabilir. Aynı özellikte iki batarya aynı şartlar altında çalıştırılsa da, imalat 
+kaynaklı sorunlar/yapısal farklar nedeni ile bir tanesi diğerinden önce problem çıkarabilmekte ve problemin kaynağını daha 
+önceden tespit etme imkanı da çoğunlukla bulu nmamaktadır. Özellikle yüksek güçte, orta gerilimde çalışan bir elektrik 
+
+===== PAGE 2 =====
+ 
+2 
+depolama tesisinde seri koldaki batarya sayısı azımsanmayacak kadar çok (yüzlerce prizmatik batarya) olacaktır. Depolama 
+gücünün büyüklüğü ise paralel bağlı batarya kol sayısı ile doğ ru orantılı olarak artar. Seri kolda yer alan bir bataryanın 
+kimyasal özelliğinin olumsuz neden(ler)den dolayı geçici ve/veya kalıcı olarak değişmesi, hem şarj hem de deşarj edilecek 
+güç değerini (tasarlanan tesisin nominal güç değerinin altındaki bir değere) düşürecektir. Bu durum elektrikli depolama tesisi 
+için kabul edilebilecek bir durum değildir. Dolayısı ile projenin araştırma sorusu şudur: Yüksek güçlü EDS’lerde batarya ömrü 
+nasıl arttırılabilir? 
+ 
+Bu araştırma sorusuna ve yukarıda belirtilen sorunlara çözüm olarak proje önerisinde yeni nesil BYS kavramı ile batarya 
+şarj/deşarj özelliklerinde aşağıda sıralanan özgünlüklere atıf yapılmıştır. Bunlar; a) Önerilen BYS’nin uygulanacağı, Şekil 
+1 ve Şekil 2’de verilen devre topolojisi projenin ilk özgün yönünü oluşturmaktadır. Bu topoloji yardımı ile her bir batarya; ayrı 
+ayrı şarj edilebilecek ve şarj durumu sürekli izlenerek gerektiğinde problemli bataryaya müdahale edilebilecektir. b) Deşarj 
+topolojisi ise problemli olduğu tespit edilen bataryayı, seri kol akım yoluna zarar vermeden bypass edebilecek ve yedekteki 
+diğer bataryayı devreye alarak seri koldaki güç düşüşünü kompanze edebilecektir. c) Seri kol üzerindeki her bir bataryanın 
+gerilim kontrolü yapılarak gerilim değerinin kolaylıkla ve esnek bir şekilde ayarlanabilmesi nden dolayı fiziksel bağlantılar 
+sırasında ark ve aşırı akım oluşumu engellenebilecektir. d) Klasik yaklaşımlarda kullanılan, gerilim ayarı için sürekli çalışarak 
+verimsizliğe ve yüksek EMI değerine neden olan boost devresine ihtiyaç bırakmayacaktır. e) Eviriciler düşük güçlerde hem 
+düşük verimle hem de çıkış akımında yüksek THD değeri ile çalışırlar (Chicco vd., 2009). T tipi çeviricilerde bu iki probleme 
+çözüm öneren kontrol yöntemi ise bu projenin diğer bir özgün yönünü oluşturmaktadır. İlerleyen zaman diliminde “second 
+life” olarak tabir edilen ikinci el kullanılmış piller de bu tür depolama tesislerinde kullanıma girecektir. Hem şarj/deşarj gerilim 
+hem de akım değerleri birbirine yakın (aynı batarya kimyasına sahip) olmak şartı ile ikinci el batarya türlerinde de, önerilen 
+BYS topolojisinin elektrik depolama birimlerinde tercih nedeni olacağı değerlendirilmektedir. 
+ 
+Bu projedeki hedeflerden bir tanesi de paralel kolların DA bara ile gerilim uyumunu sağlayan boost çeviricilerin kullanım 
+zorunluluğunu ortadan kaldırmaktır. Boost devre kullanıldığında, b ataryaların şarjı tükendikçe düşen batarya gerilimini 
+yükseltme sürecinde, boost devrenin verimi artan gerilim farkı ile azalacaktır (Galkin vd., 2021; Lin, 2022). Diğer bir ifade ile 
+bataryaların şarjı tükendikçe boost çevirici gerilimi yükseltmek için bataryalardan yüksek pik akımlar çekerek bataryaların 
+ömrünü kısaltacağı gibi aynı zamanda bataryaların şarjı tükendikçe gittikçe daha verimsiz bölgeye kaymak suretiyle 
+bataryadan alınan enerjinin bir kısmını boşa harcayacaktır. Batarya gerilimi her an referans seviyeden farklı olacağından 
+boost devresi sürekli çalışmak suretiyle anahtarlama kaybına sebep olacaktır. Boost devresi nominal DA bara gerilimine ve 
+nominal DA akımına sürekli olarak maruz kaldığı için hem anahtarlama kaybı hem de iletim kayıpları eviricideki anahtarların 
+her birinden daha fazla olacaktır. Ayrıca yine aynı sebepten boost anahtarı eviricideki tüm anahtarların ürettiği 
+elektromanyetik girişim ( EMI) değerinden daha yüksek değerde EMI kaynağı olacaktır. Kayıp güçler bataryaları boşa 
+tükettiği gibi iklimlendirmenin önemli olduğu bu depolama sisteminde bu kayıpların ısıya dönüşmesi ayrıca bir soğutma 
+maliyeti de oluşturacaktır. Deşarj yönetimi kapsamında kontrollü batarya bypass etme ve devreye alma donanımı sayesinde, 
+bataryalar alttan gelen akımı direkt olarak yukarıya ileten bir diyot üzerinden ya bypass edilerek ya da bir MOSFET ile 
+devreye alınarak seri kola eklenip çıkarılabilmektedir. Bu işlem şarjı erken tükenen, ömrü erken biten bataryaların seri kol 
+gücünü kısıtlamaması amacıyla bypass edilmesi mantığı üzerine tasarlanmış olmakla birlikte, ihtiyaç duyulacak kadar 
+sayıda (yedek) bataryanın istenildiği zaman devreye alınıp çıkarılabilme imkanını sağlaması sebebiyle de seri batarya 
+grubunun toplam bara gerilimini ayarlayabilme yolu açılmış olmaktadır. Üstelik boost devresi içermediğinden, dolayısı ile 
+(deşarj boyunca) belirli bir frekansta sürekli bir anahtarlama olmayacağından, tüm devrenin anahtarlama kaybı da 
+azalacaktır. Yeni nesil BYS’nin izolasyon avantajı sayesinde 10-20 V seviyesinde seçilebildiği için kullanılacak MOSFET çok 
+düşük Rds_on değerlerine sahip olabilecektir. Bu nedenle MOSFETin iletim kayıpları da oldukça düşük olacaktır. Her bir 
+bataryanın, kimyasının takip edili p gerektiğinde (hem şarj hem deşarj süresince) müdahale edilebilmesi için ayrı ayrı 
+beslenmesi gerekir. Bu durumda, projede kullanılacak transformatörün primer sargısına uygulanacak yüksek frekanslı AA 
+gerilimin nasıl üretileceği ve transformatörün sargı yapısının nasıl olacağı önem kazanmaktadır. Şekil 1’de verilen özgün 
+devre topolojisi ile ilk hedef, Şekil 2’de verilen özgün devre topolojisi ile de ikinci hedef sağlanmaktadır. 
+ 
+Bu proje, batarya kimyası üzerine yazılmış birçok eser taranarak, önümüzdeki süreçte batarya depolamalı sistemlerde 
+ortaya çıkması muhtemel sorunlar öngörülerek hazırlanmıştır. Şarj ve deşarj için her bir bataryaya ayrı ayrı hükmede rek 
+(dolayısı ile bataryaların derin şarja veya aşırı şarja girmesini engelleyen) bir topoloji üzerine bina edilmesi ve buna uygun 
+BYS algoritma altyapısı önerilmesi bu projeyi özgün kılan iki ana öğedir. 
+ 
+Proje dosyasının ileriki bölümlerinde de detaylı olara k açıklandığı üzere, klasik aktif BYS yapılarında doğrultucu üzerinden 
+batarya şarjı için bir DA barası oluşturulmakta, n adet seri bağlı bataryanın her birine DA bara gerilim değerinin 1/n'de biri 
+uygulanmaktadır. Eğer dizi üzerinde şarj değeri düşük olan batarya var ise anahtarlama yapılarak dolu olan bataryadan bu 
+bataryaya enerji aktarılmaktadır. Bu projede önerilen topolojide ise her bir batarya ayrı ayrı kontrol edilmekte, dolayısı il e 
+ayrı ayrı şarj edilmektedir. Bu topolojide her bir batarya belirlenen gerilime kadar şarj edildikleri için bataryaların şarj değerleri 
+arasında bir fark oluşmamaktadır. Eğer batarya(lar)da bir problem oluşur ise bu batarya(lar) devre dışına çıkarılmakta yerine 
+serinin en sonunda (transformatör üzerinden şarjlı bir şekild e yedekte bekletilen) batarya(lar)dan ihtiyaç duyulan kadarı 
+devreye alınmaktadır. Böylece devreyi verimsiz kılan boost devresine de bir ihtiyaç kalmamaktadır. 
+ 
+Benzer şekilde deşarj sürecinin de hassas bir şekilde yönetilmesi gerekmektedir. Önerilen yedek batarya kullanımı 
+sayesinde DA baradaki sistemin verimini oldukça düşüren DA/DA boost çeviricinin artık kullanılmaması ve erken deşarj olan 
+bataryaların tüm seri kolun gücünü düşürmemesini sağlayan batarya bypass yaklaşımı (Shibata vd., 2001) kullanılmıştır. 
+ 
+Şekil 1’de projede önerilen değiştirilmiş 3 seviyeli T tipi çevirici topolojisi, Şekil 2’de ise Şekil 1’de önerilen tipte bir çevirici 
+de kullanılabilecek olan şarj/deşarj devre topolojisi ve Şekil 3’te şarj durumunda, Şekil 1’deki anahtarların tetikleme stratejileri 
+
+===== PAGE 3 =====
+ 
+3 
+gösterilmiştir. Şekil 1’de gösterilen nötr IGBT’ler; hem girişteki LCL filtreler ile doğrultma durumunda 3 fazlı PFC olarak görev 
+yaparak şebeke akımının THD değerini düşürür hem de DA bara gerilim değerini (boost) ayarlar. Şekil 1’de gösterilen çevirici 
+topolojisinde 6 anahtarlı SiC -MOSFET yapısı ise faz-nötr (AN, BN, CN) arasına yıldız bağlı (ferrit core ) transformatörün 
+primerlerini beslemektedir. Böylece Şekil 1’de verilen topoloji hem şarj hem de deşarj operasyonlarında tam olarak 
+kullanılmakta ve iki farklı (şarj/deşarj) operasyonu için ek bileşenlere gerek duymamaktadır. Şekil 1’in özgün yönü ise iki 
+yönlü çeviricinin X, Y ve Z noktalarından elde edilen yüksek frekanslı, 3 fazlı, 3 seviyeli AA gerilimin 3 fazlı transformatörün 
+beslemesinde kullanılmasıdır. Böylece Şekil 1’de gösterilen “1 devresi” ile hem vienne rectifier yapısı ile ayarlanabilir DA 
+bara gerilimi oluşturulurken hem de çeviricinin X, Y ve Z noktalarından 3 fazlı, 3 seviyeli AA gerilim elde edilebilmektedir. 
+Şekil 1’de gösterilen köprü diyot devresi, klasik T tipi çevirici devresine göre maliyeti arttırmamaktadır, zira yüksek güçlü T 
+tipi çift yönlü çeviricilerde body diyotlarının yetersiz kalması nedeni ile uygulamada 6 adet SiC MOSFET’lere paralel olarak 
+güç diyotları (6 adet) zaten bağlanmaktadır. Şekil 2’deki devrenin özgün yönü ise seri bağlı bataryaların tek tek şarj/deşarj 
+durumlarının kontrol edebilecek özelliğe sahip olmasıdır. Şekil 2 ile verilen özgün yapının diğer aktif BYS topolojilerinden 
+üstünlüğü projenin ilerleyen bölümlerinde karşılaştırmalı olarak açıklanacaktır. 
+Önerilen projede şarj durumunda hem LCL filtre hem 6 adet IGBT anahtar içeren PFC katı hem de 3 fazlı köprü diyot 
+kullanılarak elde edilen (ayarlanabilen) DA bara gerilimi (Kedjar, 2014; Burgos, 2007; Chongming, 2003); 6 adet SiC anahtar 
+ile 30 kHz’de tetiklenerek (fe rrit özlü) güç transformatörünün faz-nötr gerilim beslemeli 3 fazlı primer sargılarına uygulanır. 
+Bu transformatörlerin sekonderlerinde 10‘ar adet 3 uçlu sekonder sargı çıkışı bulunmaktadır. Bu yapıda her bir transformatör 
+çıkışında izole ve bağımsız, devamında buck çevirici olan batarya şarj devreleri yer alır . Primer gerilim değeri, sekonder 
+gerilim değerleri yaklaşık 2x5 V seviyelerinde olmasını sağlayacak şekilde elde edilecektir. Primer g erilimi etkin değerini 
+belirlemede 2 faktör etkilidir: a) IGBT’leri kullanarak sistemin (boost) DA bara gerilim değeri, b) SiC’leri 30 kHz’de çeşitli duty 
+değerleri ile tetikleyerek transformatörün primer devresinin etkin gerilim değeri. Bu yapıda aşırı yü klenme olur ve 
+transformatörün sekonder devresindeki buck çeviriciyi besleyen DA gerilim değeri düşer ise Şekil 1’de PFC yapısı içinde yer 
+alan nötr IGBT’ler kullanılarak sistemin DA bara (boost) gerilimi (geçici olarak) yükseltilebilecektir. 
+Şekil 1. Önerilen topolojide iki yönlü çevirici devresinin gösterimi. 
+Önerilen topoloji gereği; g erek sistemin DA (boost) bara gerilim değeri nin gerek transformatörün primer gerilim etkin 
+değerinin ve gerekse buck çevirici yi besleyen DA referans gerilim değerinin esnek bir şekilde ayarlanabilir olması ; buck 
+çeviricide D değerini %85 -100 bant aralığında tutarak devrenin verimini n arttırılmasına çok önemli katkı sağlamaktadır. 
+Evirme modunda devrenin (özellikle düşük güçlerde) verimini arttırmak amacı ile T tipi eviriciler için önerilen kontrol yöntemi 
+uygulanacaktır. Transformatörün kayıplarını azaltmak için primer devre için LCL filtre tasarlanacak ve primer akımının (30 
+kHz anahtarlama frekansında) sinüs formuna yaklaşması sağlanacaktır. LCL filtre devresinin rezonans frekansını belirlerken 
+üretilecek ferrit özlü transformatörün devre parametrelerinden faydalanılacaktır. Devrenin topolojisi, tüm bataryalar deşarj 
+modunda seri olarak bağlanacak şekilde belirlenmiştir. Böylece her bir batar yanın şarjı tek tek yönetilebilecektir. Diğer bir 
+ifade ile her bir bataryanın gerilim ve akımı kontrol edilebilir, istendiğinde o bataryanın şarjı tamamen kesilebilir. Bu top oloji 
+ile her bir bataryanın aldığı ve verdiği enerji hem izlenebilmekte ve hem de bunların ayrı ayrı kontrol imkânı 
+sağlanabilmektedir. 
+ 
+
+===== PAGE 4 =====
+ 
+4 
+ 
+ 
+Şekil 2. Önerilen topolojide batarya şarj/deşarj devresinin gösterimi. 
+ 
+ 
+Şekil 3. Şarj durumunda; a) Şekil 1’deki nötr IGBT’lerin tetikleme stratejileri, b) SiC-MOSFET tetikleme darbeleri. 
+ 
+
+===== PAGE 5 =====
+ 
+5 
+Klasik T tipi çeviriciden beslenen depolama sistemlerinde Şekil 1 yapısı kullanılmadığından Şekil 2’de önerilen topolojinin 
+de kullanılma şansı bulunmamaktadır. Klasik T tipi çevirici kullanıldığında, Şekil 2 yerine kullanılacak alternatif devre 
+modelleri ve bunların Şekil 2 ile karşılaştırılması yöntem bölümünde yapılmıştır. 
+ 
+ 
+Yüksek güçlü EDS çok sayıda batarya barındırmaktadır. Bataryalar üreticilerinin önerdiği şarj ve deşarj değerlerinde 
+kullanılmadıklarında ömürleri oldukça kısalmakta, problemli bir batarya nedeni ile seri koldaki tüm bataryalar nominal 
+değerlerinden uzaklaşmakta ve sonuç olarak EDS verimsiz çalışmaktadır. Projenin amacı EDS içinde yer alan her bir 
+bataryayı ayrı ayrı kontrol ederek her an nominal değerlerinde çalışmalarını sağlayarak EDS’nin verimini arttırmak ve 
+bu amacı değişik batarya türleri için de başarabilmektir. 
+ 
+Böyle bir amaca odaklanılmasının nedeni aşağıda sıralanan ihtiyaçları karşılamaktır. 
+a) Yakın bir gelecekte GES ve HES yapan tüm yatırımcılar en az santralin kurulu gücü kadar bir güçte elektrik depolama 
+tesisi de kurmak zorunda kalacaklardır. 
+ 
+b) Gün içinde enerjinin ucuz olduğu saatlerde şebekeden aldığı elektrik enerjisini depolayıp, elektrik enerjisinin pahalı 
+olduğu saatlerde depolanan enerjiyi kullanmak isteyen ve/veya şebekeye satmaya çalışacak şirketler de ülkemizde 
+fizibilite çalışmalarına başlamış bulunmaktadır. 
+ 
+c) Özellikle elektrikli araçların sayıca artması ile birlikte bunların aynı anda şarj gereksinimlerinin sağlanması için ev, 
+apartman gibi yerleşim yerlerindeki (4 telli) elektrik altyapısının yetersizliği nedeni ile enerj i depolama birimlerine olan 
+ihtiyacın artacağı da değerlendirilmektedir. 
+ 
+d) Bataryaların şarj/deşarj gerilimleri farklı olabildiği için değişik şarj/deşarj gerilim ve akımında da görev yapabilecek 
+özellikte BYS tasarımı yapmak önemli hale gelmektedir. 
+ 
+e) Türkiye elektrikli araç piyasasına yatırım yapan üreticiler aracın maliyeti hesaplanırken elektrikli araçlarda batarya 
+maliyetinde negatif bir bedel belirlemektedirler. Bu negatif bedel ise araç trafiğe çıktıktan sonra batarya problemleri 
+nedeni ile bakıma geldiğinde telafi edilmektedir. Asıl amacın enerji depolama olmadığı bu tür kullanım yerlerinde (taksi, 
+minibüs, otobüs, forklift vb.) pasif BYS sistemi kullanılmaktadır. Bataryada problem olduğunda hemen değiştirilmekte 
+ve bu maliyet pek de önemsenmem ektedir. Örneğin forkliftin kullanım amacı yük taşımaktır. Batarya problemi 
+olduğunda bu problemin nedenine odaklanılmamakta, sıkıntılı batarya hemen değiştirilmekte ve değişim maliyeti 
+forkliftin asıl amacı yanında ihmal edilebilmektedir. Benzer durum ins an ve yük taşıyan elektrikli araçlar için de 
+geçerlidir. Bu nedenle bu tür yerlerde pasif BYS kullanımı üretici tarafından tercih nedenidir. Elektrikli araçlara batarya 
+paketi hazırlayan kuruluşların önümüzdeki süreçte pasif BYS kullanarak, ülkemizde yeni kurulacak elektrik depolamalı 
+santrallere de batarya paketi imal etmeyi hedefledikleri gözlemlenmektedir. Bu yaklaşımın hatalı olduğunun kısa süre 
+sonra (uygulamada çıkan problemler nedeni ile) anlaşılacağı ve terk edileceği değerlendirilmektedir. Enerji depolamalı 
+(ticari) kuruluşlarda (elektrikli araçlardan farkı) amaç bataryanın maksimum verim ile kullanımıdır. Eğer depolanan 
+enerji ile şebekeye satılan enerji arasındaki maliyet farkı yatırımcı aleyhine dönerse bu sonuç kabul edilemez olacaktır. 
+Yatırımcı için santral maliyetinde en pahalı kalem batarya paketidir (elektronik aksam maliyeti bunun yanında düşük 
+kalmaktadır). Enerjinin alım satımı ile ortaya çıkan ticari kazancın bir süre sonra ömrü biten batarya paketleri yerine 
+yenilerini satın almaya harc anması yatırımcının rıza göstereceği bir durum değildir. Bu tür tesislerde batarya sağlığı, 
+verimi ve kullanım ömrünün uzunluğu yatırımcı için vazgeçilmez derecede önem arz etmektedir. Bu nedenle pasif BYS, 
+depolamalı elektrik santralleri için tercih edilecek bir yöntem değildir 
+ 
+Projenin hedefleri ise aşağıda maddeler halinde özetlenmiştir: 
+ 
+a) Projede, yukarıda belirtilen amaçlara ulaşılmasını sağlayacak olan donanıma ve yazılım algoritmalarına 
+odaklanılacaktır. Proje BYS yazılım alt yapısı; 3.2 V, 50 A li tyum demir fosfat bataryalardan oluşan 30 kW’lık elektrik 
+depolamalı BYS’nin tasarımı ve prototip üretimi hedeflenmiştir. 
+ 
+b) Şarj işleminde kullanıma girecek ve buck çeviriciyi besleyecek olan ferrit özlü transformatörlerin maliyet ve boyutunu 
+azaltmak i çin şarj modunda anahtarlama frekansı 30 kHz olarak belirlenmiştir. 30 kW gücünde olacak prototipte 
+özellikle elektrikli araçların şarjının yapılacağı ev ve ap artmanlardaki yetersiz şarj altyapısı problemi nedeni ile 4 telli 
+elektrik sistemine göre (bir fa zlı yüklerle çalışmaya destek verebilen) değiştirilmiş T tipi evirici tasarımı yapılması 
+hedeflenmiştir. Bu prototipin tasarımı ve üretimi ile elde edilecek bilgi ve tecrübe birikiminin, çok daha yüksek güçlü 
+(MW), batarya maliyetinin çok daha yüksek olduğu (dolayısı ile aktif BYS sisteminin çok daha önem kazandığı) elektrik 
+depolama tesislerinin yapımı için proje ekibine ciddi bir know-how kazandıracağı değerlendirilmektedir. 
+ 
+c) Literatürde yapılmış çalışmaların tamamına yakınında şarj ve deşarj yapan gü ç elektroniği devrelerinde bataryalar 
+genellikle bir kapasitör gibi modellenmiştir. Bataryayı bir kapasitör olarak modellemek aslında; zamanla değişen, 
+doğrusal olmayan birimlerden birden fazlasının seri ve paralel bağlantılarla bir araya getirilmesiyle elde edilen karmaşık 
+bir yapının, zamanla değişmeyen doğrusal, tek bir komponent olarak modellenmesi anlamına gelir. Bataryaların farklı 
+kimyasal içerikleri, farklı anot-katot türleri gibi özellikleri bulunmakta, bunlar bile; basınç, sıcaklık gibi çevresel şartlarla, 
+bataryanın o zamana kadar kaç defa şarj -deşarj olduğu ile ve şarj/ deşarj derinliği ile değişmektedir. Dolayısı ile 
+bataryanın ömrü ve verimi bu parametrelere oldukça bağlıdır. Bu bilgiler ışığında batarya sağlığına dönük olarak 
+
+===== PAGE 6 =====
+ 
+6 
+literatürde önerilen çalışmaların yüksek güçlü elektrik depolama tesisleri için (orta ve uzun vadede) yeterli olmadığı 
+sonucuna varılmıştır. Bu projenin bu bağlamda literatüre katkı yapması hedefler arasında yer almaktadır. 
+ 
+d) Mevcut çalışmalar BYS adı altında yalnızca batarya şarj gerilimlerini dengeli tutmak amacına odaklanmıştır. Ancak 
+aslında bu yöntemlerin hemen hepsi; şarjı güvenli sınırı aşmış bataryanın şarjını kesmeden o bataryaya paralel 
+bağlanan bir kapasitöre şarj edilen enerjinin sonradan şarj gerilimi düşük olan bataryaya paralel bağlanarak, o enerjiyi 
+diğer bataryaya aktarması şeklinde çalışan, dolayısı ile batarya sağlığını dikkate almayan ve çok sayıda batarya içeren 
+enerji depolamalı sistemlere yatırım yapacaklar için ekonomik anlamda yetersiz kalan yaklaşımlardır (Singirikonda ve 
+Obulesu, 2021) . Yüksek güçlü elektrik depolama tesislerinde batarya ömrü hayati derecede önemlidir. Bu tesisler 
+mutlaka, şarj-deşarj süreçleri batarya sağlığını önceleyecek donanım ve yazılımlarla yönetilmelidir. Bu projenin bir diğer 
+hedefi de yukarıdaki hedefleri doğrulayan bir prototip ortaya koymaktır. 
+ 
+2. YÖNTEM 
+ 
+Burada önce çeviriciler sonrasında ise bataryaları şarj/deşarj yapan devreler hakkında karşılaştırmalı bilgiler verilmiştir. 
+EDS’ler için tasarlanan çevirici topolojileri 4 ana grup altında incelen miştir. Her bir grubun avantaj ve dezavantajları 
+belirtilmiş, topolojilerin tanıtımı sonunda ise önerilen topolojinin mevcut olanlardan farklılığı ve üstünlüğü açıklanmıştır. 
+Daha sonra önerilen topolojinin şarj ve deşarj modunda nasıl çalıştığı, matlab-simulink programı ile üretilen simulasyon 
+sonuçları eşliğinde detaylandırıl mıştır. Deşarj modun da özellikle düşük güçlerde çalışırken T tipi çeviricilerde verim 
+düşüşü yaşanmaktadır ( Chicco vd., 2009). Deşarj modunda T tipi evirici veriminin önerilen yeni bir yaklaşım ile nasıl 
+arttırılabileceği açıklanmış, bu yaklaşıma ilişkin devre şemaları ve simulasyon sonuçları verilmiştir. 
+ 
+Bataryaları şarj/deşarj yapan aktif BYS’li devreler incelendiğinde çoğunlukla dengeleme yaklaşımlarının kullanıldığı 
+görülmektedir. Bu yaklaşımların, a) bataryanın derin şarj ve aşırı şarj a girmesi ile ortaya çıkan problemlerinin 
+çözümünde yetersiz kalması, b) önerilen develerde çok sayıda anahtar kullanılması nedeni ile hem verim kaybı ve 
+kontrol zorluğu hem de maliyet artışı gibi dezavantajları olduğu tespit edilmiştir. Projede önerilen topoloji ile; a) her bir 
+batarya bağımsız olarak kontrol edilebildiği için bataryanın derin şarja veya aşırı şarja girmesi engellenmiş, b) karmaşık 
+anahtar yapılarından ve kontrol tekniklerinden uzaklaşılmıştır . Bu yaklaşım ; batarya arızaları veya verimsiz batarya 
+kullanımı nedeni ile EDS’lerde ortaya çıkan ekonomik kayıplara engel olacak, çok sayıda batarya içeren EDS’lerin orta 
+ve uzun vadede ekonomik açıdan verimli çalışmalarını temin edecektir. 
+ 
+2.1. Doğrultucu ve Evirici Devre Topolojileri 
+ 
+Batarya hücrelerinin nominal gerilimi EDS bağlantı geriliminden çok daha düşüktür. Örneğin, lityum tabanlı bir batarya 
+hücresinin gerilimi 3-4 V arasında değişirken enerji depolama sistemleri 11 -34.5 kV’luk OG şebekeye bağlanır (Xavier 
+vd., 2019). Bu nedenle minimum DA bara geriliminin (600 -1000 V) sağlanabilmesi için çok sayıda hücrenin seri 
+bağlanmasıyla bir batarya ünitesi oluşturulur ve DA bara gerilimi şebeke bağlantısı için bir evirici yardımıyla AA’ya 
+dönüştürülür. Batarya hücrelerinin tam şarjlı ve tam boşalmış durumları arasındaki uç gerilimi değişimleri %40'a kadar 
+çıkabileceği göz önünde bulundurularak çevirici tasarımında batarya özelliklerinin de dikkate alınması gerekir (Trintis 
+vd., 2011). EDS’lerde kullanılacak DA/DA ve DA/AA çeviricilerin hem şarj hem de deşarj durumunda güç akışını 
+sağlayabilmesi, yüksek verim ve hızlı güç cevabı gibi özelliklere sahip olması gerekir. Ayrıca anahtarlama frekansı 
+değeri ile insan sağlığı açısından duyulabilir aralıktaki gürültü frekanslarının da ötesine geçilmesi gerekir (Stecca vd., 
+2020). Bu bilgiler ışığında EDS’ler için literatürde yer alan çevirici tasarımları incelenerek avantaj ve dezavantajları 
+irdelenmiştir. EDS’lerde kullanılan güç çeviriciler depolama sistemi ve şebeke arasına bağlantı şekline göre; tek 
+kademeli, iki kademeli, modüler sistemler ve katı hal transformatörlü sistemler olarak 4 grup altında sınıflandırılabilir. 
+ 
+2.1.1. Tek Kademeli DA-AA Çeviriciler 
+ 
+EDS’lerde sıklıkla kullanılan iki seviyeli çeviriciler; gerilim kaynağı çevirici, empedans kaynağı çevirici ve yarı-empedans 
+kaynağı çevirici olmak üzere üç türdedir. Literatürde iki seviyeli topolojilere alternatif olarak çevirici verimini artıran, çıkış 
+geriliminin esnek kontrolünün sağlanabildiği çok seviyeli topolojiler önerilmişt ir (Althuwaini vd., 2022) . EDS’lerde 
+kullanılan başlıca üç seviyeli topolojiler; nötr noktası kenetlemeli (NPC) çevirici, aktif NPC çevirici, T tipi çevirici ve uçan 
+kapasitör çeviricidir. 
+ 
+Gerilim kaynağı çevirici (VSC), üç fazlı AA sistemler için yaygın kullanılan bir topoloji olup literatürde yer alan diğer 
+çeviriciler arasında kontrol kolaylığı, düşük maliyeti ve basitliği nedeniyle tercih edilmektedir (Komurcugil ve Kukrer, 
+1999). VSC topolojisinde anahtarlama hızı düşük tutularak anahtarlama kayıpları azaltılmaktadır. Gerilim kaynaklı 
+çeviricilerin dezavantajı bataryalardan şebekeye enerji transferi sırasında yalnızca bir buck çevirici olarak çalışabilmesi 
+nedeniyle AA çıkış gerili minin DA bara geriliminden düşük olmasıdır. Bu topolojilerde bir diğer problem de 
+elektromanyetik girişim ( EMI) nedeniyle yanlış tetikleme geçişlerinin neden olabileceği geçiş anı probleminin çevirici 
+güvenilirliğini önemli ölçüde düşürmesidir. 
+ 
+Empedans kaynaklı (ZSI) ve yarı -empedans kaynaklı (qZSI) çeviriciler DA bağlantısında yer alan kapasitör ve 
+bobinlerden oluşan ek devre sayesinde VSC’den farklı olarak tam geçiş durumunu kullanarak yükseltici modunda 
+çalışabilir (Anderson ve Peng, 2008b). ZSI topol ojinin EDS’lerde kullanılabilmesi için iki yönlü güç akışı özelliğini 
+sağlamak amacıyla doğrultucu modunda çalışması sırasında akım geçişi için diyota paralel olarak ek bir anahtarlama 
+elemanı bağlanır (Rabkowski, 2007b, 2007a). q -ZSI topoloji (Anderson ve Peng, 2008b, 2008a) ise geleneksel ZSI 
+
+===== PAGE 7 =====
+ 
+7 
+topolojisinin geliştirilmiş halidir. ZSI ve q-ZSI çeviriciler literatürde çok çalışılan konulardan biri olmasına rağmen EDS’ler 
+için ticari ürün olarak uygulamalarına rastlanmamıştır. 
+ 
+Üç seviyeli nötr kenetlemeli çevirici (NPC) EDS uygulamaları (Tabart vd., 2018) için yaygın olarak kullanılan bir 
+topolojidir. Bu çevirici topolojisinin avantajı çıkış geriliminin büyüklüğünün artması ve iyileştirilmiş harmonik performansı 
+sayesinde filtre gereksiniminde azalma sağlanabilmesidir. Bu da anahtarların gerilim gereksinimini azaltan NPC diyotları 
+tarafından DA bara geriliminin yarısının kenetlenmesiyle mümkün olmaktadır. Topolojinin dezavantajı ise iki seviyeli 
+çeviricilere göre daha karmaşık kontrol ve modülasyon teknikleri gereksinimidir (Pou vd., 2005). NPC topolojisinin en 
+büyük dezavantajı güç kaybının eviricinin her bir bacağındaki iç ve dış anahtarlar arasında eşit paylaşılmamasıdır. Bu 
+asimetri çeviricinin anahtarlama elemanı güvenilirliği, anahtarlama frekansı, çıkış akımı gibi önemli parametrelerinin 
+sınırlanmasına neden olur. Geleneksel NPC topolojisindeki kenetleme diyotlarının yarı iletken anahtarlar ile 
+değiştirilmesiyle oluşturulan aktif NPC (ANPC) çevirici topolojisi EDS’lerde kullanılan bir diğer topolojidir (Tabart vd., 
+2018). ANPC topolojisi daha iyi kapasitör gerilimi dengelemesi ve daha fazla anahtarlama durumuna sahip olması 
+nedeniyle NPC’ye göre daha avantajlıdır. Ayrıca bu yapının yarı iletken anahtarlar arasında daha iyi kayıp dağılımı 
+sağlaması da bir diğer avantajıdır. Bununla birlikte ANPC topolojisinde daha fazla sayıda yarı iletken anahtar bulunması 
+nedeniyle sistem maliyeti yüksektir. 
+ 
+Uçan kapasitörlü (FC) (Meynard ve Foch, 1992) çeviricide klasik NPC’den farklı olarak DA gerilim girişini bölmek için 
+kenetleme diyotları yerine kapasitörler kullanılır. FC çeviricinin NPC çeviriciye göre avantajı modüler yapıya sahip olması 
+nedeniyle daha büyük gerilim seviyesi ve yüksek güç ihtiyaçlarına kolay adapte edilebilmesidir. FC çeviricinin en büyük 
+dezavantajı çok sayıda elektrolitik kapasitör gereksinimidir. 
+ 
+T tipi çevirici daha yüksek verim ve NPC ile karşılaştırıldığında arıza sonrası çalışma güvenilirliğinin daha iyi olması 
+nedeniyle son yıllarda yaygın kullanım alanına sahip bir topolojidir. T tipinde iç anahtarlarda bir arıza olması durumunda 
+üç seviyeli T tipi çevirici iki seviyeli çevirici olarak çalışabilir, bu da belirli bir seviyede güvenilir çalışma koşulunun 
+sağlanabildiğini gösterir. Literatürde iki yönlü üç seviyeli T tipi eviricinin EDS için düşük gerilim ve düşük güçlü (5 -kW) 
+bir tasarımı yer almaktadır (Sung vd., 2018). Çalışmada T tipi eviricinin iki yönlü çalışmadaki yeteneği ve yüksek verimli 
+oluşu gibi özellikleri raporlanmıştır. EDS’ler için yapılan bir çalışmada (Jeong vd., 2019), üç seviyeli DA/DA çevirici 
+entegreli, değiştirilmiş T tipi topolo ji önerilmiştir. Yüksek frekansta anahtarlama yaparak filtre devresinin boyutunu 
+küçültmek ve frekans artsa bile Si MOSFET’lere nispeten daha az güç kaybı ile güç dönüşümü yapabilmek için dikey 
+kollarda SiC, yatay kolda ise Si MOSFET’ler kullanılmıştır. 
+ 
+2.1.2. İki Kademeli Çeviriciler 
+ 
+İki kademeli çeviricilerde batarya ile DA/AA çevirici arasına boost DA/DA çevirici eklenir. Çok seviyeli çeviricilerde ek 
+gerilim dengelemesi sağlanması için seri çıkış ikili boost gibi değiştirilmiş yapıların kullanımı uygundur Ancak bu 
+yapıların dezavantajı da gerilim artırma yeteneklerinin düşük olması nedeniyle çok sayıda batarya dizisine sahip EDS’ler 
+için uygun bir topoloji olmayışıdır. Ayrıca giriş akımındaki dalgalanmanın yüksek olması da EDS uygulamalarında 
+batarya sağlığı için zararlı olabilmektedir (Chang, 2017). 
+ 
+2.1.3. Modüler Sistemler 
+ 
+Depolama sistemlerinde kullanılan gü ç çevirici devre yapılarından bir diğeri modüler sistemlerdir. Modüler sistemler 
+yarıiletkenlerin seri bağlantısı, modüllerin seri bağlantısından oluşan kaskat H-köprü ve modüler çok seviyeli çeviriciler 
+olmak üzere 3 alt başlıkta incelenmiştir. 
+ 
+İki veya üç seviyeli çeviricilerin OG hatta bağlantısında her bir faz bacağı için çok sayıda IGBT’nin seri bağlanmasıyla 
+birkaç kV (1.7–6.5 kV) gerilim değerini sağlayabilen tek bir IGBT modülü oluşturulur. Ancak bu yöntemin dezavantajları 
+maliyetinin yüksek olması, seri bağlantının uygulamasının zor oluşu ve her bir anahtarın aynı anda kontrol edilebilmesi 
+için karmaşık bir sürücü tasarımı gerektirmesidir. Seri bağlantılı topolojide çok sayıda anahtar olması yüksek bir 
+anahtarlama kaybını da beraberinde getir eceği için anahtarlama frekansının düşük seçilmesi gerekir. Bu da filtre 
+elemanlarının boyutunun büyümesine neden olur (Wang vd., 2016). 
+ 
+Kaskat H-köprü (CHB) çevirici her bir faz bacağına bağlanan çok sayıda seri bağlı H-köprü hücresinden oluşur (Eroglu 
+vd., 2022). EDS’lerde yer alan çok sayıdaki batarya modülü her bir H-köprü hücresine kısa diziler şeklinde dengeli olarak 
+dağıtılır. DA bağlantısındaki her bir bataryanın (veya dizinin) güç akışı bağlı olduğu H-köprü çevirici ile ayarlanır. Kaskat 
+bağlantı sayesinde yükseltici transformatöre ihtiyaç olmadan batarya modülünün gerilimi OG seviyesinde AA çıkış 
+gerilimine yükseltilir. CHB topolojisinin avantajları; yüksek çıkış gerilimi kalitesi, modüler olması, düşük frekansta 
+anahtarlama ve düşük gerilim li anahtarların kullanımıdır. CHB çevirici, tek kademeli çevirici olmasına rağmen bazı 
+referanslarda DA/DA kademesinin de eklenmesiyle iki kademeli çevirici yapısı şeklinde kullanıldığı görülmektedir (Al -
+Khdhairi ve Vural, 2021). 
+ 
+Modüler çok seviyeli çeviriciler (MMC) farklı gerilim seviyelerine uygun, yüksek verime sahip, düşük THD ve AA tarafında 
+filtresiz olması gibi avantajlara sahip oluşu ve esneklikleri ile son yıllarda EDS ve HVDC gibi uygulama alanlarında 
+kullanılmaktadır (Ali vd., 2022). MMC’lerde çok sayıda özdeş anahtarın seri bağlanmasıyla yüksek çıkış gerilimini 
+sağlanır ve OG transformatörü olmadan OG hatta bağlanabilir. Çok seviyeli gerilim yapısıyla çıkış AA akımı sinüse daha 
+yakın olduğundan AA filtre boyutu da azalır. MMC’lerde DA geriliminin kararlılığını sağlamak için alt modülün alt ve üst 
+
+===== PAGE 8 =====
+ 
+8 
+kollarının devreye girişinin doğru kontrolü gerekir. Aksi takdirde MMC’lerin dezavantajları olan fazlar arası sirkülasyon 
+akımı ve kondansatör gerilimi dalgalanması sorunları ortaya çıkar (Hasan vd., 2017). 
+ 
+2.1.4. Katı Hal Transformatörlü (SST) Çevirici 
+ 
+SST çeviriciler geleneksel hat transformatörü yerine güç elektroniği transformatörü olarak da bilinen yüksek frekansta 
+çalışan katı hal transformatörü (SST) kullanılarak daha küçük nüve boyutunda galvanik izolasyon sağlanan çeviricilerdir 
+(Farivar vd., 2022; Mollik vd., 2022). Ancak yüksek frekansta çalışmak için iki frekans çeviricinin maliyeti ve güç kayıpları 
+da göz önüne alınmalıdır (Zheng vd., 2022). SST çevirici çok seviyeli çeviricilere göre daha küçük güç seviyeli EDS’ler 
+için uygun yapılardır. 
+ 
+2.1.5. Literatür Özeti 
+ 
+Sonuç olarak; yukarıda verilen literatür özetinde güç çevirici devreleri incelenmiş ve her bir çeviricinin avantaj ve 
+dezavantajları anlatılmıştır. Tek ve iki kademeli çeviriciler OG hatta bir AG/OG transformatör üzerinden bağlandığından, 
+bu yapı hantal oluşu ve transformatör kayıplarının da dahil olmasıyla güç kaybının yüksek olduğu bir yöntemdir. AG/OG 
+transformatörü yerine OG gerilimini bloke edebilecek şekilde anahtarlar seri bağlanarak da OG bağlantısı sağlanabilir. 
+Ancak çok sayıda seri bağlı anahtarların senkron şekilde çalışabilmesi için karmaşık bir sürücü devresi tasarımı gerekir. 
+Seri bağlı anahtarların kontrol karmaşıklığına neden olmasının yanı sıra anahtarlama kayıpları da yüksek olacaktır. Bu 
+nedenle kayıpları azaltmak için düşük anahtarlama frekansları tercih edilir, bu da filtre elemanlarının boyutunun artması 
+demektir. EDS’lerde çok tercih edilen üç seviyeli çeviriciler incelendiğinde NPC’deki nötr noktası geriliminde yaşanan 
+gerilim sapması sorunu, FC topoloji kapasitörlerindeki dengesiz gerilim sorunu ve CHB topolojideki çok sayıda ayrık DA 
+kaynağın olması gibi sorunlar mevcuttur. CHB’de ise her bir tam köprü hücresi (toplam 4 anahtar) batarya modülünü 
+kontrol etmektedir. Batarya modülü içerisindeki herhangi bir ba tarya hücresinde arıza meydana gelmesi durumunda 
+tüm modül devre dışı edilmekte bu da depolama sisteminin kapasitesini düşürmektedir. MMC çeviricilerde ise DA 
+kapasitörü gerilim dalgalılığı ve sirkülasyon akımı sorunlarına ilave olarak seri bağlı anahtar veya alt modüler nedeniyle 
+olası arızalarda faz bacaklarında gerilim dengesizliği sorunu da ortaya çıkmaktadır. Bu çalışmada tercih edilen T tipi 
+çeviriciler ise akım yolu üzerinde seri bağlı iki anahtar olmasına karşın çift yönlü anahtar yapısının DA bara geriliminin 
+sadece yarı sını bloke etmesi sayesinde düşük anahtarlama kaybı ve kabul edilebilir derecede iletim kaybı gibi 
+üstünlüklere sahiptir. Ayrıca T tipi çevirici üzerine yapılan literatür çalışmaları incelendiğinde bu çevirici tipinin üç seviyeli 
+topolojiler arasında düşük EMI yeteneği ile öne çıktığı görülmektedir. 
+ 
+2.2. Önerilen topoloji 
+ 
+3 seviyeli çeviriciler, 2 seviyeli çeviricilere göre; a) düşük EMI değeri, b) küçük hacimli filtre kullanımı, c) düşük kayıp, d) 
+düşük THD değeri açısından üstünlüklere sahiptir (Sung vd., 2018). Bu nedenle projede, 3 seviyeli T tipi çevirici topolojisi 
+tercih edilmiştir. Şekil 1-3, yer probleminden dolayı bu bölüm içeriğinde tekrar verilmemiştir. 
+ 
+2.2.1. Şarj durumunda 
+ 
+Özgün değer başlığı altında sunulan Şekil 1’de S1 ve S2 anahtarları T tipi topolojide farklı işlevleri olan 2 bölümü 
+birbirinden ayırmayı sağlamaktadır. Bu bölümlerden biri, 3 seviyeli 6 anahtarlı (SiC MOSFET) 3 fazlı inverter yapısıdır. 
+Şekil 1’de “iki yönlü çevirici” olarak adlandırılmıştır. Bölümlerden ikincisi ise Şekil 1’de köprü diyot ve PFC olarak 
+adlandırılan (iki parçadan meydana gelen) “vienne rectifier” devresidir. Bu devrenin şebeke akımının THD değerini nasıl 
+azalttığını ve PF değerlerini ise nasıl 1 yaptığını anlatan kaynaklar (Kedjar, 2014; Burgos, 2007; Chongming, 2003) 
+mevcuttur. Vienne rectifier devresinin kontrol şeması Şekil 3(a)’da, bu kontrol şeması kullanılarak modellenen simulink 
+devresine ilişkin; şebeke akımları Şekil 4(a)’da ve DA bara gerilim dalga şekli ise Şekil 4(b)’de verilmiştir. S1 anahtarı 
+off, S2 anahtarı on durumunda iken şarj işlemi başlar. X, Y ve Z noktalarından (simulink dosyasında elde edilen) Şekil 
+4(c)’de verilen yüksek frekanslı, 3 seviyeli , esnek 3 fazlı AA gerilimi Şekil 2’de verilen transformatörün primer sargı 
+uçlarına uygulanır. Esnek AA gerilimi elde etmede kullanılan çeşitli d (duty) değerlerindeki tetikleme işaretleri ise Şekil 
+3(b)’de verilmiştir. Daha önce de bahsedildiği gibi önerilen topolojinin, klasik T tipi topolojiden maliyet olarak bir farkı 
+yoktur. Klasik T tipi devrede yer alan SiC MOSFET’lerin body diyotları, şarj sırasında tam güçte doğrultma amacıyla 
+kullanılamamaktadır. Her zaman body diyotları SiC MOSFET’lere göre daha düşük akım değerlerine sahiptirler. Yani 
+yarım köprü kol akımı 100 A olarak veriliyorken, o kolda doğrultma amacıyla kullanılan body diyotları 100 A’de doğrultma 
+yapmak için kullanılamazlar. Bu diyotların 100 A seviyesindeki bir akımı doğrultmak için kullanılması demek içinde 
+bulundukları SiC MOSFET’lerin daha da yüksek akım değerlerine çık arılması demektir ki , uygulamada bu yaklaşım 
+yerine, doğrultma durumu için SiC MOSFET’lere paralel bir köprü doğrultucu ya da tekil olarak paralel diyotlar devreye 
+eklenmektedir. Köprü diyotların deşarj sırasında da devrede bulunmalarının kayıp anlamında bir zararı olmaz. Şekil 5’te 
+yapılan simulasyonda şarj durumunda; transformatörün sekonder sargı gerilimi, buck çevirici giriş gerilimi ve batarya 
+şarj geriliminin değişimi verilmiştir. Buck çeviricinin kontrolü ile bataryanın en uygun akım ve gerilim değerinde şarj 
+olması sağlanır. Transformatörün primer sargıları faz-nötr arasına bağlanmıştır. Sekonder sargılar ise yıldız bağlıdır ve 
+şarj durumunda sekonder sargıların yıldız noktası uçan nötr konumundadır. Primer sargısı AN arasına bağlanmış olan 
+transformatörün sekonder sargılarına bağlı tüm bataryalar (buck çıkışında) birbirlerine seri olarak bağlanmıştır. Benzer 
+durum BN ve CN sargıları için de geçerlidir. Son olarak EDS sistemindeki tüm sekonder sargılardan beslenen bataryalar 
+Şekil 2’de gösterildiği gibi birbirlerine seri olarak bağlanmışlardır. Arzu edilirse bu seri kollar birbirlerine paralel olarak 
+bağlanarak EDS’nin gücü arttırılabilir. P rojede batarya maliyetini artırmaması için bir adet seri kol kullanılacaktır. İş 
+paketi 1’de yukarıda belirtilen konular hakkında daha detaylı çalışmalar yapılacaktır. 
+
+===== PAGE 9 =====
+ 
+9 
+ 
+Şekil 4’te, devre şarj durumunda çalıştırıldığında, çeşitli büyüklüklerin Matlab -Simulink simulasyonunda elde edilen 
+değişimleri verilmiştir. Şekil 4(a)’da görülen şebeke faz akımının (Şekil 1(a)’da verilen kontrol blokları kullanılarak) THD 
+değeri %1.5, PF değeri ise 1 olarak bulunmuştur. Şekil 5’te ise şarj durumunda, Şekil 2’de verilen transformatörün 
+sekonder sargı gerilimi, buck devresi giriş gerilimi ve batarya şarj geriliminin değişiminin simulasyon sonuçları verilmiştir. 
+ 
+ 
+Şekil 4. Şarj durumunda; a) şebeke akım ve gerilimleri, b) DA bara gerilimi, c) trafo primer faz-nötr gerilim değişimi. 
+ 
+ 
+Şekil 5. a) Batarya şarj devresi, b) transformatörün 2 numaralı sargı uçları arasındaki AA gerilim değişimi, c) buck 
+çeviriyi besleyen DA geriliminin değişimi, d) batarya uçları arasındaki DA (şarj) gerilim değişimi. 
+ 
+Önerilen topolojide şarj yönünde 3 farklı ayarlama esnekliği bulunmaktadır: 
+- IGBT’ler kullanılarak GFK (PFC) ile DA bara (boost) gerilimi, 
+- SiC MOSFET’lerin duty ayarı ile trafo primer gerilim etkin değeri ve 
+- Buck çevirici duty’leri ile batarya şarj akım/gerilimleri. 
+ 
+Böylece şarjın herhangi bir anında en yüksek verimle bataryanın en uygun şarj şartlarında çalışması sağlanmaktadır. 
+Şebekeye satılacak enerjinin maliyetinde yalnızca çevirici verimi değil belki bundan daha da önemli olan bataryalara 
+şarj edilen enerjinin verimidir. Bu nedenle önerilen projedeki şarj donanım ve yazılımları kullanılarak yalnızca batarya 
+gerilimleri eşitlenmekle kalınmayacak, ayrıca bataryaya aktarılan enerjinin miktarı, batarya ömrü ve şarj sıras ında 
+aktarılan gücün verimi gibi konularda da bataryanın verimli kullanılmasını sağlayacak (batarya üreticilerden temin 
+edilen) şarj/deşarj eğrilerine de odaklanılacaktır. İlk bakışta önerilen topoloji karmaşık ve maliyetli gibi görünse de, bir 
+yatırımcının binlerce dolar ödediği bataryaların ömrünü 1 (bir) yıl uzatabilmekle elde edeceği kazanç, topolojideki 
+malzeme maliyetini rahatlıkla karşılamaya yetecektir. Önerilen (her bir bataryayı şarj ve deşarj sırasında ayrı ayrı kontrol 
+edebilen) topoloji ile yal nızca bataryaların amortisman maliyeti azaltılmakla kalınmayacak, bu projenin odağında yer 
+alan bataryalara depolanan her kW başına boşa harcanan kayıp güçlerin minimize edilmesi de sağlanacaktır (Liu vd., 
+2020). 
+ 
+2.2.2. Deşarj durumunda 
+ 
+Deşarj işlemini başlatmak için Şekil 1 ve Şekil 2’de görülen S1 anahtarı ve termik manyetik şalter on, S2 anahtarı ise 
+off durumuna getirilmelidir. Şekil 2’de tüm EDS’nin deşarj kontrol devresi verilmiştir. Bu devre içinde A1-C360 noktaları 
+arasına tüm bataryalar seri olarak bağlanmıştır. Bu bataryaların ürettiği toplam DA gerilimi, Şekil 1’de gösterilen DA+ 
+ve DA- baraları arasındaki gerilim farkını oluşturur. Örneğin, Şekil 2’de A1-A2 arasına bağlı Bat1 adlı bataryada (ölçüm 
+devreleri vasıtası ile) bir arıza olduğu tespit edilirse , arıza öncesi on durumunda olan S4 anahtarı off durumuna 
+geçirilerek tüm diğer bataryaların üzerinden geçen seri kol akımının D4 diyodu üzerinden akması sağlanır. Devre dışına 
+çıkan Bat1 adlı batarya yerine C360 noktasının altındaki yedek batarya (seri olarak) devreye alınır. Deşarj işlemi bittikten 
+sonra Bat1 adlı batarya için tedavi edici süreç başlatılır. T tipi 3 seviyeli çevirici; 6 adet nötr IGBT’si ve 6 adet SiC 
+MOSFET, aşağıda detaylı olarak açıklanan yöntem kullanılarak evirici modunda çalıştırılır. 
+
+===== PAGE 10 =====
+ 
+10 
+ 
+ Şekil 6. Nominal güçlerde çalışan klasik bir çalışan Şekil 7. Projede önerilen ve düşük güçlerde SI’nın 
+ SI’nın kontrol şeması (A fazına ilişkin gösterim). kontrol şeması (A fazına ilişkin gösterim). 
+ 
+Klasik buck çeviricide L akımı belirli bir ortalama değerin altına düşerse L akımının sürekli olması durumu ortadan kalkar 
+ve süreksiz mod denen yeni bir durum ortaya çıkar. Yine bilindiği gibi klasik buck çeviricinin ana anahtarın ( S1) off 
+olduğu durumlarda diyot üzerindeki iletim geriliminin düşürülmesi kayıpların azalması demek olduğundan diyoda paralel 
+bir anahtar (S2) daha bağlanması ile senkron buck çevirici elde edilir. Bu noktada senkron buck çeviriciye değinilmesinin 
+sebebi, 4 telli (nötrlü) 3 seviye T tipi çeviricilerin aslında her fazında biri pozitif diğeri de negatif alternansı üreten 2 adet 
+senkron buck çevirici gibi çalışmasıdır. Senkron buck çeviricideki bir özellik senkron inverterde (SI) düşük güçlerde 
+verim kaybına ve şebeke akımının yüksek THD değerlerine çıkmasına neden olmaktadır. Düşük güçlerdeki yüksek THD 
+değeri klasik buck çeviricide oluşan kesintili mod durumu SI’da oluşmamaktadır, zira çıkış akımı ortalaması çok 
+düştüğünde L indüktansında biriken enerji bitip akım sıfıra indikten sonra diyot kesime gider ancak paralelindeki S2 
+anahtarı ters yönde akım geçirmek üzere tetiklenmiş ve hazır durumda beklemektedir. Bu akı mı sağlayacak olan ise 
+çıkışta bulunan C kapasitörüdür. Yani senkron buck çevirici kesintisiz mod durumunda diyot üzerindeki iletim gerilimini 
+düşürerek bir verim artışı getirse de düşük akımlarda çalışıyorken kritik eşiğin altındaki akımlarda çıkıştaki kapasitörden 
+geriye akım akıtarak S2 anahtarı üzerinde enerji harcamaktadır. Bu durum bu bölgede verim kaybına ve çıkış geriliminde 
+ripple’ların artışına sebep olmaktadır. Düşük güçlerde çalışan eviricilerdeki şebeke akımına ilişkin yüksek THD değeri 
+Chicco (Chicco vd., 200 9) makalesinde ispatlanmıştır. Ancak SI’larda durum daha da kötüleşir . SI’ların çıkış 
+kapasitörünün olduğu yerde LCL filtre ve şebeke fazı vardır. S2 anahtarına karşılık gelen anahtar on durumunda iken 
+yalnızca LCL’deki kapasitördeki enerji bitene kadar bu ters akım akmaz. Bu nokta şebeke ile nötr arasında doğrudan 
+bir akım yolu oluşturur ve şebeke fazından nötre doğru çekilen ve bu anahtar üzerinde harcanan ek bir kayıp güç 
+meydana getirir. Bu durum senkron buck dönüştürücüdeki diyod a paralel çalışan anahtarının düşük güçlerde hiçbir 
+zaman ON yapılmaması ile çözülebilir. Bu anahtarlama farkının verim artışı getirdiği simülasyonda görülmektedir. Ancak 
+bu durumda indükta ns akımının süreksiz moda girmesi sebebiyle THD aşırı miktarda artmaktadır. Bunun çözümü de 
+anahtarlama değişikliğine ek olarak kontrol blok diyagramında bir iyileştirme yapılmasıdır. Şekil 6’da görülen klasik bir 
+SI’nın kontrol şemasındaki şebekenin faz -nötr gerilimi ( ug)’nin ani değeri feed forward olarak adlandırılır. Şekil 6’da 
+kontrol bloğu çalışmaz iken çıkışa verilen akımı oluşturan ana bileşen feed forward değeridir. Bu bileşen kontrolörün 
+ürettiği kontrol işareti ile toplanır. Yani kontrol işareti sı fır iken bu feed forward bileşeni SI’nın şebeke ile aynı anlık 
+değerleri üretmesini sağlar. Böylece birbirine paralel eş potansiyel iki kaynak meydana gelmiş olur. Bu durumda akım 
+akışı olmaz. Kontrolör; SI’dan şebekeye akım akması gerektiğinde feed forward bileşeninin üzerine hassas bir şekilde 
+genlik bileşeni ekler. Feed forward bileşeninin tepe değeri şebeke ile aynı iken, kontrolör çıkış genliği bunun %1’i 
+mertebesinde olan ve oldukça hassas ayarlanması gereken bir bileşendir. Kug değeri azaltıldıkça şebeke akımındaki 
+düşük dereceli harmonikler aşırı derecede artmaktadır. SI’lar maksimum güçlerine göre çok düşük oranlarda güç 
+ürettiklerinde kontrolörün ürettiği bileşen feed forward bileşene göre oldukça küçük bir oranda kalmaktadır. Bu durumda 
+oransal d üşük akımlarda kontrolör üzerindeki iyileştirmeler için çaba harcamak yerine feed forward bileşen üzerine 
+yoğunlaşmak daha etkili olacaktır. Kontrolörün devrede olmadığı ve feed forward bileşeninin SI’dan şebekeye mümkün 
+olan en düşük akımı sağladığı durum da, bu akımın mümkün olan en düşük THD değerine sahip olması SI’nın sürekli 
+maksimum akımına oranla düşük akımları düşük THD ile verebilmesi oldukça önemlidir. Feed forward bileşeni sadece 
+düşük bir katsayı ile çarpılarak bu düşük akım değeri elde edilmeye çalışıldığında akımın THD değeri yükselmektedir. 
+Bunun sebebi ise L1 indüktansının; nominal değere oranla oldukça düşük olan bu akım değerlerinde akım 
+süreksizliğinden kaynaklanan doğrusal olmayan davranışıdır. Bu durumda filtrenin giriş gerilim dalga şekli saf sinüs olsa 
+da üzerinden geçen akım yüksek oranda 3. harmonik bileşen i içermektedir. Düşük çıkış güçlerinde feed forward 
+bileşenin, şebeke gerilimi ile aynı dalga şekline sahip olması yerine , belirli bir oranda ters fazda 3. harmonik bi leşeni 
+içermesi (önerilen projenin bir diğer özgün noktası) çözüm olabilecektir. Ancak burada şöyle bir sorun vardır. Üçüncü 
+harmonik bileşen 3(wt) demektir. Ancak sin(wt)’nin o anki değeri hesaplanmamakta, ölçülmektedir. Herhangi bir anda 
+ölçülen değer sin(wt)’dir ve sin(3wt)’nin değerini aynı anda ölçmek ise mümkün değildir. Bu kabaca, sürecin birinci 
+saniyesinde iken üçüncü saniyesindeki değerini ölçmek anlamına gelir ki bu da mümkün değildir. Bu durumda (2.1) 
+eşitliğinden faydalanılarak etkili bir çözüm elde edilebilir: 
+ 𝑠𝑖𝑛(𝑥)3 = (1 4) ∙⁄ 𝑠𝑖𝑛(𝑥) − (3 4) ∙⁄ 𝑠𝑖𝑛⁡(3𝑥) (2.1) 
+(2.1) eşitliğine göre, sinüsoidal bir büyüklüğün anlık değerlerinin küpü alınırsa, içeriğinde kendisi ile aynı frekans ve aynı 
+fazda bir bileşenle birlikte kendisinin 3 katı frekanslı, ters fazlı bir bileşen ortaya çıkar. Bu sonuç aslında arzu edilen bir 
+şeydir. Düşük çıkış güçleri için önerilen çözüm, Şekil 6’da verilen ve nominal güçte çalışan klasik SI kontrol blok 
+diyagramında revizyon yapılmasını gerektirmektedir. Projede düşük çık ış güçleri için önerilen SI yapısının blok 
+
+===== PAGE 11 =====
+ 
+11 
+diyagramı Şekil 7’de verilmiştir. Şekil 7, Şekil 6’da verilen klasik SI kontrol blok diyagramındaki feed forward bileşene 
+bir K katsayısı ile çarpılarak sin(3x) bileşen ekleyerek oluşturulmuştur. Şekil 7 incelendiğinde, sin(3x) bileşeninin 
+şebekeden direkt olarak örneklenen işaret olmayıp, şebeke ile senkron olarak PLL çıkışında elde edilen saf sinüs olduğu 
+görülür. Bu işlemin nedeni ise şebekedeki gerilim harmoniklerinin kendisi ile 3 defa çarpıldığında çok belirgin hale 
+gelmesidir. Feed forward bileşene sin(3x)’lü terim PLL çıkışından K katsayısı ile ekleniyorken, direkt olarak şebekeden 
+örneklenen sin(x) bileşen ise Kug katsayısı ile çarpılarak eklenmektedir. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Şekil 8. Şekil 1’de verilen düşük güçlerde, 3 fazlı T tipi çeviricinin deşarj modunda yalnızca A fazına ilişkin, a) simulink 
+devresi, b) evirici çıkış (LCL filtre giriş) gerilimi, c) 4 adet anahtarın tetikleme darbeleri, d) LCL filtre çıkışındaki gerilim 
+ve akım dalga şekilleri (akımın scope değişimi 20 ile çarpılarak görünürlüğü arttırılmıştır). 
+ 
+Şekil 8’de T tipi çeviricinin (A fazı) devre şeması ve düşük güçlerde (%7) deşarj modunda çalıştığında çeşitli büyüklerin 
+zamanla değişimleri verilmiştir. Yapılan simülasyon çalışmasında şebekeye ilişkin A faz akımın THD değeri %6.1 olarak, 
+devrenin verilimi ise %86.5 olarak bulunmuştur. Chicco (Chicco vd., 2009) makalesinde %10 güç değeri için THD değeri 
+0.15, Sidrach-de Cordana (Sidrach-de Cordana vd., 2005)’de ise %5 güç için THD değeri 0.2 verilmiştir. Loba (Loba 
+vd., 2015) makalesinde düşük güçlerde verim %64, Akpolat (Akpolat vd., 2021) %7 güç için verim % 79 olarak 
+ölçülmüştür. 
+ 
+Şekil 8(c)’de verilen A fazına ilişkin tetikleme darbeleri 120o gecikme ile SiC2, SiC5, IGBT3 ve IGBT4’e uygulandığında 
+B fazına ilişkin şebeke akım ve gerilimi, 240o gecikme ile SiC3, SiC6, IGBT5 ve IGBT6’ya uygulandığında ise C fazına 
+ilişkin şebeke akım ve gerilimi elde edilir. İş paketi 1’de yukarıda belirtilen konular hakkında daha detaylı çalışılacaktır. 
+ 
+2.2.3. Önerilen topolojinin genel özellikleri 
+ 
+Önerilen topolojideki tüm ayarlar, batarya sağlığına en uygun olan batarya şarj akımını ve batarya şarj gerilimini tam 
+olarak sağlayacak şekilde belirlenecektir. Önerilen topolojide, şarj sırasında tüm sistemin; en düşük THD değerinde, en 
+yüksek verimde ve bataryaların sağlığı açısından en uygun şarj değerlerinde olması için 3 farklı ayar imkânı 
+bulunmaktadır. Bunlardan ilki ; PFC ve köprü doğrultucudan oluşan (vienne rectifier) ünitesidir. Diğeri ise Şekil 2’de 
+gösterilen ve 6 adet SiC anahtardan oluşan , iki yönlü çevirici devresidir. Bu devre şarj durumunda, ferrit özlü 
+transformatörün primer devresine uygulanan 3 seviyeli, yüksek frekanslı AA gerilimin Şekil 3’te gösterildiği gibi d (duty) 
+değeri ayarlanarak EDS gücünün transformatör üzerinden bataryalara aktarılmasını sağlayacaktır. Hem DA bara 
+seviyesinin ayarlanması hem de 6 anahtarlı yapıda PWM ile transformatörlere aktarılacak gücün ayarlanması birbirine 
+seri bağlı iki adet sanal potansiyometrenin varlığı anlamına gelmektedir. Transformatörün sekonderinde bulunun buck 
+çevirici ise bataryanın ihtiyaç duyduğu gerilim ve akım değerlerinde şarj edilmesini temin eden üçüncü sanal 
+potansiyometredir. Buck çeviriciler %95 ile %100 duty arasında en yüksek verimde çalışırlar. Transformatörün primer 
+devresi EDS’ye ilişkin nominal gücü çekerken, yukarıda belirtilen (birbirini destekleyen) 3 adet ayar uygun bir şekilde 
+yapıldığında transformatörünün veriminin %99’lar civarında tutulması mümkün olabilmektedir. Transformatörün primer 
+
+===== PAGE 12 =====
+ 
+12 
+sargılarının çektiği gücün (transformatör kaybı+ transformatör çıkışındaki diyotların kaybı+buck çevirici kaybı 
+düşünüldüğünde) %95’inin EDS sistemine aktarılması beklenmektedir. PFC veriminin ise köprü doğrultucu ve filtre 
+(LCL+EMI) ile birlikte %9 8 olarak hesaplanmıştır . Yapılan simülasyon çalışmasında 0.99*0.95*0.98=0.92’lik bir şarj 
+verimi hesaplanmıştır. Devrenin şarj yönündeki bağlantıları Şekil 3’te gösterilmiştir. Deşarj modunda ise transformatör, 
+buck çevirici ve köprü doğrultucu görev almayacağından verim daha yüksek ve değeri 0.97 olarak hesaplanmıştır. Hem 
+şarj hem de deşarj durumunda, bataryaların iç dirençlerinde oluşan kayıplar verim hesaplarına dahil edilmemiştir. 
+ 
+Bu projede üç seviyeli değiştirilmiş T tipi doğrultucu/evirici topolojisi kullanılarak EDS’ler için esnek yapıda güç çevirici 
+tasarımı önerilmiştir. Şekil 1’de projede önerilen değiştirilmiş T tipi, iki yönlü, PFC özellikli çevirici devre şeması 
+verilmiştir. Önerilen enerji depolama sistemi, 680 V, AA şebeke gerilimi ve 30 kW gücünde tasarlanacak olup farklı pil 
+kimyaları ve elektrokimyasal kapasitörler ile çalışabilme yeteneğine sahip olacaktır. Önerilen topoloji şarj durumunda iki 
+parça halinde çalışmaktadır. Topolojide görülen köprü doğrultucu ve nötr IGBT’leri, girişteki LCL filtre yardımıyla şarj 
+durumunda 3 fazlı PFC olarak görev yapmaktadır. Önerilen topolojide yer alan PFC (vienne rectifier) yapısı sayesinde 
+şarj durumunda güç faktörü düzeltilme ktedir. Topolojinin bir diğer avantajı da şarj modunda LCL filtre ile EMI filtre 
+boyutunun da azaltılacak olmasıdır. Şarj durumunda LCL filtre, köprü diyotlar ve nötrdeki PFC katı üzerinden elde edilen 
+(boost) DA bara gerilimi, 6 adet SiC MOSFET anahtarla 30kHz’de anahtarlama oranı (duty cycle) ayarlaması yapılarak 
+3 fazlı ferrit özlü güç transformatörüne uygulanır. Çeviricide SiC MOSFET kullanımı ile anahtarlama kayıpları azaltılmış 
+olacaktır. Önerilen t opoloji, şarj durumunda 3 farklı gerilim ayarlama esnekliğine sahiptir. Bunlar; 1) PFC ve köprü 
+doğrultucu (vienne rectifier) yardımı ile DA bara (boost) gerilimi ayarı, 2) 6 adet SiC MOSFET anahtara uygulanan (Şekil 
+3) 30 kHz duty değerinin kontrolü ile transformatör primer devreye ilişkin etkin gerilim değerinin hassas ayarı, 3) buck 
+çeviriciyi verimli kılacak anahtarlama oranı (%85-100) ile batarya şarj gerilim/akımlarının seçilen bataryanın kimyasına 
+uygun şekilde kontrolüdür. Transformatör kayıplarını azaltmak için primer devre için LCL filtre tasarlanacak ve primer 
+akımının sinüs formuna yaklaşması sağlanacaktır. LCL filtre devresinin rezonans frekansını belirlerken fe rrit özlü 
+transformatörün devre parametrelerinden faydalanılacaktır. Önerilen topolojinin sunduğu kontrol esnekliği sayesinde; 
+bataryaların şarjı sırasında herhangi bir anda gerekli olan batarya gücünü belirlemede optimum verim, şebeke akımına 
+ilişkin düşük THD değeri ve batarya için gerekli olan sağlıklı çalışma şartları sağlanabilecektir. İş paketi 2 ve 3’te yukarıda 
+bahsedilen konular hakkında detaylı çalışmalar yapılacaktır. 
+ 
+Önerilen topoloji hem şarj hem de deşarj durum una uygun olarak tasarlanmıştır. Bataryaların verimli olarak şarj 
+edilebilmesi için önerilen izole çoklu buck çeviricili aktif şarj kontrol devresi bu projenin bir diğer özgünlüğüdür. 
+Bataryaların deşarj devre yapısı aktif şarj devre yapısına uyumludur. Batarya hücreleri belirli bir yaşam ömrüne sahip 
+olup, yaşlandıkça hücreler arasında ki kapasite farkı artar ve seri bağlı dizinin kapasitesi en zayıf hücre si tarafından 
+sınırlandırılır. Projede önerilen BYS ile her bir hücre ayrı olarak kontrol edileceği için bataryaların ihtiyaç duyduğu esnek 
+gerilim ve akım gereksinimi kolaylıkla sağlanabilir. Buradaki temel yaklaşım, depolama birimlerinin (hücre) bağımsız 
+kontrolüyle en zayıf hücrenin neden olabileceği kapasite sınırlamasının üstesinden gelmektir. Her bir hücrenin kontrolü 
+için ek devre gereksinimi ekonomik açıdan ek maliyet getiriyor gibi görünse de bataryaların sağlıklı çalışma koşullarına 
+uygun esnek kontrolü sayesinde, önerilen topoloji ile mevcut depolama sistemlerinde ortaya çıkan düşük kapasite, verim 
+ve ömür sorununa gerçekçi ve uygulanabilir bir çözüm sunulmaktadır. 
+ 
+Enerji depolama sistemlerinde gidiş -dönüş (round trip) verimi, şebekeye deşarj edilen net enerjinin (kontrol/izleme 
+bileşenleri ve termal yönetim gibi yardımcı yük tüketimleri hariç) bataryayı şarj etmek için kullanılan net enerjiye 
+(yardımcı yük tüketimi dahil) oranıdır (DOE, 2011) . Batarya enerji depolama sistemlerinde enerji verimlili ği üzerine 
+yapılan bir çalışmada 248 kW/192 kWh’lık lityum iyon bataryalı EDS için toplam sistem veriminin %81 olduğu bildirilmiştir 
+(Schimpe, 2018) . Yine aynı çalış mada farklı batarya kimyalarının ikincil ömür kullanımının olduğu sistemde toplam 
+sistem veriminin %64.95-76.65 arasında değiştiği görülmüştür. NaS bataryalı EDS üzerine yapılan bir çalışmada, gerçek 
+uygulamalarda sistem kullanım oranı %100 iken en yüksek verim değeri %82.7 olduğu söylenmiştir (Gatta vd., 2015). 
+Lityum tabanlı başka bir depolama sisteminde ise toplam verim %87.17 olarak hesaplanmıştır (Correia vd., 2022). 
+ 
+Önerilen topolojiye benzediği için en yakın sistem olan k aynak makinalarının verimleri üzerine araştırma yapılmıştır. 
+Yun (D.H. Yun vd., 2021) tarafından yapılan çalışmada konvansiyonel topolojide verim %89.415 iken önerdikleri inverter 
+tabanlı topolojide % 94.051 verim elde edilmiştir. Kocaağa (Kocaağa, 2019) tarafından yapılan çalışmada ise inverte r 
+tipi kaynak makinasında verim %84 olarak bulunmuştur. Faz kaydırmalı tam köprü çeviricili topoloji üzerine yapılan 
+çalışmada ise verim %94.31 olarak bulunmuştur (D.H. Yun vd., 2021). Yine başka bir çalışmada faz kaydırmalı köprü 
+çevirici kullanılmış ve verim %83 olarak bulunmuştur (Aksoy, 2014) . Yukarıda verilen kaynak makine devre sinde 
+transformatörün sekonder tarafında buck çevirici kullanılmadığından, (şarj durumunda) esas alınacak verim değerine 
+referans olması için verilen verim değerleri buck çeviricinin verimi ile ayrıca çarpılmalıdır. 
+ 
+2.3. Batarya Yönetim Sistemleri 
+ 
+Elektrik enerjisinin kimyasal enerjiye dönüştürülerek depolandığı bataryalar ın yüksek enerji yoğunluğu ve hızlı tepki 
+süreleri gibi avantajları vardır. Bu nedenle enerji şebekesi için batarya enerji depolama sistemlerinin ( BEDS) kullanımı 
+giderek daha fazla önem kazanmaktadır (Akpinar vd., 2023). BEDS'lerin esnek kurulum, düşük işletme maliyeti, hızlı 
+şarj ve deşarj gibi avantajları sistem operatörlerinin, enerji depolamadaki kısa ve uzun vadeli maddi kazanımlar ise 
+yatırımcıların ilgisini çekmektedir. BEDS'lerin kısa ve uzun vadeli performansını belirleyen faktörler ise bataryaların 
+depoladığı enerji miktarı (State of Charge - SoC), deşarj edebileceği enerji miktarı (Depth of Discharge - DoD) ve şarj-
+deşarj döngü sayı sıdır. Yatırımcı özellikle bu üç konuya odaklanır (Çetinkaya vd., 2022) . Yapılan tekno -ekonomik 
+incelemeler, bataryaların uzun ömürlü olması ve performanslarının ömür boyunca yüksek seviyede kalması durumunda 
+
+===== PAGE 13 =====
+ 
+13 
+BEDS yatırımlarının daha da çekici hale geldiğini göstermektedir (Marchi vd., 2017). Bu bağlamda, BEDS'lerde en 
+büyük maliyet kalemi olan bataryaların mümkün olan en yüksek verimlilikle kullanılması ve sistemin uzun ömürlü olması 
+için bataryaların sağlıklarının korunması oldukça önemlidir (Galeela vd., 2023). 
+ 
+(Viswanathan vd., 2022) tarafından yapılan enerji depolama sistemlerinin maliyet ve performans değerlendirme 
+raporuna göre, 2022 yılında en büyük maliyet ka leminin bataryalar olduğu tespit edilmiştir. Bu çalışma da ayrıca, 
+teknolojideki ve tedarik zincirindeki ilerlemelerin etkisiyle 2030 yılında maliyetlerin düşeceğini, ancak bataryaların 
+maliyetlerde hala büyük bir paya sahip olacağını öngör ülmüştür. Öte yandan, kurulum maliyeti ile proje maliyetlerinin 
+ayrı ayrı değerlendirilmesi gerektiği de vurgulanmıştır. Bu raporda ayrıca, dikkat edilmesi gereken en önemli kriterin 
+bataryaların bakımı, kullanım ömrü ve sağlık durumu olduğu belirt ilmektedir. Bu noktaların üzerinde durulması, enerji 
+depolama sisteminin uzun vadeli başarısını ve verimliliğini etkileyebilir. Bataryaların düzenli bakımının sağlanması ve 
+sağlık durumunun izlenmesi, yatırımcıların ve sistem operatörlerinin batarya esaslı enerji depolama sistemlerine olan 
+güvenini de artırabilir. Bu bağlamda, bataryaların bakım ve kullanım ömrü gibi faktörlerin detaylı bir şekilde 
+değerlendirilmesi, enerji depolama projelerinin sürdürülebilirliği ve başarısı için kritik öneme sahiptir. 
+ 
+Kimyasal yapılarından dolayı genellikle 2 -4 Volt aralığında gerilim seviyelerine sahip olmaları, şebeke bağlantılı 
+BEDS'ler için uygun gerilim ve güç seviyelerini sağlamak için batarya ların (seri ve paralel bağlanarak) kullanılmasını 
+gerektirir. Dolayısıyla BEDS’lerde çok sayıdaki bataryanın uygun çevresel koşullarda tutulması, üreticiler i tarafından 
+önerilen şekilde bataryaları şarj ve deşarj e dilmesi, her bir bataryanın SoC ve sağlık durumunun (SoH) sürekli takip 
+edilmesi, bataryanın aşırı şarj (over charge) ve derin deşarj (deep discharge) durumlarına düşmesinin önlenmesi gerekir 
+(Chombo vd., 2020) . Üretim ve çevresel etkiler nedeniyle, bataryaların enerji kapasiteleri arasında farklılıklar 
+kaçınılmazdır ve bu farklılıklar, batarya ömrü azaldıkça daha da belirgin hale gelir (Fioriti vd., 2023) . Enerji 
+kapasitesindeki farklılıklar batarya dizilerinde dengesizliklere yol açabilir. Tüm bataryaların SoC seviye lerinin aynı 
+olmaması durumunda BEDS tam kapasiteyle çalışamaz. Batarya dizisinden en verimli şekilde faydalanabilmek için 
+bataryaların SoC değerlerinin dengelenmesi gerekir (Amin vd., 2017). Bu nedenle BEDS'lerin kullanım ömrünü uzatmak 
+ve performansı maksimum seviyede tutmak için gelişmiş bir batarya yönetim sistemi ( BYS) kullanılması önemlidi r. 
+BYS'ler; şarj ve deşarj akımlarını kontrol edebilen anahtarlama devreleriyle birlikte, SoC, SoH ve sıcaklık gibi değerleri 
+izleyebilen sensörler, işlemciler ve hafıza birimlerini içerirler. Temel görevleri, batarya dizisindeki enerji seviyelerini 
+dengelemek ve bataryaları uygun çalışma koşullarında tutmaktır (Nyamathulla ve Dhanamjayulu, 2024). 
+ 
+Yapılan diğer güncel çalışmalarda ise (Habib vd., 2023; Nazaralizadeh vd., 2024; Nyamathulla ve Dhanamjayulu, 2024) 
+BEDS’lerin maliyet analizleri yapıldığında, bataryaların yaşlanma maliyetlerinin yüksek olduğu vurgulanmıştır. Buna ek 
+olarak geri dönüştürülemeyen, doğaya zararlı ve pahalı olan lityum tabanlı batarya ların kullanımında; batarya 
+ömürlerinin uzatılmasını sağlayan yeni yöntemler geliştirilmesi gerektiği vurgulanmıştır. Ayrıca batarın elektriksel ve 
+termal olarak daha iyi korunması gerektiği belirtilmiştir. Ayrıca (Habib vd., 2023)’te batarya dizisi içerisinde, yaşlanmaya 
+bağlı olarak düşük sağlığa sahip bir batarya olması sebebiyle bütün dizinin şarj ve deşarjının erkenden sonlandırılmasını 
+önlemek adına bataryaları bypass edebilen yapıların gerekliliğine dikkat çekmiştir. 
+ 
+BEDS’lerin çok sayıda batarya içermesi çözülmesi gereken birçok problemi de beraberinde getirir. Seri batarya dizisinde 
+enerji kapasitesi düşmüş bir batarya varsa , yüzlerce batarya akım verebilecek durumda olsa bile, seri koldaki bir 
+bataryanın şarjı tükendiği için seri kol deş arj edilmemelidir. Eğer deşarja devam edilirse tükenmiş batarya derin deşarj 
+edilmiş olur. Benzer şekilde seri kolda şarjı dolmuş bir batarya olması durumunda, diğer bataryalar henüz dolmamış 
+olsalar bile seri kol şarj edil memelidir. Eğer şarja devam edilirse dolu batarya aşırı şarj edilmiş olur. Aşırı şarj ve derin 
+deşarj bataryalara kalıcı hasar verebilir ve batarya sağlığını olumsuz etkiler (Ouyang vd., 2022). Dolayısıyla kullanılacak 
+olan BYS’nin hem şarjda hem de deşarjda dengeleme yapabilmesi ve şarj/deşarj akımlarını gerektiğinde kesebilmesi 
+gerekmektedir. Üretimsel veya çevresel koşullardan dolayı ömrü bitmiş ol an bir bataryanın gerektiğinde bypass 
+edilebilmesi BEDS’nin verimini ve kullanım ömrünü arttırır. Enerji kapasitesini tüketmiş bir batarya bypass edilirse seri 
+koldaki diğer bataryalar depoladıkları bütün enerjiyi tüketene kadar enerji vermeye devam edebil irler. Dolayısıyla 
+depolama sisteminin enerji verimliliği bu şekilde arttırılmış olur. 
+ 
+BYS’lerin temel görevlerinden birisi dengelemedir. Literatürde pasif ve aktif yöntemler olmak üzere birçok dengeleme 
+yöntemi sunulmuştur. Bu yöntemlerin özeti Şekil 9’da verilmiş ve karşılaştırılması ise Tablo 1’de gösterilmiştir. 
+ 
+Pasif dengeleme yöntemi basit ve düşük maliyetli olduğundan yaygın olarak tercih edilmektedir. Bu yöntemde 
+bataryaların SoC değerleri izlenir. Dengesizlik algılandığında üzerinde fazla enerji biriktirmiş olan bataryalara bağlı olan 
+anahtar/röle tetiklenerek bataryanın dirence do ğru akım akıtması ile dengeleme sağlanır. Batarya sayısı fazla olduğu 
+BEDS uygulamalarında boşa harcanan enerji de fazla olacaktır ve sistem verimi oldukça düşecektir. Ek olarak 
+dengelemenin kontrollü yapılabilmesi ve ısıl dengenin korunması için dirence d oğru akan akım sınırlı tutulmalıdır . 
+Dolayısıyla bu yaklaşımda dengeleme süresi uzun dur (Thiruvonasundari ve Deepa, 2023) . BEDS’lerde kullanılması 
+enerji verimliliğini açısından dezavantaj yaratmaktadır. 
+ 
+Aktif dengeleme yönteminde ise bataryalar arasında şarj farkı algılandığında dengesiz bataryalar arasında enerji 
+transferi ile dengeleme gerçekleştirilir. Aynı zamanda bataryaların her birinin kontrollü bir şekilde şarj ve deşarj edilmesi 
+de aktif bir dengeleme sunar. Bu yöntemde kapasitör, bobin gibi dinamik devre elemanları ve MOSFET gibi anahtarlama 
+elemanları kullanılmaktadır. Aktif dengeleme, pasif dengelemeye göre daha maliyetli ve daha karmaşık bir çözüm sunsa 
+da, özellikle BEDS’ler gibi yüksek kapasiteli (maliyet etkin) depolama sistemlerinde enerjinin verimli kullanılması ve 
+bataryaların sağlıklı bir şekilde kullanılması için aktif dengeleme yöntemleri tercih edilmektedir. 
+
+===== PAGE 14 =====
+ 
+14 
+ 
+ 
+Şekil 9. Batarya Şarj Dengeleme Yöntemleri 
+Tek kapasitör (Lee vd., 2023) , anahtarlamalı kapasitör (La ve Choi, 2022) ve çok sıralı kapasitör (Zhang vd., 2023) 
+devrelerinde, dengeleme işlemi kapasitörler ve anahtarlar üzerinden gerçekleştirilir. İki batarya arasında şarj farkı 
+oluştuğunda, uygun anahtarlar açılıp kapatılarak kapasitör üzerinden enerji paylaşımı gerçekleştirilir. Seri koldaki 
+batarya sayısı çok fazla olduğu BEDS’lerde şarj dengesinin sağlanması uzun sürecektir. Ayrıca deşarj dengelemesi ve 
+bataryaların bypass edilmesi bu yaklaşımda gerçekleştirilemez. Bu sebeple projede bu yaklaşım tercih edilmemiştir. 
+ 
+Anahtarlamalı bobin ve çok sıralı bobin yöntemlerinde bataryalar arasında enerji transferi bobin üzerinden 
+gerçekleştirilir. Bu yöntem kapasitör temelli yöntemlere benze r şekilde çalışmaktadır. Kapasitörlü devrelerdeki 
+dezavantajlar bu devrelerde de bulunduğundan BEDS’lerde kullanımı tercih edilmemektedir. Tek sarımlı transformatör 
+yönteminde tek bir transformatör sargısı ile yüzlerce bataryadan oluşan seri batarya dizisi ni dengelemek uzun 
+sürecektir. Bu yöntemde de deşarj dengelemesi ve batarya bypass gerçekleştirilemez (Noh vd., 2022; Park vd., 2021). 
+Çok sarımlı transformatör yönteminde (Chen vd., 2024) , transformatörün primer tarafı sürüldüğünde bataryalar 
+sekonder sargılarının her birinden, batarya geriliml eri ile orantılı olarak akım çekerek şarj olurlar. Transformatörlerde 
+sekonderdeki sargı sayısı ise fiziksel olarak üretilebilir sayıda olması gerekmektedir. 
+ 
+Dönüştürücü temelli devrelerde DA-DA tipi devreler kullanılır. Dönüştürücü devreler bataryadan bataryaya (C2C) enerji 
+aktarım modunda, komşu bataryalar arasında (AC2C) veya herhangi iki batarya arasında (DC2C) kullanılabilirken; 
+diziden bataryaya (P2C) modunda da kullanılabilir (Di Rienzo vd., 2023). Tercih edilen yapıya göre dönüştürücüler tek 
+veya çift yönlü olarak kullanılabilmektedir. Literatürde aktif dengeleme yapabilmek için birçok farklı DA/DA dönüştürücü 
+topolojilerinin kullanıldığı devreler tanıtılmıştır (Habib ve Hasan, 2023; Miranda vd., 2023; Zhao vd ., 2023). Yapılan 
+literatür taramasında en yaygın olarak Buck/Boost ve Flyback topolojilerinin tercih edildiği görülmüştür. 
+ 
+Buck/Boost dönüştürücü (Izadi ve Beiranvand, 2023; Krishnamoorthy vd., 2023) temelli devrelerde dönüştürücü AC2C, 
+DC2C veya P2C modda kullanılabilir. AC2C ve DC2C modlarında dönüştürücünün giriş ve çıkış gerilimi arasındaki fark 
+düşük olduğundan dönüştürücünün kayıpları az ve sistemin dengeleme verimi yüksektir. P2C modunda ise dizi gerilimi 
+ile batarya gerilimi arasındaki fark yüksek olduğundan dönüştürücü verimi düşüktür, aynı zamanda dönüştürücü bu 
+yapıda çift yönlü olarak kullanıldığından dolayı hem şarjda h em de deşarjda dönüştürücü kaybı etkilidir. Ancak 
+BEDS’lerde bu yöntemin kullanımı problemlidir. AC2C modunda batarya sayısı arttıkça dönüştürücü, anahtar ve sürücü 
+sayısı artacaktır, sistemin kontrolü karmaşıklaşacaktır. DC2C modunda tek bir dönüştürücü ile aynı anda iki bataryanın 
+dengelenmesi verimli bir şekilde sağlansa da tüm dizinin dengelenme süreci oldukça uzun süre alacaktır. P2C modunda 
+seri koldaki batarya sayısı çok arttığında dizi ve tek bir batarya arasındaki gerilim farkı çok yüksek olacağınd an 
+dönüştürücü bu modda doğrudan kullanılamaz. Dolayısı ile BEDS’lerde bu yöntemler doğrudan uygulanamaz. 
+2023 yılında yapılan bir çalışmada (Yun vd., 2023), Flyback temelli bir dengeleme devresi tasarlanmıştır. Bu devre hem 
+şarjda hem de deşarjda çift yönlü Flyback topolojisi ile bataryalar arası dengeleme yapabilmektedir. Bu devrede 
+dengeleme yapılan batarya bypass edilebilmektedir. Yapılan çalışma incelendiğinde N adet batarya için 4N adet anahtar 
+ve N-1 adet çift yönlü Flyback dönüştürücü kullanılması gerektiği ve kontrolünün karmaşık olduğu görülmektedir. 
+ 
+(Wu vd.,2019) ’de verilen çalışmada bir hücreden diğerine enerji aktarılması s ırasında akım seri bağlı çok sayıda 
+anahtardan geçer. Bu anahtarların sürülmesi kolay değildir. Ek olarak akım ne kadar çok anahtardan geçerse kayıp o 
+kadar artar. Burada bir depolama elemanı olmadan anlık olarak enerji aktarımı DA/DA çevirici ile sağlanmaktadır. Bu 
+çeviricide ek olarak 4 adet anahtar mevcuttur. Toplamda aynı anda 6 MOSFET ve 5 diyot üzerinden geçen akım bu 
+elemanlar üzerinde yüksek bir kayba sebep olacaktır. 
+ 
+(Li vd.,2023; Gunlu, 2017) ’de bataryaların bypass edilmesi ve batarya dizilerinin düzenlenmesi ile ilgili çalışmalar 
+yapılmıştır. Sunulan bu devrelerde bypass anahtarı açıldıktan sonra seri kol akımı MOSFET üzerinden akmaktadır. 
+(Shibata vd., 2001) ’da verilen yapıda ise bypass anahtarı açıldıktan sonra akım diyot üzerinden akmaktadır. Burada 
+
+===== PAGE 15 =====
+ 
+15 
+diyot yerine MOSFET kullanıldığında anahtarın konum değiştirdiği zamanlarında arklar oluşacaktır. Ark oluşmasının ve 
+ek sürme devresi kullanımının önüne geçmek için projede önerilen BYS yapısında bypass işlemi diyot ile yapılmaktadır. 
+Kayıpları en aza indirmek için üzerinden sürekli olarak akım akan, bataryalara seri bağlı olan, MOSFET’lerin “Ultra Low 
+Rds(on)” özelliğine sahip olması gerekmektedir. 
+ 
+Anahtarların konum değiştirmesi ile batarya dizisinin düzenlendiği diğer bir çalışmada (Pandian vd., 2024), bataryaların 
+seri ve paralel olarak bağlantı değiştirmeleri ile dizinin ne kadar verimli olarak çalıştığı incelenmiştir. Dört adet bataryanın 
+test edildiği çalışmada en yüksek verim ; düşük ve yüksek SoC’li bataryaların seri, bu serilerin de paralel bağlandığı 
+yapıda elde edilmiştir. Bu sayede toplam depolama kapasitesinin %23.3 arttığı tespit edilmiştir. Yapılan çalışmanın dört 
+adet batarya ile yapıldığı ve BEDS’lerde batarya sayısının artması durumunda yen i problemler ortaya çıkacağı da 
+unutulmamalıdır. 
+ 
+Batarya bağlantılarının düzenlenebildiği bu yapılar şebeke bağlantılı olarak çalışan BEDS’lerde doğrudan kullanılamaz. 
+Şebekeye bağlı olan eviricinin girişine uygulanan batarya dizisinin gerilimi belirli b ir gerilim seviyesinin altına 
+düşmemelidir. 
+Tablo 1. Dengeleme Yöntemlerin Karşılaştırılması 
+ 
+ 
+2.4. Önerilen BYS’nin Özellikleri 
+ 
+Projede önerilen BYS yapısında şarj akımı kontrol edilebilir ve gerektiği durumlarda kesilebilir. Bataryalar deşarj edilirken 
+herhangi bir batarya bypass edilebilir, deşarj akımı depolanan tüm enerji şebekeye akıtılana kadar akımın devam etmesi 
+sağlanabilir. Önerilen BYS yapısında şarj akımı, Şekil 1’de görülen çeviricinin X, Y ve Z noktalarından beslenen 
+transformatörler üzerinden sağlanır. Transformatörlerin yapısal sınırlarından dolayı sekonder taraftaki sargı sayısı 20 
+ile sınırlandırılmıştır. Bataryalar, sekonder sargılar ına bağlı olan buck dönüştürücüler ile şarj edilmektedir. Kullanılan 
+transformatör sayesinde şarj devreleri izole edilmiştir. Bu izolasyon sayesinde sirkülasyon akımlarının akması ve 
+herhangi bir devrede oluşabilecek olan hatanın diğer devreleri etkilemesi engellenmiştir. Aynı zamanda transformatör 
+çevirme oranı; buck dönüştürücülerin %85 -%100 doluluk oranı seviyelerinde çalışmasını sağlayacak şekilde 
+ayarlanacaktır. Bu sayede kayıpların azaltılması hedeflenmiştir. Transformatörün sekonder sargılarına bağlı olan buck 
+dönüştürücüler sayesinde şarj akımı her bir batarya için ayrı ayrı kontrol edilebilmektedir. Böylece bataryanın derin şarja 
+veya aşırı şarja girmesi engellenmektedir . Literatürde çift yönlü DA/DA dönüştürücülerin kullanıldığı benzer yapılar 
+önerilmiştir fakat bu durumda hem şarjda hem de deşarjda çevirici ve transformatör kayıpları devreye girecektir (Moo 
+vd., 2008; Gong vd., 2023). Önerilen yapıda deşarj akımı seri batarya dizisinden doğrudan eviriciye akmaktadır. Deşarj 
+esnasında her bir bataryaya seri bağlı olan bypass MOSFET’i sayesinde enerjisi tükenmiş bataryalar bypass edilebilir 
+ve akımın bypass diyotu üzerinden yoluna devam etmesi sağlanır. Tercih edilen bypass diyotları düşük V f değerine ve 
+hızlı toparlanma özelliğine sahiptir. 
+
+===== PAGE 16 =====
+ 
+16 
+ 
+Bataryaların SoC değerlerini tespit etmek amacıyla literatürde çeşitli yöntemler önerilmiştir (Ul Hassan vd., 2022) . Bu 
+yöntemlerin bazıları nda laboratuvar ortamında, bazıları nda ise bataryanın uçları açık ve dinlenmiş haldeyken test 
+edilmesi gerekir (Ghaeminezhad vd., 2023). Batarya üreticisi tarafından önerilen SoC ve SoH tespit yöntemi olmadığı 
+durumlarda, günümüzde en çok coulomb sayma ve geliştirilmiş coulomb sayma yöntemleri tercih edilir. Batarya 
+üreticileri kullanıcılara; nominal açık devre gerilimi (V ocv(nom)), batarya kapasitesi, şarjı kesme gerilimi (V cutoff(c)), deşarjı 
+kesme gerilimi (Vcutoff(d)), bataryadan sürekli veya ani olarak çekilebilecek maksimum akım miktarı (C-rate), batarya ömrü 
+(cycle life), şarj ve deşarjda uygun çalışma sıcaklığı gibi önemli bilgileri sunmaktadırlar. Bunun yanında bazı batarya 
+üreticileri uygun şarj etme yöntemini ve önerilen SoC, SoH tespit yöntemlerini sunmaktadır. Projede kullanılacak BYS’de 
+GKS temelli, uygulamada başarılı sonuçlar vermiş olan yöntem kullanılacaktır (Ng vd., 2009). Bu yöntemde, akımın en 
+az hata ile ölçülmesi ve bataryanın şarj veya deşarja başlamadan önceki son SoC değerinin bilinmesi gerekir. Bu 
+yöntemde her bir bataryanın şarj ve deşarj akımları sürekli olarak izlenir. Bataryaların şarj ve deşarj akımının zamana 
+göre integrali alınarak bataryanın depolamış olduğu enerjinin değişim miktarı hesaplanır. Aynı zamanda katalog 
+değerleri dikkate alınarak bataryanın maksimum enerji kapasitesinin her şarjda ve deşarjda hesaplanması ile SoH 
+değeri elde edilir. Bataryanın ömrü boyunca toplam şarj-deşarj sayısı, ortam sıcaklığı, batarya boştayken yaşanan kendi 
+kendine deşarj (self discharge) parametreleri de hesaba katılarak SoC ve SoH’nin en doğru şekilde tespiti sağlanır. 
+ 
+Projede, yaygın olarak tercih edilen CC -CV şarj yöntemi kullanılacaktır. Bu yöntemde batarya, batarya üreticisi 
+tarafından belirlenen bir şarj seviyesine ulaşana kadar sabit akım (CC) ile şarj edilir. Ardından batarya tam şarj olana 
+kadar sabit gerilim (CV) ile şarja devam edilir. Batarya üreticileri şarjın hangi akım ve gerilim d eğerlerinde yapılması 
+gerektiğini ürün kataloglarında sunmaktadırlar. Projede kullanılacak BYS her batarya için şarj akımını ayrı ayrı kontrol 
+edebildiği için CC-CV yöntemi bu projeye uygundur. 
+ 
+Projede önerilen topoloji ile hem bütün bataryaların şarj akımları ayrı ayrı kontrol edilebilmekte hem de deşarj esnasında 
+sıkıntılı bataryalar bypass edilebilmektedir. Bu nedenle projede kullanılacak BYS, farklı batarya tiplerine, farklı şarj 
+yöntemlerine, farklı SoC ve SoH tespiti yöntemlerine uygundur. Aynı zamanda bataryaların bypass edilebilmesi sistemin 
+verimini arttırırken bataryaların daha esnek olarak kullanılmasının da önünü açar. Bypass edilmiş olan bataryalara 
+bakım, onarım, değişim yapılabilir, sisteme yedek bataryalar bağ lanabilir, gerektiği durumlarda bataryalar bypass 
+edilerek açık devre testleri gerçekleştirilebilir. Şekil 10’da proje şarj ve deşarj süresi boyunca kullanılacak akış şemaları 
+verilmiştir. 
+ 
+ a) b) 
+Şekil 10. Önerilen projede kullanılacak, a) şarj yönetimi akış şeması, b) deşarj yönetimi akış şeması. 
+Şekil 1 1’de ise OCV yöntemi ile SoC tespiti akış şeması ve Coulomb sayma yöntemi ile SoC tespiti akış şeması 
+verilmiştir. 
+
+===== PAGE 17 =====
+ 
+17 
+ 
+a) b) 
+Şekil 11. a) OCV yöntemi ile SoC tespiti akış şeması, b) Coulomb sayma yöntemi ile SoC tespiti akış şeması. 
+ 
+Önerilen yöntem için mikroişlemci hiyerarşisi Şekil 12’de gösterilmiş olup , çok sarımlı transformatörlerin çıkışların daki 
+(toplamda 20 bataryadan oluşan her bir) batarya paketini kontrol e tmek için bir adet mikroişlemci kullanılacaktır . 
+Transformatörün çıkışlarına bağlı olan DA/DA dönüştürücüleri ve bataryaları bu mikroişlemci kontrol edecektir. İşlemci 
+bataryaların gerilim, akım ve sıcaklık değerlerini takip edecektir. Herhangi bir bataryada sıcaklık kritik değerleri aştığında 
+işlemci ilgili bataryayı bypass edecek ve şarj akımını kesecektir. Herhangi bir batarya gerilimi şarjdayken Vcutoff(c) 
+gerilimine ulaştığında işlemci şarjı bitirecek, deşarjdayken ise gerilim Vcutoff(d) gerilimine düştüğünde işlemci deşarjı kesip 
+bataryayı bypass edecektir. Ayrıca işlemci, bataryalara bağlı olan akım sensörü üzerinden sürekli olarak batarya 
+akımları takip ederek bataryalara verilen veya bataryalardan çekilen anlık gü cü hesaplayarak şarj takibini yapacaktır. 
+Her bir transformatör için kullanılan bu mikroişlemci aynı işi yapan diğer mikroişlemciler ile birlikte genel kontrolü 
+sağlayan bir mikroişlemci ile haberleşerek ondan şarja ve deşarja başlama ve bitirme komutunu alacaklardır. Genel 
+kontrolü sağlayan mikroişlemci ise bataryaların durumunu kullanıcılara iletece k ve kullanıcıdan depolanmak istenen 
+enerji miktarı bilgisini alacaktır. 
+ 
+Şekil 12. Mikroişlemci Hiyerarşisi 
+ 
+ 
+ 
+ 
+
+===== PAGE 18 =====
+ 
+18 
+KAYNAKLAR 
+Akpinar, K. N., Gundogdu, B., Ozgonenel, O., Gezegin, C. 2023. "An intelligent power management 
+controller for grid-connected battery energy storage systems for frequency response service: A battery cycle 
+life approach". Electric Power Systems Research, 216, 109040. 
+Akpolat, A. N., Dursun, E., Siano, P. 2021. "Inverter-based modeling and energy efficiency analysis of off -
+grid hybrid power system in distributed generation". Computers & Electrical Engineering, 96. 
+Aksoy, İ. 2014. "A new PSFB converter -based inverter arc welding machine with high power d ensity and 
+high efficiency". Turkish Journal of Electrical Engineering & Computer Sciences, 22, 1501 –1516. 
+Al-Khdhairi, Y. M. S., Vural, A. M. 2021. "Study on the modeling and simulation of a grid -connected battery 
+energy storage system based on cascaded h-bridge converter". International Journal of Energy Applications 
+and Technologies, 8(3), 98–112. 
+Ali, S., Bogarra, S., Khan, M. M., Taha, A., Phyo, P. P., Byun, Y. -C. 2022. "Prospective Submodule 
+Topologies for MMC-BESS and Its Control Analysis with HBSM". Electronics, 12(1), 20. 
+Althuwaini, H., Zare, A., Shadmand, M.B. "An Optimal Predictive Control for Maximum Utilization of 
+Heterogeneous Battery Energy Storage System Interfaced Cascaded Multilevel Inverters". 2022 IEEE 
+Energy Conversion Congress and Exposition (ECCE) (ss. 1–7). IEEE. 
+Amin, Ismail, K., Nugroho, A., Kaleg, S. 2017. "Passive balancing battery management system using 
+MOSFET internal resistance as balancing resistor". 2017 International Conference on Sustainable Energy 
+Engineering and Application (ICSEEA) (ss. 151–155). IEEE. 
+Anderson, J., Peng, F. Z. 2008a. "A Class of Quasi -Z-Source Inverters". 2008 IEEE Industry Applications 
+Society Annual Meeting (ss. 1–7). IEEE. 
+Anderson, J., Peng, F. Z. 2008b. "Four quasi-Z-Source inverters". 2008 IEEE Power Electronics Specialists 
+Conference (ss. 2743–2749). IEEE. 
+Burgos, R., Lai, R., Pei, Y., Wang, F., Boroyevic, D., Pou, J. 2007. "Space vector modulation for Vienna -
+type rectifiers based on the equivalence between two -and three -level converters: A carrie r based 
+implementation". 2007. IEEE Power Electronics Specialists Conference, (ss. 2861 –2867). IEEE. 
+Chang, Liuchen. 2017. "Review on Distributed Energy Storage Systems for Utility Applications". CPSS 
+Transactions on Power Electronics and Applications, 2(4), 267–276. 
+Chen, K., Liu, L., Zang, T., Zhou, Y., Yan, Z., Xu, Y., … Cai, C. 2024. "Double -Layer Multiwinding 
+Transformer-Based Modular -Integrated Equalizer for Extended Battery String". IEEE Transactions on 
+Power Electronics, 39(2), 2767–2776. 
+Chicco,G., Schlabbach,J., Spertino, F. 2009, “Experimental assessment of the wave form distortion in grid-
+connected photovoltaic installations”, Solar Energy 83, 1026–1039. 
+Chombo, P. V., Laoonual, Y. 2020. "A review of safety strategies of a Li -ion battery". Journa l of Power 
+Sources, 478, 228649. 
+Chongming, Q., Smedley, K. M. "Three -phase unity-power-factor VIENNA rectifier with unified constant -
+frequency integration control". 2003. 7 th IEEE International Power Electronics Congress (ss. 125 –130). 
+IEEE. 
+Çetinkaya, U., Bayındır, R., Avcı, E., Ayık , S. 2022. "Battery Energy Storage System Sizing, Lifetime and 
+Techno-Economic Evaluation for Primary Frequency Control: A Data -driven Case Study for Turkey". Gazi 
+Üniversitesi Fen Bilimleri Dergisi Part C: Tasarım ve Teknoloji, 10(2), 177–194.

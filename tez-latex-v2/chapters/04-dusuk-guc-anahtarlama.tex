@@ -1,0 +1,295 @@
+\chapter{DÜŞÜK GÜÇ ANALİZİ VE YENİ ANAHTARLAMA YÖNTEMİ}
+\label{chap:anahtarlama}
+
+T-tipi dönüştürücünün düşük güç bölgesindeki davranışı, yalnızca aktarılan aktif gücün azalmasıyla açıklanamaz. Modülasyon indeksinin küçülmesi aktif gerilim durumlarının süresini azaltırken sıfır durumunun ve nötr kol üzerinden gerçekleşen serbest dolaşımın payını artırır. Endüktör akımı bir anahtarlama periyodu içinde sıfıra ulaştığında klasik senkron anahtarlama ters yönde akıma izin verebilir. Yararlı çıkış gücüne katkı sağlamayan ters akım, yarı iletkenlerin ve filtre elemanlarının RMS akımını artırarak hafif yük verimini düşürür. Ters akım yolunun kesilmesi ise süreksiz iletime ve akım dalga biçiminde özellikle üçüncü harmonik bileşenin büyümesine neden olabilir. Düşük güçteki temel tasarım problemi bu iki etki arasındaki ödünleşimin yönetilmesidir.
+
+Bölüm~\ref{chap:sistem} altında T-tipi faz kolunun gerilim durumları, akım yolları ve LCL filtre modeli tanımlanmıştır. Mevcut bölümde aynı fiziksel model kullanılarak ters akımın oluşumu incelenmekte, klasik anahtarlama ile önerilen nötr anahtar susturma yöntemi karşılaştırılmakta ve eldeki üç benzetim senaryosu kanıt düzeyleri açıkça belirtilerek değerlendirilmektedir.
+
+Düşük güç bölgesi yalnız laboratuvar için seçilmiş bir test noktası değildir: fotovoltaik eviricilerde gün doğumu ve gün batımı çevresinde, enerji depolama sistemlerinde ise düşük akımlı şarj veya deşarj komutlarında ortaya çıkan gerçek bir işletme koşuludur. Fotovoltaik üretim profilleri ile saha ölçümlerinde kısmi yük süresinin ve düşük akımdaki THD artışının gösterilmesi bu işletme gerekçesini desteklemektedir \citep{Mondol2007,AbRahman2020,Chicco2009}. Enerji depolama uygulamalarında çift yönlü güç komutunun geniş bir aralıkta değişebilmesi de dönüştürücünün yalnız anma noktasında değerlendirilmemesini gerektirir \citep{Aneke2016}.
+
+\section{Ters Akım Dolaşım Mekanizması}
+
+Şebekeye verilen faz akımının temel bileşeni $i_g(t)=\hat I_g\sin(\omega_0t)$ olarak ele alınsın. Düşük güçte $\hat I_g$ küçülürken anahtarlama dalgalanmasının genliği aynı oranda küçülmeyebilir. Bölüm~\ref{chap:sistem} içinde verilen Eşitlik~\eqref{eq:ters-akim-esigi} koşuluna göre ortalama endüktör akımının dalgalanmanın yarısından küçük olması, akımın anahtarlama periyodu içerisinde sıfırı geçebilmesine yol açar. Klasik diyotlu alçaltıcı dönüştürücüde akım sıfıra ulaştığında serbest dolaşım diyodu doğal olarak kesime gider. Senkron yapıda diyoda paralel anahtar iletimde tutulduğu için aynı doğal kesim gerçekleşmez \citep{Erickson2001,Chen2010}.
+
+T-tipi faz kolunun nötr durumu, pozitif ve negatif yarım periyotlarda senkron alçaltıcı dönüştürücünün serbest dolaşım durumuna benzer bir görev üstlenir. Faz akımı referans yönünde azalarak sıfıra ulaştığında nötr kol iletimde kalırsa LCL filtre kapasitöründe ve şebeke eşdeğerinde bulunan enerji ters yönde akım oluşturabilir. Akımın işaret değiştirdiği söz konusu aralıkta enerji şebekeden veya filtre kapasitöründen nötr noktaya doğru taşınır. Aktarılan ortalama aktif gücü artırmayan dolaşım akımı, iletim ve bakır kayıpları açısından ek yük oluşturur. Genel senkron-buck dönüştürücüde diyot benzetimi ile zorlanmış sürekli iletimin farkı Şekil~\ref{fig:de-ccm-akim} üzerinde birincil kaynakla gösterilmişti; mevcut bölüm aynı hafif-yük davranışını T-tipi faz kolunun nötr durumuna ve ölçülebilir ters akım yüküne uyarlamaktadır \citep{Erickson2001,Mohan2003,Chen2010}.
+
+Klasik senkron buck dönüştürücülerde tamamlayıcı sürme, MOSFET kanalı üzerinden diyot kaybını azaltabilir; incelenen T-tipi yapının nötr kolunda IGBT kullanılması nedeniyle aynı kazanç daha sınırlı kalabilir. Nötr IGBT'lerin iki yönlü akımı sürdürmesiyle oluşan ters dolaşım, düşük güçte tamamlayıcı sürmenin olası iletim avantajını aşan bir kayıp mekanizmasına dönüşebilir. Kesin kayıp karşılaştırması için IGBT ve diyot iletim karakteristikleriyle anahtarlama kayıplarının gerçek parça kodları üzerinden hesaplanması gerekmektedir.
+
+Bir temel periyot $T_0$, faz kolu endüktör akımı $i_L(t)$, istenen enerji aktarım yönünü veren akım referansı $i^{\ast}(t)$ ve işaret fonksiyonu $\operatorname{sgn}(\cdot)$ ile gösterilsin. Referans yönüne ters akımın akım--zaman büyüklüğünü veren ters akım yükü $Q_{\mathrm{rev}}$
+\begin{equation}
+  Q_{\mathrm{rev}}=\int_0^{T_0}\max\!\left[-i_L(t)\,\operatorname{sgn}\!\left(i^{\ast}(t)\right),0\right]\,\mathrm{d}t
+  \label{eq:ters-akim-yuku}
+\end{equation}
+ile tanımlanabilir. Eşitlik~\eqref{eq:ters-akim-yuku} akımın mutlak yönü yerine referansa göre ters bileşeni seçer ve amper--saniye birimindedir; tek başına kayıp enerjisi veya gücü vermez, farklı anahtarlama yöntemlerindeki dolaşımı karşılaştırmak için kullanılır. Parçalı doğrusal yarı iletken modelinde sabit iletim gerilimi $V_{\mathrm{on}}$, eğim direnci $R_{\mathrm{on}}$, iletimdeki mutlak akım ortalaması $I_{\mathrm{avg,abs}}$ ve RMS akım $I_{\mathrm{rms}}$ ile basitleştirilmiş iletim kaybı
+\begin{equation}
+  P_{\mathrm{cond}}\simeq V_{\mathrm{on}} I_{\mathrm{avg,abs}}+R_{\mathrm{on}}I_{\mathrm{rms}}^2
+  \label{eq:iletim-kaybi-yaklasik}
+\end{equation}
+ile yaklaştırılabilir \citep{Chen2010,Schweizer2013}. Eşitlik~\eqref{eq:iletim-kaybi-yaklasik} anahtarlama enerjisini ve sıcaklık bağımlılığını içermeyen ilk mertebe bir iletim modelidir. Ortalama aktif gücü değiştirmeyen bir ters akım bile $I_{\mathrm{rms}}$ değerini ve kaybı büyütebilir; nötr kol anahtarları, filtre endüktansları ve bağlantı iletkenleri aynı RMS artışından etkilenir.
+
+Kayıp dağılımının düşük güçteki değişimi de Eşitlik~\eqref{eq:iletim-kaybi-yaklasik} üzerinden yorumlanabilir. Düşük akımda $V_{\mathrm{on}}I_{\mathrm{avg,abs}}$ teriminin aktarılan çıkış gücüne oranı büyüdüğünden, yüksek güçte ikincil kalan sabit iletim gerilimi düşümü hafif yük veriminde belirginleşir. Modülasyon indeksi küçüldükçe ana güç anahtarlarının aktif durum payı azalırken nötr durumda geçirilen sürenin artması, toplam kaybın ana anahtarlardan nötr kol elemanlarına ve serbest dolaşım yollarına doğru yeniden dağılmasına yol açar. Sayısal dağılım henüz sonuç olarak verilmemiştir; anahtar başına iletim süresi, RMS akım, gerçek $V_{\mathrm{CE(sat)}}$/diyot karakteristiği ve geçiş enerjileri kesin model veya parça kodları üzerinden hesaplanacaktır \citep{Schweizer2013,Wang2020,Chen2010}.
+
+Ters akımın yalnız akım işaretine bakılarak belirlenmesi yeterli değildir. Ölçüm gürültüsü, akım sensörü ofseti, PWM güncelleme gecikmesi, ölü zaman ve anahtarlama anındaki diyot iletimi sıfır geçiş çevresinde yanlış karar üretebilir. Güvenilir uygulama; akım eşiği, histerezis, minimum bekleme süresi ve güvenli komütasyon koşullarını birlikte kullanmalıdır. Gerçek kapı kodu mevcut olmadığından söz konusu değerler tezde sayısal olarak varsayılmamış, doğrulama gerektiren tasarım değişkenleri olarak bırakılmıştır. Akım denetleyicisinin özellikle sıfır geçiş çevresinde referans--ölçüm farkını azaltmak için oluşturduğu düzeltmeler, ana güç anahtarları ile nötr kol arasındaki geçiş sayısını da artırabilir; yeni doğrulamada kapı başına $N_{\mathrm{sw},j}$ geçiş sayısı, kontrol eforu ve ters akım alanı aynı analiz penceresinde birlikte ölçülecek, verim değişiminin ters dolaşımdan mı, ek anahtarlamadan mı yoksa iki etkiden birlikte mi kaynaklandığı Eşitlik~\eqref{eq:ters-akim-anahtarlama-olcutleri} üzerinden sınanacaktır \citep{Teodorescu2006PR,Zhang2014Deadtime}.
+
+\section{Senkron Buck Eşdeğer Modeli}
+
+Pozitif yarım periyotta faz kolu $P$ ve $O$, negatif yarım periyotta $N$ ve $O$ durumları arasında anahtarlanır. Her yarım periyot kendi işaretine göre ele alındığında yapı iki senkron buck dönüştürücünün simetrik birleşimi olarak yorumlanabilir \citep{Mohan2003,Erickson2001,Holmes2003}. Ortalama akım ile akım dalgalanması arasındaki ilişki üç çalışma bölgesi oluşturur:
+
+\begin{enumerate}
+  \item \textbf{Sürekli iletim bölgesi:} $|\bar i_L|>\Delta i_L/2$ koşulunda akım bir anahtarlama periyodu içinde sıfıra ulaşmaz. Senkron nötr anahtarın iletim gerilim düşümünü azaltması verim açısından yararlıdır.
+  \item \textbf{Sınır iletim bölgesi:} $|\bar i_L|\simeq\Delta i_L/2$ noktasında akım periyot sonunda sıfıra yaklaşır. Parametre belirsizlikleri ve gecikmeler nedeniyle yöntem geçişi için histerezis gereklidir.
+  \item \textbf{Zorlanmış sürekli iletim bölgesi:} $|\bar i_L|<\Delta i_L/2$ olmasına rağmen senkron anahtarlama sürdürülürse akım sıfırın ötesine geçer. Ters akım kaybı belirginleşirken akımın sürekliliği harmonik performansı destekleyebilir.
+\end{enumerate}
+
+Sınır akımı yaklaşık olarak
+\begin{equation}
+  I_{\mathrm{B}}(t)=\frac{\Delta i_L(t)}{2}
+  \label{eq:sinir-akimi}
+\end{equation}
+şeklinde tanımlanabilir. Eşitlik~\eqref{eq:sinir-akimi} içindeki $I_{\mathrm{B}}$; DA bara gerilimi, anlık şebeke gerilimi, görev oranı, anahtarlama frekansı ve eşdeğer endüktansa bağlıdır. Sabit bir yüzde güç eşiği yerine fiziksel değişkenlerden türetilen sınır akımının kullanılması, şebeke gerilimi veya DA bara seviyesi değiştiğinde daha tutarlı bir kip geçişi sağlayabilir. Nihai $I_{\mathrm{B}}$ sayısı, gerçek eşik/histerezis değerleri kodla kilitlendiğinde verilecektir.
+
+Senkron-buck eşdeğerinin sağladığı temel kazanım, üç fazlı sistemdeki düşük güç davranışını faz kolu düzeyinde enerji aktarımı, serbest dolaşım ve akım sürekliliği bakımından ayrıştırabilmesidir. Pozitif yarım periyotta üst ana anahtar ile nötr kolun, negatif yarım periyotta ise alt ana anahtar ile karşı nötr yolun görevleri aynı devre modeli üzerinde izlenebilir. Eşdeğer model böylece modülasyon indeksinin küçülmesiyle nötr durum payının artmasını, endüktör akımının sıfırı geçmesini ve hangi kapı geçişlerinin ek anahtarlama yükü oluşturduğunu ortak bir fiziksel çerçeveye bağlar; sınır akımı, ters akım alanı ve anahtar geçiş sayısı ölçütlerinin kurulmasına da temel oluşturur.
+
+\section{Klasik Anahtarlama Yöntemi}
+
+Klasik üç seviyeli modülasyonda nötr kol, sıfır gerilim durumunu üretmek üzere her iki yarım periyotta etkin kullanılır. Pozitif alternansta aktif enerji aktarımı $P$ durumu, serbest dolaşım $O$ durumu; negatif alternansta aktif enerji aktarımı $N$ durumu, serbest dolaşım yine $O$ durumu üzerinden gerçekleşir. Akım referansı küçüldüğünde aktif durumun görev oranı azalır ve nötr durumda geçirilen süre uzar.
+
+İncelenen benzetim kurgusunda üç fazlı, dört telli yapının her fazı bağımsız bir tek fazlı T-tipi kol olarak ele alınmış ve kapı işaretleri sinüzoidal PWM (SPWM) ile üretilmiştir. Faz başına inceleme, nötr anahtar müdahalesinin hangi yarım periyotta ve hangi kol üzerinde yapıldığını açıkça göstermektedir. Yöntemin uzay vektör PWM veya başka modülasyon tekniklerine genellenmesi, mevcut kanıtın dışında kalan ayrı bir doğrulama konusudur.
+
+Senkron anahtarlamanın temel üstünlüğü, normal ve yüksek akım bölgesinde diyot iletimini düşük gerilim düşümlü anahtar kanalıyla değiştirebilmesidir. Aynı davranış düşük güçte nötr kolun akımı iki yönde de iletebilmesi nedeniyle dezavantaja dönüşür. Akım sıfıra ulaştıktan sonra kapı komutunun korunması, akım yönünü sınırlayan doğal bir diyot kesimi bırakmaz. Klasik yöntem bu yüzden düşük THD sağlayabilmesine karşın hafif yükte ters akım alanı ve RMS akım bakımından elverişsizdir. İki yöntemin işlevsel farkı Tablo~\ref{tab:klasik-onerilen-islevsel} üzerinde özetlenmiştir.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Klasik ve önerilen anahtarlamanın düşük güçte işlevsel karşılaştırması.}
+  \label{tab:klasik-onerilen-islevsel}
+  \small
+  \begin{tabularx}{\textwidth}{p{0.22\textwidth} X X}
+    \toprule
+    Özellik & Klasik senkron anahtarlama & Önerilen nötr anahtar susturma \\
+    \midrule
+    Sıfır durumu & Nötr kol iki yönlü akıma izin verir. & Ters dolaşıma yol açan nötr komutu düşük güç bölgesinde engellenir. \\
+    Akım sürekliliği & Sıfır geçişten sonra ters yönde sürdürülebilir. & Akım sıfırda doğal olarak kesilebilir; süreksiz iletim oluşabilir. \\
+    Beklenen kayıp etkisi & Ters akım nedeniyle RMS ve iletim kaybı artabilir. & Ters akım yolu azaltıldığı için iletim kaybı düşebilir. \\
+    Beklenen harmonik etkisi & Akım sürekliliği THD açısından avantaj sağlayabilir. & Üçüncü harmonik ve THD belirgin biçimde artabilir. \\
+    Gerekli tamamlayıcı önlem & Özel düşük güç müdahalesi yoktur. & Sin\textsuperscript{3} kompanzasyonu ve güvenli kip geçişi gerekir. \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+\section{Önerilen Anahtarlama Yöntemi}
+
+Önerilen yöntemin amacı, düşük güçte referans enerji yönüne ters akımı sürdüren nötr anahtar komutunu bastırmaktır. Yöntem klasik PWM yapısını tüm çalışma aralığında değiştirmemekte, yalnız akımın sınır iletim bölgesine yaklaştığı koşullarda devreye girmektedir. Yarım periyot işareti, akım referansı ve ölçülen akım birlikte değerlendirilerek yararlı akım yönünün tersine iletime yol açan nötr komut belirlenir.
+
+İkili etkinleştirme değişkeni $\sigma(t)\in\{0,1\}$, düşük güç geçiş eşiği $I_{\mathrm{th}}$, pozitif histerezis genişliği $H$ ve ters iletim koşulunu gösteren ikili gösterge $\chi_{\mathrm{rev}}(t)\in\{0,1\}$ ile tanımlansın. Histerezis bandında önceki durumun korunmasını da içeren işlevsel kural
+\begin{equation}
+  \sigma(t)=
+  \begin{cases}
+    1, & |i^{\ast}(t)|\leq I_{\mathrm{th}}\ \text{ve }\chi_{\mathrm{rev}}(t)=1,\\
+    0, & |i^{\ast}(t)|\geq I_{\mathrm{th}}+H\ \text{veya }\chi_{\mathrm{rev}}(t)=0,\\
+    \sigma(t^-), & I_{\mathrm{th}}<|i^{\ast}(t)|<I_{\mathrm{th}}+H\ \text{ve }\chi_{\mathrm{rev}}(t)=1
+  \end{cases}
+  \label{eq:susturma-etkinlestirme}
+\end{equation}
+ile gösterilebilir. Eşitlik~\eqref{eq:susturma-etkinlestirme} içindeki $t^-$ karar anından hemen önceki durumu gösterir; histerezis aralığında durum korunarak sürekli kip değiştirme önlenir. Klasik ve yeni nötr kapı komutları $g_{n,\mathrm{kl}}(t)$ ile $g_{n,\mathrm{yeni}}(t)$ olarak tanımlandığında
+\begin{equation}
+  g_{n,\mathrm{yeni}}(t)=g_{n,\mathrm{kl}}(t)\left[1-\sigma(t)\chi_{\mathrm{rev}}(t)\right]
+  \label{eq:notr-susturma-kurali}
+\end{equation}
+biçiminde özetlenebilir. Eşitlik~\eqref{eq:notr-susturma-kurali} gerçek sürücüye doğrudan aktarılacak kesin bir kapı tablosu değil, yöntemin hangi komutu hangi amaçla değiştirdiğini belirleyen işlevsel tanımdır. Anahtarların gerçek adları, polariteleri ve güvenli komütasyon sırası kaynak kod veya sürücü kaydı bulunmadan kesinleştirilemez.
+
+Klasik ve nötr anahtar susturmalı yöntemlerin kapı komutları, benzetim kayıtlarında hem tam temel periyot hem de seçilmiş anahtarlama penceresinin yakın görünümüyle belgelenmiştir. Klasik yöntem Şekil~\ref{fig:klasik-kapi-darbeleri-tam} ve Şekil~\ref{fig:klasik-kapi-darbeleri-yakin}, önerilen yöntem Şekil~\ref{fig:susturma-kapi-darbeleri-tam} ve Şekil~\ref{fig:susturma-kapi-darbeleri-yakin} altında verilmektedir; dört kayıt aynı içeriğin tekrarı olmadığından birleştirilmemiştir.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.98\textwidth]{sistem/onceki_tez_klasik_kapi_darbeleri.jpg}
+  \caption{Klasik tamamlayıcı anahtarlamada $Q_1$--$Q_4$ kapı darbelerinin bir temel periyot boyunca görünümü (benzetim kaydı).}
+  \label{fig:klasik-kapi-darbeleri-tam}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.98\textwidth]{sistem/onceki_tez_klasik_kapi_darbeleri_yakin.jpg}
+  \caption{Klasik tamamlayıcı anahtarlamada seçilmiş anahtarlama penceresinin yakın görünümü (benzetim kaydı).}
+  \label{fig:klasik-kapi-darbeleri-yakin}
+\end{figure}
+
+Şekil~\ref{fig:klasik-kapi-darbeleri-yakin} altındaki pozitif alternans kesitinde $Q_1$ ile $Q_4$ tamamlayıcı darbelerle anahtarlanırken $Q_2$ kesimde, $Q_3$ iletimde tutulmaktadır. Aynı zaman aralığında önerilen yöntemi gösteren Şekil~\ref{fig:susturma-kapi-darbeleri-yakin} altında $Q_1$ anahtarlamayı sürdürmekte, nötr kola ait $Q_4$ komutu ise sıfırda tutulmaktadır; simetrik olarak negatif alternansta $Q_3$ komutu bastırılmaktadır. Ekran kayıtları ölü zamanı, minimum darbe genişliğini, lojik polariteyi ve sürücü gecikmesini doğrulayamadığından kesin kapı tablosu gerçek PWM koduyla kilitlenecektir.
+
+Benzetim modelinin faz kolu ve tüm sistem ekranı, sonuç dalga biçimlerinden ayrı kanıt türleridir. Şekil~\ref{fig:onceki-faz-modeli}, $Q_1$--$Q_4$, bölünmüş DA bara, $L_1$, $C_1$ ve $L_2$ elemanlarının kullanılan tek fazlı T-tipi kola bağlantısını; Şekil~\ref{fig:onceki-simulasyon-modeli} ise ölçüm, filtre, şebeke eşdeğeri ve güç hesabı bloklarını içeren üst düzey Simulink çalışma alanını göstermektedir. Eldeki Senaryo~1 kaynak dosyası bu genel yapıyla uyumludur; ancak R2025b'de kaldırılan ölçüm blokları ve Senaryo~2--3 model/kodlarının yokluğu nedeniyle ekranlar üç senaryonun yeniden üretilebilir ortak model kanıtı değildir.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.90\textwidth]{sonuclar/onceki_tez_t_tipi_faz_modeli.png}
+  \caption{Benzetimde kullanılan tek fazlı T-tipi evirici ve LC filtre yapısı.}
+  \label{fig:onceki-faz-modeli}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[angle=90,width=0.96\textwidth]{sonuclar/onceki_tez_simulasyon_modeli.jpg}
+  \caption{Benzetimde kullanılan Simulink modelinin genel görünümü; Senaryo~1 kaynak modeliyle yapısal olarak uyumludur, üç senaryonun ortak koşulu olarak doğrulanmamıştır.}
+  \label{fig:onceki-simulasyon-modeli}
+\end{figure}
+
+Güvenli uygulamada dört koşul birlikte sağlanmalıdır. İlk olarak, akım işareti sensör ofsetinden büyük bir güven payıyla belirlenmelidir. İkinci olarak, nötr kolun kesilmesi endüktör akımı için kesintisiz ve aşırı gerilim üretmeyen alternatif bir yol bırakmalıdır. Üçüncü olarak, karşılıklı anahtarların ölü zamanı ve minimum darbe genişliği korunmalıdır. Son olarak, ölçüm geçersizliği veya aşırı akım durumunda denetim önceden tanımlanmış güvenli anahtarlamaya dönmelidir. Eldeki benzetim parametre dosyası ölü zaman içermemektedir; gerçek donanım için ölü zaman ve sürücü gecikmesi ayrıca doğrulanmalıdır \citep{Zhang2014Deadtime}.
+
+Nötr anahtarın bastırılması ters akım yolunu azaltırken endüktör akımını süreksiz iletime zorlar. Akımın sıfır çevresindeki düzleşmesi ve iletim aralıklarının daralması, temel bileşene göre üçüncü harmonik payını büyütür. Süreksiz iletimde akım zarfı, görev oranı ile anahtarlama anındaki endüktör gerilim farkının birlikte değişmesi nedeniyle saf sinüs biçimini koruyamaz: alternans ortasında ($\omega_0t=\pi/2$ ve $3\pi/2$ çevresinde) DA bara ile şebeke gerilimi arasındaki akım yükseltme payının azalması akım zarfında çökme oluşturur; sıfır geçişlerine yakın bölgelerdeki farklı yükselme hızı da üçüncü harmonik bileşeni besler. Önerilen anahtarlama bu yüzden tek başına nihai yöntem değildir; ortaya çıkan harmonik cezanın azaltılması için Bölüm~\ref{chap:sin3} altında incelenen Sin\textsuperscript{3} ileri besleme kompanzasyonu tamamlayıcı katman olarak kullanılmaktadır.
+
+\eksikistek{Kapı mantığı ve senaryo eşlemesinin kodla kesinleştirilmesi}{Senaryo~1 modelinde klasik kapı üretimi görülebilmiştir; ancak R2025b sürüm uyumsuzluğu nedeniyle kaynak koşu tamamlanamamıştır ve Senaryo~2--3 PWM modeli veya kontrol kodu elimizde yoktur. İstiyoruz: (1) Senaryo~2--3 model/kod paketi; (2) dönüştürülmüş ortak modelde $Q_1$--$Q_4$ doğruluk tablosu, tamamlayıcılık, ölü zaman, akım işareti, eşik/histerezis ve kip geçişlerinin yeniden çıkarılması; (3) R2025b diyot yakınsama sorununun giderilip Senaryo~1'in en az iki kararlı \SI{50}{\hertz} periyodu koşturulması.}
+
+\section{Verim ve Harmonik Performans Ödünleşimi}
+
+Eldeki üç senaryo arşivi aynı düşük güç probleminin ardışık karşılaştırma kolları olarak değerlendirilmiştir. Dalga biçimleri ve teknik açıklamalar birlikte incelendiğinde Senaryo~1 klasik senkron anahtarlama, Senaryo~2 nötr anahtar susturma, Senaryo~3 ise susturma ile Sin\textsuperscript{3} kompanzasyonunun birlikte kullanımıyla yüksek ölçüde uyumludur. Yalnız Senaryo~1 için kaynak model mevcuttur; eşleme bu yüzden ``yüksek güvenli'' düzeyde tutulmuş, kesin kod doğrulaması olarak sunulmamıştır.
+
+Benzetim kurgusu; üç fazlı dört telli sistemin faz başına modellenmesini, düşük güç incelemesinin yaklaşık \SI{2.6}{\ampere} RMS faz akımında yapılmasını ve yapısal etkiyi ayırmak için akım denetleyicisinin devre dışı bırakılarak yalnızca ileri besleme katsayısının değiştirilmesini içermektedir. Kontrolörsüz koşullar yöntemin oluşum mekanizmasını ayırmak için yararlıdır; kapalı çevrim performans kanıtı değildir ve Bölüm~\ref{chap:sin3} bu ayrımı ayrıca ele almaktadır.
+
+FFT ekranlarında analiz başlangıcı \SI{0.06}{\second}, pencere uzunluğu iki temel çevrim ve temel frekans \SI{50}{\hertz} olarak verilmiştir. Tablo~\ref{tab:senaryo-thd}, ekranlardan doğrudan okunan değerleri aynı ölçüm tanımı altında toplamaktadır.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Düşük güç benzetim ekranlarından okunan temel bileşen ve THD değerleri.}
+  \label{tab:senaryo-thd}
+  \small
+  \begin{tabular}{c l S[table-format=1.3] S[table-format=2.2] S[table-format=1.3] S[table-format=2.2]}
+    \toprule
+    {Senaryo} & {Yöntem eşlemesi} & {$I_{L1,1}$ (A)} & {$\mathrm{THD}_{L1}$ (\%)} & {$I_{\mathrm{out},1}$ (A)} & {$\mathrm{THD}_{\mathrm{out}}$ (\%)} \\
+    \midrule
+    1 & Klasik anahtarlama & 3.698 & 8.29 & 3.734 & 2.14 \\
+    2 & Nötr anahtar susturma & 3.396 & 46.86 & 3.412 & 46.35 \\
+    3 & Susturma + Sin\textsuperscript{3} & 3.752 & 9.46 & 3.766 & 7.79 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Aynı üç yöntem için verim ve THD değerlerini birlikte veren bir benzetim özeti de mevcuttur; Tablo~\ref{tab:onceki-benzetim-ozeti} bu kaydı ayrı kanıt statüsüyle aktarmaktadır. THD değerleri FFT ekranlarıyla yakından uyuşurken verim yüzdeleri, kayıp hesabının yapıldığı ham model mevcut olmadığından yeniden hesaplanamamıştır.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Raporlanan benzetim verimi ve akım THD değerleri; verim hesabı ham model beklemektedir.}
+  \label{tab:onceki-benzetim-ozeti}
+  \begin{tabular}{>{\raggedright\arraybackslash}p{0.43\textwidth}ccc}
+    \toprule
+    \textbf{Yöntem} & \textbf{Verim (\%)} & \textbf{$\mathrm{THD}_{L1}$ (\%)} & \textbf{$\mathrm{THD}_{faz}$ (\%)} \\
+    \midrule
+    Klasik tamamlayıcı anahtarlama & 90,45 & 8,30 & 2,10 \\
+    Nötr anahtar susturma & 93,00 & 46,90 & 46,30 \\
+    Susturma + Sin\textsuperscript{3} & 93,70 & 9,50 & 7,80 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Senaryo~2'de $I_{L1}$ ve $I_{\mathrm{out}}$ THD değerlerinin sırasıyla \%46,86 ve \%46,35'e çıkması, nötr anahtar susturmanın tek başına oluşturduğu harmonik cezayı göstermektedir. Senaryo~3'te aynı değerlerin \%9,46 ve \%7,79'a gerilemesi, Senaryo~2'ye göre yaklaşık \%79,8 ve \%83,2 bağıl azalma anlamına gelir. Kompanzasyon sonrasında temel akım genliklerinin Senaryo~1 ile yakın seviyeye dönmesi, yöntemin düşük güç akımını bütünüyle bastırmadığını da gösterir. Yine de Senaryo~3 çıkış THD değeri Senaryo~1'in \%2,14 seviyesine ulaşmamıştır; kompanzasyonun iyileştirici fakat ideal olmayan sonucu açıkça korunmalıdır.
+
+Senaryo~1'in yüksek çözünürlüklü kayıtları klasik anahtarlamanın referans davranışını belgelemektedir. Şekil~\ref{fig:klasik-l1-tam}, $L_1$ endüktör akımının bir temel periyot içindeki anahtarlama dalgalanmasını göstermektedir; akım zarfının temel bileşen boyunca değişmesi ve yüksek frekanslı üçgensel dalgalanmanın zarf üzerine binmesi, düşük güçte anlık akımın sıfır çevresine yaklaşabildiğini gösterir.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.82\textwidth]{sonuclar/onceki_tez_l1_tam.png}
+  \caption{Klasik anahtarlama benzetiminde $L_1$ endüktör akımının tam-periyot dalga biçimi (Senaryo~1).}
+  \label{fig:klasik-l1-tam}
+\end{figure}
+
+Şekil~\ref{fig:klasik-l1-yakin}, yaklaşık \SI{0.9}{\milli\second}--\SI{1.8}{\milli\second} aralığını büyüterek akım dalgalanmasının anahtarlama periyodu ölçeğindeki yapısını görünür kılmaktadır. Yaklaşık \SI{10}{\kilo\hertz} anahtarlama frekansıyla uyumlu üçgensel değişim, $L_1$ akımındaki dalgalanmanın yalnız düşük frekanslı zarf üzerinden değerlendirilmemesi gerektiğini gösterir.
+
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=0.82\textwidth]{sonuclar/onceki_tez_l1_yakin_0_9_1_8ms.png}
+  \caption{Klasik anahtarlama benzetimindeki $L_1$ endüktör akımından büyütülmüş kesit (Senaryo~1).}
+  \label{fig:klasik-l1-yakin}
+\end{figure}
+
+Senaryo~1'in dört kanallı kaynak ekranı Şekil~\ref{fig:klasik-dort-kanal} altında verilmiştir. Yukarıdan aşağıya kanallar; anahtarlama devresi çıkışındaki filtre giriş gerilimini, filtrelenmiş gerilimi, $L_1$ endüktör akımını ve LC filtre çıkış akımını göstermektedir. İlk iki kanal anahtarlama geriliminin filtrelenmesini, son iki kanal ise $L_1$ dalgalanmasının çıkış akımında ne ölçüde bastırıldığını aynı zaman ekseninde izlemeyi sağlamaktadır.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.98\textwidth]{../dosyalar/05_sonradan_gelenler/Senaryo_1/dalga_sekli_s1.jpg}
+  \caption{Klasik anahtarlamada filtre giriş gerilimi, filtrelenmiş gerilim, $L_1$ endüktör akımı ve LC filtre çıkış akımının birlikte gösterimi (Senaryo~1).}
+  \label{fig:klasik-dort-kanal}
+\end{figure}
+
+FFT sonuçları, aynı klasik anahtarlama koşulunda filtrenin akım harmonikleri üzerindeki etkisini iki ölçüm noktasında göstermektedir. Şekil~\ref{fig:klasik-l1-fft} altında $L_1$ akımının temel bileşeni \SI{3.698}{\ampere} ve THD değeri \%8,29; Şekil~\ref{fig:klasik-iout-fft} altında çıkış akımının temel bileşeni \SI{3.734}{\ampere} ve THD değeri \%2,14 olarak okunmaktadır. Çıkış akımındaki THD'nin $L_1$ akımına göre yaklaşık \%74,2 azalması, LC filtrenin anahtarlama kaynaklı harmonikleri bastırdığını nicel olarak gösterir.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.98\textwidth]{../dosyalar/05_sonradan_gelenler/Senaryo_1/THD_IL1.jpg}
+  \caption{Klasik anahtarlamada $L_1$ endüktör akımının FFT analizi: temel bileşen \SI{3.698}{\ampere}, $\mathrm{THD}_{L1}=\%8{,}29$ (Senaryo~1).}
+  \label{fig:klasik-l1-fft}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.98\textwidth]{../dosyalar/05_sonradan_gelenler/Senaryo_1/THD_Iout.jpg}
+  \caption{Klasik anahtarlamada LC filtre çıkış akımının FFT analizi: temel bileşen \SI{3.734}{\ampere}, $\mathrm{THD}_{\mathrm{out}}=\%2{,}14$ (Senaryo~1).}
+  \label{fig:klasik-iout-fft}
+\end{figure}
+
+Nötr anahtar susturma yöntemine ait kayıtlar yedi ayrı görselden oluşmaktadır: Şekil~\ref{fig:susturma-kapi-darbeleri-tam} ve Şekil~\ref{fig:susturma-kapi-darbeleri-yakin} kapı komutlarını; Şekil~\ref{fig:susturma-l1-tam} ve Şekil~\ref{fig:susturma-l1-yakin} $L_1$ akımını; Şekil~\ref{fig:susturma-dort-kanal} dört ölçüm kanalını; Şekil~\ref{fig:susturma-l1-fft} ile Şekil~\ref{fig:susturma-iout-fft} iki akım ölçüm noktasının FFT sonuçlarını göstermektedir. Görsellerin ayrı tutulması, anahtarlama müdahalesi ile ortaya çıkan akım ve harmonik sonuçları arasındaki neden--sonuç zincirini izlenebilir kılmaktadır.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.98\textwidth]{sistem/onceki_tez_susturma_kapi_darbeleri.jpg}
+  \caption{Önerilen nötr anahtar susturma yönteminde $Q_1$--$Q_4$ kapı darbelerinin bir temel periyot boyunca görünümü (Senaryo~2).}
+  \label{fig:susturma-kapi-darbeleri-tam}
+\end{figure}
+
+Şekil~\ref{fig:susturma-kapi-darbeleri-tam} altında pozitif alternansta $Q_1$ anahtarlamayı sürdürürken $Q_4$ komutunun sıfırda tutulduğu; negatif alternansta simetrik anahtarlama rolünün karşı kola geçtiği görülmektedir. Şekil~\ref{fig:susturma-kapi-darbeleri-yakin}, yaklaşık \SI{2.2}{\milli\second}--\SI{2.7}{\milli\second} aralığında $Q_1$ darbeleri devam ederken $Q_4$ ve $Q_2$ komutlarının sıfırda, $Q_3$ komutunun iletimde kaldığını daha açık göstermektedir.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.98\textwidth]{sistem/onceki_tez_susturma_kapi_darbeleri_yakin.jpg}
+  \caption{Önerilen nötr anahtar susturma yönteminde seçilmiş anahtarlama penceresinin yakın görünümü (Senaryo~2).}
+  \label{fig:susturma-kapi-darbeleri-yakin}
+\end{figure}
+
+Şekil~\ref{fig:susturma-l1-tam}, nötr anahtar susturulduğunda $L_1$ akımının sıfırın ters yönünde sürekli dolaşmak yerine her anahtarlama çevriminde sıfıra oturan aralıklar oluşturduğunu göstermektedir. Klasik yöntemin Şekil~\ref{fig:klasik-l1-tam} altındaki iki yönlü dalgalanmasına karşılık burada görülen sıfır-akım aralıkları süreksiz iletim davranışının doğrudan görsel kanıtıdır.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.82\textwidth]{sonuclar/onceki_tez_susturma_l1_tam.png}
+  \caption{Nötr anahtar susturma benzetiminde $L_1$ endüktör akımının tam-periyot dalga biçimi (Senaryo~2).}
+  \label{fig:susturma-l1-tam}
+\end{figure}
+
+Yakın görünüm Şekil~\ref{fig:susturma-l1-yakin} altında verilmiştir. Akımın pozitif eğimle yükselmesinin ardından sıfıra düşmesi ve bir sonraki çevrime kadar sıfırda kalması, nötr kolun klasik senkron serbest dolaşım yolunu sürdürmediğini göstermektedir. Tepe değerinin temel periyot boyunca değişmesi, süreksiz iletim zarfının saf sinüzoidal biçimde kalmadığını da açıklamaktadır.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.82\textwidth]{sonuclar/onceki_tez_susturma_l1_yakin.png}
+  \caption{Nötr anahtar susturma benzetimindeki $L_1$ endüktör akımından büyütülmüş kesit (Senaryo~2).}
+  \label{fig:susturma-l1-yakin}
+\end{figure}
+
+Senaryo~2'nin dört kanallı ekranı Şekil~\ref{fig:susturma-dort-kanal} altında verilmiştir; kanal sırası Senaryo~1 ile aynıdır. $L_1$ ve çıkış akımında görülen düşük frekanslı zarf bozulması, susturmanın tek başına oluşturduğu üçüncü harmonik artışıyla uyumludur.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.98\textwidth]{../dosyalar/05_sonradan_gelenler/Senaryo_2/dalga_sekilleri_s2.jpg}
+  \caption{Nötr anahtar susturma yönteminde filtre giriş gerilimi, filtrelenmiş gerilim, $L_1$ endüktör akımı ve LC filtre çıkış akımının birlikte gösterimi (Senaryo~2).}
+  \label{fig:susturma-dort-kanal}
+\end{figure}
+
+Senaryo~2 FFT ekranlarında analiz tanımı Senaryo~1 ile aynıdır. Şekil~\ref{fig:susturma-l1-fft} altında $L_1$ akımının temel bileşeni \SI{3.396}{\ampere} ve THD değeri \%46,86; Şekil~\ref{fig:susturma-iout-fft} altında çıkış akımının temel bileşeni \SI{3.412}{\ampere} ve THD değeri \%46,35 olarak okunmaktadır. Filtre çıkışında THD'nin yüksek kalması, bozulmanın yalnız yüksek frekanslı anahtarlama dalgalanmasından değil, filtrenin geçiş bandına daha yakın düşük mertebeli harmoniklerden kaynaklandığını göstermektedir.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.98\textwidth]{../dosyalar/05_sonradan_gelenler/Senaryo_2/THD_IL1.jpg}
+  \caption{Nötr anahtar susturma yönteminde $L_1$ endüktör akımının FFT analizi: temel bileşen \SI{3.396}{\ampere}, $\mathrm{THD}_{L1}=\%46{,}86$ (Senaryo~2).}
+  \label{fig:susturma-l1-fft}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.98\textwidth]{../dosyalar/05_sonradan_gelenler/Senaryo_2/THD_Iout.jpg}
+  \caption{Nötr anahtar susturma yönteminde LC filtre çıkış akımının FFT analizi: temel bileşen \SI{3.412}{\ampere}, $\mathrm{THD}_{\mathrm{out}}=\%46{,}35$ (Senaryo~2).}
+  \label{fig:susturma-iout-fft}
+\end{figure}
+
+Senaryo~3'ün ekranları Sin\textsuperscript{3} kompanzasyonunun sonuç setine ait olduğundan Bölüm~\ref{chap:sin3} altında ele alınmaktadır. Sayısal yorum yalnız görüntüden okunabilen kanallarla sınırlandırılmıştır; anahtarlama kaybı, yarı iletken sıcaklığı ve DA/AA güçleri kaydedilmediği için üç senaryo arasında doğrudan verim artışı yüzdesi hesaplanamaz.
+
+\eksikistek{Verim ve güç adlandırma çelişkilerinin ham kayıtla çözümü}{Tablo~\ref{tab:onceki-benzetim-ozeti} içindeki verim yüzdelerinin DA giriş gücü, AA çıkış gücü, işaret yönü, analiz penceresi ve kayıp modeliyle ham kayıttan yeniden hesabını istiyoruz. Ayrıca 20~kVA, 25~kW ve yaklaşık 30~kW anma ifadelerinin hangi çalışma noktasına ait olduğunu gösteren ham tasarım belgesini istiyoruz. Bu kayıtlar gelmeden verim satırları tarihsel bulgu statüsünde kalacaktır.}
+
+\section{Bölüm Sonucu}
+
+T-tipi faz kolunun düşük güçte senkron buck benzeri davranışı, nötr kol üzerinden ters enerji dolaşımının fiziksel kaynağını açıklamaktadır. Klasik anahtarlama akım sürekliliği ve THD bakımından avantajlıyken ters akımın RMS ve iletim kayıplarını büyütmesine izin verebilir. Önerilen anahtarlama, ters akımı sürdüren nötr komutunu düşük güç bölgesinde bastırarak kayıp yolunu azaltmayı amaçlamakta; karşılığında süreksiz iletim ve üçüncü harmonik cezası oluşturmaktadır.
+
+Üç benzetim senaryosu mekanizma sırasını desteklemektedir: nötr anahtar susturma çıkış THD değerini \%2,14'ten \%46,35'e yükseltirken Sin\textsuperscript{3} kompanzasyonu değeri \%7,79'a indirmiştir. Ham modelin bulunmaması kapı eşlemesini ve verim iddiasını sınırlandırmaktadır. Sonraki bölümde kompanzasyonun matematiksel tanımı, kapalı çevrim içindeki konumu, Bode analizi ve çalışma noktasına bağlı sonuçları ele alınmaktadır.

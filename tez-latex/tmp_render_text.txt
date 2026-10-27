@@ -1,0 +1,681 @@
+                               T.C.
+                      SAKARYA ÜNİVERSİTESİ
+                     FEN BİLİMLERİ ENSTİTÜSÜ
+
+
+
+
+ENERJİ DEPOLAMA SİSTEMLERİ İÇİN GELİŞTİRİLMİŞ T-TİPİ DÖNÜŞTÜRÜCÜ
+                           MİMARİSİ
+   VE DÜŞÜK GÜÇ PERFORMANSINI İYİLEŞTİREN ANAHTARLAMA VE
+            Sin3 TABANLI KOMPANZASYON YÖNTEMLERİ
+
+
+
+
+                         DOKTORA TEZİ
+
+                         Ümit PEKPARLAK
+
+
+
+
+                         [ANABİLİM DALI]
+
+                      [BİLİM DALI / PROGRAM]
+
+
+
+
+                          HAZİRAN 2026
+                                T.C.
+                       SAKARYA ÜNİVERSİTESİ
+                      FEN BİLİMLERİ ENSTİTÜSÜ
+
+
+
+
+ENERJİ DEPOLAMA SİSTEMLERİ İÇİN GELİŞTİRİLMİŞ T-TİPİ DÖNÜŞTÜRÜCÜ
+                           MİMARİSİ
+   VE DÜŞÜK GÜÇ PERFORMANSINI İYİLEŞTİREN ANAHTARLAMA VE
+            Sin3 TABANLI KOMPANZASYON YÖNTEMLERİ
+
+
+
+
+                           DOKTORA TEZİ
+
+                        Ümit PEKPARLAK
+                  [DOKTORA ÖĞRENCİ NUMARASI]
+
+
+
+
+                           [ANABİLİM DALI]
+
+                       [BİLİM DALI / PROGRAM]
+
+
+
+                 Tez Danışmanı: Prof. Dr. Uğur ARİFOĞLU
+
+
+
+
+                            HAZİRAN 2026
+TEZ ONAYI
+
+
+
+Ümit PEKPARLAK tarafından hazırlanan “Enerji Depolama Sistemleri İçin Geliştiril-
+miş T-Tipi Dönüştürücü Mimarisi ve Düşük Güç Performansını İyileştiren Anahtarlama
+ve Sin3 Tabanlı Kompanzasyon Yöntemleri” adlı tez çalışması, [SAVUNMA TARİHİ]
+tarihinde aşağıdaki jüri tarafından Doktora Tezi olarak kabul edilmiştir.
+
+
+
+
+                                                               Tez Jürisi
+
+
+
+
+Jüri Başkanı: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+                             [ÜNİVERSİTE]                                                                                        [İMZA]
+
+
+
+Jüri Üyesi (Danışman): Prof. Dr. Uğur ARİFOĞLU . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+                     Sakarya Üniversitesi                                                     [İMZA]
+
+
+
+Jüri Üyesi: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+                               [ÜNİVERSİTE]                                                                                         [İMZA]
+
+
+
+Jüri Üyesi: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+                               [ÜNİVERSİTE]                                                                                         [İMZA]
+
+
+
+Jüri Üyesi: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+                               [ÜNİVERSİTE]                                                                                         [İMZA]
+ETİK İLKE VE KURALLARA UYGUNLUK BEYANNAMESİ
+
+
+Sakarya Üniversitesi Fen Bilimleri Enstitüsü Lisansüstü Eğitim-Öğretim Yönetmeli-
+ğine ve Yükseköğretim Kurumları Bilimsel Araştırma ve Yayın Etiği Yönergesine uy-
+gun olarak hazırlamış olduğum “Enerji Depolama Sistemleri İçin Geliştirilmiş T-Tipi
+Dönüştürücü Mimarisi ve Düşük Güç Performansını İyileştiren Anahtarlama ve Sin3
+Tabanlı Kompanzasyon Yöntemleri” başlıklı tezin bana ait, özgün bir çalışma oldu-
+ğunu; çalışmamın tüm aşamalarında yukarıda belirtilen yönetmelik ve yönergeye uy-
+gun davrandığımı, tezin içerdiği yenilik ve sonuçları başka bir yerden almadığımı, tezde
+kullandığım eserleri usulüne göre kaynak olarak gösterdiğimi, bu tezi başka bir bilim
+kuruluna akademik amaç ve unvan almak amacıyla vermediğimi ve 20.04.2016 tarihli
+Resmî Gazete’de yayımlanan Lisansüstü Eğitim ve Öğretim Yönetmeliğinin 9/2 ve
+22/2 maddeleri gereğince Sakarya Üniversitesinin abonesi olduğu intihal yazılım prog-
+ramı kullanılarak Enstitü tarafından belirlenmiş ölçütlere uygun rapor alındığını, etik
+kurul onay belgesi aldığımı (gerekiyorsa) ve bu belgenin tez içinde sunulduğunu beyan
+ederim.
+
+
+
+
+                                                              ([SAVUNMA TARİHİ])
+                                                                            (imza)
+                                                                  Ümit PEKPARLAK
+TEŞEKKÜR
+
+
+
+Teşekkür metni, mevcut tezdeki onaylanmış içerikten buraya aktarılacaktır. Danış-
+mana, katkı sağlayan kişilere ve çalışmayı destekleyen TÜBİTAK/BAP projelerine
+ilişkin bilgiler bu bölümde belirtilecektir.
+
+
+
+
+                                                             Ümit PEKPARLAK
+İÇİNDEKİLER
+
+ETİK İLKE VE KURALLARA UYGUNLUK BEYANNAMESİ . . . . . .                              v
+TEŞEKKÜR . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . vii
+İÇİNDEKİLER . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .       ix
+KISALTMALAR . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .       xi
+SİMGELER . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . xiii
+TABLO LİSTESİ . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . xv
+ŞEKİL LİSTESİ . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . xvii
+ÖZET . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . xix
+SUMMARY . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . xxi
+1          GİRİŞ . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .     1
+  1.1 Problem Bağlamı ve Motivasyon . . . . . . . . . . . . . . . . . . . . .        1
+  1.2 Tezin Amacı . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .      4
+  1.3 Araştırma Soruları . . . . . . . . . . . . . . . . . . . . . . . . . . . .     4
+  1.4 Tezin Özgün Katkıları . . . . . . . . . . . . . . . . . . . . . . . . . .      5
+  1.5 Kapsam ve Sınırlılıklar . . . . . . . . . . . . . . . . . . . . . . . . . .    5
+  1.6 Tezin Organizasyonu . . . . . . . . . . . . . . . . . . . . . . . . . . .      6
+2          LİTERATÜR, KURAMSAL TEMEL VE ARAŞTIRMA BOŞ-
+           LUĞU . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .      7
+  2.1 Enerji Depolama Sistemlerinde Güç Dönüşüm Mimarileri . . . . . . .             7
+  2.2 T-Tipi Evirici Topolojileri . . . . . . . . . . . . . . . . . . . . . . . .    7
+  2.3 Düşük Güçte Verim ve Harmonik Bozulma . . . . . . . . . . . . . . .            7
+  2.4 Akım Kontrolü ve İleri Besleme Yaklaşımları . . . . . . . . . . . . . .        7
+  2.5 Araştırma Boşluğu . . . . . . . . . . . . . . . . . . . . . . . . . . . .      7
+3          SİSTEM MİMARİSİ, MODEL VE METODOLOJİ . . . . . .                          9
+  3.1 Sistemin Genel Blok Diyagramı . . . . . . . . . . . . . . . . . . . . .        9
+  3.2 T-Tipi Evirici ve Çalışma Modları . . . . . . . . . . . . . . . . . . . .      9
+  3.3 LCL Filtre ve Şebeke Modeli . . . . . . . . . . . . . . . . . . . . . .        9
+  3.4 Kontrol ve Modülasyon Yapısı . . . . . . . . . . . . . . . . . . . . . .       9
+  3.5 Elektriksel ve Kontrol Parametreleri . . . . . . . . . . . . . . . . . . .     9
+  3.6 Simülasyon ve Deneysel Test Metodolojisi . . . . . . . . . . . . . . .         9
+4          DÜŞÜK GÜÇ ANALİZİ VE YENİ ANAHTARLAMA YÖN-
+           TEMİ . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 11
+  4.1 Ters Akım Dolaşım Mekanizması . . . . . . . . . . . . . . . . . . . . 11
+  4.2 Senkron Buck Eşdeğer Modeli . . . . . . . . . . . . . . . . . . . . . . 11
+  4.3 Klasik Anahtarlama Yöntemi . . . . . . . . . . . . . . . . . . . . . . 11
+  4.4 Önerilen Anahtarlama Yöntemi . . . . . . . . . . . . . . . . . . . . . 11
+  4.5 Verim ve Harmonik Performans Ödünleşimi . . . . . . . . . . . . . . . 11
+5          SİN3 TABANLI İLERİ BESLEME KOMPANZASYONU VE
+           KAPALI ÇEVRİM ANALİZİ . . . . . . . . . . . . . . . . . . 13
+         3
+  5.1 Sin Bileşeninin Matematiksel Tanımı . . . . . . . . . . . . . . . . . . 13
+  5.2 Kompanzasyon Yapısı ve Blok Diyagramı . . . . . . . . . . . . . . . .         13
+  5.3 Kapalı Çevrim Modeli . . . . . . . . . . . . . . . . . . . . . . . . . .      13
+  5.4 Bode ve Kararlılık Marjı Analizi . . . . . . . . . . . . . . . . . . . . .    13
+  5.5 Düşük, Orta ve Nominal Güç Karşılaştırması . . . . . . . . . . . . . .        13
+6          DENEYSEL DOĞRULAMA . . . . . . . . . . . . . . . . . . .                 15
+  6.1 Deney Düzeneği . . . . . . . . . . . . . . . . . . . . . . . . . . . . .      15
+  6.2 Ölçüm Cihazları ve Belirsizlikler . . . . . . . . . . . . . . . . . . . .     15
+  6.3 Test Matrisi ve Veri İşleme . . . . . . . . . . . . . . . . . . . . . . . .   15
+  6.4 Düşük Güç Sonuçları . . . . . . . . . . . . . . . . . . . . . . . . . . .     15
+  6.5 Nominal Güç Sonuçları . . . . . . . . . . . . . . . . . . . . . . . . . .     15
+  6.6 Simülasyon ve Deney Sonuçlarının Karşılaştırılması . . . . . . . . . .        15
+7          GT-TİPİ YENİDEN YAPILANDIRILABİLİR ENERJİ DE-
+           POLAMA MİMARİSİ . . . . . . . . . . . . . . . . . . . . . .              17
+  7.1 Tasarım Gereksinimleri . . . . . . . . . . . . . . . . . . . . . . . . . .    17
+  7.2 GT-Tipi Topolojinin Yapısı . . . . . . . . . . . . . . . . . . . . . . . .    17
+  7.3 Şarj ve Deşarj Çalışma Modları . . . . . . . . . . . . . . . . . . . . .      17
+  7.4 Mod Geçişleri ve Güvenlik Kısıtları . . . . . . . . . . . . . . . . . . .     17
+  7.5 Klasik Mimari ile Karşılaştırma . . . . . . . . . . . . . . . . . . . . .     17
+  7.6 Doğrulama Sonuçları . . . . . . . . . . . . . . . . . . . . . . . . . . .     17
+8          SONUÇLAR VE GELECEK ÇALIŞMALAR . . . . . . . . .                         19
+  8.1 Araştırma Sorularının Yanıtları . . . . . . . . . . . . . . . . . . . . . .   19
+  8.2 Özgün Katkıların Değerlendirilmesi . . . . . . . . . . . . . . . . . . .      19
+  8.3 Çalışmanın Sınırlılıkları . . . . . . . . . . . . . . . . . . . . . . . . .   19
+  8.4 Gelecek Çalışmalar . . . . . . . . . . . . . . . . . . . . . . . . . . . .    19
+EKLER . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   23
+ÖZGEÇMİŞ . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .      25
+
+
+
+
+                                               x
+KISALTMALAR
+
+
+AA        Alternatif Akım
+BYS       Batarya Yönetim Sistemi
+LCL       İndüktans-Kapasitans-İndüktans filtre yapısı
+THD       Toplam Harmonik Bozulma
+SİMGELER
+
+
+𝑉da        Doğru akım bara gerilimi
+𝑓s         Anahtarlama frekansı
+𝐼rms       Akımın etkin değeri
+TABLO LİSTESİ
+ŞEKİL LİSTESİ
+    ENERJİ DEPOLAMA SİSTEMLERİ İÇİN GELİŞTİRİLMİŞ T-TİPİ
+     DÖNÜŞTÜRÜCÜ MİMARİSİ VE DÜŞÜK GÜÇ PERFORMANSINI
+  İYİLEŞTİREN ANAHTARLAMA VE SİN3 TABANLI KOMPANZASYON
+                       YÖNTEMLERİ
+
+                                         ÖZET
+
+Bu bölüm, tezin ana metni ve sayısal sonuçlar tamamlandıktan sonra yeniden yazılacak-
+tır. Türkçe tezlerde özet en az 300 kelime olmalı ve bir ila üç sayfa arasında kalmalıdır.
+Özette kaynak, şekil ve tablo kullanılmayacaktır.
+Anahtar Kelimeler: T-tipi evirici, enerji depolama sistemi, düşük güç, ileri besleme
+kompanzasyonu, harmonik bozulma.
+ ENGLISH THESIS TITLE WILL BE FINALIZED AFTER THE TURKISH
+                     TITLE IS APPROVED
+
+                                    SUMMARY
+
+The extended English summary will be rewritten after the thesis structure, claims, and
+numerical results are finalized. For a thesis written in Turkish, this section must be
+between three and five pages. It must not contain citations, figures, or tables.
+Keywords: T-type inverter, energy storage system, low-power operation, feedforward
+compensation, harmonic distortion.
+1. GİRİŞ
+
+
+1.1. Problem Bağlamı ve Motivasyon
+
+Elektrik enerjisi sistemleri; artan talep, fosil kaynakların çevresel etkileri ve enerji ar-
+zının karbonsuzlaştırılması gereksinimi nedeniyle önemli bir dönüşüm geçirmektedir.
+Güneş ve rüzgâr gibi yenilenebilir kaynakların kurulu güç içindeki payı büyürken elekt-
+rik üretimi, merkezi ve öngörülebilir bir yapıdan dağıtık ve zamana bağlı bir yapıya
+doğru ilerlemektedir. Bu dönüşüm, temiz enerji üretimini artırmakla birlikte üretim ile
+tüketimin her an dengelenmesi zorunluluğunu ortadan kaldırmamaktadır. Işınım ve rüz-
+gâr koşullarına bağlı üretim değişimleri; güç dengesinin korunması, gerilim ve frekan-
+sın desteklenmesi ve yenilenebilir enerjinin etkin biçimde kullanılabilmesi için esnek
+kaynaklara duyulan gereksinimi artırmaktadır [1–3].
+Enerji depolama sistemleri (EDS), enerjiyi üretildiği anda tüketme zorunluluğunu azal-
+tarak yenilenebilir kaynakların şebekeye entegrasyonunda bu esnekliği sağlayan baş-
+lıca yapılardan biridir. Bir EDS yalnızca batarya grubundan ibaret değildir; batarya,
+güç dönüşüm sistemi, batarya ve enerji yönetim birimleri, koruma, haberleşme ve ısıl
+yönetim alt sistemlerinin birlikte çalıştığı bütünleşik bir sistemdir [4, 5]. Dolayısıyla
+sistem başarısı yalnızca hücrenin enerji yoğunluğuyla değil, batarya ile DA bara, yük
+ve şebeke arasındaki enerji akışını yöneten güç elektroniği arayüzünün verimi, güveni-
+lirliği, hacmi ve maliyetiyle de belirlenir. Güncel maliyet çalışmalarında batarya paketi
+en büyük kalem olarak öne çıksa da çift yönlü güç dönüştürücüleri ve bunların yardımcı
+donanımları da sistem düzeyindeki maliyet ve kayıpların önemli bir parçasıdır [6, 7].
+Bu nedenle EDS’lerde hem bataryanın güvenli çalışma bölgesini koruyan hem de aynı
+yarı iletken donanımı farklı enerji akış yönlerinde daha etkin kullanan dönüştürücü mi-
+marileri önem kazanmaktadır.
+Depolama arayüzünün performansı, bağlı olduğu yenilenebilir üretim sisteminin ger-
+çek çalışma profiliyle birlikte değerlendirilmelidir. Fotovoltaik (FV) üretim, ışınım ve
+sıcaklık nedeniyle gün boyunca sürekli değişir; evirici yalnızca sınırlı sürelerle anma
+gücüne yakın çalışır ve çalışma ömrünün kayda değer bir bölümünü kısmi yük bölge-
+lerinde geçirir. Bu nedenle yalnızca anma noktasında verilen tepe verim değeri, yıllık
+enerji dönüşüm başarısını tek başına açıklamaz. Avrupa ve CEC ağırlıklı verim tanım-
+ları ile bölgesel ışınım dağılımlarına dayalı ölçütler, farklı güç seviyelerindeki verim-
+lerin gerçek işletme açısından birlikte ele alınması gerektiğini göstermektedir [8–11].
+Kısmi yükte sabit sürme, anahtarlama ve manyetik eleman kayıplarının aktarılan güce
+oranı büyürken akım dalga biçimi de anahtar doğrusal olmayanlıklarına, ölü zamana ve
+şebeke gerilimindeki bozulmalara daha duyarlı hâle gelir. Sonuçta düşük güç bölgesi,
+verim ile akım toplam harmonik bozulması (THD) arasındaki ödünleşimin belirginleş-
+tiği bir çalışma alanına dönüşür [12, 13].
+Şebekeye bağlı dönüştürücülerde bu ödünleşim; topoloji, modülasyon, filtre ve kontrol
+yapısının ortak sonucudur. İki seviyeli eviricilere alternatif olan çok seviyeli topoloji-
+ler, çıkış gerilimini daha fazla seviyede oluşturarak yarı iletken gerilim zorlanmasını ve
+anahtarlama dalgalanmasını azaltabilmektedir. Üç seviyeli T-tipi evirici, nötr noktaya
+bağlanan çift yönlü anahtar kolu sayesinde +𝑉dc /2, 0 ve −𝑉dc /2 gerilim seviyelerini
+üretir. Bu yapı; uygun eleman seçimi ve modülasyonla yüksek güç yoğunluğu ve yük-
+sek verim potansiyeli sunmakta, aynı zamanda ticari yarı iletken modüllerle gerçekleş-
+tirilebilmektedir [14]. T-tipi topolojinin şebekeye bağlı gerçek bir donanım üzerindeki
+uygulanabilirliği ve elektromanyetik uyumluluk gereksinimleri de deneysel çalışma-
+larla gösterilmiştir [15].
+Bununla birlikte, topolojinin anma gücündeki üstünlüğü düşük güçte aynı ölçüde ko-
+runmayabilir. Çıkış akımının küçük olduğu bölgelerde T-tipi faz kolunun sıfır gerilim
+durumunu oluşturan nötr anahtarları, akımın işaret değiştirmesine izin veren senkron
+bir alçaltıcı dönüştürücü davranışı gösterebilir. Endüktör akımı bir anahtarlama peri-
+yodu içinde sıfıra ulaştıktan sonra nötr anahtar iletimde tutulduğunda akım ters yönde
+büyüyebilir; böylece şebekeye yararlı güç taşımayan dolaşım akımı, yarı iletken ve pa-
+sif elemanların RMS akımını ve iletim kayıplarını artırabilir. Süreksiz iletim ve diyot
+benzetimi yaklaşımlarının hafif yükte ters akımı engelleyerek kayıpları azaltabilmesi,
+senkron alçaltıcı dönüştürücüler için bilinen bir ilkedir [16–18]. Ancak bu ilkenin şebe-
+keye bağlı üç seviyeli T-tipi eviricinin sıfır durumuna uygulanması, yalnızca bir anah-
+tarın kapatılması değildir; akım yolunu, çıkış gerilimini, modülasyon bütünlüğünü ve
+harmonik içeriği birlikte değiştiren topolojiye özgü bir problemdir.
+Bu tezde söz konusu problem için, düşük güç bölgesinde ters akım dolaşımını sınır-
+landırmak amacıyla nötr anahtarın belirli koşullarda susturulmasına dayanan yeni bir
+anahtarlama yöntemi ele alınmaktadır. Yöntem, dolaşım akımını ve buna bağlı kayıp-
+ları azaltmayı hedeflerken T-tipi eviricinin ürettiği gerilim darbelerini de değiştirmek-
+tedir. Dolayısıyla verimdeki olası iyileşmenin karşılığında, özellikle üçüncü harmo-
+nik bileşeninde artış ortaya çıkabilmektedir. Ölü zaman, anahtar geçişleri ve parazitik
+kapasiteler gibi gerçek devre etkilerinin akım harmoniklerini çalışma noktasına bağlı
+biçimde değiştirebildiği bilinmektedir [19]. Bu nedenle önerilen anahtarlama yöntemi-
+nin başarısı yalnızca verim kazancıyla değil, aynı çalışma noktalarında THD ve şebeke
+akımı kalitesi korunarak değerlendirilmelidir.
+
+
+                                                2
+Anahtarlama değişikliğinin oluşturduğu üçüncü harmonik bileşenini azaltmak
+için bu tezde Sin3 tabanlı bir ileri besleme kompanzasyonu kullanılmaktadır.
+    3
+sin (𝜃) = [3 sin(𝜃) − sin(3𝜃)]/4 özdeşliği, ölçülen şebeke geriliminin faz bilgisin-
+den temel ve üçüncü harmonikle ilişkili anlık bir şekillendirme terimi üretilebilmesini
+sağlar. Üretilen terim, akım hatasından türetilen bağımsız bir geri besleme kontrolcüsü
+değil, mevcut akım kontrol döngüsünün modülasyon girişine eklenen bir kompanzas-
+yon bileşenidir. Bu terminolojik ayrım önemlidir: şebeke gerilimi ileri besleme yolları
+akım bozulmasını azaltabilse de dijital gecikme, LCL filtresi ve şebeke empedansı
+nedeniyle sistem dinamiğiyle etkileşebilir [20, 21]. Bu nedenle Sin3 teriminin ideal
+doğrusal modelde karakteristik paydayı değiştirmemesi, gerçek dönüştürücüde kararlı-
+lık incelemesini gereksiz kılmaz. Kapalı çevrim modelinin, duyarlılık fonksiyonlarının
+ve düşük ile anma gücü çalışma noktalarının birlikte incelenmesi gerekir.
+Tezin ikinci daralma ekseni, aynı T-tipi donanımın yalnızca evirici olarak değil,
+EDS’nin farklı enerji akış kiplerinde yeniden kullanılabilmesidir. Geleneksel bir de-
+polama sisteminde şebeke eviricisi, şarj doğrultucusu veya güç faktörü düzeltme katı
+ve hücre dengeleme dönüştürücüleri ayrı yarı iletken gruplarıyla gerçekleştirilebilir.
+Her ilave kat güç yoğunluğu, sürücü, soğutma, koruma ve maliyet üzerinde yeni yük
+oluşturur. Bu tezde geliştirilen GT-tipi mimari, T-tipi dönüştürücünün anahtarlarını
+çalışma kipine göre yeniden görevlendirerek evirici, Vienna PFC ve aktif batarya
+yönetimi işlevlerini ortak bir donanımsal yapı üzerinde birleştirmeyi amaçlamaktadır.
+Böylece düşük güçteki anahtarlama ve harmonik problemi ile şarj–deşarj mimarisinin
+yeniden yapılandırılması, birbirinden kopuk iki çalışma olarak değil, T-tipi dönüştü-
+rücünün yapısal olanaklarını farklı ölçeklerde kullanan tek bir araştırma ekseni olarak
+ele alınmaktadır.
+Bu çerçevede tezin ana savı şudur: T-tipi dönüştürücünün yapısal ve anahtarlama özel-
+likleri, enerji depolama sistemlerinde şarj–deşarj işlevlerini yeniden yapılandırmak ve
+düşük güçte verim–harmonik ödünleşimini iyileştirmek için birlikte kullanılabilir; Sin3
+terimi ise bu ikinci hedefi destekleyen bir ileri besleme kompanzasyonudur. Literatürde
+T-tipi eviricinin yüksek güç yoğunluğu, şebeke kontrolü, hafif yük dönüştürücü kipleri
+ve ileri besleme yolları ayrı ayrı incelenmiştir [14, 18, 20, 22]. Bu tezin odaklandığı
+araştırma boşluğu; T-tipi faz kolundaki düşük güç ters akım mekanizmasını, bunun
+verim–THD sonucu ile Sin3 tabanlı kompanzasyonunu ve aynı donanımın EDS işlev-
+leri için yeniden yapılandırılmasını ortak bir mimari ve doğrulama zinciri içinde ele
+almaktır.
+
+
+
+
+                                      3
+1.2. Tezin Amacı
+
+Bu tezin temel amacı, enerji depolama sistemleri için T-tipi dönüştürücü tabanlı yeni-
+den yapılandırılabilir bir şarj–deşarj mimarisi geliştirmek ve aynı topolojinin şebekeye
+bağlı düşük güç çalışmasında görülen verim ile harmonik bozulma sorunlarını birlikte
+iyileştirecek yöntemleri ortaya koymaktır. Bu genel amaç doğrultusunda;
+
+   1. T-tipi eviricinin düşük güçteki akım yollarını ve ters akım dolaşım mekanizma-
+      sını açıklamak,
+   2. ters akımı azaltmaya yönelik nötr anahtar susturma yöntemini geliştirmek ve kla-
+      sik anahtarlamayla karşılaştırmak,
+   3. anahtarlama değişikliğinin üçüncü harmonik üzerindeki etkisini belirlemek ve
+      Sin3 tabanlı ileri besleme kompanzasyonunu tanımlamak,
+   4. kompanzasyon yolunu mevcut kapalı çevrim akım kontrolünden ayırarak sistem
+      dinamiği ve kararlılık üzerindeki etkisini incelemek,
+   5. T-tipi yarı iletkenleri farklı şarj, deşarj ve dengeleme kiplerinde yeniden kullanan
+      GT-tipi mimariyi tanımlamak ve uygulanabilirliğini mevcut kanıtlarla değerlen-
+      dirmek
+
+amaçlanmıştır.
+
+
+1.3. Araştırma Soruları
+
+Tez aşağıdaki araştırma sorularına yanıt aramaktadır:
+
+AS1. T-tipi eviricinin düşük güç çalışma bölgesinde ters akım dolaşımı hangi anah-
+     tarlama durumları ve akım yolları üzerinden oluşmakta; bu dolaşım kayıpları ve
+     akım harmoniklerini nasıl etkilemektedir?
+AS2. Nötr anahtarın koşula bağlı olarak susturulması, klasik anahtarlamaya göre düşük
+     güç verimini hangi çalışma aralığında ve hangi harmonik maliyetle değiştirmek-
+     tedir?
+AS3. Sin3 tabanlı ileri besleme kompanzasyonu, önerilen anahtarlamanın oluşturduğu
+     üçüncü harmonik bileşenini ne ölçüde azaltmakta ve mevcut kapalı çevrim akım
+     kontrolünün kararlılık marjlarıyla nasıl etkileşmektedir?
+AS4. T-tipi dönüştürücünün yarı iletkenleri, EDS’nin şarj–deşarj ve hücre dengeleme
+     kiplerinde güvenli biçimde yeniden görevlendirilerek ayrı güç dönüşüm katları-
+     nın işlevleri ortak bir yapıda birleştirilebilir mi?
+
+
+
+                                                4
+1.4. Tezin Özgün Katkıları
+
+Tezin özgün katkıları, birbirini tamamlayan üç düzeyde tanımlanmıştır:
+
+   1. Düşük güç anahtarlama yöntemi: T-tipi eviricinin sıfır gerilim durumunda or-
+      taya çıkan ters akım dolaşımını hedefleyen nötr anahtar susturma yöntemi ge-
+      liştirilmiştir. Katkı; çalışma kiplerinin analizi, klasik ve önerilen akım yollarının
+      karşılaştırılması, benzetim sonuçları ve erişilebilir deneysel kayıtlarla değerlen-
+      dirilmektedir.
+   2. Sin3 tabanlı ileri besleme kompanzasyonu: Yeni anahtarlama yönteminin
+      üçüncü harmonik üzerindeki etkisini azaltmak üzere şebeke işaretinden anlık
+      olarak üretilen bir kompanzasyon terimi önerilmiştir. Katkı, bağımsız bir kont-
+      rolcü olarak değil mevcut kapalı çevrime eklenen ileri besleme bileşeni olarak
+      modellenmekte; harmonik performansın yanı sıra kapalı çevrim varsayımları ve
+      kararlılık sınırlarıyla birlikte incelenmektedir.
+   3. GT-tipi yeniden yapılandırılabilir mimari: Evirici, Vienna PFC ve aktif ba-
+      tarya yönetimi işlevlerinde aynı yarı iletkenlerin farklı görevlerle kullanılmasını
+      sağlayan T-tipi tabanlı bir EDS mimarisi geliştirilmiştir. Katkı; çalışma kipleri,
+      anahtarlama durumları, enerji akış yolları, güvenlik kısıtları ve mevcut benze-
+      tim/deney kanıtı üzerinden klasik ayrık mimariyle karşılaştırılmaktadır.
+
+Bu katkılar için patent tescilleri teknolojik yenilik ve uygulanabilirlik bakımından ta-
+mamlayıcı çıktı niteliğindedir; bilimsel doğrulamanın yerine kullanılmamaktadır. Her
+katkının geçerliliği, tez içinde açıkça belirtilen model, benzetim, ölçüm ve karşılaştırma
+sınırları içerisinde değerlendirilmektedir.
+
+
+1.5. Kapsam ve Sınırlılıklar
+
+Çalışma, şebekeye bağlı üç seviyeli T-tipi dönüştürücünün düşük güç davranışı ile
+bu topolojiden türetilen GT-tipi enerji depolama mimarisiyle sınırlandırılmıştır. Dü-
+şük güç incelemesinde anahtarlama durumları, ters akım, dönüştürücü verimi, şebeke
+akımı THD’si ve üçüncü harmonik temel performans ölçütleridir. Sin3 terimi, şebeke
+geriliminden üretilen ileri besleme kompanzasyonu olarak ele alınmakta; bağımsız bir
+kapalı çevrim kontrol yasası veya genel amaçlı aktif harmonik filtre yöntemi olduğu
+iddia edilmemektedir.
+Doğrulama, tez kapsamında erişilebilen benzetim modelleri, gerçek zamanlı uygulama
+sonuçları ve deneysel kayıtlarla sınırlıdır. Sonuçlar; kullanılan DA bara gerilimi, şe-
+beke koşulları, LCL filtre, anahtarlama frekansı, denetleyici ayarları, ölçüm düzeni ve
+
+
+
+                                       5
+incelenen güç seviyeleri için geçerlidir. Yeni deneyle doğrulanmamış çalışma bölgele-
+rine ilişkin ifadeler genellenmemekte; benzetim ve deney sonuçları ayrı biçimde rapor-
+lanmaktadır. GT-tipi mimarinin maliyet, hacim ve eleman sayısı bakımından sağladığı
+yararlar, ayrıntılı yaşam döngüsü maliyeti veya seri üretim güvenilirlik çalışması ya-
+pılmadığı durumlarda “potansiyel” olarak ifade edilmektedir.
+
+
+1.6. Tezin Organizasyonu
+
+Tez sekiz bölümden oluşmaktadır. Birinci bölümde araştırma problemi genelden özele
+kurulmuş, amaç, araştırma soruları, katkılar ve sınırlar tanımlanmıştır. İkinci bölümde
+EDS güç dönüşüm mimarileri, T-tipi eviriciler, düşük güç verimi ve harmonik bozulma,
+akım kontrolü ve ileri besleme yaklaşımları incelenerek araştırma boşluğu belirlen-
+mektedir. Üçüncü bölüm ortak sistem mimarisini, T-tipi çalışma kiplerini, LCL filtre
+ve şebeke modelini, kontrol yapısını, elektriksel parametreleri ve doğrulama yöntemini
+sunmaktadır.
+Dördüncü bölümde düşük güç ters akım mekanizması çözümlenmekte ve nötr anah-
+tar susturma yöntemi klasik anahtarlamayla karşılaştırılmaktadır. Beşinci bölüm Sin3
+tabanlı ileri besleme kompanzasyonunu matematiksel olarak tanımlamakta; kapalı çev-
+rim modelini, duyarlılık fonksiyonlarını ve kararlılık incelemesini vermektedir. Altıncı
+bölüm, benzetim ve erişilebilir deneysel sonuçları ortak bir test matrisi üzerinden de-
+ğerlendirerek yöntemlerin düşük, orta ve mümkün olan anma gücü koşullarındaki per-
+formansını karşılaştırmaktadır. Yedinci bölüm GT-tipi yeniden yapılandırılabilir EDS
+mimarisini, çalışma kiplerini ve klasik mimariyle farklarını sunmaktadır. Sekizinci ve
+son bölümde araştırma soruları kanıt sınırları içinde yanıtlanmakta, özgün katkılar top-
+luca değerlendirilmekte ve gelecek çalışmalar önerilmektedir.
+
+
+
+
+                                               6
+2. LİTERATÜR, KURAMSAL TEMEL VE ARAŞTIRMA BOŞLUĞU
+
+
+2.1. Enerji Depolama Sistemlerinde Güç Dönüşüm Mimarileri
+
+2.2. T-Tipi Evirici Topolojileri
+
+2.3. Düşük Güçte Verim ve Harmonik Bozulma
+
+2.4. Akım Kontrolü ve İleri Besleme Yaklaşımları
+
+2.5. Araştırma Boşluğu
+3. SİSTEM MİMARİSİ, MODEL VE METODOLOJİ
+
+
+3.1. Sistemin Genel Blok Diyagramı
+
+3.2. T-Tipi Evirici ve Çalışma Modları
+
+3.3. LCL Filtre ve Şebeke Modeli
+
+3.4. Kontrol ve Modülasyon Yapısı
+
+3.5. Elektriksel ve Kontrol Parametreleri
+
+3.6. Simülasyon ve Deneysel Test Metodolojisi
+4. DÜŞÜK GÜÇ ANALİZİ VE YENİ ANAHTARLAMA YÖNTEMİ
+
+
+4.1. Ters Akım Dolaşım Mekanizması
+
+4.2. Senkron Buck Eşdeğer Modeli
+
+4.3. Klasik Anahtarlama Yöntemi
+
+4.4. Önerilen Anahtarlama Yöntemi
+
+4.5. Verim ve Harmonik Performans Ödünleşimi
+5. SİN3 TABANLI İLERİ BESLEME KOMPANZASYONU VE KAPALI ÇEV-
+   RİM ANALİZİ
+
+
+5.1. Sin3 Bileşeninin Matematiksel Tanımı
+
+5.2. Kompanzasyon Yapısı ve Blok Diyagramı
+
+5.3. Kapalı Çevrim Modeli
+
+5.4. Bode ve Kararlılık Marjı Analizi
+
+5.5. Düşük, Orta ve Nominal Güç Karşılaştırması
+6. DENEYSEL DOĞRULAMA
+
+
+6.1. Deney Düzeneği
+
+6.2. Ölçüm Cihazları ve Belirsizlikler
+
+6.3. Test Matrisi ve Veri İşleme
+
+6.4. Düşük Güç Sonuçları
+
+6.5. Nominal Güç Sonuçları
+
+6.6. Simülasyon ve Deney Sonuçlarının Karşılaştırılması
+7. GT-TİPİ YENİDEN YAPILANDIRILABİLİR ENERJİ DEPOLAMA MİMA-
+   RİSİ
+
+
+7.1. Tasarım Gereksinimleri
+
+7.2. GT-Tipi Topolojinin Yapısı
+
+7.3. Şarj ve Deşarj Çalışma Modları
+
+7.4. Mod Geçişleri ve Güvenlik Kısıtları
+
+7.5. Klasik Mimari ile Karşılaştırma
+
+7.6. Doğrulama Sonuçları
+8. SONUÇLAR VE GELECEK ÇALIŞMALAR
+
+
+8.1. Araştırma Sorularının Yanıtları
+
+8.2. Özgün Katkıların Değerlendirilmesi
+
+8.3. Çalışmanın Sınırlılıkları
+
+8.4. Gelecek Çalışmalar
+KAYNAKLAR
+
+
+ [1] Haisheng Chen, Thang Ngoc Cong, Wei Yang, Chunqing Tan, Yongliang Li, and
+     Yulong Ding. Progress in electrical energy storage system: A critical review.
+     Progress in Natural Science, 19(3):291–312, 2009.
+
+ [2] Mathew Aneke and Meihong Wang. Energy storage technologies and real life
+     applications: A state of the art review. Applied Energy, 179:350–377, 2016.
+
+ [3] IEA Photovoltaic Power Systems Programme. Trends in photovoltaic appli-
+     cations 2024. Technical Report IEA-PVPS T1-43:2024, International Energy
+     Agency, 2024.
+
+ [4] M. A. Hannan, M. M. Hoque, A. Mohamed, and A. Ayob. Review of energy sto-
+     rage systems for electric vehicle applications: Issues and challenges. Renewable
+     and Sustainable Energy Reviews, 69:771–789, 2017.
+
+ [5] Gregory L. Plett. Battery Management Systems, Volume I: Battery Modeling.
+     Artech House, 2015.
+
+ [6] Vignesh Ramasamy, Jarett Zuboy, Michael Woodhouse, Eric O’Shaughnessy, Da-
+     vid Feldman, Jal Desai, Andy Walker, Robert Margolis, and Paul Basore. U.s.
+     solar photovoltaic system and energy storage cost benchmarks, with minimum
+     sustainable price analysis: Q1 2023. Technical Report NREL/TP-7A40-87303,
+     National Renewable Energy Laboratory, 2023.
+
+ [7] Lazard. Levelized cost of energy+ version 17.0. Technical report, Lazard Finan-
+     cial Advisory, 2024.
+
+ [8] M. Meinhardt and G. Cramer. Past, present and future of grid-connected
+     photovoltaic- and hybrid-power-systems. Solar Energy, 68(6):575–588, 2000.
+
+ [9] Dezso Sera, Remus Teodorescu, Massimo Valentini, and Adrian Raducu. PV
+     inverter test setup for european efficiency, static and dynamic MPPT effici-
+     ency evaluation. In Proceedings of the 11th International Conference on Op-
+     timization of Electrical and Electronic Equipment, pages 433–438, 2008. doi:
+     10.1109/OPTIM.2008.4602445.
+
+[10] Sandia National Laboratories and DNV KEMA Renewables. Performance test
+     protocol for evaluating inverters used in grid-connected photovoltaic systems.
+     Technical Report SAND2015-4418R, Sandia National Laboratories, 2015.
+
+[11] A. O. Ongun and E. Özdemir. Weighted efficiency measurement of PV inverters:
+     Introducing 𝜂izmir . Journal of Optoelectronics and Advanced Materials, 15:550–
+     554, 2013.
+[12] Soren Baekhoej Kjaer, John K. Pedersen, and Frede Blaabjerg. A review of single-
+     phase grid-connected inverters for photovoltaic modules. IEEE Transactions on
+     Industry Applications, 41(5):1292–1306, 2005.
+
+[13] Gianfranco Chicco, Juergen Schlabbach, and Filippo Spertino. Experimental as-
+     sessment of the waveform distortion in grid-connected photovoltaic installations.
+     Solar Energy, 83(7):1026–1039, 2009.
+
+[14] Zhongjing Wang, Yuheng Wu, Mohammad Hazzaz Mahmud, Zhe Zhao, Yue
+     Zhao, and H. Alan Mantooth. Design and validation of a 250-kw all-silicon car-
+     bide high-density three-level t-type inverter. IEEE Journal of Emerging and Se-
+     lected Topics in Power Electronics, 8(1):578–588, 2020.
+
+[15] Halime Hizarci, Umit Pekparlak, and Ugur Arifoglu. Conducted emission supp-
+     ression using an EMI filter for grid-tied three-phase/level t-type solar inverter.
+     IEEE Access, 9:69881–69896, 2021. doi: 10.1109/ACCESS.2021.3077380.
+
+[16] Robert W. Erickson and Dragan Maksimovic. Fundamentals of Power Electro-
+     nics. Kluwer Academic Publishers, 2 edition, 2001.
+
+[17] Ned Mohan, Tore M. Undeland, and William P. Robbins. Power Electronics:
+     Converters, Applications, and Design. John Wiley & Sons, 3 edition, 2003.
+
+[18] Yan-Fei Chen, Pourya Asadi, and Parviz Parto. Comparative analysis of power
+     stage losses for synchronous buck converter in diode emulation mode vs. con-
+     tinuous conduction mode at light load condition. In Twenty-Fifth Annual IEEE
+     Applied Power Electronics Conference and Exposition, pages 1578–1583, 2010.
+
+[19] Dongdong Zhang and Longya Xu. Dead-time compensation for inverters conside-
+     ring snubber and parasitic capacitance. IEEE Transactions on Power Electronics,
+     29(6):3179–3187, 2014.
+
+[20] Minghui Lu, Xiongfei Wang, Frede Blaabjerg, S. M. Muyeen, Ahmed Al-Durra,
+     and Siyu Leng. Grid-voltage-feedforward active damping for grid-connected in-
+     verter with LCL filter. In IEEE Energy Conversion Congress and Exposition,
+     pages 1–6, 2016. doi: 10.1109/ECCE.2016.7855427.
+
+[21] Su’e Wang, Kaiyuan Cui, and Pengfei Hao. Grid-connected inverter grid voltage
+     feedforward control strategy based on multi-objective constraint in weak grid.
+     Energies, 17(13):3288, 2024. doi: 10.3390/en17133288.
+
+[22] Frede Blaabjerg, Remus Teodorescu, Marco Liserre, and Adrian V. Timbus. Over-
+     view of control and grid synchronization for distributed power generation sys-
+     tems. IEEE Transactions on Industrial Electronics, 53(5):1398–1409, 2006.
+
+
+
+
+                                              22
+EKLER
+
+
+
+Gerekli ekler bu bölüme eklenecektir.
+ÖZGEÇMİŞ
+
+
+
+Adı Soyadı: Ümit PEKPARLAK
+Eğitim Bilgileri
+Mesleki Deneyim
+Yayınlar ve Bilimsel Faaliyetler
+

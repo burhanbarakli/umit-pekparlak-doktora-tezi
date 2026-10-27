@@ -1,0 +1,10 @@
+@echo off
+setlocal
+set "TECTONIC=C:\Users\bob\.codex\plugins\cache\openai-bundled\latex\0.2.4\bin\tectonic.exe"
+if not exist "%TECTONIC%" (
+  echo Tectonic bulunamadi: %TECTONIC%
+  exit /b 1
+)
+if not exist build mkdir build
+"%TECTONIC%" main.tex --outdir build --keep-logs --keep-intermediates
+exit /b %ERRORLEVEL%

@@ -1,0 +1,6 @@
+Final_L1_H=0.0006
+Final_Cf_F=8e-06
+Final_L2_H=0.0002
+Decision=L2=200 uH
+Reason=600 uH labels are the three phase inductors in the full topology; 200 uH is independently present in the latest parameter note and real-application workbook; 400 uH is the legacy CL1 model value.
+Limit=Analytical LCL sensitivity only; the R2025b source-model conversion still requires solver repair before switching validation.

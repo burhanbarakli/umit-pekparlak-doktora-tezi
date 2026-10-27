@@ -1,0 +1,193 @@
+\usepackage{fontspec}
+\IfFontExistsTF{Times New Roman}
+  {\setmainfont{Times New Roman}}
+  {\setmainfont{Liberation Serif}}
+\IfFontExistsTF{Arial}
+  {\setsansfont{Arial}}
+  {\setsansfont{Liberation Sans}}
+% Türkçe babel'in etkin "=" kısaltması paket seçeneklerini bozmasın.
+\usepackage[shorthands=off,turkish]{babel}
+\usepackage{unicode-math}
+\IfFontExistsTF{Cambria Math}
+  {\setmathfont{Cambria Math}}
+  {\setmathfont{TeX Gyre Termes Math}}
+
+\input{config/tez-metadata}
+
+\usepackage{geometry}
+\geometry{
+  a4paper,
+  twoside,
+  inner=40mm,
+  outer=25mm,
+  top=25mm,
+  bottom=25mm,
+  footskip=12.5mm
+}
+
+\usepackage{setspace}
+\onehalfspacing
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\setlength{\emergencystretch}{2em}
+
+\usepackage{fancyhdr}
+\fancypagestyle{sau}{%
+  \fancyhf{}
+  % Metin alanı aynalı olsa da numara kâğıdın fiziksel merkezinde kalır.
+  \fancyhfoffset[LO,RE]{15mm}
+  \fancyfoot[C]{\normalfont\bfseries\fontsize{12}{12}\selectfont\thepage}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
+}
+% Birinci derece başlıkların ilk sayfasında numara gösterilmez.
+\fancypagestyle{plain}{%
+  \fancyhf{}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
+}
+% Çift taraflı baskıdaki boş sayfalar tamamen boş kalır.
+\makeatletter
+\renewcommand{\cleardoublepage}{%
+  \clearpage
+  \if@twoside
+    \ifodd\c@page\else
+      \hbox{}\thispagestyle{empty}\newpage
+      \if@twocolumn\hbox{}\newpage\fi
+    \fi
+  \fi
+}
+\makeatother
+
+\usepackage{graphicx}
+\usepackage{float}
+% Yeni hattın kendi şekilleri figures/ altında; mevcut kanıt görselleri
+% tez-latex/figures deposundan okunur (çoğaltılmaz).
+\graphicspath{{figures/}{../tez-latex/figures/}}
+\usepackage[table]{xcolor}
+
+% ---------------------------------------------------------------------------
+% EKSİK ÇALIŞMA barı: tamamlanması istenen MATLAB benzetimi, veri veya
+% analiz işini sonucun geleceği yerde görünür kılar. Nihai teslimden önce
+% bütün barlar ya kapatılmış ya da Sınırlılıklar bölümüne taşınmış olmalıdır.
+% Kullanım: \eksikistek{Kısa başlık}{Ne istiyoruz — hangi koşu, hangi veri.}
+% ---------------------------------------------------------------------------
+\newcommand{\eksikistek}[2]{%
+  \par\medskip
+  \noindent\fcolorbox{orange!85!black}{orange!12}{%
+    \begin{minipage}{0.94\linewidth}
+      \small
+      \colorbox{orange!85!black}{\strut\textcolor{white}{\textbf{EKSİK ÇALIŞMA --- BUNU İSTİYORUZ}}}\ \textbf{#1}\par\smallskip
+      #2
+    \end{minipage}%
+  }%
+  \par\medskip
+}
+
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{array}
+% unicode-math matematik sembollerini sağlar; amssymb ile \eth çakışmasını önleriz.
+\usepackage{amsmath}
+\usepackage{siunitx}
+\sisetup{output-decimal-marker={,}}
+
+\usepackage{caption}
+\DeclareCaptionFormat{sauhang}{#1#2#3}
+\captionsetup{
+  font={normalfont,stretch=1},
+  labelfont=bf,
+  labelsep=period,
+  format=hang,
+  justification=justified,
+  singlelinecheck=true
+}
+\captionsetup[table]{position=top,skip=6pt}
+\captionsetup[figure]{position=bottom,skip=6pt}
+\usepackage{subcaption}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,fit,calc,decorations.pathmorphing}
+\numberwithin{equation}{chapter}
+
+\usepackage{enumitem}
+\setlist{itemsep=6pt,topsep=6pt,parsep=0pt,partopsep=0pt}
+
+% Sayısal atıfları metinde görünme sırasına göre sıkıştırarak gösterir.
+\usepackage[sort&compress,numbers]{natbib}
+
+\usepackage[absolute,overlay]{textpos}
+\textblockorigin{0mm}{0mm}
+
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+  pdftitle={\TezBasligiPDF},
+  pdfauthor={\TezYazari}
+}
+
+\usepackage{titlesec}
+% SAÜ FBE: 1. derece başlık 12 punto, kalın, büyük harf, sola yaslı.
+\titleformat{\chapter}[hang]
+  {\normalfont\bfseries\fontsize{12}{12}\selectfont}
+  {\thechapter.}{0.6em}{}
+\titlespacing*{\chapter}{0pt}{72pt}{18pt}
+
+% 2. derece: önce 18 nk, sonra 12 nk.
+\titleformat{\section}
+  {\normalfont\bfseries\fontsize{12}{12}\selectfont}
+  {\thesection.}{0.6em}{}
+\titlespacing*{\section}{0pt}{18pt}{12pt}
+
+% 3. ve 4. derece: önce 12 nk, sonra 6 nk.
+\titleformat{\subsection}
+  {\normalfont\bfseries\fontsize{12}{12}\selectfont}
+  {\thesubsection.}{0.6em}{}
+\titlespacing*{\subsection}{0pt}{12pt}{6pt}
+\titleformat{\subsubsection}
+  {\normalfont\bfseries\fontsize{12}{12}\selectfont}
+  {\thesubsubsection.}{0.6em}{}
+\titlespacing*{\subsubsection}{0pt}{12pt}{6pt}
+
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+% Resmî Word şablonundaki İçindekiler stilleri:
+% tek satır, paragraf öncesi/sonrası 0 nk ve tüm düzeylerde noktalı kılavuz.
+\usepackage{tocloft}
+\setlength{\cftparskip}{0pt}
+\setlength{\cftbeforechapskip}{0pt}
+\setlength{\cftbeforesecskip}{0pt}
+\setlength{\cftbeforesubsecskip}{0pt}
+\setlength{\cftbeforesubsubsecskip}{0pt}
+\renewcommand{\cftchapdotsep}{\cftdotsep}
+\renewcommand{\cftchapfont}{\normalfont\bfseries}
+\renewcommand{\cftchappagefont}{\normalfont\bfseries}
+\renewcommand{\cfttoctitlefont}{\normalfont\bfseries\fontsize{12}{12}\selectfont}
+\renewcommand{\cftlottitlefont}{\normalfont\bfseries\fontsize{12}{12}\selectfont}
+\renewcommand{\cftloftitlefont}{\normalfont\bfseries\fontsize{12}{12}\selectfont}
+\setlength{\cftbeforetoctitleskip}{72pt}
+\setlength{\cftaftertoctitleskip}{18pt}
+\setlength{\cftbeforelottitleskip}{72pt}
+\setlength{\cftafterlottitleskip}{18pt}
+\setlength{\cftbeforeloftitleskip}{72pt}
+\setlength{\cftafterloftitleskip}{18pt}
+\setlength{\cftchapindent}{0pt}
+\setlength{\cftchapnumwidth}{22.51mm}
+\setlength{\cftsecindent}{4mm}
+\setlength{\cftsubsecindent}{8.5mm}
+\setlength{\cftsubsubsecindent}{12.7mm}
+
+% Numarasız birinci derece ön/arka bölüm başlığı.
+\newcommand{\saufrontchapter}[2][]{%
+  \cleardoublepage
+  \chapter*{#2}
+  \thispagestyle{plain}
+  \if\relax\detokenize{#1}\relax\else
+    \addcontentsline{toc}{chapter}{#1}
+  \fi
+}
+
+% Biçim sistemi, 04.08.2022 tarih ve 621-9 sayılı Senato kararı eki
+% SAÜ FBE tez yazım kılavuzu, Word şablonu ve teslim kontrol formundan
+% distile edilmiştir. Kontrol formu ile kılavuzun sayfa numarası mesafesi
+% çeliştiğinden Word şablonundaki 1,25 cm değeri uygulanmıştır.

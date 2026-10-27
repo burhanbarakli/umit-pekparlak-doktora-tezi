@@ -1,0 +1,60 @@
+Error using run_scenario1_r2025b_validation (line 112)
+['Inverter2_senaryo1_R2025b_L2_200uH_local_full_40ms/Solver Configuration1']:
+When trying to advance one time step, nonlinear solver failed to converge,
+residual norm too large.
+
+
+Error in run (line 112)
+evalin('caller', strcat(scriptStem, ';'));
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Caused by:
+    Error using run_scenario1_r2025b_validation (line 112)
+    Here is the set of components with unconverged equations:
+    
+    <a href="matlab:das_dv_hyperlink('DAS', 'mdl',
+    'Inverter2_senaryo1_R2025b_L2_200uH_local_full_40ms/N-Channel
+    IGBT2')">'Inverter2_senaryo1_R2025b_L2_200uH_local_full_40ms/N-Channel
+    IGBT2'</a>
+    Equation location is:
+    'ee.semiconductors.thermal_port_simple'(no line number info)
+    
+    <a href="matlab:das_dv_hyperlink('DAS', 'mdl',
+    'Inverter2_senaryo1_R2025b_L2_200uH_local_full_40ms/N-Channel
+    IGBT3')">'Inverter2_senaryo1_R2025b_L2_200uH_local_full_40ms/N-Channel
+    IGBT3'</a>
+    Equation location is:
+    'ee.semiconductors.thermal_port_simple'(no line number info)
+    
+    <a href="matlab:das_dv_hyperlink('DAS', 'mdl',
+    'Inverter2_senaryo1_R2025b_L2_200uH_local_full_40ms/Capacitor')">'Inverter2_senaryo1_R2025b_L2_200uH_local_full_40ms/Capacitor'</a>
+    Equation location is:
+    'ee.passive.capacitor'(no line number info)
+    
+    <a href="matlab:das_dv_hyperlink('DAS', 'mdl',
+    'Inverter2_senaryo1_R2025b_L2_200uH_local_full_40ms/Capacitor1')">'Inverter2_senaryo1_R2025b_L2_200uH_local_full_40ms/Capacitor1'</a>
+    Equation location is:
+    'ee.passive.capacitor'(no line number info)
+    
+    <a href="matlab:das_dv_hyperlink('DAS', 'mdl',
+    'Inverter2_senaryo1_R2025b_L2_200uH_local_full_40ms/N-Channel
+    IGBT2')">'Inverter2_senaryo1_R2025b_L2_200uH_local_full_40ms/N-Channel
+    IGBT2'</a>
+    Equation location is:
+    'ee.semiconductors.igbt_event_based_thermal'(no line number info)
+    Equation location is:
+    'ee.semiconductors.igbt_event_based_thermal'(no line number info)
+    Equation location is:
+    'ee.semiconductors.igbt_event_based_thermal'(no line number info)
+    Equation location is:
+    'ee.semiconductors.igbt_event_based_thermal'(no line number info)
+    Equation location is:
+    'ee.semiconductors.igbt_event_based_thermal'(no line number info)
+    Equation location is:
+    'ee.semiconductors.igbt_event_based_thermal'(no line number info)
+    Equation location is:
+    'ee.semiconductors.igbt_event_based_thermal'(no line number info)
+    
+    
+    Error in run (line 112)
+    evalin('caller', strcat(scriptStem, ';'));
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

@@ -1,0 +1,5 @@
+sin3 rescan 20260901
+Parametreler: Vdc=431.5 V (Vh=215.75), Vm=169.4 V, L=0.0006 H, f0=50 Hz, fs=10000 Hz
+Saf sinus DCM taramasi I3/I1: 29.32%..39.96%
+En iyi nokta: D1=0.34 D3=0.40 -> I3/I1=0.15%, THD=4.72%, I1=2.849 A, Irms=2.017 A, dmax=0.740
+Esdeger (A1,A3)=(0.6400, -0.1000); A1=D1+3D3/4, A3=-D3/4

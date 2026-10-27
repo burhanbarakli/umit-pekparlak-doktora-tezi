@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bölüm 3–4–5 İçin Önceki Tez Sahibinden İstek Listesi</title>
+  <style>
+    :root{--ink:#17212b;--muted:#637083;--line:#dbe3ea;--bg:#f2f5f7;--paper:#fff;--navy:#143c59;--teal:#177680;--green:#e2f4e8;--green-ink:#17613a;--blue:#e7f2fb;--blue-ink:#245d82;--amber:#fff1cf;--amber-ink:#7b5200;--red:#fde5e5;--red-ink:#8d2e2e;--purple:#eee9fb}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.55 "Segoe UI",Arial,sans-serif}
+    header{padding:38px clamp(18px,5vw,72px);color:#fff;background:linear-gradient(130deg,var(--navy),var(--teal))}header h1{margin:0 0 8px;font-size:clamp(27px,4vw,44px)}header p{max-width:1050px;margin:5px 0;color:#e5f2f4;font-size:15px}
+    nav{position:sticky;top:0;z-index:5;display:flex;gap:8px;overflow:auto;padding:10px clamp(14px,4vw,60px);background:#ffffffee;border-bottom:1px solid var(--line);backdrop-filter:blur(8px)}nav a{text-decoration:none;color:var(--navy);font-weight:650;white-space:nowrap;padding:6px 10px;border-radius:8px}nav a:hover{background:var(--blue)}
+    main{max-width:1400px;margin:0 auto;padding:25px 18px 56px}.card{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px;margin-bottom:18px;box-shadow:0 5px 16px #143c5910}
+    h2{margin:0 0 12px;color:var(--navy);font-size:22px}h3{margin:18px 0 8px;color:var(--teal);font-size:17px}p{margin:7px 0}.muted{color:var(--muted)}
+    .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}.stat{padding:15px;border-radius:11px;background:var(--blue)}.stat strong{display:block;color:var(--navy);font-size:27px}.stat span{color:var(--muted)}
+    .decision{border-left:5px solid var(--teal);background:#eef8f8;padding:12px 14px;border-radius:8px}.warning{border-left-color:#c17a00;background:#fff8e7}.danger{border-left-color:#b53a3a;background:#fff0f0}
+    .badges{display:flex;flex-wrap:wrap;gap:6px;margin:7px 0}.badge{display:inline-block;border-radius:999px;padding:3px 9px;font-size:12px;font-weight:700}.have{background:var(--blue);color:var(--blue-ink)}.must{background:var(--red);color:var(--red-ink)}.important{background:var(--amber);color:var(--amber-ink)}.produce{background:var(--green);color:var(--green-ink)}.optional{background:var(--purple);color:#554087}
+    table{width:100%;border-collapse:collapse;min-width:920px}th,td{padding:10px 9px;border-bottom:1px solid var(--line);vertical-align:top;text-align:left}th{background:#edf3f6;color:var(--navy);position:static}tr:last-child td{border-bottom:0}.scroll{overflow-x:auto;overflow-y:visible}
+    code{background:#edf1f4;border-radius:5px;padding:2px 5px;font-family:Consolas,monospace;font-size:12px}ul,ol{margin:8px 0 0;padding-left:22px}li{margin:5px 0}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:12px}.box{border:1px solid var(--line);border-radius:11px;padding:14px;background:#fff}.box h3{margin:0 0 7px}.message{white-space:normal;background:#f5f8fa;border:1px solid var(--line);border-radius:10px;padding:16px;font-size:14px}
+    .links{display:flex;flex-wrap:wrap;gap:8px;margin-top:11px}.links a{display:inline-block;text-decoration:none;color:#fff;background:var(--teal);padding:8px 11px;border-radius:8px;font-weight:650}.links a.secondary{background:var(--navy)}
+    footer{max-width:1400px;margin:0 auto;padding:0 18px 40px;color:var(--muted)}
+    @media(max-width:720px){table{min-width:760px}th,td{padding:8px 7px}}
+    @media print{nav,.links{display:none}body{background:#fff}.card{box-shadow:none;break-inside:avoid}header{background:#fff;color:#000;padding:15px 0}header p{color:#333}main{padding:10px 0}table{font-size:10px;min-width:0}}
+  </style>
+</head>
+<body>
+<header>
+  <h1>Bölüm 3–4–5 İçin Önceki Tez Sahibinden İstek Listesi</h1>
+  <p>İstekler yalnızca yeni tezin Bölüm 3–4–5 model, anahtarlama ve Sin³ çalışmalarını tamamlamak amacıyla; karşı tarafın kendi yazdığı önceki tezdeki bölüm, şekil, tablo ve senaryo numaraları üzerinden hazırlanmıştır.</p>
+  <p>Amaç; önceki tezde sunulan model, benzetim ve deney sonuçlarını değiştirmek değil, özgün dosyalardan yeniden üretmek, kanıt zincirini tamamlamak ve okunur tez çıktıları oluşturmaktır.</p>
+</header>
+<nav>
+  <a href="#yaklasim">Yaklaşım</a><a href="#mevcut">Elimizdekiler</a><a href="#hizli">Öncelikli paket</a><a href="#yerlesim">Simülasyonun yeri</a><a href="#matris">Ayrıntılı istekler</a><a href="#format">Dosya biçimi</a><a href="#mesaj">Gönderilecek metin</a><a href="#baglantilar">Bağlantılar</a>
+</nav>
+<main>
+  <section id="yaklasim" class="card">
+    <h2>İsteklerin dayanağı</h2>
+    <div class="stats">
+      <div class="stat"><strong>10</strong><span>numaralı istek</span></div>
+      <div class="stat"><strong>3</strong><span>hedef bölüm: yeni Bölüm 3–4–5</span></div>
+      <div class="stat"><strong>2</strong><span>ana kanıt türü: kaynak model ve benzetim</span></div>
+      <div class="stat"><strong>1</strong><span>klasör yapısı korunmuş kaynak paketi</span></div>
+    </div>
+    <p class="decision"><strong>Karşı tarafa anlatılacak temel gerekçe:</strong> Eski tezdeki simülasyon şekillerinin büyük bölümü Word içine gömülü ekran görüntüleridir. Bölüm 3–4–5'te kullanılacak sayısal sonuçların savunulabilmesi için sonuçları üreten asıl Simulink modeli, kontrol/PWM kodu, parametreler ve ham benzetim kayıtları gerekir. Kaynaklar elde edildiğinde aynı sonuçlar ortak ölçüm penceresiyle yeniden hesaplanacak, yüksek çözünürlüklü grafikler üretilecek ve eski sonuçlarla farklar açıkça gösterilecektir.</p>
+    <p class="decision warning"><strong>İletişim kuralı:</strong> Yeni tezdeki bölüm yapısını bilmesi beklenmeyecektir. Her talep, “önceki tezde Şekil/Tablo …'yi üreten dosya” biçiminde sorulacaktır. İç kullanım için son sütunda yeni çalışmada üretilecek karşılık ayrıca gösterilmektedir.</p>
+  </section>
+
+  <section id="mevcut" class="card">
+    <h2>Tekrar istenmeyecek, zaten elimizde bulunanlar</h2>
+    <div class="grid">
+      <div class="box"><h3>Önceki tez metni</h3><p><span class="badge have">MEVCUT</span> Word/PDF içeriği, şekil başlıkları, tablolar ve metin açıklamaları.</p></div>
+      <div class="box"><h3>Senaryo 1–2–3 görselleri</h3><p><span class="badge have">MEVCUT</span> JPG/EMF dalga biçimleri ile <code>IL1</code> ve <code>Iout</code> FFT ekranları.</p></div>
+      <div class="box"><h3>Kısa parametre dosyası</h3><p><span class="badge have">KISMEN MEVCUT</span> <code>Vdc=400 V</code>, <code>Vrms=230 V</code>, <code>f=50 Hz</code>, <code>fs=10 kHz</code>, <code>Ts=1e-7 s</code>, <code>kp=1</code>, <code>faz1</code> ve <code>faz2</code>.</p></div>
+    </div>
+    <p class="decision danger"><strong>Eksik kalan nokta:</strong> Görsellerin kaynak modeli ve ham zaman serileri bulunmuyor. <code>Ts</code>, <code>kp</code>, <code>faz1</code> ve <code>faz2</code> değişkenlerinin anlamı/birimi bilinmiyor; LCL, yük, denetleyici, anahtar ve Sin³ parametreleri de dosyada yer almıyor.</p>
+  </section>
+
+  <section id="hizli" class="card">
+    <h2>İlk aşamada istenecek en küçük yeterli paket</h2>
+    <ol>
+      <li><strong>Önceki tezi üretirken kullanılan asıl MATLAB/Simulink klasörü:</strong> <code>.slx/.mdl</code>, çağrılan tüm <code>.m/.mat/.sldd</code> dosyaları ve özel blok/kütüphaneler.</li>
+      <li><strong>Önceki Bölüm 3'teki Şekil 3.13–3.16'yı üreten dosyalar:</strong> akım, hata, kontrolör çıkışı ve anahtarlama kanalları.</li>
+      <li><strong>Önceki Bölüm 4'teki Şekil 4.1–4.32 ve Tablo 4.1–4.4'ü üreten dosyalar:</strong> kapı darbeleri, üç senaryo, kontrol blokları ve Sin³ katsayı taraması.</li>
+      <li><strong>Önceki Tablo 5.4'ün yalnız simülasyon tarafı:</strong> karşılaştırmada kullanılan simülasyon koşuları, parametreleri ve kaynak çıktı tablosu; deney kayıtları şu anda istenmeyecek.</li>
+      <li><strong>Yalnız model parametresi için önceki Tablo 5.1–5.3:</strong> şema/BOM, IGBT/diyot/sürücü parça kodları, LCL ve DA bara değerleri.</li>
+      <li><strong>Açıklama notu:</strong> <code>Ts</code>, <code>kp</code>, <code>faz1</code>, <code>faz2</code>, Sin³ denklemi, ölü zaman ve Senaryo 1–2–3 eşlemesi.</li>
+    </ol>
+    <p class="decision warning"><strong>Kapsam dışında bırakılanlar:</strong> Önceki Şekil 5.17–5.24 ham deney kayıtları, eski Tablo 5.4'ün deney ölçüm tarafı, eski Şekil 6.4–6.15 GT-tipi model ve Bölüm 2 PVGIS/ticari evirici verileri söz konusu isteğe dahil değildir. Eski Tablo 5.4'ün yalnız simülasyon sütunlarını üreten kaynak koşular istenecektir; deneylerin yeniden yapılması veya Bölüm 6 ham kayıtlarının gönderilmesi şu aşamada talep edilmeyecektir.</p>
+  </section>
+
+  <section id="yerlesim" class="card">
+    <h2>Deneysel doğrulamaya temel olan simülasyonlar tezde nerede yer alacak?</h2>
+    <div class="scroll"><table>
+      <thead><tr><th>Yeni tez yeri</th><th>Yer alacak çalışma</th><th>Önceki tezdeki kaynak karşılığı</th><th>İstek durumu</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Bölüm 4</strong></td><td>Klasik anahtarlama, nötr anahtar susturma, Senaryo 1–2; kapı darbeleri, ters akım, THD ve verim benzetimleri.</td><td>Eski Şekil 4.1–4.16 ve eski Tablo 4.4</td><td><span class="badge must">İSTENECEK</span> Kaynak model, kapı kodu, parametreler ve ham simülasyon çıktıları.</td></tr>
+        <tr><td><strong>Bölüm 5</strong></td><td>Susturma+Sin³, Senaryo 3, katsayı taraması, kapalı çevrim, <code>L/S/T</code>, Bode ve çalışma noktası karşılaştırmaları.</td><td>Eski Şekil 4.17–4.32, eski Tablo 4.1–4.4 ve eski Tablo 5.4'ün simülasyon sütunları</td><td><span class="badge must">İSTENECEK</span> Sin³ denklemi/kodu, denetleyici, katsayı taraması ve simülasyon sonuç tablosu.</td></tr>
+        <tr><td><strong>Bölüm 6</strong></td><td>Önceden yapılmış deneylerin sunumu ve Bölüm 4–5 simülasyonlarıyla nihai karşılaştırması.</td><td>Eski Şekil 5.17–5.24 ve eski Tablo 5.4'ün deney sütunları</td><td><span class="badge have">ŞİMDİLİK İSTENMEYECEK</span> Mevcut tez kayıtları aktarılacak; yeni deney veya ham deney verisi talebi ayrı tutulacak.</td></tr>
+      </tbody>
+    </table></div>
+    <p class="decision"><strong>Yerleşim kararı:</strong> Simülasyonların yöntem ve teknik sonuçları Bölüm 4–5'te verilecek. Bölüm 6 aynı simülasyonları tekrar anlatmayacak; yalnız deneylerle yan yana karşılaştıracak ve ilgili Bölüm 4–5 şekil/tablolarına başvuracaktır.</p>
+  </section>
+
+  <section id="matris" class="card">
+    <h2>Önceki teze göre ayrıntılı istek–gerekçe–çıktı matrisi</h2>
+    <div class="badges"><span class="badge must">P0 — ZORUNLU</span><span class="badge important">P1 — ÖNEMLİ</span><span class="badge optional">P2 — VARSA</span><span class="badge produce">ÜRETİLECEK ÇIKTI</span></div>
+    <div class="scroll"><table>
+      <thead><tr><th>No / öncelik</th><th>Önceki tezdeki karşılığı</th><th>Tez sahibinden istenecek</th><th>Neden istiyoruz?</th><th>Elde edilince ne üretilecek, tezde nereye konulacak?</th></tr></thead>
+      <tbody>
+        <tr><td><strong>T01</strong><br><span class="badge must">P0</span></td><td>Önceki tezin bütün MATLAB/Simulink çalışmaları</td><td>Asıl proje klasörünün değiştirilmemiş ZIP kopyası: <code>.slx/.mdl</code>, <code>.m</code>, <code>.mat</code>, <code>.sldd</code>, özel kütüphaneler ve başlatma dosyaları; kullanılan MATLAB sürümü.</td><td>Word içindeki ekran görüntüsü modelin bağlantılarını, çözücü ayarlarını ve parametre kaynağını göstermiyor.</td><td><span class="badge produce">ORTAK KAYNAK MODEL</span> Sistem/model metodolojisi için tekrarlanabilir proje; bütün yeni grafiklerin koşu kimliği ve sürüm kaydı.</td></tr>
+        <tr><td><strong>T02</strong><br><span class="badge must">P0</span></td><td>Önceki tez genel sistem tanımı; Bölüm 3–6</td><td>Eski çalışmanın kesin kimliği: tek/üç faz, üç/dört telli, evirici/doğrultucu yönü, T/GT tipi, 20/25/30 kW ifadelerinden hangisinin hangi düzenek/model için olduğu; 400 V bara ve 230 V şebeke tanımı.</td><td>Önceki metinde güç ve gerilim değerleri farklı bağlamlarda geçiyor. Yanlış sistem değerlerinin aynı modele karışması engellenecek.</td><td><span class="badge produce">SİSTEM PARAMETRE TABLOSU</span> Yeni tez Bölüm 3; birimli, kaynaklı ve sürüm etiketli anma değerleri.</td></tr>
+        <tr><td><strong>T03</strong><br><span class="badge must">P0</span></td><td>Eski Şekil 3.1–3.12; T-tipi faz kolu, akım yolları ve senkron-buck eşdeğeri</td><td><code>L1, R1, L2, R2, Cf, ESR, Rd</code>; iki DA bara kapasitörü ve ESR; yük/şebeke <code>R-L</code>; anahtar/diyot modeli; ölçüm alınan düğümler.</td><td>Akım yolu çizimleri hazır olsa da ters akım eşiği, LCL rezonansı, akım dalgalanması ve kararlılık sayısal olarak gerçek değer olmadan doğrulanamaz.</td><td><span class="badge produce">TAM FAZ TOPOLOJİSİ</span> Yeni tez Bölüm 3'te değerli devre şeması, durum modeli, LCL rezonansı ve parametre tablosu.</td></tr>
+        <tr><td><strong>T04</strong><br><span class="badge must">P0</span></td><td>Eski Şekil 3.13–3.16; harmonik oluşumu, referans/gerçek akım, kontrolör çıkışı ve anahtarlama değişimi</td><td>Şekilleri üreten model/komut dosyası ve aynı koşunun ham kanalları: zaman, referans akım, <code>IL1</code>, çıkış/faz akımı, hata, kontrolör çıkışı, modülasyon komutu, Q1–Q4.</td><td>Kavramsal raster şekillerden hangi sinyalin hangi koşuda oluştuğu ve üçüncü harmoniğin mekanizması yeniden hesaplanamıyor.</td><td><span class="badge produce">ZAMAN ALANI + FFT</span> Yeni tez Bölüm 4–5'te aynı eksenli mekanizma grafiği, temel/3. harmonik ve kontrol eforu karşılaştırması.</td></tr>
+        <tr><td><strong>T05</strong><br><span class="badge must">P0</span></td><td>Eski Şekil 4.1–4.16; klasik ve nötr anahtar susturmalı kapı/akım/FFT şekilleri</td><td>Gerçek PWM alt sistemi veya DSP/MCU kodu; Q1–Q4 doğruluk tablosu; taşıyıcı türü/fazı, modülasyon indeksi, ölü zaman, minimum darbe, nötr susturma koşulu ve akım yönü mantığı.</td><td>Mevcut görseller iki yöntemi gösteriyor; kapıların hangi kesin kuralla üretildiği ve anahtar güvenliği kaynak kod olmadan doğrulanamıyor.</td><td><span class="badge produce">KAPI DURUM KANITI</span> Yeni tez Bölüm 3–4'te P–O–N tablosu, geçersiz durum sayımı, klasik/susturma kapı grafikleri ve akım yolları.</td></tr>
+        <tr><td><strong>T06</strong><br><span class="badge must">P0</span></td><td>Eski Senaryo 1–2–3 ve Şekil 4.5–4.16</td><td>Her senaryonun yöntem adı, değiştirilmiş parametreleri, yük/güç/akım referansı, başlangıç koşulu, benzetim süresi, olay zamanları ve hangi model sürümüyle çalıştırıldığı.</td><td>Görüntüler klasik / susturma / susturma+Sin³ biçiminde güçlü şekilde eşleşse de kesin dosya bağlantısı yok.</td><td><span class="badge produce">BİREBİR SENARYO TABLOSU</span> Yeni tez Bölüm 4'te 0,06–0,10 s ortak FFT penceresiyle THD, <code>I3/I1</code>, RMS ve ters akım karşılaştırması.</td></tr>
+        <tr><td><strong>T07</strong><br><span class="badge must">P0</span></td><td>Eski Şekil 4.17–4.24; kontrol blokları, ileri besleme ve iki buck açıklaması</td><td>Akım denetleyicisi türü ve bütün katsayıları; PLL, ileri besleme, sınırlayıcı, anti-windup, PWM güncelleme zamanı, kontrol örnekleme zamanı ve toplam gecikme. <code>kp=1</code>'in kullanıldığı blok özellikle gösterilmeli.</td><td>Kontrol yapısı olmadan kapalı çevrim davranış, Bode marjları ve kompanzasyonun denetleyiciden bağımsız etkisi ayrılamıyor.</td><td><span class="badge produce">KAPALI ÇEVRİM MODELİ</span> Yeni tez Bölüm 3 ve 5'te işlevsel blok diyagramı, <code>L/S/T</code> Bode, kazanç/faz marjları ve geçici rejim ölçütleri.</td></tr>
+        <tr><td><strong>T08</strong><br><span class="badge must">P0</span></td><td>Eski Şekil 4.25–4.32 ve Tablo 4.1–4.3; Sin³/katsayı taraması</td><td>Tarama betiği; kullanılan Sin³ denklemi; katsayıların işareti, birimi, tarama aralığı ve adımı; enjeksiyon noktası; sınırlandırıcı; seçilen optimumun karar ölçütü.</td><td>Eski metinde <code>sin³(θ)</code> ile <code>sin(3θ)</code> anlatımları ve optimum katsayılar birbiriyle çelişiyor.</td><td><span class="badge produce">YENİDEN HESAPLANMIŞ KATSAYI TARAMASI</span> Yeni tez Bölüm 5'te doğru özdeşlik, iki boyutlu katsayı yüzeyi, THD/ters akım/modülasyon payı ve çalışma noktasına bağlı seçim.</td></tr>
+        <tr><td><strong>T09</strong><br><span class="badge must">P0</span></td><td>Eski Tablo 4.4 ve eski Tablo 5.4'ün yalnız simülasyon sütunları; üç yöntemin verim/THD karşılaştırması</td><td>Tablolardaki benzetim değerlerinin kaynak koşusu/çıktı dosyası; <code>Pdc</code>, <code>Pac</code>, güç işaret yönü, analiz penceresi, kullanılan kayıp modeli ve hangi Senaryo 1–2–3 koşusuna ait olduğu. Deneyin yeniden yapılması ve ham deney kaydı istenmiyor.</td><td>Deneysel karşılaştırmaya temel olan simülasyon değerleri yalnız özet tablodan yeniden hesaplanamıyor; Bölüm 4–5 sonuçlarıyla eski Tablo 5.4 arasındaki bağ kurulacak.</td><td><span class="badge produce">BENZETİM KARŞILAŞTIRMASI</span> Yeni tez Bölüm 4–5'te verim, THD, ters akım ve kanıt düzeyi; Bölüm 6'da aynı sonuçlara referansla simülasyon–deney karşılaştırması.</td></tr>
+        <tr><td><strong>T10</strong><br><span class="badge must">P0</span></td><td>Eski Tablo 5.1–5.3 ve yalnız devreyi gösteren Şekil 5.2–5.9; komponent bilgileri</td><td>Modelde kullanılacak değerler için güç devresi şeması/BOM; IGBT/MOSFET/diyot malzemesi ve parça numarası; gate driver ve kapı direnci; <code>L1/L2/Cf/Rd</code> ile DA bara kapasitörleri. Deney fotoğrafları ve ölçüm kayıtları istenmiyor.</td><td>Anahtarlamalı modelin iletim düşümü, kayıp sınırı, ölü zaman ve LCL değerleri gerçek donanımla eşlenecek.</td><td><span class="badge produce">KAYNAKLI ELEMAN TABLOSU</span> Yeni tez Bölüm 3'te parametre/topoloji tablosu; Bölüm 4'te bileşenlere dayalı kayıp sınırı.</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section id="format" class="card">
+    <h2>Dosyaların nasıl gönderilmesi istenecek?</h2>
+    <div class="grid">
+      <div class="box"><h3>Kaynak klasör</h3><p>Klasör yapısı ve dosya adları değiştirilmeden ZIP/RAR yapılmalı. Eksik referanslı Simulink dosyaları tek başına gönderilmemeli.</p></div>
+      <div class="box"><h3>Doğal veri biçimi</h3><p>Grafik için yalnız JPG/ekran görüntüsü yerine <code>.mat</code>, CSV, osiloskop dosyası veya kullanılan yazılımın özgün kayıt biçimi gönderilmeli.</p></div>
+      <div class="box"><h3>Kanal sözlüğü</h3><p>Her sütun/kanalın adı, birimi, sensörü, prob oranı, örnekleme hızı ve işaret yönü kısa bir metin veya Excel tablosuyla açıklanmalı.</p></div>
+      <div class="box"><h3>Bulunamayan kayıt</h3><p>Dosya kaybolduysa tahminî değer gönderilmemeli; “bulunamadı” denmeli. Yalnız hatırlanan bilgi ayrıca “hatırlanan/tahmini” etiketiyle yazılmalı.</p></div>
+    </div>
+  </section>
+
+  <section id="mesaj" class="card">
+    <h2>Tez sahibine doğrudan gönderilebilecek metin</h2>
+    <div class="message">
+      Merhaba, önceki tezinizde yer alan benzetim ve deney sonuçlarını özgün dosyalar üzerinden yeniden üretip daha okunur grafikler hâline getirmemiz gerekiyor. Word/PDF tez dosyası, Senaryo 1–2–3 JPG/EMF görselleri ve kısa parametre <code>.m</code> dosyası elimizde bulunuyor; aynı dosyaları tekrar istemiyoruz.<br><br>
+      Öncelikle tezi hazırlarken kullandığınız asıl MATLAB/Simulink proje klasörünü, bağlantıları korunmuş ZIP/RAR olarak paylaşabilir misiniz? Klasörde <code>.slx/.mdl</code> modelleri, çağrılan bütün <code>.m/.mat/.sldd</code> dosyaları ve özel bloklar yer almalı.<br><br>
+      Özellikle önceki tezin Şekil 3.13–3.16'sını, Şekil 4.1–4.32'sini ve Tablo 4.1–4.4'ünü üreten model, kod ve benzetim verilerine ihtiyaç duyuyoruz. Eski Tablo 5.4'te deney sonuçlarıyla karşılaştırılan simülasyon sütunlarının kaynak koşu/çıktı dosyasını ve Senaryo 1–2–3 eşlemesini de rica ediyoruz; tablonun deney tarafı veya deneylerin yeniden yapılması istenmiyor. Model değerlerini doğrulamak amacıyla eski Tablo 5.1–5.3'teki devre elemanlarının şema/BOM'u; LCL ve DA bara değerleri ile IGBT/diyot/sürücü parça kodları da gerekli. Eski Şekil 5.17–5.24 ham deney kayıtları ve eski Bölüm 6 GT-tipi model söz konusu isteğin kapsamında değildir.<br><br>
+      Kısa parametre dosyasındaki <code>Ts=1e-7</code>, <code>kp=1</code>, <code>faz1=0.005</code> ve <code>faz2=0.01</code> değişkenlerinin anlamını, birimini ve kullanıldığı blok veya kod satırını da açıklayabilir misiniz? Uygulanan Sin³ ifadesinin <code>K·sin³(θ)</code> mi yoksa <code>K·sin(3θ)</code> mı olduğu; kazancı, işareti ve enjeksiyon noktası; Q1–Q4 kapı mantığı, ölü zaman ve Senaryo 1–2–3 eşlemesi ayrıca gerekli.<br><br>
+      Benzetim kayıtları bulunuyorsa ekran görüntüsü yerine zaman sütunlu <code>.mat/CSV</code> biçimini tercih ediyoruz. Bulunmayan dosya ya da hatırlanmayan değer için tahmin yürütmenize gerek yok; “bulunamadı” şeklinde belirtmeniz yeterli olacaktır. İstenen kaynaklar önceki sonuçları değiştirmek için değil, Bölüm 3–4–5 kapsamındaki model ve benzetimleri ortak analiz koşullarıyla doğrulamak için kullanılacaktır.
+    </div>
+  </section>
+
+  <section id="baglantilar" class="card">
+    <h2>Çalışma bağlantıları</h2>
+    <div class="links">
+      <a href="../../ANA_SAYFA_TEZ_CALISMA_MERKEZI.html">Ana tez çalışma merkezi</a>
+      <a class="secondary" href="BOLUM_3_4_5_MATLAB_SIMULINK_DENEY_PLANI_2026-07-14.html">Bölüm 3–5 deney planı</a>
+      <a class="secondary" href="ONCEKI_TEZ_SEKIL_TABLO_TAKIP_LISTESI_2026-07-13.html">Eski şekil–tablo takip listesi</a>
+      <a class="secondary" href="../../dosyalar/01_TAM_TEZ/tez_tumu_8.docx">Önceki tez Word dosyası</a>
+      <a class="secondary" href="../../dosyalar/05_sonradan_gelenler/Desarjv30parametre_deadtime_olmayan.m">Gönderilen parametre dosyası</a>
+    </div>
+  </section>
+</main>
+<footer>Hazırlanma tarihi: 14 Temmuz 2026 · Kapsam: yalnız yeni tez Bölüm 3–4–5 model, anahtarlama ve Sin³ doğrulama gereksinimleri.</footer>
+</body>
+</html>

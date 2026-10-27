@@ -1,0 +1,24 @@
+\cleardoublepage
+\thispagestyle{plain}
+\addcontentsline{toc}{chapter}{SUMMARY}
+\begingroup
+\singlespacing
+
+\vspace*{72pt}
+\begin{center}
+  \bfseries IMPROVED T-TYPE CONVERTER ARCHITECTURE FOR ENERGY STORAGE SYSTEMS WITH SWITCHING AND SIN\textsuperscript{3}-BASED COMPENSATION METHODS IMPROVING LOW-POWER PERFORMANCE\\[18pt]
+  SUMMARY
+\end{center}
+
+% Not: SAÜ FBE kuralına göre genişletilmiş İngilizce özet 3--5 sayfa olmalıdır;
+% nihai sonuçlar kilitlendiğinde bu metin genişletilecektir.
+Energy storage systems are among the key enablers of renewable integration, and their overall performance is determined not only by the battery pack but also by the efficiency, reliability, and cost of the power conversion interface between the battery, the DC bus, and the grid. The three-level T-type inverter is an attractive grid interface owing to its high efficiency and power density at rated load. Its behaviour in the low-power region, however, where grid-connected converters spend a considerable share of their operating time, is governed by a different mechanism: the bidirectional neutral branch that produces the zero-voltage state keeps conducting after the inductor current reaches zero, so the phase leg behaves like a synchronous buck converter and allows a reverse circulating current. This circulation carries no useful power, yet it increases the RMS current and the conduction losses of the semiconductors and filter elements, degrading light-load efficiency.
+
+This thesis analyses that mechanism through the switching states, current paths, and the synchronous-buck equivalent of the T-type phase leg, and unifies three original contributions in a single research chain. The first contribution is a new switching method that conditionally suppresses the neutral-switch command responsible for the reverse conduction in the low-power region. Simulation and prototype records show an efficiency improvement, but the method forces the inductor current into discontinuous conduction and produces a pronounced current distortion dominated by the third harmonic: in the recovered simulation scenarios, the output-current THD rises from 2.14\,\% under classical switching to 46.35\,\% under neutral-switch suppression.
+
+The second contribution is a Sin\textsuperscript{3}-based feedforward compensation term generated instantaneously from the grid phase information. The term is not an independent feedback controller derived from the current error; it is an additional component injected into the modulation sum of the existing current loop, and this distinction is treated explicitly through the closed-loop model, the sensitivity functions, and the stability-margin analysis. Using the identity $\sin^3\theta=[3\sin\theta-\sin(3\theta)]/4$ and a piecewise DCM--CCM average model, the compensation coefficients are re-derived for the validated parameter set of the studied converter. The scan shows that the coefficients are operating-point dependent and cannot be transferred between parameter sets, and it yields corrected coefficient candidates that reduce the analytical third-harmonic ratio from 39.96\,\% to 0.15\,\% at the actual low-power operating point. In the recovered simulation scenarios the compensation reduces the output-current THD from 46.35\,\% to 7.79\,\%, and the prototype records support the same trend, whereas an independent re-simulation with provisional parameters did not reproduce the historical improvement, confirming that the real injection point and gain scaling must be locked from the actual control code before final conclusions are drawn.
+
+The third contribution is the GT-type reconfigurable energy storage architecture, in which the same T-type semiconductors are re-tasked as a grid inverter, a Vienna-type power factor correction stage, and an active battery management stage. The architecture is defined together with its operating modes, safe reconfiguration conditions, protection functions, and a validation matrix, and it is extended by a 100~kW project design layer with per-battery isolated charging branches and a selectable series discharge path. Simulation and experimental results are reported separately throughout the thesis, the evidence level of every claim is stated explicitly, and the verification steps that remain open are marked in the text.
+
+\textbf{Keywords:} T-type inverter, energy storage system, low-power operation, neutral-switch suppression, feedforward compensation, third harmonic, reconfigurable architecture.
+\endgroup

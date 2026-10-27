@@ -1,0 +1,4 @@
+Scenario,Provisional_Method,IL1_Fundamental_A,IL1_THD_pct,Iout_Fundamental_A,Iout_THD_pct,FFT_Start_s,FFT_Cycles,Fundamental_Hz,Max_Display_Hz,Evidence_Status
+Senaryo_1,Klasik_anahtarlama,3.698,8.29,3.734,2.14,0.06,2,50,550,Gorselden_dogrulandi_ham_veri_yok
+Senaryo_2,Notr_anahtar_susturma,3.396,46.86,3.412,46.35,0.06,2,50,550,Gorselden_dogrulandi_ham_veri_yok
+Senaryo_3,Notr_susturma_ve_Sin3,3.752,9.46,3.766,7.79,0.06,2,50,550,Gorselden_dogrulandi_ham_veri_yok

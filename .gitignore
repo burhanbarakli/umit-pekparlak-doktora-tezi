@@ -1,0 +1,49 @@
+# Ham kaynak deposu: yalnız dizin/README notları izlenir.
+# Arşivler, Word/PDF kaynakları ve gelen paketler diskte kalır.
+/dosyalar/**
+!/dosyalar/**/
+!/dosyalar/**/*.md
+/jüri istekleri/*.pdf
+
+# Geçici çalışma alanları
+/tmp/
+/build/
+/tez-matlab-simulink/tmp/
+/tez-matlab-simulink/build/
+/tez-matlab-simulink/runs/**/slprj/
+/tez-latex/tmp/
+
+# LaTeX derleme çıktıları (kalıcı sürümler zaten tarihli PDF'lerde)
+/tez-latex/build*/
+/tez-latex-v2/build*/
+/tez-latex/main.pdf
+/tez-latex-v2/main.pdf
+/tez-latex/tez_guncel_*.pdf
+/tez-latex-v2/tez_guncel_*.pdf
+/tez-latex/historical_main.*
+/tez-latex/main.aux
+/tez-latex/main.bbl
+/tez-latex/main.blg
+/tez-latex/main.lof
+/tez-latex/main.log
+/tez-latex/main.lot
+/tez-latex/main.out
+/tez-latex/main.toc
+*.synctex.gz
+
+# MATLAB/Simulink üretilmiş dosyaları
+slprj/
+*.slxc
+*.mexa64
+*.mexw64
+*.asv
+*.autosave
+*.slx.r20*
+
+# Sonuç yedekleri
+/tez-matlab-simulink/results_yedek_*/
+
+# Araç klasörleri
+/.agents/
+/.codex/
+/tez-latex/tmp_render/

@@ -1,0 +1,493 @@
+\chapter{DENEYSEL DOĞRULAMA}
+\label{chap:deney}
+
+Bölüm~\ref{chap:anahtarlama} ve Bölüm~\ref{chap:sin3} içinde benzetim düzeyinde incelenen klasik anahtarlama, nötr anahtar susturma ve susturma+Sin\textsuperscript{3} yöntemleri, geliştirilen üç fazlı T-tipi prototip üzerinde düşük güç koşulunda karşılaştırılmıştır. Bu bölüm; deney düzeneğini, güç donanımını, kontrol ve ölçüm zincirini yalnızca testleri yeniden üretecek ayrıntıda tanıtmakta ve mevcut deney kayıtlarını kanıt sınırlarıyla birlikte değerlendirmektedir. Tez çalışmasının bu aşamasında yeni deney yapılmamıştır; kayıtlar mevcut arşivden alınmış, metin, tablo ve ekran değerleri kaynak içi tutarlılık bakımından denetlenmiştir.
+
+\eksikistek{Deney protokolü ve ham kayıtlar}{Her yöntem için enerjilendirme sırası, başlangıç koşulları, sabit tutulan değişkenler, referansın uygulanma biçimi, kararlı duruma geçiş ölçütü, ölçüm süresi ve güvenli kapatma adımlarını içeren deney protokolünü; ayrıca bütün PC/Modbus ve osiloskop kayıtlarının ham dosyalarını (tarih, yöntem, çalışma noktası, kanal adı, birim, sensör/prob oranı, örnekleme hızı, analiz penceresi ile) istiyoruz (istek listesi R11--R14). Kayıt gelmeden yalnız ekran görüntüsüne dayanan sonuçlar destekleyici kanıt statüsünde kalacaktır.}
+
+\section{Deney Düzeneği ve Güç Donanımı}
+
+Deney düzeneği, yaklaşık 20--25~kW güç dönüştürme kapasitesi hedeflenerek düşey bir pano üzerine bakır baralarla modüler biçimde kurulmuştur. Akım sensörü boyutlandırma hesabında prototip gücü \SI{20}{\kilo\volt\ampere} olarak verilmiştir; güç birimi ve anma değeri arasındaki fark, prototip etiketi veya tasarım dosyası bulunmadan tek bir anma değerinde birleştirilmemiştir. Raporlanan deneylerin yaklaşık \SI{2.3}{\ampere} faz akımında gerçekleştirilmesi, mevcut sonuçların anma gücü değil düşük güç doğrulaması olduğunu göstermektedir.
+
+Şekil~\ref{fig:deney-duzenegi-genel}; varyak modülü, evirici panosu, bilgisayar ve osiloskopları aynı görünümde vermektedir. Varyak modülünde enerji bağlantıları, şalt ve koruma ekipmanları, akım transformatörleri ve AA enerji analizörü bulunmakta; üç faz bağımsız varyaklarla ayarlanabilmektedir. Aşırı akım, kaçak akım, topraklama ve acil durdurma önlemleri mevcuttur; eşik ve açma süreleri kaynak kayıtlarda yer almamaktadır.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.95\textwidth]{deneysel/onceki_tez_sekil_5_1_deney_duzenegi.png}
+  \caption{Deney ve ölçme düzeneklerinin genel görünümü.}
+  \label{fig:deney-duzenegi-genel}
+\end{figure}
+
+Şekil~\ref{fig:deney-evirici-genel}, evirici donanımının önden genel görünümünü sunmaktadır. Üç faza ait güç modülleri, kontrol ve ölçüm kartları, DA bara bağlantıları ve yardımcı beslemeler aynı pano üzerindedir; genel görünüm, numaralı ayrıntıların verildiği Şekil~\ref{fig:deney-donanim-kartlar} için yerleşim bağlamı sağlamaktadır.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.88\textwidth]{deneysel/onceki_tez_sekil_5_2_evirici_donanimi.jpeg}
+  \caption{Evirici donanımının genel görünümü.}
+  \label{fig:deney-evirici-genel}
+\end{figure}
+
+Şekil~\ref{fig:deney-donanim-kartlar} üzerindeki 1--14 numaraları doğrudan Tablo~\ref{tab:deney-alt-birimler} içindeki açıklamalara karşılık gelmektedir.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.72\textwidth]{deneysel/onceki_tez_sekil_5_3_donanim_alt_birimleri.jpeg}
+  \caption{Evirici donanımı ve alt birimlerinin numaralı tanıtımı.}
+  \label{fig:deney-donanim-kartlar}
+\end{figure}
+
+\clearpage
+\begin{table}[htbp]
+  \centering
+  \caption{Evirici donanımının alt birimleri.}
+  \label{tab:deney-alt-birimler}
+  \small
+  \begin{tabularx}{0.94\textwidth}{X X}
+    \toprule
+    1. LCL filtrelerin $L_1$ bobinleri & 2. IGBT kapı sürme kartları \\
+    3. Nötr IGBT'leri & 4. Yükseltici (boost) diyotları \\
+    5. Fonksiyon değiştirme röleleri & 6. Snubber kapasitörleri \\
+    7. Kontrol kartı & 8. Tampon (buffer) kartı \\
+    9. Ölçme kartı & 10. LCL filtre kapasitörleri \\
+    11. Ani akım (inrush) röleleri & 12. Kumanda beslemeleri \\
+    13. Şarj fonksiyonu lambası & 14. Deşarj fonksiyonu lambası \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+Şekil~\ref{fig:deney-faz-donanim-1} ve Şekil~\ref{fig:deney-faz-donanim-2}, aynı faz kolunun iki farklı açıdan çekilmiş ayrıntılarını göstermektedir; her iki görseldeki 1--8 numaraları Tablo~\ref{tab:deney-faz-komponentler} ile birlikte okunmalıdır. İki görüntünün ayrı tutulması; boost diyotları, fonksiyon değiştirme röleleri, DA bara ve snubber kapasitörleri, soğutma düzeni, sürücü kartı ve $L_1$ bobininin fiziksel konumunu kaybetmeden izlemeyi sağlamaktadır.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[height=0.68\textheight]{deneysel/onceki_tez_sekil_5_4_faz_donanimlari_1.png}
+  \caption{Eviricinin bir fazına ait donanımlar, birinci görünüm.}
+  \label{fig:deney-faz-donanim-1}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[height=0.68\textheight]{deneysel/onceki_tez_sekil_5_5_faz_donanimlari_2.png}
+  \caption{Eviricinin bir fazına ait donanımlar, ikinci görünüm.}
+  \label{fig:deney-faz-donanim-2}
+\end{figure}
+
+\clearpage
+\begin{table}[htbp]
+  \centering
+  \caption{Şekil~\ref{fig:deney-faz-donanim-1} ve Şekil~\ref{fig:deney-faz-donanim-2}'deki faz donanımı bileşenleri.}
+  \label{tab:deney-faz-komponentler}
+  \small
+  \begin{tabularx}{0.94\textwidth}{X X}
+    \toprule
+    1. Boost diyotları ve kondansatörü & 2. Fonksiyon değiştirme röleleri \\
+    3. Snubber kondansatörleri & 4. DA bara elektrolitik kondansatörleri \\
+    5. IGBT soğutucu & 6. Yüksek devirli soğutma fanı \\
+    7. IGBT kapı sürme kartı & 8. LCL filtre $L_1$ bobini \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+Şekil~\ref{fig:deney-giris-devresi}, evirici giriş devresini ve 1--6 ile işaretlenmiş yardımcı donanımları göstermektedir; numaraların karşılığı Tablo~\ref{tab:deney-giris-komponentler} içindedir. Giriş bölümünün ayrı verilmesi; inrush röleleri, sigorta, yardımcı kaynaklar, EMI filtresi, kontrol kartı ve tampon kartının güç katıyla bağlantısını görünür kılmaktadır.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.94\textwidth]{deneysel/onceki_tez_sekil_5_6_giris_devresi.png}
+  \caption{Evirici giriş devresinin ayrıntı görünümü.}
+  \label{fig:deney-giris-devresi}
+\end{figure}
+
+\clearpage
+\begin{table}[htbp]
+  \centering
+  \caption{Evirici giriş kısmına ait bileşenler.}
+  \label{tab:deney-giris-komponentler}
+  \small
+  \begin{tabularx}{0.94\textwidth}{X X}
+    \toprule
+    1. Ani akım (inrush) röleleri & 2. Evirici açma kapama sigortası \\
+    3. 12 V--24 V güç kaynakları & 4. EMI filtre \\
+    5. Kontrol kartı & 6. Tampon (buffer) kartı \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+\section{Kontrol Kartı, Tampon Kartı ve Kapı Sürücüsü}
+
+Şekil~\ref{fig:deney-kontrol-buffer}, kontrol ve tampon kartlarını numaralı işlevleriyle göstermektedir. Kontrol kartında RS485 haberleşme birimi, optoizole giriş/çıkışlar, DA bara ve akım ölçüm dönüştürme devreleri, PIC32MK ailesi mikrodenetleyici, lineer regülatörler ve röle/fan çıkış katları bulunmaktadır. Tampon kartı, mikrodenetleyicinin \SI{3.3}{\volt} tek uçlu (single-ended) PWM işaretlerini diferansiyel sinyal çiftlerine dönüştürmek ve uzun ekranlı kablolarda ortak-mod gürültü etkisini azaltmak amacıyla kullanılmıştır. Fotoğraftaki numaralar sırasıyla şu işlevleri gösterir: (1) RS485 haberleşme; (2)--(3) optoizole giriş ve çıkışlar; (4) diferansiyel DA bara gerilimini tek uçlu biçime dönüştüren ölçüm katı; (5) ölçüm, haberleşme ve kontrol algoritmalarını yürüten PIC32MK mikrodenetleyici; (6) akım ölçüm dönüştürme katı; (7) \SI{5}{\volt} lineer regülatörler; (8) röle ve fanlar için MOSFET güç çıkışları; (9) \SI{9}{\volt} anahtarlamalı regülatör; (10) PWM tampon kartının \SI{9}{\volt} beslemesi; (11) tek uçlu PWM işaretlerini diferansiyel çiftlere dönüştüren kat.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.90\textwidth]{deneysel/onceki_tez_sekil_5_7_kontrol_buffer.png}
+  \caption{Kontrol kartı ve tampon kartının numaralı görünümü.}
+  \label{fig:deney-kontrol-buffer}
+\end{figure}
+
+PWM1--PWM6 kanallarının yüksek ve alçak işaretleri tampon kartında diferansiyel çiftlere dönüştürülmekte; yaklaşık \SI{12}{\volt} genlikte, tek yönlü iletim amacıyla H-köprü tabanlı bir sürme çözümü kullanılmaktadır. Gerçek PWM kaynak kodu, ölü zaman, minimum darbe süresi ve çıkış gecikmeleri mevcut olmadığından zincirin zamanlama performansı henüz doğrulanamamıştır.
+
+Şekil~\ref{fig:deney-igbt-surucu}, ADuM4135 tabanlı IGBT kapı sürme kartını göstermektedir. Diferansiyel giriş, desatürasyon koruması, aktif Miller kenetleme ve düşük gerilim kilitleme özellikleri sürücü seçiminin gerekçeleridir: diferansiyel giriş uzun PWM hatlarındaki ortak-mod gürültüsüne bağışıklık sağlar; desatürasyon koruması aşırı akımda IGBT komutunu donanımsal olarak keser; aktif Miller kenetleme yüksek frekanslı anahtarlamada hatalı iletime geçme (false turn-on) riskini azaltır. Bütün sürücülerden gelen FAULT çıkışları kontrol kartında toplanmakta ve ortak RESET işareti sürücülere paralel dağıtılmaktadır; böylece donanım koruması ile denetim yazılımı arasında bir hata yönetim zinciri oluşmaktadır.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[height=0.64\textheight]{deneysel/onceki_tez_sekil_5_8_igbt_surucu.jpeg}
+  \caption{IGBT kapı sürme devresi.}
+  \label{fig:deney-igbt-surucu}
+\end{figure}
+
+\clearpage
+\section{Gerilim ve Akım Ölçme Devreleri}
+
+Faz--nötr gerilimleri ile pozitif ve negatif DA bara gerilimleri, AMC1200 tabanlı izole ölçüm devreleriyle alınmaktadır. AMC1200 için diferansiyel çıkış ofseti yaklaşık \SI{1.3}{\volt}, çıkış aralığı 0--\SI{2.6}{\volt} ve gerilim kazancı 8'dir. Bu değerlere göre girişte izin verilen en yüksek genlik \SI{162.5}{\milli\volt} olarak hesaplanmış; faz ve DA bara ölçümleri için ayrı gerilim bölücüler kullanılmıştır. Faz ölçüm sınırı anlık yaklaşık \SI{387}{\volt}, DA bara giriş ayarı \SI{470}{\volt} DA'dır.
+
+Mikrodenetleyicideki yedi ADC kanalının üçü faz--nötr gerilimlerine, ikisi pozitif ve negatif DA bara gerilimlerine ayrılmıştır. Faz ölçümleri AMC1200 çıkışlarından ekranlı kabloyla diferansiyel olarak taşınmış ve RC örtüşme önleme (anti-aliasing) filtrelerinden geçirilmiştir. DA bara kanallarında diferansiyel işaretler enstrümantasyon yükselteciyle işlenip \SI{1.3}{\volt} ofset eklenerek tek uçlu biçime dönüştürülmektedir. 12 bit ADC gösterimi, diferansiyel sayısal aralığı yaklaşık $-2047$ ile $+2048$ arasında tanımlamaktadır.
+
+Dört telli T-tipi yapıda nötr noktasının kayması iki DA bara kondansatörünün gerilimlerini eşitsizleştirebileceğinden pozitif ve negatif bara kanalları sürekli izlenmekte; eşik aşımında mikrodenetleyici FAULT üretip PWM çıkışlarını kesmektedir. AMC1200 giriş beslemesi RFM-0505S izole dönüştürücü ile sağlanmış; dönüştürücü çıkışındaki regülasyon zayıflığını azaltmak için TCR2EF250 düşük gerilim düşümlü regülatör kullanılmıştır. Ölçüm zinciri böylece yalnız ölçekleme değil, izolasyon ve nötr nokta koruması görevlerini de üstlenmektedir.
+
+Akım ölçümünde HLSR 20-P/SP33 Hall etkili sensör kullanılmıştır. Sensör kazancı \SI{23}{\milli\volt\per\ampere}, referans gerilimi \SI{1.3}{\volt} ve hesaplanan simetrik en yüksek akım yaklaşık \SI{56.5}{\ampere} tepe ya da \SI{39.9}{\ampere} RMS'tir. Prototip için faz başına yaklaşık \SI{30}{\ampere} RMS ve yüzde 20 toleransla \SI{36}{\ampere} RMS tasarım değeri verilmiştir. Hesapların gerçek direnç toleransları, ADC kalibrasyonu ve sensör sıcaklık sapmasıyla yeniden doğrulanması gerekmektedir.
+
+Ani faz ve kondansatör akımlarının sınırlandırılması amacıyla kullanılan pencere karşılaştırıcı devre Şekil~\ref{fig:deney-pencere-karsilastirici} üzerinde verilmiştir. Devrede üst eşik \SI{2.0}{\volt}, alt eşik \SI{0.6}{\volt} ve referans \SI{1.3}{\volt} olarak ayarlanmıştır. \SI{0.7}{\volt} eşik farkı, \SI{23}{\milli\volt\per\ampere} sensör kazancıyla yaklaşık \SI{30.4}{\ampere} akıma karşılık gelmektedir. Eşik dışına çıkıldığında FAULT işareti kontrol kartında harici kesme oluşturarak PWM çıkışlarını kesmektedir.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.96\textwidth]{deneysel/onceki_tez_sekil_5_9_pencere_karsilastirici.jpeg}
+  \caption{Pencere karşılaştırıcı devresi.}
+  \label{fig:deney-pencere-karsilastirici}
+\end{figure}
+
+Şekil~\ref{fig:deney-pencere-dalga}, harici bir deneme kartının DAC çıkışıyla uygulanan giriş işareti ve pencere karşılaştırıcının FAULT çıkışını göstermektedir. İmleç seviyeleri \SI{2.0}{\volt} ve \SI{0.6}{\volt} olarak ayarlanmış; giriş sınırların dışına çıktığında ikinci kanal işaretinin lojik sıfıra indiği gözlenmiştir. Kayıt, koruma mantığının işlevsel örneğidir; gecikme süresi ve gerçek kısa devre kesme enerjisi aynı görüntüden çıkarılamaz.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.88\textwidth]{deneysel/onceki_tez_sekil_5_10_pencere_dalga.jpeg}
+  \caption{Pencere karşılaştırıcı giriş ve çıkış gerilim dalga şekilleri.}
+  \label{fig:deney-pencere-dalga}
+\end{figure}
+
+Şekil~\ref{fig:deney-olcum-karti}; HLSR akım sensörleri, AMC1200 izole ölçüm kanalları ve akım probu bağlantı iletkenlerini içeren ölçüm kartını göstermektedir. Kart üzerindeki \SI{4}{\milli\metre\squared} kesitli ters-U biçimli iletkenler; faz başına $L_1$ akımı, kondansatör akımı ve faz akımının ayrı ayrı osiloskop probuyla ölçülmesini sağlamaktadır. TLV431 referansları ve MC33269 regülatörleri ölçüm beslemesi ile \SI{1.3}{\volt} ofset üretiminde kullanılmıştır.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.96\textwidth]{deneysel/onceki_tez_sekil_5_11_olcum_karti.jpeg}
+  \caption{Ölçüm kartı.}
+  \label{fig:deney-olcum-karti}
+\end{figure}
+
+\section{DA ve AA Güç Analizörleri}
+
+DA bara gerilimi, akımı ve gücü Accuenergy AcuDC240 analizörüyle ölçülmüştür; üretici akım ve gerilim için yüzde 0,2, güç ve enerji için yüzde 0,5 hata toleransı bildirmektedir. Şekil~\ref{fig:deney-acudc240}(a) cihazın pano üzerindeki konumunu, Şekil~\ref{fig:deney-acudc240}(b) üretici dokümanındaki şönt bağlantısını göstermektedir.
+
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}[t]{0.46\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{deneysel/onceki_tez_sekil_5_12a_acudc240.jpeg}
+    \caption{Evirici donanımı üzerindeki AcuDC240.}
+  \end{subfigure}\hfill
+  \begin{subfigure}[t]{0.50\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{deneysel/onceki_tez_sekil_5_12b_acudc240_baglanti.jpeg}
+    \caption{DA analizörü ve şönt bağlantı şekli.}
+  \end{subfigure}
+  \caption{AcuDC240 DA bara analizörü ve bağlantısı.}
+  \label{fig:deney-acudc240}
+\end{figure}
+
+Prototipte şönt direnci DA baranın negatif terminaline bağlanarak alçak-taraf akım ölçümü yapılmıştır. Şekil~\ref{fig:deney-sont-baglanti}, \SI{20}{\ampere}/\SI{60}{\milli\volt} şönt direncin fiziksel bağlantısını göstermektedir. Şöntün ölçüm uçları koaksiyel ve ekranlı kabloyla analizöre taşınmış; DA gerilim girişinde yüksek izolasyon dayanımlı kablo kullanılmıştır.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.94\textwidth]{deneysel/onceki_tez_sekil_5_13_sont_baglanti.jpeg}
+  \caption{\SI{20}{\ampere}--\SI{60}{\milli\volt} şönt direnç bağlantısı.}
+  \label{fig:deney-sont-baglanti}
+\end{figure}
+
+AA tarafta Entes EMK-01 analizörü ve 50/5 oranlı, \SI{5}{\volt\ampere}, Class~0.1 akım transformatörleri kullanılmıştır. Üç faz ve nötr hattı için dört akım transformatörü bağlanmış; faz--nötr gerilimleri, faz/nötr akımları, aktif ve reaktif güç ile toplam THD değerleri Modbus RTU üzerinden okunmuştur. Şekil~\ref{fig:deney-emk01}(a) analizörü, Şekil~\ref{fig:deney-emk01}(b) üreticinin bağlantı düzenini vermektedir.
+
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}[t]{0.43\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{deneysel/onceki_tez_sekil_5_14a_emk01.jpeg}
+    \caption{EMK-01 AA analizörü.}
+  \end{subfigure}\hfill
+  \begin{subfigure}[t]{0.53\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{deneysel/onceki_tez_sekil_5_14b_emk01_baglanti.png}
+    \caption{Üretici tarafından önerilen bağlantı şekli.}
+  \end{subfigure}
+  \caption{EMK-01 AA analizörü ve bağlantısı.}
+  \label{fig:deney-emk01}
+\end{figure}
+
+\section{PC Ana Kumanda Yazılımı ve Veri Toplama}
+
+PC ana kumanda yazılımı; EMK-01, AcuDC240 ve kontrol kartından RS485/Modbus RTU üzerinden veri almak, anlık değerleri grafikleştirmek ve verim hesabına temel oluşturmak amacıyla geliştirilmiştir. Şekil~\ref{fig:deney-pc-arayuzu} yazılımın arayüzünü göstermektedir. Bir veri çevrimi yaklaşık \SI{1}{\second} sürmekte; önce DA analizörü, en fazla yaklaşık \SI{50}{\milli\second} sonra AA analizörü okunmaktadır. Yapı kararlı durum eğilimleri için kullanılabilir; hızlı geçici rejimlerin tam eşzamanlı karşılaştırılması için yeterli değildir.
+
+Haberleşme hızı cihazların izin verdiği en yüksek değer olan 38400 baud seçilmiş; veri sırası DA analizörü, AA analizörü ve kontrol kartı biçiminde kurulmuştur. Yazılımın karşılaştırma seti verim, THD, güç faktörü, faz akımı, faz--nötr gerilimi ve DA bara geriliminden oluşmaktadır. Kayıtlarda kontrol yapısına ilişkin bir belirsizlik vardır: benzetim açıklamalarında akım denetleyicisinin devre dışı bırakıldığı belirtilirken osiloskop kanal adlarında ``kontrolör çıkışı'' ifadesi geçmektedir. İki ifade arasındaki fark kaynak kod olmadan çözülemediğinden kontrol yapısına ilişkin kesin yorum Bölüm~\ref{chap:sin3} içindeki doğrulama kapsamında bırakılmıştır.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.98\textwidth]{deneysel/onceki_tez_sekil_5_15_pc_arayuzu.png}
+  \caption{Haberleşme sistemi arayüzü.}
+  \label{fig:deney-pc-arayuzu}
+\end{figure}
+
+Ortak hedef çalışma koşulu; DA bara gerilimi yaklaşık \SI{400}{\volt}, faz--nötr gerilimi yaklaşık \SI{130}{\volt}, faz akımı yaklaşık \SI{2.3}{\ampere} ve birim güç faktörüne yakın işletim olarak tanımlanmıştır. Gerçek ekran ve metin kayıtları yöntemler arasında farklı DA bara ve faz gerilimleri bulunduğunu göstermektedir. Verim, THD ve ters akım ölçütleri Eşitlik~\eqref{eq:verim-tanimi}, Eşitlik~\eqref{eq:thd-rmse-tanimlari} ve Eşitlik~\eqref{eq:ters-akim-anahtarlama-olcutleri} ile ilişkilendirilmiştir.
+
+\section{Klasik Anahtarlama Modu Deney Kayıtları}
+
+Klasik yöntemde bütün anahtarlar tamamlayıcı sürülmekte ve düşük akımda senkron-buck benzeri ters akım yolu açık kalmaktadır. Deney özeti yüzde 92,5 verim, yüzde 15 akım THD'si, yaklaşık \SI{2.3}{\ampere} faz akımı, \SI{120}{\volt} faz--nötr gerilimi ve \SI{430}{\volt} DA bara gerilimi bildirmektedir.
+
+Şekil~\ref{fig:deney-klasik-pc}, PC yazılımında klasik anahtarlama sırasında elde edilen grafiklerin tamamını göstermektedir; AA/DA analizör değerleri ile güç ve THD eğilimleri aynı arayüzde izlenmektedir.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.98\textwidth]{deneysel/onceki_tez_sekil_5_16_klasik_pc.jpeg}
+  \caption{Klasik anahtarlama sırasında PC yazılımında alınan grafikler.}
+  \label{fig:deney-klasik-pc}
+\end{figure}
+
+Şekil~\ref{fig:deney-klasik-l1} üzerinde yukarıdan aşağıya kontrol işareti, şebeke gerilimi, işlemciden alınan ortalama endüktör akımı ve akım probuyla ölçülen $L_1$ akımı bulunmaktadır. Kayıt, anahtarlama dalgalanmasını ve akımın sıfır çevresindeki davranışını doğrudan göstermektedir.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.94\textwidth]{deneysel/onceki_tez_sekil_5_17_klasik_l1.png}
+  \caption{Klasik yöntemde kontrol işareti, şebeke gerilimi, ortalama endüktör akımı ve $L_1$ akımı.}
+  \label{fig:deney-klasik-l1}
+\end{figure}
+
+Şekil~\ref{fig:deney-klasik-faz} üzerinde ilk üç kanal korunmuş, dördüncü kanalda faz akımı verilmiştir. $L_1$ akımı ile faz akımının ayrı kayıtlarda sunulması, filtre ve şebeke tarafındaki dalga biçimlerinin aynı fiziksel büyüklük olarak yorumlanmasını önlemektedir.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.94\textwidth]{deneysel/onceki_tez_sekil_5_18_klasik_faz.png}
+  \caption{Klasik yöntemde kontrol işareti, şebeke gerilimi, ortalama endüktör akımı ve faz akımı.}
+  \label{fig:deney-klasik-faz}
+\end{figure}
+
+\section{Nötr Anahtar Susturma Modu Deney Kayıtları}
+
+Nötr anahtar susturma yönteminde ilgili yarım periyotta ters akım yolu kesilmekte, düşük görev oranında kesintili iletim ve üçüncü harmonik ağırlıklı akım zarfı ortaya çıkmaktadır. Deney özeti yüzde 94,2 verim, yüzde 46 akım THD'si, yaklaşık \SI{2.3}{\ampere} faz akımı, \SI{120}{\volt} faz--nötr gerilimi ve \SI{395}{\volt} DA bara gerilimi vermektedir.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.98\textwidth]{deneysel/onceki_tez_sekil_5_19_susturma_pc.jpeg}
+  \caption{Nötr anahtar susturma modunda PC yazılımında elde edilen grafikler.}
+  \label{fig:deney-susturma-pc}
+\end{figure}
+
+Şekil~\ref{fig:deney-susturma-l1}, anahtarlamalı endüktör akımının sıfır çevresinde kesildiği aralıkları göstermektedir. Gözlenen zarf, Bölüm~\ref{chap:anahtarlama} içindeki Senaryo~2 kayıtları ve üçüncü harmonik mekanizmasıyla nitel olarak uyumludur.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.94\textwidth]{deneysel/onceki_tez_sekil_5_20_susturma_l1.png}
+  \caption{Susturma yönteminde kontrol işareti, şebeke gerilimi, ortalama endüktör akımı ve $L_1$ akımı.}
+  \label{fig:deney-susturma-l1}
+\end{figure}
+
+Şekil~\ref{fig:deney-susturma-faz}, aynı yöntemin faz akımındaki belirgin biçim bozulmasını göstermektedir. Klasik yönteme göre farklı DA bara gerilimi kullanıldığından verim değişiminin tamamı yalnız anahtarlama yöntemine atfedilemez.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.94\textwidth]{deneysel/onceki_tez_sekil_5_21_susturma_faz.png}
+  \caption{Susturma yönteminde kontrol işareti, şebeke gerilimi, ortalama endüktör akımı ve faz akımı.}
+  \label{fig:deney-susturma-faz}
+\end{figure}
+
+\section{Susturma ve Sin\texorpdfstring{\textsuperscript{3}}{3} Modu Deney Kayıtları}
+
+Üçüncü yöntemde nötr anahtar susturma korunmuş ve akım zarfındaki harmonik bozulmayı azaltmak amacıyla Sin\textsuperscript{3} tabanlı terim eklenmiştir. Deney özeti yüzde 94,5 verim, yüzde 14 akım THD'si, yaklaşık \SI{2.3}{\ampere} faz akımı, \SI{124}{\volt} faz--nötr gerilimi ve \SI{427}{\volt} DA bara gerilimi bildirmektedir. Uygulanan terimin $K\sin^3(\theta)$ mı yoksa $K\sin(3\theta)$ mı olduğu, kaynak kod mevcut olmadığından Bölüm~\ref{chap:sin3} içindeki açık doğrulama konusudur.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.98\textwidth]{deneysel/onceki_tez_sekil_5_22_sin3_pc.jpeg}
+  \caption{Sin\textsuperscript{3} uygulanmış susturma modunda PC yazılımında alınan grafikler.}
+  \label{fig:deney-sin3-pc}
+\end{figure}
+
+Şekil~\ref{fig:deney-sin3-l1}, susturma deneyine göre daha düzenli bir $L_1$ akım zarfı göstermektedir; nitel iyileşme, bildirilen THD azalmasıyla uyumludur.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.94\textwidth]{deneysel/onceki_tez_sekil_5_23_sin3_l1.png}
+  \caption{Sin\textsuperscript{3} uygulanmış yöntemde kontrol işareti, şebeke gerilimi, ortalama endüktör akımı ve $L_1$ akımı.}
+  \label{fig:deney-sin3-l1}
+\end{figure}
+
+Şekil~\ref{fig:deney-sin3-faz}, faz akımındaki zarfın susturma yöntemine göre düzeldiğini göstermektedir. Klasik ve Sin\textsuperscript{3} deneyleri farklı DA bara ve faz gerilimlerinde yapıldığından tek değişkenli nedensel üstünlük sonucu çıkarılmamıştır.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.94\textwidth]{deneysel/onceki_tez_sekil_5_24_sin3_faz.png}
+  \caption{Sin\textsuperscript{3} uygulanmış yöntemde kontrol işareti, şebeke gerilimi, ortalama endüktör akımı ve faz akımı.}
+  \label{fig:deney-sin3-faz}
+\end{figure}
+
+\section{Deney Sonuçlarının Değerlendirilmesi}
+
+Üç yöntemin deney ve benzetim sonuçlarını birlikte veren özet Tablo~\ref{tab:deney-dusuk-guc-ozeti} üzerindedir. Kaynak tabloda gerçek uygulama hücreleri dolu, benzetim hücreleri boştur; eksik benzetim değerleri tahminle doldurulmamıştır.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Üç yöntemin deneysel verim ve THD değerleri; benzetim sütunları kaynak kayıtta boş olduğundan boş bırakılmıştır.}
+  \label{tab:deney-dusuk-guc-ozeti}
+  \footnotesize
+  \begin{tabularx}{\textwidth}{p{0.28\textwidth} >{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X}
+    \toprule
+    & \multicolumn{2}{c}{Gerçek uygulama sonuçları} & \multicolumn{2}{c}{Benzetim sonuçları} \\
+    \cmidrule(lr){2-3}\cmidrule(lr){4-5}
+    Yöntem & Verim & THD$_i$ (L1) & Verim & THD$_i$ (L1) \\
+    \midrule
+    Klasik tamamlayıcı anahtarlama & \%92,50 & \%15 & & \\
+    Nötr anahtar susturma & \%94,20 & \%46 & & \\
+    Susturma + Sin\textsuperscript{3} & \%94,50 & \%14 & & \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+Deney düzeneğindeki güç, ölçüm ve veri toplama akışı Şekil~\ref{fig:deney-olcum-zinciri} üzerinde özetlenmiştir.
+
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}[
+    node distance=8mm and 10mm,
+    block/.style={draw=blue!55!black,fill=blue!7,rounded corners,align=center,minimum height=10mm,text width=28mm,font=\small},
+    meas/.style={draw=green!50!black,fill=green!8,rounded corners,align=center,minimum height=10mm,text width=28mm,font=\small},
+    data/.style={draw=orange!70!black,fill=orange!10,rounded corners,align=center,minimum height=10mm,text width=30mm,font=\small},
+    arr/.style={-{Latex[length=2.5mm]},thick}
+  ]
+    \node[block] (dc) {DA bara\\AcuDC240 + şönt};
+    \node[block,right=of dc] (inv) {T-tipi evirici\\LCL filtre};
+    \node[block,right=of inv] (grid) {Varyak ve\\AA şebeke};
+    \draw[arr] (dc) -- node[above,font=\scriptsize] {$P_{dc}$} (inv);
+    \draw[arr] (inv) -- node[above,font=\scriptsize] {$v_g,i_g$} (grid);
+    \node[meas,below=of inv] (scope) {Osiloskop\\$i_{L1}$, $i_g$, $v_g$, DAC};
+    \node[meas,below=of grid] (ac) {EMK-01 + CT\\$P_{ac}$, THD, PF};
+    \node[meas,below=of dc] (ctrl) {Kontrol/ölçüm kartı\\ADC, PWM, FAULT};
+    \draw[arr] (inv) -- (scope);
+    \draw[arr] (grid) -- (ac);
+    \draw[arr] (inv) -- (ctrl);
+    \node[data,below=15mm of scope] (pc) {PC ana kumanda yazılımı\\RS485/Modbus RTU};
+    \draw[arr] (ctrl) -- (pc);
+    \draw[arr] (ac) -- (pc);
+    \draw[arr] (dc) |- (pc);
+    \draw[arr,dashed] (scope) -- node[right,font=\scriptsize] {ekran kaydı} (pc);
+  \end{tikzpicture}
+  \caption{Deney düzeneğindeki güç, ölçüm ve veri toplama akışı.}
+  \label{fig:deney-olcum-zinciri}
+\end{figure}
+
+Tablo~\ref{tab:olcum-cihazlari}, kullanılan cihaz ve sensörleri doğrulama sınırlarıyla birlikte toplamaktadır. Kayıtlardaki ``Class 0,1'' ve AcuDC240 yüzde hata değerleri aynı büyüklük olarak kabul edilmemiş; osiloskop için yazılan ``300 Hz'' ifadesi model ailesiyle uyuşmadığından üretici belgesi bekleyen kayıt olarak işaretlenmiştir.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Ölçüm cihazları ve doğrulama sınırları.}
+  \label{tab:olcum-cihazlari}
+  \footnotesize
+  \begin{tabularx}{\textwidth}{p{0.19\textwidth} p{0.23\textwidth} p{0.20\textwidth} X}
+    \toprule
+    Büyüklük & Cihaz / sensör & Bildirilen özellik & Doğrulama notu \\
+    \midrule
+    AA güç ve THD & Entes EMK-01 ve 50/5 oranlı, \SI{5}{\volt\ampere} akım transformatörleri & Class 0.1 & Kalibrasyon belgesi bağımsız olarak mevcut değildir. \\
+    DA güç & Accuenergy AcuDC240 ve \SI{20}{\ampere}/\SI{60}{\milli\volt} şönt & Akım/gerilim yüzde 0,2; güç/enerji yüzde 0,5 & ``Class 0,1'' ifadesiyle uyuşmazlık üretici belgesiyle kesinleştirilecektir. \\
+    Hızlı akım & Tektronix TCP0150 & \SI{150}{\ampere}, \SI{20}{\mega\hertz} & Prob oranı ham osiloskop dosyasıyla doğrulanacaktır. \\
+    Hızlı gerilim & Tektronix THDP0200 & \SI{1500}{\volt}, \SI{200}{\mega\hertz} & Kanal zayıflatması ve ortak-mod sınırı ham kayıtla doğrulanacaktır. \\
+    Osiloskop & Tektronix DPO3034 & Kayıtta ``300 Hz, 2,5 GS/s'' & ``300 Hz'' ifadesi model veri sayfasıyla uyuşmadığından bant genişliği doğrulanmalıdır. \\
+    Faz/LCL akımı & HLSR 20-P/SP33 & \SI{23}{\milli\volt\per\ampere}; \SI{39.9}{\ampere} RMS hesap sınırı & Kazanç ve ADC ölçekleme katsayıları kontrol koduyla doğrulanacaktır. \\
+    Gerilim ölçümü & AMC1200 tabanlı izole kart & Kazanç 8; \SI{2.6}{\volt} ADC aralığı & Direnç oranı ve kanal kalibrasyonu şemadan doğrulanacaktır. \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+Üç yöntemin çalışma koşulları Tablo~\ref{tab:deney-kosullari} üzerinde karşılaştırılmıştır. Yöntemler tam olarak aynı DA bara ve faz gerilimlerinde çalıştırılmadığından, verim sıralaması tek değişkenli bir yöntem karşılaştırması değildir.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Üç yöntem için bildirilen çalışma koşulları.}
+  \label{tab:deney-kosullari}
+  \footnotesize
+  \begin{tabularx}{\textwidth}{p{0.21\textwidth} *{3}{>{\centering\arraybackslash}X} X}
+    \toprule
+    Büyüklük & Klasik & Nötr susturma & Susturma+Sin\textsuperscript{3} & Yorum \\
+    \midrule
+    Faz akımı & \SI{2.3}{\ampere} & \SI{2.3}{\ampere} & \SI{2.3}{\ampere} & Düşük güç noktası; anma testi değildir. \\
+    Faz--nötr gerilimi & \SI{120}{\volt} & \SI{120}{\volt} & \SI{124}{\volt} & Yöntemler tam aynı gerilimde değildir. \\
+    DA bara gerilimi & \SI{430}{\volt} & \SI{395}{\volt} & \SI{427}{\volt} & Yöntemler tam aynı bara koşulunda değildir. \\
+    Güç faktörü & $-0{,}990$--$1{,}000$ & $-0{,}995$ & $-0{,}997$ & İşaret, güç akış yönü konvansiyonundan etkilenmektedir. \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+Deney özet değerleri ile PC ekranlarında görünen anlık değerler de birebir aynı değildir; Tablo~\ref{tab:deney-metin-ekran-karsilastirma} farkları görünür kılmaktadır. Ekran değeri, görselde okunabilen tek anlık görüntüdür; özet değeri deney raporundaki sayıdır. Ham kayıtlar bulunmadan farkların ortalama, medyan, seçilmiş an veya farklı faz sonucu olup olmadığı belirlenemez; tablo bir hata düzeltme tablosu değil, kaynak içi tutarlılık denetimidir.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Deney özeti ile PC ekranlarında okunabilen anlık değerlerin karşılaştırılması.}
+  \label{tab:deney-metin-ekran-karsilastirma}
+  \footnotesize
+  \begin{tabularx}{\textwidth}{p{0.21\textwidth} p{0.16\textwidth} >{\centering\arraybackslash}X >{\centering\arraybackslash}X X}
+    \toprule
+    Yöntem & Büyüklük & Özet & PC ekranı & Farkın durumu \\
+    \midrule
+    Klasik & Verim & \%92,5 & \%92,9 & Ortalama/anlık ayrımı doğrulanamadı. \\
+    Klasik & THD$_i$ & \%15 & \%11,1 & Analiz penceresi ve ortalama yöntemi eksik. \\
+    Klasik & $V_{dc}$ & \SI{430}{\volt} & \SI{431.5}{\volt} & Yakın değerler. \\
+    \midrule
+    Nötr susturma & Verim & \%94,2 & \%93,8 & Ortalama/anlık ayrımı doğrulanamadı. \\
+    Nötr susturma & THD$_i$ & \%46 & \%48,6 & Aynı yüksek bozulma eğilimi; sayısal fark açık. \\
+    Nötr susturma & $V_{dc}$ & \SI{395}{\volt} & \SI{394.7}{\volt} & Yakın değerler. \\
+    \midrule
+    Susturma+Sin\textsuperscript{3} & Verim & \%94,5 & \%93,9 & Ortalama/anlık ayrımı doğrulanamadı. \\
+    Susturma+Sin\textsuperscript{3} & THD$_i$ & \%14 & \%15,7 & Aynı iyileşme eğilimi; sayısal fark açık. \\
+    Susturma+Sin\textsuperscript{3} & $V_{dc}$ & \SI{427}{\volt} & \SI{427.5}{\volt} & Yakın değerler. \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+Düşük, orta ve nominal güçte aynı kapalı çevrim yapının karşılaştırılması mevcut deneylerle bütünüyle karşılanmamaktadır: kayıtlar yalnız yaklaşık \SI{2.3}{\ampere} düşük güç noktasını belgelemektedir. Tablo~\ref{tab:deney-juri-durum}, mevcut kanıt ile tamamlanması gereken doğrulamayı ayırmaktadır.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Deneysel doğrulamanın güç bölgelerine göre yeterlilik durumu.}
+  \label{tab:deney-juri-durum}
+  \small
+  \begin{tabularx}{\textwidth}{p{0.19\textwidth} p{0.23\textwidth} X X}
+    \toprule
+    Çalışma bölgesi & Mevcut kanıt & Eksik doğrulama & Tezdeki kullanım \\
+    \midrule
+    Düşük güç & Üç yönteme ait PC ve osiloskop ekranları; deney özeti & Ham zaman serisi, ortak bara/şebeke koşulu, tekrar ve belirsizlik & Destekleyici deneysel kanıt \\
+    Orta güç & Kayıt bulunamadı & Aynı kontrol ve ölçüm zinciriyle en az üç tekrar & Sonuç iddiası kurulmayacak \\
+    Nominal / erişilebilir en yüksek güç & Kayıt bulunamadı & Güvenlik sınırı, termal durum, doyum, THD ve verim & Açık eksik olarak gösterilecek \\
+    Geçici rejim & Kayıt bulunamadı & Referans basamağı, şebeke değişimi ve kompanzasyon aç/kapa geçişi & Gelecek doğrulama veya sınırlılık \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+\eksikistek{Ortak koşullu düşük--orta--anma gücü deney seti}{Aynı kapalı çevrim ve ölçüm zinciriyle; düşük, orta ve güvenli biçimde erişilebilen en yüksek/nominal güç noktalarında, her yöntem için tercihen en az üç bağımsız tekrar istiyoruz. Her noktada DA/AA güç, verim, THD, güç faktörü, RMS akım, doyum, anahtarlama davranışı ve termal durum aynı tabloda; DA bara ve şebeke gerilimi bütün kollarda sabit olacak biçimde. Ek olarak referans basamağı, şebeke gerilimi değişimi ve kompanzasyon aç/kapa geçişini içeren eşzamanlı osiloskop kayıtları ile cihaz kalibrasyon belgelerini istiyoruz. Verim, birleşik ölçüm belirsizliğiyle ($u_{\eta}=\eta\sqrt{(u_{P_{ac}}/P_{ac})^2+(u_{P_{dc}}/P_{dc})^2}$ ilk yaklaşımıyla) raporlanacaktır.}
+
+\subsection{Deney Özet Tablosunun Sayısal Denetimi}
+
+17.08.2026 tarihli çalışma kitabının gerçek uygulama alanı Senaryo~1--3 için tek satırlık özetler içermekte, ham zaman serisi veya tekrar koşusu vermemektedir. Tablo~\ref{tab:gelen-excel-senaryolar}, hücrelerdeki değerleri değiştirmeden ve $\eta_{VI}=100P_{\mathrm{out}}/(V_{\mathrm{dc}}I_{\mathrm{dc}})$ bağımsız hesabını ayrıca göstererek kaynağın izini korumaktadır.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Deney özet tablosundaki değerler ve DA giriş çarpımından yeniden hesaplanan verim.}
+  \label{tab:gelen-excel-senaryolar}
+  \footnotesize
+  \begin{tabularx}{\textwidth}{c r r r r r r r}
+    \toprule
+    Senaryo & $V_{dc}$ (V) & $I_{dc}$ (A) & $V_{ac}$ (V RMS) & $I_{faz}$ (A) & $P_o$ (W) & THD (\%) & $\eta_{VI}$ (\%) \\
+    \midrule
+    1 & 431,5 & 0,624 & 119,8 & 2,26 & 249,6 & 15 & 92,700 \\
+    2 & 395,0 & 0,684 & 121,0 & 2,33 & 253,2 & 47 & 93,715 \\
+    3 & 427,5 & 0,697 & 124,3 & 2,31 & 281,2 & 14 & 94,373 \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+Bildirilen verimler sırasıyla \%92,5, \%94,2 ve \%94,5'tir; yeniden hesaplanan değerlerle farklar yaklaşık $-0{,}20$, $+0{,}48$ ve $+0{,}13$ yüzde puandır. Farkların yuvarlama, farklı ortalama penceresi veya ek kayıp teriminden kaynaklanıp kaynaklanmadığı ham güç örnekleri olmadan çözülemez. Kitabın benzetim satırları aynı temel sayıları tekrar etmekte, bağımsız Simulink çıktısı veya ham iz sağlamamaktadır; tablo bu yüzden deneysel özet olarak kullanılmış, benzetim doğrulaması sayılmamıştır.
+
+\section{Bölüm Sonucu}
+
+Deney düzeneği; T-tipi güç katı, faz modülleri, kontrol/tampon/sürücü kartları, gerilim ve akım ölçüm devreleri, koruma devresi, AA ve DA analizörleri, şönt bağlantısı, PC yazılımı ve üç yönteme ait ekran kayıtlarıyla birlikte, testleri yeniden üretmeye yetecek ayrıntıda belgelenmiştir.
+
+Üç yönteme ait kayıtlar, nötr susturmanın düşük güçte verimi artırırken harmonik bozulmayı büyüttüğü; Sin\textsuperscript{3} teriminin ise söz konusu bozulmayı azalttığı yönündeki mekanizmayı nitel olarak desteklemektedir. Sayısal sonuçların kanıt düzeyi kaynak içi tutarlılık denetimiyle sınırlandırılmıştır: özet ile ekran değerleri arasındaki farklar, boş/tekrarlı benzetim hücreleri, DA giriş çarpımından yeniden hesaplanan verim farkları, yöntemler arasındaki DA bara/şebeke gerilimi değişimi ve ham kayıt yokluğu açıkça gösterilmiştir. Nominal güçte kapalı çevrim ve ortak koşullu karşılaştırmalı deney gereksinimi, tamamlanmamış açık iş olarak korunmaktadır.

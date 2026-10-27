@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Denklem, Parametre ve Kaynak Denetimi — 14 Temmuz 2026</title>
+  <style>
+    :root{--ink:#18212b;--muted:#647180;--line:#dbe3ea;--bg:#f3f6f8;--paper:#fff;--navy:#153d59;--teal:#18727a;--green:#dff3e6;--yellow:#fff2b8;--red:#f9dddd;--blue:#e7f2fb}
+    *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.55 "Segoe UI",Arial,sans-serif}
+    header{padding:34px clamp(18px,5vw,68px);color:#fff;background:linear-gradient(130deg,var(--navy),var(--teal))}
+    header h1{margin:0 0 8px;font-size:clamp(25px,4vw,42px)} header p{max-width:980px;margin:4px 0;color:#e1f0f3}
+    main{max-width:1280px;margin:0 auto;padding:26px 18px 50px}.card{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px;margin-bottom:18px;box-shadow:0 5px 16px #153d5910}
+    h2{margin:0 0 13px;color:var(--navy);font-size:21px} h3{margin:18px 0 8px;color:var(--teal)}
+    .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}.stat{padding:15px;border-radius:11px;background:var(--blue)}.stat strong{display:block;font-size:28px;color:var(--navy)}
+    table{width:100%;border-collapse:collapse}th,td{padding:10px 9px;border-bottom:1px solid var(--line);vertical-align:top;text-align:left}th{background:#edf3f6;color:var(--navy);position:sticky;top:0}.scroll{overflow:auto}
+    .ok,.conditional,.history,.external,.jury{display:inline-block;border-radius:999px;padding:3px 8px;font-size:12px;font-weight:650}.ok{background:var(--green);color:#175b35}.conditional{background:#ffe4b7;color:#754800}.history{background:var(--yellow);color:#6b5600}.external{background:var(--red);color:#852c2c}.jury{background:#cfeeda;color:#175b35}
+    code{background:#eef2f5;border-radius:5px;padding:2px 5px}.note{border-left:4px solid var(--teal);padding:10px 13px;background:#edf7f7}.warning{border-left-color:#b87800;background:#fff7df}
+    a.button{display:inline-block;text-decoration:none;color:#fff;background:var(--teal);padding:9px 13px;border-radius:8px;font-weight:650} ul{margin:8px 0 0;padding-left:21px} li{margin:5px 0}
+  </style>
+</head>
+<body>
+<header>
+  <h1>Denklem, Parametre ve Kaynak Denetimi</h1>
+  <p>Bölüm 1–5 için formül doğruluğu, ilk kullanımda sembol tanımı, metin içi denklem çağrısı, kaynak dayanağı ve eski tezden aktarım kararı.</p>
+  <p>Denetim tarihi: 14 Temmuz 2026 · Derlenen çıktı: 121 sayfa</p>
+</header>
+<main>
+  <section class="card">
+    <h2>Sonuç</h2>
+    <div class="stats">
+      <div class="stat"><strong>41</strong>geçerli numaralı denklem</div>
+      <div class="stat"><strong>41/41</strong>metin içinde çağrılıyor</div>
+      <div class="stat"><strong>26/26</strong>tarihsel formül kırmızı hatalı etiketli</div>
+      <div class="stat"><strong>0</strong>tanımsız çapraz başvuru</div>
+      <div class="stat"><strong>0</strong>taşan satır uyarısı</div>
+    </div>
+    <p class="note"><strong>Karar:</strong> Bölüm 2–5'teki 41 geçerli numaralı denklem önce veya hemen sonra açıklanıyor. Dışarıdan alınan model ve standart tanımlarında kaynak verildi. Teze özgü ölçütler “tanımlanabilir/hesaplanacaktır” diliyle ayrıldı. Eski 4.2–4.26 zincirindeki 26 tarihsel formül, yeni denklem numaralandırmasına katılmadan ve her biri kırmızı <strong>HATALI–Eski</strong> etiketiyle Bölüm 5.1.1'e yerleştirildi; hemen ardından geçerli HTF modeli verildi.</p>
+    <a class="button" href="../main.pdf">Güncel tez PDF'ini aç</a>
+  </section>
+
+  <section class="card">
+    <h2>Bölüm bazında denetim</h2>
+    <div class="scroll"><table>
+      <thead><tr><th>Bölüm</th><th>Denklemler</th><th>Parametre ve metin içi anlatım</th><th>Kaynak durumu</th><th>Sonuç</th></tr></thead>
+      <tbody>
+        <tr><td><strong>1 — Giriş</strong></td><td>Numaralı denklem yok.</td><td>Formül denetimi gerekmiyor.</td><td>Teknik iddialar metin kaynaklarıyla destekleniyor.</td><td><span class="ok">Tamam</span></td></tr>
+        <tr><td><strong>2 — Literatür</strong></td><td>2.1–2.3</td><td><code>h,m,p_d,G_m,G_tem,P_tem,P_n,G_max,x,η_x</code> ilk kullanımlarında tanımlandı. Üç denklem de metinde açıkça yorumlandı.</td><td>Avrupa/CEC ağırlıkları Sera ve Sandia kaynaklarına; temsilî profil PVGIS ve saha literatürü sınırına bağlandı.</td><td><span class="ok">Tamam</span></td></tr>
+        <tr><td><strong>3 — Sistem ve metodoloji</strong></td><td>3.1–3.15</td><td>T-tipi durumları, buck eşdeğeri, LCL, PR, modülasyon, güç, verim, THD, RMSE, ters akım ve geçiş sayısı sembolleri ilk geçişte tanımlandı.</td><td>Topoloji, buck, LCL/PR ve THD için birincil/standart kaynaklar verildi. Teze özgü performans ölçütleri açık yöntem tanımı olarak işaretlendi.</td><td><span class="ok">Tamam</span></td></tr>
+        <tr><td><strong>4 — Düşük güç ve anahtarlama</strong></td><td>4.1–4.5</td><td>Ters akım yükü, iletim kaybı, sınır akımı, histerezis ve kapı susturma sembolleri tanımlandı; her denklem amaç ve sınırıyla çağrıldı.</td><td>Kayıp ve senkron-buck dayanakları Chen, Erickson ve Schweizer kaynaklarına bağlandı.</td><td><span class="ok">Tamam</span></td></tr>
+        <tr><td><strong>5 — Sin³ ve kapalı çevrim</strong></td><td>5.1–5.18</td><td>Sin³ katsayıları, HTF indisleri, DCM/CCM değişkenleri, Fourier katsayıları ve <code>L,S,T</code> fonksiyonları ilk geçişte tanımlandı.</td><td>HTF, DCM/CCM, Fourier, PWM ve PR/LCL kaynakları eklendi. Tarihsel katsayı ayrı etiketlendi.</td><td><span class="ok">Kuramsal kısım tamam</span> <span class="conditional">Sayısal doğrulama bekliyor</span></td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="card">
+    <h2>Yapılan kritik düzeltmeler</h2>
+    <div class="scroll"><table>
+      <thead><tr><th>Konu</th><th>Önceki sorun</th><th>Uygulanan düzeltme</th><th>Tezdeki yer</th></tr></thead>
+      <tbody>
+        <tr><td>Örnek sayısı</td><td><code>N</code>, DA bara orta noktası <code>N</code> ile çakışıyordu.</td><td>Örnek sayısı <code>N_s</code> yapıldı; RMSE ve anahtar geçiş toplamları birlikte güncellendi.</td><td>3.14–3.15</td></tr>
+        <tr><td>Zaman/Laplace alanı</td><td>Aktarım fonksiyonu ile zaman alanı işaretleri aynı denklemde karışıyordu.</td><td>Modülasyon toplamı bütünüyle Laplace alanında <code>U(s), I(s)</code> gösterimine çevrildi.</td><td>3.10</td></tr>
+        <tr><td>Güç integralleri</td><td>İntegral sınırı bir zaman aralığı sembolü olarak eksik yazılmıştı.</td><td><code>t₀</code> ile <code>t₀+T_w</code> açık sınırları ve güç işaret yönleri tanımlandı.</td><td>3.12–3.13</td></tr>
+        <tr><td>Ters akım ölçütü</td><td>Mutlak negatif akım, negatif alternansın yararlı akımını da ters akım sayabiliyordu.</td><td>Akım referansının işaretine göre ters bileşeni seçen yön-duyarlı integral kuruldu.</td><td>3.15 ve 4.1</td></tr>
+        <tr><td>İletim kaybı</td><td>İşaretli ortalama akım kullanımı pozitif/negatif alternansları birbirini götürebilirdi.</td><td>Mutlak ortalama akım <code>I_avg,abs</code> ve RMS akım kullanıldı; modelin anahtarlama kaybını içermediği yazıldı.</td><td>4.2</td></tr>
+        <tr><td>Histerezis</td><td>İki durumlu eski kural histerezis bandını tanımsız bırakıyordu.</td><td>Bandın içinde önceki durumu koruyan üçüncü durum <code>σ(t⁻)</code> eklendi.</td><td>4.4–4.5</td></tr>
+        <tr><td>Sin³ yorumu</td><td><code>sin³θ</code> yalnız üçüncü harmonik gibi yorumlanabiliyordu.</td><td>Temel ve üçüncü harmonik katsayıları <code>A₁</code> ve <code>A₃</code> olarak açıkça ayrıştırıldı.</td><td>5.1–5.3</td></tr>
+        <tr><td>Skaler “toplam aktarım”</td><td>Eski 4.7–4.8 türetimi periyodik sistemi tek skaler transfer fonksiyonuna indiriyor ve sembol/payda tutarsızlıkları içeriyordu.</td><td>Tarihsel zincir kırmızı hata etiketleriyle eksiksiz gösterildi; doğrulanmış model olarak kullanılmadı ve hemen ardından genel harmonik transfer matrisi ilişkisi verildi.</td><td>5.1.1 ve 5.5</td></tr>
+        <tr><td>DCM–CCM geçişi</td><td>Eski eşitliklerde simge ve boyut tutarsızlıkları bulunuyordu.</td><td>Tepe akımı, boşalma oranı, ortalama akım, kritik görev, CCM çözümü ve parçalı model aynı işaret sistemiyle yeniden türetildi.</td><td>5.6–5.14</td></tr>
+        <tr><td>Fourier yorumu</td><td>İşaretli Fourier katsayısı doğrudan genlik olarak adlandırılmıştı.</td><td><code>B₁,B₃</code> sinüs katsayıları; <code>|B₁|,|B₃|</code> genlikleri olarak ayrıldı.</td><td>5.15</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="card">
+    <h2>Önceki tez formüllerinin aktarım kararı</h2>
+    <div class="scroll"><table>
+      <thead><tr><th>Eski tez</th><th>Yeni karşılık</th><th>Karar</th><th>Gerekçe</th></tr></thead>
+      <tbody>
+        <tr><td>2.1–2.2</td><td>2.2–2.3</td><td><span class="history">Korundu</span></td><td>Avrupa ve CEC ağırlıklı verim denklemleri kaynakları ve parametre tanımlarıyla aktarıldı.</td></tr>
+        <tr><td>Eski Bölüm 3</td><td>3.1–3.15</td><td><span class="jury">Genişletildi</span></td><td>Eski bölümde numaralı denklem yoktu; jüri talebine uygun sistem, model ve doğrulama matematiği eklendi.</td></tr>
+        <tr><td>4.1</td><td>3.6–3.8 ve Bölüm 5 açıklaması</td><td><span class="external">Yeniden kuruldu</span></td><td>Tek eşdeğer empedans yerine LCL durum denklemleri, bitki aktarımı ve rezonans modeli kullanıldı.</td></tr>
+        <tr><td>4.2–4.26</td><td>Bölüm 5.1.1 ve 5.1–5.5</td><td><span class="external">Tam tarihsel kayıt — hatalı</span></td><td>26 formülün tamamı kırmızı <strong>HATALI–Eski</strong> etiketiyle korundu. Beş maddelik notta genlik oranı–sistem modeli ayrımı, geçersiz süperpozisyon, eksik terimle harmonik seçimi, akım–gerilim/birim kopması ve <code>K₁=9K₃</code> sonucunun neden genellenemediği açıklandı. Beş adımlık düzeltme yolu HTF/ölçüm, katsayı seçimi ve çoklu çalışma noktası doğrulamasına bağlandı.</td></tr>
+        <tr><td>4.27–4.47</td><td>5.6–5.10 ve 5.15</td><td><span class="external">Düzeltilerek aktarıldı</span></td><td>DCM üçgen akım alanı ve Fourier amacı korunarak varsayımlar ve geçerlilik sınırları açıklandı.</td></tr>
+        <tr><td>4.48–4.55</td><td>5.11–5.15</td><td><span class="external">Düzeltilerek aktarıldı</span></td><td>CCM diferansiyel denklem, integral çözüm ve DCM–CCM parçalı model boyutsal tutarlılıkla yeniden yazıldı.</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="card">
+    <h2>Kaynak verme ilkesi</h2>
+    <ul>
+      <li><strong>Kaynak gerekenler:</strong> topoloji modeli, PR denetleyici, LCL aktarımı, senkron-buck/DCM yaklaşımı, HTF, Fourier ve standart THD tanımı kaynaklandırıldı.</li>
+      <li><strong>Ayrı kaynak gerektirmeyenler:</strong> trigonometrik özdeşlik, cebirsel dönüşüm ve tezde ilk kez tanımlanan performans ölçütleri; söz konusu ifadeler “tanım” diliyle verildi ve başka çalışmanın sonucu gibi sunulmadı.</li>
+      <li><strong>Eski tez kaynaklı olanlar:</strong> sarı tarihsel etiketle ve kanıt sınırıyla ayrıldı.</li>
+      <li><strong>Gerçek kod/model bekleyenler:</strong> kesin <code>K₁,K₃,D₁,D₃</code>, LCL/PR parametreleri, gecikme, anahtarlama eşiği ve kapı tablosu nihai sonuç sayılmadı.</li>
+    </ul>
+    <p class="note warning"><strong>Açık iş:</strong> Gerçek MATLAB/Simulink modeli ve kontrol kodu geldiğinde sayısal katsayılar, HTF kesme mertebesi, DCM–CCM kip sınırı, Padé mertebesi, kararlılık marjları ve anahtar geçiş tanımları yeniden üretilecek. Kuramsal denklemler hazır; sayısal doğrulama henüz kapanmış sayılmıyor.</p>
+  </section>
+</main>
+</body>
+</html>

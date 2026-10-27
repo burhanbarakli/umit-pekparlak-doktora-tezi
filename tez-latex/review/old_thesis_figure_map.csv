@@ -1,0 +1,119 @@
+﻿paragraph_index,style,media,caption_index,caption
+328,Normal,image1.png,329,Şekil 1.1. Tipik bir enerji depolama sisteminin temel bileşenleri (literatür temel alınarak
+360,Normal,image2.jpeg,362,Şekil 1.2. Deşarj derinliği ile çevrim ömrü arasındaki ilişki (NREL verilerinden
+386,Normal,image3.png,387,"Şekil 1.3. Lityum iyon hücreler için tipik güvenli çalışma bölgesi [9], [10]."
+407,Normal,image4.png,408,Şekil 1.4. Enerji depolama sistemi bileşenlerinin toplam sistem maliyeti içerisindeki
+460,Normal,image5.png,461,Şekil 1.5. Tipik bir batarya yönetim sistemi mimarisi [13].
+504,Normal,image6.png,505,Şekil 1.6. Pasif hücre dengeleme prensibi [12].
+539,Normal,image7.png,540,Şekil 1.7. Kapasitör tabanlı aktif dengeleme yapısı [12].
+552,Normal,image8.png,553,Şekil 1.8. İndüktans tabanlı aktif dengeleme yapısı [12].
+566,Normal,image9.png,567,Şekil 1.9. Transformatör tabanlı aktif dengeleme yapısı [12].
+610,Normal,image10.png,611,Şekil 1.10. Hücreler arası dengesizliğin göreli batarya ömrüne etkisi (senaryo analizi)
+700,Normal,image11.png,701,Şekil 2.1. Tipik günlük güneş panelinin üretim eğrisi [17].
+705,Normal,image12.png,706,Şekil 2.2. PVGIS verilerine göre aylık toplam güneş ışınımının yıl içerisindeki değişimi.
+709,Normal,image13.png,710,Şekil 2.3. Yıl ve saat bazında minimum ve maksimum gerçekçi güç üretimleri.
+714,Normal,image14.png,715,Şekil 2.4. Yıllık ve saatlik olarak üretilen gücün zamana bağlı değişimleri (yüzde olarak).
+723,Normal,image15.png,724,Şekil 2.5. Eviricinin çalışma süresinin çıkış gücüne göre değişimi.
+779,Normal,image16.png,780,Şekil 2.6. Tipik bir solar eviricinin verim eğrisi [23].
+792,Normal,image17.png,793,Şekil 2.7. Verim seviyelerine göre evirici çalışma süresi dağılımı.
+814,Normal,image18.png,815,Şekil 2.8. 5 kW’lık bir solar eviricinin gün içindeki güç değişimine karşı akım THD
+818,Normal,image19.png,819,Şekil 2.9. Evirici çıkış gücüne bağlı THD değişimi [26].
+832,Normal,image20.png,833,Şekil 2.10. Zaman oranlaması bazında THD değerleri.
+981,Normal (Web),image21.jpeg,982,Şekil 3.1. T-tipi evirici topolojisinin bir faz kolunun şematik gösterimi.
+998,Normal (Web),image22.jpeg,999,Şekil 3.2. T-Tipi eviricide pozitif çıkış geriliminin oluşturulduğu çalışma durumu.
+1002,Normal (Web),image23.jpeg,1003,Şekil 3.3.  T-Tipi eviricide sıfır seviyesinin oluşturulduğu çalışma durumu.
+1006,Normal (Web),image24.jpeg,1007,Şekil 3.4.  T-Tipi eviricide negatif çıkış geriliminin oluşturulduğu çalışma durumu.
+1019,Normal (Web),image25.jpeg,1020,Şekil 3.5. T-tipi eviricide pozitif alternansta anahtarın açık (on) durumları.
+1022,Normal (Web),image26.jpeg,1023,Şekil 3.6. T-tipi eviricide pozitif alternansta anahtarların kapalı (off) durumları.
+1037,Normal (Web),image27.jpeg,1038,Şekil 3.7. T-tipi eviricide negatif alternansta anahtarın açık (on) durumları.
+1046,Normal (Web),image28.jpeg,1047,Şekil 3.8. T-tipi eviricide negatif alternansta anahtarın kapalı (off) durumları.
+1081,Normal (Web),image29.jpeg,1082,Şekil 3.9. T-tipi eviricinin pozitif alternansta senkron buck eşdeğeri.
+1103,Normal (Web),image30.jpeg,1104,Şekil 3.10. T-tipi eviricinin negatif alternansta senkron buck eşdeğeri.
+1160,Normal (Web),image31.jpeg,1161,"Şekil 3.11. Senkron buck dönüştürücüde düşük anahtarlama oranında, sürekli modda"
+1178,Normal (Web),image32.jpeg,1179,"Şekil 3.12. Senkron Buck dönüştürücü düşük anahtarlama oranında, süreksiz modda"
+1191,Normal (Web),image33.png,1193,Şekil 3.13. Düşük anahtarlama oranında çalışılan bölgelerde harmonik bileşenlerin akım
+1212,Normal (Web),image34.png,1213,Şekil 3.15. Anahtarlama düzeninin teorik işleyişi.
+1217,Normal (Web),image35.jpeg,1218,Şekil 3.16. Düşük akımlarda kontrolörün verdiği cevaba göre anahtarlama durumlarının değişimi.
+1262,Normal,image36.jpeg,1263,Şekil 4.1.  Klasik tamamlayıcı (complementary) anahtarlama yönteminde kapı darbeleri.
+1266,Normal,image37.jpeg,1267,Şekil 4.2. Klasik tamamlayıcı anahtarlama yönteminde tetikleme darbelerinden alınan  büyütülmüş bir kesit.
+1269,Normal,image38.png,1270,Şekil 4.3. Simülasyonda kullanılacak bir fazlı T-tipi evirici yapısı.
+1271,Normal,image39.jpeg,1272,Şekil 4.4. Kullanılacak simülasyon dosyasının görseli.
+1273,Normal,image40.png,1274,Şekil 4.5. Klasik anahtarlama ile yapılmış simülasyondan elde edilen indüktans akım
+1281,Normal,image41.tiff,1282,Şekil 4.6. Klasik anahtarlama ile yapılmış simülasyondan elde edilen indüktans akım dalga şeklinden büyütülmüş bir kesit.
+1283,Normal,image42.emf,1285,"Şekil 4.7. Klasik anahtarlamada dalga şekilleri (yukarıdan aşağıya doğru): 1. Evirici çıkış gerilimi, 2. Kontrolör çıkış işareti, 3. L1 indüktans akımı, 4. Şebeke akımı."
+1286,Normal,image43.emf,1287,"Şekil 4.8. Klasik anahtarlamada L1 indüktans akımının FFT analizi (THDi = %8,29)."
+1289,Normal,image44.emf,1290,"Şekil 4.9. Klasik anahtarlamada şebeke faz akımının FFT analizi (THDi = %2,14)."
+1294,Normal,image45.jpeg,1295,Şekil 4.10. Önerilen nötr anahtar susturma stratejisi ile yapılan anahtarlama.
+1297,Normal,image46.jpeg,1298,Şekil 4.11. Önerilen nötr anahtar susturma stratejisi ile yapılan anahtarlamadan alınmış
+1300,Normal,image47.png,1301,Şekil 4.12. Önerilen nötr anahtar susturma stratejisi ile yapılmış simülasyondan elde edilen indüktans akım dalga şeklinden büyütülmüş bir kesit.
+1305,Normal,image48.png,1306,Şekil 4.13. Önerilen nötr anahtar susturma stratejisi ile yapılmış simülasyondan elde
+1308,Normal,image49.emf,1310,Şekil 4.14. Önerilen nötr anahtar susturma stratejisine ilişkin dalga şekilleri (yukarıdan
+1314,Normal,image50.emf,1316,Şekil 4.15. Önerilen nötr anahtar susturma stratejisinde L1 indüktans akımının FFT
+1319,Normal,image51.emf,1321,Şekil 4.16. Önerilen nötr anahtar susturma stratejisinde şebeke faz akımının FFT analizi
+1334,Normal,image52.png,1335,Şekil 4.17. Klasik bir solar evirici kontrol blok diyagramı [44].
+1343,Normal,image53.png,1344,Şekil 4.18. Feedforward bileşeninin etkisi.
+1346,Normal,image54.tiff,1347,Şekil 4.19. Eşpotansiyel kaynakların gerilim dalga şekilleri ve akımın sıfır oluşu.
+1348,Normal,image55.jpeg,1349,Şekil 4.20. Evirici tam güçte iken feedforward ve kontrolör etkileri.
+1359,Normal,image56.jpeg,1360,Şekil 4.21.  2.7 A’da feedforward ve kontrolör etkileri.
+1366,Normal,image57.jpeg,1367,Şekil 4.22. Düşük güçlerde doğrusal olmayan sistem.
+1466,Normal (Web),image59.jpeg,1467,Şekil 4.24. T-tipi eviricinin nötr anahtar susturma sonrası 2 buck eviriciye dönüşmesi.
+1554,Normal (Web),image60.png,1555,"Şekil 4.25. dmax:0,1; 0,2; 0,3; 0,4; 0,5;0,6;0,7; 0,8 değerleri için L1 akımının pozitif"
+1591,Normal (Web),image61.png,1592,"Şekil 4.26. 1: d(wt) =Vm . sin(wt),  2: d(wt) = 0,45 . sin(wt) + 0,39 . sin3(wt), 3: d(wt) =                  0,45 . sin(wt) + 0,37. sin3(wt) değerleri için L1 akımının dalga şekilleri."
+1594,Normal (Web),image62.jpeg,1596,"Şekil 4.27. d(wt)=Vm . sin(wt) için farklı dmax = 0,1;0,2; 0,3; 0,4; 0,5; 0,6, 0,7; 0,8"
+1600,Normal (Web),image63.jpeg,1601,"Şekil 4.28. 0,1≤V1m≤0,5 ile 0,1≤V3m≤0,5 değerleri için d(wt)=V1m.sin(wt)+V3m.sin3(wt) harmonik bileşenler grafiği."
+1606,Normal,image64.png,1607,Şekil 4.29. Önerilen nötr anahtar susturma stratejisi ile yapılmış simülasyondan elde
+1610,Normal,image65.emf,1611,"Şekil 4.30. Dalga şekilleri (yukarıdan aşağıya doğru): 1. Evirici çıkış gerilimi,  2."
+1614,Normal,image66.emf,1615,"Şekil 4.31. L1 indüktans akımı FFT analizi (THDi=%9,5)."
+1617,Normal,image67.emf,1618,"Şekil 4.32. Şebeke akımı FFT analizi (THDi=%7,8)."
+1690,Normal (Web),image69.jpeg,1691,Şekil 5.2. Evirici donanımı.
+1692,Normal (Web),image70.jpeg,1693,Şekil 5.3. Evirici donanımı ve alt birimlerinin tanıtılması.
+1792,Normal,image76.jpeg,1793,Şekil 5.9. Pencere karşılaştırıcı devresi.
+1799,Normal,image77.jpeg,1800,Şekil 5.10. Pencere karşılaştırıcı giriş ve çıkış gerilim dalga şekilleri.
+1808,Normal,image78.jpeg,1809,Şekil 5.11. Ölçüm kartı.
+1834,Normal,image81.jpeg,1835,Şekil 5.13. 20A - 60mV şönt direnç bağlantısı.
+1859,Normal (Web),image84.png,1860,Şekil 5.15. Haberleşme sistemi arayüz tasarımı.
+1879,Normal,image85.jpeg,1880,Şekil  5.16.  Çalışma sırasında PC yazılımında alınan grafikler.
+1895,Normal,image86.png,1896,"Şekil 5.17. Osiloskop kayıtları (yukarıdan aşağıya doğru sırasıyla): 1. Kontrol işareti, 2."
+1899,Normal,image87.png,1900,"Şekil 5.18. Osiloskop kayıtları (yukarıdan aşağıya doğru sırasıyla): 1. Kontrol işareti, 2."
+1905,Normal,image88.jpeg,1906,Şekil 5.19. PC yazılımında elde edilen grafikler.
+1921,Normal,image89.png,1922,"Şekil 5.20. Osiloskop kayıtları (yukarıdan aşağıya doğru sırasıyla): 1. Kontrol işareti,"
+1925,Normal,image90.png,1926,Şekil 5.21. Osiloskop  kayıtları (yukarıdan  aşağıya  doğru  sırasıyla): 1. Kontrol
+1930,Normal,image91.jpeg,1931,Şekil 5.22. PC yazılımında alınan grafikler.
+1944,Normal,image92.png,1945,"Şekil 5.23. Osiloskop kayıtları (yukarıdan aşağıya doğru sırasıyla): 1. Kontrol işareti, 2."
+1948,Normal,image93.png,1949,"Şekil 5.24. Osiloskop kayıtları (yukarıdan aşağıya doğru):1. Kontrol işareti, 2.  Şebeke gerilimi, 3.İndüktans akım ortalaması, 4. Faz akımı."
+1990,Normal,image94.jpeg,1991,Şekil 6.1. Bilinen T-tipi topolojinin 1 fazına ait devre şeması.
+1997,Normal,image95.jpeg,1998,Şekil 6.2. Viyana doğrultucu PFC.
+2011,Normal,image96.jpeg,2012,Şekil 6.3. Tek primer sargıya ve çoklu sekonder sargıya sahip bir transformatör içeren aktif BYS prensip devre şeması.
+2021,Normal,image97.jpeg,2023,Şekil 6.4. Geliştirilmiş T-tipi (GT-tipi) topoloji.
+2027,Normal,image98.jpeg,2029,Şekil 6.5. GT-tipi topolojinin evirici çalışma modunda LCL filtre bağlantısı.
+2033,Normal,image99.jpeg,2035,Şekil 6.6. GT-tipi topoloji 2 seviye evirici çıkış bağlantısı.
+2039,Normal,image100.jpeg,2041,Şekil 6.7. GT-tipi topoloji nötr IGBT’leri ile elde edilmiş 3 faz PFC bölümü.
+2055,Normal,image101.png,2056,"Şekil 6.8. Şarj yönünde, Viyana PFC, 2 seviye evirici ve transformatör tabanlı BYS"
+2058,Normal,image102.jpeg,2059,Şekil 6.9. Viyana PFC sayesinde düzelmiş şebeke akımları dalga şekilleri.
+2061,Normal,image103.png,2062,Şekil 6.10. DA bara gerilimleri dalga şekilleri.
+2064,Normal,image104.png,2065,Şekil 6.11. BYS transformatörüne 2 seviye eviricilerden sağlanan primer gerilim dalga
+2067,Normal,image105.png,2068,Şekil 6.12. BYS transformatörünün primer akım dalga şekli.
+2070,Normal,image106.png,2071,Şekil 6.13. BYS transformatörünün sekonder gerilim dalga şekli.
+2074,Normal,image107.png,2075,Şekil 6.14. BYS transformatörlerinin sekonder akım dalga şekli.
+2077,Normal,image108.jpeg,2078,"Şekil 6.15. Bir adet bataryaya ilişkin batarya gerilimi, batarya akımı ve SOC değerleri."
+2216,Normal,image109.png,,
+2217,Normal,image110.png,,
+2222,Normal,image111.png,,
+2226,Normal,image112.png,,
+2228,Normal,image113.jpeg,,
+2234,Normal,image114.jpeg,,
+2236,Normal,image115.jpeg,,
+2239,Normal,image116.png,,
+2242,Normal,image117.png,,
+2244,Normal,image118.png,,
+2246,Normal,image119.png,,
+2249,Normal,image120.jpeg,,
+2252,Normal,image121.png,,
+2254,Normal,image122.png,,
+2256,Normal,image123.png,,
+2260,Normal,image124.jpeg,,
+2262,Normal,image125.jpeg,,
+2263,Normal,image126.jpeg,,
+2276,Normal,image127.jpeg,,
+2280,Normal,image128.jpeg,,
+2282,Normal,image129.jpeg,,

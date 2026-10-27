@@ -1,0 +1,71 @@
+% !TEX program = xelatex
+\documentclass[12pt,a4paper,twoside,openright]{book}
+
+\input{config/tez-preamble}
+
+\begin{document}
+
+% Elektronik dış kapak numaralandırma dışındadır.
+\pagenumbering{gobble}
+\input{frontmatter/dis-kapak}
+\cleardoublepage
+
+% İç kapak mantıksal olarak i, arkası ii'dir; numaralar basılmaz.
+\pagenumbering{roman}
+\setcounter{page}{1}
+\input{frontmatter/ic-kapak}
+\clearpage
+\thispagestyle{empty}\null
+\clearpage
+
+% Onay sayfası iii ile başlar.
+\setcounter{page}{3}
+\pagestyle{sau}
+\input{frontmatter/onay}
+\input{frontmatter/etik-beyan}
+\input{frontmatter/tesekkur}
+
+\cleardoublepage
+\addcontentsline{toc}{chapter}{İÇİNDEKİLER}
+\begingroup\singlespacing
+\renewcommand{\contentsname}{İÇİNDEKİLER}
+\tableofcontents
+\endgroup
+
+\input{frontmatter/kisaltmalar}
+\input{frontmatter/simgeler}
+
+\cleardoublepage
+\addcontentsline{toc}{chapter}{TABLO LİSTESİ}
+\begingroup\singlespacing
+\renewcommand{\listtablename}{TABLO LİSTESİ}
+\listoftables
+\endgroup
+
+\cleardoublepage
+\addcontentsline{toc}{chapter}{ŞEKİL LİSTESİ}
+\begingroup\singlespacing
+\renewcommand{\listfigurename}{ŞEKİL LİSTESİ}
+\listoffigures
+\endgroup
+
+\input{frontmatter/ozet}
+\input{frontmatter/abstract}
+
+\mainmatter
+\pagestyle{sau}
+\input{chapters/01-giris}
+\input{chapters/02-literatur}
+\input{chapters/03-sistem-model-metodoloji}
+\input{chapters/04-dusuk-guc-anahtarlama}
+\input{chapters/05-sin3-kompanzasyon}
+\input{chapters/06-deneysel-dogrulama}
+\input{chapters/07-gt-tipi-mimari}
+\input{chapters/08-sonuc}
+
+\backmatter
+\input{backmatter/kaynaklar}
+\input{backmatter/ekler}
+\input{backmatter/ozgecmis}
+
+\end{document}

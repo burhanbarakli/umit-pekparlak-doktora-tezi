@@ -1,0 +1,11 @@
+SourceModel=/home/bob/CODES/PROJECTS NAN ACADEMIC/ümit abi/tez-matlab-simulink/models/Inverter2_senaryo1_20260816_simscape_conversion_candidate.slx
+WorkingModel=/home/bob/CODES/PROJECTS NAN ACADEMIC/ümit abi/tez-matlab-simulink/models/Inverter2_senaryo1_R2025b_baseline_unmodified_baseline_raw_5ms_normal.slx
+ProbeType=UNMODIFIED_CONVERSION_BASELINE
+StopTime=0.005
+SimulationMode=normal
+Solver=ode23t
+MaxStep=1e-7
+RelTol=auto
+Status=STARTED
+Status=SUCCESS
+ElapsedSeconds=102.853909

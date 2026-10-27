@@ -1,0 +1,61 @@
+Ümit:
+
+zaten ben de bunu anlatmak istemiştim savunmada. sinküp FF sisteme sabit olarak giriyor. geribeslemeden ya da hatadan etkilenmiyor. sadece şebeke Vrms değeri etkiliyor bunu. yaptığımız şey herhangi bir kontrolörün kararlılığını etkilemez ki.
+
+Chat GPT:
+
+Ümit, evet, senin anlattığın yapıyı hatırlıyorum. Eğer gerçekten durum anlattığın gibiyse, teknik olarak söylediğin şey doğru bir temele dayanıyor.
+
+Şöyle düşünelim. Bir geri besleme sistemi:
+
+u(s)=C(s)e(s)+F(s) şeklindeyse, burada:
+
+C(s) = PI, PR, MPC vb. kontrolcü,
+F(s)= senin Sin³ feedforward terimin.
+Eğer F(s):
+
+hata sinyalinden üretilmiyorsa,
+geri besleme yolunda değilse,
+kontrolcünün girişini veya kazancını değiştirmiyorsa,
+sadece çıkışa ilave edilen bağımsız bir ileri besleme sinyaliyse,
+o zaman kapalı çevrimin karakteristik denklemi 1+C(s)G(s)=0  değişmez.
+
+Dolayısıyla:
+
+kutuplar (poles) değişmez,
+faz marjı değişmez,
+kazanç marjı değişmez,
+Bode kararlılık analizi aynı kalır.
+Yani senin savunmada söylemeye çalıştığın fikir, kontrol teorisi açısından doğru.
+
+Ümit:
+
+jüri hatalı verdiğimiz tez adından etkilendi. tez başlığının sonunda ff kontrol yazıyordu ve tamamen hedefimizin dışında bir cümleydi. hoca da madem ff kontrol yapıyorsunuz o zaman sinküp kararlılığı nasıl etkiler gösterin dedi. ben de ff kontrol yapmıyoruz aslında dedim ama hoca dinlemedi ve sonuç bu oldu.
+
+Chat GPT:
+
+Ümit, anlattığın senaryoda teknik olarak bir karışıklık yaşanmış olması mümkün görünüyor.
+
+Çünkü güç elektroniğinde şu iki kavram sıkça birbirine karışabiliyor:
+
+Feedforward control (ileri beslemeli bir kontrol yapısı)
+Feedforward compensation / injection (kontrol döngüsüne yardımcı olan ileri besleme sinyali)
+Bunlar aynı şey değildir.
+
+Eğer senin yaptığın şey gerçekten:
+
+PI/PR kontrolcüyü değiştirmiyor,
+hata sinyalini kullanmıyor,
+sadece hesaplanan bir sinyali modülasyona ekliyorsa,
+o zaman bu, klasik anlamda kontrol yasasını değiştiren bir feedforward controller değildir. Daha çok feedforward compensation veya feedforward injection olarak adlandırılır.
+
+Bence tez başlığı da önemli
+
+Eğer düzeltme sürecinde başlığı değiştirme imkânın varsa, "feedforward control" yerine daha doğru bir ifade seçmek ileride aynı yanlış anlamayı önler.
+
+Örneğin:
+
+Sin³ Feedforward Compensation
+Sin³ Feedforward Injection
+Sin³-Based Harmonic Compensation
+gibi ifadeler, bunun yeni bir kontrolcü değil mevcut kontrolcüye eklenen bir teknik olduğunu daha iyi anlatır.

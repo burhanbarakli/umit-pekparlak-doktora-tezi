@@ -1,0 +1,10 @@
+===== word/document.xml =====
+Ek-A - Doğrultucu ve Evirici Devre Topolojileri
+Şekil 1. a) İki yönlü DA/AA dönüştürücü, b) ayrık kapasitörlü iki yönlü DA/AA dönüştürücü.
+Şekil 2. Dört bacaklı DA/AA dönüştürücü.
+Şekil 3. a) ZSI dönüştürücü, b) qZSI dönüştürücü.
+Şekil 4. Üç seviyeli dönüştürücüler a) nötr kenetlemeli (NPC), b) aktif nötr kenetlemeli (ANPC), c) uçan kapasitörlü (FC), d) T tipi.
+Şekil 5. İki kademeli sistem örnekleri, (a) S&C'nin PureWave EDS devresi, (b) izole edilmiş iki kademeli sistem (c) seri bağlı dönüştürücülere sahip iki kademeli sistem, d) paralel bağlı dönüştürücülere sahip iki kademeli sistem.
+Şekil 6. 2 seviyeli dönüştürücü kullanarak OG şebekesine doğrudan bağlantı için IGBT'lerin seri bağlantısı.
+Şekil 7. a) Üç fazlı kaskat H-köprü devresi ve kaskat çok seviyeli dönüştürücü alt modülleri b) H-köprü hücre yapısı 1 (tek kademe), c) H-köprü hücre yapısı 2 (iki kademe).
+Şekil 8. Modüler çok seviyeli dönüştürücü a) DA barada merkezileştirilmiş bataryalar, b1) alt modüllere dağıtılmış bataryalar (Alt modül 2a), b2) DA/DA dönüştürücü üzerinden bağlanan bataryalar (Alt modül 2b).

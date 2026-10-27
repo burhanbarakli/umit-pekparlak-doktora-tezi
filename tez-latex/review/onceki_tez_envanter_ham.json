@@ -1,0 +1,3981 @@
+{
+  "source": "C:\\CODES\\ümit abi\\dosyalar\\01_TAM_TEZ\\tez_tumu_8.docx",
+  "paragraph_count": 1805,
+  "caption_count": 293,
+  "headings": [
+    {
+      "index": 113,
+      "style": "T1",
+      "text": "1. GİRİŞ 1"
+    },
+    {
+      "index": 114,
+      "style": "T2",
+      "text": "1.1. Enerji Depolama Sistemlerinin Yapısı ve Maliyet Dağılımı 2"
+    },
+    {
+      "index": 115,
+      "style": "T2",
+      "text": "1.2. Batarya Yaşlanması ve Ömür Problemleri 4"
+    },
+    {
+      "index": 116,
+      "style": "T3",
+      "text": "1.2.1. Deşarj derinliğinin çevrim ömrüne olan etkisi 5"
+    },
+    {
+      "index": 117,
+      "style": "T3",
+      "text": "1.2.2. Aşırı şarjın batarya ömrüne olan etkisi 6"
+    },
+    {
+      "index": 118,
+      "style": "T3",
+      "text": "1.2.3. Aşırı deşarjın batarya ömrüne olan etkisi 6"
+    },
+    {
+      "index": 119,
+      "style": "T3",
+      "text": "1.2.4. Güvenli çalışma bölgesinin korunmasının önemi 7"
+    },
+    {
+      "index": 120,
+      "style": "T3",
+      "text": "1.2.5. Batarya değişim maliyetlerinin enerji depolama sistemlerine etkisi 8"
+    },
+    {
+      "index": 121,
+      "style": "T2",
+      "text": "1.3. Hücre Dengesizliği Problemi 10"
+    },
+    {
+      "index": 122,
+      "style": "T3",
+      "text": "1.3.1. Hücre dengesizliğinin kaynakları 10"
+    },
+    {
+      "index": 123,
+      "style": "T3",
+      "text": "1.3.2. Hücre dengesizliğinin sonuçları 11"
+    },
+    {
+      "index": 124,
+      "style": "T3",
+      "text": "1.3.3. Hücre dengesizliğinin güvenlik üzerindeki etkileri 12"
+    },
+    {
+      "index": 125,
+      "style": "T2",
+      "text": "1.4. Batarya Yönetim Sistemleri 12"
+    },
+    {
+      "index": 126,
+      "style": "T3",
+      "text": "1.4.1. BYS'nin temel görevleri 13"
+    },
+    {
+      "index": 127,
+      "style": "T3",
+      "text": "1.4.2. Şarj durumu (State of Charge – SoC) 14"
+    },
+    {
+      "index": 128,
+      "style": "T3",
+      "text": "1.4.3. Sağlık durumu (State of Health – SoH) 14"
+    },
+    {
+      "index": 129,
+      "style": "T3",
+      "text": "1.4.4. Koruma fonksiyonları 14"
+    },
+    {
+      "index": 130,
+      "style": "T3",
+      "text": "1.4.5. Dengeleme fonksiyonları 15"
+    },
+    {
+      "index": 131,
+      "style": "T2",
+      "text": "1.5. Pasif ve Aktif Hücre Dengeleme Yöntemleri 15"
+    },
+    {
+      "index": 132,
+      "style": "T3",
+      "text": "1.5.1. Pasif dengeleme yöntemleri 15"
+    },
+    {
+      "index": 133,
+      "style": "T3",
+      "text": "1.5.2. Aktif dengeleme yöntemleri 16"
+    },
+    {
+      "index": 134,
+      "style": "T3",
+      "text": "1.5.3. Kapasitör tabanlı aktif dengeleme yöntemleri 17"
+    },
+    {
+      "index": 135,
+      "style": "T3",
+      "text": "1.5.4. İndüktans tabanlı aktif dengeleme yöntemleri 18"
+    },
+    {
+      "index": 136,
+      "style": "T3",
+      "text": "1.5.5. Transformatör tabanlı aktif dengeleme yöntemleri 19"
+    },
+    {
+      "index": 137,
+      "style": "T2",
+      "text": "1.6. Hücre Bazlı Enerji Yönetimi İhtiyacı 20"
+    },
+    {
+      "index": 138,
+      "style": "T3",
+      "text": "1.6.1 Hücre Bazlı Şarj ve Deşarj Kontrolünün Önemi 21"
+    },
+    {
+      "index": 139,
+      "style": "T3",
+      "text": "1.6.2 Hücre Bazlı Enerji Yönetiminin Ekonomik Etkileri 22"
+    },
+    {
+      "index": 140,
+      "style": "T3",
+      "text": "1.6.3 Hücre Bazlı Enerji Yönetiminin Potansiyel Ömür Kazancı 22"
+    },
+    {
+      "index": 141,
+      "style": "T2",
+      "text": "1.7 Mevcut Yaklaşımların Sınırlamaları 24"
+    },
+    {
+      "index": 142,
+      "style": "T2",
+      "text": "1.8. Hücre Dengeleme Yöntemlerinin Genel Değerlendirilmesi 25"
+    },
+    {
+      "index": 143,
+      "style": "T1",
+      "text": "2. GÜNEŞ ENERJİ SİSTEMLERİNDE DÜŞÜK GÜÇ ÇALIŞMASI, VERİM VE HARMONİK BOZULMA PROBLEMLERİ 28"
+    },
+    {
+      "index": 144,
+      "style": "T2",
+      "text": "2.1. Giriş 28"
+    },
+    {
+      "index": 145,
+      "style": "T2",
+      "text": "2.2. Güneş Enerji Sistemlerinin Gerçek Çalışma Koşulları 28"
+    },
+    {
+      "index": 146,
+      "style": "T2",
+      "text": "2.3. Günlük ve Yıllık Güç Dağılımları 31"
+    },
+    {
+      "index": 147,
+      "style": "T2",
+      "text": "2.4. Solar Eviricilerde Ağırlıklı Verim Kavramı 33"
+    },
+    {
+      "index": 148,
+      "style": "T2",
+      "text": "2.4.1 Avrupa Verimliliği (European Efficiency) 33"
+    },
+    {
+      "index": 149,
+      "style": "",
+      "text": "2.4.2. Kaliforniya enerji komisyonu (CEC) verimliliği……………………………………………………….34"
+    },
+    {
+      "index": 150,
+      "style": "T2",
+      "text": "2.5. Düşük Güç Bölgelerinde Verim Problemi 35"
+    },
+    {
+      "index": 151,
+      "style": "T2",
+      "text": "2.5.1. Düşük güç bölgelerinin yıllık enerji üretimine etkisi 36"
+    },
+    {
+      "index": 152,
+      "style": "T2",
+      "text": "2.6. Düşük Güç Bölgelerinde Harmonik Bozulma Problemi 38"
+    },
+    {
+      "index": 153,
+      "style": "T2",
+      "text": "2.6.1. Güç seviyesi ile THD arasındaki ilişki 38"
+    },
+    {
+      "index": 154,
+      "style": "T2",
+      "text": "2.6.2. Düşük güç bölgelerinde harmoniklerin artış nedenleri 41"
+    },
+    {
+      "index": 155,
+      "style": "T2",
+      "text": "2.6.3. Verim ve THD arasındaki etkileşim 42"
+    },
+    {
+      "index": 156,
+      "style": "T2",
+      "text": "2.7. Literatürde Düşük Güç Performansını İyileştirmeye Yönelik Yaklaşımlar 42"
+    },
+    {
+      "index": 157,
+      "style": "T2",
+      "text": "2.7.1. Verim iyileştirmeye yönelik çalışmalar 43"
+    },
+    {
+      "index": 158,
+      "style": "T2",
+      "text": "2.7.2. Harmonik performansı iyileştirmeye yönelik çalışmalar 43"
+    },
+    {
+      "index": 159,
+      "style": "T2",
+      "text": "2.8. Solar Eviricilerde Çözülmesi Gereken Problemler 44"
+    },
+    {
+      "index": 160,
+      "style": "T2",
+      "text": "2.8.1. Düşük güç bölgelerinde T-tipi eviricilerin verimi 44"
+    },
+    {
+      "index": 161,
+      "style": "T2",
+      "text": "2.8.2. Feedforward yaklaşımlarının önemi 45"
+    },
+    {
+      "index": 162,
+      "style": "T2",
+      "text": "2.8.3. T-tipi eviricilerde düşük güç bölgesinin önemi 46"
+    },
+    {
+      "index": 163,
+      "style": "T2",
+      "text": "2.9. Bölüm Sonucu 47"
+    },
+    {
+      "index": 164,
+      "style": "T1",
+      "text": "3. T-TİPİ EVİRİCİLERDE DÜŞÜK GÜÇ ÇALIŞMA KOŞULLARININ ANALİZİ 49"
+    },
+    {
+      "index": 165,
+      "style": "T2",
+      "text": "3.1. Giriş 49"
+    },
+    {
+      "index": 166,
+      "style": "T2",
+      "text": "3.2. T-tipi Evirici Topolojisi 50"
+    },
+    {
+      "index": 167,
+      "style": "T2",
+      "text": "3.3. T-tipi Eviricinin Çalışma Prensibi 52"
+    },
+    {
+      "index": 168,
+      "style": "T2",
+      "text": "3.3.1. Pozitif yarım periyot çalışması 54"
+    },
+    {
+      "index": 169,
+      "style": "T2",
+      "text": "3.3.2. Negatif yarım periyot çalışması 56"
+    },
+    {
+      "index": 170,
+      "style": "T2",
+      "text": "3.3.3. Sıfır seviyesinin oluşturulması ve nötr anahtarlarının davranışı 58"
+    },
+    {
+      "index": 171,
+      "style": "T2",
+      "text": "3.4. T-Tipi Eviricilerde Akım Yollarının Analizi 60"
+    },
+    {
+      "index": 172,
+      "style": "T2",
+      "text": "3.5. T-Tipi Eviricinin Senkron Buck Dönüştürücü Eşdeğeri 61"
+    },
+    {
+      "index": 173,
+      "style": "T2",
+      "text": "3.5.1. Pozitif yarım periyot için senkron buck eşdeğerinin incelenmesi 63"
+    },
+    {
+      "index": 174,
+      "style": "T2",
+      "text": "3.5.2. Negatif yarım periyot için senkron buck eşdeğerinin incelenmesi 64"
+    },
+    {
+      "index": 175,
+      "style": "T2",
+      "text": "3.5.3. Eşdeğer modelin sağladığı avantajlar 65"
+    },
+    {
+      "index": 176,
+      "style": "T2",
+      "text": "3.6. Düşük Güç Çalışma Bölgesinin Analizi 66"
+    },
+    {
+      "index": 177,
+      "style": "T2",
+      "text": "3.6.1. Modülasyon indeksinin azalmasının etkileri 67"
+    },
+    {
+      "index": 178,
+      "style": "T2",
+      "text": "3.6.2. Nötr anahtarlarının artan rolü 68"
+    },
+    {
+      "index": 179,
+      "style": "T2",
+      "text": "3.6.3. Düşük güç bölgelerinde kayıp dağılımının değişimi 68"
+    },
+    {
+      "index": 180,
+      "style": "T2",
+      "text": "3.6.4. Düşük güç bölgelerinde akım dolaşım mekanizması 69"
+    },
+    {
+      "index": 181,
+      "style": "T2",
+      "text": "3.7. Düşük Güç Bölgelerinde Harmonik Oluşum Mekanizması 71"
+    },
+    {
+      "index": 182,
+      "style": "T2",
+      "text": "3.7.1. Üçüncü harmonik bileşeninin gözlenmesi 73"
+    },
+    {
+      "index": 183,
+      "style": "T2",
+      "text": "3.7.2. Akım kontrolörünün düzeltme davranışı 75"
+    },
+    {
+      "index": 184,
+      "style": "T2",
+      "text": "3.8. Düşük Güç Bölgelerinde Verim ve Harmonik Performansı Arasındaki 78"
+    },
+    {
+      "index": 186,
+      "style": "T3",
+      "text": "3.9. Bölüm Sonucu 79"
+    },
+    {
+      "index": 187,
+      "style": "T1",
+      "text": "4. DÜŞÜK GÜÇ BÖLGELERİNDE T-TİPİ EVİRİCİLER İÇİN VERİM VE HARMONİK PERFORMANSIN İYİLEŞTİRİLMESİNE YÖNELİK YENİ ANAHTARLAMA VE FEEDFORWARD YAKLAŞIMI 80"
+    },
+    {
+      "index": 188,
+      "style": "T2",
+      "text": "4.1. Giriş 80"
+    },
+    {
+      "index": 189,
+      "style": "T2",
+      "text": "4.2. Düşük Güç Bölgelerinde Ters Akım Dolaşımının İncelenmesi 81"
+    },
+    {
+      "index": 190,
+      "style": "T2",
+      "text": "4.3. Nötr Anahtar Susturma Yönteminin Geliştirilmesi 81"
+    },
+    {
+      "index": 191,
+      "style": "T2",
+      "text": "4.4. Klasik Bir Solar Evirici Kontrol Blok Diyagramının Anlaşılması 92"
+    },
+    {
+      "index": 192,
+      "style": "T2",
+      "text": "4.5. Yeni Solar Evirici Kontrol Blok Diyagramı Önerisi 95"
+    },
+    {
+      "index": 193,
+      "style": "T2",
+      "text": "4.6. Harmonik Oluşum Mekanizmasının Matematiksel Olarak Açıklanması 101"
+    },
+    {
+      "index": 194,
+      "style": "T2",
+      "text": "4.7. Sin³ Yöntemi ile Yapılan Simülasyon ve Sonuçların Değerlendirilmesi 112"
+    },
+    {
+      "index": 195,
+      "style": "T2",
+      "text": "4.8. 114"
+    },
+    {
+      "index": 196,
+      "style": "T1",
+      "text": "5. GERÇEK ZAMAN UYGULAMALARI 117"
+    },
+    {
+      "index": 197,
+      "style": "T2",
+      "text": "5.1. Giriş 117"
+    },
+    {
+      "index": 198,
+      "style": "T2",
+      "text": "5.2. Evirici Kontrol Kartı ve Buffer Kartı 122"
+    },
+    {
+      "index": 199,
+      "style": "T2",
+      "text": "5.3. IGBT Kapı Sürücü Devresi 125"
+    },
+    {
+      "index": 200,
+      "style": "T2",
+      "text": "5.4. Gerilim Ölçme Devresi 127"
+    },
+    {
+      "index": 201,
+      "style": "T2",
+      "text": "5.5. Akım Sensörü 129"
+    },
+    {
+      "index": 202,
+      "style": "T2",
+      "text": "5.6. Ölçüm Kartı 131"
+    },
+    {
+      "index": 203,
+      "style": "T2",
+      "text": "5.7. DA Güç Analizörü 134"
+    },
+    {
+      "index": 204,
+      "style": "T2",
+      "text": "5.8. AA Güç Analizörü 136"
+    },
+    {
+      "index": 205,
+      "style": "T2",
+      "text": "5.9. PC Ana Kumanda Yazılımı 137"
+    },
+    {
+      "index": 206,
+      "style": "T2",
+      "text": "5.10. Klasik Anahtarlama Modunda Alınan Çalışma Kayıtları 140"
+    },
+    {
+      "index": 207,
+      "style": "T2",
+      "text": "5.11. Değiştirilmiş Anahtarlama Modunda Alınan Çalışma Kayıtları 142"
+    },
+    {
+      "index": 208,
+      "style": "T2",
+      "text": "5.12. Değiştirilmiş Anahtarlama ve Sinküp İlave Edilmiş Modda Çalışma Kayıtları 144"
+    },
+    {
+      "index": 209,
+      "style": "T2",
+      "text": "5.13. Bölüm Sonucu 146"
+    },
+    {
+      "index": 210,
+      "style": "T1",
+      "text": "6. GELİŞTİRİLMİŞ T-TİPİ TOPOLOJİ 148"
+    },
+    {
+      "index": 211,
+      "style": "T2",
+      "text": "6.1. Giriş 148"
+    },
+    {
+      "index": 212,
+      "style": "T2",
+      "text": "6.2. T-tipi Evirici 148"
+    },
+    {
+      "index": 213,
+      "style": "T2",
+      "text": "6.3. PFC Doğrultucu 149"
+    },
+    {
+      "index": 214,
+      "style": "T2",
+      "text": "6.4. Batarya Yönetim Sistemi (BYS) 150"
+    },
+    {
+      "index": 215,
+      "style": "T2",
+      "text": "6.5. Geliştirilmiş T-tipi Topoloji 151"
+    },
+    {
+      "index": 216,
+      "style": "T2",
+      "text": "6.6. Bölüm Sonucu 159"
+    },
+    {
+      "index": 217,
+      "style": "T1",
+      "text": "7. SONUÇ VE ÖNERİLER 161"
+    },
+    {
+      "index": 218,
+      "style": "T2",
+      "text": "7.1. Fikri Mülkiyet Çıktıları 164"
+    },
+    {
+      "index": 219,
+      "style": "T2",
+      "text": "7.2. Gelecek Çalışmalar için Öneriler 164"
+    },
+    {
+      "index": 292,
+      "style": "",
+      "text": "3 yaklaşım ile karşılaştırılması."
+    },
+    {
+      "index": 498,
+      "style": "Balk1",
+      "text": "1. GİRİŞ"
+    },
+    {
+      "index": 520,
+      "style": "Balk2",
+      "text": "1.1. Enerji Depolama Sistemlerinin Yapısı ve Maliyet Dağılımı"
+    },
+    {
+      "index": 545,
+      "style": "",
+      "text": "50 – 70"
+    },
+    {
+      "index": 547,
+      "style": "",
+      "text": "10 – 20"
+    },
+    {
+      "index": 549,
+      "style": "",
+      "text": "3 – 8"
+    },
+    {
+      "index": 551,
+      "style": "",
+      "text": "2 – 5"
+    },
+    {
+      "index": 553,
+      "style": "",
+      "text": "3 – 10"
+    },
+    {
+      "index": 555,
+      "style": "",
+      "text": "2 – 5"
+    },
+    {
+      "index": 557,
+      "style": "",
+      "text": "1 – 3"
+    },
+    {
+      "index": 559,
+      "style": "",
+      "text": "5 – 10"
+    },
+    {
+      "index": 568,
+      "style": "Balk2",
+      "text": "1.2. Batarya Yaşlanması ve Ömür Problemleri"
+    },
+    {
+      "index": 579,
+      "style": "Balk3",
+      "text": "1.2.1. Deşarj derinliğinin çevrim ömrüne olan etkisi"
+    },
+    {
+      "index": 589,
+      "style": "Balk3",
+      "text": "1.2.2. Aşırı şarjın batarya ömrüne olan etkisi"
+    },
+    {
+      "index": 597,
+      "style": "Balk3",
+      "text": "1.2.3. Aşırı deşarjın batarya ömrüne olan etkisi"
+    },
+    {
+      "index": 605,
+      "style": "Balk3",
+      "text": "1.2.4. Güvenli çalışma bölgesinin korunmasının önemi"
+    },
+    {
+      "index": 620,
+      "style": "Balk3",
+      "text": "1.2.5. Batarya değişim maliyetlerinin enerji depolama sistemlerine etkisi"
+    },
+    {
+      "index": 636,
+      "style": "Balk2",
+      "text": "1.3. Hücre Dengesizliği Problemi"
+    },
+    {
+      "index": 640,
+      "style": "Balk3",
+      "text": "1.3.1. Hücre dengesizliğinin kaynakları"
+    },
+    {
+      "index": 643,
+      "style": "Balk3",
+      "text": "1.3.2. Hücre dengesizliğinin sonuçları"
+    },
+    {
+      "index": 657,
+      "style": "Balk3",
+      "text": "1.3.3. Hücre dengesizliğinin güvenlik üzerindeki etkileri"
+    },
+    {
+      "index": 663,
+      "style": "Balk2",
+      "text": "1.4. Batarya Yönetim Sistemleri"
+    },
+    {
+      "index": 670,
+      "style": "Balk3",
+      "text": "1.4.1. BYS'nin temel görevleri"
+    },
+    {
+      "index": 688,
+      "style": "Balk3",
+      "text": "1.4.2. Şarj durumu (State of Charge – SoC)"
+    },
+    {
+      "index": 693,
+      "style": "Balk3",
+      "text": "1.4.3. Sağlık durumu (State of Health – SoH)"
+    },
+    {
+      "index": 696,
+      "style": "Balk3",
+      "text": "1.4.4. Koruma fonksiyonları"
+    },
+    {
+      "index": 708,
+      "style": "Balk3",
+      "text": "1.4.5. Dengeleme fonksiyonları"
+    },
+    {
+      "index": 719,
+      "style": "Balk2",
+      "text": "1.5. Pasif ve Aktif Hücre Dengeleme Yöntemleri"
+    },
+    {
+      "index": 723,
+      "style": "Balk3",
+      "text": "1.5.1. Pasif dengeleme yöntemleri"
+    },
+    {
+      "index": 744,
+      "style": "Balk3",
+      "text": "1.5.2. Aktif dengeleme yöntemleri"
+    },
+    {
+      "index": 759,
+      "style": "Balk3",
+      "text": "1.5.3. Kapasitör tabanlı aktif dengeleme yöntemleri"
+    },
+    {
+      "index": 771,
+      "style": "Balk3",
+      "text": "1.5.4. İndüktans tabanlı aktif dengeleme yöntemleri"
+    },
+    {
+      "index": 785,
+      "style": "Balk3",
+      "text": "1.5.5. Transformatör tabanlı aktif dengeleme yöntemleri"
+    },
+    {
+      "index": 796,
+      "style": "Balk2",
+      "text": "1.6. Hücre Bazlı Enerji Yönetimi İhtiyacı"
+    },
+    {
+      "index": 812,
+      "style": "Balk3",
+      "text": "1.6.1 Hücre Bazlı Şarj ve Deşarj Kontrolünün Önemi"
+    },
+    {
+      "index": 819,
+      "style": "Balk3",
+      "text": "1.6.2 Hücre Bazlı Enerji Yönetiminin Ekonomik Etkileri"
+    },
+    {
+      "index": 825,
+      "style": "Balk3",
+      "text": "1.6.3 Hücre Bazlı Enerji Yönetiminin Potansiyel Ömür Kazancı"
+    },
+    {
+      "index": 837,
+      "style": "Balk2",
+      "text": "1.7 Mevcut Yaklaşımların Sınırlamaları"
+    },
+    {
+      "index": 915,
+      "style": "Balk2",
+      "text": "1.8. Hücre Dengeleme Yöntemlerinin Genel Değerlendirilmesi"
+    },
+    {
+      "index": 955,
+      "style": "Balk1",
+      "text": "2. GÜNEŞ ENERJİ SİSTEMLERİNDE DÜŞÜK GÜÇ ÇALIŞMASI, VERİM VE HARMONİK BOZULMA PROBLEMLERİ"
+    },
+    {
+      "index": 957,
+      "style": "Balk2",
+      "text": "2.1. Giriş"
+    },
+    {
+      "index": 967,
+      "style": "Balk2",
+      "text": "2.2. Güneş Enerji Sistemlerinin Gerçek Çalışma Koşulları"
+    },
+    {
+      "index": 991,
+      "style": "Balk2",
+      "text": "2.3 Günlük ve Yıllık Güç Dağılımları"
+    },
+    {
+      "index": 1017,
+      "style": "Balk2",
+      "text": "2.4. Solar Eviricilerde Ağırlıklı Verim Kavramı"
+    },
+    {
+      "index": 1021,
+      "style": "Balk2",
+      "text": "2.4.1. Avrupa Verimliliği (European Efficiency)"
+    },
+    {
+      "index": 1044,
+      "style": "NormalWeb",
+      "text": "2.4.2. Kaliforniya enerji komisyonu (CEC) verimliliği"
+    },
+    {
+      "index": 1080,
+      "style": "Balk2",
+      "text": "2.5. Düşük Güç Bölgelerinde Verim Problemi"
+    },
+    {
+      "index": 1100,
+      "style": "Balk2",
+      "text": "2.5.1. Düşük güç bölgelerinin yıllık enerji üretimine etkisi"
+    },
+    {
+      "index": 1111,
+      "style": "Balk2",
+      "text": "2.6. Düşük Güç Bölgelerinde Harmonik Bozulma Problemi"
+    },
+    {
+      "index": 1122,
+      "style": "Balk2",
+      "text": "2.6.1. Güç seviyesi ile THD arasındaki ilişki"
+    },
+    {
+      "index": 1193,
+      "style": "Balk2",
+      "text": "2.6.2. Düşük güç bölgelerinde harmoniklerin artış nedenleri"
+    },
+    {
+      "index": 1214,
+      "style": "Balk2",
+      "text": "2.6.3. Verim ve THD arasındaki etkileşim"
+    },
+    {
+      "index": 1218,
+      "style": "Balk2",
+      "text": "2.7. Literatürde Düşük Güç Performansını İyileştirmeye Yönelik Yaklaşımlar"
+    },
+    {
+      "index": 1225,
+      "style": "Balk2",
+      "text": "2.7.1. Verim iyileştirmeye yönelik çalışmalar"
+    },
+    {
+      "index": 1236,
+      "style": "Balk2",
+      "text": "2.7.2. Harmonik performansı iyileştirmeye yönelik çalışmalar"
+    },
+    {
+      "index": 1248,
+      "style": "Balk2",
+      "text": "2.8. Solar Eviricilerde Çözülmesi Gereken Problemler"
+    },
+    {
+      "index": 1254,
+      "style": "Balk2",
+      "text": "2.8.1. Düşük güç bölgelerinde T-tipi eviricilerin verimi"
+    },
+    {
+      "index": 1265,
+      "style": "Balk2",
+      "text": "2.8.2. Feedforward yaklaşımlarının önemi"
+    },
+    {
+      "index": 1273,
+      "style": "Balk2",
+      "text": "2.8.3. T-tipi eviricilerde düşük güç bölgesinin önemi"
+    },
+    {
+      "index": 1281,
+      "style": "Balk2",
+      "text": "2.9. Bölüm Sonucu"
+    },
+    {
+      "index": 1319,
+      "style": "Balk1",
+      "text": "3. T-TİPİ EVİRİCİLERDE DÜŞÜK GÜÇ ÇALIŞMA KOŞULLARININ ANALİZİ"
+    },
+    {
+      "index": 1321,
+      "style": "Balk2",
+      "text": "3.1. Giriş"
+    },
+    {
+      "index": 1334,
+      "style": "Balk2",
+      "text": "3.2. T-tipi Evirici Topolojisi"
+    },
+    {
+      "index": 1350,
+      "style": "Balk2",
+      "text": "3.3. T-tipi Eviricinin Çalışma Prensibi"
+    },
+    {
+      "index": 1371,
+      "style": "Balk2",
+      "text": "3.3.1. Pozitif yarım periyot çalışması"
+    },
+    {
+      "index": 1389,
+      "style": "Balk2",
+      "text": "3.3.2. Negatif yarım periyot çalışması"
+    },
+    {
+      "index": 1409,
+      "style": "Balk2",
+      "text": "3.3.3. Sıfır seviyesinin oluşturulması ve nötr anahtarlarının davranışı"
+    },
+    {
+      "index": 1422,
+      "style": "Balk2",
+      "text": "3.4. T-Tipi Eviricilerde Akım Yollarının Analizi"
+    },
+    {
+      "index": 1436,
+      "style": "Balk2",
+      "text": "3.5. T-Tipi Eviricinin Senkron Buck Dönüştürücü Eşdeğeri"
+    },
+    {
+      "index": 1448,
+      "style": "Balk2",
+      "text": "3.5.1. Pozitif yarım periyot için senkron buck eşdeğerinin incelenmesi"
+    },
+    {
+      "index": 1458,
+      "style": "Balk2",
+      "text": "3.5.2. Negatif yarım periyot için senkron buck eşdeğerinin incelenmesi"
+    },
+    {
+      "index": 1467,
+      "style": "Balk2",
+      "text": "3.5.3. Eşdeğer modelin sağladığı avantajlar"
+    },
+    {
+      "index": 1477,
+      "style": "Balk2",
+      "text": "3.6. Düşük Güç Çalışma Bölgesinin Analizi"
+    },
+    {
+      "index": 1485,
+      "style": "Balk2",
+      "text": "3.6.1. Modülasyon indeksinin azalmasının etkileri"
+    },
+    {
+      "index": 1493,
+      "style": "Balk2",
+      "text": "3.6.2. Nötr anahtarlarının artan rolü"
+    },
+    {
+      "index": 1501,
+      "style": "Balk2",
+      "text": "3.6.3. Düşük güç bölgelerinde kayıp dağılımının değişimi"
+    },
+    {
+      "index": 1511,
+      "style": "Balk2",
+      "text": "3.6.4. Düşük güç bölgelerinde akım dolaşım mekanizması"
+    },
+    {
+      "index": 1526,
+      "style": "Balk2",
+      "text": "3.7. Düşük Güç Bölgelerinde Harmonik Oluşum Mekanizması"
+    },
+    {
+      "index": 1539,
+      "style": "Balk2",
+      "text": "3.7.1. Üçüncü harmonik bileşeninin gözlenmesi"
+    },
+    {
+      "index": 1555,
+      "style": "Balk2",
+      "text": "3.7.2. Akım kontrolörünün düzeltme davranışı"
+    },
+    {
+      "index": 1581,
+      "style": "Balk2",
+      "text": "3.8. Düşük Güç Bölgelerinde Verim ve Harmonik Performansı Arasındaki"
+    },
+    {
+      "index": 1591,
+      "style": "Balk3",
+      "text": "3.9. Bölüm Sonucu"
+    },
+    {
+      "index": 1597,
+      "style": "Balk1",
+      "text": "4. DÜŞÜK GÜÇ BÖLGELERİNDE T-TİPİ EVİRİCİLER İÇİN VERİM VE HARMONİK PERFORMANSIN İYİLEŞTİRİLMESİNE YÖNELİK YENİ ANAHTARLAMA VE FEEDFORWARD YAKLAŞIMI"
+    },
+    {
+      "index": 1599,
+      "style": "Balk2",
+      "text": "4.1. Giriş"
+    },
+    {
+      "index": 1607,
+      "style": "Balk2",
+      "text": "4.2. Düşük Güç Bölgelerinde Ters Akım Dolaşımının İncelenmesi"
+    },
+    {
+      "index": 1613,
+      "style": "Balk2",
+      "text": "4.3. Nötr Anahtar Susturma Yönteminin Geliştirilmesi"
+    },
+    {
+      "index": 1690,
+      "style": "Balk2",
+      "text": "4.4. Klasik Bir Solar Evirici Kontrol Blok Diyagramının Anlaşılması"
+    },
+    {
+      "index": 1720,
+      "style": "Balk2",
+      "text": "4.5. Yeni Solar Evirici Kontrol Blok Diyagramı Önerisi"
+    },
+    {
+      "index": 1727,
+      "style": "",
+      "text": "1. (4.2)"
+    },
+    {
+      "index": 1728,
+      "style": "",
+      "text": "2. (4.3)"
+    },
+    {
+      "index": 1743,
+      "style": "",
+      "text": "3. harmonik transfer fonksiyonu:"
+    },
+    {
+      "index": 1816,
+      "style": "NormalWeb",
+      "text": "4.6. Harmonik Oluşum Mekanizmasının Matematiksel Olarak Açıklanması"
+    },
+    {
+      "index": 1919,
+      "style": "",
+      "text": "1. h (50Hz)"
+    },
+    {
+      "index": 1920,
+      "style": "",
+      "text": "3. h (150Hz)"
+    },
+    {
+      "index": 1921,
+      "style": "",
+      "text": "5. h (250Hz)"
+    },
+    {
+      "index": 1922,
+      "style": "",
+      "text": "7. h (350Hz)"
+    },
+    {
+      "index": 1923,
+      "style": "",
+      "text": "9. h (450Hz)"
+    },
+    {
+      "index": 1976,
+      "style": "",
+      "text": "3. harmonik [%]"
+    },
+    {
+      "index": 1977,
+      "style": "",
+      "text": "5. harmonik [%]"
+    },
+    {
+      "index": 1978,
+      "style": "",
+      "text": "7. harmonik [%]"
+    },
+    {
+      "index": 1979,
+      "style": "",
+      "text": "9. harmonik [%]"
+    },
+    {
+      "index": 2046,
+      "style": "",
+      "text": "3. harmonik"
+    },
+    {
+      "index": 2050,
+      "style": "",
+      "text": "2.21 A"
+    },
+    {
+      "index": 2160,
+      "style": "Balk2",
+      "text": "4.7. Sin³ Yöntemi ile Yapılan Simülasyon ve Sonuçların Değerlendirilmesi"
+    },
+    {
+      "index": 2182,
+      "style": "NormalWeb",
+      "text": "4.8. Yapılan Çalışmanın Literatüre Katkısı"
+    },
+    {
+      "index": 2187,
+      "style": "NormalWeb",
+      "text": "4.9. Bölüm Sonucu"
+    },
+    {
+      "index": 2216,
+      "style": "",
+      "text": "3 yaklaşım ile karşılaştırılması."
+    },
+    {
+      "index": 2239,
+      "style": "Balk1",
+      "text": "5. GERÇEK ZAMAN UYGULAMALARI"
+    },
+    {
+      "index": 2241,
+      "style": "Balk2",
+      "text": "5.1. Giriş"
+    },
+    {
+      "index": 2271,
+      "style": "",
+      "text": "1. LCL filtrelerin L1’leri"
+    },
+    {
+      "index": 2272,
+      "style": "",
+      "text": "2. IGBT kapı sürme kartları"
+    },
+    {
+      "index": 2273,
+      "style": "",
+      "text": "3. Nötr IGBT’leri"
+    },
+    {
+      "index": 2274,
+      "style": "",
+      "text": "4. Boost diyotları"
+    },
+    {
+      "index": 2275,
+      "style": "",
+      "text": "5. Fonksiyon değiştirme röleleri"
+    },
+    {
+      "index": 2276,
+      "style": "",
+      "text": "6. Snubber kapasitörleri"
+    },
+    {
+      "index": 2277,
+      "style": "",
+      "text": "7. Kontrol kartı"
+    },
+    {
+      "index": 2278,
+      "style": "",
+      "text": "8. Buffer kartı"
+    },
+    {
+      "index": 2279,
+      "style": "",
+      "text": "9. Ölçme kartı"
+    },
+    {
+      "index": 2280,
+      "style": "",
+      "text": "10. LCL filtre C’leri"
+    },
+    {
+      "index": 2281,
+      "style": "",
+      "text": "11. Inrush akım röleleri"
+    },
+    {
+      "index": 2282,
+      "style": "",
+      "text": "12. Kumanda beslemeleri"
+    },
+    {
+      "index": 2283,
+      "style": "",
+      "text": "13. Şarj fonksiyonu lambası"
+    },
+    {
+      "index": 2284,
+      "style": "",
+      "text": "14. Deşarj fonksiyonu lambası"
+    },
+    {
+      "index": 2294,
+      "style": "",
+      "text": "1. Boost diyotları ve kondansatörü"
+    },
+    {
+      "index": 2295,
+      "style": "",
+      "text": "2. Fonksiyon değiştirme röleleri"
+    },
+    {
+      "index": 2296,
+      "style": "",
+      "text": "3. Snubber kondansatörleri"
+    },
+    {
+      "index": 2297,
+      "style": "",
+      "text": "4. DA bara elektrolitik kondansatörleri"
+    },
+    {
+      "index": 2298,
+      "style": "",
+      "text": "5. IGBT soğutucu (99 AS)"
+    },
+    {
+      "index": 2299,
+      "style": "",
+      "text": "6. Yüksek devirli soğutma fanı"
+    },
+    {
+      "index": 2300,
+      "style": "",
+      "text": "7. IGBT kapı sürme kartı"
+    },
+    {
+      "index": 2301,
+      "style": "",
+      "text": "8. LCL filtre L1 bobini"
+    },
+    {
+      "index": 2308,
+      "style": "",
+      "text": "1. Inrush akım röleleri"
+    },
+    {
+      "index": 2309,
+      "style": "",
+      "text": "2. Evirici açma kapama sigortası"
+    },
+    {
+      "index": 2310,
+      "style": "",
+      "text": "3. 12 V-24 V güç kaynakları"
+    },
+    {
+      "index": 2311,
+      "style": "",
+      "text": "4. EMI filtre"
+    },
+    {
+      "index": 2312,
+      "style": "",
+      "text": "5. Kontrol kartı"
+    },
+    {
+      "index": 2313,
+      "style": "",
+      "text": "6. Buffer kartı"
+    },
+    {
+      "index": 2322,
+      "style": "Balk2",
+      "text": "5.2. Evirici Kontrol Kartı ve Buffer Kartı"
+    },
+    {
+      "index": 2354,
+      "style": "Balk2",
+      "text": "5.3. IGBT Kapı Sürücü Devresi"
+    },
+    {
+      "index": 2372,
+      "style": "Balk2",
+      "text": "5.4. Gerilim Ölçme Devresi"
+    },
+    {
+      "index": 2388,
+      "style": "Balk2",
+      "text": "5.5. Akım Sensörü"
+    },
+    {
+      "index": 2410,
+      "style": "Balk2",
+      "text": "5.6. Ölçüm Kartı"
+    },
+    {
+      "index": 2431,
+      "style": "Balk2",
+      "text": "5.7. DA Güç Analizörü"
+    },
+    {
+      "index": 2451,
+      "style": "Balk2",
+      "text": "5.8. AA Güç Analizörü"
+    },
+    {
+      "index": 2467,
+      "style": "Balk2",
+      "text": "5.9. PC Ana Kumanda Yazılımı"
+    },
+    {
+      "index": 2483,
+      "style": "",
+      "text": "3 farklı çalışma modunda yapılan ölçümlerde aşağıdaki veriler alınacak ve karşılaştırılacaktır:"
+    },
+    {
+      "index": 2491,
+      "style": "Balk2",
+      "text": "5.10. Klasik Anahtarlama Modunda Alınan Çalışma Kayıtları"
+    },
+    {
+      "index": 2517,
+      "style": "Balk2",
+      "text": "5.11. Değiştirilmiş Anahtarlama Modunda Alınan Çalışma Kayıtları"
+    },
+    {
+      "index": 2537,
+      "style": "",
+      "text": "2. Şebeke gerilimi, 3. İndüktans akım ortalaması, 4. İndüktans akımı."
+    },
+    {
+      "index": 2542,
+      "style": "Balk2",
+      "text": "5.12. Değiştirilmiş Anahtarlama ve Sinküp İlave Edilmiş Modda Çalışma Kayıtları"
+    },
+    {
+      "index": 2564,
+      "style": "Balk2",
+      "text": "5.13. Bölüm Sonucu"
+    },
+    {
+      "index": 2627,
+      "style": "Balk1",
+      "text": "6. GELİŞTİRİLMİŞ T-TİPİ TOPOLOJİ"
+    },
+    {
+      "index": 2629,
+      "style": "Balk2",
+      "text": "6.1. Giriş"
+    },
+    {
+      "index": 2637,
+      "style": "Balk2",
+      "text": "6.2. T-tipi Evirici"
+    },
+    {
+      "index": 2644,
+      "style": "Balk2",
+      "text": "6.3. PFC Doğrultucu"
+    },
+    {
+      "index": 2652,
+      "style": "Balk2",
+      "text": "6.4. Batarya Yönetim Sistemi (BYS)"
+    },
+    {
+      "index": 2665,
+      "style": "Balk2",
+      "text": "6.5. Geliştirilmiş T-tipi Topoloji"
+    },
+    {
+      "index": 2736,
+      "style": "Balk2",
+      "text": "6.6. Bölüm Sonucu"
+    },
+    {
+      "index": 2761,
+      "style": "Balk1",
+      "text": "7. SONUÇ VE ÖNERİLER"
+    },
+    {
+      "index": 2782,
+      "style": "Balk2",
+      "text": "7.1. Fikri Mülkiyet Çıktıları"
+    },
+    {
+      "index": 2802,
+      "style": "Balk2",
+      "text": "7.2. Gelecek Çalışmalar için Öneriler"
+    }
+  ],
+  "captions": [
+    {
+      "index": 281,
+      "style": "NormalWeb",
+      "text": "Tablo 1.1. Enerji depolama sistemi maliyet dağılımı.",
+      "context": "7.2. Gelecek Çalışmalar için Öneriler 164",
+      "kind": "Tablo",
+      "number": "1.1",
+      "title": "Enerji depolama sistemi maliyet dağılımı"
+    },
+    {
+      "index": 282,
+      "style": "",
+      "text": "Tablo 1.2. Literatürde kullanılan hücre dengeleme yöntemlerinin performanslarının karşılaştırılması.",
+      "context": "7.2. Gelecek Çalışmalar için Öneriler 164",
+      "kind": "Tablo",
+      "number": "1.2",
+      "title": "Literatürde kullanılan hücre dengeleme yöntemlerinin performanslarının karşılaştırılması"
+    },
+    {
+      "index": 283,
+      "style": "",
+      "text": "Tablo 1.3. Geleneksel BYS ve hücre bazlı enerji yönetimi yaklaşımlarının fonksiyonlarının karşılaştırılması.",
+      "context": "7.2. Gelecek Çalışmalar için Öneriler 164",
+      "kind": "Tablo",
+      "number": "1.3",
+      "title": "Geleneksel BYS ve hücre bazlı enerji yönetimi yaklaşımlarının fonksiyonlarının karşılaştırılması"
+    },
+    {
+      "index": 284,
+      "style": "NormalWeb",
+      "text": "Tablo 2.1. Güç seviyelerine göre eviricinin yıllık çalışma süresi dağılımı.",
+      "context": "7.2. Gelecek Çalışmalar için Öneriler 164",
+      "kind": "Tablo",
+      "number": "2.1",
+      "title": "Güç seviyelerine göre eviricinin yıllık çalışma süresi dağılımı"
+    },
+    {
+      "index": 285,
+      "style": "NormalWeb",
+      "text": "Tablo 2.2. Avrupa verimlilik hesaplamasında kullanılan katsayılar.",
+      "context": "7.2. Gelecek Çalışmalar için Öneriler 164",
+      "kind": "Tablo",
+      "number": "2.2",
+      "title": "Avrupa verimlilik hesaplamasında kullanılan katsayılar"
+    },
+    {
+      "index": 286,
+      "style": "NormalWeb",
+      "text": "Tablo 2.3. CEC verimlilik hesaplamasında kullanılan katsayılar.",
+      "context": "7.2. Gelecek Çalışmalar için Öneriler 164",
+      "kind": "Tablo",
+      "number": "2.3",
+      "title": "CEC verimlilik hesaplamasında kullanılan katsayılar"
+    },
+    {
+      "index": 287,
+      "style": "",
+      "text": "Tablo 2.4. Ticari bir ürünün sabah saatlerindeki %güç-THD ölçüm tablosu.",
+      "context": "7.2. Gelecek Çalışmalar için Öneriler 164",
+      "kind": "Tablo",
+      "number": "2.4",
+      "title": "Ticari bir ürünün sabah saatlerindeki %güç-THD ölçüm tablosu"
+    },
+    {
+      "index": 288,
+      "style": "NormalWeb",
+      "text": "Tablo 4.1. Farklı dmax değerleri için harmonik bileşen genlikleri.",
+      "context": "7.2. Gelecek Çalışmalar için Öneriler 164",
+      "kind": "Tablo",
+      "number": "4.1",
+      "title": "Farklı dmax değerleri için harmonik bileşen genlikleri"
+    },
+    {
+      "index": 289,
+      "style": "NormalWeb",
+      "text": "Tablo 4.2. Farklı dmax değerlerinde harmonik bileşen oranlarının değişimsizliği.",
+      "context": "7.2. Gelecek Çalışmalar için Öneriler 164",
+      "kind": "Tablo",
+      "number": "4.2",
+      "title": "Farklı dmax değerlerinde harmonik bileşen oranlarının değişimsizliği"
+    },
+    {
+      "index": 290,
+      "style": "NormalWeb",
+      "text": "Tablo 4.3. V1m ve V3m katsayılarının çeşitli kombinasyonları.",
+      "context": "7.2. Gelecek Çalışmalar için Öneriler 164",
+      "kind": "Tablo",
+      "number": "4.3",
+      "title": "V1m ve V3m katsayılarının çeşitli kombinasyonları"
+    },
+    {
+      "index": 291,
+      "style": "",
+      "text": "Tablo 4.4. Simülasyon çalışmaları sonucunda elde edilen verim ve THD değerlerinin her",
+      "context": "7.2. Gelecek Çalışmalar için Öneriler 164",
+      "kind": "Tablo",
+      "number": "4.4",
+      "title": "Simülasyon çalışmaları sonucunda elde edilen verim ve THD değerlerinin her"
+    },
+    {
+      "index": 293,
+      "style": "NormalWeb",
+      "text": "Tablo 5.1. Evirici donanımı alt birimleri.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Tablo",
+      "number": "5.1",
+      "title": "Evirici donanımı alt birimleri"
+    },
+    {
+      "index": 294,
+      "style": "NormalWeb",
+      "text": "Tablo 5.2. Şekil 5.4 ve Şekil 5.5’teki donanıma ait komponentler.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Tablo",
+      "number": "5.2",
+      "title": "Şekil 5.4 ve Şekil 5.5’teki donanıma ait komponentler"
+    },
+    {
+      "index": 295,
+      "style": "NormalWeb",
+      "text": "Tablo 5.3. Evirici donanımının giriş kısmına ait komponentler.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Tablo",
+      "number": "5.3",
+      "title": "Evirici donanımının giriş kısmına ait komponentler"
+    },
+    {
+      "index": 296,
+      "style": "",
+      "text": "Tablo 5.4. Deneysel ve simülasyon çalışmaları sonucunda elde edilen verim ve THD değerlerinin her 3 yaklaşım ile karşılaştırılması.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Tablo",
+      "number": "5.4",
+      "title": "Deneysel ve simülasyon çalışmaları sonucunda elde edilen verim ve THD değerlerinin her 3 yaklaşım ile karşılaştırılması"
+    },
+    {
+      "index": 297,
+      "style": "NormalWeb",
+      "text": "Tablo 7.1. Fikri Mülkiyet çıktıları",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Tablo",
+      "number": "7.1",
+      "title": "Fikri Mülkiyet çıktıları"
+    },
+    {
+      "index": 301,
+      "style": "",
+      "text": "Şekil 1.1. Tipik bir enerji depolama sisteminin temel bileşenleri.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "1.1",
+      "title": "Tipik bir enerji depolama sisteminin temel bileşenleri"
+    },
+    {
+      "index": 302,
+      "style": "",
+      "text": "Şekil 1.2. Deşarj derinliği ve çevrim ömrü ilişkisi.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "1.2",
+      "title": "Deşarj derinliği ve çevrim ömrü ilişkisi"
+    },
+    {
+      "index": 303,
+      "style": "",
+      "text": "Şekil 1.3. Lityum iyon hücreler için tipik güvenli çalışma bölgesi.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "1.3",
+      "title": "Lityum iyon hücreler için tipik güvenli çalışma bölgesi"
+    },
+    {
+      "index": 304,
+      "style": "",
+      "text": "Şekil 1.4. Enerji depolama sistemi bileşenlerinin toplam sistem maliyeti içerisindeki payları.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "1.4",
+      "title": "Enerji depolama sistemi bileşenlerinin toplam sistem maliyeti içerisindeki payları"
+    },
+    {
+      "index": 305,
+      "style": "",
+      "text": "Şekil 1.5. Tipik bir batarya yönetim sistemi mimarisi.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "1.5",
+      "title": "Tipik bir batarya yönetim sistemi mimarisi"
+    },
+    {
+      "index": 306,
+      "style": "",
+      "text": "Şekil 1.6. Pasif hücre dengeleme prensibi.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "1.6",
+      "title": "Pasif hücre dengeleme prensibi"
+    },
+    {
+      "index": 307,
+      "style": "",
+      "text": "Şekil 1.7. Kapasitör tabanlı aktif dengeleme yapısı.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "1.7",
+      "title": "Kapasitör tabanlı aktif dengeleme yapısı"
+    },
+    {
+      "index": 308,
+      "style": "",
+      "text": "Şekil 1.8. İndüktans tabanlı aktif dengeleme yapısı.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "1.8",
+      "title": "İndüktans tabanlı aktif dengeleme yapısı"
+    },
+    {
+      "index": 309,
+      "style": "",
+      "text": "Şekil 1.9. Transformatör tabanlı aktif dengeleme yapısı.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "1.9",
+      "title": "Transformatör tabanlı aktif dengeleme yapısı"
+    },
+    {
+      "index": 310,
+      "style": "",
+      "text": "Şekil 1.10. Hücreler arası dengesizliğin göreli batarya ömrüne etkisi (senaryo analizi).",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "1.10",
+      "title": "Hücreler arası dengesizliğin göreli batarya ömrüne etkisi (senaryo analizi)"
+    },
+    {
+      "index": 311,
+      "style": "",
+      "text": "Şekil 2.1. Tipik günlük güneş panelinin üretim eğrisi.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "2.1",
+      "title": "Tipik günlük güneş panelinin üretim eğrisi"
+    },
+    {
+      "index": 312,
+      "style": "",
+      "text": "Şekil 2.2. PVGIS verilerine göre aylık toplam güneş ışınımının yıl içerisindeki değişimi.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "2.2",
+      "title": "PVGIS verilerine göre aylık toplam güneş ışınımının yıl içerisindeki değişimi"
+    },
+    {
+      "index": 313,
+      "style": "",
+      "text": "Şekil 2.3. Yıl ve saat bazında minimum ve maksimum gerçekçi güç üretimleri.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "2.3",
+      "title": "Yıl ve saat bazında minimum ve maksimum gerçekçi güç üretimleri"
+    },
+    {
+      "index": 314,
+      "style": "",
+      "text": "Şekil 2.4. Yıllık ve saatlik olarak üretilen gücün zamana bağlı değişimleri (yüzde olarak).",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "2.4",
+      "title": "Yıllık ve saatlik olarak üretilen gücün zamana bağlı değişimleri (yüzde olarak)"
+    },
+    {
+      "index": 315,
+      "style": "",
+      "text": "Şekil 2.5. Eviricinin çalışma süresinin çıkış gücüne göre değişimi.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "2.5",
+      "title": "Eviricinin çalışma süresinin çıkış gücüne göre değişimi"
+    },
+    {
+      "index": 316,
+      "style": "",
+      "text": "Şekil 2.6. Tipik bir solar eviricinin verim eğrisi.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "2.6",
+      "title": "Tipik bir solar eviricinin verim eğrisi"
+    },
+    {
+      "index": 317,
+      "style": "",
+      "text": "Şekil 2.7. Verim seviyelerine göre evirici çalışma süresi dağılımı.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "2.7",
+      "title": "Verim seviyelerine göre evirici çalışma süresi dağılımı"
+    },
+    {
+      "index": 318,
+      "style": "",
+      "text": "Şekil 2.8. 5kW'lık bir solar eviricinin gün içindeki güç değişimine karşı akım THD değişimi.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "2.8",
+      "title": "5kW'lık bir solar eviricinin gün içindeki güç değişimine karşı akım THD değişimi"
+    },
+    {
+      "index": 319,
+      "style": "",
+      "text": "Şekil 2.9. Evirici çıkış gücüne bağlı THD değişimi.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "2.9",
+      "title": "Evirici çıkış gücüne bağlı THD değişimi"
+    },
+    {
+      "index": 320,
+      "style": "",
+      "text": "Şekil 2.10. Zaman oranlaması bazında THD değerleri.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "2.10",
+      "title": "Zaman oranlaması bazında THD değerleri"
+    },
+    {
+      "index": 321,
+      "style": "",
+      "text": "Şekil 3.1. T-tipi evirici topolojisinin bir faz kolunun şematik gösterimi.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "3.1",
+      "title": "T-tipi evirici topolojisinin bir faz kolunun şematik gösterimi"
+    },
+    {
+      "index": 322,
+      "style": "",
+      "text": "Şekil 3.2. T-tipi eviricide pozitif çıkış geriliminin oluşturulduğu çalışma durumu.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "3.2",
+      "title": "T-tipi eviricide pozitif çıkış geriliminin oluşturulduğu çalışma durumu"
+    },
+    {
+      "index": 323,
+      "style": "",
+      "text": "Şekil 3.3. T-tipi eviricide sıfır seviyesinin oluşturulduğu çalışma durumu.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "3.3",
+      "title": "T-tipi eviricide sıfır seviyesinin oluşturulduğu çalışma durumu"
+    },
+    {
+      "index": 324,
+      "style": "",
+      "text": "Şekil 3.4. T-tipi eviricide negatif çıkış geriliminin oluşturulduğu çalışma durumu.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "3.4",
+      "title": "T-tipi eviricide negatif çıkış geriliminin oluşturulduğu çalışma durumu"
+    },
+    {
+      "index": 325,
+      "style": "",
+      "text": "Şekil 3.5. T-tipi eviricide pozitif alternansta anahtarın açık (on) durumları.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "3.5",
+      "title": "T-tipi eviricide pozitif alternansta anahtarın açık (on) durumları"
+    },
+    {
+      "index": 326,
+      "style": "",
+      "text": "Şekil 3.6. T-tipi eviricide pozitif alternansta anahtarların kapalı (off) durumları.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "3.6",
+      "title": "T-tipi eviricide pozitif alternansta anahtarların kapalı (off) durumları"
+    },
+    {
+      "index": 327,
+      "style": "",
+      "text": "Şekil 3.7. T-tipi eviricide negatif alternansta anahtarın açık (on) durumları.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "3.7",
+      "title": "T-tipi eviricide negatif alternansta anahtarın açık (on) durumları"
+    },
+    {
+      "index": 328,
+      "style": "",
+      "text": "Şekil 3.8. T-tipi eviricide negatif alternansta anahtarın kapalı (off) durumları.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "3.8",
+      "title": "T-tipi eviricide negatif alternansta anahtarın kapalı (off) durumları"
+    },
+    {
+      "index": 329,
+      "style": "",
+      "text": "Şekil 3.9. T-tipi eviricinin pozitif alternansta senkron buck eşdeğeri.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "3.9",
+      "title": "T-tipi eviricinin pozitif alternansta senkron buck eşdeğeri"
+    },
+    {
+      "index": 330,
+      "style": "",
+      "text": "Şekil 3.10. T-tipi eviricinin negatif alternansta senkron buck eşdeğeri.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "3.10",
+      "title": "T-tipi eviricinin negatif alternansta senkron buck eşdeğeri"
+    },
+    {
+      "index": 331,
+      "style": "",
+      "text": "Şekil 3.11. Senkron buck dönüştürücüde düşük anahtarlama oranında, sürekli modda indüktans akım dalga şekli.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "3.11",
+      "title": "Senkron buck dönüştürücüde düşük anahtarlama oranında, sürekli modda indüktans akım dalga şekli"
+    },
+    {
+      "index": 332,
+      "style": "",
+      "text": "Şekil 3.12. Senkron buck dönüştürücü düşük anahtarlama oranında, süreksiz modda indüktans akım dalga şekli.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "3.12",
+      "title": "Senkron buck dönüştürücü düşük anahtarlama oranında, süreksiz modda indüktans akım dalga şekli"
+    },
+    {
+      "index": 333,
+      "style": "",
+      "text": "Şekil 3.13. Düşük anahtarlama oranında çalışılan bölgelerde harmonik bileşenlerin akım dalga şekli üzerindeki etkisinin grafiksel gösterimi.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "3.13",
+      "title": "Düşük anahtarlama oranında çalışılan bölgelerde harmonik bileşenlerin akım dalga şekli üzerindeki etkisinin grafiksel gösterimi"
+    },
+    {
+      "index": 334,
+      "style": "NormalWeb",
+      "text": "Şekil 3.14. 3. harmonikli akım oluşumu karşısında referans akım, oluşan akım ve kontrolör çıkış değişimlerinin karşılaştırmalı grafiği.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "3.14",
+      "title": "3. harmonikli akım oluşumu karşısında referans akım, oluşan akım ve kontrolör çıkış değişimlerinin karşılaştırmalı grafiği"
+    },
+    {
+      "index": 335,
+      "style": "",
+      "text": "Şekil 3.15. Anahtarlama düzeninin teorik işleyişi.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "3.15",
+      "title": "Anahtarlama düzeninin teorik işleyişi"
+    },
+    {
+      "index": 336,
+      "style": "",
+      "text": "Şekil 3.16. Düşük akımlarda kontrolörün verdiği cevaba göre anahtarlama durumlarının değişimi.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "3.16",
+      "title": "Düşük akımlarda kontrolörün verdiği cevaba göre anahtarlama durumlarının değişimi"
+    },
+    {
+      "index": 337,
+      "style": "",
+      "text": "Şekil 4.1. Klasik tamamlayıcı (complementary) anahtarlama yönteminde kapı darbeleri.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "4.1",
+      "title": "Klasik tamamlayıcı (complementary) anahtarlama yönteminde kapı darbeleri"
+    },
+    {
+      "index": 338,
+      "style": "",
+      "text": "Şekil 4.2. Klasik tamamlayıcı anahtarlama yönteminde tetikleme darbelerinden alınan büyütülmüş bir kesit.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "4.2",
+      "title": "Klasik tamamlayıcı anahtarlama yönteminde tetikleme darbelerinden alınan büyütülmüş bir kesit"
+    },
+    {
+      "index": 339,
+      "style": "",
+      "text": "Şekil 4.3. Simülasyonda kullanılacak bir fazlı T-tipi evirici yapısı.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "4.3",
+      "title": "Simülasyonda kullanılacak bir fazlı T-tipi evirici yapısı"
+    },
+    {
+      "index": 340,
+      "style": "",
+      "text": "Şekil 4.4. Kullanılacak simülasyon dosyasının görseli.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "4.4",
+      "title": "Kullanılacak simülasyon dosyasının görseli"
+    },
+    {
+      "index": 341,
+      "style": "",
+      "text": "Şekil 4.5. Klasik anahtarlama ile yapılmış simülasyondan elde edilen indüktans akım dalga şekli.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "4.5",
+      "title": "Klasik anahtarlama ile yapılmış simülasyondan elde edilen indüktans akım dalga şekli"
+    },
+    {
+      "index": 342,
+      "style": "",
+      "text": "Şekil 4.6. Klasik anahtarlama ile yapılmış simülasyondan elde edilen indüktans akım dalga şeklinden büyütülmüş bir kesit.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "4.6",
+      "title": "Klasik anahtarlama ile yapılmış simülasyondan elde edilen indüktans akım dalga şeklinden büyütülmüş bir kesit"
+    },
+    {
+      "index": 343,
+      "style": "",
+      "text": "Şekil 4.7. Klasik anahtarlamada dalga şekilleri (Evirici çıkış gerilimi, kontrolör çıkış işareti, L1 indüktans akımı ve şebeke akımı).",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "4.7",
+      "title": "Klasik anahtarlamada dalga şekilleri (Evirici çıkış gerilimi, kontrolör çıkış işareti, L1 indüktans akımı ve şebeke akımı)"
+    },
+    {
+      "index": 344,
+      "style": "",
+      "text": "Şekil 4.8. Klasik anahtarlamada L1 indüktans akımının FFT analizi.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "4.8",
+      "title": "Klasik anahtarlamada L1 indüktans akımının FFT analizi"
+    },
+    {
+      "index": 345,
+      "style": "",
+      "text": "Şekil 4.9. Klasik anahtarlamada şebeke faz akımının FFT analizi.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "4.9",
+      "title": "Klasik anahtarlamada şebeke faz akımının FFT analizi"
+    },
+    {
+      "index": 346,
+      "style": "",
+      "text": "Şekil 4.10. Önerilen nötr anahtar susturma stratejisi ile yapılan anahtarlama.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "4.10",
+      "title": "Önerilen nötr anahtar susturma stratejisi ile yapılan anahtarlama"
+    },
+    {
+      "index": 347,
+      "style": "",
+      "text": "Şekil 4.11. Önerilen nötr anahtar susturma stratejisi ile yapılan anahtarlamadan alınmış bir büyütme.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "4.11",
+      "title": "Önerilen nötr anahtar susturma stratejisi ile yapılan anahtarlamadan alınmış bir büyütme"
+    },
+    {
+      "index": 348,
+      "style": "",
+      "text": "Şekil 4.12. Önerilen nötr anahtar susturma stratejisi ile yapılmış simülasyondan elde edilen indüktans akım dalga şeklinden büyütülmüş bir bölüm.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "4.12",
+      "title": "Önerilen nötr anahtar susturma stratejisi ile yapılmış simülasyondan elde edilen indüktans akım dalga şeklinden büyütülmüş bir bölüm"
+    },
+    {
+      "index": 349,
+      "style": "",
+      "text": "Şekil 4.13. Önerilen nötr anahtar susturma stratejisi ile yapılmış simülasyondan elde edilen indüktans akım dalga şeklinden büyütülmüş bir bölüm.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "4.13",
+      "title": "Önerilen nötr anahtar susturma stratejisi ile yapılmış simülasyondan elde edilen indüktans akım dalga şeklinden büyütülmüş bir bölüm"
+    },
+    {
+      "index": 350,
+      "style": "",
+      "text": "Şekil 4.14. Önerilen nötr anahtar susturma stratejisine ilişkin dalga şekilleri.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "4.14",
+      "title": "Önerilen nötr anahtar susturma stratejisine ilişkin dalga şekilleri"
+    },
+    {
+      "index": 351,
+      "style": "",
+      "text": "Şekil 4.15. Önerilen nötr anahtar susturma stratejisinde L1 indüktans akımının FFT analizi.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "4.15",
+      "title": "Önerilen nötr anahtar susturma stratejisinde L1 indüktans akımının FFT analizi"
+    },
+    {
+      "index": 352,
+      "style": "",
+      "text": "Şekil 4.16. Önerilen nötr anahtar susturma stratejisinde şebeke faz akımının FFT analizi.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "4.16",
+      "title": "Önerilen nötr anahtar susturma stratejisinde şebeke faz akımının FFT analizi"
+    },
+    {
+      "index": 353,
+      "style": "",
+      "text": "Şekil 4.17. Klasik bir solar evirici kontrol blok diyagramı.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "4.17",
+      "title": "Klasik bir solar evirici kontrol blok diyagramı"
+    },
+    {
+      "index": 354,
+      "style": "",
+      "text": "Şekil 4.18. Feedforward bileşeninin etkisi.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "4.18",
+      "title": "Feedforward bileşeninin etkisi"
+    },
+    {
+      "index": 355,
+      "style": "",
+      "text": "Şekil 4.19. Eşpotansiyel kaynakların gerilim dalga şekilleri ve akımın sıfır oluşu.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "4.19",
+      "title": "Eşpotansiyel kaynakların gerilim dalga şekilleri ve akımın sıfır oluşu"
+    },
+    {
+      "index": 356,
+      "style": "",
+      "text": "Şekil 4.20. Evirici tam güçte iken feedforward ve kontrolör etkileri.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "4.20",
+      "title": "Evirici tam güçte iken feedforward ve kontrolör etkileri"
+    },
+    {
+      "index": 357,
+      "style": "",
+      "text": "Şekil 4.21. Faz akımı 2,7 A için feedforward ve kontrolör etkileri.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "4.21",
+      "title": "Faz akımı 2,7 A için feedforward ve kontrolör etkileri"
+    },
+    {
+      "index": 358,
+      "style": "",
+      "text": "Şekil 4.22. Düşük güçlerde doğrusal olmayan sistem.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "4.22",
+      "title": "Düşük güçlerde doğrusal olmayan sistem"
+    },
+    {
+      "index": 359,
+      "style": "",
+      "text": "Şekil 4.23. Önerilen kontrol blok diyagramı.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "4.23",
+      "title": "Önerilen kontrol blok diyagramı"
+    },
+    {
+      "index": 360,
+      "style": "",
+      "text": "Şekil 4.24. T-tipi eviricinin nötr anahtar susturma sonrası 2 buck eviriciye dönüşmesi.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "4.24",
+      "title": "T-tipi eviricinin nötr anahtar susturma sonrası 2 buck eviriciye dönüşmesi"
+    },
+    {
+      "index": 361,
+      "style": "",
+      "text": "Şekil 4.25. dmax:0,1; 0,2; 0,3; 0,4; 0,5;0,6;0,7; 0,8 değerleri için L1 akımının pozitif",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "4.25",
+      "title": "dmax:0,1; 0,2; 0,3; 0,4; 0,5;0,6;0,7; 0,8 değerleri için L1 akımının pozitif"
+    },
+    {
+      "index": 363,
+      "style": "",
+      "text": "Şekil 4.26. dmax:0,1; 0,2; 0,3; 0,4; 0,5;0,6;0,7; 0,8 değerleri için L1 akımının",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "4.26",
+      "title": "dmax:0,1; 0,2; 0,3; 0,4; 0,5;0,6;0,7; 0,8 değerleri için L1 akımının"
+    },
+    {
+      "index": 365,
+      "style": "NormalWeb",
+      "text": "Şekil 4.27. d(wt)=Vm . sin(wt) için farklı dmax = 0,1;0,2; 0,3; 0,4; 0,5; 0,6, 0,7; 0,8",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "4.27",
+      "title": "d(wt)=Vm . sin(wt) için farklı dmax = 0,1;0,2; 0,3; 0,4; 0,5; 0,6, 0,7; 0,8"
+    },
+    {
+      "index": 367,
+      "style": "",
+      "text": "Şekil 4.28. 0,.1≤V1m≤0,5 ile 0,1≤V3m≤0,5 değerleri için d(wt)=V1m . sin(wt)+V3m .",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "4.28",
+      "title": "0,.1≤V1m≤0,5 ile 0,1≤V3m≤0,5 değerleri için d(wt)=V1m . sin(wt)+V3m"
+    },
+    {
+      "index": 369,
+      "style": "",
+      "text": "Şekil 4.29. Önerilen nötr anahtar susturma stratejisi ile yapılmış simülasyondan elde",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "4.29",
+      "title": "Önerilen nötr anahtar susturma stratejisi ile yapılmış simülasyondan elde"
+    },
+    {
+      "index": 371,
+      "style": "",
+      "text": "Şekil 4.30. Dalga şekilleri: 1. Evirici çıkış gerilimi, 2. Kontrolör çıkış işareti, 3. L1 indüktans akımı, 4. Şebeke akımı.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "4.30",
+      "title": "Dalga şekilleri: 1. Evirici çıkış gerilimi, 2. Kontrolör çıkış işareti, 3. L1 indüktans akımı, 4. Şebeke akımı"
+    },
+    {
+      "index": 373,
+      "style": "",
+      "text": "Şekil 4.31. L1 indüktans akımı FFT analizi.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "4.31",
+      "title": "L1 indüktans akımı FFT analizi"
+    },
+    {
+      "index": 374,
+      "style": "",
+      "text": "Şekil 4.32. Şebeke akımı FFT analizi.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "4.32",
+      "title": "Şebeke akımı FFT analizi"
+    },
+    {
+      "index": 375,
+      "style": "",
+      "text": "Şekil 5.1. Deney ve ölçme düzenekleri genel fotoğrafı.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "5.1",
+      "title": "Deney ve ölçme düzenekleri genel fotoğrafı"
+    },
+    {
+      "index": 376,
+      "style": "",
+      "text": "Şekil 5.2. Evirici donanımı.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "5.2",
+      "title": "Evirici donanımı"
+    },
+    {
+      "index": 377,
+      "style": "",
+      "text": "Şekil 5.3. Evirici donanımı ve alt birimlerinin tanıtılması.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "5.3",
+      "title": "Evirici donanımı ve alt birimlerinin tanıtılması"
+    },
+    {
+      "index": 378,
+      "style": "",
+      "text": "Şekil 5.4. Eviricinin bir fazına ait donanımlar.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "5.4",
+      "title": "Eviricinin bir fazına ait donanımlar"
+    },
+    {
+      "index": 379,
+      "style": "",
+      "text": "Şekil 5.5. Eviricinin bir fazına ait donanımlar.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "5.5",
+      "title": "Eviricinin bir fazına ait donanımlar"
+    },
+    {
+      "index": 380,
+      "style": "",
+      "text": "Şekil 5.6. Evirici giriş devresinin detay görüntüsü.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "5.6",
+      "title": "Evirici giriş devresinin detay görüntüsü"
+    },
+    {
+      "index": 381,
+      "style": "",
+      "text": "Şekil 5.7. Kontrol kartı ve buffer kartın fotoğrafı.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "5.7",
+      "title": "Kontrol kartı ve buffer kartın fotoğrafı"
+    },
+    {
+      "index": 382,
+      "style": "",
+      "text": "Şekil 5.8. IGBT kapı sürme devresi fotoğrafı.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "5.8",
+      "title": "IGBT kapı sürme devresi fotoğrafı"
+    },
+    {
+      "index": 383,
+      "style": "",
+      "text": "Şekil 5.9. Pencere karşılaştırıcı devresi.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "5.9",
+      "title": "Pencere karşılaştırıcı devresi"
+    },
+    {
+      "index": 384,
+      "style": "",
+      "text": "Şekil 5.10. Pencere karşılaştırıcı giriş ve çıkış gerilim dalga şekilleri.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "5.10",
+      "title": "Pencere karşılaştırıcı giriş ve çıkış gerilim dalga şekilleri"
+    },
+    {
+      "index": 385,
+      "style": "",
+      "text": "Şekil 5.11. Ölçüm kartı.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "5.11",
+      "title": "Ölçüm kartı"
+    },
+    {
+      "index": 386,
+      "style": "ResimYazs",
+      "text": "Şekil 5.12. (a) Evirici donanımı üzerinde AcuDC240 DA bara analizörü, (b) DA bara",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "5.12",
+      "title": "(a) Evirici donanımı üzerinde AcuDC240 DA bara analizörü, (b) DA bara"
+    },
+    {
+      "index": 388,
+      "style": "",
+      "text": "Şekil 5.13. 20A - 60mV şönt direnç bağlantısı.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "5.13",
+      "title": "20A - 60mV şönt direnç bağlantısı"
+    },
+    {
+      "index": 389,
+      "style": "ResimYazs",
+      "text": "Şekil 5.14. (a) EMK-01 ürün kodlu AA analizör, (b) Üretici tarafından önerilen bağlantı şekli.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "5.14",
+      "title": "(a) EMK-01 ürün kodlu AA analizör, (b) Üretici tarafından önerilen bağlantı şekli"
+    },
+    {
+      "index": 390,
+      "style": "",
+      "text": "Şekil 5.15. Haberleşme sistemi arayüz tasarımı.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "5.15",
+      "title": "Haberleşme sistemi arayüz tasarımı"
+    },
+    {
+      "index": 391,
+      "style": "",
+      "text": "Şekil 5.16. Çalışma sırasında PC yazılımı ile üretilen grafikler.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "5.16",
+      "title": "Çalışma sırasında PC yazılımı ile üretilen grafikler"
+    },
+    {
+      "index": 392,
+      "style": "",
+      "text": "Şekil 5.17. Osilokop kayıtları (İndüktans akımı). 1. Kontrol işareti, 2.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "5.17",
+      "title": "Osilokop kayıtları (İndüktans akımı). 1. Kontrol işareti, 2"
+    },
+    {
+      "index": 394,
+      "style": "",
+      "text": "Şekil 5.18. Osiloskop kayıtları: 1. Kontrol işareti, 2. Şebeke gerilimi, 3. İndüktans akım ortalaması, 4. Faz akımı.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "5.18",
+      "title": "Osiloskop kayıtları: 1. Kontrol işareti, 2. Şebeke gerilimi, 3. İndüktans akım ortalaması, 4. Faz akımı"
+    },
+    {
+      "index": 395,
+      "style": "",
+      "text": "Şekil 5.19. PC yazılımında elde edilen grafikler.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "5.19",
+      "title": "PC yazılımında elde edilen grafikler"
+    },
+    {
+      "index": 396,
+      "style": "",
+      "text": "Şekil 5.20. Osiloskop kayıtları: 1. Kontrol işareti, 2. Şebeke gerilimi, 3. İndüktans akım ortalaması, 4. İndüktans akımı.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "5.20",
+      "title": "Osiloskop kayıtları: 1. Kontrol işareti, 2. Şebeke gerilimi, 3. İndüktans akım ortalaması, 4. İndüktans akımı"
+    },
+    {
+      "index": 397,
+      "style": "",
+      "text": "Şekil 5.21. Osiloskop kayıtları: 1. Kontrol işareti, 2. Şebeke gerilimi, 3. İndüktans akım ortalaması, 4. Faz akımı.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "5.21",
+      "title": "Osiloskop kayıtları: 1. Kontrol işareti, 2. Şebeke gerilimi, 3. İndüktans akım ortalaması, 4. Faz akımı"
+    },
+    {
+      "index": 398,
+      "style": "",
+      "text": "Şekil 5.22. PC yazılımında alınan grafikler.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "5.22",
+      "title": "PC yazılımında alınan grafikler"
+    },
+    {
+      "index": 399,
+      "style": "",
+      "text": "Şekil 5.23. Osiloskop kayıtları: 1. Kontrol işareti, 2. Şebeke gerilimi, 3. İndüktans akım ortalaması, 4. İndüktans akımı.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "5.23",
+      "title": "Osiloskop kayıtları: 1. Kontrol işareti, 2. Şebeke gerilimi, 3. İndüktans akım ortalaması, 4. İndüktans akımı"
+    },
+    {
+      "index": 400,
+      "style": "",
+      "text": "Şekil 5.24. Osiloskop kayıtları: 1. Kontrol işareti, 2. Şebeke gerilimi, 3.İndüktans akım ortalaması, 4. Faz akımı.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "5.24",
+      "title": "Osiloskop kayıtları: 1. Kontrol işareti, 2. Şebeke gerilimi, 3.İndüktans akım ortalaması, 4. Faz akımı"
+    },
+    {
+      "index": 401,
+      "style": "",
+      "text": "Şekil 6.1. Bilinen T-tipi topolojinin 1 fazına ait devre şeması.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "6.1",
+      "title": "Bilinen T-tipi topolojinin 1 fazına ait devre şeması"
+    },
+    {
+      "index": 402,
+      "style": "",
+      "text": "Şekil 6.2. Viyana doğrultucu PFC.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "6.2",
+      "title": "Viyana doğrultucu PFC"
+    },
+    {
+      "index": 403,
+      "style": "",
+      "text": "Şekil 6.3. Tek primer sargıya ve çoklu sekonder sargıya sahip bir transformatör içeren aktif BYS prensip devre şeması..",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "6.3",
+      "title": "Tek primer sargıya ve çoklu sekonder sargıya sahip bir transformatör içeren aktif BYS prensip devre şeması"
+    },
+    {
+      "index": 404,
+      "style": "",
+      "text": "Şekil 6.4. Geliştirilmiş T-tipi (GT-tipi) topoloji.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "6.4",
+      "title": "Geliştirilmiş T-tipi (GT-tipi) topoloji"
+    },
+    {
+      "index": 405,
+      "style": "",
+      "text": "Şekil 6.5. GT-tipi topoloji evirici çalışma modunda LCL filtre bağlantısı.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "6.5",
+      "title": "GT-tipi topoloji evirici çalışma modunda LCL filtre bağlantısı"
+    },
+    {
+      "index": 406,
+      "style": "",
+      "text": "Şekil 6.6. GT-tipi topoloji 2 seviye evirici çıkış bağlantısı.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "6.6",
+      "title": "GT-tipi topoloji 2 seviye evirici çıkış bağlantısı"
+    },
+    {
+      "index": 407,
+      "style": "",
+      "text": "Şekil 6.7. GT-tipi topoloji nötr IGBT’leri ile elde edilmiş 3 faz PFC bölümü.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "6.7",
+      "title": "GT-tipi topoloji nötr IGBT’leri ile elde edilmiş 3 faz PFC bölümü"
+    },
+    {
+      "index": 408,
+      "style": "",
+      "text": "Şekil 6.8. Şarj yönünde, Viyana PFC, 2 seviye evirici ve transformatör tabanlı BYS simülasyon dosyası görseli.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "6.8",
+      "title": "Şarj yönünde, Viyana PFC, 2 seviye evirici ve transformatör tabanlı BYS simülasyon dosyası görseli"
+    },
+    {
+      "index": 410,
+      "style": "",
+      "text": "Şekil 6.9. Viyana PFC sayesinde düzelmiş şebeke akımları dalga şekilleri.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "6.9",
+      "title": "Viyana PFC sayesinde düzelmiş şebeke akımları dalga şekilleri"
+    },
+    {
+      "index": 411,
+      "style": "",
+      "text": "Şekil 6.10. DA bara gerilimleri dalga şekilleri.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "6.10",
+      "title": "DA bara gerilimleri dalga şekilleri"
+    },
+    {
+      "index": 412,
+      "style": "",
+      "text": "Şekil 6.11. BYS transformatörlerine sağlanan primer gerilim dalga şekli.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "6.11",
+      "title": "BYS transformatörlerine sağlanan primer gerilim dalga şekli"
+    },
+    {
+      "index": 413,
+      "style": "",
+      "text": "Şekil 6.12. BYS transformatörlerinin primer akım dalga şekli.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "6.12",
+      "title": "BYS transformatörlerinin primer akım dalga şekli"
+    },
+    {
+      "index": 414,
+      "style": "",
+      "text": "Şekil 6.13. BYS transformatörlerinin sekonder gerilim dalga şekli.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "6.13",
+      "title": "BYS transformatörlerinin sekonder gerilim dalga şekli"
+    },
+    {
+      "index": 415,
+      "style": "",
+      "text": "Şekil 6.14. BYS transformatörlerinin sekonder akım dalga şekli.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "6.14",
+      "title": "BYS transformatörlerinin sekonder akım dalga şekli"
+    },
+    {
+      "index": 416,
+      "style": "",
+      "text": "Şekil 6.15. Bir adet bataryaya ilişkin batarya gerilimi, batarya akımı ve SOC değerleri.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Şekil",
+      "number": "6.15",
+      "title": "Bir adet bataryaya ilişkin batarya gerilimi, batarya akımı ve SOC değerleri"
+    },
+    {
+      "index": 534,
+      "style": "",
+      "text": "Şekil 1.1. Tipik bir enerji depolama sisteminin temel bileşenleri (literatür temel alınarak",
+      "context": "1.1. Enerji Depolama Sistemlerinin Yapısı ve Maliyet Dağılımı",
+      "kind": "Şekil",
+      "number": "1.1",
+      "title": "Tipik bir enerji depolama sisteminin temel bileşenleri (literatür temel alınarak"
+    },
+    {
+      "index": 539,
+      "style": "NormalWeb",
+      "text": "Tablo 1.1’de verilen değerler NREL ve DOE tarafından yayımlanan enerji depolama sistemi maliyet analizlerinden derlenmiş tipik maliyet aralıklarını göstermektedir. Uygulama türüne bağlı olarak bileşenlerin toplam maliyet içerisindeki payları değişebilmektedir. Özellikle güç dönüştürücüleri içerisinde yer alan yarı iletken elemanlar, sürücü devreleri, yardımcı besleme kaynakları ve soğutma sistemleri dikkate alındığında bu bölümün toplam sistem maliyeti üzerindeki etkisi daha belirgin hale gelmektedir. Tablo 1.1 incelendiğinde batarya ve güç elektroniği dönüştürücülerinin toplam sistem maliyetinin büyük bölümünü oluşturduğu görülmektedir. Bu nedenle enerji depolama sistemlerinde ekonomik ömrün artırılması için iki temel yaklaşım öne çıkmaktadır:",
+      "context": "1.1. Enerji Depolama Sistemlerinin Yapısı ve Maliyet Dağılımı",
+      "kind": "Tablo",
+      "number": "1.1",
+      "title": "’de verilen değerler NREL ve DOE tarafından yayımlanan enerji depolama sistemi maliyet analizlerinden derlenmiş tipik maliyet aralıklarını göstermektedir. Uygulama türüne bağlı olarak bileşenlerin toplam maliyet içerisindeki payları değişebilmektedir. Özellikle güç dönüştürücüleri içerisinde yer alan yarı iletken elemanlar, sürücü devreleri, yardımcı besleme kaynakları ve soğutma sistemleri dikkate alındığında bu bölümün toplam sistem maliyeti üzerindeki etkisi daha belirgin hale gelmektedir. Tablo 1.1 incelendiğinde batarya ve güç elektroniği dönüştürücülerinin toplam sistem maliyetinin büyük bölümünü oluşturduğu görülmektedir. Bu nedenle enerji depolama sistemlerinde ekonomik ömrün artırılması için iki temel yaklaşım öne çıkmaktadır:"
+    },
+    {
+      "index": 561,
+      "style": "",
+      "text": "Tablo 1.1. Enerji depolama sistemi maliyet dağılımı [3], [4].",
+      "context": "5 – 10",
+      "kind": "Tablo",
+      "number": "1.1",
+      "title": "Enerji depolama sistemi maliyet dağılımı [3], [4]"
+    },
+    {
+      "index": 585,
+      "style": "",
+      "text": "Şekil 1.2. Deşarj derinliği ile çevrim ömrü arasındaki ilişki (NREL verilerinden",
+      "context": "1.2.1. Deşarj derinliğinin çevrim ömrüne olan etkisi",
+      "kind": "Şekil",
+      "number": "1.2",
+      "title": "Deşarj derinliği ile çevrim ömrü arasındaki ilişki (NREL verilerinden"
+    },
+    {
+      "index": 588,
+      "style": "NormalWeb",
+      "text": "Şekil 1.2 incelendiğinde, deşarj derinliği arttıkça bataryaların çevrim ömrünün önemli ölçüde azaldığı görülmektedir. Bunun temel nedeni, yüksek deşarj seviyelerinde elektrot yapılarında meydana gelen kimyasal ve mekanik zorlanmaların artmasıdır. Bu nedenle enerji depolama sistemlerinde bataryaların sürekli olarak tam deşarj edilmesi yerine, belirli çalışma aralıklarında kullanılması tercih edilmektedir. Batarya yönetim sistemleri, hücrelerin güvenli çalışma sınırları içerisinde tutulmasını sağlayarak çevrim ömrünün artırılmasına katkıda bulunmaktadır.",
+      "context": "1.2.1. Deşarj derinliğinin çevrim ömrüne olan etkisi",
+      "kind": "Şekil",
+      "number": "1.2",
+      "title": "incelendiğinde, deşarj derinliği arttıkça bataryaların çevrim ömrünün önemli ölçüde azaldığı görülmektedir. Bunun temel nedeni, yüksek deşarj seviyelerinde elektrot yapılarında meydana gelen kimyasal ve mekanik zorlanmaların artmasıdır. Bu nedenle enerji depolama sistemlerinde bataryaların sürekli olarak tam deşarj edilmesi yerine, belirli çalışma aralıklarında kullanılması tercih edilmektedir. Batarya yönetim sistemleri, hücrelerin güvenli çalışma sınırları içerisinde tutulmasını sağlayarak çevrim ömrünün artırılmasına katkıda bulunmaktadır"
+    },
+    {
+      "index": 610,
+      "style": "",
+      "text": "Şekil 1.3. Lityum iyon hücreler için tipik güvenli çalışma bölgesi [9], [10].",
+      "context": "1.2.4. Güvenli çalışma bölgesinin korunmasının önemi",
+      "kind": "Şekil",
+      "number": "1.3",
+      "title": "Lityum iyon hücreler için tipik güvenli çalışma bölgesi [9], [10]"
+    },
+    {
+      "index": 628,
+      "style": "NormalWeb",
+      "text": "Şekil 1.4 incelendiğinde enerji depolama sistemlerinde toplam maliyetin büyük bölümünün batarya paketinden kaynaklandığı görülmektedir. Bununla birlikte güç elektroniği dönüştürücüleri, batarya yönetim sistemleri ve yardımcı alt sistemler de toplam maliyet içerisinde önemli paya sahiptir. Bu durum enerji depolama sistemlerinde batarya ömrünün artırılmasını ve mevcut güç elektroniği donanımlarının daha verimli kullanılmasını ekonomik açıdan önemli hale getirmektedir. Özellikle dönüştürücü sayısının azaltılmasına veya mevcut dönüştürücülerin farklı çalışma modlarında yeniden kullanılmasına yönelik yaklaşımlar sistem maliyetinin düşürülmesine katkı sağlayabilmektedir.",
+      "context": "1.2.5. Batarya değişim maliyetlerinin enerji depolama sistemlerine etkisi",
+      "kind": "Şekil",
+      "number": "1.4",
+      "title": "incelendiğinde enerji depolama sistemlerinde toplam maliyetin büyük bölümünün batarya paketinden kaynaklandığı görülmektedir. Bununla birlikte güç elektroniği dönüştürücüleri, batarya yönetim sistemleri ve yardımcı alt sistemler de toplam maliyet içerisinde önemli paya sahiptir. Bu durum enerji depolama sistemlerinde batarya ömrünün artırılmasını ve mevcut güç elektroniği donanımlarının daha verimli kullanılmasını ekonomik açıdan önemli hale getirmektedir. Özellikle dönüştürücü sayısının azaltılmasına veya mevcut dönüştürücülerin farklı çalışma modlarında yeniden kullanılmasına yönelik yaklaşımlar sistem maliyetinin düşürülmesine katkı sağlayabilmektedir"
+    },
+    {
+      "index": 631,
+      "style": "",
+      "text": "Şekil 1.4. Enerji depolama sistemi bileşenlerinin toplam sistem maliyeti içerisindeki",
+      "context": "1.2.5. Batarya değişim maliyetlerinin enerji depolama sistemlerine etkisi",
+      "kind": "Şekil",
+      "number": "1.4",
+      "title": "Enerji depolama sistemi bileşenlerinin toplam sistem maliyeti içerisindeki"
+    },
+    {
+      "index": 684,
+      "style": "",
+      "text": "Şekil 1.5. Tipik bir batarya yönetim sistemi mimarisi [13].",
+      "context": "1.4.1. BYS'nin temel görevleri",
+      "kind": "Şekil",
+      "number": "1.5",
+      "title": "Tipik bir batarya yönetim sistemi mimarisi [13]"
+    },
+    {
+      "index": 728,
+      "style": "",
+      "text": "Şekil 1.6. Pasif hücre dengeleme prensibi [12].",
+      "context": "1.5.1. Pasif dengeleme yöntemleri",
+      "kind": "Şekil",
+      "number": "1.6",
+      "title": "Pasif hücre dengeleme prensibi [12]"
+    },
+    {
+      "index": 763,
+      "style": "",
+      "text": "Şekil 1.7. Kapasitör tabanlı aktif dengeleme yapısı [12].",
+      "context": "1.5.3. Kapasitör tabanlı aktif dengeleme yöntemleri",
+      "kind": "Şekil",
+      "number": "1.7",
+      "title": "Kapasitör tabanlı aktif dengeleme yapısı [12]"
+    },
+    {
+      "index": 776,
+      "style": "",
+      "text": "Şekil 1.8. İndüktans tabanlı aktif dengeleme yapısı [12].",
+      "context": "1.5.4. İndüktans tabanlı aktif dengeleme yöntemleri",
+      "kind": "Şekil",
+      "number": "1.8",
+      "title": "İndüktans tabanlı aktif dengeleme yapısı [12]"
+    },
+    {
+      "index": 790,
+      "style": "",
+      "text": "Şekil 1.9. Transformatör tabanlı aktif dengeleme yapısı [12].",
+      "context": "1.5.5. Transformatör tabanlı aktif dengeleme yöntemleri",
+      "kind": "Şekil",
+      "number": "1.9",
+      "title": "Transformatör tabanlı aktif dengeleme yapısı [12]"
+    },
+    {
+      "index": 791,
+      "style": "",
+      "text": "Şekil 1.9'da verilen yapı yalnızca hücreler arasındaki enerji dengesizliğini azaltmak amacıyla kullanılmamaktadır. Aynı zamanda hücre bazında enerji transferinin gerçekleştirilebildiği ve hücrelerin ayrı ayrı kontrol edilebildiği gelişmiş bir mimari sunmaktadır. Bu yaklaşım klasik dengeleme kavramının ötesine geçerek hücre bazlı enerji yönetimi kavramına geçişi mümkün kılmaktadır. Literatürde transformatör tabanlı yapılar çoğunlukla hücre dengeleme amacıyla incelenmiştir. Bununla birlikte yapının enerji transfer kabiliyeti incelendiğinde, aynı mimarinin yalnızca dengeleme amacıyla değil hücre bazlı şarj ve deşarj işlemlerinin gerçekleştirilmesi için de kullanılabileceği görülmektedir. Bu yaklaşım klasik aktif dengeleme kavramının ötesine geçerek hücre bazlı enerji yönetimi mimarilerine imkan sağlamaktadır. Sonuç olarak, hücreler yalnızca dengelenen pasif elemanlar olmaktan çıkmakta, enerji akışının aktif olarak yönetilebildiği bir yapının parçası haline gelmektedir. Böylece yalnızca enerji dengeleme değil, hücre bazında şarj ve deşarj kontrolü de gerçekleştirilebilmektedir.",
+      "context": "1.5.5. Transformatör tabanlı aktif dengeleme yöntemleri",
+      "kind": "Şekil",
+      "number": "1.9",
+      "title": "'da verilen yapı yalnızca hücreler arasındaki enerji dengesizliğini azaltmak amacıyla kullanılmamaktadır. Aynı zamanda hücre bazında enerji transferinin gerçekleştirilebildiği ve hücrelerin ayrı ayrı kontrol edilebildiği gelişmiş bir mimari sunmaktadır. Bu yaklaşım klasik dengeleme kavramının ötesine geçerek hücre bazlı enerji yönetimi kavramına geçişi mümkün kılmaktadır. Literatürde transformatör tabanlı yapılar çoğunlukla hücre dengeleme amacıyla incelenmiştir. Bununla birlikte yapının enerji transfer kabiliyeti incelendiğinde, aynı mimarinin yalnızca dengeleme amacıyla değil hücre bazlı şarj ve deşarj işlemlerinin gerçekleştirilmesi için de kullanılabileceği görülmektedir. Bu yaklaşım klasik aktif dengeleme kavramının ötesine geçerek hücre bazlı enerji yönetimi mimarilerine imkan sağlamaktadır. Sonuç olarak, hücreler yalnızca dengelenen pasif elemanlar olmaktan çıkmakta, enerji akışının aktif olarak yönetilebildiği bir yapının parçası haline gelmektedir. Böylece yalnızca enerji dengeleme değil, hücre bazında şarj ve deşarj kontrolü de gerçekleştirilebilmektedir"
+    },
+    {
+      "index": 817,
+      "style": "",
+      "text": "Şekil 1.9'da verilen transformatör tabanlı yapı incelendiğinde, yalnızca bir hücre dengeleme yöntemi olarak değil, aynı zamanda hücre bazlı enerji yönetimi mimarilerinin temelini oluşturabilecek bir yaklaşım olarak da değerlendirilebilir.",
+      "context": "1.6.1 Hücre Bazlı Şarj ve Deşarj Kontrolünün Önemi",
+      "kind": "Şekil",
+      "number": "1.9",
+      "title": "'da verilen transformatör tabanlı yapı incelendiğinde, yalnızca bir hücre dengeleme yöntemi olarak değil, aynı zamanda hücre bazlı enerji yönetimi mimarilerinin temelini oluşturabilecek bir yaklaşım olarak da değerlendirilebilir"
+    },
+    {
+      "index": 834,
+      "style": "",
+      "text": "Şekil 1.10. Hücreler arası dengesizliğin göreli batarya ömrüne etkisi (senaryo analizi)",
+      "context": "1.6.3 Hücre Bazlı Enerji Yönetiminin Potansiyel Ömür Kazancı",
+      "kind": "Şekil",
+      "number": "1.10",
+      "title": "Hücreler arası dengesizliğin göreli batarya ömrüne etkisi (senaryo analizi)"
+    },
+    {
+      "index": 888,
+      "style": "",
+      "text": "Tablo 1.2. Literatürde kullanılan hücre dengeleme yöntemlerinin performanslarının",
+      "context": "1.7 Mevcut Yaklaşımların Sınırlamaları",
+      "kind": "Tablo",
+      "number": "1.2",
+      "title": "Literatürde kullanılan hücre dengeleme yöntemlerinin performanslarının"
+    },
+    {
+      "index": 913,
+      "style": "",
+      "text": "Tablo 1.3. Geleneksel BYS ve hücre bazlı enerji yönetimi yaklaşımlarının fonksiyonlarının karşılaştırılması.",
+      "context": "1.7 Mevcut Yaklaşımların Sınırlamaları",
+      "kind": "Tablo",
+      "number": "1.3",
+      "title": "Geleneksel BYS ve hücre bazlı enerji yönetimi yaklaşımlarının fonksiyonlarının karşılaştırılması"
+    },
+    {
+      "index": 973,
+      "style": "",
+      "text": "Şekil 2.1. Tipik günlük güneş panelinin üretim eğrisi [17].",
+      "context": "2.2. Güneş Enerji Sistemlerinin Gerçek Çalışma Koşulları",
+      "kind": "Şekil",
+      "number": "2.1",
+      "title": "Tipik günlük güneş panelinin üretim eğrisi [17]"
+    },
+    {
+      "index": 975,
+      "style": "",
+      "text": "Şekil 2.1 incelendiğinde eviricinin nominal güce yalnızca günün belirli bir bölümünde ulaştığı, günün önemli bir kısmında ise sistemin orta veya düşük güç seviyelerinde çalıştığı görülmektedir.",
+      "context": "2.2. Güneş Enerji Sistemlerinin Gerçek Çalışma Koşulları",
+      "kind": "Şekil",
+      "number": "2.1",
+      "title": "incelendiğinde eviricinin nominal güce yalnızca günün belirli bir bölümünde ulaştığı, günün önemli bir kısmında ise sistemin orta veya düşük güç seviyelerinde çalıştığı görülmektedir"
+    },
+    {
+      "index": 978,
+      "style": "",
+      "text": "Şekil 2.2. PVGIS verilerine göre aylık toplam güneş ışınımının yıl içerisindeki değişimi.",
+      "context": "2.2. Güneş Enerji Sistemlerinin Gerçek Çalışma Koşulları",
+      "kind": "Şekil",
+      "number": "2.2",
+      "title": "PVGIS verilerine göre aylık toplam güneş ışınımının yıl içerisindeki değişimi"
+    },
+    {
+      "index": 982,
+      "style": "",
+      "text": "Şekil 2.3. Yıl ve saat bazında minimum ve maksimum gerçekçi güç üretimleri.",
+      "context": "2.2. Güneş Enerji Sistemlerinin Gerçek Çalışma Koşulları",
+      "kind": "Şekil",
+      "number": "2.3",
+      "title": "Yıl ve saat bazında minimum ve maksimum gerçekçi güç üretimleri"
+    },
+    {
+      "index": 984,
+      "style": "",
+      "text": "Şekil 2.1 ve Şekil 2.2’deki güneşlenme eğrilerinden elde edilen veriler birbiri ile çarpıldığında, Şekil 2.3’te görüldüğü gibi yıl bazında üretilen gerçek minimum ve gerçek maksimum güç değerleri ortaya çıkmaktadır. Şekil 2.3 incelendiğinde güneş panellerinden üretilen maksimum ve minimum güç değerlerinde 50 katlık bir oran olduğu görülmektedir. Sonuç olarak güneş panellerinin beslediği eviriciler bazı zamanlarda maksimum gücünün %2’si kadar düşük güç üretmek zorunda kalmaktadırlar.",
+      "context": "2.2. Güneş Enerji Sistemlerinin Gerçek Çalışma Koşulları",
+      "kind": "Şekil",
+      "number": "2.1",
+      "title": "ve Şekil 2.2’deki güneşlenme eğrilerinden elde edilen veriler birbiri ile çarpıldığında, Şekil 2.3’te görüldüğü gibi yıl bazında üretilen gerçek minimum ve gerçek maksimum güç değerleri ortaya çıkmaktadır. Şekil 2.3 incelendiğinde güneş panellerinden üretilen maksimum ve minimum güç değerlerinde 50 katlık bir oran olduğu görülmektedir. Sonuç olarak güneş panellerinin beslediği eviriciler bazı zamanlarda maksimum gücünün %2’si kadar düşük güç üretmek zorunda kalmaktadırlar"
+    },
+    {
+      "index": 987,
+      "style": "",
+      "text": "Şekil 2.4. Yıllık ve saatlik olarak üretilen gücün zamana bağlı değişimleri (yüzde olarak).",
+      "context": "2.2. Güneş Enerji Sistemlerinin Gerçek Çalışma Koşulları",
+      "kind": "Şekil",
+      "number": "2.4",
+      "title": "Yıllık ve saatlik olarak üretilen gücün zamana bağlı değişimleri (yüzde olarak)"
+    },
+    {
+      "index": 989,
+      "style": "",
+      "text": "Şekil 2.4, Şekil 2.3 yardımı ile elde edilmiştir. Şekil 2.4’den de görüleceği üzere, zaman bazında bakıldığında bir solar evirici, tüm yıl içerisinde görev yaptığı zamanın %15,3 + %8,3 = %23,6’sını, diğer bir ifade ile neredeyse ¼’ünü, maksimum gücünün %10’undan düşük güçleri üretmekle geçirmektedir. Bu durum evirici performansının yalnızca tam yük koşullarında değerlendirilmesinin yeterli olmadığını göstermektedir.",
+      "context": "2.2. Güneş Enerji Sistemlerinin Gerçek Çalışma Koşulları",
+      "kind": "Şekil",
+      "number": "2.4",
+      "title": ", Şekil 2.3 yardımı ile elde edilmiştir. Şekil 2.4’den de görüleceği üzere, zaman bazında bakıldığında bir solar evirici, tüm yıl içerisinde görev yaptığı zamanın %15,3 + %8,3 = %23,6’sını, diğer bir ifade ile neredeyse ¼’ünü, maksimum gücünün %10’undan düşük güçleri üretmekle geçirmektedir. Bu durum evirici performansının yalnızca tam yük koşullarında değerlendirilmesinin yeterli olmadığını göstermektedir"
+    },
+    {
+      "index": 996,
+      "style": "",
+      "text": "Şekil 2.5. Eviricinin çalışma süresinin çıkış gücüne göre değişimi.",
+      "context": "2.3 Günlük ve Yıllık Güç Dağılımları",
+      "kind": "Şekil",
+      "number": "2.5",
+      "title": "Eviricinin çalışma süresinin çıkış gücüne göre değişimi"
+    },
+    {
+      "index": 1013,
+      "style": "",
+      "text": "Tablo 2.1. Güç seviyelerine göre eviricinin yıllık çalışma süresi dağılımı.",
+      "context": "2.3 Günlük ve Yıllık Güç Dağılımları",
+      "kind": "Tablo",
+      "number": "2.1",
+      "title": "Güç seviyelerine göre eviricinin yıllık çalışma süresi dağılımı"
+    },
+    {
+      "index": 1015,
+      "style": "",
+      "text": "Şekil 2.5 ve Tablo 2.1 birlikte incelendiğinde, eviricilerin tam yük bölgesinde çalıştıkları sürenin oldukça sınırlı olduğu görülmektedir. Buna karşılık düşük güç bölgelerinde geçirilen süre ise oldukça yüksektir. Bu sonuç önemli bir gerçeği ortaya koymaktadır. Solar eviriciler çoğu zaman nominal güçlerine göre satın alınmakla birlikte, bu cihazlar gerçek çalışma ömürlerinin büyük kısmında düşük güç seviyelerinde kullanılmaktadır. Dolayısıyla yıllık enerji üretimini belirleyen temel parametre yalnızca maksimum verim değeri değildir. Eviricilerin düşük güç bölgelerindeki performansı da yıllık enerji üretimi üzerinde doğrudan etkiye sahiptir. Bu nedenle son yıllarda evirici performans değerlendirmelerinde yalnızca maksimum verim değeri değil, gerçek çalışma koşullarını temsil eden ağırlıklı verim tanımları kullanılmaya başlanmıştır [19]. Şebekeye bağlı fotovoltaik sistemlerde kullanılan evirici topolojileri yıllar içerisinde merkezi yapılardan string ve çoklu-string yapılara doğru önemli bir gelişim göstermiştir [20]. Bu teknolojik gelişmelerle birlikte evirici performansının farklı çalışma koşullarında değerlendirilmesi konusu da giderek daha fazla önem kazanmıştır. Bu değerlendirmeler, Bölüm 2.2’de elde edilen ve eviricilerin çalışma sürelerinin önemli bir kısmını düşük güç seviyelerinde geçirdiğini gösteren literatürle ([19], [21], [22]) uyumludur.",
+      "context": "2.3 Günlük ve Yıllık Güç Dağılımları",
+      "kind": "Şekil",
+      "number": "2.5",
+      "title": "ve Tablo 2.1 birlikte incelendiğinde, eviricilerin tam yük bölgesinde çalıştıkları sürenin oldukça sınırlı olduğu görülmektedir. Buna karşılık düşük güç bölgelerinde geçirilen süre ise oldukça yüksektir. Bu sonuç önemli bir gerçeği ortaya koymaktadır. Solar eviriciler çoğu zaman nominal güçlerine göre satın alınmakla birlikte, bu cihazlar gerçek çalışma ömürlerinin büyük kısmında düşük güç seviyelerinde kullanılmaktadır. Dolayısıyla yıllık enerji üretimini belirleyen temel parametre yalnızca maksimum verim değeri değildir. Eviricilerin düşük güç bölgelerindeki performansı da yıllık enerji üretimi üzerinde doğrudan etkiye sahiptir. Bu nedenle son yıllarda evirici performans değerlendirmelerinde yalnızca maksimum verim değeri değil, gerçek çalışma koşullarını temsil eden ağırlıklı verim tanımları kullanılmaya başlanmıştır [19]. Şebekeye bağlı fotovoltaik sistemlerde kullanılan evirici topolojileri yıllar içerisinde merkezi yapılardan string ve çoklu-string yapılara doğru önemli bir gelişim göstermiştir [20]. Bu teknolojik gelişmelerle birlikte evirici performansının farklı çalışma koşullarında değerlendirilmesi konusu da giderek daha fazla önem kazanmıştır. Bu değerlendirmeler, Bölüm 2.2’de elde edilen ve eviricilerin çalışma sürelerinin önemli bir kısmını düşük güç seviyelerinde geçirdiğini gösteren literatürle ([19], [21], [22]) uyumludur"
+    },
+    {
+      "index": 1027,
+      "style": "",
+      "text": "Tablo 2.2 incelendiğinde düşük ve orta güç bölgelerinin toplam ağırlığının oldukça yüksek olduğu görülmektedir. Bu durum, düşük güç çalışma bölgelerine, evirici performansının değerlendirilmesinde, Avrupa standartlarında oldukça önem verildiğini göstermektedir.",
+      "context": "2.4.1. Avrupa Verimliliği (European Efficiency)",
+      "kind": "Tablo",
+      "number": "2.2",
+      "title": "incelendiğinde düşük ve orta güç bölgelerinin toplam ağırlığının oldukça yüksek olduğu görülmektedir. Bu durum, düşük güç çalışma bölgelerine, evirici performansının değerlendirilmesinde, Avrupa standartlarında oldukça önem verildiğini göstermektedir"
+    },
+    {
+      "index": 1043,
+      "style": "",
+      "text": "Tablo 2.2. Avrupa verimliliği hesaplamasında kullanılan katsayılar [21].",
+      "context": "2.4.1. Avrupa Verimliliği (European Efficiency)",
+      "kind": "Tablo",
+      "number": "2.2",
+      "title": "Avrupa verimliliği hesaplamasında kullanılan katsayılar [21]"
+    },
+    {
+      "index": 1076,
+      "style": "",
+      "text": "Tablo 2.3. CEC verim hesaplamasında kullanılan katsayılar [22].",
+      "context": "2.4.2. Kaliforniya enerji komisyonu (CEC) verimliliği",
+      "kind": "Tablo",
+      "number": "2.3",
+      "title": "CEC verim hesaplamasında kullanılan katsayılar [22]"
+    },
+    {
+      "index": 1084,
+      "style": "",
+      "text": "Şekil 2.6 incelendiğinde evirici veriminin düşük güç bölgelerinde belirgin şekilde azaldığı görülmektedir. Bunun temel nedenleri aşağıdaki verilmiştir:",
+      "context": "2.5. Düşük Güç Bölgelerinde Verim Problemi",
+      "kind": "Şekil",
+      "number": "2.6",
+      "title": "incelendiğinde evirici veriminin düşük güç bölgelerinde belirgin şekilde azaldığı görülmektedir. Bunun temel nedenleri aşağıdaki verilmiştir:"
+    },
+    {
+      "index": 1094,
+      "style": "",
+      "text": "Şekil 2.6. Tipik bir solar eviricinin verim eğrisi [23].",
+      "context": "2.5. Düşük Güç Bölgelerinde Verim Problemi",
+      "kind": "Şekil",
+      "number": "2.6",
+      "title": "Tipik bir solar eviricinin verim eğrisi [23]"
+    },
+    {
+      "index": 1104,
+      "style": "",
+      "text": "Şekil 2.7 incelendiğinde, solar eviricinin çalışma süresinin önemli bölümünü maksimum verim bölgesinin altında geçirdiği görülmektedir. Şekil 2.7'nin elde edilmesinde, yıl içerisindeki 12 ay ve gün içerisindeki 12 saat esas alınarak toplam 144 çalışma noktası oluşturulmuştur. Her bir çalışma noktası için, ilgili güç seviyesine karşılık gelen evirici verim değeri belirlenmiş ve verim değerleri belirli aralıklarda sınıflandırılmıştır. Her verim aralığında bulunan çalışma noktalarının sayısı toplam çalışma noktası sayısına bölünerek ilgili verim bölgesinin gerçekleşme oranı hesaplanmıştır. Bu işlem sonucunda eviricinin yıl boyunca farklı verim seviyelerinde çalışma sürelerini temsil eden dağılım elde edilmiştir.",
+      "context": "2.5.1. Düşük güç bölgelerinin yıllık enerji üretimine etkisi",
+      "kind": "Şekil",
+      "number": "2.7",
+      "title": "incelendiğinde, solar eviricinin çalışma süresinin önemli bölümünü maksimum verim bölgesinin altında geçirdiği görülmektedir. Şekil 2.7'nin elde edilmesinde, yıl içerisindeki 12 ay ve gün içerisindeki 12 saat esas alınarak toplam 144 çalışma noktası oluşturulmuştur. Her bir çalışma noktası için, ilgili güç seviyesine karşılık gelen evirici verim değeri belirlenmiş ve verim değerleri belirli aralıklarda sınıflandırılmıştır. Her verim aralığında bulunan çalışma noktalarının sayısı toplam çalışma noktası sayısına bölünerek ilgili verim bölgesinin gerçekleşme oranı hesaplanmıştır. Bu işlem sonucunda eviricinin yıl boyunca farklı verim seviyelerinde çalışma sürelerini temsil eden dağılım elde edilmiştir"
+    },
+    {
+      "index": 1107,
+      "style": "",
+      "text": "Şekil 2.7. Verim seviyelerine göre evirici çalışma süresi dağılımı.",
+      "context": "2.5.1. Düşük güç bölgelerinin yıllık enerji üretimine etkisi",
+      "kind": "Şekil",
+      "number": "2.7",
+      "title": "Verim seviyelerine göre evirici çalışma süresi dağılımı"
+    },
+    {
+      "index": 1129,
+      "style": "",
+      "text": "Şekil 2.8. 5 kW’lık bir solar eviricinin gün içindeki güç değişimine karşı akım THD",
+      "context": "2.6.1. Güç seviyesi ile THD arasındaki ilişki",
+      "kind": "Şekil",
+      "number": "2.8",
+      "title": "5 kW’lık bir solar eviricinin gün içindeki güç değişimine karşı akım THD"
+    },
+    {
+      "index": 1133,
+      "style": "",
+      "text": "Şekil 2.9. Evirici çıkış gücüne bağlı THD değişimi [26].",
+      "context": "2.6.1. Güç seviyesi ile THD arasındaki ilişki",
+      "kind": "Şekil",
+      "number": "2.9",
+      "title": "Evirici çıkış gücüne bağlı THD değişimi [26]"
+    },
+    {
+      "index": 1135,
+      "style": "",
+      "text": "Şekil 2.9 incelendiğinde özellikle nominal gücün altındaki çalışma bölgelerinde THD değerlerinin belirgin şekilde yükseldiği görülmektedir.",
+      "context": "2.6.1. Güç seviyesi ile THD arasındaki ilişki",
+      "kind": "Şekil",
+      "number": "2.9",
+      "title": "incelendiğinde özellikle nominal gücün altındaki çalışma bölgelerinde THD değerlerinin belirgin şekilde yükseldiği görülmektedir"
+    },
+    {
+      "index": 1137,
+      "style": "",
+      "text": "Tablo 2.4’de ticari olarak piyasada bulunan ve Pazar payı yüksek olan bir ürünün (10kW Huawei) laboratuvar ortamında, sabah saatlerinde devreye ilk girmesi ile başlayan düşük güç bölgesindeki ölçümleri gösterilmiştir.",
+      "context": "2.6.1. Güç seviyesi ile THD arasındaki ilişki",
+      "kind": "Tablo",
+      "number": "2.4",
+      "title": "’de ticari olarak piyasada bulunan ve Pazar payı yüksek olan bir ürünün (10kW Huawei) laboratuvar ortamında, sabah saatlerinde devreye ilk girmesi ile başlayan düşük güç bölgesindeki ölçümleri gösterilmiştir"
+    },
+    {
+      "index": 1184,
+      "style": "",
+      "text": "Tablo 2.4. Ticari bir ürünün sabah saatlerindeki %güç-THD ölçüm tablosu.",
+      "context": "2.6.1. Güç seviyesi ile THD arasındaki ilişki",
+      "kind": "Tablo",
+      "number": "2.4",
+      "title": "Ticari bir ürünün sabah saatlerindeki %güç-THD ölçüm tablosu"
+    },
+    {
+      "index": 1186,
+      "style": "",
+      "text": "Tablo 2.4 incelendiğinde eviricinin nominal gücünün yalnızca %1 seviyesinde çalıştığı devreye ilk giriş anında, akım THD değerinin %400 seviyelerine ulaşabildiği görülmektedir. Güç seviyesi arttıkça THD değeri hızla azalmakta ve nominal gücün yaklaşık %20’sine ulaşıldığında ise %10’un altına düşmektedir. Bu sonuçlar literatürde verilen eğilimlerle uyumlu olmakla birlikte, gerçek saha koşullarında düşük güç bölgelerindeki harmonik bozulmanın literatürde rapor edilen birçok değerden daha yüksek seviyelere ulaşabileceğini de göstermektedir.",
+      "context": "2.6.1. Güç seviyesi ile THD arasındaki ilişki",
+      "kind": "Tablo",
+      "number": "2.4",
+      "title": "incelendiğinde eviricinin nominal gücünün yalnızca %1 seviyesinde çalıştığı devreye ilk giriş anında, akım THD değerinin %400 seviyelerine ulaşabildiği görülmektedir. Güç seviyesi arttıkça THD değeri hızla azalmakta ve nominal gücün yaklaşık %20’sine ulaşıldığında ise %10’un altına düşmektedir. Bu sonuçlar literatürde verilen eğilimlerle uyumlu olmakla birlikte, gerçek saha koşullarında düşük güç bölgelerindeki harmonik bozulmanın literatürde rapor edilen birçok değerden daha yüksek seviyelere ulaşabileceğini de göstermektedir"
+    },
+    {
+      "index": 1188,
+      "style": "",
+      "text": "Şekil 2.10 incelendiğinde, solar eviricinin çalışma süresinin önemli bir bölümünü yüksek THD değerlerine sahip akım üreterek geçirdiği görülmektedir. Şeklin oluşturulmasında öncelikle yıl içerisindeki 12 ay ve gün içerisindeki 12 saat dikkate alınarak toplam 144 çalışma noktası elde edilmiştir. Daha sonra her bir çalışma noktası için ilgili güç seviyesine karşılık gelen THD değeri belirlenmiştir. Aynı THD aralığında bulunan çalışma noktalarının sayısı hesaplanmış ve bu sayı toplam çalışma noktası sayısı olan 144'e bölünerek ilgili THD seviyesinin gerçekleşme oranı elde edilmiştir. Böylece eviricinin yıl boyunca farklı THD seviyelerinde çalışma sürelerini gösteren dağılım oluşturulmuştur. Bu sonuçlar düşük güç bölgelerinin yalnızca verim açısından değil, güç kalitesi açısından da kritik öneme sahip olduğunu göstermektedir.",
+      "context": "2.6.1. Güç seviyesi ile THD arasındaki ilişki",
+      "kind": "Şekil",
+      "number": "2.10",
+      "title": "incelendiğinde, solar eviricinin çalışma süresinin önemli bir bölümünü yüksek THD değerlerine sahip akım üreterek geçirdiği görülmektedir. Şeklin oluşturulmasında öncelikle yıl içerisindeki 12 ay ve gün içerisindeki 12 saat dikkate alınarak toplam 144 çalışma noktası elde edilmiştir. Daha sonra her bir çalışma noktası için ilgili güç seviyesine karşılık gelen THD değeri belirlenmiştir. Aynı THD aralığında bulunan çalışma noktalarının sayısı hesaplanmış ve bu sayı toplam çalışma noktası sayısı olan 144'e bölünerek ilgili THD seviyesinin gerçekleşme oranı elde edilmiştir. Böylece eviricinin yıl boyunca farklı THD seviyelerinde çalışma sürelerini gösteren dağılım oluşturulmuştur. Bu sonuçlar düşük güç bölgelerinin yalnızca verim açısından değil, güç kalitesi açısından da kritik öneme sahip olduğunu göstermektedir"
+    },
+    {
+      "index": 1191,
+      "style": "",
+      "text": "Şekil 2.10. Zaman oranlaması bazında THD değerleri.",
+      "context": "2.6.1. Güç seviyesi ile THD arasındaki ilişki",
+      "kind": "Şekil",
+      "number": "2.10",
+      "title": "Zaman oranlaması bazında THD değerleri"
+    },
+    {
+      "index": 1340,
+      "style": "NormalWeb",
+      "text": "Şekil 3.1. T-tipi evirici topolojisinin bir faz kolunun şematik gösterimi.",
+      "context": "3.2. T-tipi Evirici Topolojisi",
+      "kind": "Şekil",
+      "number": "3.1",
+      "title": "T-tipi evirici topolojisinin bir faz kolunun şematik gösterimi"
+    },
+    {
+      "index": 1342,
+      "style": "NormalWeb",
+      "text": "Şekil 3.1'de üç seviyeli T-tipi evirici topolojisinin bir faz kolu gösterilmektedir. Yapı incelendiğinde her faz kolunun dört adet aktif yarı iletken anahtardan oluştuğu görülmektedir. Üst ve alt kolda bulunan anahtarlar klasik iki seviyeli eviricilerdeki yapıya benzer şekilde çalışırken, orta noktada bulunan iki adet nötr anahtarı, çıkışın DA baranın orta noktasına bağlanmasını sağlamaktadır.",
+      "context": "3.2. T-tipi Evirici Topolojisi",
+      "kind": "Şekil",
+      "number": "3.1",
+      "title": "'de üç seviyeli T-tipi evirici topolojisinin bir faz kolu gösterilmektedir. Yapı incelendiğinde her faz kolunun dört adet aktif yarı iletken anahtardan oluştuğu görülmektedir. Üst ve alt kolda bulunan anahtarlar klasik iki seviyeli eviricilerdeki yapıya benzer şekilde çalışırken, orta noktada bulunan iki adet nötr anahtarı, çıkışın DA baranın orta noktasına bağlanmasını sağlamaktadır"
+    },
+    {
+      "index": 1357,
+      "style": "NormalWeb",
+      "text": "Şekil 3.2. T-Tipi eviricide pozitif çıkış geriliminin oluşturulduğu çalışma durumu.",
+      "context": "3.3. T-tipi Eviricinin Çalışma Prensibi",
+      "kind": "Şekil",
+      "number": "3.2",
+      "title": "T-Tipi eviricide pozitif çıkış geriliminin oluşturulduğu çalışma durumu"
+    },
+    {
+      "index": 1359,
+      "style": "NormalWeb",
+      "text": "Şekil 3.2'de pozitif çıkış geriliminin oluşturulduğu çalışma durumu gösterilmektedir. Bu durumda yük akımı üst kol üzerinden akarak çıkış ucuna ulaşmaktadır. Çıkış gerilimi pozitif DA bara seviyesine bağlandığından faz çıkışında +Vda/2 gerilimi oluşmaktadır.",
+      "context": "3.3. T-tipi Eviricinin Çalışma Prensibi",
+      "kind": "Şekil",
+      "number": "3.2",
+      "title": "'de pozitif çıkış geriliminin oluşturulduğu çalışma durumu gösterilmektedir. Bu durumda yük akımı üst kol üzerinden akarak çıkış ucuna ulaşmaktadır. Çıkış gerilimi pozitif DA bara seviyesine bağlandığından faz çıkışında +Vda/2 gerilimi oluşmaktadır"
+    },
+    {
+      "index": 1361,
+      "style": "NormalWeb",
+      "text": "Şekil 3.3. T-Tipi eviricide sıfır seviyesinin oluşturulduğu çalışma durumu.",
+      "context": "3.3. T-tipi Eviricinin Çalışma Prensibi",
+      "kind": "Şekil",
+      "number": "3.3",
+      "title": "T-Tipi eviricide sıfır seviyesinin oluşturulduğu çalışma durumu"
+    },
+    {
+      "index": 1363,
+      "style": "NormalWeb",
+      "text": "Şekil 3.3'te sıfır seviyesinin oluşturulduğu çalışma durumu verilmiştir. Bu çalışma durumunda çıkış ucu nötr anahtarları üzerinden DA bara orta noktasına bağlanmaktadır. Böylece faz çıkış gerilimi sıfır seviyesine çekilmektedir. T-tipi eviricinin iki seviyeli eviriciden ayrıldığı temel nokta bu çalışma durumudur. Nötr anahtarları sayesinde çıkış gerilimi ilave bir seviyeye sahip olmakta ve gerilim basamakları küçülmektedir.",
+      "context": "3.3. T-tipi Eviricinin Çalışma Prensibi",
+      "kind": "Şekil",
+      "number": "3.3",
+      "title": "'te sıfır seviyesinin oluşturulduğu çalışma durumu verilmiştir. Bu çalışma durumunda çıkış ucu nötr anahtarları üzerinden DA bara orta noktasına bağlanmaktadır. Böylece faz çıkış gerilimi sıfır seviyesine çekilmektedir. T-tipi eviricinin iki seviyeli eviriciden ayrıldığı temel nokta bu çalışma durumudur. Nötr anahtarları sayesinde çıkış gerilimi ilave bir seviyeye sahip olmakta ve gerilim basamakları küçülmektedir"
+    },
+    {
+      "index": 1365,
+      "style": "NormalWeb",
+      "text": "Şekil 3.4. T-Tipi eviricide negatif çıkış geriliminin oluşturulduğu çalışma durumu.",
+      "context": "3.3. T-tipi Eviricinin Çalışma Prensibi",
+      "kind": "Şekil",
+      "number": "3.4",
+      "title": "T-Tipi eviricide negatif çıkış geriliminin oluşturulduğu çalışma durumu"
+    },
+    {
+      "index": 1367,
+      "style": "NormalWeb",
+      "text": "Şekil 3.4'te negatif çıkış geriliminin oluşturulduğu çalışma durumu gösterilmektedir. Bu durumda yük akımı alt kol üzerinden akmakta ve çıkış terminali negatif DA bara noktasına bağlanmaktadır. Böylece faz çıkışında -Vda/2 gerilimi elde edilmektedir.",
+      "context": "3.3. T-tipi Eviricinin Çalışma Prensibi",
+      "kind": "Şekil",
+      "number": "3.4",
+      "title": "'te negatif çıkış geriliminin oluşturulduğu çalışma durumu gösterilmektedir. Bu durumda yük akımı alt kol üzerinden akmakta ve çıkış terminali negatif DA bara noktasına bağlanmaktadır. Böylece faz çıkışında -Vda/2 gerilimi elde edilmektedir"
+    },
+    {
+      "index": 1375,
+      "style": "NormalWeb",
+      "text": "Şekil 3.5'te pozitif yarım periyot boyunca devrede oluşan temel akım yolları gösterilmektedir. Faz çıkışında pozitif gerilim seviyesinin oluşturulması sırasında üst anahtar ile ilgili iletim yolu aktif hale gelmekte ve yük akımı pozitif DA bara üzerinden yük tarafına akmaktadır. Bu çalışma durumunda enerji doğrudan DA kaynaktan yük tarafına aktarılmaktadır.",
+      "context": "3.3.1. Pozitif yarım periyot çalışması",
+      "kind": "Şekil",
+      "number": "3.5",
+      "title": "'te pozitif yarım periyot boyunca devrede oluşan temel akım yolları gösterilmektedir. Faz çıkışında pozitif gerilim seviyesinin oluşturulması sırasında üst anahtar ile ilgili iletim yolu aktif hale gelmekte ve yük akımı pozitif DA bara üzerinden yük tarafına akmaktadır. Bu çalışma durumunda enerji doğrudan DA kaynaktan yük tarafına aktarılmaktadır"
+    },
+    {
+      "index": 1378,
+      "style": "NormalWeb",
+      "text": "Şekil 3.5. T-tipi eviricide pozitif alternansta anahtarın açık (on) durumları.",
+      "context": "3.3.1. Pozitif yarım periyot çalışması",
+      "kind": "Şekil",
+      "number": "3.5",
+      "title": "T-tipi eviricide pozitif alternansta anahtarın açık (on) durumları"
+    },
+    {
+      "index": 1381,
+      "style": "NormalWeb",
+      "text": "Şekil 3.6. T-tipi eviricide pozitif alternansta anahtarların kapalı (off) durumları.",
+      "context": "3.3.1. Pozitif yarım periyot çalışması",
+      "kind": "Şekil",
+      "number": "3.6",
+      "title": "T-tipi eviricide pozitif alternansta anahtarların kapalı (off) durumları"
+    },
+    {
+      "index": 1393,
+      "style": "NormalWeb",
+      "text": "Şekil 3.7'de negatif yarım periyot boyunca oluşan temel akım yolları gösterilmektedir. Faz çıkışında negatif gerilim seviyesinin oluşturulması sırasında alt anahtarlar iletimde bulunmakta ve enerji DA kaynaktan yük tarafına aktarılmaktadır. Bu çalışma durumunda faz çıkışı negatif DA bara noktasına bağlanmakta ve çıkışta -Vda/2 gerilimi elde edilmektedir.",
+      "context": "3.3.2. Negatif yarım periyot çalışması",
+      "kind": "Şekil",
+      "number": "3.7",
+      "title": "'de negatif yarım periyot boyunca oluşan temel akım yolları gösterilmektedir. Faz çıkışında negatif gerilim seviyesinin oluşturulması sırasında alt anahtarlar iletimde bulunmakta ve enerji DA kaynaktan yük tarafına aktarılmaktadır. Bu çalışma durumunda faz çıkışı negatif DA bara noktasına bağlanmakta ve çıkışta -Vda/2 gerilimi elde edilmektedir"
+    },
+    {
+      "index": 1396,
+      "style": "NormalWeb",
+      "text": "Şekil 3.7. T-tipi eviricide negatif alternansta anahtarın açık (on) durumları.",
+      "context": "3.3.2. Negatif yarım periyot çalışması",
+      "kind": "Şekil",
+      "number": "3.7",
+      "title": "T-tipi eviricide negatif alternansta anahtarın açık (on) durumları"
+    },
+    {
+      "index": 1405,
+      "style": "NormalWeb",
+      "text": "Şekil 3.8. T-tipi eviricide negatif alternansta anahtarın kapalı (off) durumları.",
+      "context": "3.3.2. Negatif yarım periyot çalışması",
+      "kind": "Şekil",
+      "number": "3.8",
+      "title": "T-tipi eviricide negatif alternansta anahtarın kapalı (off) durumları"
+    },
+    {
+      "index": 1413,
+      "style": "NormalWeb",
+      "text": "Şekil 3.3'te sıfır seviyesinin oluşturulduğu çalışma durumu gösterilmektedir. Bu durumda faz çıkışı nötr anahtarları üzerinden DA bara orta noktasına bağlanmaktadır. Çıkış gerilimi sıfır seviyesinde tutulurken yük akımı filtre indüktansı nedeniyle akmaya devam etmektedir. Bu nedenle nötr anahtarları yalnızca gerilim seviyesini belirleyen elemanlar değil aynı zamanda önemli miktarda akım taşıyan güç elemanları haline gelmektedir.",
+      "context": "3.3.3. Sıfır seviyesinin oluşturulması ve nötr anahtarlarının davranışı",
+      "kind": "Şekil",
+      "number": "3.3",
+      "title": "'te sıfır seviyesinin oluşturulduğu çalışma durumu gösterilmektedir. Bu durumda faz çıkışı nötr anahtarları üzerinden DA bara orta noktasına bağlanmaktadır. Çıkış gerilimi sıfır seviyesinde tutulurken yük akımı filtre indüktansı nedeniyle akmaya devam etmektedir. Bu nedenle nötr anahtarları yalnızca gerilim seviyesini belirleyen elemanlar değil aynı zamanda önemli miktarda akım taşıyan güç elemanları haline gelmektedir"
+    },
+    {
+      "index": 1428,
+      "style": "NormalWeb",
+      "text": "Şekil 3.5'de pozitif yarım periyot sırasında oluşan temel akım yolları gösterilmektedir. Pozitif çıkış gerilimi oluşturulurken yük akımı üst bölgedeki güç anahtarı üzerinden yük tarafına aktarılmaktadır. Bu çalışma durumunda enerji doğrudan DA kaynaktan yük tarafına iletilmektedir. Yük akımının yönü ile çıkış geriliminin işareti aynı olduğundan iletim yolu oldukça basit bir yapıya sahiptir.",
+      "context": "3.4. T-Tipi Eviricilerde Akım Yollarının Analizi",
+      "kind": "Şekil",
+      "number": "3.5",
+      "title": "'de pozitif yarım periyot sırasında oluşan temel akım yolları gösterilmektedir. Pozitif çıkış gerilimi oluşturulurken yük akımı üst bölgedeki güç anahtarı üzerinden yük tarafına aktarılmaktadır. Bu çalışma durumunda enerji doğrudan DA kaynaktan yük tarafına iletilmektedir. Yük akımının yönü ile çıkış geriliminin işareti aynı olduğundan iletim yolu oldukça basit bir yapıya sahiptir"
+    },
+    {
+      "index": 1440,
+      "style": "NormalWeb",
+      "text": "Şekil 3.9. T-tipi eviricinin pozitif alternansta senkron buck eşdeğeri.",
+      "context": "3.5. T-Tipi Eviricinin Senkron Buck Dönüştürücü Eşdeğeri",
+      "kind": "Şekil",
+      "number": "3.9",
+      "title": "T-tipi eviricinin pozitif alternansta senkron buck eşdeğeri"
+    },
+    {
+      "index": 1442,
+      "style": "NormalWeb",
+      "text": "Şekil 3.9'da pozitif yarım periyot için elde edilen eşdeğer yapı gösterilmektedir. Eşdeğer devrede kullanılan anahtar isimleri, T-tipi eviricinin faz kolunda kullanılan anahtar isimleri ile aynı tutulmuştur. Pozitif yarım periyot boyunca faz çıkışı yalnızca pozitif DA bara seviyesi ile sıfır seviyesi arasında değişmektedir. Bu nedenle ilgili faz kolu, giriş gerilimi Vda/2 olan bir senkron buck dönüştürücü gibi düşünülebilmektedir. Bu çalışma durumunda üst güç anahtarı aktif anahtarlama elemanı olarak görev yaparken nötr anahtarları senkron doğrultucu görevini üstlenmektedir [27],[32]. Benzer şekilde negatif yarım periyot incelendiğinde faz çıkışının sıfır seviyesi ile negatif DA bara seviyesi arasında değiştiği görülmektedir. Şekil 3.10'da gösterilen bu çalışma durumunda ise faz kolu giriş gerilimi yine Vda/2 olan ikinci bir senkron buck dönüştürücü gibi davranmaktadır. Bu durumda alt güç anahtarı aktif anahtarlama elemanı görevini üstlenirken, nötr anahtarları yine serbest dolaşım akımının taşınmasını sağlamaktadır. Bu yaklaşım kullanıldığında T-tipi eviricinin düşük güç çalışma davranışı daha anlaşılır hale gelmektedir. Zira, düşük modülasyon indekslerinde çıkış geriliminin ortalama değeri büyük ölçüde PWM darbe oranı tarafından belirlenmektedir. Bu durum, klasik buck dönüştürücü analizlerinde kullanılan yöntemlerin, T-tipi evirici için de uygulanabilmesine olanak sağlamaktadır.",
+      "context": "3.5. T-Tipi Eviricinin Senkron Buck Dönüştürücü Eşdeğeri",
+      "kind": "Şekil",
+      "number": "3.9",
+      "title": "'da pozitif yarım periyot için elde edilen eşdeğer yapı gösterilmektedir. Eşdeğer devrede kullanılan anahtar isimleri, T-tipi eviricinin faz kolunda kullanılan anahtar isimleri ile aynı tutulmuştur. Pozitif yarım periyot boyunca faz çıkışı yalnızca pozitif DA bara seviyesi ile sıfır seviyesi arasında değişmektedir. Bu nedenle ilgili faz kolu, giriş gerilimi Vda/2 olan bir senkron buck dönüştürücü gibi düşünülebilmektedir. Bu çalışma durumunda üst güç anahtarı aktif anahtarlama elemanı olarak görev yaparken nötr anahtarları senkron doğrultucu görevini üstlenmektedir [27],[32]. Benzer şekilde negatif yarım periyot incelendiğinde faz çıkışının sıfır seviyesi ile negatif DA bara seviyesi arasında değiştiği görülmektedir. Şekil 3.10'da gösterilen bu çalışma durumunda ise faz kolu giriş gerilimi yine Vda/2 olan ikinci bir senkron buck dönüştürücü gibi davranmaktadır. Bu durumda alt güç anahtarı aktif anahtarlama elemanı görevini üstlenirken, nötr anahtarları yine serbest dolaşım akımının taşınmasını sağlamaktadır. Bu yaklaşım kullanıldığında T-tipi eviricinin düşük güç çalışma davranışı daha anlaşılır hale gelmektedir. Zira, düşük modülasyon indekslerinde çıkış geriliminin ortalama değeri büyük ölçüde PWM darbe oranı tarafından belirlenmektedir. Bu durum, klasik buck dönüştürücü analizlerinde kullanılan yöntemlerin, T-tipi evirici için de uygulanabilmesine olanak sağlamaktadır"
+    },
+    {
+      "index": 1462,
+      "style": "NormalWeb",
+      "text": "Şekil 3.10. T-tipi eviricinin negatif alternansta senkron buck eşdeğeri.",
+      "context": "3.5.2. Negatif yarım periyot için senkron buck eşdeğerinin incelenmesi",
+      "kind": "Şekil",
+      "number": "3.10",
+      "title": "T-tipi eviricinin negatif alternansta senkron buck eşdeğeri"
+    },
+    {
+      "index": 1519,
+      "style": "NormalWeb",
+      "text": "Şekil 3.11. Senkron buck dönüştürücüde düşük anahtarlama oranında, sürekli modda",
+      "context": "3.6.4. Düşük güç bölgelerinde akım dolaşım mekanizması",
+      "kind": "Şekil",
+      "number": "3.11",
+      "title": "Senkron buck dönüştürücüde düşük anahtarlama oranında, sürekli modda"
+    },
+    {
+      "index": 1537,
+      "style": "NormalWeb",
+      "text": "Şekil 3.12. Senkron Buck dönüştürücü düşük anahtarlama oranında, süreksiz modda",
+      "context": "3.7. Düşük Güç Bölgelerinde Harmonik Oluşum Mekanizması",
+      "kind": "Şekil",
+      "number": "3.12",
+      "title": "Senkron Buck dönüştürücü düşük anahtarlama oranında, süreksiz modda"
+    },
+    {
+      "index": 1543,
+      "style": "NormalWeb",
+      "text": "Şekil 3.13'te düşük anahtarlama oranında çalışılan bölgelerde harmonik bileşenlerin temel akım dalga şekli üzerindeki etkisi şematik olarak gösterilmektedir. Bu şekil herhangi bir simülasyon veya deneysel sonucu temsil etmemekte olup, düşük modülasyon indekslerinde gözlenen harmonik bozulma mekanizmasının kavramsal olarak açıklanması amacıyla verilmiştir. Şekil 3.13’te görüldüğü üzere akım dalga şekli ideal sinüs formundan sapmakta ve üçüncü harmonik bileşeni belirgin hale gelmektedir. Bu harmonik bileşeninin azaltılması için kontrol sisteminin ilave düzeltme hareketleri gerçekleştirmesi gerekmektedir.",
+      "context": "3.7.1. Üçüncü harmonik bileşeninin gözlenmesi",
+      "kind": "Şekil",
+      "number": "3.13",
+      "title": "'te düşük anahtarlama oranında çalışılan bölgelerde harmonik bileşenlerin temel akım dalga şekli üzerindeki etkisi şematik olarak gösterilmektedir. Bu şekil herhangi bir simülasyon veya deneysel sonucu temsil etmemekte olup, düşük modülasyon indekslerinde gözlenen harmonik bozulma mekanizmasının kavramsal olarak açıklanması amacıyla verilmiştir. Şekil 3.13’te görüldüğü üzere akım dalga şekli ideal sinüs formundan sapmakta ve üçüncü harmonik bileşeni belirgin hale gelmektedir. Bu harmonik bileşeninin azaltılması için kontrol sisteminin ilave düzeltme hareketleri gerçekleştirmesi gerekmektedir"
+    },
+    {
+      "index": 1551,
+      "style": "NormalWeb",
+      "text": "Şekil 3.13. Düşük anahtarlama oranında çalışılan bölgelerde harmonik bileşenlerin akım",
+      "context": "3.7.1. Üçüncü harmonik bileşeninin gözlenmesi",
+      "kind": "Şekil",
+      "number": "3.13",
+      "title": "Düşük anahtarlama oranında çalışılan bölgelerde harmonik bileşenlerin akım"
+    },
+    {
+      "index": 1567,
+      "style": "NormalWeb",
+      "text": "Şekil 3.14. 3. harmonikli akım oluşumu karşısında referans akım, oluşan akım ve kontrolör çıkış değişimlerinin karşılaştırmalı grafiği.",
+      "context": "3.7.2. Akım kontrolörünün düzeltme davranışı",
+      "kind": "Şekil",
+      "number": "3.14",
+      "title": "3. harmonikli akım oluşumu karşısında referans akım, oluşan akım ve kontrolör çıkış değişimlerinin karşılaştırmalı grafiği"
+    },
+    {
+      "index": 1571,
+      "style": "NormalWeb",
+      "text": "Şekil 3.15. Anahtarlama düzeninin teorik işleyişi.",
+      "context": "3.7.2. Akım kontrolörünün düzeltme davranışı",
+      "kind": "Şekil",
+      "number": "3.15",
+      "title": "Anahtarlama düzeninin teorik işleyişi"
+    },
+    {
+      "index": 1573,
+      "style": "NormalWeb",
+      "text": "Şekil 3.16'da düşük güç çalışma koşullarında elde edilen akım ve kontrol işaretleri gösterilmektedir. Şekilden görüldüğü üzere üçüncü harmonik bileşeninin oluştuğu bölgelerde kontrolör çıkışı daha agresif davranmakta ve referans akımı düzeltmek amacıyla ilave müdahalelerde bulunmaktadır. Oluşan akım referans akımdan yüksek ise kontrolör oluşan akımı referans seviyesine indirebilmek için negatif akım geçirme gereği duyacak ve bu periyotta devreye girmemesi gereken anahtar grubunu devreye alıp olması gerekenleri devreden çıkartmak suretiyle ek anahtarlama kayıpları oluşturacaktır.",
+      "context": "3.7.2. Akım kontrolörünün düzeltme davranışı",
+      "kind": "Şekil",
+      "number": "3.16",
+      "title": "'da düşük güç çalışma koşullarında elde edilen akım ve kontrol işaretleri gösterilmektedir. Şekilden görüldüğü üzere üçüncü harmonik bileşeninin oluştuğu bölgelerde kontrolör çıkışı daha agresif davranmakta ve referans akımı düzeltmek amacıyla ilave müdahalelerde bulunmaktadır. Oluşan akım referans akımdan yüksek ise kontrolör oluşan akımı referans seviyesine indirebilmek için negatif akım geçirme gereği duyacak ve bu periyotta devreye girmemesi gereken anahtar grubunu devreye alıp olması gerekenleri devreden çıkartmak suretiyle ek anahtarlama kayıpları oluşturacaktır"
+    },
+    {
+      "index": 1576,
+      "style": "NormalWeb",
+      "text": "Şekil 3.16. Düşük akımlarda kontrolörün verdiği cevaba göre anahtarlama durumlarının değişimi.",
+      "context": "3.7.2. Akım kontrolörünün düzeltme davranışı",
+      "kind": "Şekil",
+      "number": "3.16",
+      "title": "Düşük akımlarda kontrolörün verdiği cevaba göre anahtarlama durumlarının değişimi"
+    },
+    {
+      "index": 1621,
+      "style": "",
+      "text": "Şekil 4.1. Klasik tamamlayıcı (complementary) anahtarlama yönteminde kapı darbeleri.",
+      "context": "4.3. Nötr Anahtar Susturma Yönteminin Geliştirilmesi",
+      "kind": "Şekil",
+      "number": "4.1",
+      "title": "Klasik tamamlayıcı (complementary) anahtarlama yönteminde kapı darbeleri"
+    },
+    {
+      "index": 1623,
+      "style": "",
+      "text": "Şekil 4.1’de klasik tamamlayıcı (complementary) anahtarlama yönteminde kapı darbeleri, Şekil 4.2’de klasik tamamlayıcı anahtarlama yönteminde tetikleme darbelerinden alınan büyütülmüş bir kesit, Şekil 4.3’de simülasyonda kullanılacak bir fazlı T-tipi evirici yapısı, Şekil 4.4’de kullanılan simülasyon dosyasının görseli, Şekil 4.5’de klasik anahtarlama ile yapılmış simülasyondan elde edilen indüktans akım dalga şekli, Şekil 4.6’da klasik anahtarlama ile yapılmış simülasyondan elde edilen indüktans akım dalga şeklinden büyütülmüş bir kesit, Şekil 4.7’de yukarıdan aşağıya doğru; evirici çıkış gerilimi, kontrolör çıkış işareti, L1 indüktans akımı, ve şebeke akımı dalga şekilleri, Şekil 4.8’de L1 indüktans akımının FFT analizi, Şekil 4.9’da şebeke faz akımının FFT analizi verilmiştir. Şekil 4.10’dan itibaren ise önerilen nötr anahtar susturma stratejisinin simülasyon devresine uygulanması sonucunda elde edilen çeşitli dalga şekilleri verilmiştir. Önerilen nötr anahtar susturma stratejisinin devreye uygulanması sonucunda devre veriminin arttığı fakat L1 akımının THD değerinin ise yükseldiği unutulmamalıdır.",
+      "context": "4.3. Nötr Anahtar Susturma Yönteminin Geliştirilmesi",
+      "kind": "Şekil",
+      "number": "4.1",
+      "title": "’de klasik tamamlayıcı (complementary) anahtarlama yönteminde kapı darbeleri, Şekil 4.2’de klasik tamamlayıcı anahtarlama yönteminde tetikleme darbelerinden alınan büyütülmüş bir kesit, Şekil 4.3’de simülasyonda kullanılacak bir fazlı T-tipi evirici yapısı, Şekil 4.4’de kullanılan simülasyon dosyasının görseli, Şekil 4.5’de klasik anahtarlama ile yapılmış simülasyondan elde edilen indüktans akım dalga şekli, Şekil 4.6’da klasik anahtarlama ile yapılmış simülasyondan elde edilen indüktans akım dalga şeklinden büyütülmüş bir kesit, Şekil 4.7’de yukarıdan aşağıya doğru; evirici çıkış gerilimi, kontrolör çıkış işareti, L1 indüktans akımı, ve şebeke akımı dalga şekilleri, Şekil 4.8’de L1 indüktans akımının FFT analizi, Şekil 4.9’da şebeke faz akımının FFT analizi verilmiştir. Şekil 4.10’dan itibaren ise önerilen nötr anahtar susturma stratejisinin simülasyon devresine uygulanması sonucunda elde edilen çeşitli dalga şekilleri verilmiştir. Önerilen nötr anahtar susturma stratejisinin devreye uygulanması sonucunda devre veriminin arttığı fakat L1 akımının THD değerinin ise yükseldiği unutulmamalıdır"
+    },
+    {
+      "index": 1625,
+      "style": "",
+      "text": "Şekil 4.2. Klasik tamamlayıcı anahtarlama yönteminde tetikleme darbelerinden alınan büyütülmüş bir kesit.",
+      "context": "4.3. Nötr Anahtar Susturma Yönteminin Geliştirilmesi",
+      "kind": "Şekil",
+      "number": "4.2",
+      "title": "Klasik tamamlayıcı anahtarlama yönteminde tetikleme darbelerinden alınan büyütülmüş bir kesit"
+    },
+    {
+      "index": 1628,
+      "style": "",
+      "text": "Şekil 4.3. Simülasyonda kullanılacak bir fazlı T-tipi evirici yapısı.",
+      "context": "4.3. Nötr Anahtar Susturma Yönteminin Geliştirilmesi",
+      "kind": "Şekil",
+      "number": "4.3",
+      "title": "Simülasyonda kullanılacak bir fazlı T-tipi evirici yapısı"
+    },
+    {
+      "index": 1630,
+      "style": "",
+      "text": "Şekil 4.4. Kullanılacak simülasyon dosyasının görseli.",
+      "context": "4.3. Nötr Anahtar Susturma Yönteminin Geliştirilmesi",
+      "kind": "Şekil",
+      "number": "4.4",
+      "title": "Kullanılacak simülasyon dosyasının görseli"
+    },
+    {
+      "index": 1632,
+      "style": "",
+      "text": "Şekil 4.5. Klasik anahtarlama ile yapılmış simülasyondan elde edilen indüktans akım",
+      "context": "4.3. Nötr Anahtar Susturma Yönteminin Geliştirilmesi",
+      "kind": "Şekil",
+      "number": "4.5",
+      "title": "Klasik anahtarlama ile yapılmış simülasyondan elde edilen indüktans akım"
+    },
+    {
+      "index": 1640,
+      "style": "",
+      "text": "Şekil 4.6. Klasik anahtarlama ile yapılmış simülasyondan elde edilen indüktans akım dalga şeklinden büyütülmüş bir kesit.",
+      "context": "4.3. Nötr Anahtar Susturma Yönteminin Geliştirilmesi",
+      "kind": "Şekil",
+      "number": "4.6",
+      "title": "Klasik anahtarlama ile yapılmış simülasyondan elde edilen indüktans akım dalga şeklinden büyütülmüş bir kesit"
+    },
+    {
+      "index": 1643,
+      "style": "",
+      "text": "Şekil 4.7. Klasik anahtarlamada dalga şekilleri (yukarıdan aşağıya doğru): 1. Evirici çıkış gerilimi, 2. Kontrolör çıkış işareti, 3. L1 indüktans akımı, 4. Şebeke akımı.",
+      "context": "4.3. Nötr Anahtar Susturma Yönteminin Geliştirilmesi",
+      "kind": "Şekil",
+      "number": "4.7",
+      "title": "Klasik anahtarlamada dalga şekilleri (yukarıdan aşağıya doğru): 1. Evirici çıkış gerilimi, 2. Kontrolör çıkış işareti, 3. L1 indüktans akımı, 4. Şebeke akımı"
+    },
+    {
+      "index": 1645,
+      "style": "",
+      "text": "Şekil 4.8. Klasik anahtarlamada L1 indüktans akımının FFT analizi (THDi = %8,29).",
+      "context": "4.3. Nötr Anahtar Susturma Yönteminin Geliştirilmesi",
+      "kind": "Şekil",
+      "number": "4.8",
+      "title": "Klasik anahtarlamada L1 indüktans akımının FFT analizi (THDi = %8,29)"
+    },
+    {
+      "index": 1648,
+      "style": "",
+      "text": "Şekil 4.9. Klasik anahtarlamada şebeke faz akımının FFT analizi (THDi = %2,14).",
+      "context": "4.3. Nötr Anahtar Susturma Yönteminin Geliştirilmesi",
+      "kind": "Şekil",
+      "number": "4.9",
+      "title": "Klasik anahtarlamada şebeke faz akımının FFT analizi (THDi = %2,14)"
+    },
+    {
+      "index": 1653,
+      "style": "",
+      "text": "Şekil 4.10. Önerilen nötr anahtar susturma stratejisi ile yapılan anahtarlama.",
+      "context": "4.3. Nötr Anahtar Susturma Yönteminin Geliştirilmesi",
+      "kind": "Şekil",
+      "number": "4.10",
+      "title": "Önerilen nötr anahtar susturma stratejisi ile yapılan anahtarlama"
+    },
+    {
+      "index": 1656,
+      "style": "",
+      "text": "Şekil 4.11. Önerilen nötr anahtar susturma stratejisi ile yapılan anahtarlamadan alınmış",
+      "context": "4.3. Nötr Anahtar Susturma Yönteminin Geliştirilmesi",
+      "kind": "Şekil",
+      "number": "4.11",
+      "title": "Önerilen nötr anahtar susturma stratejisi ile yapılan anahtarlamadan alınmış"
+    },
+    {
+      "index": 1659,
+      "style": "",
+      "text": "Şekil 4.12. Önerilen nötr anahtar susturma stratejisi ile yapılmış simülasyondan elde edilen indüktans akım dalga şeklinden büyütülmüş bir kesit.",
+      "context": "4.3. Nötr Anahtar Susturma Yönteminin Geliştirilmesi",
+      "kind": "Şekil",
+      "number": "4.12",
+      "title": "Önerilen nötr anahtar susturma stratejisi ile yapılmış simülasyondan elde edilen indüktans akım dalga şeklinden büyütülmüş bir kesit"
+    },
+    {
+      "index": 1664,
+      "style": "",
+      "text": "Şekil 4.13. Önerilen nötr anahtar susturma stratejisi ile yapılmış simülasyondan elde",
+      "context": "4.3. Nötr Anahtar Susturma Yönteminin Geliştirilmesi",
+      "kind": "Şekil",
+      "number": "4.13",
+      "title": "Önerilen nötr anahtar susturma stratejisi ile yapılmış simülasyondan elde"
+    },
+    {
+      "index": 1668,
+      "style": "",
+      "text": "Şekil 4.14. Önerilen nötr anahtar susturma stratejisine ilişkin dalga şekilleri (yukarıdan",
+      "context": "4.3. Nötr Anahtar Susturma Yönteminin Geliştirilmesi",
+      "kind": "Şekil",
+      "number": "4.14",
+      "title": "Önerilen nötr anahtar susturma stratejisine ilişkin dalga şekilleri (yukarıdan"
+    },
+    {
+      "index": 1674,
+      "style": "",
+      "text": "Şekil 4.15. Önerilen nötr anahtar susturma stratejisinde L1 indüktans akımının FFT",
+      "context": "4.3. Nötr Anahtar Susturma Yönteminin Geliştirilmesi",
+      "kind": "Şekil",
+      "number": "4.15",
+      "title": "Önerilen nötr anahtar susturma stratejisinde L1 indüktans akımının FFT"
+    },
+    {
+      "index": 1679,
+      "style": "",
+      "text": "Şekil 4.16. Önerilen nötr anahtar susturma stratejisinde şebeke faz akımının FFT analizi",
+      "context": "4.3. Nötr Anahtar Susturma Yönteminin Geliştirilmesi",
+      "kind": "Şekil",
+      "number": "4.16",
+      "title": "Önerilen nötr anahtar susturma stratejisinde şebeke faz akımının FFT analizi"
+    },
+    {
+      "index": 1682,
+      "style": "",
+      "text": "Şekil 4.13’de önerilen nötr anahtar susturma stratejisi ile yapılmış simülasyondan elde edilen indüktans akım dalga şeklinden büyütülmüş bir bölüm, Şekil 4.14’de önerilen nötr anahtar susturma stratejisine ilişkin evirici çıkış gerilimi, kontrolör çıkış işareti, L1 indüktans akımı ve şebeke akımı dalga şekilleri, Şekil 4.15’de önerilen nötr anahtar susturma stratejisinde L1 indüktans akımının FFT analizi ve Şekil 4.16’da önerilen nötr anahtar susturma stratejisinde şebeke faz akımının FFT analizi verilmiştir.",
+      "context": "4.3. Nötr Anahtar Susturma Yönteminin Geliştirilmesi",
+      "kind": "Şekil",
+      "number": "4.13",
+      "title": "’de önerilen nötr anahtar susturma stratejisi ile yapılmış simülasyondan elde edilen indüktans akım dalga şeklinden büyütülmüş bir bölüm, Şekil 4.14’de önerilen nötr anahtar susturma stratejisine ilişkin evirici çıkış gerilimi, kontrolör çıkış işareti, L1 indüktans akımı ve şebeke akımı dalga şekilleri, Şekil 4.15’de önerilen nötr anahtar susturma stratejisinde L1 indüktans akımının FFT analizi ve Şekil 4.16’da önerilen nötr anahtar susturma stratejisinde şebeke faz akımının FFT analizi verilmiştir"
+    },
+    {
+      "index": 1693,
+      "style": "",
+      "text": "Şekil 4.17. Klasik bir solar evirici kontrol blok diyagramı [44].",
+      "context": "4.4. Klasik Bir Solar Evirici Kontrol Blok Diyagramının Anlaşılması",
+      "kind": "Şekil",
+      "number": "4.17",
+      "title": "Klasik bir solar evirici kontrol blok diyagramı [44]"
+    },
+    {
+      "index": 1695,
+      "style": "",
+      "text": "Şekil 4.17’de görülen kontrol blok diyagramda, LCL filtreye uygulanacak gerilim dalga şeklini oluşturmak üzere anahtarların D(duty cycle) değerlerinin nasıl elde edildiğini gösterilmektedir. PWM D değerinin elde edildiği toplama bloğuna giren bilgilerden konu ile ilgili olan bir tanesi kontrolör çıkışı iken diğeri de feedforward olarak adlandırılan bilgisidir. Tezde kontrolör kullanılmayacağı için elde edilecek sonuçların yalnızca feedforward bileşeninin düzenlenmesiyle elde edileceği açıktır.",
+      "context": "4.4. Klasik Bir Solar Evirici Kontrol Blok Diyagramının Anlaşılması",
+      "kind": "Şekil",
+      "number": "4.17",
+      "title": "’de görülen kontrol blok diyagramda, LCL filtreye uygulanacak gerilim dalga şeklini oluşturmak üzere anahtarların D(duty cycle) değerlerinin nasıl elde edildiğini gösterilmektedir. PWM D değerinin elde edildiği toplama bloğuna giren bilgilerden konu ile ilgili olan bir tanesi kontrolör çıkışı iken diğeri de feedforward olarak adlandırılan bilgisidir. Tezde kontrolör kullanılmayacağı için elde edilecek sonuçların yalnızca feedforward bileşeninin düzenlenmesiyle elde edileceği açıktır"
+    },
+    {
+      "index": 1702,
+      "style": "",
+      "text": "Şekil 4.18. Feedforward bileşeninin etkisi.",
+      "context": "4.4. Klasik Bir Solar Evirici Kontrol Blok Diyagramının Anlaşılması",
+      "kind": "Şekil",
+      "number": "4.18",
+      "title": "Feedforward bileşeninin etkisi"
+    },
+    {
+      "index": 1705,
+      "style": "",
+      "text": "Şekil 4.19. Eşpotansiyel kaynakların gerilim dalga şekilleri ve akımın sıfır oluşu.",
+      "context": "4.4. Klasik Bir Solar Evirici Kontrol Blok Diyagramının Anlaşılması",
+      "kind": "Şekil",
+      "number": "4.19",
+      "title": "Eşpotansiyel kaynakların gerilim dalga şekilleri ve akımın sıfır oluşu"
+    },
+    {
+      "index": 1707,
+      "style": "",
+      "text": "Şekil 4.20. Evirici tam güçte iken feedforward ve kontrolör etkileri.",
+      "context": "4.4. Klasik Bir Solar Evirici Kontrol Blok Diyagramının Anlaşılması",
+      "kind": "Şekil",
+      "number": "4.20",
+      "title": "Evirici tam güçte iken feedforward ve kontrolör etkileri"
+    },
+    {
+      "index": 1711,
+      "style": "",
+      "text": "Şekil 3.1’de evirici çıkışında görülen LCL filtrenin seri eşdeğer empedansı (4.1) ifadesinde verilmiştir [24]:",
+      "context": "4.4. Klasik Bir Solar Evirici Kontrol Blok Diyagramının Anlaşılması",
+      "kind": "Şekil",
+      "number": "3.1",
+      "title": "’de evirici çıkışında görülen LCL filtrenin seri eşdeğer empedansı (4.1) ifadesinde verilmiştir [24]:"
+    },
+    {
+      "index": 1718,
+      "style": "",
+      "text": "Şekil 4.21. 2.7 A’da feedforward ve kontrolör etkileri.",
+      "context": "4.4. Klasik Bir Solar Evirici Kontrol Blok Diyagramının Anlaşılması",
+      "kind": "Şekil",
+      "number": "4.21",
+      "title": "2.7 A’da feedforward ve kontrolör etkileri"
+    },
+    {
+      "index": 1725,
+      "style": "",
+      "text": "Şekil 4.22. Düşük güçlerde doğrusal olmayan sistem.",
+      "context": "4.5. Yeni Solar Evirici Kontrol Blok Diyagramı Önerisi",
+      "kind": "Şekil",
+      "number": "4.22",
+      "title": "Düşük güçlerde doğrusal olmayan sistem"
+    },
+    {
+      "index": 1809,
+      "style": "",
+      "text": "Şekil 4.23’de önerilen yeni kontrol blok diyagramı; (4.26) ifadesini sağlayacak şekilde sin3(wt) ve sin(wt)’li ifadelerin toplamını feedforward olarak kullanan bir yapıyı göstermektedir.",
+      "context": "3. harmonik transfer fonksiyonu:",
+      "kind": "Şekil",
+      "number": "4.23",
+      "title": "’de önerilen yeni kontrol blok diyagramı; (4.26) ifadesini sağlayacak şekilde sin3(wt) ve sin(wt)’li ifadelerin toplamını feedforward olarak kullanan bir yapıyı göstermektedir"
+    },
+    {
+      "index": 1811,
+      "style": "NormalWeb",
+      "text": "Şekil 4.23. Önerilen kontrol blok diyagramı.",
+      "context": "3. harmonik transfer fonksiyonu:",
+      "kind": "Şekil",
+      "number": "4.23",
+      "title": "Önerilen kontrol blok diyagramı"
+    },
+    {
+      "index": 1825,
+      "style": "NormalWeb",
+      "text": "Şekil 4.24. T-tipi eviricinin nötr anahtar susturma sonrası 2 buck eviriciye dönüşmesi.",
+      "context": "4.6. Harmonik Oluşum Mekanizmasının Matematiksel Olarak Açıklanması",
+      "kind": "Şekil",
+      "number": "4.24",
+      "title": "T-tipi eviricinin nötr anahtar susturma sonrası 2 buck eviriciye dönüşmesi"
+    },
+    {
+      "index": 1913,
+      "style": "NormalWeb",
+      "text": "Şekil 4.25. dmax:0,1; 0,2; 0,3; 0,4; 0,5;0,6;0,7; 0,8 değerleri için L1 akımının pozitif",
+      "context": "4.6. Harmonik Oluşum Mekanizmasının Matematiksel Olarak Açıklanması",
+      "kind": "Şekil",
+      "number": "4.25",
+      "title": "dmax:0,1; 0,2; 0,3; 0,4; 0,5;0,6;0,7; 0,8 değerleri için L1 akımının pozitif"
+    },
+    {
+      "index": 1915,
+      "style": "NormalWeb",
+      "text": "Şekil 4.25’ten görüleceği üzere L1 akımı DCM durumunda kaldığı sürece sıfır civarları hızlı tırmanan ve ortası çökük bir dalga şekli görülür. Bunu sebebi ise (4.46) denklemindeki iki tane sin(wt) ifadesinin çarpımından gelen sin2(wt) dalga formudur. Şekil 3.13’teki grafikte akım zarfının sıfır civarlarında sinüzoidal dalga formundan daha hızlı yükseldiği kesikli çizgi ile gösterilmiştir. Orta noktalarda (wt=pi/2 civarlarında) çöküşün sebebi ise anlık akımların tepe değerlerini belirleyen Vda - vşeb(wt) değerlerinin Şekil 3.13’te gösterildiği gibi ters sinüzoidal dalga formunda olmasıdır. Denklem (4.46) ve Şekil 3.13, DCM bölgesinde oluşan akım zarfının üçüncü harmonik oluşum mekanizmasının fiziksel kökenini açıklamaktadır. Ancak (4.46) denklemi üzerinden yine dmax=0,1; 0,2; 0,3; …. 0,8; değerleri için 1.; 3.; 5.;7.; 9. harmonik bileşen genlikleri ve 1. harmoniğe oranları (4.47) denklemi ile hesaplanırsa Tablo 4.1’de verilen değerler ortaya çıkar:",
+      "context": "4.6. Harmonik Oluşum Mekanizmasının Matematiksel Olarak Açıklanması",
+      "kind": "Şekil",
+      "number": "4.25",
+      "title": "’ten görüleceği üzere L1 akımı DCM durumunda kaldığı sürece sıfır civarları hızlı tırmanan ve ortası çökük bir dalga şekli görülür. Bunu sebebi ise (4.46) denklemindeki iki tane sin(wt) ifadesinin çarpımından gelen sin2(wt) dalga formudur. Şekil 3.13’teki grafikte akım zarfının sıfır civarlarında sinüzoidal dalga formundan daha hızlı yükseldiği kesikli çizgi ile gösterilmiştir. Orta noktalarda (wt=pi/2 civarlarında) çöküşün sebebi ise anlık akımların tepe değerlerini belirleyen Vda - vşeb(wt) değerlerinin Şekil 3.13’te gösterildiği gibi ters sinüzoidal dalga formunda olmasıdır. Denklem (4.46) ve Şekil 3.13, DCM bölgesinde oluşan akım zarfının üçüncü harmonik oluşum mekanizmasının fiziksel kökenini açıklamaktadır. Ancak (4.46) denklemi üzerinden yine dmax=0,1; 0,2; 0,3; …. 0,8; değerleri için 1.; 3.; 5.;7.; 9. harmonik bileşen genlikleri ve 1. harmoniğe oranları (4.47) denklemi ile hesaplanırsa Tablo 4.1’de verilen değerler ortaya çıkar:"
+    },
+    {
+      "index": 1973,
+      "style": "NormalWeb",
+      "text": "Tablo 4.1. Farklı dmax değerleri için harmonik bileşen genlikleri.",
+      "context": "9. h (450Hz)",
+      "kind": "Tablo",
+      "number": "4.1",
+      "title": "Farklı dmax değerleri için harmonik bileşen genlikleri"
+    },
+    {
+      "index": 2021,
+      "style": "NormalWeb",
+      "text": "Tablo 4.2. Farklı dmax değerlerinde harmonik bileşen oranlarının değişimsizliği.",
+      "context": "9. harmonik [%]",
+      "kind": "Tablo",
+      "number": "4.2",
+      "title": "Farklı dmax değerlerinde harmonik bileşen oranlarının değişimsizliği"
+    },
+    {
+      "index": 2022,
+      "style": "NormalWeb",
+      "text": "Tablo 4.2’den de görüldüğü gibi; dmax değeri fark etmeksizin, L1 akımı tüm alternans boyunca DCM durumunda kaldığında, aynı harmonik bileşenleri üretilmektedir. Bu durum ancak kısmen DCM, kısmen CCM durumlarında, CCM’de kalma süresi arttıkça, harmonik bileşenlerin oranlarının düşmesi şeklinde kendini gösterecektir. Benzer şekilde CCM bölgesi için L1 akım denklemi çıkarılacak olursa;",
+      "context": "9. harmonik [%]",
+      "kind": "Tablo",
+      "number": "4.2",
+      "title": "’den de görüldüğü gibi; dmax değeri fark etmeksizin, L1 akımı tüm alternans boyunca DCM durumunda kaldığında, aynı harmonik bileşenleri üretilmektedir. Bu durum ancak kısmen DCM, kısmen CCM durumlarında, CCM’de kalma süresi arttıkça, harmonik bileşenlerin oranlarının düşmesi şeklinde kendini gösterecektir. Benzer şekilde CCM bölgesi için L1 akım denklemi çıkarılacak olursa;"
+    },
+    {
+      "index": 2145,
+      "style": "NormalWeb",
+      "text": "Tablo 4.3. V1m ve V3m katsayılarının çeşitli kombinasyonları.",
+      "context": "2.21 A",
+      "kind": "Tablo",
+      "number": "4.3",
+      "title": "V1m ve V3m katsayılarının çeşitli kombinasyonları"
+    },
+    {
+      "index": 2147,
+      "style": "NormalWeb",
+      "text": "Tablo 4.3’te verilen katsayı kombinasyonlarından en iyi sonuç; V1m=0,45 , V3m=0,37 değerleri için 3. harmonik oranı %1,60 olarak elde edilmiştir. Diğer en yakın sonuçlar ise V1m=0,44, V3m=0,38 için %1,62 ve V1m=0,41, V3m=0,41 için %1,63 olarak elde edilmiştir. Tabloda her 3 durum için de V1m+V3m toplamının 0.82 olduğu görülmektedir. Ayrıca tablonun tamamını sağlayan kısıtlanmış kombinasyonların tümünün 0,82 ≤ (V1m+V3m) ≤ 0,84 aralığında kaldığı gözlenmektedir. Bu aralığı sağlayan kombinasyonların hiçbirisinde 3. harmonik oranı %5’in üzerinde değildir. Tezde elde edilen sonucun bu noktadan daha da ileriye taşınabilmesi için bu değerleri optimize eden bir çalışma yapılabilir ve bu işlem yapılırken, bu sınırlar arasında kalması sınır şartı olarak verilirse, en kötü durumun 3. harmonik oranı olarak %4,69’ten daha kötü olmaması garanti altına alınabilir. Bu değer sinküp yöntemi ile üçüncü harmonik enjeksiyonu yapılmadan önceki durumdan kat kat daha iyi bir sonuçtur ki; bu değer her dmax değeri için %43,93 olur.",
+      "context": "2.21 A",
+      "kind": "Tablo",
+      "number": "4.3",
+      "title": "’te verilen katsayı kombinasyonlarından en iyi sonuç; V1m=0,45 , V3m=0,37 değerleri için 3. harmonik oranı %1,60 olarak elde edilmiştir. Diğer en yakın sonuçlar ise V1m=0,44, V3m=0,38 için %1,62 ve V1m=0,41, V3m=0,41 için %1,63 olarak elde edilmiştir. Tabloda her 3 durum için de V1m+V3m toplamının 0.82 olduğu görülmektedir. Ayrıca tablonun tamamını sağlayan kısıtlanmış kombinasyonların tümünün 0,82 ≤ (V1m+V3m) ≤ 0,84 aralığında kaldığı gözlenmektedir. Bu aralığı sağlayan kombinasyonların hiçbirisinde 3. harmonik oranı %5’in üzerinde değildir. Tezde elde edilen sonucun bu noktadan daha da ileriye taşınabilmesi için bu değerleri optimize eden bir çalışma yapılabilir ve bu işlem yapılırken, bu sınırlar arasında kalması sınır şartı olarak verilirse, en kötü durumun 3. harmonik oranı olarak %4,69’ten daha kötü olmaması garanti altına alınabilir. Bu değer sinküp yöntemi ile üçüncü harmonik enjeksiyonu yapılmadan önceki durumdan kat kat daha iyi bir sonuçtur ki; bu değer her dmax değeri için %43,93 olur"
+    },
+    {
+      "index": 2150,
+      "style": "NormalWeb",
+      "text": "Şekil 4.26. 1: d(wt) =Vm . sin(wt), 2: d(wt) = 0,45 . sin(wt) + 0,39 . sin3(wt), 3: d(wt) = 0,45 . sin(wt) + 0,37. sin3(wt) değerleri için L1 akımının dalga şekilleri.",
+      "context": "2.21 A",
+      "kind": "Şekil",
+      "number": "4.26",
+      "title": "1: d(wt) =Vm . sin(wt), 2: d(wt) = 0,45 . sin(wt) + 0,39 . sin3(wt), 3: d(wt) = 0,45 . sin(wt) + 0,37. sin3(wt) değerleri için L1 akımının dalga şekilleri"
+    },
+    {
+      "index": 2154,
+      "style": "NormalWeb",
+      "text": "Şekil 4.27. d(wt)=Vm . sin(wt) için farklı dmax = 0,1;0,2; 0,3; 0,4; 0,5; 0,6, 0,7; 0,8",
+      "context": "2.21 A",
+      "kind": "Şekil",
+      "number": "4.27",
+      "title": "d(wt)=Vm . sin(wt) için farklı dmax = 0,1;0,2; 0,3; 0,4; 0,5; 0,6, 0,7; 0,8"
+    },
+    {
+      "index": 2159,
+      "style": "NormalWeb",
+      "text": "Şekil 4.28. 0,1≤V1m≤0,5 ile 0,1≤V3m≤0,5 değerleri için d(wt)=V1m.sin(wt)+V3m.sin3(wt) harmonik bileşenler grafiği.",
+      "context": "2.21 A",
+      "kind": "Şekil",
+      "number": "4.28",
+      "title": "0,1≤V1m≤0,5 ile 0,1≤V3m≤0,5 değerleri için d(wt)=V1m.sin(wt)+V3m.sin3(wt) harmonik bileşenler grafiği"
+    },
+    {
+      "index": 2162,
+      "style": "NormalWeb",
+      "text": "Şekil 4.4’te görülen simülasyon dosyasında yalnızca kontrolöründe yapılan feedforward işareti değişikliği sonrası elde edilen simülasyon sonuçları Şekil 4.29 - Şekil 4.32’de verilmiştir.",
+      "context": "4.7. Sin³ Yöntemi ile Yapılan Simülasyon ve Sonuçların Değerlendirilmesi",
+      "kind": "Şekil",
+      "number": "4.4",
+      "title": "’te görülen simülasyon dosyasında yalnızca kontrolöründe yapılan feedforward işareti değişikliği sonrası elde edilen simülasyon sonuçları Şekil 4.29 - Şekil 4.32’de verilmiştir"
+    },
+    {
+      "index": 2165,
+      "style": "",
+      "text": "Şekil 4.29. Önerilen nötr anahtar susturma stratejisi ile yapılmış simülasyondan elde",
+      "context": "4.7. Sin³ Yöntemi ile Yapılan Simülasyon ve Sonuçların Değerlendirilmesi",
+      "kind": "Şekil",
+      "number": "4.29",
+      "title": "Önerilen nötr anahtar susturma stratejisi ile yapılmış simülasyondan elde"
+    },
+    {
+      "index": 2169,
+      "style": "",
+      "text": "Şekil 4.30. Dalga şekilleri (yukarıdan aşağıya doğru): 1. Evirici çıkış gerilimi, 2.",
+      "context": "4.7. Sin³ Yöntemi ile Yapılan Simülasyon ve Sonuçların Değerlendirilmesi",
+      "kind": "Şekil",
+      "number": "4.30",
+      "title": "Dalga şekilleri (yukarıdan aşağıya doğru): 1. Evirici çıkış gerilimi, 2"
+    },
+    {
+      "index": 2173,
+      "style": "",
+      "text": "Şekil 4.31. L1 indüktans akımı FFT analizi (THDi=%9,5).",
+      "context": "4.7. Sin³ Yöntemi ile Yapılan Simülasyon ve Sonuçların Değerlendirilmesi",
+      "kind": "Şekil",
+      "number": "4.31",
+      "title": "L1 indüktans akımı FFT analizi (THDi=%9,5)"
+    },
+    {
+      "index": 2176,
+      "style": "",
+      "text": "Şekil 4.32. Şebeke akımı FFT analizi (THDi=%7,8).",
+      "context": "4.7. Sin³ Yöntemi ile Yapılan Simülasyon ve Sonuçların Değerlendirilmesi",
+      "kind": "Şekil",
+      "number": "4.32",
+      "title": "Şebeke akımı FFT analizi (THDi=%7,8)"
+    },
+    {
+      "index": 2215,
+      "style": "",
+      "text": "Tablo 4.4. Simülasyon çalışmaları sonucunda elde edilen verim ve THD değerlerinin her",
+      "context": "4.9. Bölüm Sonucu",
+      "kind": "Tablo",
+      "number": "4.4",
+      "title": "Simülasyon çalışmaları sonucunda elde edilen verim ve THD değerlerinin her"
+    },
+    {
+      "index": 2218,
+      "style": "",
+      "text": "Tablo 4.4’te simülasyon çalışmaları sonucunda her 3 yaklaşım ile elde edilen verim ve THD değerlerinin karşılaştırılması verilmiştir. Simülasyon çalışmaları, önerilen yöntemin teorik beklentiler ile uyumlu sonuçlar verdiğini göstermiştir. Harmonik performansında elde edilen iyileşmeye rağmen Bölüm 3 kapsamında sağlanan verim avantajının korunması, geliştirilen yaklaşımın en önemli kazanımlarından biri olmuştur. Böylece güç kalitesi ve enerji dönüşüm verimi açısından daha dengeli bir çalışma noktası elde edilmiştir.",
+      "context": "3 yaklaşım ile karşılaştırılması.",
+      "kind": "Tablo",
+      "number": "4.4",
+      "title": "’te simülasyon çalışmaları sonucunda her 3 yaklaşım ile elde edilen verim ve THD değerlerinin karşılaştırılması verilmiştir. Simülasyon çalışmaları, önerilen yöntemin teorik beklentiler ile uyumlu sonuçlar verdiğini göstermiştir. Harmonik performansında elde edilen iyileşmeye rağmen Bölüm 3 kapsamında sağlanan verim avantajının korunması, geliştirilen yaklaşımın en önemli kazanımlarından biri olmuştur. Böylece güç kalitesi ve enerji dönüşüm verimi açısından daha dengeli bir çalışma noktası elde edilmiştir"
+    },
+    {
+      "index": 2245,
+      "style": "NormalWeb",
+      "text": "Şekil 5.1’de sol tarafta görünen varyak isimli modül üzerinde enerji bağlantıları, şalt ve koruma ekipmanlarının olduğu, akım transformatörleri ve AA enerji analizörünü bulunan, 3 faz bağımsız varyaklar sayesinde şebeke-evirici bağlantı noktasının etkin gerilim seviyesinin ayarlanabildiği önemli bir yardımcı modüldür.",
+      "context": "5.1. Giriş",
+      "kind": "Şekil",
+      "number": "5.1",
+      "title": "’de sol tarafta görünen varyak isimli modül üzerinde enerji bağlantıları, şalt ve koruma ekipmanlarının olduğu, akım transformatörleri ve AA enerji analizörünü bulunan, 3 faz bağımsız varyaklar sayesinde şebeke-evirici bağlantı noktasının etkin gerilim seviyesinin ayarlanabildiği önemli bir yardımcı modüldür"
+    },
+    {
+      "index": 2248,
+      "style": "NormalWeb",
+      "text": "Şekil 5.1. Deney ve ölçme düzenekler genel fotoğrafı.",
+      "context": "5.1. Giriş",
+      "kind": "Şekil",
+      "number": "5.1",
+      "title": "Deney ve ölçme düzenekler genel fotoğrafı"
+    },
+    {
+      "index": 2267,
+      "style": "NormalWeb",
+      "text": "Şekil 5.2. Evirici donanımı.",
+      "context": "5.1. Giriş",
+      "kind": "Şekil",
+      "number": "5.2",
+      "title": "Evirici donanımı"
+    },
+    {
+      "index": 2269,
+      "style": "ResimYazs",
+      "text": "Şekil 5.3. Evirici donanımı ve alt birimlerinin tanıtılması.",
+      "context": "5.1. Giriş",
+      "kind": "Şekil",
+      "number": "5.3",
+      "title": "Evirici donanımı ve alt birimlerinin tanıtılması"
+    },
+    {
+      "index": 2286,
+      "style": "ResimYazs",
+      "text": "Tablo 5.1. Evirici donanımı alt birimleri.",
+      "context": "14. Deşarj fonksiyonu lambası",
+      "kind": "Tablo",
+      "number": "5.1",
+      "title": "Evirici donanımı alt birimleri"
+    },
+    {
+      "index": 2289,
+      "style": "ResimYazs",
+      "text": "Şekil 5.4. Eviricinin bir fazına ait donanımlar.",
+      "context": "14. Deşarj fonksiyonu lambası",
+      "kind": "Şekil",
+      "number": "5.4",
+      "title": "Eviricinin bir fazına ait donanımlar"
+    },
+    {
+      "index": 2292,
+      "style": "ResimYazs",
+      "text": "Şekil 5.5. Eviricinin bir fazına ait donanımlar.",
+      "context": "14. Deşarj fonksiyonu lambası",
+      "kind": "Şekil",
+      "number": "5.5",
+      "title": "Eviricinin bir fazına ait donanımlar"
+    },
+    {
+      "index": 2303,
+      "style": "ResimYazs",
+      "text": "Tablo 5.2. Şekil 5.4 ve Şekil 5.5’teki donanıma ait komponentler.",
+      "context": "8. LCL filtre L1 bobini",
+      "kind": "Tablo",
+      "number": "5.2",
+      "title": "Şekil 5.4 ve Şekil 5.5’teki donanıma ait komponentler"
+    },
+    {
+      "index": 2306,
+      "style": "ResimYazs",
+      "text": "Şekil 5.6. Evirici giriş devresinin detay görüntüsü.",
+      "context": "8. LCL filtre L1 bobini",
+      "kind": "Şekil",
+      "number": "5.6",
+      "title": "Evirici giriş devresinin detay görüntüsü"
+    },
+    {
+      "index": 2315,
+      "style": "ResimYazs",
+      "text": "Tablo 5.3. Evirici donanımının giriş kısmına ait komponentler.",
+      "context": "6. Buffer kartı",
+      "kind": "Tablo",
+      "number": "5.3",
+      "title": "Evirici donanımının giriş kısmına ait komponentler"
+    },
+    {
+      "index": 2325,
+      "style": "NormalWeb",
+      "text": "Şekil 5.7. Kontrol kartı ve buffer kartın fotoğrafı.",
+      "context": "5.2. Evirici Kontrol Kartı ve Buffer Kartı",
+      "kind": "Şekil",
+      "number": "5.7",
+      "title": "Kontrol kartı ve buffer kartın fotoğrafı"
+    },
+    {
+      "index": 2370,
+      "style": "ResimYazs",
+      "text": "Şekil 5.8. IGBT kapı sürme devresi fotoğrafı.",
+      "context": "5.3. IGBT Kapı Sürücü Devresi",
+      "kind": "Şekil",
+      "number": "5.8",
+      "title": "IGBT kapı sürme devresi fotoğrafı"
+    },
+    {
+      "index": 2399,
+      "style": "ResimYazs",
+      "text": "Şekil 5.9. Pencere karşılaştırıcı devresi.",
+      "context": "5.5. Akım Sensörü",
+      "kind": "Şekil",
+      "number": "5.9",
+      "title": "Pencere karşılaştırıcı devresi"
+    },
+    {
+      "index": 2401,
+      "style": "",
+      "text": "Şekil 5.9’da pencere karşılaştırıcı devresine ait şematik çizim verilmiştir. Bu devrede R1, R2 ve R3 dirençleri akım sensöründen elde edilen gerilimin izin verilen sınırlarını belirleyecek şekilde ayarlanmıştır. Buna göre, sensörün ölçtüğü akımın pozitif alternansına karşılık gelen en yüksek gerilim değeri Vp+ = 2 V, negatif alternansına karşılık gelen en düşük gerilim değeri ise Vp− = 0,6 V olarak belirlenmiştir. Referans gerilimi 1,3 V seviyesindedir ve bu değerin 0,7 V üstü (2,0 V) ile 0,7 V altı (0,6 V) arasında kalan gerilim aralığında sistem normal çalışmaya devam eder. Gerilim değeri bu aralığın dışına çıktığında pencere karşılaştırıcı devresi FAULT sinyali üretir. Pencere karşılaştırıcı devresinin FAULT çıkışı kontrol kartının optoizole girişlerinden birine bağlanmıştır. Aşırı akım durumunda kontrol kartı harici kesme üreterek PWM sinyallerini kesmekte ve devrenin korumaya geçmesi sağlanmaktadır.",
+      "context": "5.5. Akım Sensörü",
+      "kind": "Şekil",
+      "number": "5.9",
+      "title": "’da pencere karşılaştırıcı devresine ait şematik çizim verilmiştir. Bu devrede R1, R2 ve R3 dirençleri akım sensöründen elde edilen gerilimin izin verilen sınırlarını belirleyecek şekilde ayarlanmıştır. Buna göre, sensörün ölçtüğü akımın pozitif alternansına karşılık gelen en yüksek gerilim değeri Vp+ = 2 V, negatif alternansına karşılık gelen en düşük gerilim değeri ise Vp− = 0,6 V olarak belirlenmiştir. Referans gerilimi 1,3 V seviyesindedir ve bu değerin 0,7 V üstü (2,0 V) ile 0,7 V altı (0,6 V) arasında kalan gerilim aralığında sistem normal çalışmaya devam eder. Gerilim değeri bu aralığın dışına çıktığında pencere karşılaştırıcı devresi FAULT sinyali üretir. Pencere karşılaştırıcı devresinin FAULT çıkışı kontrol kartının optoizole girişlerinden birine bağlanmıştır. Aşırı akım durumunda kontrol kartı harici kesme üreterek PWM sinyallerini kesmekte ve devrenin korumaya geçmesi sağlanmaktadır"
+    },
+    {
+      "index": 2406,
+      "style": "ResimYazs",
+      "text": "Şekil 5.10. Pencere karşılaştırıcı giriş ve çıkış gerilim dalga şekilleri.",
+      "context": "5.5. Akım Sensörü",
+      "kind": "Şekil",
+      "number": "5.10",
+      "title": "Pencere karşılaştırıcı giriş ve çıkış gerilim dalga şekilleri"
+    },
+    {
+      "index": 2408,
+      "style": "",
+      "text": "Şekil 5.10'da pencere karşılaştırıcı devresinin giriş ve çıkış dalga şekillerine ait osiloskop görüntüsü verilmiştir. Devrenin doğru çalıştığını doğrulamak amacıyla, harici bir deneme kartının dijital-analog dönüştürücü (DAC) çıkışından üretilen sinyal (CH1) pencere karşılaştırıcı girişine uygulanmıştır. Osiloskop ekranında görüldüğü üzere, Cursor1 ile işaretlenen seviye 2 V, Cursor2 ile işaretlenen seviye ise 0,6 V olarak ayarlanmıştır. Uygulanan sinyalin bu sınır değerleri aştığı durumlarda, PWM sinyallerini kesecek olan FAULT sinyali (CH2) üretilmiştir. Bu durum, sinyalin lojik “0” seviyesine inmesiyle gözlemlenmiştir.",
+      "context": "5.5. Akım Sensörü",
+      "kind": "Şekil",
+      "number": "5.10",
+      "title": "'da pencere karşılaştırıcı devresinin giriş ve çıkış dalga şekillerine ait osiloskop görüntüsü verilmiştir. Devrenin doğru çalıştığını doğrulamak amacıyla, harici bir deneme kartının dijital-analog dönüştürücü (DAC) çıkışından üretilen sinyal (CH1) pencere karşılaştırıcı girişine uygulanmıştır. Osiloskop ekranında görüldüğü üzere, Cursor1 ile işaretlenen seviye 2 V, Cursor2 ile işaretlenen seviye ise 0,6 V olarak ayarlanmıştır. Uygulanan sinyalin bu sınır değerleri aştığı durumlarda, PWM sinyallerini kesecek olan FAULT sinyali (CH2) üretilmiştir. Bu durum, sinyalin lojik “0” seviyesine inmesiyle gözlemlenmiştir"
+    },
+    {
+      "index": 2415,
+      "style": "ResimYazs",
+      "text": "Şekil 5.11. Ölçüm kartı.",
+      "context": "5.6. Ölçüm Kartı",
+      "kind": "Şekil",
+      "number": "5.11",
+      "title": "Ölçüm kartı"
+    },
+    {
+      "index": 2417,
+      "style": "",
+      "text": "Şekil 5.11’de ölçüm kartının genel görünümü sunulmuştur. Ölçüm kartı üzerinde, akım yolları boyunca 4 mm² kesitli (ters “u” harfi formunda, kırmızı renkli) bakır iletkenler yer almaktadır. Şekil 5.11’den görülebileceği üzere, bu iletkenler osiloskop cihazına bağlanacak akım problarının fiziksel ölçü ve bağlantı şekline uygun olarak tasarlanmıştır. Bu akım yolları, LCL filtrenin L1 akımı (evirici çıkış akımı), kondansatör akımı (aktif damping kontrolü için) ve faz akımları olmak üzere her faz için üç adet bağımsız akım hattı şeklinde düzenlenmiştir.",
+      "context": "5.6. Ölçüm Kartı",
+      "kind": "Şekil",
+      "number": "5.11",
+      "title": "’de ölçüm kartının genel görünümü sunulmuştur. Ölçüm kartı üzerinde, akım yolları boyunca 4 mm² kesitli (ters “u” harfi formunda, kırmızı renkli) bakır iletkenler yer almaktadır. Şekil 5.11’den görülebileceği üzere, bu iletkenler osiloskop cihazına bağlanacak akım problarının fiziksel ölçü ve bağlantı şekline uygun olarak tasarlanmıştır. Bu akım yolları, LCL filtrenin L1 akımı (evirici çıkış akımı), kondansatör akımı (aktif damping kontrolü için) ve faz akımları olmak üzere her faz için üç adet bağımsız akım hattı şeklinde düzenlenmiştir"
+    },
+    {
+      "index": 2439,
+      "style": "ResimYazs",
+      "text": "Şekil 5.12 (a). Evirici donanımı üzerinde AcuDC240 DA bara analizörü. (b) DA bara",
+      "context": "5.7. DA Güç Analizörü",
+      "kind": "Şekil",
+      "number": "5.12",
+      "title": "(a). Evirici donanımı üzerinde AcuDC240 DA bara analizörü. (b) DA bara"
+    },
+    {
+      "index": 2445,
+      "style": "ResimYazs",
+      "text": "Şekil 5.13. 20A - 60mV şönt direnç bağlantısı.",
+      "context": "5.7. DA Güç Analizörü",
+      "kind": "Şekil",
+      "number": "5.13",
+      "title": "20A - 60mV şönt direnç bağlantısı"
+    },
+    {
+      "index": 2447,
+      "style": "",
+      "text": "Şekil 5.13’de, 20 A - 60 mV değerlerindeki şönt direncin Şekil 5.12(b)’de görülen bağlantı yapısına uygun olarak gerçekleştirilmiş DA bara bağlantısı verilmiştir.",
+      "context": "5.7. DA Güç Analizörü",
+      "kind": "Şekil",
+      "number": "5.13",
+      "title": "’de, 20 A - 60 mV değerlerindeki şönt direncin Şekil 5.12(b)’de görülen bağlantı yapısına uygun olarak gerçekleştirilmiş DA bara bağlantısı verilmiştir"
+    },
+    {
+      "index": 2474,
+      "style": "ResimYazs",
+      "text": "Şekil 5.15. Haberleşme sistemi arayüz tasarımı.",
+      "context": "5.9. PC Ana Kumanda Yazılımı",
+      "kind": "Şekil",
+      "number": "5.15",
+      "title": "Haberleşme sistemi arayüz tasarımı"
+    },
+    {
+      "index": 2494,
+      "style": "",
+      "text": "Şekil 5.16. Çalışma sırasında PC yazılımında alınan grafikler.",
+      "context": "5.10. Klasik Anahtarlama Modunda Alınan Çalışma Kayıtları",
+      "kind": "Şekil",
+      "number": "5.16",
+      "title": "Çalışma sırasında PC yazılımında alınan grafikler"
+    },
+    {
+      "index": 2504,
+      "style": "",
+      "text": "Şekil 5.17 ve Şekil 5.18’de osiloskop kayıtları verilmiştir. Yapılan deneysel çalışmalar sonucunda elde edilen osiloskop kayıtlarında aşağıdaki dalga şekilleri incelenmiştir:",
+      "context": "5.10. Klasik Anahtarlama Modunda Alınan Çalışma Kayıtları",
+      "kind": "Şekil",
+      "number": "5.17",
+      "title": "ve Şekil 5.18’de osiloskop kayıtları verilmiştir. Yapılan deneysel çalışmalar sonucunda elde edilen osiloskop kayıtlarında aşağıdaki dalga şekilleri incelenmiştir:"
+    },
+    {
+      "index": 2510,
+      "style": "",
+      "text": "Şekil 5.17. Osiloskop kayıtları (yukarıdan aşağıya doğru sırasıyla): 1. Kontrol işareti, 2.",
+      "context": "5.10. Klasik Anahtarlama Modunda Alınan Çalışma Kayıtları",
+      "kind": "Şekil",
+      "number": "5.17",
+      "title": "Osiloskop kayıtları (yukarıdan aşağıya doğru sırasıyla): 1. Kontrol işareti, 2"
+    },
+    {
+      "index": 2514,
+      "style": "",
+      "text": "Şekil 5.18. Osiloskop kayıtları (yukarıdan aşağıya doğru sırasıyla): 1. Kontrol işareti, 2.",
+      "context": "5.10. Klasik Anahtarlama Modunda Alınan Çalışma Kayıtları",
+      "kind": "Şekil",
+      "number": "5.18",
+      "title": "Osiloskop kayıtları (yukarıdan aşağıya doğru sırasıyla): 1. Kontrol işareti, 2"
+    },
+    {
+      "index": 2520,
+      "style": "",
+      "text": "Şekil 5.19. PC yazılımında elde edilen grafikler.",
+      "context": "5.11. Değiştirilmiş Anahtarlama Modunda Alınan Çalışma Kayıtları",
+      "kind": "Şekil",
+      "number": "5.19",
+      "title": "PC yazılımında elde edilen grafikler"
+    },
+    {
+      "index": 2530,
+      "style": "",
+      "text": "Şekil 5.19’da PC yazılımında alınan grafikler, Şekil 5.20 ve Şekil 5.21’de ise osiloskop kayıtları verilmiştir.",
+      "context": "5.11. Değiştirilmiş Anahtarlama Modunda Alınan Çalışma Kayıtları",
+      "kind": "Şekil",
+      "number": "5.19",
+      "title": "’da PC yazılımında alınan grafikler, Şekil 5.20 ve Şekil 5.21’de ise osiloskop kayıtları verilmiştir"
+    },
+    {
+      "index": 2536,
+      "style": "",
+      "text": "Şekil 5.20. Osiloskop kayıtları (yukarıdan aşağıya doğru sırasıyla): 1. Kontrol işareti,",
+      "context": "5.11. Değiştirilmiş Anahtarlama Modunda Alınan Çalışma Kayıtları",
+      "kind": "Şekil",
+      "number": "5.20",
+      "title": "Osiloskop kayıtları (yukarıdan aşağıya doğru sırasıyla): 1. Kontrol işareti,"
+    },
+    {
+      "index": 2540,
+      "style": "",
+      "text": "Şekil 5.21. Osiloskop kayıtları (yukarıdan aşağıya doğru sırasıyla): 1. Kontrol",
+      "context": "2. Şebeke gerilimi, 3. İndüktans akım ortalaması, 4. İndüktans akımı.",
+      "kind": "Şekil",
+      "number": "5.21",
+      "title": "Osiloskop kayıtları (yukarıdan aşağıya doğru sırasıyla): 1. Kontrol"
+    },
+    {
+      "index": 2545,
+      "style": "",
+      "text": "Şekil 5.22. PC yazılımında alınan grafikler.",
+      "context": "5.12. Değiştirilmiş Anahtarlama ve Sinküp İlave Edilmiş Modda Çalışma Kayıtları",
+      "kind": "Şekil",
+      "number": "5.22",
+      "title": "PC yazılımında alınan grafikler"
+    },
+    {
+      "index": 2556,
+      "style": "",
+      "text": "Şekil 5.22’de PC yazılımında alınan grafikler, Şekil 5.23 ve Şekil 5.24’de ise osiloskop kayıtları verilmiştir.",
+      "context": "5.12. Değiştirilmiş Anahtarlama ve Sinküp İlave Edilmiş Modda Çalışma Kayıtları",
+      "kind": "Şekil",
+      "number": "5.22",
+      "title": "’de PC yazılımında alınan grafikler, Şekil 5.23 ve Şekil 5.24’de ise osiloskop kayıtları verilmiştir"
+    },
+    {
+      "index": 2559,
+      "style": "",
+      "text": "Şekil 5.23. Osiloskop kayıtları (yukarıdan aşağıya doğru sırasıyla): 1. Kontrol işareti, 2.",
+      "context": "5.12. Değiştirilmiş Anahtarlama ve Sinküp İlave Edilmiş Modda Çalışma Kayıtları",
+      "kind": "Şekil",
+      "number": "5.23",
+      "title": "Osiloskop kayıtları (yukarıdan aşağıya doğru sırasıyla): 1. Kontrol işareti, 2"
+    },
+    {
+      "index": 2563,
+      "style": "",
+      "text": "Şekil 5.24. Osiloskop kayıtları (yukarıdan aşağıya doğru):1. Kontrol işareti, 2. Şebeke gerilimi, 3.İndüktans akım ortalaması, 4. Faz akımı.",
+      "context": "5.12. Değiştirilmiş Anahtarlama ve Sinküp İlave Edilmiş Modda Çalışma Kayıtları",
+      "kind": "Şekil",
+      "number": "5.24",
+      "title": "Osiloskop kayıtları (yukarıdan aşağıya doğru):1. Kontrol işareti, 2. Şebeke gerilimi, 3.İndüktans akım ortalaması, 4. Faz akımı"
+    },
+    {
+      "index": 2608,
+      "style": "",
+      "text": "Tablo 5.4. Deneysel ve simülasyon çalışmaları sonucunda elde edilen verim ve THD değerlerinin her 3 yaklaşım ile karşılaştırılması.",
+      "context": "5.13. Bölüm Sonucu",
+      "kind": "Tablo",
+      "number": "5.4",
+      "title": "Deneysel ve simülasyon çalışmaları sonucunda elde edilen verim ve THD değerlerinin her 3 yaklaşım ile karşılaştırılması"
+    },
+    {
+      "index": 2642,
+      "style": "",
+      "text": "Şekil 6.1. Bilinen T-tipi topolojinin 1 fazına ait devre şeması.",
+      "context": "6.2. T-tipi Evirici",
+      "kind": "Şekil",
+      "number": "6.1",
+      "title": "Bilinen T-tipi topolojinin 1 fazına ait devre şeması"
+    },
+    {
+      "index": 2649,
+      "style": "",
+      "text": "Şekil 6.2. Viyana doğrultucu PFC.",
+      "context": "6.3. PFC Doğrultucu",
+      "kind": "Şekil",
+      "number": "6.2",
+      "title": "Viyana doğrultucu PFC"
+    },
+    {
+      "index": 2663,
+      "style": "",
+      "text": "Şekil 6.3. Tek primer sargıya ve çoklu sekonder sargıya sahip bir transformatör içeren aktif BYS prensip devre şeması.",
+      "context": "6.4. Batarya Yönetim Sistemi (BYS)",
+      "kind": "Şekil",
+      "number": "6.3",
+      "title": "Tek primer sargıya ve çoklu sekonder sargıya sahip bir transformatör içeren aktif BYS prensip devre şeması"
+    },
+    {
+      "index": 2674,
+      "style": "",
+      "text": "Şekil 6.4. Geliştirilmiş T-tipi (GT-tipi) topoloji.",
+      "context": "6.5. Geliştirilmiş T-tipi Topoloji",
+      "kind": "Şekil",
+      "number": "6.4",
+      "title": "Geliştirilmiş T-tipi (GT-tipi) topoloji"
+    },
+    {
+      "index": 2676,
+      "style": "",
+      "text": "Şekil 6.4’de verilen devre incelendiğinde yarım köprü kol anahtarları ile nötr anahtarları arasına basit bir röle-kontaktör gibi bir anahtar koymak sureti ile T-tipi topolojinin iki ayrı işlevsel bloğa ayrıldığı görülmektedir. Yani deşarj yönünde tam bir T-tipi evirici olarak görev yapan Q1,Q2,Q3 ve Q4 anahtar grubu ve LCL filtre, şarj yönünde ancak önerilen BYS türü ile Q1-Q2 ile 2 seviye evirici olarak ve Viyana PFC kullanıldığında Q3-Q4 PFC için işlevsel anahtarlar haline gelebilecektir. Bir yönde 3 seviye evirici, diğer yönde ise 2 seviye evirici + PFC olarak çalışmayı sağlayan RL1 fonksiyon anahtarıdır. Bu anahtar Bölüm 5’te, Şekil 5.4’te fotoğrafta gösterilmiş ve Tablo 5.2’de fonksiyon değiştirme rölesi olarak adlandırılmıştır. Bu şekilde işlevsel olarak ikiye bölünebilen T-tipi topoloji, bundan sonra tez içeriğinde geliştirilmiş T-tipi topoloji (GT-tipi topoloji) adıyla kullanılacaktır.",
+      "context": "6.5. Geliştirilmiş T-tipi Topoloji",
+      "kind": "Şekil",
+      "number": "6.4",
+      "title": "’de verilen devre incelendiğinde yarım köprü kol anahtarları ile nötr anahtarları arasına basit bir röle-kontaktör gibi bir anahtar koymak sureti ile T-tipi topolojinin iki ayrı işlevsel bloğa ayrıldığı görülmektedir. Yani deşarj yönünde tam bir T-tipi evirici olarak görev yapan Q1,Q2,Q3 ve Q4 anahtar grubu ve LCL filtre, şarj yönünde ancak önerilen BYS türü ile Q1-Q2 ile 2 seviye evirici olarak ve Viyana PFC kullanıldığında Q3-Q4 PFC için işlevsel anahtarlar haline gelebilecektir. Bir yönde 3 seviye evirici, diğer yönde ise 2 seviye evirici + PFC olarak çalışmayı sağlayan RL1 fonksiyon anahtarıdır. Bu anahtar Bölüm 5’te, Şekil 5.4’te fotoğrafta gösterilmiş ve Tablo 5.2’de fonksiyon değiştirme rölesi olarak adlandırılmıştır. Bu şekilde işlevsel olarak ikiye bölünebilen T-tipi topoloji, bundan sonra tez içeriğinde geliştirilmiş T-tipi topoloji (GT-tipi topoloji) adıyla kullanılacaktır"
+    },
+    {
+      "index": 2680,
+      "style": "",
+      "text": "Şekil 6.5. GT-tipi topolojinin evirici çalışma modunda LCL filtre bağlantısı.",
+      "context": "6.5. Geliştirilmiş T-tipi Topoloji",
+      "kind": "Şekil",
+      "number": "6.5",
+      "title": "GT-tipi topolojinin evirici çalışma modunda LCL filtre bağlantısı"
+    },
+    {
+      "index": 2686,
+      "style": "",
+      "text": "Şekil 6.6. GT-tipi topoloji 2 seviye evirici çıkış bağlantısı.",
+      "context": "6.5. Geliştirilmiş T-tipi Topoloji",
+      "kind": "Şekil",
+      "number": "6.6",
+      "title": "GT-tipi topoloji 2 seviye evirici çıkış bağlantısı"
+    },
+    {
+      "index": 2688,
+      "style": "",
+      "text": "Şekil 6.6’da, RL1’in üst konuma getirilmesi durumunda, nötr anahtarları ile yarım köprü kol anahtarlarının nasıl ayrıldığı gösterilmiştir. Bu şekilde elde edilen 3 fazlı, 2 seviyeli eviricinin yarım kolları arasına bağlanan her bir transformatör aslında Şekil 6.3’te verilen BYS’nin transformatörleridir. Böylece, sadece deşarj sırasında aktif olan T-tipi eviricinin yarım köprü kol anahtarları, şarj sırasında da şebekenin doğrultulması ile elde edilen DA baradan BYS’yi besleyen bir güç dönüştürücüsü olarak görev yapacak ve atıl kalmayacaktır.",
+      "context": "6.5. Geliştirilmiş T-tipi Topoloji",
+      "kind": "Şekil",
+      "number": "6.6",
+      "title": "’da, RL1’in üst konuma getirilmesi durumunda, nötr anahtarları ile yarım köprü kol anahtarlarının nasıl ayrıldığı gösterilmiştir. Bu şekilde elde edilen 3 fazlı, 2 seviyeli eviricinin yarım kolları arasına bağlanan her bir transformatör aslında Şekil 6.3’te verilen BYS’nin transformatörleridir. Böylece, sadece deşarj sırasında aktif olan T-tipi eviricinin yarım köprü kol anahtarları, şarj sırasında da şebekenin doğrultulması ile elde edilen DA baradan BYS’yi besleyen bir güç dönüştürücüsü olarak görev yapacak ve atıl kalmayacaktır"
+    },
+    {
+      "index": 2692,
+      "style": "",
+      "text": "Şekil 6.7. GT-tipi topoloji nötr IGBT’leri ile elde edilmiş 3 faz PFC bölümü.",
+      "context": "6.5. Geliştirilmiş T-tipi Topoloji",
+      "kind": "Şekil",
+      "number": "6.7",
+      "title": "GT-tipi topoloji nötr IGBT’leri ile elde edilmiş 3 faz PFC bölümü"
+    },
+    {
+      "index": 2696,
+      "style": "",
+      "text": "Şekil 6.7’de ise T-tipi yarım kol anahtarlarından ayrılan nötr anahtar grubunun LCL filtre ve doğrultma diyotları ile 3 fazlı bir Viyana PFC’ye dönüşümü gösterilmektedir. Böylece yine sadece deşarj sırasında T-tipi evirici bileşeni olarak görev yapan nötr anahtarları, şarj sırasında da aktif olarak kullanılmaktadır.",
+      "context": "6.5. Geliştirilmiş T-tipi Topoloji",
+      "kind": "Şekil",
+      "number": "6.7",
+      "title": "’de ise T-tipi yarım kol anahtarlarından ayrılan nötr anahtar grubunun LCL filtre ve doğrultma diyotları ile 3 fazlı bir Viyana PFC’ye dönüşümü gösterilmektedir. Böylece yine sadece deşarj sırasında T-tipi evirici bileşeni olarak görev yapan nötr anahtarları, şarj sırasında da aktif olarak kullanılmaktadır"
+    },
+    {
+      "index": 2707,
+      "style": "",
+      "text": "Şekil 6.8. Şarj yönünde, Viyana PFC, 2 seviye evirici ve transformatör tabanlı BYS",
+      "context": "6.5. Geliştirilmiş T-tipi Topoloji",
+      "kind": "Şekil",
+      "number": "6.8",
+      "title": "Şarj yönünde, Viyana PFC, 2 seviye evirici ve transformatör tabanlı BYS"
+    },
+    {
+      "index": 2710,
+      "style": "",
+      "text": "Şekil 6.9. Viyana PFC sayesinde düzelmiş şebeke akımları dalga şekilleri.",
+      "context": "6.5. Geliştirilmiş T-tipi Topoloji",
+      "kind": "Şekil",
+      "number": "6.9",
+      "title": "Viyana PFC sayesinde düzelmiş şebeke akımları dalga şekilleri"
+    },
+    {
+      "index": 2713,
+      "style": "",
+      "text": "Şekil 6.10. DA bara gerilimleri dalga şekilleri.",
+      "context": "6.5. Geliştirilmiş T-tipi Topoloji",
+      "kind": "Şekil",
+      "number": "6.10",
+      "title": "DA bara gerilimleri dalga şekilleri"
+    },
+    {
+      "index": 2716,
+      "style": "",
+      "text": "Şekil 6.11. BYS transformatörüne 2 seviye eviricilerden sağlanan primer gerilim dalga",
+      "context": "6.5. Geliştirilmiş T-tipi Topoloji",
+      "kind": "Şekil",
+      "number": "6.11",
+      "title": "BYS transformatörüne 2 seviye eviricilerden sağlanan primer gerilim dalga"
+    },
+    {
+      "index": 2719,
+      "style": "",
+      "text": "Şekil 6.12. BYS transformatörünün primer akım dalga şekli.",
+      "context": "6.5. Geliştirilmiş T-tipi Topoloji",
+      "kind": "Şekil",
+      "number": "6.12",
+      "title": "BYS transformatörünün primer akım dalga şekli"
+    },
+    {
+      "index": 2722,
+      "style": "",
+      "text": "Şekil 6.13. BYS transformatörünün sekonder gerilim dalga şekli.",
+      "context": "6.5. Geliştirilmiş T-tipi Topoloji",
+      "kind": "Şekil",
+      "number": "6.13",
+      "title": "BYS transformatörünün sekonder gerilim dalga şekli"
+    },
+    {
+      "index": 2726,
+      "style": "",
+      "text": "Şekil 6.14. BYS transformatörlerinin sekonder akım dalga şekli.",
+      "context": "6.5. Geliştirilmiş T-tipi Topoloji",
+      "kind": "Şekil",
+      "number": "6.14",
+      "title": "BYS transformatörlerinin sekonder akım dalga şekli"
+    },
+    {
+      "index": 2729,
+      "style": "ResimYazs",
+      "text": "Şekil 6.15. Bir adet bataryaya ilişkin batarya gerilimi, batarya akımı ve SOC değerleri.",
+      "context": "6.5. Geliştirilmiş T-tipi Topoloji",
+      "kind": "Şekil",
+      "number": "6.15",
+      "title": "Bir adet bataryaya ilişkin batarya gerilimi, batarya akımı ve SOC değerleri"
+    },
+    {
+      "index": 2800,
+      "style": "NormalWeb",
+      "text": "Tablo 7.1. Fikri Mülkiyet çıktıları",
+      "context": "7.1. Fikri Mülkiyet Çıktıları",
+      "kind": "Tablo",
+      "number": "7.1",
+      "title": "Fikri Mülkiyet çıktıları"
+    }
+  ]
+}

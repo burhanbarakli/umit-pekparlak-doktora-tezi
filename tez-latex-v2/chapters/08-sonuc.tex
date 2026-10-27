@@ -1,0 +1,112 @@
+\chapter{SONUÇLAR VE GELECEK ÇALIŞMALAR}
+\label{chap:sonuc}
+
+Tezde T-tipi dönüştürücünün düşük güç davranışı, nötr anahtar susturma yöntemi, Sin\textsuperscript{3} tabanlı ileri besleme kompanzasyonu ve GT-tipi yeniden yapılandırılabilir enerji depolama mimarisi tek bir araştırma zinciri altında ele alınmıştır. Eldeki kanıtlar aynı olgunluk düzeyinde değildir: düşük güç anahtarlama ve Sin\textsuperscript{3} incelemeleri analitik model, benzetim senaryoları, prototip deney kayıtları ve bağımsız MATLAB/Simscape kontrol koşularına; GT-tipi inceleme ise şarj zinciri benzetim kayıtları ile \SI{100}{\kilo\watt} hedefli proje şemalarına dayanmaktadır. Sonuçlar bu ayrımı koruyacak biçimde; doğrulanmış mekanizma, raporlanmış sayısal bulgu, yeniden üretim/uyumluluk sonucu, analitik sonuç ve henüz sınanmamış mimari öneri olarak sınıflandırılmıştır.
+
+\section{Araştırma Sorularının Yanıtları}
+
+Tablo~\ref{tab:arastirma-sorusu-kanit}, Giriş bölümünde tanımlanan dört araştırma sorusunu mevcut kanıtlarla eşleştirmektedir. ``Yanıtlandı'' ifadesi yalnız tezde kurulan fiziksel veya matematiksel ilişkinin mevcut kayıtlarla desteklendiği kapsamı; ``kısmen yanıtlandı'' ifadesi ise sayısal genelleme için ham model, ortak koşullu deney ya da donanım doğrulaması bulunmadığını göstermektedir.
+
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.07\textwidth}>{\raggedright\arraybackslash}p{0.23\textwidth}>{\raggedright\arraybackslash}p{0.28\textwidth}>{\raggedright\arraybackslash}p{0.28\textwidth}@{}}
+  \caption{Araştırma sorusu--kanıt--sonuç matrisi.}
+  \label{tab:arastirma-sorusu-kanit}\\
+  \toprule
+  \textbf{Soru} & \textbf{Sonuç düzeyi} & \textbf{Başlıca dayanak} & \textbf{Geçerlilik sınırı} \\
+  \midrule
+  \endfirsthead
+  \caption[]{Araştırma sorusu--kanıt--sonuç matrisi (devam).}\\
+  \toprule
+  \textbf{Soru} & \textbf{Sonuç düzeyi} & \textbf{Başlıca dayanak} & \textbf{Geçerlilik sınırı} \\
+  \midrule
+  \endhead
+  \bottomrule
+  \endfoot
+  AS1 & Mekanizma düzeyinde yanıtlandı. & Bölüm~\ref{chap:sistem}'deki anahtarlama durumları, akım yolları ve senkron-buck eşdeğeri; Bölüm~\ref{chap:anahtarlama}'daki DCM ve ters akım incelemesi. & Ters akımın kayıplara sayısal katkısı ham yarı iletken dalga biçimleri ve ortak DA/AA güç kaydı olmadan ayrıştırılamamıştır. \\
+  AS2 & Düşük güçte kısmen yanıtlandı. & Tablo~\ref{tab:senaryo-thd}, Tablo~\ref{tab:onceki-benzetim-ozeti} ve Tablo~\ref{tab:deney-dusuk-guc-ozeti}; klasik ve susturma yöntemlerine ait ayrı dalga biçimleri. & Verim artışının geçerli olduğu güç aralığı, aynı DA bara ve denetleyiciyle yapılmış düşük--orta--nominal güç taraması bulunmadığından belirlenememiştir. \\
+  AS3 & Harmonik etkisi bakımından kısmen yanıtlandı; düzeltilmiş analitik katsayılar ve 30~A akım döngüsü fizibilitesi gösterildi. & Şekil~\ref{fig:sin3-l1-fft}--\ref{fig:sin3-iout-fft}, Şekil~\ref{fig:sin3-yeniden-tarama}, Eşitlik~\eqref{eq:sin3-duzeltilmis-optimum}, Şekil~\ref{fig:yeniden-uretim-fiziksel-s123}, Tablo~\ref{tab:senaryo4-pi-30a} ve geçici $L$--$S$--$T$ analizi. & Analitik optimum tek-L ortalama modelde geçerlidir; bağımsız fiziksel koşu tarihsel THD iyileşmesini üretmemiştir. Gerçek kod ve anahtarlamalı LCL/yarı iletken modeli olmadan nihai kararlılık ve verim sonucu sayılmaz. \\
+  AS4 & Mimari ve güvenli çalışma koşulları düzeyinde yanıtlandı. & Bölüm~\ref{chap:gttipi}'deki işlev paylaşım yolları, \SI{100}{\kilo\watt} proje şemaları, çalışma modu ve doğrulama tabloları. & Ortak donanımın kayıp, maliyet, termal davranış, arıza toleransı ve güvenlik üstünlüğü prototip ve deney kayıtları olmadan doğrulanmamıştır. \\
+\end{longtable}
+
+\textbf{AS1 -- Ters akım mekanizması.} T-tipi faz kolunda sıfır gerilim durumunu oluşturan nötr anahtarın, endüktör akımı sıfıra ulaştıktan sonra iletimde tutulması senkron-buck benzeri çift yönlü bir akım yolu oluşturmaktadır. Akım referansla aynı yönde yararlı güç taşımak yerine ters yönde büyüyebildiği için RMS akım ve iletim kaybı potansiyeli artmaktadır. Bölüm~\ref{chap:sistem}'deki ortak tabanlı akım yolu çizimleri ile Bölüm~\ref{chap:anahtarlama}'daki kip sınırı fiziksel mekanizmayı açıklamaktadır. Kayıp artışının mutlak değeri; anahtar gerilim--akım çarpımları, sıcaklık ve parça modelleri bulunmadığından sonuçlandırılmamıştır.
+
+\textbf{AS2 -- Nötr anahtar susturmanın verim--harmonik ödünleşimi.} Düşük güç benzetim kayıtlarında klasik yöntemin çıkış akımı THD değeri \%2,14 iken nötr anahtar susturma sonrasında değer \%46,35'e yükselmiştir. Benzetim özeti aynı karşılaştırma için verimi \%90,45'ten \%93,00'e; deney özeti \%92,50'den \%94,20'ye çıkmış olarak bildirmektedir. Verim değerleri ham güç kayıtlarından yeniden hesaplanamadığından raporlanmış bulgu niteliğindedir. Güvenle kurulabilen sonuç, susturma yönteminin ters akım yolunu kestiği ve mevcut düşük güç kayıtlarında belirgin bir harmonik ceza oluşturduğudur; kazancın başladığı ve sona erdiği güç aralığı henüz belirlenmemiştir.
+
+\textbf{AS3 -- Sin\textsuperscript{3} kompanzasyonu ve kararlılık.} Senaryo kayıtlarında Sin\textsuperscript{3} kompanzasyonu, susturma durumundaki $L_1$ akımı THD değerini \%46,86'dan \%9,46'ya ve çıkış akımı THD değerini \%46,35'ten \%7,79'a düşürmüştür. Doğru özdeşlikle yapılan analitik yeniden tarama (Kesim~\ref{sec:sin3-yeniden-tarama}), saf sinüs görev oranındaki \%39,96'lık üçüncü harmonik oranını doğrulanmış parametre setiyle uyumlu $(D_1,D_3)=(0{,}34,\ 0{,}40)$ noktasında \%0,15'e indiren düzeltilmiş bir aday üretmiş; önceki aday katsayıların bu sete taşınamadığını da sayısal olarak göstermiştir. Bağımsız fiziksel model koşusunda susturma+Sin\textsuperscript{3} ortalama faz THD'si \%13,772 ile yalnız susturmanın \%13,625 değerinin altına inmemiş, nötr RMS akımı 0,711~A'dan 0,694~A'a gerilemiştir; negatif yeniden üretim sonucu, gerçek enjeksiyon noktası ve kazanç ölçekleri kilitlenmeden tarihsel iyileşmenin genellenemeyeceğini göstermektedir. Senaryo~4 ortalama modelinde ileri besleme+PI, 30~A RMS yorumunda 29,715~A RMS akım, 0,662~A RMSE, \%0,393 THD ve 0,793 tepe modülasyonla doyumsuz çalışmıştır; bu değerler anahtarlama/verim kanıtı değil, akım döngüsü fizibilitesidir.
+
+\textbf{AS4 -- GT-tipi yeniden görevlendirme.} İşlev paylaşım topolojisi; evirici/LCL, iki seviyeli evirici--transformatör ve PFC yollarının aynı yarı iletken tabanının farklı kiplerde kullanılabileceğini devre düzeyinde göstermektedir. Proje katmanı bu yaklaşımı AB--BC--CA batarya grupları, izole şarj kolları ve seçilebilir seri deşarj yolu ile \SI{100}{\kilo\watt} hedefe genişletmektedir. Güvenli yeniden yapılandırma için sıfıra yakın akım, düğüm gerilimi eşleşmesi, ölü zaman, kontaktör sırası ve kapı geri bildirimi birlikte şart koşulmuştur. Ortak yapı teknik olarak tanımlanmış olsa da ayrı güç katlarına göre sayısal üstünlüğü henüz gösterilmemiştir.
+
+\section{Özgün Katkıların Değerlendirilmesi}
+
+\subsection{Düşük Güç Anahtarlama Katkısı}
+
+T-tipi eviricinin düşük güçteki ters akım sorunu genel bir hafif yük kaybı olarak bırakılmamış; sıfır gerilim durumu, nötr kol ve akım yönü üzerinden topolojiye özgü bir mekanizma olarak açıklanmıştır. Nötr anahtar susturma yaklaşımı, akım sıfıra ulaştıktan sonra ters yönde büyümeyi sürdüren komutu engelleyen işlevsel bir yöntem sunmaktadır. Benzetim ve deney kayıtları yöntemin verim artışı yönündeki eğilimini desteklemekle birlikte, aynı koşullu ham güç ölçümleri bulunmadığından belirli bir yüzde iyileşme, katkının doğrulanmış sonucu olarak verilmemektedir.
+
+\subsection{Sin\textsuperscript{3} İleri Besleme Katkısı}
+
+Sin\textsuperscript{3} terimi bağımsız bir geri besleme kontrolcüsü veya genel amaçlı harmonik süzgeç olarak değil, nötr susturmanın ürettiği üçüncü harmonik cezasını azaltan bir modülasyon ileri beslemesi olarak konumlandırılmıştır. Tez, $\sin^3(\theta)$ ile $\sin(3\theta)$ katsayılarının aynı anlamı taşımadığını göstermiş; katsayıların tek bir cebirsel iptal koşulundan türetilemeyeceğini gerekçelendirmiş ve doğru özdeşlikle, doğrulanmış parametre setine bağlı düzeltilmiş analitik katsayılar üretmiştir. Senaryo kayıtları düşük güçte güçlü bir THD azalması göstermektedir. Farklı güç seviyelerinde üstünlük, hesaplama yükü, anahtarlama sayısı ve gerçek kararlılık marjı henüz doğrulanmadığından PLL/PR tabanlı yapılara karşı genel üstünlük iddiası kurulmamıştır.
+
+\subsection{GT-Tipi Mimari Katkısı}
+
+GT-tipi yaklaşım, T-tipi dönüştürücü anahtarlarının evirici, PFC, izole şarj ve batarya bazlı yönetim görevlerinde yeniden kullanılmasını amaçlayan bir mimari çerçeve sunmaktadır. İlk tasarım katmanının devreleri ve şarj benzetim kayıtları ile \SI{100}{\kilo\watt} proje şemaları ayrı kanıt katmanları olarak verilmiştir. Ortak sürücü, koruma ve soğutma kullanımının maliyet ve hacim azaltma potansiyeli bulunmaktadır; parça sayısı, kayıp, termal sınır, çok sekonderli transformatör üretilebilirliği ve arıza sonrası kullanılabilir güç aynı tabanda hesaplanmadığından söz konusu yararlar potansiyel düzeyindedir.
+
+Üç katkı birlikte değerlendirildiğinde ana eksen, Sin\textsuperscript{3} kontrol teriminden ziyade T-tipi donanımın iki ölçekte yeniden kullanılmasıdır. Birinci ölçekte nötr kolun düşük güçteki görevi değiştirilmekte, ikinci ölçekte dönüştürücü anahtarları şarj--deşarj mimarisi içinde yeniden görevlendirilmektedir. Sin\textsuperscript{3} terimi, ilk değişikliğin harmonik bedelini azaltmaya yönelik tamamlayıcı katkıdır. Bu hiyerarşi, T-tipi topoloji katkısının ileri besleme yönteminin gölgesinde kalmaması gereksinimini karşılamaktadır.
+
+\subsection{Fikrî Mülkiyet Çıktılarının Kanıt Konumu}
+
+Tez çalışmasıyla ilişkili üç ulusal patent ve üç PCT başvurusu Tablo~\ref{tab:fikri-mulkiyet}'te verilmiştir; güncel hukukî durum, hak sahibi, tarih ve tezin teknik katkısıyla istem eşleşmesi resmî patent kayıtlarından henüz doğrulanmamıştır.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Tez çalışmasıyla ilişkili fikrî mülkiyet çıktıları; güncel statü resmî kayıtla doğrulanacaktır.}
+  \label{tab:fikri-mulkiyet}
+  \small
+  \begin{tabularx}{\textwidth}{p{0.25\textwidth}p{0.30\textwidth}X}
+    \toprule
+    \textbf{Tür} & \textbf{Numara} & \textbf{Tezdeki kullanım} \\
+    \midrule
+    Ulusal patent & TR 2023 013377 B & Tamamlayıcı çıktı; resmî durum doğrulanacak \\
+    Ulusal patent & TR 2023 013378 B & Tamamlayıcı çıktı; resmî durum doğrulanacak \\
+    Ulusal patent & TR 2023 013379 B & Tamamlayıcı çıktı; resmî durum doğrulanacak \\
+    PCT başvurusu & WO2025/085037 A1 & Tamamlayıcı çıktı; yayın ve aile kaydı doğrulanacak \\
+    PCT başvurusu & WO2025/085038 A3 & Tamamlayıcı çıktı; yayın ve aile kaydı doğrulanacak \\
+    PCT başvurusu & WO2025/085039 A1 & Tamamlayıcı çıktı; yayın ve aile kaydı doğrulanacak \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+Patent veya başvuru kaydı teknolojik yenilik iddiasını destekleyen tamamlayıcı bir çıktı olabilir; verim, THD, kararlılık, güvenlik veya endüstriyel uygulanabilirlik için bilimsel performans kanıtı değildir. Resmî belgeler doğrulanmadıkça ``tescilli'', ``uluslararası patent'' veya ``teknolojik olgunluk'' sonucu kurulmamaktadır.
+
+\section{Çalışmanın Sınırlılıkları}
+
+Sonuçların yorumlanmasında aşağıdaki sınırlılıklar geçerlidir:
+
+\begin{enumerate}
+  \item \textbf{Kaynak model ve kod:} Senaryo~1'e ait R2023b modeli mevcuttur; Senaryo~2--4 modelleri, çağrılan MATLAB dosyaları, gerçek PI/kapı kodu ve eksiksiz parametre paketi yoktur. R2025b çalışma kopyasında \SI{600}{\micro\henry}--\SI{8}{\micro\farad}--\SI{200}{\micro\henry} filtre ile SKM--IXYN--DSEI eşlemesi uygulanmış ve tam cihaz dinamikli \SI{1}{\milli\second} sağlık kontrolü tamamlanmıştır; buna karşın sistem koşusu \SI{21.3324}{\milli\second}'de diyot yakınsamasında durmuş, ayrıntılı \SI{5}{\milli\second} koşu 1200~s hesap süresi içinde tamamlanmamıştır. Dönüşüm eşdeğerliği ve kararlı hâl sağlanmadan bu kopya THD/verim kanıtı kabul edilmemiştir.
+  \item \textbf{Ortak çalışma koşulu:} Klasik, susturma ve susturma+Sin\textsuperscript{3} kayıtlarında DA bara, şebeke gerilimi, güç noktası, denetleyici ve analiz penceresinin bütünüyle aynı olduğu kanıtlanamamıştır. Yöntemler arasındaki yüzdesel verim farkı nedensel üstünlük olarak yorumlanmamıştır.
+  \item \textbf{Güç aralığı:} Mevcut donanım arşivi düşük güç davranışını göstermektedir. 30~A tepe ve RMS yorumları ortalama-değerli akım döngüsünde sınanmış, ancak aynı nokta anahtarlamalı/termal modelde ve donanımda doğrulanmamıştır. Düşük--orta--nominal güçte ortak koşullu deney ile geçici rejim kayıtları tamamlanmamıştır.
+  \item \textbf{Ölçüm izlenebilirliği:} Ham PC/Modbus ve osiloskop kayıtları, zaman eşleme bilgisi, FFT penceresi, kalibrasyon zinciri ve tekrar deneyleri eksiktir. Ölçüm belirsizliği ve istatistiksel yayılım hesaplanamamıştır.
+  \item \textbf{Kararlılık modeli:} Kaynak ayrıştırmasıyla $L_1=\SI{600}{\micro\henry}$, $C_f=\SI{8}{\micro\farad}$ ve $L_2=\SI{200}{\micro\henry}$ seçilmiş; ideal rezonans \SI{4.594}{\kilo\hertz} bulunmuştur. Bode incelemesi geçici PR, sönüm ve gecikme değerleriyle yöntem gösterimi düzeyindedir; seçilen setin $f_s/2$ sınırına yaklaşık \SI{406}{\hertz} yakınlığı gerçek denetleyiciyle henüz doğrulanmamıştır. Kip değiştiren yapının HTF analizi ve gerçek çalışma noktası doğrusallaştırması tamamlanmamıştır.
+  \item \textbf{Analitik katsayı taraması:} Kesim~\ref{sec:sin3-yeniden-tarama} sonuçları tek-L, ölü zamansız, denetleyicisiz ortalama modelde geçerlidir; $C_f$--$L_2$ dinamiği, kayıplar ve kapalı çevrim etkileşimi katsayıları değiştirebilir.
+  \item \textbf{GT-tipi doğrulama:} \SI{30}{\kilo\watt} sınıfı prototip kanıtı ile \SI{100}{\kilo\watt} hedef tasarım aynı deneysel tabanda değildir. Kesin BOM, transformatör, batarya, termal model, güvenlik testi ve tam ölçekli prototip bulunmamaktadır.
+  \item \textbf{Genellenebilirlik:} Bulgular incelenen T-tipi topoloji, filtre, şebeke, anahtarlama ve kontrol koşullarıyla sınırlıdır. Farklı yarı iletken teknolojileri, şebeke empedansları, batarya kimyaları ve güç ölçeklerine doğrudan genelleme yapılmamıştır.
+\end{enumerate}
+
+Sınırlılıklar çalışmanın fiziksel mekanizma, yöntem ve mimari öneri katkılarını geçersiz kılmamakta; hangi sonuçların yeniden üretim, ortak koşullu deney ve prototip doğrulaması gerektirdiğini belirlemektedir. Metin içindeki turuncu ``EKSİK ÇALIŞMA'' barları, söz konusu doğrulamaların hangi bölümde ve hangi veriyle kapatılacağını göstermektedir; nihai teslimden önce her bar ya tamamlanmış ya da bu bölümdeki sınırlılıklara dönüştürülmüş olacaktır.
+
+\section{Gelecek Çalışmalar}
+
+Öncelikli gelecek çalışma, R2025b Senaryo~1 çalışma kopyasını kararlı hâle getirmek ve Senaryo~2--4'ü aynı model tabanında kurmaktır. Kalan iş; ideal DA kaynağının başlangıç darbesini fiziksel bir ön şarj/kaynak empedansıyla gidermek, diyot komütasyonundaki parazitik ve sönüm yollarını veri sayfasına uygun kurmak, çözücü toleranslarını doğrulamak ve en az iki kararlı \SI{50}{\hertz} periyodu tamamlamaktır. Dönüşümden önce ve sonra bağlantı listesi, blok parametreleri, ilk koşullar ve ölçüm işaretleri karşılaştırılmalıdır. Kilitli paket; çağrılan dosyalar, örnekleme ve anahtarlama zamanları, bütün elektriksel parametreler, kontrol katsayıları, kapı mantığı ve koşu kimliğini içermeli; klasik, nötr susturma ve susturma+Sin\textsuperscript{3} yöntemlerini aynı başlangıç durumu ve analiz penceresinde çalıştırmalıdır.
+
+İkinci aşamada düşük, orta ve güvenli biçimde erişilebilen en yüksek/nominal güç noktalarında ortak karşılaştırma yapılmalıdır. Verim, güç faktörü, THD, $I_3/I_1$, RMS akım, ters akım alanı, anahtarlama geçiş sayısı, yarı iletken sıcaklığı ve modülasyon payı en az üç tekrarla raporlanmalıdır. Akım referansı basamağı, şebeke gerilimi değişimi ve kompanzasyonun açma/kapama anı için yerleşme süresi, aşım, doyum ve koruma davranışı ayrıca ölçülmelidir.
+
+Üçüncü aşamada gerçek LCL/PR/gecikme değerleriyle çalışma noktasına bağlı $L$, $S$ ve $T$ fonksiyonları yeniden hesaplanmalıdır. Nötr susturmanın periyodik kip değiştirmesi harmonikler arası bağlaşımı belirginleştirirse sonlu mertebeli HTF modeli kurulmalı; kesme mertebesi ve yaklaşım hatası raporlanmalıdır. Sin\textsuperscript{3} katsayıları yalnız düşük güç THD minimumuna göre değil; temel akım, RMS kayıp, doyum, kararlılık ve geçiş sürekliliği birlikte gözetilerek seçilmeli, Kesim~\ref{sec:sin3-yeniden-tarama} taraması gerçek kod ve anahtarlamalı modelle yinelenmelidir.
+
+GT-tipi mimari için tam ölçekli prototipten önce donanım-içinde-döngü ve düşük gerilimli güç katı doğrulaması yapılmalıdır. Ön şarj, PFC/CC--CV şarj, kademeli yüke deşarj, bypass/yedekleme ve güvenli kapalı durumları; yanlış kapı komutu, sensör kaybı, aşırı akım, aşırı gerilim, sıcaklık ve haberleşme hatalarıyla sınanmalıdır. Çok sekonderli transformatörün izolasyon, kaçak endüktans ve üretilebilirlik özellikleri ile seri deşarj yolunun MOSFET/diyot kayıpları ve ortak mod davranışı tasarımın sayısal karşılaştırmasına eklenmelidir.
+
+Batarya çalışmaları farklı kimya, kapasite ve yaşlanma koşullarını içerecek biçimde genişletilebilir. CC--CV sınırları, SoC/SoH kestirimi, hücreler arası akım paylaşımı, bypass sonrası kullanılabilir enerji ve uzun süreli termal davranış üretici güvenlik sınırları içinde değerlendirilmelidir. Desülfasyon veya darbeli bakım modu yalnız uygun batarya kimyasında, üretici onayı ve ayrı güvenlik protokolüyle incelenmelidir.
+
+Son aşamada yöntemlerin mikro şebeke, elektrikli araç şarj altyapısı ve hibrit yenilenebilir enerji sistemi gibi uygulamalara aktarılabilirliği araştırılabilir. Farklı topolojilere genişletme, mevcut T-tipi sistemde kanıtlanmış mekanizma ve ölçütler tamamlandıktan sonra ele alınmalıdır; yapay zekâ veya adaptif optimizasyon gibi ilave yöntemler temel model ve deney boşluklarının yerine kullanılmamalıdır.
+
+\section{Genel Sonuç}
+
+Tezin mevcut kanıtlarla ulaştığı genel sonuç, T-tipi dönüştürücünün düşük güçteki nötr kol davranışının iyileştirme olanağı sunduğu, ancak verim kazancı ile harmonik kalite arasında açık bir ödünleşim bulunduğudur. Üç endüktans kaynağı devre rolüne göre ayrıştırılmış ve faz-başına LCL seti \SI{600}{\micro\henry}--\SI{8}{\micro\farad}--\SI{200}{\micro\henry} olarak kilitlenmiştir; seçilen setin \SI{4.594}{\kilo\hertz} ideal rezonansı gerçek sönüm ve denetleyiciyle doğrulama gerektirmektedir. Sin\textsuperscript{3} ileri beslemesi senaryo kayıtlarında harmonik cezayı önemli ölçüde azaltmış; doğru özdeşlikle yapılan analitik tarama, doğrulanmış parametre setine bağlı düzeltilmiş katsayı adayları üretmiş ve katsayıların çalışma noktasına bağlılığını göstermiştir. Bağımsız fiziksel yeniden koşu aynı THD eğilimini üretmeyerek gerçek kod/parametre eşleşmesinin zorunlu olduğunu ortaya koymuştur. İleri besleme+PI yapısı yaklaşık 30~A akımın ortalama modelde doyumsuz izlenebildiğini göstermiş, fakat anahtarlamalı verim ve donanım kararlılığını kanıtlamamıştır. GT-tipi yaklaşım aynı donanımı daha fazla EDS işlevinde kullanmaya yönelik tutarlı bir mimari sunmuş; sayısal üstünlük ve tam ölçekli uygulanabilirlik doğrulamasını gelecek prototip çalışmasına bırakmıştır. Olumlu ve olumsuz sonuçlar birlikte korunmuş; kanıt sınırları, sürüm uyumluluğu, kararlılık gereksinimi, nominal güç doğrulaması ve deneysel izlenebilirlik açık hâle getirilmiştir.

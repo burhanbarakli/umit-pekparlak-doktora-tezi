@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Şekil 4.1 ve 4.2 karşılaştırması</title>
+  <style>
+    :root{--bg:#f4f7fb;--card:#fff;--ink:#172033;--muted:#5d687b;--line:#dbe2ec;--ok:#087a55;--warn:#a85d00;--blue:#2457d6}
+    *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 "Segoe UI",Arial,sans-serif}
+    main{max-width:1500px;margin:auto;padding:28px} h1{font-size:28px;margin:0 0 8px} h2{font-size:20px;margin:0 0 14px}
+    p{margin:8px 0}.lead{font-size:17px;color:var(--muted);max-width:1050px}.status{display:inline-block;margin-top:10px;padding:7px 11px;border-radius:999px;background:#e3f6ef;color:var(--ok);font-weight:700}
+    .panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;margin-top:20px;box-shadow:0 7px 20px rgba(25,45,80,.05)}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.figure{border:1px solid var(--line);border-radius:11px;overflow:hidden;background:#fff}.figure h3{font-size:16px;margin:0;padding:10px 13px;background:#eef3f9}.figure img{display:block;width:100%;height:auto}.figure p{padding:0 13px 10px;color:var(--muted)}
+    table{width:100%;border-collapse:collapse}th,td{text-align:left;vertical-align:top;padding:10px;border-bottom:1px solid var(--line)}th{background:#eef3f9}.ok{color:var(--ok);font-weight:700}.warn{color:var(--warn);font-weight:700}
+    code{background:#edf1f7;padding:2px 5px;border-radius:4px}a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}.links{display:flex;gap:12px;flex-wrap:wrap}.links a{border:1px solid #b8c8ee;background:#f4f7ff;padding:8px 11px;border-radius:8px}
+    @media(max-width:900px){main{padding:16px}.grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body><main>
+  <h1>Eski Şekil 4.1 ve 4.2 - yeniden üretim karşılaştırması</h1>
+  <p class="lead">Eski tezdeki Scope ekranları, 13 Temmuz'da gelen parametre dosyası ve çalışma klasöründeki Q1-Q4 anahtarlama mantığı kullanılarak yeniden üretilen adaylarla yan yana verilmiştir.</p>
+  <span class="status">Mantıksal yeniden üretim başarılı</span>
+
+  <section class="panel">
+    <h2>Şekil 4.1 - tam temel periyot</h2>
+    <div class="grid">
+      <article class="figure"><h3>Önceki tezdeki özgün ekran</h3><img src="../figures/sistem/onceki_tez_klasik_kapi_darbeleri.jpg" alt="Önceki tez Şekil 4.1"><p>Yaklaşık 0-21 ms, kanal sırası Q1-Q4-Q2-Q3.</p></article>
+      <article class="figure"><h3>MATLAB ile yeniden üretilen aday</h3><img src="../../tez-matlab-simulink/results/gate_comparison/yeniden_uretilen_sekil_4_1_tam_periyot.png" alt="Yeniden üretilen Şekil 4.1"><p>50 Hz, 10 kHz, ölü zamansız PWM; aynı kanal sırası ve aynı üç anahtarlama durumu.</p></article>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>Şekil 4.2 - anahtarlama penceresinin yakın görünümü</h2>
+    <div class="grid">
+      <article class="figure"><h3>Önceki tezdeki özgün ekran</h3><img src="../figures/sistem/onceki_tez_klasik_kapi_darbeleri_yakin.jpg" alt="Önceki tez Şekil 4.2"><p>Yaklaşık 2,16-2,75 ms: Q1 ve Q4 tamamlayıcı, Q2=0 ve Q3=1.</p></article>
+      <article class="figure"><h3>MATLAB ile yeniden üretilen aday</h3><img src="../../tez-matlab-simulink/results/gate_comparison/yeniden_uretilen_sekil_4_2_yakin.png" alt="Yeniden üretilen Şekil 4.2"><p>Aynı pencere ve kapı ilişkisi; 10 kHz nedeniyle yaklaşık altı anahtarlama çevrimi.</p></article>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>Teknik karşılaştırma</h2>
+    <table>
+      <thead><tr><th>Ölçüt</th><th>Eski şekil</th><th>Yeniden üretim</th><th>Karar</th></tr></thead>
+      <tbody>
+        <tr><td>Temel periyot</td><td>Yaklaşık 20 ms</td><td>20 ms, 50 Hz</td><td class="ok">Eşleşiyor</td></tr>
+        <tr><td>Anahtarlama frekansı</td><td>Yakın görünümde yaklaşık 100 µs</td><td>10 kHz, 100 µs</td><td class="ok">Eşleşiyor</td></tr>
+        <tr><td>Kanal sırası</td><td>Q1, Q4, Q2, Q3</td><td>Q1, Q4, Q2, Q3</td><td class="ok">Eşleşiyor</td></tr>
+        <tr><td>Pozitif alternans</td><td>Q1=PWM, Q4=tümleyen, Q2=0, Q3=1</td><td>Aynı mantık</td><td class="ok">Eşleşiyor</td></tr>
+        <tr><td>İzinli durumlar</td><td>Görselden P/O/N dizilimi</td><td>P=1010, O=0011, N=0101</td><td class="ok">Eşleşiyor</td></tr>
+        <tr><td>Ölü zaman</td><td>Scope görüntüsünden doğrulanamıyor</td><td>Gelen dosyaya göre kapalı</td><td class="warn">Kesin kaynak kod bekliyor</td></tr>
+        <tr><td>Modülasyon indeksi ve taşıyıcı fazı</td><td>Dosyada yazmıyor</td><td>m=0,86; bizim deneme parametremiz</td><td class="warn">Bire bir sayısal eşlik kanıtlanmadı</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="panel">
+    <h2>Sonuç</h2>
+    <p><strong>Şekil 4.1 ve 4.2 yeniden üretilebiliyor.</strong> Yeniden üretim, eski şekillerdeki kapı sırasını, alternans davranışını, 10 kHz anahtarlama periyodunu ve P/O/N durumlarını karşılıyor. Yalnız özgün modülasyon indeksi, taşıyıcı başlangıç fazı ve gerçek sürücü ölü zamanı bilinmediği için adaylar henüz eski ekranların kesin sayısal kopyası sayılmamalıdır.</p>
+    <p>Tezdeki sarı etiketli eski ekranlar şimdilik korunmalı; özgün PWM kodu veya gerçek <code>.slx</code> geldiğinde yeniden üretilen şekiller ana kanıt olarak kullanılmalıdır.</p>
+    <div class="links">
+      <a href="../../tez-matlab-simulink/scripts/export_classic_gate_comparison.m">Üretim betiği</a>
+      <a href="../../dosyalar/05_sonradan_gelenler/Desarjv30parametre_deadtime_olmayan.m">Gelen parametre dosyası</a>
+      <a href="../../tez-matlab-simulink/scripts/build_switching_ttype_model.m">Q1-Q4 model mantığı</a>
+      <a href="../../tez-matlab-simulink/results/gate_comparison/dogrulama.txt">Doğrulama kaydı</a>
+    </div>
+  </section>
+</main></body></html>

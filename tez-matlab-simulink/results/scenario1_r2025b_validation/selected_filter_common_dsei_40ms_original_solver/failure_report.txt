@@ -1,0 +1,62 @@
+Error using probe_scenario1_conversion_baseline (line 131)
+['Inverter2_senaryo1_R2025b_baseline_selected_filter_common_dsei_40ms_original_solver/Solver
+Configuration1']: Transient initialization at time 0.02030764063485773, solving
+for consistent states and modes, failed to converge.
+
+Error in run (line 112)
+evalin('caller', strcat(scriptStem, ';'));
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Caused by:
+    Error using probe_scenario1_conversion_baseline (line 131)
+    Nonlinear solver: failed to converge, residual norm too large.
+    
+    Error in run (line 112)
+    evalin('caller', strcat(scriptStem, ';'));
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        Error using probe_scenario1_conversion_baseline (line 131)
+        These components have equations that did not converge:
+        
+        <a href="matlab:das_dv_hyperlink('DAS', 'mdl',
+        'Inverter2_senaryo1_R2025b_baseline_selected_filter_common_dsei_40ms_original_solver/Diode1')">'Inverter2_senaryo1_R2025b_baseline_selected_filter_common_dsei_40ms_original_solver/Diode1'</a>
+        Equation location is:
+        'ee.semiconductors.diodePiecewiseLinear'(no line number info)
+        Equation location is:
+        'ee.semiconductors.diodePiecewiseLinear'(no line number info)
+        Equation location is:
+        'ee.semiconductors.diodePiecewiseLinear'(no line number info)
+        
+        <a href="matlab:das_dv_hyperlink('DAS', 'mdl',
+        'Inverter2_senaryo1_R2025b_baseline_selected_filter_common_dsei_40ms_original_solver/Gate
+        Drive7/Gate
+        Driver1')">'Inverter2_senaryo1_R2025b_baseline_selected_filter_common_dsei_40ms_original_solver/Gate
+        Drive7/Gate Driver1'</a>
+        Equation location is:
+        'ee.semiconductors.gate_driver'(no line number info)
+        Equation location is:
+        'ee.semiconductors.gate_driver'(no line number info)
+        Equation location is:
+        'ee.semiconductors.gate_driver'(no line number info)
+        
+        <a href="matlab:das_dv_hyperlink('DAS', 'mdl',
+        'Inverter2_senaryo1_R2025b_baseline_selected_filter_common_dsei_40ms_original_solver/Capacitor1')">'Inverter2_senaryo1_R2025b_baseline_selected_filter_common_dsei_40ms_original_solver/Capacitor1'</a>
+        Equation location is:
+        'ee.passive.capacitor'(no line number info)
+        
+        <a href="matlab:das_dv_hyperlink('DAS', 'mdl',
+        'Inverter2_senaryo1_R2025b_baseline_selected_filter_common_dsei_40ms_original_solver/Diode1')">'Inverter2_senaryo1_R2025b_baseline_selected_filter_common_dsei_40ms_original_solver/Diode1'</a>
+        Equation location is:
+        'ee.semiconductors.diodePiecewiseLinear'(no line number info)
+        Equation location is:
+        'ee.semiconductors.diodePiecewiseLinear'(no line number info)
+        Equation location is:
+        'ee.semiconductors.diodePiecewiseLinear'(no line number info)
+        
+        <a href="matlab:das_dv_hyperlink('DAS', 'mdl',
+        'Inverter2_senaryo1_R2025b_baseline_selected_filter_common_dsei_40ms_original_solver/Diode6')">'Inverter2_senaryo1_R2025b_baseline_selected_filter_common_dsei_40ms_original_solver/Diode6'</a>
+        Equation location is:
+        'ee.semiconductors.diode_base'(no line number info)
+        
+        
+        Error in run (line 112)
+        evalin('caller', strcat(scriptStem, ';'));
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

@@ -1,0 +1,96 @@
+===== word/document.xml =====
+Ek-D - Batarya ve Şarj Yönetim Sistemleri
+Pasif Batarya Yönetim Sistemi
+Pasif BYS yapısında herhangi iki batarya arasındaki şarj farkı, tasarımcı tarafından belirlenen tolerans değerin üzerinde ise fazla şarj edilmiş olan bataryaya bağlı anahtar kapalı (ON) konuma getirilerek bataryadan akım çekilmesi sağlanır. Dengeleme işlemi sırasında fazla depolanmış olan enerji dirençler üzerinde ısıya dönüştürülerek uzaklaştırılır. Dirence bağlı bir kapasitör kullanılarak çekilen akımdaki ani dalgalanmaların önüne geçilebilir. Pasif BYS’nin en büyük dezavantajı enerjinin boşa harcanmasıdır. Batarya enerji depolama sistemlerinde enerji verimliliğini düşürecek bir yöntem olduğu için tercih edilmemiştir.
+Şekil 1. Pasif batarya yönetim sistemi devresi.
+Anahtarlamalı Kapasitör ile Dengeleme
+Anahtarlamalı kapasitör ile dengeleme yönteminde tek bir kapasitör, uygun anahtar kombinasyonları ile dizi içerisindeki herhangi bir bataryaya bağlanabilir durumdadır. Herhangi iki batarya arasındaki şarj farkı belirli bir tolerans değerin üzerine çıktığında iki batarya arasındaki enerji aktarımı kapasitör üzerinden gerçekleştirilir. Dengeleme, her seferinde iki batarya dengelenmesi üzerine kurulduğu için dizideki batarya sayısı arttıkça bu yöntemlerde dengeleme süresi artacaktır. Ayrıca tüm dizinin dengelenmesini sağlayacak olan anahtarlama algoritması batarya sayısı arttıkça karmaşıklaşacaktır. Bu yapıda şarj akımlarının ayrı ayrı kontrol edilebilmesi ve şarjı biten bataryanın bypass edilmesi mümkün olmadığı için projede tercih edilmemiştir.
+Şekil 2. Anahtarlamalı kapasitör ile dengeleme yöntemi
+Tek Sıralı Anahtarlamalı Kapasitör ile Dengeleme
+Tek sıralı anahtarlamalı kapasitör ile dengeleme devresinde komşu bataryalar arasında enerji transferi yapılabilmektedir. Komşu iki bataryanın arasındaki şarj dengesizliği tolerans değeri aştığı durumlarda ilgili anahtarlar kapalı (ON) konumuna getirilerek şarjı fazla olan bataryadan kapasitöre, ardından kapasitörden şarjı az olan bataryaya enerji aktarılarak denge sağlanır. Dengeleme, her seferinde iki batarya dengelenmesi üzerine kurulduğu için dizideki batarya sayısı arttıkça bu yöntemlerde dengeleme süresi artacaktır. Ayrıca tüm dizinin dengelenmesini sağlayacak olan anahtarlama algoritması batarya sayısı arttıkça karmaşıklaşacaktır. Bu yapıda şarj akımlarının ayrı ayrı kontrol edilebilmesi ve şarjı biten bataryanın bypass edilmesi mümkün olmadığı için projede tercih edilmemiştir.
+Şekil 3. Tek sıralı anahtarlamalı kapasitör devresi.
+Çok Sıralı Anahtarlamalı Kapasitör ile Dengeleme
+Çok sıralı kapasitör ile dengeleme yöntemi, tek sıralı kapasitör yöntemindeki sadece komşu bataryaların dengelenebilmesi problemine çözüm için bir alternatif tasarımdır. Birden çok kapasitör sırası kullanılarak, dizi içerisindeki bütün batarya çiftleri arasına kapasitör ve anahtarlar yerleştirilir. Batarya sayısı arttıkça kapasitör ve anahtar sayısı çok artacağı için tercih edilmemiştir.
+Şekil 4. Çok sıralı anahtarlamalı kapasitör devresi.
+Tek Bobin ile Dengeleme Yöntemi
+Bobin ile dengeleme yöntemleri kapasitör kullanılan yöntemlere benzer çalışmaktadır. Dengesiz iki batarya arasındaki enerji transferi bobin üzerinden gerçekleştirilir. Tek bobin yönteminde uygun anahtarlamalar ile herhangi iki dengesiz batarya arasında enerji transferi yapabilmektedir. Dengeleme, her seferinde iki batarya dengelenmesi üzerine kurulduğu için dizideki batarya sayısı arttıkça bu yöntemlerde dengeleme süresi artacaktır. Ayrıca tüm dizinin dengelenmesini sağlayacak olan anahtarlama algoritması batarya sayısı arttıkça karmaşıklaşacaktır. Bu yapıda şarjı biten bataryanın bypass edilmesi mümkün olmadığı için projede tercih edilmemiştir.
+Şekil 5. Tek bobin ile dengeleme devresi
+Çoklu Bobin ile Dengeleme Yöntemi
+Bataryaların arasına bobin yerleştirilerek tasarlanan bobin yöntemi, tek sıralı anahtarlamalı kapasitör yöntemine benzemektedir. Bu yöntemde uygun anahtarlamalar sayesinde enerji, komşu bataryalar arasında aktarılabilir. Tek sıralı anahtarlamalı kapasitör yapısındaki benzer sebepler ile tercih edilmemiştir.
+Şekil 6. Çoklu bobin ile dengeleme devresi
+Tek Sarımlı Transformatör ile Dengeleme
+Tek sarımlı transformatör ile dengeleme yönteminde bir giriş bir çıkışlı bir transformatör sayesinde bataryalar arasında enerji aktarımı yapılabilir. Transformatörün primer tarafında batarya dizisinin oluşturduğu DA baraya bağlı MOSFET’ler bulunmaktadır. Transformatörün primer sargısı MOSFET ile anahtarlanarak sekondere bağlı bataryalara enerji aktarılır. Sekonder tarafta bulunan anahtarlar, sekonder ile herhangi bir batarya ile istenilen yönde bağlantı kurabilmektedir. Bataryalar ile DA bara arasında transformatör üzerinden enerji aktarımı gerçekleştirilebilmektedir.
+Şekil 7. Tek sarımlı transformatör ile dengeleme yöntemi
+Çok Sarımlı Transformatör ile Dengeleme
+Çok sarımlı transformatör yapısında transformatörün primer tarafında DA baraya bağlı MOSFET’ler bulunmaktadır. Sekonder tarafta batarya sayısı kadar sargı bulunmaktadır. Transformatörün primer tarafı MOSFET ile anahtarlanarak sekonderde bulunan bataryalar aynı anda şarj edilebilir. Her batarya gerilimi ile bağlantılı olarak akım çekerek şarj olur. Bu yapıda transformatörün sekonder sargı sayısı sınırlıdır. Transformatörün gücü, dizi gücünü karşılayabilmelidir.
+Şekil 8. Çok sarımlı transformatör devresi
+Buck/Boost Dönüştürücü ile Dengeleme
+Buck-boost dönüştürücü temelli dengeleme yönteminde DA baraya paralel olarak bağlı dönüştürücülerin her birinin çıkışında bir batarya bulunmaktadır. Şarj sırasında dönüştürücüler düşürücü olarak çalışarak bataryaları şarj etmektedir. Deşarj sırasında dönüştürücüler yükseltici olarak çalışarak bataryalardan DA baraya akım vermektedir. Her batarya ayrı ayrı kontrollü şarj ve deşarj edildiği için batarya enerji depolama sistemleri için uygun bir yapıdır fakat hem şarj hem deşarj esnasında güç kaybı olacaktır. Ek olarak, batarya sayısı arttıkça DA/DA dönüştürücünün girişi ve çıkışı arasındaki gerilimlerin farkı artacaktır. Bu sebepten dolayı Buck-boost dönüştürücüleri düşük bir doluluk oranında (duty cycle) çalıştırılması kaçınılmaz olacaktır. Düşük doluluk oranından dolayı dönüştürücü verimi iki yönde de düşecektir. Ayrıca bu yapıda batarya akımı ana kol anahtarının body diyotu üzerinden yolunu tamamladığı için bataryalar bypass edilemezler.
+Şekil 9. Buck/Boost dönüştürücü ile dengeleme yöntemi
+Flyback Dönüştürücü ile Dengeleme
+Flyback dönüştürücü temelli aktif dengeleme yönteminde enerji hem DA baradan bataryaya hem de bataryadan DA baraya aktarılabilir. Bu sayede her bir hücre izole bir şekilde ayrı ayrı kontrol edilebilir. Dönüştürücünün hem şarj hem de deşarj yönünde güç kaybı bulunmaktadır. Batarya enerji depolama sisteminde tercih edilmemiştir.
+Şekil 10. Flyback dönüştürücü ile dengeleme yöntemi
+Cuk Dönüştürücü ile Dengeleme
+Cuk dönüştürücü ile komşu hücreler arasında enerji transferi yapabilir. Bu yöntemde toplam N adet hücre için N-1 adet dönüştürücüye ihtiyaç vardır. Bataryalar arasındaki dengeleme akımı kontrollü bir şekilde sağlanır. Dengeleme yalnızca komşu iki batarya arasında olduğundan, dizideki batarya sayısı arttıkça dengeleme hızı düşer. Projede batarya sayısının fazla olması sebebiyle bu yöntem tercih edilmemiştir.
+Şekil 11. Cuk dönüştürücü ile dengeleme yöntemi
+Rampa Dönüştürücü ile Dengeleme
+Rampa dönüştürücü devresi çok sargılı transformatör yapısına benzerdir. Sekonder tarafta bataryalar ve diyotlar uygun düzende yerleştirildiğinde; primer sargıya verilen sinyalin pozitif alternansında tek numaralı hücreler, negatif alternansında çift numaralı hücreler şarj olmaktadır.
+Şekil 12. Rampa dönüştürücü ile dengeleme yöntemi
+Rezonans Dönüştürücü ile Dengeleme
+Rezonans dönüştürücü temelli devrenin dengeleme hızı ve verimi yüksektir. Ancak N adet batarya için 4N-4 adet anahtar gerektirmektedir. Projedeki batarya sayısı fazla olduğundan, kullanılması gereken anahtar sayısı dikkate alınarak tercih edilmemiştir.
+Şekil 13. Rezonans dönüştürücü ile dengeleme yöntemi
+Şekil 14. OCV yöntemi ile SoC tespiti akış şeması
+Şekil 15. Coulomb sayma yöntemi ile SoC tespiti akış şeması
+Şekil 16. Şarj yönetimi akış şeması
+Şekil 17. Deşarj yönetimi akış şeması
+Şekil 18. Projede önerilen batarya yönetim sistemi devresi
+Devre Şeması
+Avantaj
+Dezavantaj
+Pasif BYS
+1) Kontrolü kolaydır2) Maliyeti düşüktür.3) Kolay anlaşılabilir ve Uygulanabilirdir.
+1) Enerji Boşa Harcanmaktadır.2) Batarya sayısı arttıkça termal problemler yaşanabilir.
+Anahtarlamalı kapasitör
+1) Kontrolü kolaydır.
+1) Dengeleme hızı düşüktür.2) Batarya sayısı arttıkça dengeleme algoritması karmaşıklaşmaktadır.
+Tek sıralı anahtarlamalı kapasitör
+1) Kontrolü kolaydır.
+1) Dengeleme hızı düşüktür.2) Batarya sayısı arttıkça dengeleme algoritması karmaşıklaşmaktadır.
+Çok sıralı anahtarlamalı kapasitör
+1) Kontrolü kolaydır.2) Aynı anda birden çok batarya dengelenebilir.
+1) Dengeleme hızı düşüktür.2) Batarya sayısı arttıkça dengeleme algoritması karmaşıklaşmaktadır.
+Tek bobin
+1) Kontrolü kolaydır.
+1) Dengeleme hızı düşüktür.2) Batarya sayısı arttıkça dengeleme algoritması karmaşıklaşmaktadır.
+Çoklu bobin
+1) Kontrolü kolaydır.
+1) Dengeleme hızı düşüktür.2) Batarya sayısı arttıkça dengeleme algoritması karmaşıklaşmaktadır.
+Tek sarımlı transformatör
+1) Bataryalar şarj devresinden izole olarak şarj edilir.
+1) Transformatörün manyetik kayıpları devreye girer.2) Batarya sayısı arttıkça dengeleme hızı düşmektedir.
+Çok sarımlı transformatör
+1) Bataryalar şarj devresinde izole olarak, aynı anda olarak şarj edilebilir.2) Bataryalar gerilim değerleri kadar akım çekerek şarj olmaktadır.
+1) Transformatörün manyetik kayıpları devreye girer.2) Transformatörün yapısal limitlerinden dolayı gücü ve sekonder taraftaki sargı sayısı sınırlıdır.
+Buck/Boost dönüştürücü
+1) Şarj ve deşarj akımları ayrı ayrı ayarlanabilir.2) Bataryalar aynı anda kontrollü şarj edildiği için dengeleme hızı yüksektir.
+1) Kontrolü karmaşıktır.2) Hem şarjda hem de deşarjda dönüştürücü kayıpları vardır.
+3) Bataryalar bypass edilemez.
+Flyback dönüştürücü
+1) Şarj ve deşarj akımları ayrı ayrı ayarlanabilir.2) Bataryalar aynı anda kontrollü şarj edildiği için dengeleme hızı yüksektir.
+1) Transformatörün manyetik kayıpları ve dönüştürücü kayıpları devreye girer.
+Rampa dönüştürücü
+1) Diğer dönüştürücü temelli yöntemlere göre daha az sayıda devre elemanı kullanılır.2) Bataryalar eş zamanlı şarj ve deşarj edilebilir.
+1) Şarj ve deşarj akımları ayrı ayrı ayarlanamaz.
+Cuk dönüştürücü
+1) Şarj ve deşarj akımları ayrı ayrı ayarlanabilir.2) Bataryalar arası dengelenme akımı ayarlanabilir.
+1) Kontrolü karmaşıktır.2) Batarya sayısı arttıkça dengeleme hızı düşer.
+Rezonans dönüştürücü
+1) Anahtarlama elemanlarına düşen stres diğer dönüştürücülere göre daha azdır.
+1) Batarya sayısı arttıkça kullanılması gereken anahtar sayısının fazla olması
+Baypas Özelliğine Sahip Devreler
+1) Kusurlu bataryalar bypass edilebilir.2) Dizinin tüm enerji kapasitesi kullanılabilir.
+1) Bataryaların şarj akımları ayrı ayrı kontrol edilemezler.2) Hem şarjda hem de deşarjda bypass edilmelidir ve bu sebeple anahtar sayısını iki katına çıkar.
+Önerilen BYS yapısı
+1) Her bir bataryanın kontrollü bir şekilde şarj edilmesi.2) Bataryaların deşarj esnasında bypass edilebilmesi ve dizinin tüm şarjının kullanılabilmesi.3) Bataryaların izole olarak şarj edilmesi4) Her bir batarya ayrı ayrı kontrol edildiği için dengenin hızlı sağlanması.5) Desülfasyon, hafıza etkisi giderme, hızlı şarj gibi farklı şarj karakteristiklerine uygun olması.6) Önerilen devre yapısı ile sadece transformatörü değiştirerek farklı bataryalarında şarj ve deşarj edilebilmesine imkân sağlaması.7) Yedek batarya kullanımına imkân sağlaması8) Bataryaların eşit bir şekilde yaşlandırılmasının sağlanabilmesi.9) Batarya dizileri DA baraya bağlanırken boost dönüştürücü kullanılmasına gerek olmaması.10) Dizide ömrü dolmuş bataryalar olmasına rağmen dizinin kullanıma devam edebilmesi.
+1) Kontrolü karmaşıktır.2) Maliyeti yüksektir.
+Tablo 1. Batarya yönetim sistemleri karşılaştırması
