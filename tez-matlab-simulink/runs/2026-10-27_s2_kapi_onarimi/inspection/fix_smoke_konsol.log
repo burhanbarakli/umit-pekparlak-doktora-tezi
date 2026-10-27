@@ -1,0 +1,201 @@
+﻿[Warning: Using find_system without the 'Variants' argument skips inactive Variant Subsystem blocks in the search. This behavior will change in a future release to look at all
+choices of the Variant Subsystem. To find blocks that are active in simulation or code generation, compile the model and use the built-in variant filters with the 'MatchFilter'
+option. To find all blocks use filter '@Simulink.match.allVariants' with the 'MatchFilter' option.] 
+[> In fix_s2_gate_path_20261027 (line 73)] 
+[Warning: Using find_system without the 'Variants' argument skips inactive Variant Subsystem blocks in the search. This behavior will change in a future release to look at all
+choices of the Variant Subsystem. To find blocks that are active in simulation or code generation, compile the model and use the built-in variant filters with the 'MatchFilter'
+option. To find all blocks use filter '@Simulink.match.allVariants' with the 'MatchFilter' option.] 
+[> In fix_s2_gate_path_20261027 (line 128)] 
+kaydedildi: C:\CODES\�mit abi\tez-matlab-simulink\runs\2026-10-27_s2_kapi_onarimi\model\inverter_s1s2_s2onarim.slx (607 yeni blok)
+derleme denetimi: ba�ar�l�
+[Warning: Matching "From" for "Goto" 'inverter_s1s2_s2onarim/G1' not found] 
+[> In fix_s2_gate_path_20261027>smoke_run (line 281)
+In fix_s2_gate_path_20261027 (line 187)] 
+[Warning: Matching "From" for "Goto" 'inverter_s1s2_s2onarim/G2' not found] 
+[> In fix_s2_gate_path_20261027>smoke_run (line 281)
+In fix_s2_gate_path_20261027 (line 187)] 
+[Warning: Matching "From" for "Goto" 'inverter_s1s2_s2onarim/G3' not found] 
+[> In fix_s2_gate_path_20261027>smoke_run (line 281)
+In fix_s2_gate_path_20261027 (line 187)] 
+[Warning: Matching "From" for "Goto" 'inverter_s1s2_s2onarim/G4' not found] 
+[> In fix_s2_gate_path_20261027>smoke_run (line 281)
+In fix_s2_gate_path_20261027 (line 187)] 
+[Warning: Matching "From" for "Goto" 'inverter_s1s2_s2onarim/G5' not found] 
+[> In fix_s2_gate_path_20261027>smoke_run (line 281)
+In fix_s2_gate_path_20261027 (line 187)] 
+[Warning: Matching "From" for "Goto" 'inverter_s1s2_s2onarim/G6' not found] 
+[> In fix_s2_gate_path_20261027>smoke_run (line 281)
+In fix_s2_gate_path_20261027 (line 187)] 
+[Warning: Matching "From" for "Goto" 'inverter_s1s2_s2onarim/G7' not found] 
+[> In fix_s2_gate_path_20261027>smoke_run (line 281)
+In fix_s2_gate_path_20261027 (line 187)] 
+[Warning: Matching "From" for "Goto" 'inverter_s1s2_s2onarim/G8' not found] 
+[> In fix_s2_gate_path_20261027>smoke_run (line 281)
+In fix_s2_gate_path_20261027 (line 187)] 
+[Warning: 'Output Port 5' of 'inverter_s1s2_s2onarim/S2 PWM susturma' is not connected.] 
+[> In fix_s2_gate_path_20261027>smoke_run (line 281)
+In fix_s2_gate_path_20261027 (line 187)] 
+[Warning: 'Output Port 6' of 'inverter_s1s2_s2onarim/S2 PWM susturma' is not connected.] 
+[> In fix_s2_gate_path_20261027>smoke_run (line 281)
+In fix_s2_gate_path_20261027 (line 187)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim/RMS1/TrueRMS /Mean value/Model/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 169984. In order to generate code, you need to update the buffer size parameter] 
+[> In fix_s2_gate_path_20261027>smoke_run (line 281)
+In fix_s2_gate_path_20261027 (line 187)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim/RMS2/TrueRMS /Mean value/Model/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 169984. In order to generate code, you need to update the buffer size parameter] 
+[> In fix_s2_gate_path_20261027>smoke_run (line 281)
+In fix_s2_gate_path_20261027 (line 187)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim/THD/RMS1/TrueRMS /Mean value/Model/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 169984. In order to generate code, you need to update the buffer size parameter] 
+[> In fix_s2_gate_path_20261027>smoke_run (line 281)
+In fix_s2_gate_path_20261027 (line 187)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim/THD/RMS2/RMS /Fourier1/Mean value1/Model/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 169984. In order to generate code, you need to update the buffer size parameter] 
+[> In fix_s2_gate_path_20261027>smoke_run (line 281)
+In fix_s2_gate_path_20261027 (line 187)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim/THD/RMS2/RMS /Fourier1/Mean/Model/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 169984. In order to generate code, you need to update the buffer size parameter] 
+[> In fix_s2_gate_path_20261027>smoke_run (line 281)
+In fix_s2_gate_path_20261027 (line 187)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim/THD1/RMS1/TrueRMS /Mean value/Model/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 169984. In order to generate code, you need to update the buffer size parameter] 
+[> In fix_s2_gate_path_20261027>smoke_run (line 281)
+In fix_s2_gate_path_20261027 (line 187)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim/THD1/RMS2/RMS /Fourier1/Mean value1/Model/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 169984. In order to generate code, you need to update the buffer size parameter] 
+[> In fix_s2_gate_path_20261027>smoke_run (line 281)
+In fix_s2_gate_path_20261027 (line 187)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim/THD1/RMS2/RMS /Fourier1/Mean/Model/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 169984. In order to generate code, you need to update the buffer size parameter] 
+[> In fix_s2_gate_path_20261027>smoke_run (line 281)
+In fix_s2_gate_path_20261027 (line 187)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim/THD2/RMS1/TrueRMS /Mean value/Model/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 169984. In order to generate code, you need to update the buffer size parameter] 
+[> In fix_s2_gate_path_20261027>smoke_run (line 281)
+In fix_s2_gate_path_20261027 (line 187)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim/THD2/RMS2/RMS /Fourier1/Mean value1/Model/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 169984. In order to generate code, you need to update the buffer size parameter] 
+[> In fix_s2_gate_path_20261027>smoke_run (line 281)
+In fix_s2_gate_path_20261027 (line 187)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim/THD2/RMS2/RMS /Fourier1/Mean/Model/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 169984. In order to generate code, you need to update the buffer size parameter] 
+[> In fix_s2_gate_path_20261027>smoke_run (line 281)
+In fix_s2_gate_path_20261027 (line 187)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim/THD3/RMS1/TrueRMS /Mean value/Model/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 169984. In order to generate code, you need to update the buffer size parameter] 
+[> In fix_s2_gate_path_20261027>smoke_run (line 281)
+In fix_s2_gate_path_20261027 (line 187)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim/THD3/RMS2/RMS /Fourier1/Mean value1/Model/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 169984. In order to generate code, you need to update the buffer size parameter] 
+[> In fix_s2_gate_path_20261027>smoke_run (line 281)
+In fix_s2_gate_path_20261027 (line 187)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim/THD3/RMS2/RMS /Fourier1/Mean/Model/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 169984. In order to generate code, you need to update the buffer size parameter] 
+[> In fix_s2_gate_path_20261027>smoke_run (line 281)
+In fix_s2_gate_path_20261027 (line 187)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim/Mean9/Model/Transport Delay' was too small. During simulation, the buffer size
+was temporarily increased to 169984. In order to generate code, you need to update the buffer size parameter] 
+[> In fix_s2_gate_path_20261027>smoke_run (line 281)
+In fix_s2_gate_path_20261027 (line 187)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim/THD/Mean/Model/Transport Delay' was too small. During simulation, the buffer
+size was temporarily increased to 169984. In order to generate code, you need to update the buffer size parameter] 
+[> In fix_s2_gate_path_20261027>smoke_run (line 281)
+In fix_s2_gate_path_20261027 (line 187)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim/THD2/Mean/Model/Transport Delay' was too small. During simulation, the buffer
+size was temporarily increased to 169984. In order to generate code, you need to update the buffer size parameter] 
+[> In fix_s2_gate_path_20261027>smoke_run (line 281)
+In fix_s2_gate_path_20261027 (line 187)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim/Mean10/Model/Transport Delay' was too small. During simulation, the buffer size
+was temporarily increased to 169984. In order to generate code, you need to update the buffer size parameter] 
+[> In fix_s2_gate_path_20261027>smoke_run (line 281)
+In fix_s2_gate_path_20261027 (line 187)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim/Mean1/Model/Transport Delay' was too small. During simulation, the buffer size
+was temporarily increased to 169984. In order to generate code, you need to update the buffer size parameter] 
+[> In fix_s2_gate_path_20261027>smoke_run (line 281)
+In fix_s2_gate_path_20261027 (line 187)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim/Mean3/Model/Transport Delay' was too small. During simulation, the buffer size
+was temporarily increased to 169984. In order to generate code, you need to update the buffer size parameter] 
+[> In fix_s2_gate_path_20261027>smoke_run (line 281)
+In fix_s2_gate_path_20261027 (line 187)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim/Power Measurement/Continuous/Transport Delay' was too small. During simulation,
+the buffer size was temporarily increased to 169984. In order to generate code, you need to update the buffer size parameter] 
+[> In fix_s2_gate_path_20261027>smoke_run (line 281)
+In fix_s2_gate_path_20261027 (line 187)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim/Power Measurement/Continuous/Transport Delay1' was too small. During simulation,
+the buffer size was temporarily increased to 169984. In order to generate code, you need to update the buffer size parameter] 
+[> In fix_s2_gate_path_20261027>smoke_run (line 281)
+In fix_s2_gate_path_20261027 (line 187)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim/Mean2/Model/Transport Delay' was too small. During simulation, the buffer size
+was temporarily increased to 169984. In order to generate code, you need to update the buffer size parameter] 
+[> In fix_s2_gate_path_20261027>smoke_run (line 281)
+In fix_s2_gate_path_20261027 (line 187)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim/Mean8/Model/Transport Delay' was too small. During simulation, the buffer size
+was temporarily increased to 169984. In order to generate code, you need to update the buffer size parameter] 
+[> In fix_s2_gate_path_20261027>smoke_run (line 281)
+In fix_s2_gate_path_20261027 (line 187)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim/THD1/Mean/Model/Transport Delay' was too small. During simulation, the buffer
+size was temporarily increased to 169984. In order to generate code, you need to update the buffer size parameter] 
+[> In fix_s2_gate_path_20261027>smoke_run (line 281)
+In fix_s2_gate_path_20261027 (line 187)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim/THD3/Mean/Model/Transport Delay' was too small. During simulation, the buffer
+size was temporarily increased to 169984. In order to generate code, you need to update the buffer size parameter] 
+[> In fix_s2_gate_path_20261027>smoke_run (line 281)
+In fix_s2_gate_path_20261027 (line 187)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim/Mean5/Model/Transport Delay' was too small. During simulation, the buffer size
+was temporarily increased to 169984. In order to generate code, you need to update the buffer size parameter] 
+[> In fix_s2_gate_path_20261027>smoke_run (line 281)
+In fix_s2_gate_path_20261027 (line 187)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim/Mean4/Model/Transport Delay' was too small. During simulation, the buffer size
+was temporarily increased to 169984. In order to generate code, you need to update the buffer size parameter] 
+[> In fix_s2_gate_path_20261027>smoke_run (line 281)
+In fix_s2_gate_path_20261027 (line 187)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim/Mean7/Model/Transport Delay' was too small. During simulation, the buffer size
+was temporarily increased to 169984. In order to generate code, you need to update the buffer size parameter] 
+[> In fix_s2_gate_path_20261027>smoke_run (line 281)
+In fix_s2_gate_path_20261027 (line 187)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim/Power Measurement1/Continuous/Transport Delay' was too small. During simulation,
+the buffer size was temporarily increased to 169984. In order to generate code, you need to update the buffer size parameter] 
+[> In fix_s2_gate_path_20261027>smoke_run (line 281)
+In fix_s2_gate_path_20261027 (line 187)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim/Power Measurement1/Continuous/Transport Delay1' was too small. During
+simulation, the buffer size was temporarily increased to 169984. In order to generate code, you need to update the buffer size parameter] 
+[> In fix_s2_gate_path_20261027>smoke_run (line 281)
+In fix_s2_gate_path_20261027 (line 187)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim/Mean6/Model/Transport Delay' was too small. During simulation, the buffer size
+was temporarily increased to 169984. In order to generate code, you need to update the buffer size parameter] 
+[> In fix_s2_gate_path_20261027>smoke_run (line 281)
+In fix_s2_gate_path_20261027 (line 187)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim/Power3/Fourier/Mean value1/Model/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 169984. In order to generate code, you need to update the buffer size parameter] 
+[> In fix_s2_gate_path_20261027>smoke_run (line 281)
+In fix_s2_gate_path_20261027 (line 187)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim/Power3/Fourier/Mean/Model/Transport Delay' was too small. During simulation, the
+buffer size was temporarily increased to 169984. In order to generate code, you need to update the buffer size parameter] 
+[> In fix_s2_gate_path_20261027>smoke_run (line 281)
+In fix_s2_gate_path_20261027 (line 187)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim/Power3/Fourier1/Mean value1/Model/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 169984. In order to generate code, you need to update the buffer size parameter] 
+[> In fix_s2_gate_path_20261027>smoke_run (line 281)
+In fix_s2_gate_path_20261027 (line 187)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim/Power3/Fourier1/Mean/Model/Transport Delay' was too small. During simulation,
+the buffer size was temporarily increased to 169984. In order to generate code, you need to update the buffer size parameter] 
+[> In fix_s2_gate_path_20261027>smoke_run (line 281)
+In fix_s2_gate_path_20261027 (line 187)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim/Power1/Fourier/Mean value1/Model/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 169984. In order to generate code, you need to update the buffer size parameter] 
+[> In fix_s2_gate_path_20261027>smoke_run (line 281)
+In fix_s2_gate_path_20261027 (line 187)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim/Power1/Fourier/Mean/Model/Transport Delay' was too small. During simulation, the
+buffer size was temporarily increased to 169984. In order to generate code, you need to update the buffer size parameter] 
+[> In fix_s2_gate_path_20261027>smoke_run (line 281)
+In fix_s2_gate_path_20261027 (line 187)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim/Power1/Fourier1/Mean value1/Model/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 169984. In order to generate code, you need to update the buffer size parameter] 
+[> In fix_s2_gate_path_20261027>smoke_run (line 281)
+In fix_s2_gate_path_20261027 (line 187)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim/Power1/Fourier1/Mean/Model/Transport Delay' was too small. During simulation,
+the buffer size was temporarily increased to 169984. In order to generate code, you need to update the buffer size parameter] 
+[> In fix_s2_gate_path_20261027>smoke_run (line 281)
+In fix_s2_gate_path_20261027 (line 187)] 
+denetim: C:\CODES\�mit abi\tez-matlab-simulink\runs\2026-10-27_s2_kapi_onarimi\inspection\fix_s2_denetim.txt

@@ -1,9 +1,16 @@
+function extract_umit_display_values_20261027(run_name)
 % run_umit_dort_senaryo_20261027 çıktısındaki logsout.mat'tan Display değerlerini
 % kaynak blok + port üzerinden eşler. Ümit'in modellerinde farklı hatlar aynı
 % kayıt adını (ör. Idc_s1) taşıdığından ad değil blok yolu esas alınır.
-% Çıktı: results/<model>/display_degerleri_eslesik.csv
+% Çıktı: runs/<run_name>/results/<model>/display_degerleri_eslesik.csv
+% Çağrı (proje kökünden):
+%   matlab -batch "run('scripts/extract_umit_display_values_20261027.m')"   % ilk koşu (eski çağrı)
+%   matlab -batch "addpath('scripts'); extract_umit_display_values_20261027('2026-10-27_s2_kapi_onarimi')"
+% 27.10.2026 (İP-1): betikten fonksiyona çevrildi; argümansız çağrı (run(...) dahil)
+% eski davranışı korur: run_name = '2026-10-27_dort_senaryo_ilk_kosu'.
+if nargin < 1 || isempty(run_name), run_name = '2026-10-27_dort_senaryo_ilk_kosu'; end
 root_dir = fileparts(fileparts(mfilename('fullpath')));
-run_dir = fullfile(root_dir, 'runs', '2026-10-27_dort_senaryo_ilk_kosu');
+run_dir = fullfile(root_dir, 'runs', run_name);
 model_dir = fullfile(run_dir, 'model');
 cd(model_dir);
 evalin('base', sprintf('run(''%s'');', fullfile(model_dir, 'inverter_common_parameters.m')));
@@ -44,4 +51,5 @@ for r = 1:numel(result_dirs)
         {'display', 'kaynak_blok', 'port', 'kanal', 'son_deger', 'ort_son20ms'});
     writetable(tbl, fullfile(run_dir, 'results', mdl, 'display_degerleri_eslesik.csv'), 'Encoding', 'UTF-8');
     fprintf('%s: %d display eşlendi\n', mdl, height(tbl));
+end
 end

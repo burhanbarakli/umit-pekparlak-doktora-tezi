@@ -1,0 +1,26 @@
+﻿[Warning: Folder "C:\Users\burha\AppData\Local\Temp\mwslx_spsRMSLib_1d59c4f8_3d00_4ca5_a867_440023b17f32" was being used by block diagram "spsRMSLib" but it has been deleted.
+Simulink will recreate the folder now, but some changes made since the model was loaded may have been lost. Consult the documentation for more information.] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: Folder "C:\Users\burha\AppData\Local\Temp\mwslx_spsFourierLib_758b932c_1da8_4434_93ae_8c0037da6fd8" was being used by block diagram "spsFourierLib" but it has been
+deleted. Simulink will recreate the folder now, but some changes made since the model was loaded may have been lost. Consult the documentation for more information.] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: Matching "From" for "Goto" 'inverter_s1s2_s2onarim/G1' not found] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: Matching "From" for "Goto" 'inverter_s1s2_s2onarim/G2' not found] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: Matching "From" for "Goto" 'inverter_s1s2_s2onarim/G3' not found] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: Matching "From" for "Goto" 'inverter_s1s2_s2onarim/G4' not found] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: Matching "From" for "Goto" 'inverter_s1s2_s2onarim/G5' not found] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: Matching "From" for "Goto" 'inverter_s1s2_s2onarim/G6' not found] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: Matching "From" for "Goto" 'inverter_s1s2_s2onarim/G7' not found] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: Matching "From" for "Goto" 'inverter_s1s2_s2onarim/G8' not found] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: 'Output Port 5' of 'inverter_s1s2_s2onarim/S2 PWM susturma' is not connected.] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: 'Output Port 6' of 'inverter_s1s2_s2onarim/S2 PWM susturma' is not connected.] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 

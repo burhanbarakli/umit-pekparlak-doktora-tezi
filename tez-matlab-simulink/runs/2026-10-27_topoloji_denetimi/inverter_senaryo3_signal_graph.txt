@@ -1,0 +1,181 @@
+MODEL inverter_senaryo3 — Simulink sinyal blokları (kütüphane bağlantılarının içine inilmez)
+Biçim: blok [tür] {parametreler}  <= giriş kaynakları
+
+AC Akım RMS [Display] {}  <= in1:RMS1/o1
+AC Akım THD [Display] {}  <= in1:THD/o1
+AC Current Sensor1 [SubSystem] {}  <= 
+AC Gerilim THD2 [Display] {}  <= in1:THD2/o1
+AC Reaktif Güç [Display] {}  <= in1:Mean10/o1
+AC Voltage Sensor1 [SubSystem] {}  <= 
+AC Voltage Sensor2 [SubSystem] {}  <= 
+AC instantaneous power [Product] {Inputs=2, Multiplication=Element-wise(.*)}  <= in1:From9/o1, in2:From10/o1
+AC instantaneous power1 [Product] {Inputs=2, Multiplication=Element-wise(.*)}  <= in1:Mean10/o1, in2:Mean10/o1
+AC instantaneous power2 [Product] {Inputs=2, Multiplication=Element-wise(.*)}  <= in1:Mean9/o1, in2:Mean9/o1
+AC instantaneous power6 [Product] {Inputs=2, Multiplication=Element-wise(.*)}  <= in1:Power3/o2, in2:Power3/o2
+AC instantaneous power7 [Product] {Inputs=2, Multiplication=Element-wise(.*)}  <= in1:Power3/o1, in2:Power3/o1
+Add [Sum] {Inputs=++}  <= in1:AC instantaneous power1/o1, in2:AC instantaneous power2/o1
+Add2 [Sum] {Inputs=++}  <= in1:AC instantaneous power6/o1, in2:AC instantaneous power7/o1
+Bus Creator1 [BusCreator] {}  <= in1:From1/o1, in2:From3/o1, in3:From11/o1, in4:From12/o1
+Bus Creator10 [BusCreator] {}  <= in1:Sum of Elements/o1, in2:Power Measurement/o1
+Bus Creator2 [BusCreator] {}  <= in1:From4/o1, in2:Gain1/o1
+Bus Creator3 [BusCreator] {}  <= in1:From1/o1, in2:From11/o1
+Bus Creator4 [BusCreator] {}  <= in1:From5/o1, in2:From6/o1
+DC Güç [Display] {}  <= in1:Mean1/o1
+Divide1 [Product] {Inputs=*/, Multiplication=Element-wise(.*)}  <= in1:Mean9/o1, in2:Sqrt/o1
+Divide3 [Product] {Inputs=*/, Multiplication=Element-wise(.*)}  <= in1:Mean9/o1, in2:Mean1/o1
+Divide5 [Product] {Inputs=*/, Multiplication=Element-wise(.*)}  <= in1:Power3/o1, in2:Sqrt2/o1
+From1 [From] {GotoTag=G13, TagVisibility=global}  <= 
+From10 [From] {GotoTag=i_dc1, TagVisibility=global}  <= 
+From11 [From] {GotoTag=G33, TagVisibility=global}  <= 
+From12 [From] {GotoTag=G43, TagVisibility=global}  <= 
+From13 [From] {GotoTag=i_ac1, TagVisibility=global}  <= 
+From14 [From] {GotoTag=v_inv1, TagVisibility=global}  <= 
+From2 [From] {GotoTag=i_ac1, TagVisibility=global}  <= 
+From29 [From] {GotoTag=i_ac1, TagVisibility=global}  <= 
+From3 [From] {GotoTag=G23, TagVisibility=global}  <= 
+From30 [From] {GotoTag=v_ac1, TagVisibility=global}  <= 
+From4 [From] {GotoTag=v_ac1, TagVisibility=global}  <= 
+From5 [From] {GotoTag=v_dc1, TagVisibility=global}  <= 
+From6 [From] {GotoTag=i_dc1, TagVisibility=global}  <= 
+From7 [From] {GotoTag=i_ac1, TagVisibility=global}  <= 
+From8 [From] {GotoTag=v_ac1, TagVisibility=global}  <= 
+From9 [From] {GotoTag=v_dc1, TagVisibility=global}  <= 
+G1 [Goto] {GotoTag=G13, TagVisibility=global}  <= in1:Gate Drive7/o1
+G2 [Goto] {GotoTag=G43, TagVisibility=global}  <= in1:Gate Drive8/o1
+G3 [Goto] {GotoTag=G33, TagVisibility=global}  <= in1:Gate Drive5/o1
+G4 [Goto] {GotoTag=G23, TagVisibility=global}  <= in1:Gate Drive6/o1
+Gain1 [Gain] {Gain=measurement_gain}  <= in1:From2/o1
+Gate Drive5 [SubSystem] {}  <= 
+Gate Drive5/DeadTime_g3 [From] {GotoTag=g33, TagVisibility=global}  <= 
+Gate Drive5/DeadTime_g3_5V [Gain] {Gain=5}  <= in1:Gate Drive5/DeadTime_g3_double/o1
+Gate Drive5/DeadTime_g3_double [DataTypeConversion] {OutDataTypeStr=double}  <= in1:Gate Drive5/DeadTime_g3/o1
+Gate Drive5/PS-Simulink Converter8 [SubSystem ~ nesl_utility/PS-Simulink Converter] {PhysicalDomain=network_engine_domain, SubClassName=ps_output, LeftPortType=input, RightPortType=output, PseudoPeriodic=off, Frequencies=[], VectorFormat=1-D array, Unit=1, AffineConversion=off}  <= 
+Gate Drive5/Simulink-PS Converter1 [SubSystem ~ nesl_utility/Simulink-PS Converter] {PhysicalDomain=network_engine_domain, SubClassName=ps_input, LeftPortType=input, RightPortType=output, PseudoPeriodic=off, Frequencies=[], NoiseDistribution=none, NoiseParameters=[], Unit=V, AffineConversion=off, FilteringAndDerivatives=filter, SimscapeFilterOrder=1, InputFilterTimeConstant=1e-7, UdotUserProvided=1}  <= in1:Gate Drive5/DeadTime_g3_5V/o1
+Gate Drive5/G3 [Outport] {}  <= in1:Gate Drive5/PS-Simulink Converter8/o1
+Gate Drive6 [SubSystem] {}  <= 
+Gate Drive6/DeadTime_g2 [From] {GotoTag=g23, TagVisibility=global}  <= 
+Gate Drive6/DeadTime_g2_double [DataTypeConversion] {OutDataTypeStr=double}  <= in1:Gate Drive6/DeadTime_g2/o1
+Gate Drive6/PS-Simulink Converter8 [SubSystem ~ nesl_utility/PS-Simulink Converter] {PhysicalDomain=network_engine_domain, SubClassName=ps_output, LeftPortType=input, RightPortType=output, PseudoPeriodic=off, Frequencies=[], VectorFormat=1-D array, Unit=1, AffineConversion=off}  <= 
+Gate Drive6/Simulink-PS Converter1 [SubSystem ~ nesl_utility/Simulink-PS Converter] {PhysicalDomain=network_engine_domain, SubClassName=ps_input, LeftPortType=input, RightPortType=output, PseudoPeriodic=off, Frequencies=[], NoiseDistribution=none, NoiseParameters=[], Unit=1, AffineConversion=off, FilteringAndDerivatives=filter, SimscapeFilterOrder=1, InputFilterTimeConstant=1e-7, UdotUserProvided=1}  <= in1:Gate Drive6/DeadTime_g2_double/o1
+Gate Drive6/G2 [Outport] {}  <= in1:Gate Drive6/PS-Simulink Converter8/o1
+Gate Drive7 [SubSystem] {}  <= 
+Gate Drive7/DeadTime_g1 [From] {GotoTag=g13, TagVisibility=global}  <= 
+Gate Drive7/DeadTime_g1_double [DataTypeConversion] {OutDataTypeStr=double}  <= in1:Gate Drive7/DeadTime_g1/o1
+Gate Drive7/PS-Simulink Converter8 [SubSystem ~ nesl_utility/PS-Simulink Converter] {PhysicalDomain=network_engine_domain, SubClassName=ps_output, LeftPortType=input, RightPortType=output, PseudoPeriodic=off, Frequencies=[], VectorFormat=1-D array, Unit=1, AffineConversion=off}  <= 
+Gate Drive7/Simulink-PS Converter1 [SubSystem ~ nesl_utility/Simulink-PS Converter] {PhysicalDomain=network_engine_domain, SubClassName=ps_input, LeftPortType=input, RightPortType=output, PseudoPeriodic=off, Frequencies=[], NoiseDistribution=none, NoiseParameters=[], Unit=1, AffineConversion=off, FilteringAndDerivatives=filter, SimscapeFilterOrder=1, InputFilterTimeConstant=1e-7, UdotUserProvided=1}  <= in1:Gate Drive7/DeadTime_g1_double/o1
+Gate Drive7/G1 [Outport] {}  <= in1:Gate Drive7/PS-Simulink Converter8/o1
+Gate Drive8 [SubSystem] {}  <= 
+Gate Drive8/DeadTime_g4 [From] {GotoTag=g43, TagVisibility=global}  <= 
+Gate Drive8/DeadTime_g4_5V [Gain] {Gain=5}  <= in1:Gate Drive8/DeadTime_g4_double/o1
+Gate Drive8/DeadTime_g4_double [DataTypeConversion] {OutDataTypeStr=double}  <= in1:Gate Drive8/DeadTime_g4/o1
+Gate Drive8/PS-Simulink Converter8 [SubSystem ~ nesl_utility/PS-Simulink Converter] {PhysicalDomain=network_engine_domain, SubClassName=ps_output, LeftPortType=input, RightPortType=output, PseudoPeriodic=off, Frequencies=[], VectorFormat=1-D array, Unit=1, AffineConversion=off}  <= 
+Gate Drive8/Simulink-PS Converter1 [SubSystem ~ nesl_utility/Simulink-PS Converter] {PhysicalDomain=network_engine_domain, SubClassName=ps_input, LeftPortType=input, RightPortType=output, PseudoPeriodic=off, Frequencies=[], NoiseDistribution=none, NoiseParameters=[], Unit=V, AffineConversion=off, FilteringAndDerivatives=filter, SimscapeFilterOrder=1, InputFilterTimeConstant=1e-7, UdotUserProvided=1}  <= in1:Gate Drive8/DeadTime_g4_5V/o1
+Gate Drive8/G4 [Outport] {}  <= in1:Gate Drive8/PS-Simulink Converter8/o1
+Goto [Goto] {GotoTag=i_dc1, TagVisibility=global}  <= in1:PS-Simulink Converter/o1
+Goto1 [Goto] {GotoTag=v_dc1, TagVisibility=global}  <= in1:PS-Simulink Converter1/o1
+Goto12 [Goto] {GotoTag=g33, TagVisibility=global}  <= in1:Subsystem2/o3
+Goto13 [Goto] {GotoTag=g43, TagVisibility=global}  <= in1:Subsystem2/o4
+Goto14 [Goto] {GotoTag=g13, TagVisibility=global}  <= in1:Subsystem2/o1
+Goto15 [Goto] {GotoTag=g23, TagVisibility=global}  <= in1:Subsystem2/o2
+Idc [Display] {}  <= in1:Mean3/o1
+K1 [Gain] {Gain=K13}  <= in1:Sine Wave3/o1
+K3 [Gain] {Gain=K33}  <= in1:Product1/o1
+Mean1 [SubSystem ~ spsMeanLib/Mean] {Freq=50, Vinit=0.0001, Ts=0}  <= in1:AC instantaneous power/o1
+Mean10 [SubSystem ~ spsMeanLib/Mean] {Freq=50, Vinit=0.0001, Ts=0}  <= in1:Sum of Elements1/o1
+Mean11 [SubSystem ~ spsMeanLib/Mean] {Freq=50, Vinit=0.0001, Ts=0}  <= in1:Product/o1
+Mean2 [SubSystem ~ spsMeanLib/Mean] {Freq=50, Vinit=0.0001, Ts=0}  <= in1:From9/o1
+Mean3 [SubSystem ~ spsMeanLib/Mean] {Freq=50, Vinit=0.0001, Ts=0}  <= in1:From10/o1
+Mean9 [SubSystem ~ spsMeanLib/Mean] {Freq=50, Vinit=0.0001, Ts=0}  <= in1:Sum of Elements/o1
+PS-Simulink Converter [SubSystem ~ nesl_utility/PS-Simulink Converter] {PhysicalDomain=network_engine_domain, SubClassName=ps_output, LeftPortType=input, RightPortType=output, PseudoPeriodic=off, Frequencies=[], VectorFormat=1-D array, Unit=1, AffineConversion=off}  <= 
+PS-Simulink Converter1 [SubSystem ~ nesl_utility/PS-Simulink Converter] {PhysicalDomain=network_engine_domain, SubClassName=ps_output, LeftPortType=input, RightPortType=output, PseudoPeriodic=off, Frequencies=[], VectorFormat=1-D array, Unit=1, AffineConversion=off}  <= 
+PS-Simulink Converter3 [SubSystem ~ nesl_utility/PS-Simulink Converter] {PhysicalDomain=network_engine_domain, SubClassName=ps_output, LeftPortType=input, RightPortType=output, PseudoPeriodic=off, Frequencies=[], VectorFormat=1-D array, Unit=1, AffineConversion=off}  <= 
+Power Measurement [SubSystem ~ eePowerMeasurement/Power Measurement] {F=50, K=0:50, Ts=0}  <= in1:From8/o1, in2:From7/o1
+Power3 [SubSystem ~ spsPowerLib/Power] {Freq=50, Vinit=[0.001, 0], Iinit=[0.001, 0], Ts=0}  <= in1:From30/o1, in2:From29/o1
+Product [Product] {Inputs=2, Multiplication=Element-wise(.*)}  <= in1:From30/o1, in2:From29/o1
+Product1 [Product] {Inputs=2, Multiplication=Element-wise(.*)}  <= in1:Product15/o1, in2:Sine Wave3/o1
+Product15 [Product] {Inputs=2, Multiplication=Element-wise(.*)}  <= in1:Sine Wave3/o1, in2:Sine Wave3/o1
+RMS1 [SubSystem ~ spsRMSLib/RMS] {TrueRMS=on, Freq=50, RMSInit=0, Ts=0}  <= in1:From7/o1
+Scope1 [Scope] {}  <= in1:Bus Creator2/o1
+Scope16 [Scope] {}  <= in1:Bus Creator10/o1
+Scope17 [Scope] {}  <= in1:Power3/o1
+Scope2 [Scope] {}  <= in1:Bus Creator3/o1
+Scope21 [Scope] {}  <= in1:Sum/o1
+Scope3 [Scope] {}  <= in1:Bus Creator4/o1
+Scope4 [Scope] {}  <= in1:From13/o1
+Scope5 [Scope] {}  <= in1:Bus Creator1/o1
+Scope6 [Scope] {}  <= in1:From14/o1
+Scope8 [Scope] {}  <= in1:PS-Simulink Converter3/o1
+Sine Wave3 [Sin] {SineType=Time based, Amplitude=pwm_ref_amp, Bias=0, Frequency=2*pi*f_grid, Phase=phase_deg3*pi/180, SampleTime=pwm_ref_Ts}  <= 
+Solver Configuration1 [SubSystem ~ nesl_utility/Solver Configuration] {PhysicalDomain=network_engine_domain, SubClassName=solver, LeftPortType=input, RightPortType=generic, Tones=[], Harmonics=[], SimulateNoise=off, IcStateTrace=[], Profile=off, UseLocalSampling=off, EnableSwitchedLinearOptims=on, FrequencyDomain=off, UseCCode=off, RelTol=0.001, AbsTol=1e-06, MinStep=1e-09, ToWorkspace=off, RevertToSquareIcSolve=off, NumHomotopyIterations=100, PhasorMode=off, PhasorModeNumHarmonics=1, ConsistencySolver=NEWTON_FTOL, IndexReductionMethod=DerivativeReplacement, DoDC=off, ResidualTolerance=simscape_residual_tolerance, ConsistencyTolSource=GLOBAL, ConsistencyAbsTol=0.001, ConsistencyRelTol=0.001, ConsistencyTolFactor=0.001, UseLocalSolver=off, LocalSolverChoice=NE_TRAPEZOIDAL_ADVANCER, ResolveIndetEquations=on, FunctionEvalNumThread=1, LocalSolverSampleTime=1e-7, DoFixedCost=off, MaxNonlinIter=10, MaxModeIter=2, ComputeImpulses=off, ImpulseIterations=1, LinearAlgebra=auto, LinearAlgebraNumThread=0, EquationFormulation=NE_TIME_EF, DelaysMemoryBudget=1024, AutomaticFiltering=on, FilteringTimeConstant=0.001, PartitionStorageMethod=AS_NEEDED, PartitionMemoryBudget=1024, PartitionMethod=FAST, MultibodyUseLocalSolver=off, MultibodyLocalSolverChoice=ODE1, MultibodyLocalSolverSampleTime=0.001}  <= 
+Sqrt [Sqrt] {}  <= in1:Add/o1
+Sqrt2 [Sqrt] {}  <= in1:Add2/o1
+Subsystem2 [SubSystem] {}  <= in1:Sum/o1
+Subsystem2/In1 [Inport] {}  <= 
+Subsystem2/Constant1 [Constant] {Value=0}  <= 
+Subsystem2/Constant2 [Constant] {Value=0}  <= 
+Subsystem2/Constant3 [Constant] {Value=0}  <= 
+Subsystem2/Constant4 [Constant] {Value=1}  <= 
+Subsystem2/Constant5 [Constant] {Value=1}  <= 
+Subsystem2/Constant6 [Constant] {Value=0}  <= 
+Subsystem2/Gain11 [Gain] {Gain=-1}  <= in1:Subsystem2/Switch2/o1
+Subsystem2/Gain12 [Gain] {Gain=1}  <= in1:Subsystem2/Switch1/o1
+Subsystem2/Mux2 [Mux] {}  <= in1:Subsystem2/On Delay1/o1, in2:Subsystem2/On Delay3/o1
+Subsystem2/Mux5 [Mux] {}  <= in1:Subsystem2/On Delay/o1, in2:Subsystem2/On Delay2/o1
+Subsystem2/On Delay [SubSystem ~ spsOnDelayLib/On Delay] {DelayType=On delay, delay=deadtime, ic=0, Ts=0}  <= in1:Subsystem2/PWM Generator (DC-DC)10/o1
+Subsystem2/On Delay1 [SubSystem ~ spsOnDelayLib/On Delay] {DelayType=On delay, delay=deadtime, ic=0, Ts=0}  <= in1:Subsystem2/PWM Generator (DC-DC)11/o1
+Subsystem2/On Delay2 [SubSystem ~ spsOnDelayLib/On Delay] {DelayType=On delay, delay=deadtime, ic=0, Ts=0}  <= in1:Subsystem2/Switch3/o1
+Subsystem2/On Delay3 [SubSystem ~ spsOnDelayLib/On Delay] {DelayType=On delay, delay=deadtime, ic=0, Ts=0}  <= in1:Subsystem2/Switch4/o1
+Subsystem2/PWM Generator (DC-DC)10 [SubSystem ~ spsPWMGeneratorDCDCLib/PWM Generator (DC-DC)] {Fsw=fsw, Ts=1/fsw/100}  <= in1:Subsystem2/Gain12/o1
+Subsystem2/PWM Generator (DC-DC)11 [SubSystem ~ spsPWMGeneratorDCDCLib/PWM Generator (DC-DC)] {Fsw=fsw, Ts=1/fsw/100}  <= in1:Subsystem2/Gain11/o1
+Subsystem2/Scope2 [Scope] {}  <= in1:Subsystem2/In1/o1, in2:Subsystem2/Mux5/o1, in3:Subsystem2/Mux2/o1
+Subsystem2/Switch1 [Switch] {Criteria=u2 >= Threshold, Threshold=0}  <= in1:Subsystem2/In1/o1, in2:Subsystem2/In1/o1, in3:Subsystem2/Constant1/o1
+Subsystem2/Switch2 [Switch] {Criteria=u2 >= Threshold, Threshold=0}  <= in1:Subsystem2/Constant2/o1, in2:Subsystem2/In1/o1, in3:Subsystem2/In1/o1
+Subsystem2/Switch3 [Switch] {Criteria=u2 >= Threshold, Threshold=0}  <= in1:Subsystem2/Constant3/o1, in2:Subsystem2/In1/o1, in3:Subsystem2/Constant4/o1
+Subsystem2/Switch4 [Switch] {Criteria=u2 >= Threshold, Threshold=0}  <= in1:Subsystem2/Constant5/o1, in2:Subsystem2/In1/o1, in3:Subsystem2/Constant6/o1
+Subsystem2/Out1 [Outport] {}  <= in1:Subsystem2/On Delay/o1
+Subsystem2/Out2 [Outport] {}  <= in1:Subsystem2/On Delay1/o1
+Subsystem2/Out3 [Outport] {}  <= in1:Subsystem2/On Delay2/o1
+Subsystem2/Out4 [Outport] {}  <= in1:Subsystem2/On Delay3/o1
+Subsystem2/Out5 [Outport] {}  <= in1:Subsystem2/PWM Generator (DC-DC)10/o1
+Subsystem2/Out6 [Outport] {}  <= in1:Subsystem2/PWM Generator (DC-DC)11/o1
+Sum [Sum] {Inputs=|++}  <= in1:K1/o1, in2:K3/o1
+Sum of Elements [Sum] {Inputs=+}  <= in1:Power Measurement/o1
+Sum of Elements1 [Sum] {Inputs=+}  <= in1:Power Measurement/o2
+THD [SubSystem ~ spsTHDLib/THD] {Freq=50, Ts=0}  <= in1:From7/o1
+THD2 [SubSystem ~ spsTHDLib/THD] {Freq=50, Ts=0}  <= in1:From8/o1
+Vdc [Display] {}  <= in1:Mean2/o1
+Verim [Display] {}  <= in1:Divide3/o1
+cosfi [Display] {}  <= in1:Divide1/o1
+cosfi2 [Display] {}  <= in1:Power3/o1
+cosfi3 [Display] {}  <= in1:Power3/o2
+cosfi4 [Display] {}  <= in1:Divide5/o1
+cosfi8 [Display] {}  <= in1:Mean11/o1
+powergui [SubSystem ~ spspowerguiLib/powergui] {SimulationMode=Continuous, SampleTime=50e-6, frequency=50, Iterations=50, frequencyindice=60, Pbase=100e6, ErrMax=1e-4, UnitsV=kV, UnitsW=MW, buscounter=0, FunctionMessages=off, echomessages=off, EnableUseOfTLC=off, CurrentSourceSwitches=on, DisableSnubberDevices=off, DisableRonSwitches=off, DisableVfSwitches=off, DisplayEquations=off, AutomaticDiscreteSolvers=off, SolverType=Tustin/Backward Euler (TBE), Interpol=off, ExternalGateDelay=off, methode=off, Ts=100, x0status=blocks, SPID=on, SwTol=0, HookPort=off, NonlinearTolerance=1e-4, nMaxIteration=100, ContinueOnMaxIteration=off, RestoreLinks=warning, ResistiveCurrentMeasurement=off, Frange=[0:2:500], Ylog=off, Xlog=on, ShowGrid=off, save=off, variable=ZData, structure=0, ZoomFFT=off, StartTime=0.0, cycles=1, DisplayStyle=1, fundamental=50, FreqAxis=off, MaxFrequency=1000, frequencyindicesteady=1, RmsSteady=1, display=off}  <= 
+
+== Goto / From etiketleri
+G13          GOTO: G1(global)<=in1:Gate Drive7/o1
+             FROM: From1
+G23          GOTO: G4(global)<=in1:Gate Drive6/o1
+             FROM: From3
+G33          GOTO: G3(global)<=in1:Gate Drive5/o1
+             FROM: From11
+G43          GOTO: G2(global)<=in1:Gate Drive8/o1
+             FROM: From12
+g13          GOTO: Goto14(global)<=in1:Subsystem2/o1
+             FROM: Gate Drive7/DeadTime_g1
+g23          GOTO: Goto15(global)<=in1:Subsystem2/o2
+             FROM: Gate Drive6/DeadTime_g2
+g33          GOTO: Goto12(global)<=in1:Subsystem2/o3
+             FROM: Gate Drive5/DeadTime_g3
+g43          GOTO: Goto13(global)<=in1:Subsystem2/o4
+             FROM: Gate Drive8/DeadTime_g4
+i_ac1        GOTO: AC Current Sensor1/Goto(global)<=in1:AC Current Sensor1/PS-Simulink Converter/o1
+             FROM: From13 | From2 | From29 | From7
+i_dc1        GOTO: Goto(global)<=in1:PS-Simulink Converter/o1
+             FROM: From10 | From6
+v_ac1        GOTO: AC Voltage Sensor1/Goto(global)<=in1:AC Voltage Sensor1/PS-Simulink Converter/o1
+             FROM: From30 | From4 | From8
+v_dc1        GOTO: Goto1(global)<=in1:PS-Simulink Converter1/o1
+             FROM: From5 | From9
+v_inv1       GOTO: AC Voltage Sensor2/Goto(global)<=in1:AC Voltage Sensor2/PS-Simulink Converter/o1
+             FROM: From14

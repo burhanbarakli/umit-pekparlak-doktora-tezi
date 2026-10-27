@@ -52,3 +52,7 @@ slprj/
 # (model/ kopyaları incoming_real_data/ içindeki paketle bayt bayt aynıdır)
 /tez-matlab-simulink/runs/**/logsout.mat
 /tez-matlab-simulink/runs/*/model/
+/tez-matlab-simulink/runs/*/model*/
+/tez-matlab-simulink/runs/**/*.mat
+*_acc.exp
+*_acc.lib

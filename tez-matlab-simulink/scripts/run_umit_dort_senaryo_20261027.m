@@ -1,12 +1,21 @@
-function run_umit_dort_senaryo_20261027(mdl)
+function run_umit_dort_senaryo_20261027(mdl, run_name, sim_mode)
 % Ümit'in 12.10.2026 paketindeki bir modeli devre ve parametrelerine
 % dokunmadan koşturur. Bellekte yalnız Display bloklarını besleyen sinyallerin
 % ve sensör çıkışlarının kaydı açılır; model dosyası kaydedilmez.
 % Çağrı (proje kökünden):
 %   matlab -batch "addpath('scripts'); run_umit_dort_senaryo_20261027('inverter_senaryo3')"
-% Çıktı: runs/2026-10-27_dort_senaryo_ilk_kosu/results/<model>/
+%   matlab -batch "addpath('scripts'); run_umit_dort_senaryo_20261027('inverter_s1s2_s2onarim', '2026-10-27_s2_kapi_onarimi', 'accelerator')"
+% İsteğe bağlı argümanlar (27.10.2026, İP-1):
+%   run_name : runs/ altındaki koşu klasörü (varsayılan '2026-10-27_dort_senaryo_ilk_kosu')
+%   sim_mode : 'normal' (varsayılan) ya da 'accelerator'. Accelerator hata verirse
+%              koşu Normal modda yinelenir ve iki deneme de kosu_bilgisi.txt'ye yazılır.
+% Çıktı: runs/<run_name>/results/<model>/
+if nargin < 2 || isempty(run_name), run_name = '2026-10-27_dort_senaryo_ilk_kosu'; end
+if nargin < 3 || isempty(sim_mode), sim_mode = 'normal'; end
+sim_mode = lower(char(sim_mode));
+assert(any(strcmp(sim_mode, {'normal', 'accelerator'})), 'sim_mode normal ya da accelerator olmalı');
 root_dir = fileparts(fileparts(mfilename('fullpath')));
-run_dir = fullfile(root_dir, 'runs', '2026-10-27_dort_senaryo_ilk_kosu');
+run_dir = fullfile(root_dir, 'runs', run_name);
 model_dir = fullfile(run_dir, 'model');
 out_dir = fullfile(run_dir, 'results', mdl);
 if ~exist(out_dir, 'dir'), mkdir(out_dir); end
@@ -49,19 +58,34 @@ set_param(mdl, 'SignalLogging', 'on', 'SignalLoggingName', 'logsout', ...
 
 % Modeller Accelerator modunda kayıtlı. 27.10.2026 ilk koşusunda S3/S4 Accelerator
 % ile derlendi; aynı klasörde eşzamanlı üçüncü derleme (S1+S2) MEX oluşturma
-% hatası verdi. Paralel koşularda çakışmayı önlemek için Normal mod kullanılır
-% (yalnız yürütme biçimi; devre ve çözücü ayarları aynı).
+% hatası verdi. Paralel koşularda çakışmayı önlemek için varsayılan Normal moddur
+% (yalnız yürütme biçimi; devre ve çözücü ayarları aynı). Tek koşuda
+% sim_mode = 'accelerator' verilebilir; derleme çıktısı model klasöründe kalır.
 info = struct('model', mdl, 'matlab', version, 'start', char(datetime('now')), ...
-    'kayitli_mod', get_param(mdl, 'SimulationMode'));
+    'kayitli_mod', get_param(mdl, 'SimulationMode'), 'mod', sim_mode, 'onceki_deneme', '');
 wall = tic;
 try
-    out = sim(mdl, 'SimulationMode', 'normal');
+    out = sim(mdl, 'SimulationMode', sim_mode);
     info.status = 'tamamlandi';
     info.message = '';
 catch err
     out = [];
     info.status = 'hata';
     info.message = getReport(err, 'extended', 'hyperlinks', 'off');
+end
+if isempty(out) && strcmp(sim_mode, 'accelerator')
+    info.onceki_deneme = sprintf('accelerator denemesi %.1f s sonra hata verdi:\n%s', toc(wall), info.message);
+    fprintf('%s', info.onceki_deneme);
+    info.mod = 'normal';
+    try
+        out = sim(mdl, 'SimulationMode', 'normal');
+        info.status = 'tamamlandi';
+        info.message = '';
+    catch err
+        out = [];
+        info.status = 'hata';
+        info.message = getReport(err, 'extended', 'hyperlinks', 'off');
+    end
 end
 info.wall_s = toc(wall);
 info.stop_time = get_param(mdl, 'StopTime');
@@ -95,7 +119,8 @@ fprintf(fid, '%s: %s\n', 'baslangic', info.start);
 fprintf(fid, '%s: %s\n', 'durum', info.status);
 fprintf(fid, '%s: %.1f\n', 'duvar_suresi_s', info.wall_s);
 fprintf(fid, '%s: %s\n', 'StopTime', info.stop_time);
-fprintf(fid, '%s: %s -> normal\n', 'SimulationMode', info.kayitli_mod);
+fprintf(fid, '%s: %s -> %s\n', 'SimulationMode', info.kayitli_mod, info.mod);
+if ~isempty(info.onceki_deneme), fprintf(fid, '%s\n', info.onceki_deneme); end
 fprintf(fid, '%s\n', info.message);
 fclose(fid);
 close_system(mdl, 0);

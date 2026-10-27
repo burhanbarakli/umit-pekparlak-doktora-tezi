@@ -1,0 +1,25 @@
+MODEL inverter_senaryo4 — T-tipi bacak eşlemesi (bağlantı grafiğinden otomatik çıkarım)
+Beklenen cihaz tablosu (12.10 m-dosyası + tez): dış IGBT=S12 (SKM100GB12T4), nötr IGBT=S34 (IXYN100N65C3H1),
+dış IGBT ters paralel diyot=DS12, nötr IGBT ters paralel diyot=DS34, faz–DA ray harici diyot D1/D2=D12 (DSEI2x61-12B)
+
+==== Devre: DA kaynak "Voltage Source" (DA+ = N016, orta nokta = N005, DA− = N049, faz düğümü = N014, dış kol orta düğümü = N026)
+Tez rolü           Blok                       Bağlantı                       Tablo    Beklenen Durum
+S1 dış üst         N-Channel IGBT             C=DA+ E=N026                   S12      S12      UYGUN
+S2 dış alt         N-Channel IGBT1            C=N026 E=DA-                   S12      S12      UYGUN
+S3 nötr (orta n.)  N-Channel IGBT2            C=orta E=N030 (ortak E)        S34      S34      UYGUN
+S4 nötr (faz)      N-Channel IGBT3            C=faz E=N030 (ortak E)         S34      S34      UYGUN
+DS2 (S2 ters p.)   Diode2                     A=N049 K=N026                  DS12     DS12     UYGUN
+D2 harici DA−→faz  Diode3                     A=N049 K=N014                  DS34     D12      UYUMSUZ
+D1 harici faz→DA+  Diode5                     A=N014 K=N016                  DS34     D12      UYUMSUZ
+DS3 (S3 ters p.)   Diode6                     A=N030 K=N005                  D12      DS34     UYUMSUZ
+DS4 (S4 ters p.)   Diode7                     A=N030 K=N014                  D12      DS34     UYUMSUZ
+DS1 (S1 ters p.)   Diode9                     A=N026 K=N016                  DS12     DS12     UYGUN
+Dış kol orta düğümü–faz arası seri eleman: Resistor (ee.passive.resistor)
+DA bara kapasitörleri: Capacitor (DA+–orta), Capacitor1 (orta–DA−)
+Akım sensörü AC Current Sensor1/Current  Sensor       + N003 [AC Voltage Sensor1/Voltage Sensor, Grid1]  →  − N001 [EMC Common Mode Choke S3, EMC Core Loss R2_2]
+Akım sensörü Current  Sensor                          + N009 [DC Source R]  →  − N016 [Capacitor, Diode5, Diode9, N-Channel IGBT, Resistor1, Voltage Sensor]
+Akım sensörü Current  Sensor1                         + N014 [Diode3, Diode5, Diode7, N-Channel IGBT3, Resistor]  →  − N004 [AC Voltage Sensor2/Voltage Sensor, Inductor, L1 Core Loss Rp]
+CMC EMC Common Mode Choke S1     1+ şebekeye yakın, 2+ şebekeye yakın → nokta yönü doğru (DK akımında akılar birbirini götürür)
+CMC EMC Common Mode Choke S3     1+ şebekeye yakın, 2+ şebekeye yakın → nokta yönü doğru (DK akımında akılar birbirini götürür)
+L1 adayı Inductor: + N004, − N007; şebekeye uzaklık 4/3 düğüm
+Orta noktaya bağlı filtre kapasitörü Capacitor2: N007–orta

@@ -1,0 +1,77 @@
+fix_s2_gate_path_20261027 — 27-Oct-2026 18:04:14 — MATLAB 23.2.0.2515942 (R2023b) Update 7
+Model: C:\CODES\ümit abi\tez-matlab-simulink\runs\2026-10-27_s2_kapi_onarimi\model\inverter_s1s2_s2onarim.slx
+Kaynak: inverter_scenario1_parametric5_etiquetli.slx (değişmedi)
+
+Eklenen üst düzey bloklar (11; alt sistem içleriyle birlikte toplam 607 blok; silinen/yeniden adlandırılan mevcut blok yok):
+  S2 Goto g12
+  S2 Goto g22
+  S2 Goto g32
+  S2 Goto g42
+  S2 K1
+  S2 K3
+  S2 PWM susturma
+  S2 Sine Wave
+  S2 Sum
+  S2 sin2
+  S2 sin3
+
+Goto/From eşleşmesi ve sürülen IGBT (parametre grubu):
+  g12: Goto=1 From=1  inverter_s1s2_s2onarim/Gate Drive3 -> inverter_s1s2_s2onarim/N-Channel IGBT4 [S12] 
+  g22: Goto=1 From=1  inverter_s1s2_s2onarim/Gate Drive2 -> inverter_s1s2_s2onarim/N-Channel IGBT5 [S12] 
+  g32: Goto=1 From=1  inverter_s1s2_s2onarim/Gate Drive1 -> inverter_s1s2_s2onarim/N-Channel IGBT7 [S34] 
+  g42: Goto=1 From=1  inverter_s1s2_s2onarim/Gate Drive4 -> inverter_s1s2_s2onarim/N-Channel IGBT6 [S34] 
+  g11 (S1, karşılaştırma): inverter_s1s2_s2onarim/Gate Drive7 -> inverter_s1s2_s2onarim/N-Channel IGBT [S12] 
+  g21 (S1, karşılaştırma): inverter_s1s2_s2onarim/Gate Drive6 -> inverter_s1s2_s2onarim/N-Channel IGBT1 [S12] 
+  g31 (S1, karşılaştırma): inverter_s1s2_s2onarim/Gate Drive5 -> inverter_s1s2_s2onarim/N-Channel IGBT3 [S34] 
+  g41 (S1, karşılaştırma): inverter_s1s2_s2onarim/Gate Drive8 -> inverter_s1s2_s2onarim/N-Channel IGBT2 [S34] 
+
+PreLoadFcn: temiz çalışma alanında yükleme sonrası K12/DS12_Qrr tanımlı = 1
+Derleme (SimulationCommand=update): başarılı
+
+Kapı mantığı testi (yalnız denetim yolu, 0–40 ms, K12=0.794, phase_deg2=0):
+  kapı pozitif alternans (1–9 ms)   negatif alternans (11–19 ms)
+  g12  geçiş=160, ort=0.596         geçiş=0, ort=0.000           
+  g22  geçiş=0, ort=0.000           geçiş=160, ort=0.596         
+  g32  geçiş=0, ort=0.000           geçiş=0, ort=1.000           
+  g42  geçiş=0, ort=1.000           geçiş=0, ort=0.000           
+  referans: tepe=0.7940 (beklenen K12·pwm_ref_amp)
+  örtüşme süresi g12&g32 = 0 s, g22&g42 = 0 s, g12&g22 = 0 s
+
+Duman koşusu (tam model, Normal mod, 0–5 ms):
+  duvar süresi 603 s
+  cos_s1                 min=   0.7071 max=   0.7071 geçiş(>orta)=0 son=   0.7071
+  cos_s1                 min=   0.7071 max=   0.7071 geçiş(>orta)=0 son=   0.7071
+  eff_s1                 min=        1 max=        1 geçiş(>orta)=0 son=        1
+  eff_s1                 min=        1 max=        1 geçiş(>orta)=0 son=        1
+  cos_s1                 min=        1 max=        1 geçiş(>orta)=0 son=        1
+  cos_s1                 min=        1 max=        1 geçiş(>orta)=0 son=        1
+  Gate_Drive1            min=       -5 max=       -5 geçiş(>orta)=88 son=       -5
+  Gate_Drive2            min=       -5 max=       -5 geçiş(>orta)=0 son=       -5
+  Gate_Drive3            min=       -5 max=       15 geçiş(>orta)=80 son=       -5
+  Gate_Drive4            min=       15 max=       15 geçiş(>orta)=88 son=       15
+  Gate_Drive5            min=       -5 max=       15 geçiş(>orta)=80 son=       15
+  Gate_Drive6            min=       -5 max=       -5 geçiş(>orta)=0 son=       -5
+  Gate_Drive7            min=       -5 max=       15 geçiş(>orta)=80 son=       -5
+  Gate_Drive8            min=       15 max=       15 geçiş(>orta)=968 son=       15
+  Idc_s1                 min=   0.0001 max=   0.0001 geçiş(>orta)=0 son=   0.0001
+  Vdc_s1                 min=   0.0001 max=   0.0001 geçiş(>orta)=0 son=   0.0001
+  Idc_s1                 min=   0.0001 max=   0.0001 geçiş(>orta)=0 son=   0.0001
+  Idc_s1                 min=   0.0001 max=   0.0001 geçiş(>orta)=0 son=   0.0001
+  Vdc_s1                 min=   0.0001 max=   0.0001 geçiş(>orta)=0 son=   0.0001
+  Idc_s1                 min=   0.0001 max=   0.0001 geçiş(>orta)=0 son=   0.0001
+  Idc_s1                 min=   0.0001 max=   0.0001 geçiş(>orta)=0 son=   0.0001
+  Idc_s1                 min=   0.0001 max=   0.0001 geçiş(>orta)=0 son=   0.0001
+  P_s1                   min=    5e-07 max=    5e-07 geçiş(>orta)=0 son=    5e-07
+  Q_s1                   min=        0 max=        0 geçiş(>orta)=0 son=        0
+  P_s1                   min=    5e-07 max=    5e-07 geçiş(>orta)=0 son=    5e-07
+  Q_s1                   min=        0 max=        0 geçiş(>orta)=0 son=        0
+  Iac_s1                 min=        0 max=        0 geçiş(>orta)=0 son=        0
+  Iac_s1                 min=        0 max=        0 geçiş(>orta)=0 son=        0
+  g12_S2                 min=        0 max=        1 geçiş(>orta)=80 son=        0
+  g22_S2                 min=        0 max=        0 geçiş(>orta)=0 son=        0
+  g32_S2                 min=        0 max=        0 geçiş(>orta)=0 son=        0
+  g42_S2                 min=        1 max=        1 geçiş(>orta)=0 son=        1
+  THD_s1                 min= 1.49e-08 max= 1.49e-08 geçiş(>orta)=0 son= 1.49e-08
+  THD_s1                 min= 1.49e-08 max= 1.49e-08 geçiş(>orta)=0 son= 1.49e-08
+  THD_s1                 min= 1.49e-08 max= 1.49e-08 geçiş(>orta)=0 son= 1.49e-08
+  THD_s1                 min= 1.49e-08 max= 1.49e-08 geçiş(>orta)=0 son= 1.49e-08

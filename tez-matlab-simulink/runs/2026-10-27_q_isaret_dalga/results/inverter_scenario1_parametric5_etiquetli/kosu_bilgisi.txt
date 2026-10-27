@@ -1,0 +1,15 @@
+model: inverter_scenario1_parametric5_etiquetli
+matlab: 23.2.0.2515942 (R2023b) Update 7
+baslangic: 27-Oct-2026 18:03:32
+mod: accelerator
+durum: hata
+duvar_suresi_s: 49.3
+Error using run_q_isaret_dalga_20261027
+Problem creating Accelerator MEX file for model 'inverter_scenario1_parametric5_etiquetli'.
+ To see the build output, use set_param('inverter_scenario1_parametric5_etiquetli','AccelVerboseBuild','on')
+Caused by:
+    Error using run_q_isaret_dalga_20261027
+    Error(s) encountered while building "inverter_scenario1_parametric5_etiquetli_acc"
+        Error using run_q_isaret_dalga_20261027
+        Build process used LCC compiler, which might have caused the build error. LCC compiler will be removed in a future release. Consider using a different compiler. For information
+        about supported compilers, see <a href="https://www.mathworks.com/support/compilers">https://www.mathworks.com/support/compilers</a>.

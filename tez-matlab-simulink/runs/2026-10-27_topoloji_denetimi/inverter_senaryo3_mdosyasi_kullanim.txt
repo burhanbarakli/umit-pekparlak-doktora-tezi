@@ -1,0 +1,74 @@
+MODEL inverter_senaryo3 — inverter_common_parameters.m değişkenlerinin blok diyaloglarında doğrudan kullanımı
+Kullanılan: 136 / 206
+
+== Doğrudan kullanılmayanlar (dolaylı: başka bir m-dosyası değişkeninin tanımına giriyor)
+parameter_file_path          
+EMC_M                        dolaylı → EMC_k
+EMC_Cx_each                  
+EMC_Rx_each                  
+EMC_Ldm_stage                
+EMC_Rdm_stage                
+EMC_Cx_eq                    
+EMC_Rx_eq                    
+EMC_Rref                     
+Tj_operating                 dolaylı → Tj_operating_K
+sim_max_step                 
+sim_min_step                 
+sim_rel_tol                  
+sim_abs_tol                  
+S12_Vce_cond_25C             dolaylı → S12_Vce_cond
+S12_Vge_threshold            
+S12_Eon_25C                  dolaylı → S12_Eon
+S12_Eoff_25C                 dolaylı → S12_Eoff
+S12_thermal_network          
+S12_Rth                      
+S12_thermal_mass_parameterization 
+S12_thermal_mass             
+S12_thermal_time_constant    
+S12_thermal_initial_temperature 
+S34_Vce_cond_25C             dolaylı → S34_Vce_cond
+S34_Vge_threshold            
+S34_Eon_25C                  dolaylı → S34_Eon
+S34_Eoff_25C                 dolaylı → S34_Eoff
+S34_thermal_network          
+S34_Rth                      
+S34_thermal_mass_parameterization 
+S34_thermal_mass             
+S34_thermal_time_constant    
+S34_thermal_initial_temperature 
+DS12_Tdevice                 
+DS34_Tdevice                 
+D12_Tdevice                  
+scenario_name                
+Vdc_target                   dolaylı → Vdc3
+Idc_target                   
+Vac_rms_target               
+Ifaz_rms_target              
+Pout_target                  
+cosphi_target                
+THD_target_pct               
+Qout_target                  
+Vout_target                  
+eff_target                   
+Vdc1                         
+Vdc2                         
+Vdc4                         
+Vac1_rms                     
+Vac2_rms                     
+Vac3_rms                     dolaylı → Vac3_peak
+Vac4_rms                     
+Vac1_peak                    
+Vac2_peak                    
+Vac4_peak                    
+K11                          
+K12                          
+K14                          
+K34                          
+K_pwm                        
+K3_pwm                       
+phase_deg1                   
+phase_deg2                   
+phase_deg4                   
+phase_deg                    
+L1_core_Rp4                  
+Kp                           

@@ -1,0 +1,255 @@
+MODEL inverter_senaryo3 — fiziksel düğüm listesi (Simscape portları, alt sistem sınırları çözülmüş)
+Port etiketi: rol(ham), ham = L<n>/R<n> = LConn/RConn sırası
+PortConnectivity çapraz denetimi: 0 uyumsuzluk
+
+N001 [3 uç]
+    AC Current Sensor1/Current  Sensor:R2(R2)
+    EMC Common Mode Choke S3:2+(R1)
+    EMC Core Loss R2_2:+(L1)
+N002 [4 uç]
+    AC Voltage Sensor1/Voltage Sensor:L1(L1)
+    CL1:+(L1)
+    EMC Common Mode Choke S3:1+(L1)
+    EMC Core Loss R2_1:+(L1)
+N003 [3 uç]
+    AC Current Sensor1/Current  Sensor:L1(L1)
+    AC Voltage Sensor1/Voltage Sensor:R2(R2)
+    Grid1:-(R1)
+N004 [4 uç]
+    AC Voltage Sensor2/Voltage Sensor:L1(L1)
+    Current  Sensor1:R2(R2)
+    Inductor:+(L1)
+    L1 Core Loss Rp:+(L1)
+N005 [10 uç]
+    AC Voltage Sensor2/Voltage Sensor:R2(R2)
+    Capacitor1:+(L1)
+    Capacitor2:-(R1)
+    Capacitor:-(R1)
+    Diode6:K-(R1)
+    EMC Common Mode Choke S1:2-(R2)
+    EMC Core Loss R1_2:-(R1)
+    N-Channel IGBT2:C(R1)
+    Resistor1:-(R1)
+    Resistor2:+(L1)
+N006 [2 uç]
+    CL1:-(R1)
+    Grid1:+(L1)
+N007 [5 uç]
+    Capacitor2:+(L1)
+    EMC Common Mode Choke S1:1-(L2)
+    EMC Core Loss R1_1:-(R1)
+    Inductor:-(R1)
+    L1 Core Loss Rp:-(R1)
+N008 [5 uç]
+    Capacitor6:-(R1)
+    EMC Common Mode Choke S1:2+(R1)
+    EMC Common Mode Choke S3:2-(R2)
+    EMC Core Loss R1_2:+(L1)
+    EMC Core Loss R2_2:-(R1)
+N009 [2 uç]
+    Current  Sensor:L1(L1)
+    DC Source R:-(R1)
+N010 [2 uç]
+    DC Blocking Diode:A+(L1)
+    Voltage Source:+(L1)
+N011 [2 uç]
+    DC Blocking Diode:K-(R1)
+    DC Source R:+(L1)
+N012 [2 uç]
+    Diode2:H?(L2)
+    Temperature Source2:L1(L1)
+N013 [2 uç]
+    Diode3:H?(L2)
+    Temperature Source5:L1(L1)
+N014 [6 uç]
+    Current  Sensor1:L1(L1)
+    Diode3:K-(R1)
+    Diode5:A+(L1)
+    Diode7:K-(R1)
+    N-Channel IGBT3:C(R1)
+    Resistor:+(L1)
+N015 [2 uç]
+    Diode5:H?(L2)
+    Temperature Source:L1(L1)
+N016 [7 uç]
+    Capacitor:+(L1)
+    Current  Sensor:R2(R2)
+    Diode5:K-(R1)
+    Diode9:K-(R1)
+    N-Channel IGBT:C(R1)
+    Resistor1:+(L1)
+    Voltage Sensor:L1(L1)
+N017 [2 uç]
+    Diode6:H?(L2)
+    Temperature Source8:L1(L1)
+N018 [2 uç]
+    Diode7:H?(L2)
+    Temperature Source9:L1(L1)
+N019 [2 uç]
+    Diode9:H?(L2)
+    Temperature Source1:L1(L1)
+N020 [5 uç]
+    Capacitor6:+(L1)
+    EMC Common Mode Choke S1:1+(L1)
+    EMC Common Mode Choke S3:1-(L2)
+    EMC Core Loss R1_1:+(L1)
+    EMC Core Loss R2_1:-(R1)
+N021 [2 uç]
+    Gate Drive5/Controlled PWM Voltage1:L1(L1)
+    Gate Drive5/Gate Driver1:L1(L1)
+N022 [3 uç]
+    Gate Drive5/Controlled PWM Voltage1:R2(R2)
+    Gate Drive5/Electrical Reference2:L1(L1)
+    Gate Drive5/Gate Driver1:L2(L2)
+N023 [3 uç]
+    Gate Drive5/Gate Driver1:R1(R1)
+    Gate Drive5/Voltage Sensor1:L1(L1)
+    N-Channel IGBT3:G(L1)
+N024 [3 uç]
+    Gate Drive6/Gate Driver1:R1(R1)
+    Gate Drive6/Voltage Sensor2:L1(L1)
+    N-Channel IGBT1:G(L1)
+N025 [3 uç]
+    Gate Drive7/Gate Driver1:R1(R1)
+    Gate Drive7/Voltage Sensor1:L1(L1)
+    N-Channel IGBT:G(L1)
+N026 [7 uç]
+    Diode2:K-(R1)
+    Diode9:A+(L1)
+    Gate Drive7/Gate Driver1:R2(R2)
+    Gate Drive7/Voltage Sensor1:R2(R2)
+    N-Channel IGBT1:C(R1)
+    N-Channel IGBT:E(R2)
+    Resistor:-(R1)
+N027 [2 uç]
+    Gate Drive8/Controlled PWM Voltage1:L1(L1)
+    Gate Drive8/Gate Driver1:L1(L1)
+N028 [3 uç]
+    Gate Drive8/Controlled PWM Voltage1:R2(R2)
+    Gate Drive8/Electrical Reference2:L1(L1)
+    Gate Drive8/Gate Driver1:L2(L2)
+N029 [3 uç]
+    Gate Drive8/Gate Driver1:R1(R1)
+    Gate Drive8/Voltage Sensor2:L1(L1)
+    N-Channel IGBT2:G(L1)
+N030 [8 uç]
+    Diode6:A+(L1)
+    Diode7:A+(L1)
+    Gate Drive5/Gate Driver1:R2(R2)
+    Gate Drive5/Voltage Sensor1:R2(R2)
+    Gate Drive8/Gate Driver1:R2(R2)
+    Gate Drive8/Voltage Sensor2:R2(R2)
+    N-Channel IGBT2:E(R2)
+    N-Channel IGBT3:E(R2)
+N031 [2 uç]
+    N-Channel IGBT:H(L2)
+    Temperature Source4:L1(L1)
+N032 [2 uç]
+    N-Channel IGBT1:H(L2)
+    Temperature Source3:L1(L1)
+N033 [2 uç]
+    N-Channel IGBT2:H(L2)
+    Temperature Source6:L1(L1)
+N034 [2 uç]
+    N-Channel IGBT3:H(L2)
+    Temperature Source7:L1(L1)
+N035 [1 uç]
+    AC Current Sensor1/Current  Sensor:R1(R1)
+N036 [1 uç]
+    AC Voltage Sensor1/Voltage Sensor:R1(R1)
+N037 [1 uç]
+    AC Voltage Sensor2/Voltage Sensor:R1(R1)
+N038 [1 uç]
+    Gate Drive5/Voltage Sensor1:R1(R1)
+N039 [1 uç]
+    Gate Drive5/Controlled PWM Voltage1:R1(R1)
+N040 [1 uç]
+    Gate Drive6/Voltage Sensor2:R1(R1)
+N041 [1 uç]
+    Gate Drive6/Gate Driver1:L1(L1)
+N042 [1 uç]
+    Gate Drive7/Voltage Sensor1:R1(R1)
+N043 [1 uç]
+    Gate Drive7/Gate Driver1:L1(L1)
+N044 [1 uç]
+    Gate Drive8/Voltage Sensor2:R1(R1)
+N045 [1 uç]
+    Gate Drive8/Controlled PWM Voltage1:R1(R1)
+N046 [1 uç]
+    Current  Sensor:R1(R1)
+N047 [1 uç]
+    Voltage Sensor:R1(R1)
+N048 [1 uç]
+    Current  Sensor1:R1(R1)
+N049 [10 uç]
+    Capacitor1:-(R1)
+    Diode2:A+(L1)
+    Diode3:A+(L1)
+    Electrical Reference1:L1(L1)
+    Gate Drive6/Gate Driver1:R2(R2)
+    Gate Drive6/Voltage Sensor2:R2(R2)
+    N-Channel IGBT1:E(R2)
+    Resistor2:-(R1)
+    Voltage Sensor:R2(R2)
+    Voltage Source:-(R1)
+
+== Blok → düğüm
+AC Current Sensor1/Current  Sensor                           foundation.electrical.sensors.current              L1=N003 R1=N035 R2=N001
+AC Voltage Sensor1/Voltage Sensor                            foundation.electrical.sensors.voltage              L1=N002 R1=N036 R2=N003
+AC Voltage Sensor2/Voltage Sensor                            foundation.electrical.sensors.voltage              L1=N004 R1=N037 R2=N005
+CL1                                                          foundation.electrical.elements.inductor            +=N002 -=N006
+Capacitor                                                    ee.passive.capacitor                               +=N016 -=N005
+Capacitor1                                                   ee.passive.capacitor                               +=N005 -=N049
+Capacitor2                                                   ee.passive.capacitor                               +=N007 -=N005
+Capacitor6                                                   ee.passive.capacitor                               +=N020 -=N008
+Current  Sensor                                              foundation.electrical.sensors.current              L1=N009 R1=N046 R2=N016
+Current  Sensor1                                             foundation.electrical.sensors.current              L1=N014 R1=N048 R2=N004
+DC Blocking Diode                                            ee.semiconductors.diode                            A+=N010 K-=N011
+DC Source R                                                  ee.passive.resistor                                +=N011 -=N009
+Diode2                                                       ee.semiconductors.diode_thermal                    A+=N049 H?=N012 K-=N026
+Diode3                                                       ee.semiconductors.diode_thermal                    A+=N049 H?=N013 K-=N014
+Diode5                                                       ee.semiconductors.diode_thermal                    A+=N014 H?=N015 K-=N016
+Diode6                                                       ee.semiconductors.diode_thermal                    A+=N030 H?=N017 K-=N005
+Diode7                                                       ee.semiconductors.diode_thermal                    A+=N030 H?=N018 K-=N014
+Diode9                                                       ee.semiconductors.diode_thermal                    A+=N026 H?=N019 K-=N016
+EMC Common Mode Choke S1                                     ee.passive.transformers.mutual_inductor            1+=N020 1-=N007 2+=N008 2-=N005
+EMC Common Mode Choke S3                                     ee.passive.transformers.mutual_inductor            1+=N002 1-=N020 2+=N001 2-=N008
+EMC Core Loss R1_1                                           ee.passive.resistor                                +=N020 -=N007
+EMC Core Loss R1_2                                           ee.passive.resistor                                +=N008 -=N005
+EMC Core Loss R2_1                                           ee.passive.resistor                                +=N002 -=N020
+EMC Core Loss R2_2                                           ee.passive.resistor                                +=N001 -=N008
+Electrical Reference1                                        foundation.electrical.elements.reference           L1=N049
+Gate Drive5/Controlled PWM Voltage1                          foundation.electrical.sources.controlled_voltage   L1=N021 R1=N039 R2=N022
+Gate Drive5/Electrical Reference2                            foundation.electrical.elements.reference           L1=N022
+Gate Drive5/Gate Driver1                                     ee.semiconductors.gate_driver                      L1=N021 L2=N022 R1=N023 R2=N030
+Gate Drive5/Voltage Sensor1                                  foundation.electrical.sensors.voltage              L1=N023 R1=N038 R2=N030
+Gate Drive6/Gate Driver1                                     ee.semiconductors.gate_driver                      L1=N041 R1=N024 R2=N049
+Gate Drive6/Voltage Sensor2                                  foundation.electrical.sensors.voltage              L1=N024 R1=N040 R2=N049
+Gate Drive7/Gate Driver1                                     ee.semiconductors.gate_driver                      L1=N043 R1=N025 R2=N026
+Gate Drive7/Voltage Sensor1                                  foundation.electrical.sensors.voltage              L1=N025 R1=N042 R2=N026
+Gate Drive8/Controlled PWM Voltage1                          foundation.electrical.sources.controlled_voltage   L1=N027 R1=N045 R2=N028
+Gate Drive8/Electrical Reference2                            foundation.electrical.elements.reference           L1=N028
+Gate Drive8/Gate Driver1                                     ee.semiconductors.gate_driver                      L1=N027 L2=N028 R1=N029 R2=N030
+Gate Drive8/Voltage Sensor2                                  foundation.electrical.sensors.voltage              L1=N029 R1=N044 R2=N030
+Grid1                                                        foundation.electrical.sources.ac_voltage           +=N006 -=N003
+Inductor                                                     ee.passive.inductor                                +=N004 -=N007
+L1 Core Loss Rp                                              ee.passive.resistor                                +=N004 -=N007
+N-Channel IGBT                                               ee.semiconductors.igbt_event_based_thermal         G=N025 H=N031 C=N016 E=N026
+N-Channel IGBT1                                              ee.semiconductors.igbt_event_based_thermal         G=N024 H=N032 C=N026 E=N049
+N-Channel IGBT2                                              ee.semiconductors.igbt_event_based_thermal         G=N029 H=N033 C=N005 E=N030
+N-Channel IGBT3                                              ee.semiconductors.igbt_event_based_thermal         G=N023 H=N034 C=N014 E=N030
+Resistor                                                     ee.passive.resistor                                +=N014 -=N026
+Resistor1                                                    ee.passive.resistor                                +=N016 -=N005
+Resistor2                                                    ee.passive.resistor                                +=N005 -=N049
+Temperature Source                                           foundation.thermal.sources.temperature             L1=N015
+Temperature Source1                                          foundation.thermal.sources.temperature             L1=N019
+Temperature Source2                                          foundation.thermal.sources.temperature             L1=N012
+Temperature Source3                                          foundation.thermal.sources.temperature             L1=N032
+Temperature Source4                                          foundation.thermal.sources.temperature             L1=N031
+Temperature Source5                                          foundation.thermal.sources.temperature             L1=N013
+Temperature Source6                                          foundation.thermal.sources.temperature             L1=N033
+Temperature Source7                                          foundation.thermal.sources.temperature             L1=N034
+Temperature Source8                                          foundation.thermal.sources.temperature             L1=N017
+Temperature Source9                                          foundation.thermal.sources.temperature             L1=N018
+Voltage Sensor                                               foundation.electrical.sensors.voltage              L1=N016 R1=N047 R2=N049
+Voltage Source                                               ee.sources.voltage_source                          +=N010 -=N049

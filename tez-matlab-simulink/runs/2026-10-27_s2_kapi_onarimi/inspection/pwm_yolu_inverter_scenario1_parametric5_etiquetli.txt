@@ -1,0 +1,1625 @@
+MODEL inverter_scenario1_parametric5_etiquetli
+PWM alt sistemi: inverter_scenario1_parametric5_etiquetli/Subsystem
+
+== PWM alt sistemine giden yukarı akış (üst düzey)
+inverter_scenario1_parametric5_etiquetli/Subsystem:In1 <- inverter_scenario1_parametric5_etiquetli/K11:Out1  [Gain] Gain=K11
+  inverter_scenario1_parametric5_etiquetli/K11:In1 <- inverter_scenario1_parametric5_etiquetli/Sine Wave1:Out1  [Sin] SineType=Time based; Amplitude=pwm_ref_amp; Bias=0; Frequency=2*pi*f_grid; Phase=phase_deg1*pi/180; SampleTime=pwm_ref_Ts
+
+== PWM alt sistemi içi (tüm derinlik, maske altı dahil)
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem
+  [Inport] In1 
+  [Constant] Constant1 Value=0
+  [Constant] Constant2 Value=0
+  [Gain] Gain11 Gain=-1
+  [Gain] Gain12 Gain=1
+  [Mux] Mux2 
+  [Mux] Mux5 
+  [Logic] NOT Operator=NOT; Inputs=2
+  [Logic] NOT1 Operator=NOT; Inputs=2
+  [SubSystem] On Delay MaskType=On/Off Delay ; DelayType=On delay; delay=deadtime; ic=0; Ts=0; ref=spsOnDelayLib/On Delay
+  [SubSystem] On Delay1 MaskType=On/Off Delay ; DelayType=On delay; delay=deadtime; ic=0; Ts=0; ref=spsOnDelayLib/On Delay
+  [SubSystem] On Delay2 MaskType=On/Off Delay ; DelayType=On delay; delay=deadtime; ic=0; Ts=0; ref=spsOnDelayLib/On Delay
+  [SubSystem] On Delay3 MaskType=On/Off Delay ; DelayType=On delay; delay=deadtime; ic=0; Ts=0; ref=spsOnDelayLib/On Delay
+  [SubSystem] PWM Generator (DC-DC)10 MaskType=PWM Generator (DC-DC); Fsw=fsw; Ts=1/fsw/100; ref=spsPWMGeneratorDCDCLib/PWM Generator (DC-DC)
+  [SubSystem] PWM Generator (DC-DC)11 MaskType=PWM Generator (DC-DC); Fsw=fsw; Ts=1/fsw/100; ref=spsPWMGeneratorDCDCLib/PWM Generator (DC-DC)
+  [Scope] Scope2 
+  [Switch] Switch1 Criteria=u2 >= Threshold; Threshold=0
+  [Switch] Switch2 Criteria=u2 >= Threshold; Threshold=0
+  [Outport] Out1 
+  [Outport] Out2 
+  [Outport] Out3 
+  [Outport] Out4 
+  [Outport] Out5 
+  [Outport] Out6 
+  Mux2:1 -> Scope2:3
+  Mux5:1 -> Scope2:2
+  In1:1 -> Switch2:2
+  In1:1 -> Switch2:3
+  In1:1 -> Switch2:3
+  In1:1 -> Switch2:2
+  In1:1 -> Scope2:1
+  In1:1 -> Scope2:1
+  In1:1 -> Switch2:3
+  In1:1 -> Switch2:2
+  In1:1 -> Switch1:2
+  In1:1 -> Switch1:1
+  In1:1 -> Switch1:1
+  In1:1 -> Switch1:2
+  In1:1 -> Switch1:1
+  In1:1 -> Switch1:2
+  In1:1 -> Scope2:1
+  In1:1 -> Switch2:3
+  In1:1 -> Switch2:2
+  On Delay3:1 -> Out4:1
+  On Delay3:1 -> Mux2:2
+  On Delay3:1 -> Mux2:2
+  On Delay3:1 -> Out4:1
+  NOT1:1 -> On Delay3:1
+  On Delay2:1 -> Out3:1
+  On Delay2:1 -> Mux5:2
+  On Delay2:1 -> Mux5:2
+  On Delay2:1 -> Out3:1
+  NOT:1 -> On Delay2:1
+  On Delay1:1 -> Out2:1
+  On Delay1:1 -> Mux2:1
+  On Delay1:1 -> Mux2:1
+  On Delay1:1 -> Out2:1
+  PWM Generator (DC-DC)11:1 -> On Delay1:1
+  PWM Generator (DC-DC)11:1 -> NOT1:1
+  PWM Generator (DC-DC)11:1 -> Out6:1
+  PWM Generator (DC-DC)11:1 -> Out6:1
+  PWM Generator (DC-DC)11:1 -> NOT1:1
+  PWM Generator (DC-DC)11:1 -> On Delay1:1
+  On Delay:1 -> Out1:1
+  On Delay:1 -> Mux5:1
+  On Delay:1 -> Mux5:1
+  On Delay:1 -> Out1:1
+  PWM Generator (DC-DC)10:1 -> On Delay:1
+  PWM Generator (DC-DC)10:1 -> NOT:1
+  PWM Generator (DC-DC)10:1 -> Out5:1
+  PWM Generator (DC-DC)10:1 -> Out5:1
+  PWM Generator (DC-DC)10:1 -> NOT:1
+  PWM Generator (DC-DC)10:1 -> On Delay:1
+  Gain12:1 -> PWM Generator (DC-DC)10:1
+  Switch1:1 -> Gain12:1
+  Constant2:1 -> Switch2:1
+  Constant1:1 -> Switch1:3
+  Switch2:1 -> Gain11:1
+  Gain11:1 -> PWM Generator (DC-DC)11:1
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay
+  [Inport] In ref=spsOnDelayLib/On Delay/In
+  [SubSystem] Model MaskType=; ref=spsOnOffDelayModel/Continuous
+  [Outport] Out ref=spsOnDelayLib/On Delay/Out
+  In:1 -> Model:1
+  Model:1 -> Out:1
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay/Model
+  [Inport] In ref=spsOnOffDelayModel/Continuous/In
+  [Clock] Clock ref=spsOnOffDelayModel/Continuous/Clock
+  [Constant] Constant Value=1; ref=spsOnOffDelayModel/Continuous/Constant
+  [Constant] Constant1 Value=delay; ref=spsOnOffDelayModel/Continuous/Constant1
+  [Constant] Constant2 Value=DelayType; ref=spsOnOffDelayModel/Continuous/Constant2
+  [DataTypeConversion] Data Type Conversion1 OutDataTypeStr=boolean; ref=spsOnOffDelayModel/Continuous/Data Type Conversion1
+  [Logic] Logical Operator1 Operator=OR; Inputs=2; ref=spsOnOffDelayModel/Continuous/Logical Operator1
+  [Logic] Logical Operator2 Operator=NOT; Inputs=1; ref=spsOnOffDelayModel/Continuous/Logical Operator2
+  [SubSystem] OFF Delay MaskType=; ref=spsOnOffDelayModel/Continuous/OFF Delay
+  [SubSystem] ON Delay MaskType=; ref=spsOnOffDelayModel/Continuous/ON Delay
+  [RelationalOperator] Relational Operator1 Operator===; ref=spsOnOffDelayModel/Continuous/Relational Operator1
+  [Outport] Out ref=spsOnOffDelayModel/Continuous/Out
+  Data Type Conversion1:1 -> ON Delay:1
+  Data Type Conversion1:1 -> OFF Delay:1
+  Data Type Conversion1:1 -> OFF Delay:1
+  Data Type Conversion1:1 -> ON Delay:1
+  Constant:1 -> Relational Operator1:2
+  Relational Operator1:1 -> Logical Operator2:1
+  Relational Operator1:1 -> ON Delay:4
+  Relational Operator1:1 -> ON Delay:4
+  Relational Operator1:1 -> Logical Operator2:1
+  Constant2:1 -> Relational Operator1:1
+  Logical Operator2:1 -> OFF Delay:4
+  OFF Delay:1 -> Logical Operator1:2
+  ON Delay:1 -> Logical Operator1:1
+  Logical Operator1:1 -> Out:1
+  Constant1:1 -> OFF Delay:3
+  Constant1:1 -> ON Delay:3
+  Constant1:1 -> ON Delay:3
+  Constant1:1 -> OFF Delay:3
+  In:1 -> Data Type Conversion1:1
+  Clock:1 -> ON Delay:2
+  Clock:1 -> OFF Delay:2
+  Clock:1 -> OFF Delay:2
+  Clock:1 -> ON Delay:2
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay/Model/OFF Delay
+  [Inport] IN ref=spsOnOffDelayModel/Continuous/OFF Delay/IN
+  [Inport] clock ref=spsOnOffDelayModel/Continuous/OFF Delay/clock
+  [Inport] DELAY ref=spsOnOffDelayModel/Continuous/OFF Delay/DELAY
+  [EnablePort] Enable ref=spsOnOffDelayModel/Continuous/OFF Delay/Enable
+  [SubSystem] Edge Detector MaskType=Edge Detector; model=Falling; ic=ic; Ts=0; ref=spsEdgeDetectorLib/Edge Detector
+  [Logic] Logical Operator Operator=NOT; Inputs=1; ref=spsOnOffDelayModel/Continuous/OFF Delay/Logical Operator
+  [Logic] Logical Operator1 Operator=AND; Inputs=2; ref=spsOnOffDelayModel/Continuous/OFF Delay/Logical Operator1
+  [Logic] Logical Operator2 Operator=NOT; Inputs=1; ref=spsOnOffDelayModel/Continuous/OFF Delay/Logical Operator2
+  [RelationalOperator] Relational Operator Operator=>=; ref=spsOnOffDelayModel/Continuous/OFF Delay/Relational Operator
+  [SubSystem] Sample and Hold MaskType=Sample and Hold ; ic=-1e99; Ts=0; ref=spsSampleandHoldLib/Sample and Hold
+  [Sum] Sum Inputs=++; ref=spsOnOffDelayModel/Continuous/OFF Delay/Sum
+  [Outport] OUT ref=spsOnOffDelayModel/Continuous/OFF Delay/OUT
+  clock:1 -> Relational Operator:1
+  clock:1 -> Sample and Hold:1
+  clock:1 -> Sample and Hold:1
+  clock:1 -> Relational Operator:1
+  IN:1 -> Logical Operator:1
+  IN:1 -> Edge Detector:1
+  IN:1 -> Edge Detector:1
+  IN:1 -> Logical Operator:1
+  Logical Operator2:1 -> OUT:1
+  Logical Operator1:1 -> Logical Operator2:1
+  DELAY:1 -> Sum:2
+  Sum:1 -> Relational Operator:2
+  Edge Detector:1 -> Sample and Hold:2
+  Sample and Hold:1 -> Sum:1
+  Relational Operator:1 -> Logical Operator1:1
+  Logical Operator:1 -> Logical Operator1:2
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay/Model/OFF Delay/Edge Detector
+  [Inport] In ref=spsEdgeDetectorLib/Edge Detector/In
+  [SubSystem] Model MaskType=; ref=spsEdgeDetectorModel/Continuous
+  [Outport] Out ref=spsEdgeDetectorLib/Edge Detector/Out
+  In:1 -> Model:1
+  Model:1 -> Out:1
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay/Model/OFF Delay/Edge Detector/Model
+  [Inport] In ref=spsEdgeDetectorModel/Continuous/In
+  [Constant] Constant1 Value=model; ref=spsEdgeDetectorModel/Continuous/Constant1
+  [DataTypeConversion] Data Type Conversion2 OutDataTypeStr=boolean; ref=spsEdgeDetectorModel/Continuous/Data Type Conversion2
+  [Demux] Demux ref=spsEdgeDetectorModel/Continuous/Demux
+  [SubSystem] Internal dirac generator MaskType=; ref=spsEdgeDetectorModel/Continuous/Internal dirac generator
+  [Logic] Logical Operator1 Operator=OR; Inputs=2; ref=spsEdgeDetectorModel/Continuous/Logical Operator1
+  [Memory] Memory ref=spsEdgeDetectorModel/Continuous/Memory
+  [MultiPortSwitch] Multiport Switch ref=spsEdgeDetectorModel/Continuous/Multiport Switch
+  [SubSystem] NEGATIVE Edge MaskType=; ref=spsEdgeDetectorModel/Continuous/NEGATIVE Edge
+  [SubSystem] POSITIVE Edge MaskType=; ref=spsEdgeDetectorModel/Continuous/POSITIVE Edge
+  [Constant] either edge Value=[1 1]; ref=spsEdgeDetectorModel/Continuous/either edge
+  [Constant] neg. edge Value=[0 1]; ref=spsEdgeDetectorModel/Continuous/neg. edge
+  [Constant] pos. edge Value=[1 0]; ref=spsEdgeDetectorModel/Continuous/pos. edge
+  [Outport] Out ref=spsEdgeDetectorModel/Continuous/Out
+  NEGATIVE Edge:1 -> Logical Operator1:2
+  pos. edge:1 -> Multiport Switch:2
+  neg. edge:1 -> Multiport Switch:3
+  Constant1:1 -> Multiport Switch:1
+  Multiport Switch:1 -> Demux:1
+  either edge:1 -> Multiport Switch:4
+  In:1 -> Data Type Conversion2:1
+  Data Type Conversion2:1 -> NEGATIVE Edge:1
+  Data Type Conversion2:1 -> POSITIVE Edge:1
+  Data Type Conversion2:1 -> POSITIVE Edge:1
+  Data Type Conversion2:1 -> NEGATIVE Edge:1
+  Data Type Conversion2:1 -> Memory:1
+  Data Type Conversion2:1 -> Memory:1
+  Data Type Conversion2:1 -> POSITIVE Edge:1
+  Data Type Conversion2:1 -> NEGATIVE Edge:1
+  Demux:2 -> NEGATIVE Edge:3
+  Memory:1 -> NEGATIVE Edge:2
+  Memory:1 -> POSITIVE Edge:2
+  Memory:1 -> POSITIVE Edge:2
+  Memory:1 -> NEGATIVE Edge:2
+  POSITIVE Edge:1 -> Logical Operator1:1
+  Demux:1 -> POSITIVE Edge:3
+  Logical Operator1:1 -> Out:1
+  Logical Operator1:1 -> Internal dirac generator:1
+  Logical Operator1:1 -> Internal dirac generator:1
+  Logical Operator1:1 -> Out:1
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay/Model/OFF Delay/Edge Detector/Model/Internal dirac generator
+  [Inport] In ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/In
+  [Clock] Clock ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/Clock
+  [Constant] Constant Value=eps; ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/Constant
+  [RelationalOperator] Relational Operator Operator=>; ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/Relational Operator
+  [Sum] Sum Inputs=++; ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/Sum
+  [Terminator] Terminator ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/Terminator
+  [SubSystem] Triggered Subsystem MaskType=; ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/Triggered Subsystem
+  Triggered Subsystem:1 -> Sum:1
+  Sum:1 -> Relational Operator:1
+  Constant:1 -> Sum:2
+  Clock:1 -> Relational Operator:2
+  Clock:1 -> Triggered Subsystem:1
+  Clock:1 -> Triggered Subsystem:1
+  Clock:1 -> Relational Operator:2
+  In:1 -> Triggered Subsystem:2
+  Relational Operator:1 -> Terminator:1
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay/Model/OFF Delay/Edge Detector/Model/Internal dirac generator/Triggered Subsystem
+  [Inport] In1 ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/Triggered Subsystem/In1
+  [TriggerPort] Trigger ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/Triggered Subsystem/Trigger
+  [Outport] Out1 ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/Triggered Subsystem/Out1
+  In1:1 -> Out1:1
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay/Model/OFF Delay/Edge Detector/Model/NEGATIVE Edge
+  [Inport] IN ref=spsEdgeDetectorModel/Continuous/NEGATIVE Edge/IN
+  [Inport] IN previous ref=spsEdgeDetectorModel/Continuous/NEGATIVE Edge/IN previous
+  [EnablePort] Enable ref=spsEdgeDetectorModel/Continuous/NEGATIVE Edge/Enable
+  [RelationalOperator] Relational Operator1 Operator=>; ref=spsEdgeDetectorModel/Continuous/NEGATIVE Edge/Relational Operator1
+  [Outport] OUT ref=spsEdgeDetectorModel/Continuous/NEGATIVE Edge/OUT
+  IN:1 -> Relational Operator1:2
+  IN previous:1 -> Relational Operator1:1
+  Relational Operator1:1 -> OUT:1
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay/Model/OFF Delay/Edge Detector/Model/POSITIVE Edge
+  [Inport] IN ref=spsEdgeDetectorModel/Continuous/POSITIVE Edge/IN
+  [Inport] IN previous ref=spsEdgeDetectorModel/Continuous/POSITIVE Edge/IN previous
+  [EnablePort] Enable ref=spsEdgeDetectorModel/Continuous/POSITIVE Edge/Enable
+  [RelationalOperator] Relational Operator1 Operator=<; ref=spsEdgeDetectorModel/Continuous/POSITIVE Edge/Relational Operator1
+  [Outport] OUT ref=spsEdgeDetectorModel/Continuous/POSITIVE Edge/OUT
+  Relational Operator1:1 -> OUT:1
+  IN previous:1 -> Relational Operator1:1
+  IN:1 -> Relational Operator1:2
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay/Model/OFF Delay/Sample and Hold
+  [Inport] In ref=spsSampleandHoldLib/Sample and Hold/In
+  [Inport] S ref=spsSampleandHoldLib/Sample and Hold/S
+  [SubSystem] Model MaskType=; ref=spsSampleAndHoldModel/Continuous
+  [Outport]     ref=spsSampleandHoldLib/Sample and Hold/   
+  In:1 -> Model:1
+  S:1 -> Model:2
+  Model:1 ->    :1
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay/Model/OFF Delay/Sample and Hold/Model
+  [Inport] In ref=spsSampleAndHoldModel/Continuous/In
+  [Inport] S ref=spsSampleAndHoldModel/Continuous/S
+  [DataTypeConversion] Data Type Conversion OutDataTypeStr=boolean; ref=spsSampleAndHoldModel/Continuous/Data Type Conversion
+  [Memory] IC=ic ref=spsSampleAndHoldModel/Continuous/IC=ic
+  [Switch] Switch Criteria=u2 >= Threshold; Threshold=0.5; ref=spsSampleAndHoldModel/Continuous/Switch
+  [Outport] Out ref=spsSampleAndHoldModel/Continuous/Out
+  S:1 -> Data Type Conversion:1
+  In:1 -> Switch:1
+  IC=ic:1 -> Switch:3
+  Switch:1 -> Out:1
+  Switch:1 -> IC=ic:1
+  Switch:1 -> IC=ic:1
+  Switch:1 -> Out:1
+  Data Type Conversion:1 -> Switch:2
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay/Model/ON Delay
+  [Inport] IN ref=spsOnOffDelayModel/Continuous/ON Delay/IN
+  [Inport] clock ref=spsOnOffDelayModel/Continuous/ON Delay/clock
+  [Inport] DELAY ref=spsOnOffDelayModel/Continuous/ON Delay/DELAY
+  [EnablePort] Enable ref=spsOnOffDelayModel/Continuous/ON Delay/Enable
+  [SubSystem] Edge Detector MaskType=Edge Detector; model=Rising; ic=ic; Ts=0; ref=spsEdgeDetectorLib/Edge Detector
+  [Logic] Logical Operator2 Operator=AND; Inputs=2; ref=spsOnOffDelayModel/Continuous/ON Delay/Logical Operator2
+  [RelationalOperator] Relational Operator Operator=>=; ref=spsOnOffDelayModel/Continuous/ON Delay/Relational Operator
+  [SubSystem] Sample and Hold MaskType=Sample and Hold ; ic=-1e99; Ts=0; ref=spsSampleandHoldLib/Sample and Hold
+  [Sum] Sum Inputs=++; ref=spsOnOffDelayModel/Continuous/ON Delay/Sum
+  [Outport] OUT ref=spsOnOffDelayModel/Continuous/ON Delay/OUT
+  Logical Operator2:1 -> OUT:1
+  IN:1 -> Logical Operator2:2
+  IN:1 -> Edge Detector:1
+  IN:1 -> Edge Detector:1
+  IN:1 -> Logical Operator2:2
+  clock:1 -> Relational Operator:1
+  clock:1 -> Sample and Hold:1
+  clock:1 -> Sample and Hold:1
+  clock:1 -> Relational Operator:1
+  Sum:1 -> Relational Operator:2
+  DELAY:1 -> Sum:2
+  Relational Operator:1 -> Logical Operator2:1
+  Sample and Hold:1 -> Sum:1
+  Edge Detector:1 -> Sample and Hold:2
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay/Model/ON Delay/Edge Detector
+  [Inport] In ref=spsEdgeDetectorLib/Edge Detector/In
+  [SubSystem] Model MaskType=; ref=spsEdgeDetectorModel/Continuous
+  [Outport] Out ref=spsEdgeDetectorLib/Edge Detector/Out
+  In:1 -> Model:1
+  Model:1 -> Out:1
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay/Model/ON Delay/Edge Detector/Model
+  [Inport] In ref=spsEdgeDetectorModel/Continuous/In
+  [Constant] Constant1 Value=model; ref=spsEdgeDetectorModel/Continuous/Constant1
+  [DataTypeConversion] Data Type Conversion2 OutDataTypeStr=boolean; ref=spsEdgeDetectorModel/Continuous/Data Type Conversion2
+  [Demux] Demux ref=spsEdgeDetectorModel/Continuous/Demux
+  [SubSystem] Internal dirac generator MaskType=; ref=spsEdgeDetectorModel/Continuous/Internal dirac generator
+  [Logic] Logical Operator1 Operator=OR; Inputs=2; ref=spsEdgeDetectorModel/Continuous/Logical Operator1
+  [Memory] Memory ref=spsEdgeDetectorModel/Continuous/Memory
+  [MultiPortSwitch] Multiport Switch ref=spsEdgeDetectorModel/Continuous/Multiport Switch
+  [SubSystem] NEGATIVE Edge MaskType=; ref=spsEdgeDetectorModel/Continuous/NEGATIVE Edge
+  [SubSystem] POSITIVE Edge MaskType=; ref=spsEdgeDetectorModel/Continuous/POSITIVE Edge
+  [Constant] either edge Value=[1 1]; ref=spsEdgeDetectorModel/Continuous/either edge
+  [Constant] neg. edge Value=[0 1]; ref=spsEdgeDetectorModel/Continuous/neg. edge
+  [Constant] pos. edge Value=[1 0]; ref=spsEdgeDetectorModel/Continuous/pos. edge
+  [Outport] Out ref=spsEdgeDetectorModel/Continuous/Out
+  NEGATIVE Edge:1 -> Logical Operator1:2
+  pos. edge:1 -> Multiport Switch:2
+  neg. edge:1 -> Multiport Switch:3
+  Constant1:1 -> Multiport Switch:1
+  Multiport Switch:1 -> Demux:1
+  either edge:1 -> Multiport Switch:4
+  In:1 -> Data Type Conversion2:1
+  Data Type Conversion2:1 -> NEGATIVE Edge:1
+  Data Type Conversion2:1 -> POSITIVE Edge:1
+  Data Type Conversion2:1 -> POSITIVE Edge:1
+  Data Type Conversion2:1 -> NEGATIVE Edge:1
+  Data Type Conversion2:1 -> Memory:1
+  Data Type Conversion2:1 -> Memory:1
+  Data Type Conversion2:1 -> POSITIVE Edge:1
+  Data Type Conversion2:1 -> NEGATIVE Edge:1
+  Demux:2 -> NEGATIVE Edge:3
+  Memory:1 -> NEGATIVE Edge:2
+  Memory:1 -> POSITIVE Edge:2
+  Memory:1 -> POSITIVE Edge:2
+  Memory:1 -> NEGATIVE Edge:2
+  POSITIVE Edge:1 -> Logical Operator1:1
+  Demux:1 -> POSITIVE Edge:3
+  Logical Operator1:1 -> Out:1
+  Logical Operator1:1 -> Internal dirac generator:1
+  Logical Operator1:1 -> Internal dirac generator:1
+  Logical Operator1:1 -> Out:1
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay/Model/ON Delay/Edge Detector/Model/Internal dirac generator
+  [Inport] In ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/In
+  [Clock] Clock ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/Clock
+  [Constant] Constant Value=eps; ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/Constant
+  [RelationalOperator] Relational Operator Operator=>; ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/Relational Operator
+  [Sum] Sum Inputs=++; ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/Sum
+  [Terminator] Terminator ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/Terminator
+  [SubSystem] Triggered Subsystem MaskType=; ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/Triggered Subsystem
+  Triggered Subsystem:1 -> Sum:1
+  Sum:1 -> Relational Operator:1
+  Constant:1 -> Sum:2
+  Clock:1 -> Relational Operator:2
+  Clock:1 -> Triggered Subsystem:1
+  Clock:1 -> Triggered Subsystem:1
+  Clock:1 -> Relational Operator:2
+  In:1 -> Triggered Subsystem:2
+  Relational Operator:1 -> Terminator:1
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay/Model/ON Delay/Edge Detector/Model/Internal dirac generator/Triggered Subsystem
+  [Inport] In1 ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/Triggered Subsystem/In1
+  [TriggerPort] Trigger ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/Triggered Subsystem/Trigger
+  [Outport] Out1 ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/Triggered Subsystem/Out1
+  In1:1 -> Out1:1
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay/Model/ON Delay/Edge Detector/Model/NEGATIVE Edge
+  [Inport] IN ref=spsEdgeDetectorModel/Continuous/NEGATIVE Edge/IN
+  [Inport] IN previous ref=spsEdgeDetectorModel/Continuous/NEGATIVE Edge/IN previous
+  [EnablePort] Enable ref=spsEdgeDetectorModel/Continuous/NEGATIVE Edge/Enable
+  [RelationalOperator] Relational Operator1 Operator=>; ref=spsEdgeDetectorModel/Continuous/NEGATIVE Edge/Relational Operator1
+  [Outport] OUT ref=spsEdgeDetectorModel/Continuous/NEGATIVE Edge/OUT
+  IN:1 -> Relational Operator1:2
+  IN previous:1 -> Relational Operator1:1
+  Relational Operator1:1 -> OUT:1
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay/Model/ON Delay/Edge Detector/Model/POSITIVE Edge
+  [Inport] IN ref=spsEdgeDetectorModel/Continuous/POSITIVE Edge/IN
+  [Inport] IN previous ref=spsEdgeDetectorModel/Continuous/POSITIVE Edge/IN previous
+  [EnablePort] Enable ref=spsEdgeDetectorModel/Continuous/POSITIVE Edge/Enable
+  [RelationalOperator] Relational Operator1 Operator=<; ref=spsEdgeDetectorModel/Continuous/POSITIVE Edge/Relational Operator1
+  [Outport] OUT ref=spsEdgeDetectorModel/Continuous/POSITIVE Edge/OUT
+  Relational Operator1:1 -> OUT:1
+  IN previous:1 -> Relational Operator1:1
+  IN:1 -> Relational Operator1:2
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay/Model/ON Delay/Sample and Hold
+  [Inport] In ref=spsSampleandHoldLib/Sample and Hold/In
+  [Inport] S ref=spsSampleandHoldLib/Sample and Hold/S
+  [SubSystem] Model MaskType=; ref=spsSampleAndHoldModel/Continuous
+  [Outport]     ref=spsSampleandHoldLib/Sample and Hold/   
+  In:1 -> Model:1
+  S:1 -> Model:2
+  Model:1 ->    :1
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay/Model/ON Delay/Sample and Hold/Model
+  [Inport] In ref=spsSampleAndHoldModel/Continuous/In
+  [Inport] S ref=spsSampleAndHoldModel/Continuous/S
+  [DataTypeConversion] Data Type Conversion OutDataTypeStr=boolean; ref=spsSampleAndHoldModel/Continuous/Data Type Conversion
+  [Memory] IC=ic ref=spsSampleAndHoldModel/Continuous/IC=ic
+  [Switch] Switch Criteria=u2 >= Threshold; Threshold=0.5; ref=spsSampleAndHoldModel/Continuous/Switch
+  [Outport] Out ref=spsSampleAndHoldModel/Continuous/Out
+  S:1 -> Data Type Conversion:1
+  In:1 -> Switch:1
+  IC=ic:1 -> Switch:3
+  Switch:1 -> Out:1
+  Switch:1 -> IC=ic:1
+  Switch:1 -> IC=ic:1
+  Switch:1 -> Out:1
+  Data Type Conversion:1 -> Switch:2
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay1
+  [Inport] In ref=spsOnDelayLib/On Delay/In
+  [SubSystem] Model MaskType=; ref=spsOnOffDelayModel/Continuous
+  [Outport] Out ref=spsOnDelayLib/On Delay/Out
+  In:1 -> Model:1
+  Model:1 -> Out:1
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay1/Model
+  [Inport] In ref=spsOnOffDelayModel/Continuous/In
+  [Clock] Clock ref=spsOnOffDelayModel/Continuous/Clock
+  [Constant] Constant Value=1; ref=spsOnOffDelayModel/Continuous/Constant
+  [Constant] Constant1 Value=delay; ref=spsOnOffDelayModel/Continuous/Constant1
+  [Constant] Constant2 Value=DelayType; ref=spsOnOffDelayModel/Continuous/Constant2
+  [DataTypeConversion] Data Type Conversion1 OutDataTypeStr=boolean; ref=spsOnOffDelayModel/Continuous/Data Type Conversion1
+  [Logic] Logical Operator1 Operator=OR; Inputs=2; ref=spsOnOffDelayModel/Continuous/Logical Operator1
+  [Logic] Logical Operator2 Operator=NOT; Inputs=1; ref=spsOnOffDelayModel/Continuous/Logical Operator2
+  [SubSystem] OFF Delay MaskType=; ref=spsOnOffDelayModel/Continuous/OFF Delay
+  [SubSystem] ON Delay MaskType=; ref=spsOnOffDelayModel/Continuous/ON Delay
+  [RelationalOperator] Relational Operator1 Operator===; ref=spsOnOffDelayModel/Continuous/Relational Operator1
+  [Outport] Out ref=spsOnOffDelayModel/Continuous/Out
+  Data Type Conversion1:1 -> ON Delay:1
+  Data Type Conversion1:1 -> OFF Delay:1
+  Data Type Conversion1:1 -> OFF Delay:1
+  Data Type Conversion1:1 -> ON Delay:1
+  Constant:1 -> Relational Operator1:2
+  Relational Operator1:1 -> Logical Operator2:1
+  Relational Operator1:1 -> ON Delay:4
+  Relational Operator1:1 -> ON Delay:4
+  Relational Operator1:1 -> Logical Operator2:1
+  Constant2:1 -> Relational Operator1:1
+  Logical Operator2:1 -> OFF Delay:4
+  OFF Delay:1 -> Logical Operator1:2
+  ON Delay:1 -> Logical Operator1:1
+  Logical Operator1:1 -> Out:1
+  Constant1:1 -> OFF Delay:3
+  Constant1:1 -> ON Delay:3
+  Constant1:1 -> ON Delay:3
+  Constant1:1 -> OFF Delay:3
+  In:1 -> Data Type Conversion1:1
+  Clock:1 -> ON Delay:2
+  Clock:1 -> OFF Delay:2
+  Clock:1 -> OFF Delay:2
+  Clock:1 -> ON Delay:2
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay1/Model/OFF Delay
+  [Inport] IN ref=spsOnOffDelayModel/Continuous/OFF Delay/IN
+  [Inport] clock ref=spsOnOffDelayModel/Continuous/OFF Delay/clock
+  [Inport] DELAY ref=spsOnOffDelayModel/Continuous/OFF Delay/DELAY
+  [EnablePort] Enable ref=spsOnOffDelayModel/Continuous/OFF Delay/Enable
+  [SubSystem] Edge Detector MaskType=Edge Detector; model=Falling; ic=ic; Ts=0; ref=spsEdgeDetectorLib/Edge Detector
+  [Logic] Logical Operator Operator=NOT; Inputs=1; ref=spsOnOffDelayModel/Continuous/OFF Delay/Logical Operator
+  [Logic] Logical Operator1 Operator=AND; Inputs=2; ref=spsOnOffDelayModel/Continuous/OFF Delay/Logical Operator1
+  [Logic] Logical Operator2 Operator=NOT; Inputs=1; ref=spsOnOffDelayModel/Continuous/OFF Delay/Logical Operator2
+  [RelationalOperator] Relational Operator Operator=>=; ref=spsOnOffDelayModel/Continuous/OFF Delay/Relational Operator
+  [SubSystem] Sample and Hold MaskType=Sample and Hold ; ic=-1e99; Ts=0; ref=spsSampleandHoldLib/Sample and Hold
+  [Sum] Sum Inputs=++; ref=spsOnOffDelayModel/Continuous/OFF Delay/Sum
+  [Outport] OUT ref=spsOnOffDelayModel/Continuous/OFF Delay/OUT
+  clock:1 -> Relational Operator:1
+  clock:1 -> Sample and Hold:1
+  clock:1 -> Sample and Hold:1
+  clock:1 -> Relational Operator:1
+  IN:1 -> Logical Operator:1
+  IN:1 -> Edge Detector:1
+  IN:1 -> Edge Detector:1
+  IN:1 -> Logical Operator:1
+  Logical Operator2:1 -> OUT:1
+  Logical Operator1:1 -> Logical Operator2:1
+  DELAY:1 -> Sum:2
+  Sum:1 -> Relational Operator:2
+  Edge Detector:1 -> Sample and Hold:2
+  Sample and Hold:1 -> Sum:1
+  Relational Operator:1 -> Logical Operator1:1
+  Logical Operator:1 -> Logical Operator1:2
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay1/Model/OFF Delay/Edge Detector
+  [Inport] In ref=spsEdgeDetectorLib/Edge Detector/In
+  [SubSystem] Model MaskType=; ref=spsEdgeDetectorModel/Continuous
+  [Outport] Out ref=spsEdgeDetectorLib/Edge Detector/Out
+  In:1 -> Model:1
+  Model:1 -> Out:1
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay1/Model/OFF Delay/Edge Detector/Model
+  [Inport] In ref=spsEdgeDetectorModel/Continuous/In
+  [Constant] Constant1 Value=model; ref=spsEdgeDetectorModel/Continuous/Constant1
+  [DataTypeConversion] Data Type Conversion2 OutDataTypeStr=boolean; ref=spsEdgeDetectorModel/Continuous/Data Type Conversion2
+  [Demux] Demux ref=spsEdgeDetectorModel/Continuous/Demux
+  [SubSystem] Internal dirac generator MaskType=; ref=spsEdgeDetectorModel/Continuous/Internal dirac generator
+  [Logic] Logical Operator1 Operator=OR; Inputs=2; ref=spsEdgeDetectorModel/Continuous/Logical Operator1
+  [Memory] Memory ref=spsEdgeDetectorModel/Continuous/Memory
+  [MultiPortSwitch] Multiport Switch ref=spsEdgeDetectorModel/Continuous/Multiport Switch
+  [SubSystem] NEGATIVE Edge MaskType=; ref=spsEdgeDetectorModel/Continuous/NEGATIVE Edge
+  [SubSystem] POSITIVE Edge MaskType=; ref=spsEdgeDetectorModel/Continuous/POSITIVE Edge
+  [Constant] either edge Value=[1 1]; ref=spsEdgeDetectorModel/Continuous/either edge
+  [Constant] neg. edge Value=[0 1]; ref=spsEdgeDetectorModel/Continuous/neg. edge
+  [Constant] pos. edge Value=[1 0]; ref=spsEdgeDetectorModel/Continuous/pos. edge
+  [Outport] Out ref=spsEdgeDetectorModel/Continuous/Out
+  NEGATIVE Edge:1 -> Logical Operator1:2
+  pos. edge:1 -> Multiport Switch:2
+  neg. edge:1 -> Multiport Switch:3
+  Constant1:1 -> Multiport Switch:1
+  Multiport Switch:1 -> Demux:1
+  either edge:1 -> Multiport Switch:4
+  In:1 -> Data Type Conversion2:1
+  Data Type Conversion2:1 -> NEGATIVE Edge:1
+  Data Type Conversion2:1 -> POSITIVE Edge:1
+  Data Type Conversion2:1 -> POSITIVE Edge:1
+  Data Type Conversion2:1 -> NEGATIVE Edge:1
+  Data Type Conversion2:1 -> Memory:1
+  Data Type Conversion2:1 -> Memory:1
+  Data Type Conversion2:1 -> POSITIVE Edge:1
+  Data Type Conversion2:1 -> NEGATIVE Edge:1
+  Demux:2 -> NEGATIVE Edge:3
+  Memory:1 -> NEGATIVE Edge:2
+  Memory:1 -> POSITIVE Edge:2
+  Memory:1 -> POSITIVE Edge:2
+  Memory:1 -> NEGATIVE Edge:2
+  POSITIVE Edge:1 -> Logical Operator1:1
+  Demux:1 -> POSITIVE Edge:3
+  Logical Operator1:1 -> Out:1
+  Logical Operator1:1 -> Internal dirac generator:1
+  Logical Operator1:1 -> Internal dirac generator:1
+  Logical Operator1:1 -> Out:1
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay1/Model/OFF Delay/Edge Detector/Model/Internal dirac generator
+  [Inport] In ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/In
+  [Clock] Clock ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/Clock
+  [Constant] Constant Value=eps; ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/Constant
+  [RelationalOperator] Relational Operator Operator=>; ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/Relational Operator
+  [Sum] Sum Inputs=++; ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/Sum
+  [Terminator] Terminator ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/Terminator
+  [SubSystem] Triggered Subsystem MaskType=; ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/Triggered Subsystem
+  Triggered Subsystem:1 -> Sum:1
+  Sum:1 -> Relational Operator:1
+  Constant:1 -> Sum:2
+  Clock:1 -> Relational Operator:2
+  Clock:1 -> Triggered Subsystem:1
+  Clock:1 -> Triggered Subsystem:1
+  Clock:1 -> Relational Operator:2
+  In:1 -> Triggered Subsystem:2
+  Relational Operator:1 -> Terminator:1
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay1/Model/OFF Delay/Edge Detector/Model/Internal dirac generator/Triggered Subsystem
+  [Inport] In1 ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/Triggered Subsystem/In1
+  [TriggerPort] Trigger ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/Triggered Subsystem/Trigger
+  [Outport] Out1 ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/Triggered Subsystem/Out1
+  In1:1 -> Out1:1
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay1/Model/OFF Delay/Edge Detector/Model/NEGATIVE Edge
+  [Inport] IN ref=spsEdgeDetectorModel/Continuous/NEGATIVE Edge/IN
+  [Inport] IN previous ref=spsEdgeDetectorModel/Continuous/NEGATIVE Edge/IN previous
+  [EnablePort] Enable ref=spsEdgeDetectorModel/Continuous/NEGATIVE Edge/Enable
+  [RelationalOperator] Relational Operator1 Operator=>; ref=spsEdgeDetectorModel/Continuous/NEGATIVE Edge/Relational Operator1
+  [Outport] OUT ref=spsEdgeDetectorModel/Continuous/NEGATIVE Edge/OUT
+  IN:1 -> Relational Operator1:2
+  IN previous:1 -> Relational Operator1:1
+  Relational Operator1:1 -> OUT:1
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay1/Model/OFF Delay/Edge Detector/Model/POSITIVE Edge
+  [Inport] IN ref=spsEdgeDetectorModel/Continuous/POSITIVE Edge/IN
+  [Inport] IN previous ref=spsEdgeDetectorModel/Continuous/POSITIVE Edge/IN previous
+  [EnablePort] Enable ref=spsEdgeDetectorModel/Continuous/POSITIVE Edge/Enable
+  [RelationalOperator] Relational Operator1 Operator=<; ref=spsEdgeDetectorModel/Continuous/POSITIVE Edge/Relational Operator1
+  [Outport] OUT ref=spsEdgeDetectorModel/Continuous/POSITIVE Edge/OUT
+  Relational Operator1:1 -> OUT:1
+  IN previous:1 -> Relational Operator1:1
+  IN:1 -> Relational Operator1:2
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay1/Model/OFF Delay/Sample and Hold
+  [Inport] In ref=spsSampleandHoldLib/Sample and Hold/In
+  [Inport] S ref=spsSampleandHoldLib/Sample and Hold/S
+  [SubSystem] Model MaskType=; ref=spsSampleAndHoldModel/Continuous
+  [Outport]     ref=spsSampleandHoldLib/Sample and Hold/   
+  In:1 -> Model:1
+  S:1 -> Model:2
+  Model:1 ->    :1
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay1/Model/OFF Delay/Sample and Hold/Model
+  [Inport] In ref=spsSampleAndHoldModel/Continuous/In
+  [Inport] S ref=spsSampleAndHoldModel/Continuous/S
+  [DataTypeConversion] Data Type Conversion OutDataTypeStr=boolean; ref=spsSampleAndHoldModel/Continuous/Data Type Conversion
+  [Memory] IC=ic ref=spsSampleAndHoldModel/Continuous/IC=ic
+  [Switch] Switch Criteria=u2 >= Threshold; Threshold=0.5; ref=spsSampleAndHoldModel/Continuous/Switch
+  [Outport] Out ref=spsSampleAndHoldModel/Continuous/Out
+  S:1 -> Data Type Conversion:1
+  In:1 -> Switch:1
+  IC=ic:1 -> Switch:3
+  Switch:1 -> Out:1
+  Switch:1 -> IC=ic:1
+  Switch:1 -> IC=ic:1
+  Switch:1 -> Out:1
+  Data Type Conversion:1 -> Switch:2
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay1/Model/ON Delay
+  [Inport] IN ref=spsOnOffDelayModel/Continuous/ON Delay/IN
+  [Inport] clock ref=spsOnOffDelayModel/Continuous/ON Delay/clock
+  [Inport] DELAY ref=spsOnOffDelayModel/Continuous/ON Delay/DELAY
+  [EnablePort] Enable ref=spsOnOffDelayModel/Continuous/ON Delay/Enable
+  [SubSystem] Edge Detector MaskType=Edge Detector; model=Rising; ic=ic; Ts=0; ref=spsEdgeDetectorLib/Edge Detector
+  [Logic] Logical Operator2 Operator=AND; Inputs=2; ref=spsOnOffDelayModel/Continuous/ON Delay/Logical Operator2
+  [RelationalOperator] Relational Operator Operator=>=; ref=spsOnOffDelayModel/Continuous/ON Delay/Relational Operator
+  [SubSystem] Sample and Hold MaskType=Sample and Hold ; ic=-1e99; Ts=0; ref=spsSampleandHoldLib/Sample and Hold
+  [Sum] Sum Inputs=++; ref=spsOnOffDelayModel/Continuous/ON Delay/Sum
+  [Outport] OUT ref=spsOnOffDelayModel/Continuous/ON Delay/OUT
+  Logical Operator2:1 -> OUT:1
+  IN:1 -> Logical Operator2:2
+  IN:1 -> Edge Detector:1
+  IN:1 -> Edge Detector:1
+  IN:1 -> Logical Operator2:2
+  clock:1 -> Relational Operator:1
+  clock:1 -> Sample and Hold:1
+  clock:1 -> Sample and Hold:1
+  clock:1 -> Relational Operator:1
+  Sum:1 -> Relational Operator:2
+  DELAY:1 -> Sum:2
+  Relational Operator:1 -> Logical Operator2:1
+  Sample and Hold:1 -> Sum:1
+  Edge Detector:1 -> Sample and Hold:2
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay1/Model/ON Delay/Edge Detector
+  [Inport] In ref=spsEdgeDetectorLib/Edge Detector/In
+  [SubSystem] Model MaskType=; ref=spsEdgeDetectorModel/Continuous
+  [Outport] Out ref=spsEdgeDetectorLib/Edge Detector/Out
+  In:1 -> Model:1
+  Model:1 -> Out:1
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay1/Model/ON Delay/Edge Detector/Model
+  [Inport] In ref=spsEdgeDetectorModel/Continuous/In
+  [Constant] Constant1 Value=model; ref=spsEdgeDetectorModel/Continuous/Constant1
+  [DataTypeConversion] Data Type Conversion2 OutDataTypeStr=boolean; ref=spsEdgeDetectorModel/Continuous/Data Type Conversion2
+  [Demux] Demux ref=spsEdgeDetectorModel/Continuous/Demux
+  [SubSystem] Internal dirac generator MaskType=; ref=spsEdgeDetectorModel/Continuous/Internal dirac generator
+  [Logic] Logical Operator1 Operator=OR; Inputs=2; ref=spsEdgeDetectorModel/Continuous/Logical Operator1
+  [Memory] Memory ref=spsEdgeDetectorModel/Continuous/Memory
+  [MultiPortSwitch] Multiport Switch ref=spsEdgeDetectorModel/Continuous/Multiport Switch
+  [SubSystem] NEGATIVE Edge MaskType=; ref=spsEdgeDetectorModel/Continuous/NEGATIVE Edge
+  [SubSystem] POSITIVE Edge MaskType=; ref=spsEdgeDetectorModel/Continuous/POSITIVE Edge
+  [Constant] either edge Value=[1 1]; ref=spsEdgeDetectorModel/Continuous/either edge
+  [Constant] neg. edge Value=[0 1]; ref=spsEdgeDetectorModel/Continuous/neg. edge
+  [Constant] pos. edge Value=[1 0]; ref=spsEdgeDetectorModel/Continuous/pos. edge
+  [Outport] Out ref=spsEdgeDetectorModel/Continuous/Out
+  NEGATIVE Edge:1 -> Logical Operator1:2
+  pos. edge:1 -> Multiport Switch:2
+  neg. edge:1 -> Multiport Switch:3
+  Constant1:1 -> Multiport Switch:1
+  Multiport Switch:1 -> Demux:1
+  either edge:1 -> Multiport Switch:4
+  In:1 -> Data Type Conversion2:1
+  Data Type Conversion2:1 -> NEGATIVE Edge:1
+  Data Type Conversion2:1 -> POSITIVE Edge:1
+  Data Type Conversion2:1 -> POSITIVE Edge:1
+  Data Type Conversion2:1 -> NEGATIVE Edge:1
+  Data Type Conversion2:1 -> Memory:1
+  Data Type Conversion2:1 -> Memory:1
+  Data Type Conversion2:1 -> POSITIVE Edge:1
+  Data Type Conversion2:1 -> NEGATIVE Edge:1
+  Demux:2 -> NEGATIVE Edge:3
+  Memory:1 -> NEGATIVE Edge:2
+  Memory:1 -> POSITIVE Edge:2
+  Memory:1 -> POSITIVE Edge:2
+  Memory:1 -> NEGATIVE Edge:2
+  POSITIVE Edge:1 -> Logical Operator1:1
+  Demux:1 -> POSITIVE Edge:3
+  Logical Operator1:1 -> Out:1
+  Logical Operator1:1 -> Internal dirac generator:1
+  Logical Operator1:1 -> Internal dirac generator:1
+  Logical Operator1:1 -> Out:1
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay1/Model/ON Delay/Edge Detector/Model/Internal dirac generator
+  [Inport] In ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/In
+  [Clock] Clock ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/Clock
+  [Constant] Constant Value=eps; ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/Constant
+  [RelationalOperator] Relational Operator Operator=>; ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/Relational Operator
+  [Sum] Sum Inputs=++; ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/Sum
+  [Terminator] Terminator ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/Terminator
+  [SubSystem] Triggered Subsystem MaskType=; ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/Triggered Subsystem
+  Triggered Subsystem:1 -> Sum:1
+  Sum:1 -> Relational Operator:1
+  Constant:1 -> Sum:2
+  Clock:1 -> Relational Operator:2
+  Clock:1 -> Triggered Subsystem:1
+  Clock:1 -> Triggered Subsystem:1
+  Clock:1 -> Relational Operator:2
+  In:1 -> Triggered Subsystem:2
+  Relational Operator:1 -> Terminator:1
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay1/Model/ON Delay/Edge Detector/Model/Internal dirac generator/Triggered Subsystem
+  [Inport] In1 ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/Triggered Subsystem/In1
+  [TriggerPort] Trigger ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/Triggered Subsystem/Trigger
+  [Outport] Out1 ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/Triggered Subsystem/Out1
+  In1:1 -> Out1:1
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay1/Model/ON Delay/Edge Detector/Model/NEGATIVE Edge
+  [Inport] IN ref=spsEdgeDetectorModel/Continuous/NEGATIVE Edge/IN
+  [Inport] IN previous ref=spsEdgeDetectorModel/Continuous/NEGATIVE Edge/IN previous
+  [EnablePort] Enable ref=spsEdgeDetectorModel/Continuous/NEGATIVE Edge/Enable
+  [RelationalOperator] Relational Operator1 Operator=>; ref=spsEdgeDetectorModel/Continuous/NEGATIVE Edge/Relational Operator1
+  [Outport] OUT ref=spsEdgeDetectorModel/Continuous/NEGATIVE Edge/OUT
+  IN:1 -> Relational Operator1:2
+  IN previous:1 -> Relational Operator1:1
+  Relational Operator1:1 -> OUT:1
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay1/Model/ON Delay/Edge Detector/Model/POSITIVE Edge
+  [Inport] IN ref=spsEdgeDetectorModel/Continuous/POSITIVE Edge/IN
+  [Inport] IN previous ref=spsEdgeDetectorModel/Continuous/POSITIVE Edge/IN previous
+  [EnablePort] Enable ref=spsEdgeDetectorModel/Continuous/POSITIVE Edge/Enable
+  [RelationalOperator] Relational Operator1 Operator=<; ref=spsEdgeDetectorModel/Continuous/POSITIVE Edge/Relational Operator1
+  [Outport] OUT ref=spsEdgeDetectorModel/Continuous/POSITIVE Edge/OUT
+  Relational Operator1:1 -> OUT:1
+  IN previous:1 -> Relational Operator1:1
+  IN:1 -> Relational Operator1:2
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay1/Model/ON Delay/Sample and Hold
+  [Inport] In ref=spsSampleandHoldLib/Sample and Hold/In
+  [Inport] S ref=spsSampleandHoldLib/Sample and Hold/S
+  [SubSystem] Model MaskType=; ref=spsSampleAndHoldModel/Continuous
+  [Outport]     ref=spsSampleandHoldLib/Sample and Hold/   
+  In:1 -> Model:1
+  S:1 -> Model:2
+  Model:1 ->    :1
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay1/Model/ON Delay/Sample and Hold/Model
+  [Inport] In ref=spsSampleAndHoldModel/Continuous/In
+  [Inport] S ref=spsSampleAndHoldModel/Continuous/S
+  [DataTypeConversion] Data Type Conversion OutDataTypeStr=boolean; ref=spsSampleAndHoldModel/Continuous/Data Type Conversion
+  [Memory] IC=ic ref=spsSampleAndHoldModel/Continuous/IC=ic
+  [Switch] Switch Criteria=u2 >= Threshold; Threshold=0.5; ref=spsSampleAndHoldModel/Continuous/Switch
+  [Outport] Out ref=spsSampleAndHoldModel/Continuous/Out
+  S:1 -> Data Type Conversion:1
+  In:1 -> Switch:1
+  IC=ic:1 -> Switch:3
+  Switch:1 -> Out:1
+  Switch:1 -> IC=ic:1
+  Switch:1 -> IC=ic:1
+  Switch:1 -> Out:1
+  Data Type Conversion:1 -> Switch:2
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay2
+  [Inport] In ref=spsOnDelayLib/On Delay/In
+  [SubSystem] Model MaskType=; ref=spsOnOffDelayModel/Continuous
+  [Outport] Out ref=spsOnDelayLib/On Delay/Out
+  In:1 -> Model:1
+  Model:1 -> Out:1
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay2/Model
+  [Inport] In ref=spsOnOffDelayModel/Continuous/In
+  [Clock] Clock ref=spsOnOffDelayModel/Continuous/Clock
+  [Constant] Constant Value=1; ref=spsOnOffDelayModel/Continuous/Constant
+  [Constant] Constant1 Value=delay; ref=spsOnOffDelayModel/Continuous/Constant1
+  [Constant] Constant2 Value=DelayType; ref=spsOnOffDelayModel/Continuous/Constant2
+  [DataTypeConversion] Data Type Conversion1 OutDataTypeStr=boolean; ref=spsOnOffDelayModel/Continuous/Data Type Conversion1
+  [Logic] Logical Operator1 Operator=OR; Inputs=2; ref=spsOnOffDelayModel/Continuous/Logical Operator1
+  [Logic] Logical Operator2 Operator=NOT; Inputs=1; ref=spsOnOffDelayModel/Continuous/Logical Operator2
+  [SubSystem] OFF Delay MaskType=; ref=spsOnOffDelayModel/Continuous/OFF Delay
+  [SubSystem] ON Delay MaskType=; ref=spsOnOffDelayModel/Continuous/ON Delay
+  [RelationalOperator] Relational Operator1 Operator===; ref=spsOnOffDelayModel/Continuous/Relational Operator1
+  [Outport] Out ref=spsOnOffDelayModel/Continuous/Out
+  Data Type Conversion1:1 -> ON Delay:1
+  Data Type Conversion1:1 -> OFF Delay:1
+  Data Type Conversion1:1 -> OFF Delay:1
+  Data Type Conversion1:1 -> ON Delay:1
+  Constant:1 -> Relational Operator1:2
+  Relational Operator1:1 -> Logical Operator2:1
+  Relational Operator1:1 -> ON Delay:4
+  Relational Operator1:1 -> ON Delay:4
+  Relational Operator1:1 -> Logical Operator2:1
+  Constant2:1 -> Relational Operator1:1
+  Logical Operator2:1 -> OFF Delay:4
+  OFF Delay:1 -> Logical Operator1:2
+  ON Delay:1 -> Logical Operator1:1
+  Logical Operator1:1 -> Out:1
+  Constant1:1 -> OFF Delay:3
+  Constant1:1 -> ON Delay:3
+  Constant1:1 -> ON Delay:3
+  Constant1:1 -> OFF Delay:3
+  In:1 -> Data Type Conversion1:1
+  Clock:1 -> ON Delay:2
+  Clock:1 -> OFF Delay:2
+  Clock:1 -> OFF Delay:2
+  Clock:1 -> ON Delay:2
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay2/Model/OFF Delay
+  [Inport] IN ref=spsOnOffDelayModel/Continuous/OFF Delay/IN
+  [Inport] clock ref=spsOnOffDelayModel/Continuous/OFF Delay/clock
+  [Inport] DELAY ref=spsOnOffDelayModel/Continuous/OFF Delay/DELAY
+  [EnablePort] Enable ref=spsOnOffDelayModel/Continuous/OFF Delay/Enable
+  [SubSystem] Edge Detector MaskType=Edge Detector; model=Falling; ic=ic; Ts=0; ref=spsEdgeDetectorLib/Edge Detector
+  [Logic] Logical Operator Operator=NOT; Inputs=1; ref=spsOnOffDelayModel/Continuous/OFF Delay/Logical Operator
+  [Logic] Logical Operator1 Operator=AND; Inputs=2; ref=spsOnOffDelayModel/Continuous/OFF Delay/Logical Operator1
+  [Logic] Logical Operator2 Operator=NOT; Inputs=1; ref=spsOnOffDelayModel/Continuous/OFF Delay/Logical Operator2
+  [RelationalOperator] Relational Operator Operator=>=; ref=spsOnOffDelayModel/Continuous/OFF Delay/Relational Operator
+  [SubSystem] Sample and Hold MaskType=Sample and Hold ; ic=-1e99; Ts=0; ref=spsSampleandHoldLib/Sample and Hold
+  [Sum] Sum Inputs=++; ref=spsOnOffDelayModel/Continuous/OFF Delay/Sum
+  [Outport] OUT ref=spsOnOffDelayModel/Continuous/OFF Delay/OUT
+  clock:1 -> Relational Operator:1
+  clock:1 -> Sample and Hold:1
+  clock:1 -> Sample and Hold:1
+  clock:1 -> Relational Operator:1
+  IN:1 -> Logical Operator:1
+  IN:1 -> Edge Detector:1
+  IN:1 -> Edge Detector:1
+  IN:1 -> Logical Operator:1
+  Logical Operator2:1 -> OUT:1
+  Logical Operator1:1 -> Logical Operator2:1
+  DELAY:1 -> Sum:2
+  Sum:1 -> Relational Operator:2
+  Edge Detector:1 -> Sample and Hold:2
+  Sample and Hold:1 -> Sum:1
+  Relational Operator:1 -> Logical Operator1:1
+  Logical Operator:1 -> Logical Operator1:2
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay2/Model/OFF Delay/Edge Detector
+  [Inport] In ref=spsEdgeDetectorLib/Edge Detector/In
+  [SubSystem] Model MaskType=; ref=spsEdgeDetectorModel/Continuous
+  [Outport] Out ref=spsEdgeDetectorLib/Edge Detector/Out
+  In:1 -> Model:1
+  Model:1 -> Out:1
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay2/Model/OFF Delay/Edge Detector/Model
+  [Inport] In ref=spsEdgeDetectorModel/Continuous/In
+  [Constant] Constant1 Value=model; ref=spsEdgeDetectorModel/Continuous/Constant1
+  [DataTypeConversion] Data Type Conversion2 OutDataTypeStr=boolean; ref=spsEdgeDetectorModel/Continuous/Data Type Conversion2
+  [Demux] Demux ref=spsEdgeDetectorModel/Continuous/Demux
+  [SubSystem] Internal dirac generator MaskType=; ref=spsEdgeDetectorModel/Continuous/Internal dirac generator
+  [Logic] Logical Operator1 Operator=OR; Inputs=2; ref=spsEdgeDetectorModel/Continuous/Logical Operator1
+  [Memory] Memory ref=spsEdgeDetectorModel/Continuous/Memory
+  [MultiPortSwitch] Multiport Switch ref=spsEdgeDetectorModel/Continuous/Multiport Switch
+  [SubSystem] NEGATIVE Edge MaskType=; ref=spsEdgeDetectorModel/Continuous/NEGATIVE Edge
+  [SubSystem] POSITIVE Edge MaskType=; ref=spsEdgeDetectorModel/Continuous/POSITIVE Edge
+  [Constant] either edge Value=[1 1]; ref=spsEdgeDetectorModel/Continuous/either edge
+  [Constant] neg. edge Value=[0 1]; ref=spsEdgeDetectorModel/Continuous/neg. edge
+  [Constant] pos. edge Value=[1 0]; ref=spsEdgeDetectorModel/Continuous/pos. edge
+  [Outport] Out ref=spsEdgeDetectorModel/Continuous/Out
+  NEGATIVE Edge:1 -> Logical Operator1:2
+  pos. edge:1 -> Multiport Switch:2
+  neg. edge:1 -> Multiport Switch:3
+  Constant1:1 -> Multiport Switch:1
+  Multiport Switch:1 -> Demux:1
+  either edge:1 -> Multiport Switch:4
+  In:1 -> Data Type Conversion2:1
+  Data Type Conversion2:1 -> NEGATIVE Edge:1
+  Data Type Conversion2:1 -> POSITIVE Edge:1
+  Data Type Conversion2:1 -> POSITIVE Edge:1
+  Data Type Conversion2:1 -> NEGATIVE Edge:1
+  Data Type Conversion2:1 -> Memory:1
+  Data Type Conversion2:1 -> Memory:1
+  Data Type Conversion2:1 -> POSITIVE Edge:1
+  Data Type Conversion2:1 -> NEGATIVE Edge:1
+  Demux:2 -> NEGATIVE Edge:3
+  Memory:1 -> NEGATIVE Edge:2
+  Memory:1 -> POSITIVE Edge:2
+  Memory:1 -> POSITIVE Edge:2
+  Memory:1 -> NEGATIVE Edge:2
+  POSITIVE Edge:1 -> Logical Operator1:1
+  Demux:1 -> POSITIVE Edge:3
+  Logical Operator1:1 -> Out:1
+  Logical Operator1:1 -> Internal dirac generator:1
+  Logical Operator1:1 -> Internal dirac generator:1
+  Logical Operator1:1 -> Out:1
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay2/Model/OFF Delay/Edge Detector/Model/Internal dirac generator
+  [Inport] In ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/In
+  [Clock] Clock ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/Clock
+  [Constant] Constant Value=eps; ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/Constant
+  [RelationalOperator] Relational Operator Operator=>; ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/Relational Operator
+  [Sum] Sum Inputs=++; ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/Sum
+  [Terminator] Terminator ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/Terminator
+  [SubSystem] Triggered Subsystem MaskType=; ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/Triggered Subsystem
+  Triggered Subsystem:1 -> Sum:1
+  Sum:1 -> Relational Operator:1
+  Constant:1 -> Sum:2
+  Clock:1 -> Relational Operator:2
+  Clock:1 -> Triggered Subsystem:1
+  Clock:1 -> Triggered Subsystem:1
+  Clock:1 -> Relational Operator:2
+  In:1 -> Triggered Subsystem:2
+  Relational Operator:1 -> Terminator:1
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay2/Model/OFF Delay/Edge Detector/Model/Internal dirac generator/Triggered Subsystem
+  [Inport] In1 ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/Triggered Subsystem/In1
+  [TriggerPort] Trigger ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/Triggered Subsystem/Trigger
+  [Outport] Out1 ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/Triggered Subsystem/Out1
+  In1:1 -> Out1:1
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay2/Model/OFF Delay/Edge Detector/Model/NEGATIVE Edge
+  [Inport] IN ref=spsEdgeDetectorModel/Continuous/NEGATIVE Edge/IN
+  [Inport] IN previous ref=spsEdgeDetectorModel/Continuous/NEGATIVE Edge/IN previous
+  [EnablePort] Enable ref=spsEdgeDetectorModel/Continuous/NEGATIVE Edge/Enable
+  [RelationalOperator] Relational Operator1 Operator=>; ref=spsEdgeDetectorModel/Continuous/NEGATIVE Edge/Relational Operator1
+  [Outport] OUT ref=spsEdgeDetectorModel/Continuous/NEGATIVE Edge/OUT
+  IN:1 -> Relational Operator1:2
+  IN previous:1 -> Relational Operator1:1
+  Relational Operator1:1 -> OUT:1
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay2/Model/OFF Delay/Edge Detector/Model/POSITIVE Edge
+  [Inport] IN ref=spsEdgeDetectorModel/Continuous/POSITIVE Edge/IN
+  [Inport] IN previous ref=spsEdgeDetectorModel/Continuous/POSITIVE Edge/IN previous
+  [EnablePort] Enable ref=spsEdgeDetectorModel/Continuous/POSITIVE Edge/Enable
+  [RelationalOperator] Relational Operator1 Operator=<; ref=spsEdgeDetectorModel/Continuous/POSITIVE Edge/Relational Operator1
+  [Outport] OUT ref=spsEdgeDetectorModel/Continuous/POSITIVE Edge/OUT
+  Relational Operator1:1 -> OUT:1
+  IN previous:1 -> Relational Operator1:1
+  IN:1 -> Relational Operator1:2
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay2/Model/OFF Delay/Sample and Hold
+  [Inport] In ref=spsSampleandHoldLib/Sample and Hold/In
+  [Inport] S ref=spsSampleandHoldLib/Sample and Hold/S
+  [SubSystem] Model MaskType=; ref=spsSampleAndHoldModel/Continuous
+  [Outport]     ref=spsSampleandHoldLib/Sample and Hold/   
+  In:1 -> Model:1
+  S:1 -> Model:2
+  Model:1 ->    :1
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay2/Model/OFF Delay/Sample and Hold/Model
+  [Inport] In ref=spsSampleAndHoldModel/Continuous/In
+  [Inport] S ref=spsSampleAndHoldModel/Continuous/S
+  [DataTypeConversion] Data Type Conversion OutDataTypeStr=boolean; ref=spsSampleAndHoldModel/Continuous/Data Type Conversion
+  [Memory] IC=ic ref=spsSampleAndHoldModel/Continuous/IC=ic
+  [Switch] Switch Criteria=u2 >= Threshold; Threshold=0.5; ref=spsSampleAndHoldModel/Continuous/Switch
+  [Outport] Out ref=spsSampleAndHoldModel/Continuous/Out
+  S:1 -> Data Type Conversion:1
+  In:1 -> Switch:1
+  IC=ic:1 -> Switch:3
+  Switch:1 -> Out:1
+  Switch:1 -> IC=ic:1
+  Switch:1 -> IC=ic:1
+  Switch:1 -> Out:1
+  Data Type Conversion:1 -> Switch:2
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay2/Model/ON Delay
+  [Inport] IN ref=spsOnOffDelayModel/Continuous/ON Delay/IN
+  [Inport] clock ref=spsOnOffDelayModel/Continuous/ON Delay/clock
+  [Inport] DELAY ref=spsOnOffDelayModel/Continuous/ON Delay/DELAY
+  [EnablePort] Enable ref=spsOnOffDelayModel/Continuous/ON Delay/Enable
+  [SubSystem] Edge Detector MaskType=Edge Detector; model=Rising; ic=ic; Ts=0; ref=spsEdgeDetectorLib/Edge Detector
+  [Logic] Logical Operator2 Operator=AND; Inputs=2; ref=spsOnOffDelayModel/Continuous/ON Delay/Logical Operator2
+  [RelationalOperator] Relational Operator Operator=>=; ref=spsOnOffDelayModel/Continuous/ON Delay/Relational Operator
+  [SubSystem] Sample and Hold MaskType=Sample and Hold ; ic=-1e99; Ts=0; ref=spsSampleandHoldLib/Sample and Hold
+  [Sum] Sum Inputs=++; ref=spsOnOffDelayModel/Continuous/ON Delay/Sum
+  [Outport] OUT ref=spsOnOffDelayModel/Continuous/ON Delay/OUT
+  Logical Operator2:1 -> OUT:1
+  IN:1 -> Logical Operator2:2
+  IN:1 -> Edge Detector:1
+  IN:1 -> Edge Detector:1
+  IN:1 -> Logical Operator2:2
+  clock:1 -> Relational Operator:1
+  clock:1 -> Sample and Hold:1
+  clock:1 -> Sample and Hold:1
+  clock:1 -> Relational Operator:1
+  Sum:1 -> Relational Operator:2
+  DELAY:1 -> Sum:2
+  Relational Operator:1 -> Logical Operator2:1
+  Sample and Hold:1 -> Sum:1
+  Edge Detector:1 -> Sample and Hold:2
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay2/Model/ON Delay/Edge Detector
+  [Inport] In ref=spsEdgeDetectorLib/Edge Detector/In
+  [SubSystem] Model MaskType=; ref=spsEdgeDetectorModel/Continuous
+  [Outport] Out ref=spsEdgeDetectorLib/Edge Detector/Out
+  In:1 -> Model:1
+  Model:1 -> Out:1
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay2/Model/ON Delay/Edge Detector/Model
+  [Inport] In ref=spsEdgeDetectorModel/Continuous/In
+  [Constant] Constant1 Value=model; ref=spsEdgeDetectorModel/Continuous/Constant1
+  [DataTypeConversion] Data Type Conversion2 OutDataTypeStr=boolean; ref=spsEdgeDetectorModel/Continuous/Data Type Conversion2
+  [Demux] Demux ref=spsEdgeDetectorModel/Continuous/Demux
+  [SubSystem] Internal dirac generator MaskType=; ref=spsEdgeDetectorModel/Continuous/Internal dirac generator
+  [Logic] Logical Operator1 Operator=OR; Inputs=2; ref=spsEdgeDetectorModel/Continuous/Logical Operator1
+  [Memory] Memory ref=spsEdgeDetectorModel/Continuous/Memory
+  [MultiPortSwitch] Multiport Switch ref=spsEdgeDetectorModel/Continuous/Multiport Switch
+  [SubSystem] NEGATIVE Edge MaskType=; ref=spsEdgeDetectorModel/Continuous/NEGATIVE Edge
+  [SubSystem] POSITIVE Edge MaskType=; ref=spsEdgeDetectorModel/Continuous/POSITIVE Edge
+  [Constant] either edge Value=[1 1]; ref=spsEdgeDetectorModel/Continuous/either edge
+  [Constant] neg. edge Value=[0 1]; ref=spsEdgeDetectorModel/Continuous/neg. edge
+  [Constant] pos. edge Value=[1 0]; ref=spsEdgeDetectorModel/Continuous/pos. edge
+  [Outport] Out ref=spsEdgeDetectorModel/Continuous/Out
+  NEGATIVE Edge:1 -> Logical Operator1:2
+  pos. edge:1 -> Multiport Switch:2
+  neg. edge:1 -> Multiport Switch:3
+  Constant1:1 -> Multiport Switch:1
+  Multiport Switch:1 -> Demux:1
+  either edge:1 -> Multiport Switch:4
+  In:1 -> Data Type Conversion2:1
+  Data Type Conversion2:1 -> NEGATIVE Edge:1
+  Data Type Conversion2:1 -> POSITIVE Edge:1
+  Data Type Conversion2:1 -> POSITIVE Edge:1
+  Data Type Conversion2:1 -> NEGATIVE Edge:1
+  Data Type Conversion2:1 -> Memory:1
+  Data Type Conversion2:1 -> Memory:1
+  Data Type Conversion2:1 -> POSITIVE Edge:1
+  Data Type Conversion2:1 -> NEGATIVE Edge:1
+  Demux:2 -> NEGATIVE Edge:3
+  Memory:1 -> NEGATIVE Edge:2
+  Memory:1 -> POSITIVE Edge:2
+  Memory:1 -> POSITIVE Edge:2
+  Memory:1 -> NEGATIVE Edge:2
+  POSITIVE Edge:1 -> Logical Operator1:1
+  Demux:1 -> POSITIVE Edge:3
+  Logical Operator1:1 -> Out:1
+  Logical Operator1:1 -> Internal dirac generator:1
+  Logical Operator1:1 -> Internal dirac generator:1
+  Logical Operator1:1 -> Out:1
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay2/Model/ON Delay/Edge Detector/Model/Internal dirac generator
+  [Inport] In ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/In
+  [Clock] Clock ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/Clock
+  [Constant] Constant Value=eps; ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/Constant
+  [RelationalOperator] Relational Operator Operator=>; ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/Relational Operator
+  [Sum] Sum Inputs=++; ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/Sum
+  [Terminator] Terminator ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/Terminator
+  [SubSystem] Triggered Subsystem MaskType=; ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/Triggered Subsystem
+  Triggered Subsystem:1 -> Sum:1
+  Sum:1 -> Relational Operator:1
+  Constant:1 -> Sum:2
+  Clock:1 -> Relational Operator:2
+  Clock:1 -> Triggered Subsystem:1
+  Clock:1 -> Triggered Subsystem:1
+  Clock:1 -> Relational Operator:2
+  In:1 -> Triggered Subsystem:2
+  Relational Operator:1 -> Terminator:1
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay2/Model/ON Delay/Edge Detector/Model/Internal dirac generator/Triggered Subsystem
+  [Inport] In1 ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/Triggered Subsystem/In1
+  [TriggerPort] Trigger ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/Triggered Subsystem/Trigger
+  [Outport] Out1 ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/Triggered Subsystem/Out1
+  In1:1 -> Out1:1
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay2/Model/ON Delay/Edge Detector/Model/NEGATIVE Edge
+  [Inport] IN ref=spsEdgeDetectorModel/Continuous/NEGATIVE Edge/IN
+  [Inport] IN previous ref=spsEdgeDetectorModel/Continuous/NEGATIVE Edge/IN previous
+  [EnablePort] Enable ref=spsEdgeDetectorModel/Continuous/NEGATIVE Edge/Enable
+  [RelationalOperator] Relational Operator1 Operator=>; ref=spsEdgeDetectorModel/Continuous/NEGATIVE Edge/Relational Operator1
+  [Outport] OUT ref=spsEdgeDetectorModel/Continuous/NEGATIVE Edge/OUT
+  IN:1 -> Relational Operator1:2
+  IN previous:1 -> Relational Operator1:1
+  Relational Operator1:1 -> OUT:1
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay2/Model/ON Delay/Edge Detector/Model/POSITIVE Edge
+  [Inport] IN ref=spsEdgeDetectorModel/Continuous/POSITIVE Edge/IN
+  [Inport] IN previous ref=spsEdgeDetectorModel/Continuous/POSITIVE Edge/IN previous
+  [EnablePort] Enable ref=spsEdgeDetectorModel/Continuous/POSITIVE Edge/Enable
+  [RelationalOperator] Relational Operator1 Operator=<; ref=spsEdgeDetectorModel/Continuous/POSITIVE Edge/Relational Operator1
+  [Outport] OUT ref=spsEdgeDetectorModel/Continuous/POSITIVE Edge/OUT
+  Relational Operator1:1 -> OUT:1
+  IN previous:1 -> Relational Operator1:1
+  IN:1 -> Relational Operator1:2
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay2/Model/ON Delay/Sample and Hold
+  [Inport] In ref=spsSampleandHoldLib/Sample and Hold/In
+  [Inport] S ref=spsSampleandHoldLib/Sample and Hold/S
+  [SubSystem] Model MaskType=; ref=spsSampleAndHoldModel/Continuous
+  [Outport]     ref=spsSampleandHoldLib/Sample and Hold/   
+  In:1 -> Model:1
+  S:1 -> Model:2
+  Model:1 ->    :1
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay2/Model/ON Delay/Sample and Hold/Model
+  [Inport] In ref=spsSampleAndHoldModel/Continuous/In
+  [Inport] S ref=spsSampleAndHoldModel/Continuous/S
+  [DataTypeConversion] Data Type Conversion OutDataTypeStr=boolean; ref=spsSampleAndHoldModel/Continuous/Data Type Conversion
+  [Memory] IC=ic ref=spsSampleAndHoldModel/Continuous/IC=ic
+  [Switch] Switch Criteria=u2 >= Threshold; Threshold=0.5; ref=spsSampleAndHoldModel/Continuous/Switch
+  [Outport] Out ref=spsSampleAndHoldModel/Continuous/Out
+  S:1 -> Data Type Conversion:1
+  In:1 -> Switch:1
+  IC=ic:1 -> Switch:3
+  Switch:1 -> Out:1
+  Switch:1 -> IC=ic:1
+  Switch:1 -> IC=ic:1
+  Switch:1 -> Out:1
+  Data Type Conversion:1 -> Switch:2
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay3
+  [Inport] In ref=spsOnDelayLib/On Delay/In
+  [SubSystem] Model MaskType=; ref=spsOnOffDelayModel/Continuous
+  [Outport] Out ref=spsOnDelayLib/On Delay/Out
+  In:1 -> Model:1
+  Model:1 -> Out:1
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay3/Model
+  [Inport] In ref=spsOnOffDelayModel/Continuous/In
+  [Clock] Clock ref=spsOnOffDelayModel/Continuous/Clock
+  [Constant] Constant Value=1; ref=spsOnOffDelayModel/Continuous/Constant
+  [Constant] Constant1 Value=delay; ref=spsOnOffDelayModel/Continuous/Constant1
+  [Constant] Constant2 Value=DelayType; ref=spsOnOffDelayModel/Continuous/Constant2
+  [DataTypeConversion] Data Type Conversion1 OutDataTypeStr=boolean; ref=spsOnOffDelayModel/Continuous/Data Type Conversion1
+  [Logic] Logical Operator1 Operator=OR; Inputs=2; ref=spsOnOffDelayModel/Continuous/Logical Operator1
+  [Logic] Logical Operator2 Operator=NOT; Inputs=1; ref=spsOnOffDelayModel/Continuous/Logical Operator2
+  [SubSystem] OFF Delay MaskType=; ref=spsOnOffDelayModel/Continuous/OFF Delay
+  [SubSystem] ON Delay MaskType=; ref=spsOnOffDelayModel/Continuous/ON Delay
+  [RelationalOperator] Relational Operator1 Operator===; ref=spsOnOffDelayModel/Continuous/Relational Operator1
+  [Outport] Out ref=spsOnOffDelayModel/Continuous/Out
+  Data Type Conversion1:1 -> ON Delay:1
+  Data Type Conversion1:1 -> OFF Delay:1
+  Data Type Conversion1:1 -> OFF Delay:1
+  Data Type Conversion1:1 -> ON Delay:1
+  Constant:1 -> Relational Operator1:2
+  Relational Operator1:1 -> Logical Operator2:1
+  Relational Operator1:1 -> ON Delay:4
+  Relational Operator1:1 -> ON Delay:4
+  Relational Operator1:1 -> Logical Operator2:1
+  Constant2:1 -> Relational Operator1:1
+  Logical Operator2:1 -> OFF Delay:4
+  OFF Delay:1 -> Logical Operator1:2
+  ON Delay:1 -> Logical Operator1:1
+  Logical Operator1:1 -> Out:1
+  Constant1:1 -> OFF Delay:3
+  Constant1:1 -> ON Delay:3
+  Constant1:1 -> ON Delay:3
+  Constant1:1 -> OFF Delay:3
+  In:1 -> Data Type Conversion1:1
+  Clock:1 -> ON Delay:2
+  Clock:1 -> OFF Delay:2
+  Clock:1 -> OFF Delay:2
+  Clock:1 -> ON Delay:2
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay3/Model/OFF Delay
+  [Inport] IN ref=spsOnOffDelayModel/Continuous/OFF Delay/IN
+  [Inport] clock ref=spsOnOffDelayModel/Continuous/OFF Delay/clock
+  [Inport] DELAY ref=spsOnOffDelayModel/Continuous/OFF Delay/DELAY
+  [EnablePort] Enable ref=spsOnOffDelayModel/Continuous/OFF Delay/Enable
+  [SubSystem] Edge Detector MaskType=Edge Detector; model=Falling; ic=ic; Ts=0; ref=spsEdgeDetectorLib/Edge Detector
+  [Logic] Logical Operator Operator=NOT; Inputs=1; ref=spsOnOffDelayModel/Continuous/OFF Delay/Logical Operator
+  [Logic] Logical Operator1 Operator=AND; Inputs=2; ref=spsOnOffDelayModel/Continuous/OFF Delay/Logical Operator1
+  [Logic] Logical Operator2 Operator=NOT; Inputs=1; ref=spsOnOffDelayModel/Continuous/OFF Delay/Logical Operator2
+  [RelationalOperator] Relational Operator Operator=>=; ref=spsOnOffDelayModel/Continuous/OFF Delay/Relational Operator
+  [SubSystem] Sample and Hold MaskType=Sample and Hold ; ic=-1e99; Ts=0; ref=spsSampleandHoldLib/Sample and Hold
+  [Sum] Sum Inputs=++; ref=spsOnOffDelayModel/Continuous/OFF Delay/Sum
+  [Outport] OUT ref=spsOnOffDelayModel/Continuous/OFF Delay/OUT
+  clock:1 -> Relational Operator:1
+  clock:1 -> Sample and Hold:1
+  clock:1 -> Sample and Hold:1
+  clock:1 -> Relational Operator:1
+  IN:1 -> Logical Operator:1
+  IN:1 -> Edge Detector:1
+  IN:1 -> Edge Detector:1
+  IN:1 -> Logical Operator:1
+  Logical Operator2:1 -> OUT:1
+  Logical Operator1:1 -> Logical Operator2:1
+  DELAY:1 -> Sum:2
+  Sum:1 -> Relational Operator:2
+  Edge Detector:1 -> Sample and Hold:2
+  Sample and Hold:1 -> Sum:1
+  Relational Operator:1 -> Logical Operator1:1
+  Logical Operator:1 -> Logical Operator1:2
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay3/Model/OFF Delay/Edge Detector
+  [Inport] In ref=spsEdgeDetectorLib/Edge Detector/In
+  [SubSystem] Model MaskType=; ref=spsEdgeDetectorModel/Continuous
+  [Outport] Out ref=spsEdgeDetectorLib/Edge Detector/Out
+  In:1 -> Model:1
+  Model:1 -> Out:1
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay3/Model/OFF Delay/Edge Detector/Model
+  [Inport] In ref=spsEdgeDetectorModel/Continuous/In
+  [Constant] Constant1 Value=model; ref=spsEdgeDetectorModel/Continuous/Constant1
+  [DataTypeConversion] Data Type Conversion2 OutDataTypeStr=boolean; ref=spsEdgeDetectorModel/Continuous/Data Type Conversion2
+  [Demux] Demux ref=spsEdgeDetectorModel/Continuous/Demux
+  [SubSystem] Internal dirac generator MaskType=; ref=spsEdgeDetectorModel/Continuous/Internal dirac generator
+  [Logic] Logical Operator1 Operator=OR; Inputs=2; ref=spsEdgeDetectorModel/Continuous/Logical Operator1
+  [Memory] Memory ref=spsEdgeDetectorModel/Continuous/Memory
+  [MultiPortSwitch] Multiport Switch ref=spsEdgeDetectorModel/Continuous/Multiport Switch
+  [SubSystem] NEGATIVE Edge MaskType=; ref=spsEdgeDetectorModel/Continuous/NEGATIVE Edge
+  [SubSystem] POSITIVE Edge MaskType=; ref=spsEdgeDetectorModel/Continuous/POSITIVE Edge
+  [Constant] either edge Value=[1 1]; ref=spsEdgeDetectorModel/Continuous/either edge
+  [Constant] neg. edge Value=[0 1]; ref=spsEdgeDetectorModel/Continuous/neg. edge
+  [Constant] pos. edge Value=[1 0]; ref=spsEdgeDetectorModel/Continuous/pos. edge
+  [Outport] Out ref=spsEdgeDetectorModel/Continuous/Out
+  NEGATIVE Edge:1 -> Logical Operator1:2
+  pos. edge:1 -> Multiport Switch:2
+  neg. edge:1 -> Multiport Switch:3
+  Constant1:1 -> Multiport Switch:1
+  Multiport Switch:1 -> Demux:1
+  either edge:1 -> Multiport Switch:4
+  In:1 -> Data Type Conversion2:1
+  Data Type Conversion2:1 -> NEGATIVE Edge:1
+  Data Type Conversion2:1 -> POSITIVE Edge:1
+  Data Type Conversion2:1 -> POSITIVE Edge:1
+  Data Type Conversion2:1 -> NEGATIVE Edge:1
+  Data Type Conversion2:1 -> Memory:1
+  Data Type Conversion2:1 -> Memory:1
+  Data Type Conversion2:1 -> POSITIVE Edge:1
+  Data Type Conversion2:1 -> NEGATIVE Edge:1
+  Demux:2 -> NEGATIVE Edge:3
+  Memory:1 -> NEGATIVE Edge:2
+  Memory:1 -> POSITIVE Edge:2
+  Memory:1 -> POSITIVE Edge:2
+  Memory:1 -> NEGATIVE Edge:2
+  POSITIVE Edge:1 -> Logical Operator1:1
+  Demux:1 -> POSITIVE Edge:3
+  Logical Operator1:1 -> Out:1
+  Logical Operator1:1 -> Internal dirac generator:1
+  Logical Operator1:1 -> Internal dirac generator:1
+  Logical Operator1:1 -> Out:1
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay3/Model/OFF Delay/Edge Detector/Model/Internal dirac generator
+  [Inport] In ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/In
+  [Clock] Clock ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/Clock
+  [Constant] Constant Value=eps; ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/Constant
+  [RelationalOperator] Relational Operator Operator=>; ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/Relational Operator
+  [Sum] Sum Inputs=++; ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/Sum
+  [Terminator] Terminator ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/Terminator
+  [SubSystem] Triggered Subsystem MaskType=; ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/Triggered Subsystem
+  Triggered Subsystem:1 -> Sum:1
+  Sum:1 -> Relational Operator:1
+  Constant:1 -> Sum:2
+  Clock:1 -> Relational Operator:2
+  Clock:1 -> Triggered Subsystem:1
+  Clock:1 -> Triggered Subsystem:1
+  Clock:1 -> Relational Operator:2
+  In:1 -> Triggered Subsystem:2
+  Relational Operator:1 -> Terminator:1
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay3/Model/OFF Delay/Edge Detector/Model/Internal dirac generator/Triggered Subsystem
+  [Inport] In1 ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/Triggered Subsystem/In1
+  [TriggerPort] Trigger ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/Triggered Subsystem/Trigger
+  [Outport] Out1 ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/Triggered Subsystem/Out1
+  In1:1 -> Out1:1
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay3/Model/OFF Delay/Edge Detector/Model/NEGATIVE Edge
+  [Inport] IN ref=spsEdgeDetectorModel/Continuous/NEGATIVE Edge/IN
+  [Inport] IN previous ref=spsEdgeDetectorModel/Continuous/NEGATIVE Edge/IN previous
+  [EnablePort] Enable ref=spsEdgeDetectorModel/Continuous/NEGATIVE Edge/Enable
+  [RelationalOperator] Relational Operator1 Operator=>; ref=spsEdgeDetectorModel/Continuous/NEGATIVE Edge/Relational Operator1
+  [Outport] OUT ref=spsEdgeDetectorModel/Continuous/NEGATIVE Edge/OUT
+  IN:1 -> Relational Operator1:2
+  IN previous:1 -> Relational Operator1:1
+  Relational Operator1:1 -> OUT:1
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay3/Model/OFF Delay/Edge Detector/Model/POSITIVE Edge
+  [Inport] IN ref=spsEdgeDetectorModel/Continuous/POSITIVE Edge/IN
+  [Inport] IN previous ref=spsEdgeDetectorModel/Continuous/POSITIVE Edge/IN previous
+  [EnablePort] Enable ref=spsEdgeDetectorModel/Continuous/POSITIVE Edge/Enable
+  [RelationalOperator] Relational Operator1 Operator=<; ref=spsEdgeDetectorModel/Continuous/POSITIVE Edge/Relational Operator1
+  [Outport] OUT ref=spsEdgeDetectorModel/Continuous/POSITIVE Edge/OUT
+  Relational Operator1:1 -> OUT:1
+  IN previous:1 -> Relational Operator1:1
+  IN:1 -> Relational Operator1:2
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay3/Model/OFF Delay/Sample and Hold
+  [Inport] In ref=spsSampleandHoldLib/Sample and Hold/In
+  [Inport] S ref=spsSampleandHoldLib/Sample and Hold/S
+  [SubSystem] Model MaskType=; ref=spsSampleAndHoldModel/Continuous
+  [Outport]     ref=spsSampleandHoldLib/Sample and Hold/   
+  In:1 -> Model:1
+  S:1 -> Model:2
+  Model:1 ->    :1
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay3/Model/OFF Delay/Sample and Hold/Model
+  [Inport] In ref=spsSampleAndHoldModel/Continuous/In
+  [Inport] S ref=spsSampleAndHoldModel/Continuous/S
+  [DataTypeConversion] Data Type Conversion OutDataTypeStr=boolean; ref=spsSampleAndHoldModel/Continuous/Data Type Conversion
+  [Memory] IC=ic ref=spsSampleAndHoldModel/Continuous/IC=ic
+  [Switch] Switch Criteria=u2 >= Threshold; Threshold=0.5; ref=spsSampleAndHoldModel/Continuous/Switch
+  [Outport] Out ref=spsSampleAndHoldModel/Continuous/Out
+  S:1 -> Data Type Conversion:1
+  In:1 -> Switch:1
+  IC=ic:1 -> Switch:3
+  Switch:1 -> Out:1
+  Switch:1 -> IC=ic:1
+  Switch:1 -> IC=ic:1
+  Switch:1 -> Out:1
+  Data Type Conversion:1 -> Switch:2
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay3/Model/ON Delay
+  [Inport] IN ref=spsOnOffDelayModel/Continuous/ON Delay/IN
+  [Inport] clock ref=spsOnOffDelayModel/Continuous/ON Delay/clock
+  [Inport] DELAY ref=spsOnOffDelayModel/Continuous/ON Delay/DELAY
+  [EnablePort] Enable ref=spsOnOffDelayModel/Continuous/ON Delay/Enable
+  [SubSystem] Edge Detector MaskType=Edge Detector; model=Rising; ic=ic; Ts=0; ref=spsEdgeDetectorLib/Edge Detector
+  [Logic] Logical Operator2 Operator=AND; Inputs=2; ref=spsOnOffDelayModel/Continuous/ON Delay/Logical Operator2
+  [RelationalOperator] Relational Operator Operator=>=; ref=spsOnOffDelayModel/Continuous/ON Delay/Relational Operator
+  [SubSystem] Sample and Hold MaskType=Sample and Hold ; ic=-1e99; Ts=0; ref=spsSampleandHoldLib/Sample and Hold
+  [Sum] Sum Inputs=++; ref=spsOnOffDelayModel/Continuous/ON Delay/Sum
+  [Outport] OUT ref=spsOnOffDelayModel/Continuous/ON Delay/OUT
+  Logical Operator2:1 -> OUT:1
+  IN:1 -> Logical Operator2:2
+  IN:1 -> Edge Detector:1
+  IN:1 -> Edge Detector:1
+  IN:1 -> Logical Operator2:2
+  clock:1 -> Relational Operator:1
+  clock:1 -> Sample and Hold:1
+  clock:1 -> Sample and Hold:1
+  clock:1 -> Relational Operator:1
+  Sum:1 -> Relational Operator:2
+  DELAY:1 -> Sum:2
+  Relational Operator:1 -> Logical Operator2:1
+  Sample and Hold:1 -> Sum:1
+  Edge Detector:1 -> Sample and Hold:2
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay3/Model/ON Delay/Edge Detector
+  [Inport] In ref=spsEdgeDetectorLib/Edge Detector/In
+  [SubSystem] Model MaskType=; ref=spsEdgeDetectorModel/Continuous
+  [Outport] Out ref=spsEdgeDetectorLib/Edge Detector/Out
+  In:1 -> Model:1
+  Model:1 -> Out:1
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay3/Model/ON Delay/Edge Detector/Model
+  [Inport] In ref=spsEdgeDetectorModel/Continuous/In
+  [Constant] Constant1 Value=model; ref=spsEdgeDetectorModel/Continuous/Constant1
+  [DataTypeConversion] Data Type Conversion2 OutDataTypeStr=boolean; ref=spsEdgeDetectorModel/Continuous/Data Type Conversion2
+  [Demux] Demux ref=spsEdgeDetectorModel/Continuous/Demux
+  [SubSystem] Internal dirac generator MaskType=; ref=spsEdgeDetectorModel/Continuous/Internal dirac generator
+  [Logic] Logical Operator1 Operator=OR; Inputs=2; ref=spsEdgeDetectorModel/Continuous/Logical Operator1
+  [Memory] Memory ref=spsEdgeDetectorModel/Continuous/Memory
+  [MultiPortSwitch] Multiport Switch ref=spsEdgeDetectorModel/Continuous/Multiport Switch
+  [SubSystem] NEGATIVE Edge MaskType=; ref=spsEdgeDetectorModel/Continuous/NEGATIVE Edge
+  [SubSystem] POSITIVE Edge MaskType=; ref=spsEdgeDetectorModel/Continuous/POSITIVE Edge
+  [Constant] either edge Value=[1 1]; ref=spsEdgeDetectorModel/Continuous/either edge
+  [Constant] neg. edge Value=[0 1]; ref=spsEdgeDetectorModel/Continuous/neg. edge
+  [Constant] pos. edge Value=[1 0]; ref=spsEdgeDetectorModel/Continuous/pos. edge
+  [Outport] Out ref=spsEdgeDetectorModel/Continuous/Out
+  NEGATIVE Edge:1 -> Logical Operator1:2
+  pos. edge:1 -> Multiport Switch:2
+  neg. edge:1 -> Multiport Switch:3
+  Constant1:1 -> Multiport Switch:1
+  Multiport Switch:1 -> Demux:1
+  either edge:1 -> Multiport Switch:4
+  In:1 -> Data Type Conversion2:1
+  Data Type Conversion2:1 -> NEGATIVE Edge:1
+  Data Type Conversion2:1 -> POSITIVE Edge:1
+  Data Type Conversion2:1 -> POSITIVE Edge:1
+  Data Type Conversion2:1 -> NEGATIVE Edge:1
+  Data Type Conversion2:1 -> Memory:1
+  Data Type Conversion2:1 -> Memory:1
+  Data Type Conversion2:1 -> POSITIVE Edge:1
+  Data Type Conversion2:1 -> NEGATIVE Edge:1
+  Demux:2 -> NEGATIVE Edge:3
+  Memory:1 -> NEGATIVE Edge:2
+  Memory:1 -> POSITIVE Edge:2
+  Memory:1 -> POSITIVE Edge:2
+  Memory:1 -> NEGATIVE Edge:2
+  POSITIVE Edge:1 -> Logical Operator1:1
+  Demux:1 -> POSITIVE Edge:3
+  Logical Operator1:1 -> Out:1
+  Logical Operator1:1 -> Internal dirac generator:1
+  Logical Operator1:1 -> Internal dirac generator:1
+  Logical Operator1:1 -> Out:1
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay3/Model/ON Delay/Edge Detector/Model/Internal dirac generator
+  [Inport] In ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/In
+  [Clock] Clock ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/Clock
+  [Constant] Constant Value=eps; ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/Constant
+  [RelationalOperator] Relational Operator Operator=>; ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/Relational Operator
+  [Sum] Sum Inputs=++; ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/Sum
+  [Terminator] Terminator ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/Terminator
+  [SubSystem] Triggered Subsystem MaskType=; ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/Triggered Subsystem
+  Triggered Subsystem:1 -> Sum:1
+  Sum:1 -> Relational Operator:1
+  Constant:1 -> Sum:2
+  Clock:1 -> Relational Operator:2
+  Clock:1 -> Triggered Subsystem:1
+  Clock:1 -> Triggered Subsystem:1
+  Clock:1 -> Relational Operator:2
+  In:1 -> Triggered Subsystem:2
+  Relational Operator:1 -> Terminator:1
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay3/Model/ON Delay/Edge Detector/Model/Internal dirac generator/Triggered Subsystem
+  [Inport] In1 ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/Triggered Subsystem/In1
+  [TriggerPort] Trigger ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/Triggered Subsystem/Trigger
+  [Outport] Out1 ref=spsEdgeDetectorModel/Continuous/Internal dirac generator/Triggered Subsystem/Out1
+  In1:1 -> Out1:1
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay3/Model/ON Delay/Edge Detector/Model/NEGATIVE Edge
+  [Inport] IN ref=spsEdgeDetectorModel/Continuous/NEGATIVE Edge/IN
+  [Inport] IN previous ref=spsEdgeDetectorModel/Continuous/NEGATIVE Edge/IN previous
+  [EnablePort] Enable ref=spsEdgeDetectorModel/Continuous/NEGATIVE Edge/Enable
+  [RelationalOperator] Relational Operator1 Operator=>; ref=spsEdgeDetectorModel/Continuous/NEGATIVE Edge/Relational Operator1
+  [Outport] OUT ref=spsEdgeDetectorModel/Continuous/NEGATIVE Edge/OUT
+  IN:1 -> Relational Operator1:2
+  IN previous:1 -> Relational Operator1:1
+  Relational Operator1:1 -> OUT:1
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay3/Model/ON Delay/Edge Detector/Model/POSITIVE Edge
+  [Inport] IN ref=spsEdgeDetectorModel/Continuous/POSITIVE Edge/IN
+  [Inport] IN previous ref=spsEdgeDetectorModel/Continuous/POSITIVE Edge/IN previous
+  [EnablePort] Enable ref=spsEdgeDetectorModel/Continuous/POSITIVE Edge/Enable
+  [RelationalOperator] Relational Operator1 Operator=<; ref=spsEdgeDetectorModel/Continuous/POSITIVE Edge/Relational Operator1
+  [Outport] OUT ref=spsEdgeDetectorModel/Continuous/POSITIVE Edge/OUT
+  Relational Operator1:1 -> OUT:1
+  IN previous:1 -> Relational Operator1:1
+  IN:1 -> Relational Operator1:2
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay3/Model/ON Delay/Sample and Hold
+  [Inport] In ref=spsSampleandHoldLib/Sample and Hold/In
+  [Inport] S ref=spsSampleandHoldLib/Sample and Hold/S
+  [SubSystem] Model MaskType=; ref=spsSampleAndHoldModel/Continuous
+  [Outport]     ref=spsSampleandHoldLib/Sample and Hold/   
+  In:1 -> Model:1
+  S:1 -> Model:2
+  Model:1 ->    :1
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/On Delay3/Model/ON Delay/Sample and Hold/Model
+  [Inport] In ref=spsSampleAndHoldModel/Continuous/In
+  [Inport] S ref=spsSampleAndHoldModel/Continuous/S
+  [DataTypeConversion] Data Type Conversion OutDataTypeStr=boolean; ref=spsSampleAndHoldModel/Continuous/Data Type Conversion
+  [Memory] IC=ic ref=spsSampleAndHoldModel/Continuous/IC=ic
+  [Switch] Switch Criteria=u2 >= Threshold; Threshold=0.5; ref=spsSampleAndHoldModel/Continuous/Switch
+  [Outport] Out ref=spsSampleAndHoldModel/Continuous/Out
+  S:1 -> Data Type Conversion:1
+  In:1 -> Switch:1
+  IC=ic:1 -> Switch:3
+  Switch:1 -> Out:1
+  Switch:1 -> IC=ic:1
+  Switch:1 -> IC=ic:1
+  Switch:1 -> Out:1
+  Data Type Conversion:1 -> Switch:2
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/PWM Generator (DC-DC)10
+  [Inport] D ref=spsPWMGeneratorDCDCLib/PWM Generator (DC-DC)/D
+  [SubSystem] Compare To Zero MaskType=Compare To Zero; relop=~=; OutDataTypeStr=boolean; ZeroCross=on; ref=simulink/Logic and Bit Operations/Compare To Zero
+  [DataTypeConversion] Data Type Conversion OutDataTypeStr=double; ref=spsPWMGeneratorDCDCLib/PWM Generator (DC-DC)/Data Type Conversion
+  [Fcn] Fcn Expr=0.5 * ( u(1)+1 ); ref=spsPWMGeneratorDCDCLib/PWM Generator (DC-DC)/Fcn
+  [Logic] Logical Operator Operator=AND; Inputs=2; ref=spsPWMGeneratorDCDCLib/PWM Generator (DC-DC)/Logical Operator
+  [RelationalOperator] Relational Operator Operator=>=; ref=spsPWMGeneratorDCDCLib/PWM Generator (DC-DC)/Relational Operator
+  [SubSystem] Sawtooth Generator MaskType=Sawtooth Generator; Freq=Fsw; Phase=0; Ts=Ts; ref=spsSawtoothGeneratorLib/Sawtooth Generator
+  [Outport] P ref=spsPWMGeneratorDCDCLib/PWM Generator (DC-DC)/P
+  D:1 -> Compare To Zero:1
+  D:1 -> Relational Operator:1
+  D:1 -> Relational Operator:1
+  D:1 -> Compare To Zero:1
+  Relational Operator:1 -> Logical Operator:2
+  Compare To Zero:1 -> Logical Operator:1
+  Logical Operator:1 -> Data Type Conversion:1
+  Sawtooth Generator:1 -> Fcn:1
+  Data Type Conversion:1 -> P:1
+  Fcn:1 -> Relational Operator:2
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/PWM Generator (DC-DC)10/Compare To Zero
+  [Inport] u ref=simulink/Logic and Bit Operations/Compare To Zero/u
+  [RelationalOperator] Compare Operator=~=; ref=simulink/Logic and Bit Operations/Compare To Zero/Compare
+  [Constant] Constant Value=0; ref=simulink/Logic and Bit Operations/Compare To Zero/Constant
+  [Outport] y ref=simulink/Logic and Bit Operations/Compare To Zero/y
+  Compare:1 -> y:1
+  u:1 -> Compare:1
+  Constant:1 -> Compare:2
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/PWM Generator (DC-DC)10/Sawtooth Generator
+  [SubSystem] Model MaskType=; ref=spsSawtoothGeneratorModel/Discrete
+  [Outport] Out ref=spsSawtoothGeneratorLib/Sawtooth Generator/Out
+  Model:1 -> Out:1
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/PWM Generator (DC-DC)10/Sawtooth Generator/Model
+  [Gain] 1\ib1 Gain=sps.Freq; ref=spsSawtoothGeneratorModel/Discrete/1\ib1
+  [Sum] Add1 Inputs=++; ref=spsSawtoothGeneratorModel/Discrete/Add1
+  [Constant] Constant2 Value=sps.Period; ref=spsSawtoothGeneratorModel/Discrete/Constant2
+  [Constant] Constant3 Value=sps.Delay; ref=spsSawtoothGeneratorModel/Discrete/Constant3
+  [DigitalClock] Digital Clock ref=spsSawtoothGeneratorModel/Discrete/Digital Clock
+  [Fcn] Fcn Expr=2*u(1)-1; ref=spsSawtoothGeneratorModel/Discrete/Fcn
+  [Math] Math Function Operator=rem; ref=spsSawtoothGeneratorModel/Discrete/Math Function
+  [Outport] Out ref=spsSawtoothGeneratorModel/Discrete/Out
+  Digital Clock:1 -> Add1:1
+  1\ib1:1 -> Fcn:1
+  Fcn:1 -> Out:1
+  Add1:1 -> Math Function:1
+  Constant3:1 -> Add1:2
+  Constant2:1 -> Math Function:2
+  Math Function:1 -> 1\ib1:1
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/PWM Generator (DC-DC)11
+  [Inport] D ref=spsPWMGeneratorDCDCLib/PWM Generator (DC-DC)/D
+  [SubSystem] Compare To Zero MaskType=Compare To Zero; relop=~=; OutDataTypeStr=boolean; ZeroCross=on; ref=simulink/Logic and Bit Operations/Compare To Zero
+  [DataTypeConversion] Data Type Conversion OutDataTypeStr=double; ref=spsPWMGeneratorDCDCLib/PWM Generator (DC-DC)/Data Type Conversion
+  [Fcn] Fcn Expr=0.5 * ( u(1)+1 ); ref=spsPWMGeneratorDCDCLib/PWM Generator (DC-DC)/Fcn
+  [Logic] Logical Operator Operator=AND; Inputs=2; ref=spsPWMGeneratorDCDCLib/PWM Generator (DC-DC)/Logical Operator
+  [RelationalOperator] Relational Operator Operator=>=; ref=spsPWMGeneratorDCDCLib/PWM Generator (DC-DC)/Relational Operator
+  [SubSystem] Sawtooth Generator MaskType=Sawtooth Generator; Freq=Fsw; Phase=0; Ts=Ts; ref=spsSawtoothGeneratorLib/Sawtooth Generator
+  [Outport] P ref=spsPWMGeneratorDCDCLib/PWM Generator (DC-DC)/P
+  D:1 -> Compare To Zero:1
+  D:1 -> Relational Operator:1
+  D:1 -> Relational Operator:1
+  D:1 -> Compare To Zero:1
+  Relational Operator:1 -> Logical Operator:2
+  Compare To Zero:1 -> Logical Operator:1
+  Logical Operator:1 -> Data Type Conversion:1
+  Sawtooth Generator:1 -> Fcn:1
+  Data Type Conversion:1 -> P:1
+  Fcn:1 -> Relational Operator:2
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/PWM Generator (DC-DC)11/Compare To Zero
+  [Inport] u ref=simulink/Logic and Bit Operations/Compare To Zero/u
+  [RelationalOperator] Compare Operator=~=; ref=simulink/Logic and Bit Operations/Compare To Zero/Compare
+  [Constant] Constant Value=0; ref=simulink/Logic and Bit Operations/Compare To Zero/Constant
+  [Outport] y ref=simulink/Logic and Bit Operations/Compare To Zero/y
+  Compare:1 -> y:1
+  u:1 -> Compare:1
+  Constant:1 -> Compare:2
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/PWM Generator (DC-DC)11/Sawtooth Generator
+  [SubSystem] Model MaskType=; ref=spsSawtoothGeneratorModel/Discrete
+  [Outport] Out ref=spsSawtoothGeneratorLib/Sawtooth Generator/Out
+  Model:1 -> Out:1
+
+-- inverter_scenario1_parametric5_etiquetli/Subsystem/PWM Generator (DC-DC)11/Sawtooth Generator/Model
+  [Gain] 1\ib1 Gain=sps.Freq; ref=spsSawtoothGeneratorModel/Discrete/1\ib1
+  [Sum] Add1 Inputs=++; ref=spsSawtoothGeneratorModel/Discrete/Add1
+  [Constant] Constant2 Value=sps.Period; ref=spsSawtoothGeneratorModel/Discrete/Constant2
+  [Constant] Constant3 Value=sps.Delay; ref=spsSawtoothGeneratorModel/Discrete/Constant3
+  [DigitalClock] Digital Clock ref=spsSawtoothGeneratorModel/Discrete/Digital Clock
+  [Fcn] Fcn Expr=2*u(1)-1; ref=spsSawtoothGeneratorModel/Discrete/Fcn
+  [Math] Math Function Operator=rem; ref=spsSawtoothGeneratorModel/Discrete/Math Function
+  [Outport] Out ref=spsSawtoothGeneratorModel/Discrete/Out
+  Digital Clock:1 -> Add1:1
+  1\ib1:1 -> Fcn:1
+  Fcn:1 -> Out:1
+  Add1:1 -> Math Function:1
+  Constant3:1 -> Add1:2
+  Constant2:1 -> Math Function:2
+  Math Function:1 -> 1\ib1:1
+
+== PWM çıkışlarından aşağı akış
+Out1 -> inverter_scenario1_parametric5_etiquetli/Goto5 tag=g11 vis=global
+Out2 -> inverter_scenario1_parametric5_etiquetli/Goto6 tag=g21 vis=global
+Out3 -> inverter_scenario1_parametric5_etiquetli/Goto7 tag=g31 vis=global
+Out4 -> inverter_scenario1_parametric5_etiquetli/Goto9 tag=g41 vis=global
+Out5 -> inverter_scenario1_parametric5_etiquetli/Bus Creator9 
+Out6 -> inverter_scenario1_parametric5_etiquetli/Bus Creator9 
+
+== Goto / From etiketleri (tüm derinlik)
+Goto i_ac1  vis=global   inverter_scenario1_parametric5_etiquetli/AC Current Sensor1/Goto
+Goto i_ac2  vis=global   inverter_scenario1_parametric5_etiquetli/AC Current Sensor2/Goto
+Goto v_ac1  vis=global   inverter_scenario1_parametric5_etiquetli/AC Voltage Sensor1/Goto
+Goto v_inv1 vis=global   inverter_scenario1_parametric5_etiquetli/AC Voltage Sensor2/Goto
+Goto v_ac2  vis=global   inverter_scenario1_parametric5_etiquetli/AC Voltage Sensor3/Goto
+Goto v_inv2 vis=global   inverter_scenario1_parametric5_etiquetli/AC Voltage Sensor4/Goto
+Goto G11    vis=global   inverter_scenario1_parametric5_etiquetli/G1
+Goto G41    vis=global   inverter_scenario1_parametric5_etiquetli/G2
+Goto G31    vis=global   inverter_scenario1_parametric5_etiquetli/G3
+Goto G21    vis=global   inverter_scenario1_parametric5_etiquetli/G4
+Goto G12    vis=global   inverter_scenario1_parametric5_etiquetli/G5
+Goto G42    vis=global   inverter_scenario1_parametric5_etiquetli/G6
+Goto G32    vis=global   inverter_scenario1_parametric5_etiquetli/G7
+Goto G22    vis=global   inverter_scenario1_parametric5_etiquetli/G8
+Goto i_dc1  vis=global   inverter_scenario1_parametric5_etiquetli/Goto
+Goto v_dc1  vis=global   inverter_scenario1_parametric5_etiquetli/Goto1
+Goto i_dc2  vis=global   inverter_scenario1_parametric5_etiquetli/Goto2
+Goto v_dc2  vis=global   inverter_scenario1_parametric5_etiquetli/Goto3
+Goto g11    vis=global   inverter_scenario1_parametric5_etiquetli/Goto5
+Goto g21    vis=global   inverter_scenario1_parametric5_etiquetli/Goto6
+Goto g31    vis=global   inverter_scenario1_parametric5_etiquetli/Goto7
+Goto g41    vis=global   inverter_scenario1_parametric5_etiquetli/Goto9
+From i_dc1  inverter_scenario1_parametric5_etiquetli/From10
+From i_ac1  inverter_scenario1_parametric5_etiquetli/From13
+From v_inv1 inverter_scenario1_parametric5_etiquetli/From14
+From i_dc2  inverter_scenario1_parametric5_etiquetli/From16
+From i_ac2  inverter_scenario1_parametric5_etiquetli/From19
+From i_ac1  inverter_scenario1_parametric5_etiquetli/From2
+From v_inv2 inverter_scenario1_parametric5_etiquetli/From20
+From i_ac2  inverter_scenario1_parametric5_etiquetli/From21
+From i_ac2  inverter_scenario1_parametric5_etiquetli/From22
+From v_ac2  inverter_scenario1_parametric5_etiquetli/From24
+From v_ac2  inverter_scenario1_parametric5_etiquetli/From25
+From v_dc2  inverter_scenario1_parametric5_etiquetli/From26
+From i_dc2  inverter_scenario1_parametric5_etiquetli/From27
+From i_ac2  inverter_scenario1_parametric5_etiquetli/From28
+From i_ac1  inverter_scenario1_parametric5_etiquetli/From29
+From v_ac1  inverter_scenario1_parametric5_etiquetli/From30
+From v_ac2  inverter_scenario1_parametric5_etiquetli/From31
+From v_dc2  inverter_scenario1_parametric5_etiquetli/From32
+From v_ac1  inverter_scenario1_parametric5_etiquetli/From4
+From v_dc1  inverter_scenario1_parametric5_etiquetli/From5
+From i_dc1  inverter_scenario1_parametric5_etiquetli/From6
+From i_ac1  inverter_scenario1_parametric5_etiquetli/From7
+From v_ac1  inverter_scenario1_parametric5_etiquetli/From8
+From v_dc1  inverter_scenario1_parametric5_etiquetli/From9
+From g32    inverter_scenario1_parametric5_etiquetli/Gate Drive1/DeadTime_g3
+From g22    inverter_scenario1_parametric5_etiquetli/Gate Drive2/DeadTime_g2
+From g12    inverter_scenario1_parametric5_etiquetli/Gate Drive3/DeadTime_g1
+From g42    inverter_scenario1_parametric5_etiquetli/Gate Drive4/DeadTime_g4
+From g31    inverter_scenario1_parametric5_etiquetli/Gate Drive5/DeadTime_g3
+From g21    inverter_scenario1_parametric5_etiquetli/Gate Drive6/DeadTime_g2
+From g11    inverter_scenario1_parametric5_etiquetli/Gate Drive7/DeadTime_g1
+From g41    inverter_scenario1_parametric5_etiquetli/Gate Drive8/DeadTime_g4
+
+== Gate Drive alt sistemleri: hangi IGBT'yi sürüyor
+inverter_scenario1_parametric5_etiquetli/Gate Drive1  From=[g32]  -> inverter_scenario1_parametric5_etiquetli/Diode10 | inverter_scenario1_parametric5_etiquetli/Diode11 | inverter_scenario1_parametric5_etiquetli/G7 | inverter_scenario1_parametric5_etiquetli/Gate Drive4 | inverter_scenario1_parametric5_etiquetli/N-Channel IGBT6 | inverter_scenario1_parametric5_etiquetli/N-Channel IGBT7
+    fiziksel uç 1 -> inverter_scenario1_parametric5_etiquetli/Gate Drive1
+    fiziksel uç 2 -> inverter_scenario1_parametric5_etiquetli/N-Channel IGBT7 | inverter_scenario1_parametric5_etiquetli/Gate Drive1
+inverter_scenario1_parametric5_etiquetli/Gate Drive2  From=[g22]  -> inverter_scenario1_parametric5_etiquetli/Capacitor4 | inverter_scenario1_parametric5_etiquetli/Diode1 | inverter_scenario1_parametric5_etiquetli/Diode4 | inverter_scenario1_parametric5_etiquetli/Electrical Reference2 | inverter_scenario1_parametric5_etiquetli/G8 | inverter_scenario1_parametric5_etiquetli/N-Channel IGBT5 | inverter_scenario1_parametric5_etiquetli/Resistor5 | inverter_scenario1_parametric5_etiquetli/Solver Configuration2 | inverter_scenario1_parametric5_etiquetli/Voltage Sensor1 | inverter_scenario1_parametric5_etiquetli/Voltage Source1
+    fiziksel uç 1 -> inverter_scenario1_parametric5_etiquetli/N-Channel IGBT5 | inverter_scenario1_parametric5_etiquetli/Gate Drive2
+    fiziksel uç 2 -> inverter_scenario1_parametric5_etiquetli/Gate Drive2
+inverter_scenario1_parametric5_etiquetli/Gate Drive3  From=[g12]  -> inverter_scenario1_parametric5_etiquetli/Diode1 | inverter_scenario1_parametric5_etiquetli/Diode12 | inverter_scenario1_parametric5_etiquetli/G5 | inverter_scenario1_parametric5_etiquetli/N-Channel IGBT4 | inverter_scenario1_parametric5_etiquetli/N-Channel IGBT5 | inverter_scenario1_parametric5_etiquetli/Resistor3
+    fiziksel uç 1 -> inverter_scenario1_parametric5_etiquetli/N-Channel IGBT4 | inverter_scenario1_parametric5_etiquetli/Gate Drive3
+    fiziksel uç 2 -> inverter_scenario1_parametric5_etiquetli/Gate Drive3
+inverter_scenario1_parametric5_etiquetli/Gate Drive4  From=[g42]  -> inverter_scenario1_parametric5_etiquetli/Diode10 | inverter_scenario1_parametric5_etiquetli/Diode11 | inverter_scenario1_parametric5_etiquetli/G6 | inverter_scenario1_parametric5_etiquetli/Gate Drive1 | inverter_scenario1_parametric5_etiquetli/N-Channel IGBT6 | inverter_scenario1_parametric5_etiquetli/N-Channel IGBT7
+    fiziksel uç 1 -> inverter_scenario1_parametric5_etiquetli/N-Channel IGBT6 | inverter_scenario1_parametric5_etiquetli/Gate Drive4
+    fiziksel uç 2 -> 
+inverter_scenario1_parametric5_etiquetli/Gate Drive5  From=[g31]  -> inverter_scenario1_parametric5_etiquetli/Diode6 | inverter_scenario1_parametric5_etiquetli/Diode7 | inverter_scenario1_parametric5_etiquetli/G3 | inverter_scenario1_parametric5_etiquetli/Gate Drive8 | inverter_scenario1_parametric5_etiquetli/N-Channel IGBT2 | inverter_scenario1_parametric5_etiquetli/N-Channel IGBT3
+    fiziksel uç 1 -> inverter_scenario1_parametric5_etiquetli/Gate Drive5
+    fiziksel uç 2 -> inverter_scenario1_parametric5_etiquetli/N-Channel IGBT3 | inverter_scenario1_parametric5_etiquetli/Gate Drive5
+inverter_scenario1_parametric5_etiquetli/Gate Drive6  From=[g21]  -> inverter_scenario1_parametric5_etiquetli/Capacitor1 | inverter_scenario1_parametric5_etiquetli/Diode2 | inverter_scenario1_parametric5_etiquetli/Diode3 | inverter_scenario1_parametric5_etiquetli/Electrical Reference1 | inverter_scenario1_parametric5_etiquetli/G4 | inverter_scenario1_parametric5_etiquetli/N-Channel IGBT1 | inverter_scenario1_parametric5_etiquetli/Resistor2 | inverter_scenario1_parametric5_etiquetli/Solver Configuration1 | inverter_scenario1_parametric5_etiquetli/Voltage Sensor | inverter_scenario1_parametric5_etiquetli/Voltage Source
+    fiziksel uç 1 -> inverter_scenario1_parametric5_etiquetli/N-Channel IGBT1 | inverter_scenario1_parametric5_etiquetli/Gate Drive6
+    fiziksel uç 2 -> inverter_scenario1_parametric5_etiquetli/Gate Drive6
+inverter_scenario1_parametric5_etiquetli/Gate Drive7  From=[g11]  -> inverter_scenario1_parametric5_etiquetli/Diode2 | inverter_scenario1_parametric5_etiquetli/Diode9 | inverter_scenario1_parametric5_etiquetli/G1 | inverter_scenario1_parametric5_etiquetli/N-Channel IGBT | inverter_scenario1_parametric5_etiquetli/N-Channel IGBT1 | inverter_scenario1_parametric5_etiquetli/Resistor
+    fiziksel uç 1 -> inverter_scenario1_parametric5_etiquetli/N-Channel IGBT | inverter_scenario1_parametric5_etiquetli/Gate Drive7
+    fiziksel uç 2 -> inverter_scenario1_parametric5_etiquetli/Gate Drive7
+inverter_scenario1_parametric5_etiquetli/Gate Drive8  From=[g41]  -> inverter_scenario1_parametric5_etiquetli/Diode6 | inverter_scenario1_parametric5_etiquetli/Diode7 | inverter_scenario1_parametric5_etiquetli/G2 | inverter_scenario1_parametric5_etiquetli/Gate Drive5 | inverter_scenario1_parametric5_etiquetli/N-Channel IGBT2 | inverter_scenario1_parametric5_etiquetli/N-Channel IGBT3
+    fiziksel uç 1 -> inverter_scenario1_parametric5_etiquetli/N-Channel IGBT2 | inverter_scenario1_parametric5_etiquetli/Gate Drive8
+    fiziksel uç 2 -> 
