@@ -1,0 +1,12 @@
+blok,degisken,i_max_son_periyot_A,i_min_son_periyot_A,i_rms_son_periyot_A,abs_i_max_kayit_A
+DC Blocking Diode,"i",142466.664684378,-0.00782608793372447,200.790815308307,142466.664684378
+Diode2,"i",0.501219590631763,-4620.13716199247,12.8128514563328,4620.13716199247
+Diode3,"i",0.34303412397967,-137133.943132766,173.06872088292,137133.943132766
+Diode5,"i",0.336302693029973,-137133.943132719,173.068720882914,137133.943132719
+Diode6,"i",134.415501716122,-168.776564839119,9.33480604439504,168.776564839119
+Diode7,"i",168.776529201165,-134.415537003565,3.57003497252298,168.776529201165
+Diode9,"i",5.31578518628919,-4620.1371619962,12.8494237876621,4620.1371619962
+N-Channel IGBT,"C,E,G,H,Qj,SimulationStatistics,Tj,iCE,iG,lastTurnOffLoss,lastTurnOnLoss,power_dissipated,thermal_port,vCE,vGE",NaN,NaN,NaN,NaN
+N-Channel IGBT1,"C,E,G,H,Qj,SimulationStatistics,Tj,iCE,iG,lastTurnOffLoss,lastTurnOnLoss,power_dissipated,thermal_port,vCE,vGE",NaN,NaN,NaN,NaN
+N-Channel IGBT2,"C,E,G,H,Qj,SimulationStatistics,Tj,iCE,iG,lastTurnOffLoss,lastTurnOnLoss,power_dissipated,thermal_port,vCE,vGE",NaN,NaN,NaN,NaN
+N-Channel IGBT3,"C,E,G,H,Qj,SimulationStatistics,Tj,iCE,iG,lastTurnOffLoss,lastTurnOnLoss,power_dissipated,thermal_port,vCE,vGE",NaN,NaN,NaN,NaN

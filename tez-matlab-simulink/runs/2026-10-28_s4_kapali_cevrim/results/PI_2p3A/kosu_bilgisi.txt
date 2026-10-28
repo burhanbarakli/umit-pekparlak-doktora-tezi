@@ -1,0 +1,11 @@
+model: inverter_senaryo4_kc
+matlab: 23.2.0.2515942 (R2023b) Update 7
+baslangic: 28-Oct-2026 14:03:01
+kip: PI
+kazanc [Kp Ki Kaw Kr]: [0.03 11.3097 376.991 0]
+I_ref [A RMS]: [2.3 2.3]
+t_step: 1000
+StopTime: 0.06
+mod: accelerator
+duvar_suresi_s: 1482.3
+simscape_kayit_penceresi_s: 0.016201 - 0.060000

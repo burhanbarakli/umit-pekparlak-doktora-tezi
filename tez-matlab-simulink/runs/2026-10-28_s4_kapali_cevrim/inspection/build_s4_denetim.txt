@@ -1,0 +1,61 @@
+build_s4_closed_loop_20261028 — 28-Oct-2026 10:17:47 — 23.2.0.2515942 (R2023b) Update 7
+kaynak: C:\CODES\ümit abi\tez-matlab-simulink\runs\2026-10-27_diyot_esleme\model\inverter_senaryo3_d08.slx (SHA-256 2de94a8b0b907355a30b4b8d72c370dc1807f984d564c8e292469b4eab5227f4)
+parametre dosyasi SHA-256: f066abfeef0bf8be605bf53a038e5c1308768a3e125748bb568cb52dce5ee3b3
+--- S3 -> S4 degisken eslemesi ---
+inverter_senaryo4_kc/Grid1 :: amp : Vac3_peak -> Vac4_peak
+inverter_senaryo4_kc/K1 :: Gain : K13 -> K14
+inverter_senaryo4_kc/K3 :: Gain : K33 -> K34
+inverter_senaryo4_kc/L1 Core Loss Rp :: R : L1_core_Rp -> L1_core_Rp4
+inverter_senaryo4_kc/Sine Wave3 :: Phase : phase_deg3*pi/180 -> phase_deg4*pi/180
+inverter_senaryo4_kc/Voltage Source :: dc_voltage : Vdc3 -> Vdc4
+toplam degisiklik: 6
+--- D-09 (K-17) ---
+Capacitor6: c=C_emc_aux, r=R_emc_aux, Commented=off -> c=EMC_Cx_eq, r=EMC_Rx_eq
+Capacitor7: c=C_emc_aux, r=R_emc_aux, Commented=on -> c=EMC_Cx_eq, r=EMC_Rx_eq
+PreLoadFcn: s4_pre_dir = fileparts(which('inverter_senaryo4_kc')); if isempty(s4_pre_dir), s4_pre_dir = pwd; end; run(fullfile(s4_pre_dir, 'inverter_common_parameters.m')); run(fullfile(s4_pre_dir, 's4_denetleyici_parametreleri.m')); clear s4_pre_dir
+InitFcn (degismedi): run(fullfile(fileparts(get_param(bdroot,'FileName')),'inverter_common_parameters.m'));
+--- dogrulama (temiz calisma alani, PreLoadFcn) ---
+derleme (update): basarili
+kalan S3 degiskeni: 0
+--- eklenen ust duzey bloklar (27) ---
+inverter_senaryo4_kc/S4 AW Asim
+inverter_senaryo4_kc/S4 Akim Denetleyicisi
+inverter_senaryo4_kc/S4 From i_ac
+inverter_senaryo4_kc/S4 From i_dc
+inverter_senaryo4_kc/S4 From v_ac
+inverter_senaryo4_kc/S4 From v_dc
+inverter_senaryo4_kc/S4 From v_inv
+inverter_senaryo4_kc/S4 Iref Basamak
+inverter_senaryo4_kc/S4 Kayit iL1
+inverter_senaryo4_kc/S4 Kayit iL1 T
+inverter_senaryo4_kc/S4 Kayit i_ac
+inverter_senaryo4_kc/S4 Kayit i_ac T
+inverter_senaryo4_kc/S4 Kayit i_dc
+inverter_senaryo4_kc/S4 Kayit i_dc T
+inverter_senaryo4_kc/S4 Kayit v_ac
+inverter_senaryo4_kc/S4 Kayit v_ac T
+inverter_senaryo4_kc/S4 Kayit v_dc
+inverter_senaryo4_kc/S4 Kayit v_dc T
+inverter_senaryo4_kc/S4 Kayit v_inv
+inverter_senaryo4_kc/S4 Kayit v_inv T
+inverter_senaryo4_kc/S4 Modulasyon Siniri
+inverter_senaryo4_kc/S4 Modulasyon Toplami
+inverter_senaryo4_kc/S4 Sebeke Faz Referansi
+inverter_senaryo4_kc/S4 iL1 Isaret
+inverter_senaryo4_kc/S4 iL1 Olcum Suzgeci
+inverter_senaryo4_kc/S4 iref Carpim
+inverter_senaryo4_kc/S4 sqrt2
+--- S4 Akim Denetleyicisi icerigi ---
+inverter_senaryo4_kc/S4 Akim Denetleyicisi/i_ref [Inport]
+inverter_senaryo4_kc/S4 Akim Denetleyicisi/iL1_olcum [Inport]
+inverter_senaryo4_kc/S4 Akim Denetleyicisi/aw_asim [Inport]
+inverter_senaryo4_kc/S4 Akim Denetleyicisi/I_giris [Sum]
+inverter_senaryo4_kc/S4 Akim Denetleyicisi/Integrator [DiscreteIntegrator]
+inverter_senaryo4_kc/S4 Akim Denetleyicisi/Kaw [Gain]
+inverter_senaryo4_kc/S4 Akim Denetleyicisi/Ki [Gain]
+inverter_senaryo4_kc/S4 Akim Denetleyicisi/Kp [Gain]
+inverter_senaryo4_kc/S4 Akim Denetleyicisi/Rezonans [DiscreteTransferFcn]
+inverter_senaryo4_kc/S4 Akim Denetleyicisi/e_hesap [Sum]
+inverter_senaryo4_kc/S4 Akim Denetleyicisi/u_fb_toplam [Sum]
+inverter_senaryo4_kc/S4 Akim Denetleyicisi/u_fb [Outport]
+model SHA-256: 7033aeb4294e9293fd94fe04105436f53b063a3722cf84e40d046a110fb90f03

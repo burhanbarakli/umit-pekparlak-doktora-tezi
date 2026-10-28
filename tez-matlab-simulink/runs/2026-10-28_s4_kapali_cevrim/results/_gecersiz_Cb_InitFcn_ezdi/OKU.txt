@@ -1,0 +1,9 @@
+28.10.2026 — Bu klasördeki Cb_* koşuları GEÇERSİZDİR (D-11 doğrulaması değildir).
+run_s4_closed_loop_20261028.m Cdc değerini yalnız taban çalışma alanına yazıyordu; modelin
+InitFcn'i sim() başında inverter_common_parameters.m'yi yeniden çalıştırıp Cdc_pos/Cdc_neg'i
+470 µF'a geri yazdı. Kanıt: Cb_PI_25A, Cb_PI_10A, Cb_P_10A, Cb_PI_basamak_10_25A metrik.csv
+dosyalarının ilk 20 sütunu özgün koşularla bayt bayt aynı. kosu_bilgisi.txt'deki
+"Cdc 0.0056" satırı InitFcn öncesi değerdir, yanıltıcıdır.
+Cb_P_25A fiilen özgün Cdc (470 µF) ile koştuğu için ../P_25A olarak kopyalandı
+(özgün P_25A ilk denemesi 2700 s süre sınırına takılmıştı).
+Düzeltme: betik artık değerleri bellekteki modelin InitFcn'ine ekler (KC_* koşuları).

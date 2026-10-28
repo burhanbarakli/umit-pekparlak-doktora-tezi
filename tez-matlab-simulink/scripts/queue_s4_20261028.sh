@@ -29,6 +29,9 @@ for c in "$@"; do
         P_25A)   cmd="run_s4_closed_loop_20261028('$c', 'P', 25, 0.06, struct($ext))";;
         PI_25A)  cmd="run_s4_closed_loop_20261028('$c', 'PI', 25, 0.06, struct($ext))";;
         PIR_25A) cmd="run_s4_closed_loop_20261028('$c', 'PIR', 25, 0.06, struct($ext))";;
+        PIR_10A) cmd="run_s4_closed_loop_20261028('$c', 'PIR', 10, 0.06, struct($ext))";;
+        PIR_10A_02s) cmd="run_s4_closed_loop_20261028('$c', 'PIR', 10, 0.2, struct($ext, 'hist', 6e6))";;
+        PIR_25A_02s) cmd="run_s4_closed_loop_20261028('$c', 'PIR', 25, 0.2, struct($ext, 'hist', 6e6))";;
         P_10A)   cmd="run_s4_closed_loop_20261028('$c', 'P', 10, 0.06, struct($ext))";;
         PI_10A)  cmd="run_s4_closed_loop_20261028('$c', 'PI', 10, 0.06, struct($ext))";;
         P_2p3A)  cmd="run_s4_closed_loop_20261028('$c', 'P', 2.3, 0.06, struct($ext))";;

@@ -1,0 +1,27 @@
+model: inverter_senaryo4_kc
+matlab: 23.2.0.2515942 (R2023b) Update 7
+baslangic: 28-Oct-2026 16:07:32
+kip: PI
+kazanc [Kp Ki Kaw Kr]: [0.03 11.3097 376.991 0]
+I_ref [A RMS]: [2.3 2.3]
+t_step: 1000
+StopTime: 0.06
+mod: accelerator
+Cdc_pos/Cdc_neg [F]: [0.0056 0.0056]
+[Warning: 'Output Port 5' of 'inverter_senaryo4_kc/Subsystem2' is not connected.] 
+[> In run_s4_closed_loop_20261028 (line 80)] 
+[Warning: 'Output Port 6' of 'inverter_senaryo4_kc/Subsystem2' is not connected.] 
+[> In run_s4_closed_loop_20261028 (line 80)] 
+### Building the Accelerator target for model: inverter_senaryo4_kc
+### Successfully built the Accelerator target for model: inverter_senaryo4_kc
+
+Build Summary
+
+Top model accelerator targets built:
+
+Model                 Action                        Rebuild Reason                        
+==========================================================================================
+inverter_senaryo4_kc  Code generated and compiled.  Accelerator MEX file is out of date.  
+
+1 of 1 models built (0 models already up to date)
+Build duration: 0h 0m 16.625s

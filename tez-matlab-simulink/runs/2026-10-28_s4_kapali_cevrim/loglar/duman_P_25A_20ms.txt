@@ -1,0 +1,148 @@
+model: inverter_senaryo4_kc
+matlab: 23.2.0.2515942 (R2023b) Update 7
+baslangic: 28-Oct-2026 10:34:52
+kip: P
+kazanc [Kp Ki Kaw Kr]: [0.03 0 0 0]
+I_ref [A RMS]: [25 25]
+t_step: 1000
+StopTime: 0.02
+mod: accelerator
+[Warning: 'Output Port 5' of 'inverter_senaryo4_kc/Subsystem2' is not connected.] 
+[> In run_s4_closed_loop_20261028 (line 72)] 
+[Warning: 'Output Port 6' of 'inverter_senaryo4_kc/Subsystem2' is not connected.] 
+[> In run_s4_closed_loop_20261028 (line 72)] 
+[Warning: The specified buffer for 'inverter_senaryo4_kc/RMS1/TrueRMS /Mean value/Model/Transport Delay' was too small. During simulation,
+the buffer size was temporarily increased to 313344. In order to generate code, you need to update the buffer size parameter] 
+[> In run_s4_closed_loop_20261028 (line 72)] 
+[Warning: The specified buffer for 'inverter_senaryo4_kc/THD/RMS1/TrueRMS /Mean value/Model/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 313344. In order to generate code, you need to update the buffer size parameter] 
+[> In run_s4_closed_loop_20261028 (line 72)] 
+[Warning: The specified buffer for 'inverter_senaryo4_kc/THD/RMS2/RMS /Fourier1/Mean value1/Model/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 313344. In order to generate code, you need to update the buffer size parameter] 
+[> In run_s4_closed_loop_20261028 (line 72)] 
+[Warning: The specified buffer for 'inverter_senaryo4_kc/THD/RMS2/RMS /Fourier1/Mean/Model/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 313344. In order to generate code, you need to update the buffer size parameter] 
+[> In run_s4_closed_loop_20261028 (line 72)] 
+[Warning: The specified buffer for 'inverter_senaryo4_kc/THD2/RMS1/TrueRMS /Mean value/Model/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 313344. In order to generate code, you need to update the buffer size parameter] 
+[> In run_s4_closed_loop_20261028 (line 72)] 
+[Warning: The specified buffer for 'inverter_senaryo4_kc/THD2/RMS2/RMS /Fourier1/Mean value1/Model/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 313344. In order to generate code, you need to update the buffer size parameter] 
+[> In run_s4_closed_loop_20261028 (line 72)] 
+[Warning: The specified buffer for 'inverter_senaryo4_kc/THD2/RMS2/RMS /Fourier1/Mean/Model/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 313344. In order to generate code, you need to update the buffer size parameter] 
+[> In run_s4_closed_loop_20261028 (line 72)] 
+[Warning: The specified buffer for 'inverter_senaryo4_kc/Mean9/Model/Transport Delay' was too small. During simulation, the buffer size was
+temporarily increased to 313344. In order to generate code, you need to update the buffer size parameter] 
+[> In run_s4_closed_loop_20261028 (line 72)] 
+[Warning: The specified buffer for 'inverter_senaryo4_kc/THD/Mean/Model/Transport Delay' was too small. During simulation, the buffer size
+was temporarily increased to 313344. In order to generate code, you need to update the buffer size parameter] 
+[> In run_s4_closed_loop_20261028 (line 72)] 
+[Warning: The specified buffer for 'inverter_senaryo4_kc/THD2/Mean/Model/Transport Delay' was too small. During simulation, the buffer size
+was temporarily increased to 313344. In order to generate code, you need to update the buffer size parameter] 
+[> In run_s4_closed_loop_20261028 (line 72)] 
+[Warning: The specified buffer for 'inverter_senaryo4_kc/Mean10/Model/Transport Delay' was too small. During simulation, the buffer size
+was temporarily increased to 313344. In order to generate code, you need to update the buffer size parameter] 
+[> In run_s4_closed_loop_20261028 (line 72)] 
+[Warning: The specified buffer for 'inverter_senaryo4_kc/Mean1/Model/Transport Delay' was too small. During simulation, the buffer size was
+temporarily increased to 313344. In order to generate code, you need to update the buffer size parameter] 
+[> In run_s4_closed_loop_20261028 (line 72)] 
+[Warning: The specified buffer for 'inverter_senaryo4_kc/Mean3/Model/Transport Delay' was too small. During simulation, the buffer size was
+temporarily increased to 313344. In order to generate code, you need to update the buffer size parameter] 
+[> In run_s4_closed_loop_20261028 (line 72)] 
+[Warning: The specified buffer for 'inverter_senaryo4_kc/Power Measurement/Continuous/Transport Delay' was too small. During simulation,
+the buffer size was temporarily increased to 313344. In order to generate code, you need to update the buffer size parameter] 
+[> In run_s4_closed_loop_20261028 (line 72)] 
+[Warning: The specified buffer for 'inverter_senaryo4_kc/Power Measurement/Continuous/Transport Delay1' was too small. During simulation,
+the buffer size was temporarily increased to 313344. In order to generate code, you need to update the buffer size parameter] 
+[> In run_s4_closed_loop_20261028 (line 72)] 
+[Warning: The specified buffer for 'inverter_senaryo4_kc/Mean2/Model/Transport Delay' was too small. During simulation, the buffer size was
+temporarily increased to 313344. In order to generate code, you need to update the buffer size parameter] 
+[> In run_s4_closed_loop_20261028 (line 72)] 
+[Warning: The specified buffer for 'inverter_senaryo4_kc/Power3/Fourier/Mean value1/Model/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 313344. In order to generate code, you need to update the buffer size parameter] 
+[> In run_s4_closed_loop_20261028 (line 72)] 
+[Warning: The specified buffer for 'inverter_senaryo4_kc/Power3/Fourier/Mean/Model/Transport Delay' was too small. During simulation, the
+buffer size was temporarily increased to 313344. In order to generate code, you need to update the buffer size parameter] 
+[> In run_s4_closed_loop_20261028 (line 72)] 
+[Warning: The specified buffer for 'inverter_senaryo4_kc/Power3/Fourier1/Mean value1/Model/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 313344. In order to generate code, you need to update the buffer size parameter] 
+[> In run_s4_closed_loop_20261028 (line 72)] 
+[Warning: The specified buffer for 'inverter_senaryo4_kc/Power3/Fourier1/Mean/Model/Transport Delay' was too small. During simulation, the
+buffer size was temporarily increased to 313344. In order to generate code, you need to update the buffer size parameter] 
+[> In run_s4_closed_loop_20261028 (line 72)] 
+[Warning: The specified buffer for 'inverter_senaryo4_kc/Mean11/Model/Transport Delay' was too small. During simulation, the buffer size
+was temporarily increased to 313344. In order to generate code, you need to update the buffer size parameter] 
+[> In run_s4_closed_loop_20261028 (line 72)] 
+    Iref_1_rms_A    IL1_rms_A    IL1_1_rms_A    izleme_genlik_hatasi_pct    izleme_faz_hatasi_deg    izleme_hatasi_rms_pct    iL1_faz_sebekeye_gore_deg    Iac_rms_A    Iac_1_rms_A    Vac_rms_V    THD_I_ac_tumbant_pct    THD_I_ac_h50_pct    THD_I_L1_h50_pct    I_ac_h3_pct    P_ac_W    P_dc_W    verim_pct    Q1_var     cosphi1      PF       Vdc_ort_V    u_top_max    u_fb_rms    u_ff_max    doyum_orani_pct    iL1_tepe_A           case           mode    I_ref_rms     Kp     Ki    Kaw    Kr    wall_s    stop_time    dP_ac_onceki_periyot_pct    dIL1_onceki_periyot_pct    u_top_max_tum    doyum_orani_tum_pct    iL1_max_tum_A    D_AC_Aktif_Guc    D_AC_Akim_RMS    D_AC_Akim_THD    D_AC_Gerilim_THD2    D_AC_Reaktif_Guc    D_DC_Guc    D_Idc     D_Vdc     D_Verim    D_cosfi    D_cosfi2    D_cosfi3    D_cosfi4    D_cosfi8    kayip_toplam_simscape_W    kayip_IGBT_W    kayip_diyot_W    kayip_L1Rp_W    IGBT_tepe_A    diyot_tepe_A
+    ____________    _________    ___________    ________________________    _____________________    _____________________    _________________________    _________    ___________    _________    ____________________    ________________    ________________    ___________    ______    ______    _________    _______    _______    _______    _________    _________    ________    ________    _______________    __________    __________________    ____    _________    ____    __    ___    __    ______    _________    ________________________    _______________________    _____________    ___________________    _____________    ______________    _____________    _____________    _________________    ________________    ________    ______    ______    _______    _______    ________    ________    ________    ________    _______________________    ____________    _____________    ____________    ___________    ____________
+
+         25          19.095        16.988               -32.048                    9.7528                   48.763                     7.2386               18.982         16.95        119.74             50.421                39.431              39.004           24.492       2014.5    5282.3     38.136      -216.29    0.99428    0.88627     428.03        1.754       0.3649       0.84          18.085           40.484      "duman_P_25A_20ms"    "P"        25        0.03    0      0     0     434.79      0.02                 NaN                         NaN                  1.754              17.947              40.484            865.12           18.982           0.39435           0.065997             -103.38          4444.9     10.587    428.05    0.19463    0.99294     2013.6     -216.28     0.99428      2014.5             291.56                24.269          199.38           5.1246           NaN         1.4247e+05 
+
+duman_P_25A_20ms: tamamlandi (434.8 s)
+
+ans = 
+
+  struct with fields:
+
+                 Iref_1_rms_A: 25.0000
+                    IL1_rms_A: 19.0954
+                  IL1_1_rms_A: 16.9881
+     izleme_genlik_hatasi_pct: -32.0478
+        izleme_faz_hatasi_deg: 9.7528
+        izleme_hatasi_rms_pct: 48.7630
+    iL1_faz_sebekeye_gore_deg: 7.2386
+                    Iac_rms_A: 18.9823
+                  Iac_1_rms_A: 16.9497
+                    Vac_rms_V: 119.7421
+         THD_I_ac_tumbant_pct: 50.4208
+             THD_I_ac_h50_pct: 39.4311
+             THD_I_L1_h50_pct: 39.0040
+                  I_ac_h3_pct: 24.4923
+                       P_ac_W: 2.0145e+03
+                       P_dc_W: 5.2823e+03
+                    verim_pct: 38.1363
+                       Q1_var: -216.2934
+                      cosphi1: 0.9943
+                           PF: 0.8863
+                    Vdc_ort_V: 428.0349
+                    u_top_max: 1.7540
+                     u_fb_rms: 0.3649
+                     u_ff_max: 0.8400
+              doyum_orani_pct: 18.0850
+                   iL1_tepe_A: 40.4839
+                         case: "duman_P_25A_20ms"
+                         mode: "P"
+                    I_ref_rms: 25
+                           Kp: 0.0300
+                           Ki: 0
+                          Kaw: 0
+                           Kr: 0
+                       wall_s: 434.7882
+                    stop_time: 0.0200
+     dP_ac_onceki_periyot_pct: NaN
+      dIL1_onceki_periyot_pct: NaN
+                u_top_max_tum: 1.7540
+          doyum_orani_tum_pct: 17.9467
+                iL1_max_tum_A: 40.4839
+               D_AC_Aktif_Guc: 865.1157
+                D_AC_Akim_RMS: 18.9823
+                D_AC_Akim_THD: 0.3944
+            D_AC_Gerilim_THD2: 0.0660
+             D_AC_Reaktif_Guc: -103.3797
+                     D_DC_Guc: 4.4449e+03
+                        D_Idc: 10.5872
+                        D_Vdc: 428.0479
+                      D_Verim: 0.1946
+                      D_cosfi: 0.9929
+                     D_cosfi2: 2.0136e+03
+                     D_cosfi3: -216.2803
+                     D_cosfi4: 0.9943
+                     D_cosfi8: 2.0145e+03
+      kayip_toplam_simscape_W: 291.5552
+                 kayip_IGBT_W: 24.2689
+                kayip_diyot_W: 199.3842
+                 kayip_L1Rp_W: 5.1246
+                  IGBT_tepe_A: NaN
+                 diyot_tepe_A: 1.4247e+05
+

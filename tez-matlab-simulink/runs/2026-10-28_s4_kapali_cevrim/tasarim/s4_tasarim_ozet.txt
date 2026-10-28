@@ -1,0 +1,7 @@
+Kpwm = 213.750 V; f_antirezonans = 1719 Hz; f_rezonans = 2815 Hz; fs/6 = 1667 Hz
+|G(50 Hz)| = 1.9647 A/V; Vac4_peak = 169.71 V; Ipk(25 A) = 35.36 A
+gereken temel modulasyon (25 A, faz 0): 0.8039 +0.0836j (|.| = 0.8082); ileri besleme temel = 0.7425, 3. h. = -0.0975
+cevrimsiz temel akim hatasi = 43.56 A tepe; cevrimsiz 150 Hz akimi = 13.68 A tepe
+Ki = 11.3097 1/(A s); Kr = 0.300 1/A; wb = 12.566 rad/s; Kaw = Ki/Kp = 376.99 1/s
+egim kosulu (suzgecsiz): Kp*Kpwm/L1 = 10688 1/s, tasiyici egimi fsw = 10000 1/s
+egim kosulu (5 kHz suzgec, 10 kHz temel bileseni zayiflatmasi 0.447): 4780 1/s

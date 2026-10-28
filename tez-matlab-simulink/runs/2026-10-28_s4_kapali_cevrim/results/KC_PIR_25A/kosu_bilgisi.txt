@@ -1,0 +1,15 @@
+model: inverter_senaryo4_kc
+matlab: 23.2.0.2515942 (R2023b) Update 7
+baslangic: 28-Oct-2026 17:04:39
+kip: PIR
+kazanc [Kp Ki Kaw Kr]: [0.03 11.3097 376.991 0.3]
+I_ref [A RMS]: [25 25]
+t_step: 1000
+StopTime: 0.06
+mod: accelerator
+model klasoru: C:\CODES\ümit abi\tez-matlab-simulink\runs\2026-10-28_s4_kapali_cevrim\model_a
+InitFcn eki: K14 = 0.44343; K34 = 0.384306; phase_deg4 = 0.6575; Cdc_pos = 0.0056; Cdc_neg = 0.0056;
+duvar_suresi_s: 1088.3
+etkin Cdc_pos/Cdc_neg [F]: [0.0056 0.0056]
+etkin K14 K34 phase_deg4: [0.44343 0.384306 0.6575]
+simscape_kayit_penceresi_s: 0.020945 - 0.060000

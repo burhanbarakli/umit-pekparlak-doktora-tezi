@@ -32,7 +32,7 @@ Her satır şu öğeleri içerir:
 | No | Dosya / blok | Sınıf | Sorun (kısa) | Durum |
 |---|---|---|---|---|
 | D-01 | `inverter_scenario1_parametric5_etiquetli.slx` · Gate Drive1–4 | Kapı/denetim | S2 devresinin kapı sürücüleri `g12…g42` etiketlerini okuyor, bu etiketleri üreten Goto yok; S2 IGBT'leri hiç anahtarlanmıyor | doğrulandı — S2 anahtarlıyor, η 94,07 % (hedef 94,2 %) |
-| D-02 | `inverter_senaryo4.slx` | Paket | Dosya S3 modelinin kopyası; S4'ün L1 akım geri beslemeli denetleyicisi yok | düzeltildi — S4 modeli kuruldu (İP-5), tarama koşuları sürüyor |
+| D-02 | `inverter_senaryo4.slx` | Paket | Dosya S3 modelinin kopyası; S4'ün L1 akım geri beslemeli denetleyicisi yok | doğrulandı — S4 kuruldu; 25 A'da PI −%2,1, PIR −%1,0 izleme hatası, doyum yok (İP-5) |
 | D-03 | Dört modelin tümü · model geri çağrıları | Paket | Parametre dosyası yalnız InitFcn'de çalışıyor, PreLoadFcn yok; temiz oturumda Simscape diyotları "Qrr/didt … type string" hatasıyla derlenmiyor | düzeltildi (koşu betiğinde) |
 | D-04 | S1+S2 ve S3 · sinyal kayıt adları | Ölçüm | Farklı hatlar aynı kayıt adını taşıyor (ör. `Idc_s1`); ada göre okunan değer yanlış hatta ait olabiliyor | düzeltildi (çıkarım betiğinde) |
 | D-05 | `inverter_common_parameters.m` | Parametre | `Kp`, `K12`, `phase_deg2`, `L1_core_Rp4` tanımlı ama hiçbir blokta kullanılmıyor | kapandı — hepsi S2/S4 modellerinde bağlı |
@@ -42,7 +42,7 @@ Her satır şu öğeleri içerir:
 | D-09 | Tüm modeller · Capacitor6/7 (EMC X kapasitörü) | Parametre | X kapasitörü `C_emc_aux` = 1 µF ile modellenmiş; m-dosyasının kendi tek faz eşdeğeri `EMC_Cx_eq` = 0,5 µF / `EMC_Rx_eq` = 0,2 Ω hiç kullanılmıyor | doğrulandı — S3'te ölçülen ΔQ₁ −2,5 var, ΔP_ac +%0,3 (İP-4) |
 | D-10 | Tüm modeller · IGBT/diyot ısıl ve eşik parametreleri | Parametre (izlenebilirlik) | `Vth = 6`, ısıl ağ dizileri ve diyot `Tdevice = 25` değişken yerine sayı olarak yazılmış; m-dosyasındaki karşılıkları kullanılmıyor. Değerler aynı, sonuca etkisi yok | açık — düşük öncelik |
 | D-12 | `inverter_s1s2_s2onarim_d08.slx` · iki bağımsız devre | Paket (koşu yöntemi) | İki fiziksel ağ aynı ode15s çözücüsünü paylaşıyor; 0,1 s koşu ~4 saat. Diğer devre `Commented = 'on'` yapılarak ayrık kopyalar koşturuldu | doğrulandı — fark P_ac ≤ %0,017, Q₁ ≤ 0,02 var; süre 22–69 dk. Tezde yer almaz |
-| D-11 | `inverter_common_parameters.m` · `Cdc_pos/Cdc_neg` (S4) | **Parametre / topoloji boyutu** | 2 × 470 µF DC bara, 25 A'da orta noktayı ±120 V salındırıyor; S4 akımı hedefin %32 altında, modülasyon doyumda. Ümit'in "20 A civarı" tavanı bu | düzeltildi — S4'te 2 × 5,6 mF; `KC_*` taraması sürüyor |
+| D-11 | `inverter_common_parameters.m` · `Cdc_pos/Cdc_neg` (S4) | **Parametre / topoloji boyutu** | 2 × 470 µF DC bara, 25 A'da orta noktayı ±120 V salındırıyor; S4 akımı hedefin %32 altında, modülasyon doyumda. Ümit'in "20 A civarı" tavanı bu | doğrulandı — 2 × 5,6 mF ile PI 25 A: −%31,9 → −%2,1, doyum %20,6 → %0, THD %57 → %9 |
 
 ## Ayrıntılı kayıtlar
 
@@ -145,7 +145,15 @@ Her satır şu öğeleri içerir:
     - PI: 2,38 A (+%3,6), THD %9,9, η %97,3
   - 10 A ve 25 A'da akım hedefin %22–32 altında kalıyor ve modülasyon doyuyor.
     Neden DC bara orta noktası (D-11).
-- **Durum:** düzeltildi — anma akımı doğrulaması D-11 `Cb_*` taramasıyla
+- **Doğrulama (28.10.2026, `KC_*` = D-11 + K-20):**
+  - 25 A, doyum yok:
+    - PI: 24,47 A (−%2,1), THD %9,2
+    - PIR (0,2 s): 24,75 A (−%1,0, +0,2°), THD %8,5
+  - 10 → 25 A basamağında aşım %7,3.
+  - 10 A'da P/PI genlik hatası −%23/−%11; PIR −%2,2. THD %20, kaynağı susturmanın
+    süreksiz iletimi.
+  - Kaynak: `review/2026-10-28_S4_KAPALI_CEVRIM.md`
+- **Durum:** doğrulandı
 
 ### D-03 — Parametre dosyası yükleme sırası
 
@@ -359,8 +367,17 @@ Her satır şu öğeleri içerir:
 - **Tezde:**
   - Bölüm 3 model düzeltme kesimi ve Bölüm 8 sınırlılık: "anma akımı sonuçları
     boyutlandırılmış DC bara ile; deney donanımının 470 µF barası 25 A için yetersiz".
-- **Etki:** `KC_*` taraması sürüyor (28.10.2026, 16:14'ten itibaren).
-- **Durum:** düzeltildi — doğrulama bekliyor
+- **Etki** (`review/2026-10-28_S4_KAPALI_CEVRIM.md`, Tablo 1 ↔ Tablo 3):
+
+  | PI denetleyici | 2 × 470 µF | 2 × 5,6 mF |
+  |---|---|---|
+  | 25 A genlik hatası | −%31,9 | −%2,1 |
+  | 25 A doyum oranı | %20,6 | %0 |
+  | 25 A THD | %57,4 | %9,2 |
+  | 25 A oturma (dP_ac/periyot) | −%31 | +%0,06 |
+  | 2,3 A genlik hatası | +%3,6 | +%1,2 (K-20 ile birlikte) |
+
+- **Durum:** doğrulandı
 
 ### D-12 — S1+S2 birleşik modelinin ayrık kopyalarla koşturulması
 

@@ -5,16 +5,19 @@ root_dir = fileparts(fileparts(mfilename('fullpath')));
 run_dir = fullfile(root_dir, 'runs', '2026-10-28_s4_kapali_cevrim');
 res = fullfile(run_dir, 'results'); fig_dir = fullfile(run_dir, 'sekiller');
 if ~exist(fig_dir, 'dir'), mkdir(fig_dir); end
-cases = {'P_2p3A', 'P_10A', 'P_25A', 'PI_2p3A', 'PI_10A', 'PI_25A', 'PIR_25A', 'PI_basamak_10_25A'};
+% Önek: çağrıdan önce s4_onek tanımlanabilir ('' = özgün Cdc / m-dosyası ileri beslemesi,
+% 'KC_' = D-11 + K-20 kesin tarama). Çıktı adları öneki taşır.
+if ~exist('s4_onek', 'var'), s4_onek = ''; end
+cases = strcat(s4_onek, {'P_2p3A', 'P_10A', 'P_25A', 'PI_2p3A', 'PI_10A', 'PI_25A', 'PIR_10A', 'PIR_25A', 'PIR_10A_02s', 'PIR_25A_02s', 'PI_basamak_10_25A'});
 T = table();
 for k = 1:numel(cases)
     f = fullfile(res, cases{k}, 'metrik.csv');
     if ~isfile(f), continue, end
-    r = readtable(f, 'TextType', 'string');
+    r = readtable(f, 'TextType', 'string', 'VariableNamingRule', 'preserve');
     if isempty(T), T = r; else, T = outerjoin(T, r, 'MergeKeys', true); end
 end
 % sıra
-[~, ord] = ismember(T.case, string(cases)); [~, i] = sort(ord); T = T(i, :);
+[~, ord] = ismember(T.("case"), string(cases)); [~, i] = sort(ord); T = T(i, :);
 cols = {'case', 'mode', 'I_ref_rms', 'Kp', 'Ki', 'Kr', 'IL1_1_rms_A', 'izleme_genlik_hatasi_pct', ...
     'izleme_faz_hatasi_deg', 'izleme_hatasi_rms_pct', 'Iac_rms_A', 'Iac_1_rms_A', 'Vac_rms_V', ...
     'THD_I_ac_tumbant_pct', 'THD_I_ac_h50_pct', 'I_ac_h3_pct', 'THD_I_L1_h50_pct', 'P_dc_W', 'P_ac_W', ...
@@ -25,11 +28,11 @@ cols = {'case', 'mode', 'I_ref_rms', 'Kp', 'Ki', 'Kr', 'IL1_1_rms_A', 'izleme_ge
     'yerlesme_hata_ms', 'yerlesme_zarf_ms', 'basamak_oncesi_IL1_1_rms_A', 'zarf_tepeleri_A', ...
     'D_AC_Akim_THD', 'D_Verim', 'D_AC_Aktif_Guc', 'D_DC_Guc', 'stop_time', 'wall_s'};
 cols = cols(ismember(cols, T.Properties.VariableNames));
-writetable(T(:, cols), fullfile(run_dir, 's4_tarama.csv'), 'Encoding', 'UTF-8');
+writetable(T(:, cols), fullfile(run_dir, ['s4_tarama' strip_us(s4_onek) '.csv']), 'Encoding', 'UTF-8');
 disp(T(:, cols));
 
 % --- Şekil 1: 25 A akım izleme (P, PI, varsa PIR), son iki periyot -------------------
-c25 = intersect({'P_25A', 'PI_25A', 'PIR_25A'}, cases(cellfun(@(c) isfile(fullfile(res, c, 'dalga.mat')), cases)), 'stable');
+c25 = intersect(strcat(s4_onek, {'P_25A', 'PI_25A', 'PIR_25A_02s'}), cases(cellfun(@(c) isfile(fullfile(res, c, 'dalga.mat')), cases)), 'stable');
 if ~isempty(c25)
     fh = figure('Visible', 'off', 'Position', [100 100 1000 280*numel(c25)]);
     tl = tiledlayout(fh, numel(c25), 1, 'TileSpacing', 'compact');
@@ -43,18 +46,18 @@ if ~isempty(c25)
         yyaxis(ax, 'right'); plot(ax, tt, w.v_ac, 'Color', [0.2 0.6 0.2], 'DisplayName', 'v_{ac}'); ylabel(ax, 'v_{ac} [V]');
         yyaxis(ax, 'left'); ylabel(ax, 'akım [A]');
         m = d.M;
-        title(ax, sprintf('%s: I_{L1,1} = %.2f A (ref %.1f A), genlik hatası %+.2f %%, faz %+.2f°, THD_I = %.1f %%, η = %.2f %%', ...
+        title(ax, sprintf('%s: I_{L1,1} = %.2f A (ref %.1f A), genlik hatası %+.2f %%, faz %+.2f°, THD_I = %.1f %%, η (Display) = %.2f %%', ...
             strrep(c25{k}, '_', ' '), m.IL1_1_rms_A, m.I_ref_rms, m.izleme_genlik_hatasi_pct, ...
-            m.izleme_faz_hatasi_deg, m.THD_I_ac_h50_pct, m.verim_pct), 'FontWeight', 'normal');
+            m.izleme_faz_hatasi_deg, m.THD_I_ac_h50_pct, 100*T.D_Verim(T.("case") == c25{k})), 'FontWeight', 'normal');
         if k == 1, legend(ax, 'Location', 'eastoutside'); end
     end
     xlabel(tl, 't [ms] (son iki şebeke periyodu)');
-    exportgraphics(fh, fullfile(fig_dir, 's4_akim_izleme_25A.png'), 'Resolution', 300);
-    savefig(fh, fullfile(fig_dir, 's4_akim_izleme_25A.fig'));
+    exportgraphics(fh, fullfile(fig_dir, ['s4_akim_izleme_25A' strip_us(s4_onek) '.png']), 'Resolution', 300);
+    savefig(fh, fullfile(fig_dir, ['s4_akim_izleme_25A' strip_us(s4_onek) '.fig']));
 end
 
 % --- Şekil 2: basamak yanıtı -------------------------------------------------------
-f = fullfile(res, 'PI_basamak_10_25A', 'dalga.mat');
+f = fullfile(res, [s4_onek 'PI_basamak_10_25A'], 'dalga.mat');
 if isfile(f)
     d = load(f); a = d.tum; m = d.M;
     fh = figure('Visible', 'off', 'Position', [100 100 1000 600]);
@@ -71,17 +74,18 @@ if isfile(f)
     plot(ax, 1e3*a.t, a.u_fb, 'DisplayName', 'u_{fb}');
     yline(ax, [-1 1], 'r:', 'HandleVisibility', 'off');
     ylabel(ax, 'modülasyon [-]'); xlabel(ax, 't [ms]'); legend(ax, 'Location', 'northwest');
-    exportgraphics(fh, fullfile(fig_dir, 's4_basamak_PI_10_25A.png'), 'Resolution', 300);
-    savefig(fh, fullfile(fig_dir, 's4_basamak_PI_10_25A.fig'));
+    exportgraphics(fh, fullfile(fig_dir, ['s4_basamak_PI_10_25A' strip_us(s4_onek) '.png']), 'Resolution', 300);
+    savefig(fh, fullfile(fig_dir, ['s4_basamak_PI_10_25A' strip_us(s4_onek) '.fig']));
 end
 
 % --- Şekil 3: tarama özeti -----------------------------------------------------------
-sel = ~contains(T.case, 'basamak');
+% Oturmamış koşular (önceki periyotla |dP_ac| > %0,5, ör. 0,06 s PIR) özet şekle girmez.
+sel = ~contains(T.("case"), 'basamak') & abs(T.dP_ac_onceki_periyot_pct) <= 0.5;
 if any(sel)
-    U = T(sel, :);
+    U = T(sel, :); U.eta_display_pct = 100*U.D_Verim;
     fh = figure('Visible', 'off', 'Position', [100 100 1000 330]);
     tl = tiledlayout(fh, 1, 3, 'TileSpacing', 'compact');
-    q = {'verim_pct', 'η [%]'; 'THD_I_ac_h50_pct', 'THD_I (h \leq 50) [%]'; 'izleme_genlik_hatasi_pct', 'genlik hatası [%]'};
+    q = {'eta_display_pct', 'η (Display) [%]'; 'THD_I_ac_h50_pct', 'THD_I (h \leq 50) [%]'; 'izleme_genlik_hatasi_pct', 'genlik hatası [%]'};
     for j = 1:3
         ax = nexttile(tl); hold(ax, 'on'); grid(ax, 'on');
         for md = unique(U.mode).'
@@ -91,6 +95,11 @@ if any(sel)
         xlabel(ax, 'I_{ref} [A RMS]'); ylabel(ax, q{j, 2});
         if j == 1, legend(ax, 'Location', 'best'); end
     end
-    exportgraphics(fh, fullfile(fig_dir, 's4_tarama_ozet.png'), 'Resolution', 300);
-    savefig(fh, fullfile(fig_dir, 's4_tarama_ozet.fig'));
+    exportgraphics(fh, fullfile(fig_dir, ['s4_tarama_ozet' strip_us(s4_onek) '.png']), 'Resolution', 300);
+    savefig(fh, fullfile(fig_dir, ['s4_tarama_ozet' strip_us(s4_onek) '.fig']));
+end
+
+function s = strip_us(onek)
+% 'KC_' -> '_KC'; '' -> ''
+s = ''; if ~isempty(onek), s = ['_' regexprep(onek, '_$', '')]; end
 end

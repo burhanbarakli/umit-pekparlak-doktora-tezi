@@ -1,0 +1,31 @@
+gerceklesme,denetleyici,marj_turu,f_Hz,marj_deg_ya_da_dB,kapali_cevrim_kararli
+"A: model (1 us, 5 kHz suzgec)",P (Kp = 0.03),faz,582.935691364914,83.5751531049003,1
+"A: model (1 us, 5 kHz suzgec)",P (Kp = 0.03),faz,2453.14693326678,-119.411856994884,1
+"A: model (1 us, 5 kHz suzgec)",P (Kp = 0.03),faz,3385.39447577315,55.1831447208133,1
+"A: model (1 us, 5 kHz suzgec)",P (Kp = 0.03),kazanc,22166.7443172384,35.3479243630192,1
+"A: model (1 us, 5 kHz suzgec)",PI (fz = 60 Hz),faz,585.512190914069,77.6909979455805,1
+"A: model (1 us, 5 kHz suzgec)",PI (fz = 60 Hz),faz,2453.06584784485,-120.811798567016,1
+"A: model (1 us, 5 kHz suzgec)",PI (fz = 60 Hz),faz,3385.49877040242,54.1667276423365,1
+"A: model (1 us, 5 kHz suzgec)",PI (fz = 60 Hz),kazanc,22029.5139719595,35.2416830818841,1
+"A: model (1 us, 5 kHz suzgec)",PIR (PI + Kr = 0.3 @50 Hz),faz,590.19792145082,73.8422987718271,1
+"A: model (1 us, 5 kHz suzgec)",PIR (PI + Kr = 0.3 @50 Hz),faz,2452.91430150724,-121.743306215008,1
+"A: model (1 us, 5 kHz suzgec)",PIR (PI + Kr = 0.3 @50 Hz),faz,3385.69419082912,53.488089610421,1
+"A: model (1 us, 5 kHz suzgec)",PIR (PI + Kr = 0.3 @50 Hz),kazanc,21937.5148762951,35.1700569620698,1
+"B: sayisal (Ts = 100 us)",P (Kp = 0.03),faz,580.655563416229,48.8427481559722,0
+"B: sayisal (Ts = 100 us)",P (Kp = 0.03),faz,2473.7916724756,90.2486911437311,0
+"B: sayisal (Ts = 100 us)",P (Kp = 0.03),faz,3253.84462238621,-142.048149684507,0
+"B: sayisal (Ts = 100 us)",P (Kp = 0.03),kazanc,1257.91240623325,11.1915638026521,0
+"B: sayisal (Ts = 100 us)",P (Kp = 0.03),kazanc,1703.77483343646,47.1693620472296,0
+"B: sayisal (Ts = 100 us)",P (Kp = 0.03),kazanc,2810.11604133677,-30.2311066182193,0
+"B: sayisal (Ts = 100 us)",PI (fz = 60 Hz),faz,574.095687467162,43.306191350591,0
+"B: sayisal (Ts = 100 us)",PI (fz = 60 Hz),faz,2478.88104899095,88.7402282647575,0
+"B: sayisal (Ts = 100 us)",PI (fz = 60 Hz),faz,3245.51971725713,-142.100897001173,0
+"B: sayisal (Ts = 100 us)",PI (fz = 60 Hz),kazanc,1219.6884189368,10.5891509252168,0
+"B: sayisal (Ts = 100 us)",PI (fz = 60 Hz),kazanc,1704.17888588103,47.7575916362834,0
+"B: sayisal (Ts = 100 us)",PI (fz = 60 Hz),kazanc,2809.90502817541,-30.0110064255685,0
+"B: sayisal (Ts = 100 us)",PIR (PI + Kr = 0.3 @50 Hz),faz,578.927588406585,39.0685308106767,0
+"B: sayisal (Ts = 100 us)",PIR (PI + Kr = 0.3 @50 Hz),faz,2478.78551402116,88.0042248206835,0
+"B: sayisal (Ts = 100 us)",PIR (PI + Kr = 0.3 @50 Hz),faz,3245.57721865117,-142.556200518296,0
+"B: sayisal (Ts = 100 us)",PIR (PI + Kr = 0.3 @50 Hz),kazanc,1192.72321124471,10.0599628287119,0
+"B: sayisal (Ts = 100 us)",PIR (PI + Kr = 0.3 @50 Hz),kazanc,1704.42690668301,48.0171818099657,0
+"B: sayisal (Ts = 100 us)",PIR (PI + Kr = 0.3 @50 Hz),kazanc,2809.76285631496,-29.974401808731,0

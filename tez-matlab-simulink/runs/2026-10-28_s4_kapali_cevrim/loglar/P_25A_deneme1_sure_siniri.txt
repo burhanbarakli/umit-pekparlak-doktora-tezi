@@ -1,0 +1,13 @@
+model: inverter_senaryo4_kc
+matlab: 23.2.0.2515942 (R2023b) Update 7
+baslangic: 28-Oct-2026 10:43:43
+kip: P
+kazanc [Kp Ki Kaw Kr]: [0.03 0 0 0]
+I_ref [A RMS]: [25 25]
+t_step: 1000
+StopTime: 0.06
+mod: accelerator
+[Warning: 'Output Port 5' of 'inverter_senaryo4_kc/Subsystem2' is not connected.] 
+[> In run_s4_closed_loop_20261028 (line 72)] 
+[Warning: 'Output Port 6' of 'inverter_senaryo4_kc/Subsystem2' is not connected.] 
+[> In run_s4_closed_loop_20261028 (line 72)] 
