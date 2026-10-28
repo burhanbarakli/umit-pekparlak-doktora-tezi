@@ -44,6 +44,7 @@ Her satır şu öğeleri içerir:
 | D-12 | `inverter_s1s2_s2onarim_d08.slx` · iki bağımsız devre | Paket (koşu yöntemi) | İki fiziksel ağ aynı ode15s çözücüsünü paylaşıyor; 0,1 s koşu ~4 saat. Diğer devre `Commented = 'on'` yapılarak ayrık kopyalar koşturuldu | doğrulandı — fark P_ac ≤ %0,017, Q₁ ≤ 0,02 var; süre 22–69 dk. Tezde yer almaz |
 | D-11 | `inverter_common_parameters.m` · `Cdc_pos/Cdc_neg` (S4) | **Parametre / topoloji boyutu** | 2 × 470 µF DC bara, 25 A'da orta noktayı ±120 V salındırıyor; S4 akımı hedefin %32 altında, modülasyon doyumda. Ümit'in "20 A civarı" tavanı bu | doğrulandı — 2 × 5,6 mF ile PI 25 A: −%31,9 → −%2,1, doyum %20,6 → %0, THD %57 → %9 |
 | D-13 | 12.10 paketindeki üç model ve kopyaları · model CloseFcn | Paket | MathWorks Solar Power Inverter örneğinden kalma geri çağrı, model kapanınca taban çalışma alanından `C` (Cf) ve `L`'yi siliyor | düzeltildi (betikte; model kapandıktan sonra parametre dosyası yeniden çalıştırılır). Koşu sonuçlarına etkisi yok, tezde yer almaz |
+| D-14 | 12.10 modelleri ve kopyaları · ölçüm blokları, PWM Generator, nötr kapı sürücüleri, çözücü ayarları | Parametre (izlenebilirlik) | `Freq = 50`, `Ts = 1/fsw/100`, `uHigh = 4`/`uLow = 3`, `LocalSolverSampleTime = 1e-7`, powergui `SampleTime = 50e-6`, `MinStep = auto` değişken yerine sayı olarak yazılmış; değerler m-dosyasıyla aynı ya da etkisiz | açık — düşük öncelik (D-10 ile birlikte), etki yok, tezde yer almaz |
 
 ## Ayrıntılı kayıtlar
 
@@ -417,6 +418,26 @@ Her satır şu öğeleri içerir:
   Kaynak: `review/2026-10-28_KARARLILIK_BODE.md`, "Önerilen kayıtlar".
 - **Tezde:** yer almaz.
 - **Durum:** düzeltildi (betikte)
+
+### D-14 — Model düzeyinde sabit yazılmış ölçüm ve çözücü ayarları (D-10'un genişletilmesi)
+
+- **Dosya / blok:** 12.10 modelleri ve bütün kopyaları:
+  - Mean/RMS/THD blokları `Freq = 50` (`f_grid` değil);
+  - PWM Generator `Ts = 1/fsw/100` (`pwm_ref_Ts` değil);
+  - nötr kapı sürücüleri `uHigh = 4`, `uLow = 3` (`gate_logic_*` yerine sayı);
+  - Solver Configuration `LocalSolverSampleTime = 1e-7` (yerel çözücü kapalı, etkisiz);
+  - powergui `SampleTime = 50e-6` (sürekli kipte etkisiz);
+  - `MinStep = auto` (`sim_min_step` = 1 ns kullanılmıyor).
+- **Sınıf:** Parametre (izlenebilirlik)
+- **Sorun:** Değerler m-dosyasından izlenemiyor; `f_grid` ya da `fsw` değişirse ölçüm
+  pencereleri ve PWM örneklemesi kendiliğinden güncellenmez.
+- **Tez kapsamındaki doğru durum:** Tek parametre kaynağı (K-09, K-22).
+- **Düzeltme:** Gerekmez; mevcut değerler m-dosyası değerleriyle aynı ya da etkisiz.
+  Tabloda "benzetim seçimi" olarak yazıldı.
+- **Etki:** yok. Kaynak: `review/2026-10-28_PARAMETRE_TABLOSU.md`,
+  `runs/2026-10-28_parametre_tablosu/sabit_sayi_parametreleri.csv`.
+- **Tezde:** yer almaz.
+- **Durum:** açık — düşük öncelik (D-10 ile birlikte)
 
 ### D-07 — Cihaz eşlemesi denetimi
 

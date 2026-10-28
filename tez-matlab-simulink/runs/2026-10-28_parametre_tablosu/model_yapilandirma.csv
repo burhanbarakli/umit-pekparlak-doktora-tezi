@@ -1,0 +1,190 @@
+model,ayar,deger
+ham_S1S2,Solver,ode15s
+ham_S1S2,SolverType,Variable-step
+ham_S1S2,StopTime,0.1
+ham_S1S2,MaxStep,sim_max_step
+ham_S1S2,MinStep,auto
+ham_S1S2,RelTol,sim_rel_tol
+ham_S1S2,AbsTol,sim_abs_tol
+ham_S1S2,FixedStep,auto
+ham_S1S2,SimulationMode,accelerator
+ham_S1S2,ZeroCrossControl,UseLocalSettings
+ham_S1S2,InitFcn,"run(fullfile(fileparts(get_param(bdroot,'FileName')),'inverter_common_parameters.m'));"
+ham_S1S2,PreLoadFcn,
+ham_S1S2,CloseFcn,"try,close(h1_SolarPowerInverter),end ⏎ clear h1_SolarPowerInverter ⏎  ⏎ clear simlog_SolarPowerInverter ⏎ clear logsout_SolarPowerInverter ⏎ clear C L efficiency f_pwm iDC i_ac_ref irradiance powerDC powerLosses t tabulatedLosses temperature totalLosses ts vDC v_ac_nom v_dc_ref"
+ham_S1S2,StartFcn,
+ham_S1S2,PostLoadFcn,
+ham_S1S2,etkin_blok_sayisi,2410
+ham_S1S2,powergui.SimulationMode,Continuous
+ham_S1S2,powergui.SampleTime,50e-6
+ham_S1S2,powergui.frequencyindice,60
+ham_S1S2,Solver Configuration1.DoDC,off
+ham_S1S2,Solver Configuration1.UseLocalSolver,off
+ham_S1S2,Solver Configuration1.LocalSolverChoice,NE_TRAPEZOIDAL_ADVANCER
+ham_S1S2,Solver Configuration1.LocalSolverSampleTime,1e-7
+ham_S1S2,Solver Configuration1.ResidualTolerance,simscape_residual_tolerance
+ham_S1S2,Solver Configuration1.DoFixedCost,off
+ham_S1S2,Solver Configuration1.MaxNonlinIter,10
+ham_S1S2,Solver Configuration2.DoDC,off
+ham_S1S2,Solver Configuration2.UseLocalSolver,off
+ham_S1S2,Solver Configuration2.LocalSolverChoice,NE_TRAPEZOIDAL_ADVANCER
+ham_S1S2,Solver Configuration2.LocalSolverSampleTime,1e-7
+ham_S1S2,Solver Configuration2.ResidualTolerance,simscape_residual_tolerance
+ham_S1S2,Solver Configuration2.DoFixedCost,off
+ham_S1S2,Solver Configuration2.MaxNonlinIter,10
+ham_S3,Solver,ode15s
+ham_S3,SolverType,Variable-step
+ham_S3,StopTime,0.1
+ham_S3,MaxStep,sim_max_step
+ham_S3,MinStep,auto
+ham_S3,RelTol,sim_rel_tol
+ham_S3,AbsTol,sim_abs_tol
+ham_S3,FixedStep,auto
+ham_S3,SimulationMode,accelerator
+ham_S3,ZeroCrossControl,UseLocalSettings
+ham_S3,InitFcn,"run(fullfile(fileparts(get_param(bdroot,'FileName')),'inverter_common_parameters.m'));"
+ham_S3,PreLoadFcn,
+ham_S3,CloseFcn,"try,close(h1_SolarPowerInverter),end ⏎ clear h1_SolarPowerInverter ⏎  ⏎ clear simlog_SolarPowerInverter ⏎ clear logsout_SolarPowerInverter ⏎ clear C L efficiency f_pwm iDC i_ac_ref irradiance powerDC powerLosses t tabulatedLosses temperature totalLosses ts vDC v_ac_nom v_dc_ref"
+ham_S3,StartFcn,
+ham_S3,PostLoadFcn,
+ham_S3,etkin_blok_sayisi,1540
+ham_S3,powergui.SimulationMode,Continuous
+ham_S3,powergui.SampleTime,50e-6
+ham_S3,powergui.frequencyindice,60
+ham_S3,Solver Configuration1.DoDC,off
+ham_S3,Solver Configuration1.UseLocalSolver,off
+ham_S3,Solver Configuration1.LocalSolverChoice,NE_TRAPEZOIDAL_ADVANCER
+ham_S3,Solver Configuration1.LocalSolverSampleTime,1e-7
+ham_S3,Solver Configuration1.ResidualTolerance,simscape_residual_tolerance
+ham_S3,Solver Configuration1.DoFixedCost,off
+ham_S3,Solver Configuration1.MaxNonlinIter,10
+ham_S4,Solver,ode15s
+ham_S4,SolverType,Variable-step
+ham_S4,StopTime,0.1
+ham_S4,MaxStep,sim_max_step
+ham_S4,MinStep,auto
+ham_S4,RelTol,sim_rel_tol
+ham_S4,AbsTol,sim_abs_tol
+ham_S4,FixedStep,auto
+ham_S4,SimulationMode,accelerator
+ham_S4,ZeroCrossControl,UseLocalSettings
+ham_S4,InitFcn,"run(fullfile(fileparts(get_param(bdroot,'FileName')),'inverter_common_parameters.m'));"
+ham_S4,PreLoadFcn,
+ham_S4,CloseFcn,"try,close(h1_SolarPowerInverter),end ⏎ clear h1_SolarPowerInverter ⏎  ⏎ clear simlog_SolarPowerInverter ⏎ clear logsout_SolarPowerInverter ⏎ clear C L efficiency f_pwm iDC i_ac_ref irradiance powerDC powerLosses t tabulatedLosses temperature totalLosses ts vDC v_ac_nom v_dc_ref"
+ham_S4,StartFcn,
+ham_S4,PostLoadFcn,
+ham_S4,etkin_blok_sayisi,1540
+ham_S4,powergui.SimulationMode,Continuous
+ham_S4,powergui.SampleTime,50e-6
+ham_S4,powergui.frequencyindice,60
+ham_S4,Solver Configuration1.DoDC,off
+ham_S4,Solver Configuration1.UseLocalSolver,off
+ham_S4,Solver Configuration1.LocalSolverChoice,NE_TRAPEZOIDAL_ADVANCER
+ham_S4,Solver Configuration1.LocalSolverSampleTime,1e-7
+ham_S4,Solver Configuration1.ResidualTolerance,simscape_residual_tolerance
+ham_S4,Solver Configuration1.DoFixedCost,off
+ham_S4,Solver Configuration1.MaxNonlinIter,10
+tez_S1,Solver,ode15s
+tez_S1,SolverType,Variable-step
+tez_S1,StopTime,0.1
+tez_S1,MaxStep,sim_max_step
+tez_S1,MinStep,auto
+tez_S1,RelTol,sim_rel_tol
+tez_S1,AbsTol,sim_abs_tol
+tez_S1,FixedStep,auto
+tez_S1,SimulationMode,accelerator
+tez_S1,ZeroCrossControl,UseLocalSettings
+tez_S1,InitFcn,"run(fullfile(fileparts(get_param(bdroot,'FileName')),'inverter_common_parameters.m')); ⏎ kal_dosya = fullfile(fileparts(get_param(bdroot,'FileName')), [bdroot '_kalibrasyon.m']); if isfile(kal_dosya), run(kal_dosya); end; clear kal_dosya"
+tez_S1,PreLoadFcn,"d08_pre_dir = fileparts(which('inverter_s1_kal')); if isempty(d08_pre_dir), d08_pre_dir = pwd; end; run(fullfile(d08_pre_dir, 'inverter_common_parameters.m')); clear d08_pre_dir"
+tez_S1,CloseFcn,"try,close(h1_SolarPowerInverter),end ⏎ clear h1_SolarPowerInverter ⏎  ⏎ clear simlog_SolarPowerInverter ⏎ clear logsout_SolarPowerInverter ⏎ clear C L efficiency f_pwm iDC i_ac_ref irradiance powerDC powerLosses t tabulatedLosses temperature totalLosses ts vDC v_ac_nom v_dc_ref"
+tez_S1,StartFcn,
+tez_S1,PostLoadFcn,
+tez_S1,etkin_blok_sayisi,1506
+tez_S1,powergui.SimulationMode,Continuous
+tez_S1,powergui.SampleTime,50e-6
+tez_S1,powergui.frequencyindice,60
+tez_S1,Solver Configuration1.DoDC,off
+tez_S1,Solver Configuration1.UseLocalSolver,off
+tez_S1,Solver Configuration1.LocalSolverChoice,NE_TRAPEZOIDAL_ADVANCER
+tez_S1,Solver Configuration1.LocalSolverSampleTime,1e-7
+tez_S1,Solver Configuration1.ResidualTolerance,simscape_residual_tolerance
+tez_S1,Solver Configuration1.DoFixedCost,off
+tez_S1,Solver Configuration1.MaxNonlinIter,10
+tez_S2,Solver,ode15s
+tez_S2,SolverType,Variable-step
+tez_S2,StopTime,0.1
+tez_S2,MaxStep,sim_max_step
+tez_S2,MinStep,auto
+tez_S2,RelTol,sim_rel_tol
+tez_S2,AbsTol,sim_abs_tol
+tez_S2,FixedStep,auto
+tez_S2,SimulationMode,accelerator
+tez_S2,ZeroCrossControl,UseLocalSettings
+tez_S2,InitFcn,"run(fullfile(fileparts(get_param(bdroot,'FileName')),'inverter_common_parameters.m')); ⏎ kal_dosya = fullfile(fileparts(get_param(bdroot,'FileName')), [bdroot '_kalibrasyon.m']); if isfile(kal_dosya), run(kal_dosya); end; clear kal_dosya"
+tez_S2,PreLoadFcn,"d08_pre_dir = fileparts(which('inverter_s2_kal')); if isempty(d08_pre_dir), d08_pre_dir = pwd; end; run(fullfile(d08_pre_dir, 'inverter_common_parameters.m')); clear d08_pre_dir"
+tez_S2,CloseFcn,"try,close(h1_SolarPowerInverter),end ⏎ clear h1_SolarPowerInverter ⏎  ⏎ clear simlog_SolarPowerInverter ⏎ clear logsout_SolarPowerInverter ⏎ clear C L efficiency f_pwm iDC i_ac_ref irradiance powerDC powerLosses t tabulatedLosses temperature totalLosses ts vDC v_ac_nom v_dc_ref"
+tez_S2,StartFcn,
+tez_S2,PostLoadFcn,
+tez_S2,etkin_blok_sayisi,1514
+tez_S2,powergui.SimulationMode,Continuous
+tez_S2,powergui.SampleTime,50e-6
+tez_S2,powergui.frequencyindice,60
+tez_S2,Solver Configuration2.DoDC,off
+tez_S2,Solver Configuration2.UseLocalSolver,off
+tez_S2,Solver Configuration2.LocalSolverChoice,NE_TRAPEZOIDAL_ADVANCER
+tez_S2,Solver Configuration2.LocalSolverSampleTime,1e-7
+tez_S2,Solver Configuration2.ResidualTolerance,simscape_residual_tolerance
+tez_S2,Solver Configuration2.DoFixedCost,off
+tez_S2,Solver Configuration2.MaxNonlinIter,10
+tez_S3,Solver,ode15s
+tez_S3,SolverType,Variable-step
+tez_S3,StopTime,0.1
+tez_S3,MaxStep,sim_max_step
+tez_S3,MinStep,auto
+tez_S3,RelTol,sim_rel_tol
+tez_S3,AbsTol,sim_abs_tol
+tez_S3,FixedStep,auto
+tez_S3,SimulationMode,accelerator
+tez_S3,ZeroCrossControl,UseLocalSettings
+tez_S3,InitFcn,"run(fullfile(fileparts(get_param(bdroot,'FileName')),'inverter_common_parameters.m')); ⏎ kal_dosya = fullfile(fileparts(get_param(bdroot,'FileName')), [bdroot '_kalibrasyon.m']); if isfile(kal_dosya), run(kal_dosya); end; clear kal_dosya"
+tez_S3,PreLoadFcn,"d08_pre_dir = fileparts(which('inverter_senaryo3_kal')); if isempty(d08_pre_dir), d08_pre_dir = pwd; end; run(fullfile(d08_pre_dir, 'inverter_common_parameters.m')); clear d08_pre_dir"
+tez_S3,CloseFcn,"try,close(h1_SolarPowerInverter),end ⏎ clear h1_SolarPowerInverter ⏎  ⏎ clear simlog_SolarPowerInverter ⏎ clear logsout_SolarPowerInverter ⏎ clear C L efficiency f_pwm iDC i_ac_ref irradiance powerDC powerLosses t tabulatedLosses temperature totalLosses ts vDC v_ac_nom v_dc_ref"
+tez_S3,StartFcn,
+tez_S3,PostLoadFcn,
+tez_S3,etkin_blok_sayisi,1540
+tez_S3,powergui.SimulationMode,Continuous
+tez_S3,powergui.SampleTime,50e-6
+tez_S3,powergui.frequencyindice,60
+tez_S3,Solver Configuration1.DoDC,off
+tez_S3,Solver Configuration1.UseLocalSolver,off
+tez_S3,Solver Configuration1.LocalSolverChoice,NE_TRAPEZOIDAL_ADVANCER
+tez_S3,Solver Configuration1.LocalSolverSampleTime,1e-7
+tez_S3,Solver Configuration1.ResidualTolerance,simscape_residual_tolerance
+tez_S3,Solver Configuration1.DoFixedCost,off
+tez_S3,Solver Configuration1.MaxNonlinIter,10
+tez_S4,Solver,ode15s
+tez_S4,SolverType,Variable-step
+tez_S4,StopTime,0.1
+tez_S4,MaxStep,sim_max_step
+tez_S4,MinStep,auto
+tez_S4,RelTol,sim_rel_tol
+tez_S4,AbsTol,sim_abs_tol
+tez_S4,FixedStep,auto
+tez_S4,SimulationMode,accelerator
+tez_S4,ZeroCrossControl,UseLocalSettings
+tez_S4,InitFcn,"run(fullfile(fileparts(get_param(bdroot,'FileName')),'inverter_common_parameters.m'));"
+tez_S4,PreLoadFcn,"s4_pre_dir = fileparts(which('inverter_senaryo4_kc')); if isempty(s4_pre_dir), s4_pre_dir = pwd; end; run(fullfile(s4_pre_dir, 'inverter_common_parameters.m')); run(fullfile(s4_pre_dir, 's4_denetleyici_parametreleri.m')); clear s4_pre_dir"
+tez_S4,CloseFcn,"try,close(h1_SolarPowerInverter),end ⏎ clear h1_SolarPowerInverter ⏎  ⏎ clear simlog_SolarPowerInverter ⏎ clear logsout_SolarPowerInverter ⏎ clear C L efficiency f_pwm iDC i_ac_ref irradiance powerDC powerLosses t tabulatedLosses temperature totalLosses ts vDC v_ac_nom v_dc_ref"
+tez_S4,StartFcn,
+tez_S4,PostLoadFcn,
+tez_S4,etkin_blok_sayisi,1579
+tez_S4,powergui.SimulationMode,Continuous
+tez_S4,powergui.SampleTime,50e-6
+tez_S4,powergui.frequencyindice,60
+tez_S4,Solver Configuration1.DoDC,off
+tez_S4,Solver Configuration1.UseLocalSolver,off
+tez_S4,Solver Configuration1.LocalSolverChoice,NE_TRAPEZOIDAL_ADVANCER
+tez_S4,Solver Configuration1.LocalSolverSampleTime,1e-7
+tez_S4,Solver Configuration1.ResidualTolerance,simscape_residual_tolerance
+tez_S4,Solver Configuration1.DoFixedCost,off
+tez_S4,Solver Configuration1.MaxNonlinIter,10

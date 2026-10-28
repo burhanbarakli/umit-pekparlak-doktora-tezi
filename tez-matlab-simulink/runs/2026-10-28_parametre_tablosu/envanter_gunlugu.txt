@@ -1,0 +1,30 @@
+envanter_parametre_20261028  28-Oct-2026 22:36:41  MATLAB 23.2.0.2515942 (R2023b) Update 7
+ham kopya inverter_common_parameters.m                     ayni=1
+ham kopya inverter_scenario1_parametric5_etiquetli.slx     ayni=1
+ham kopya inverter_senaryo3.slx                            ayni=1
+ham kopya inverter_senaryo4.slx                            ayni=1
+tez kopya inverter_common_parameters.m                     ayni=1
+tez kopya inverter_s1_kal.slx                              ayni=1
+tez kopya inverter_s1_kal_kalibrasyon.m                    ayni=1
+tez kopya inverter_s2_kal.slx                              ayni=1
+tez kopya inverter_s2_kal_kalibrasyon.m                    ayni=1
+tez kopya inverter_senaryo3_kal.slx                        ayni=1
+tez kopya inverter_senaryo3_kal_kalibrasyon.m              ayni=1
+tez kopya inverter_senaryo4_kc.slx                         ayni=1
+tez kopya s4_denetleyici_parametreleri.m                   ayni=1
+yüklendi: inverter_scenario1_parametric5_etiquetli (ham_S1S2)
+yüklendi: inverter_senaryo3 (ham_S3)
+yüklendi: inverter_senaryo4 (ham_S4)
+yüklendi: inverter_s1_kal (tez_S1)
+yüklendi: inverter_s2_kal (tez_S2)
+yüklendi: inverter_senaryo3_kal (tez_S3)
+yüklendi: inverter_senaryo4_kc (tez_S4)
+S4 KC eki: K14 = 0.44343; K34 = 0.384306; phase_deg4 = 0.6575; Cdc_pos = 0.0056; Cdc_neg = 0.0056;
+ham_S1S2  doğrudan 140  dolaylı  12  kullanılmayan  76  (toplam 228)
+ham_S3    doğrudan 139  dolaylı  11  kullanılmayan  78  (toplam 228)
+ham_S4    doğrudan 139  dolaylı  11  kullanılmayan  78  (toplam 228)
+tez_S1    doğrudan 138  dolaylı  13  kullanılmayan  77  (toplam 228)
+tez_S2    doğrudan 138  dolaylı  13  kullanılmayan  77  (toplam 228)
+tez_S3    doğrudan 139  dolaylı  13  kullanılmayan  76  (toplam 228)
+tez_S4    doğrudan 154  dolaylı  23  kullanılmayan  51  (toplam 228)
+tez modellerinin hiçbirinde kullanılmayan: parameter_file_path, C_emc_aux, R_emc_aux, EMC_Ldm_stage, EMC_Rdm_stage, EMC_Rref, sim_min_step, S12_Vge_threshold, S12_thermal_network, S12_Rth, S12_thermal_mass_parameterization, S12_thermal_mass, S12_thermal_time_constant, S12_thermal_initial_temperature, S34_Vge_threshold, S34_thermal_network, S34_Rth, S34_thermal_mass_parameterization, S34_thermal_mass, S34_thermal_time_constant, S34_thermal_initial_temperature, DS12_Tdevice, DS34_Tdevice, D12_Tdevice, Idc_target, Pout_target, cosphi_target, THD_target_pct, Qout_target, Vout_target, eff_target, K_pwm, K3_pwm, phase_deg, S4_PI_fz, S4_PIR_Kr

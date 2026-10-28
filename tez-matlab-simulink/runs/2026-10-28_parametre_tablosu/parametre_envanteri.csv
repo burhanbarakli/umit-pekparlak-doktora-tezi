@@ -1,0 +1,236 @@
+kaynak_dosya,satir,degisken,ifade,deger,birim,yorum,ham_S1S2,ham_S3,ham_S4,tez_S1,tez_S2,tez_S3,tez_S4,ornek_blok_tez
+parametre dosyası,4,parameter_file_path,mfilename('fullpath'),<tanımsız>,,,-,-,-,-,-,-,-,
+parametre dosyası,16,L1,600e-6,0.0006,H,inverter tarafi LCL enduktansi,2,1,1,1,1,1,1,inverter_s1_kal/Inductor.l | inverter_s2_kal/Inductor1.l | inverter_senaryo3_kal/Inductor.l | (+1)
+parametre dosyası,17,L1r,0.03,0.03,Ohm,L1 seri direnci (mevcut modeldeki deger),2,1,1,1,1,1,1,inverter_s1_kal/Inductor.r | inverter_s2_kal/Inductor1.r | inverter_senaryo3_kal/Inductor.r | (+1)
+parametre dosyası,21,L2r,0.01,0.01,Ohm,sebeke + varyak ortak seri direnci,2,1,1,1,1,1,1,inverter_s1_kal/CL1.r | inverter_s2_kal/CL2.r | inverter_senaryo3_kal/CL1.r | (+1)
+parametre dosyası,22,C,8e-6,8e-06,F,LCL kondansatoru,17,9,9,9,9,9,9,<model yapılandırması>.CloseFcn | inverter_s1_kal/Capacitor2.c | inverter_s1_kal/DC Blocking Diode.Qrr_unit | (+30)
+parametre dosyası,23,Cr,0.01,0.01,Ohm,kondansator ESR / sonumleme direnci,2,1,1,1,1,1,1,inverter_s1_kal/Capacitor2.r | inverter_s2_kal/Capacitor5.r | inverter_senaryo3_kal/Capacitor2.r | (+1)
+parametre dosyası,24,Rdc,1e-3,0.001,Ohm,DC kaynak baglanti direnci (mevcut modeldeki deger),4,2,2,2,2,2,2,inverter_s1_kal/DC Source R.R | inverter_s1_kal/Resistor.R | inverter_s2_kal/DC Source R1.R | (+5)
+parametre dosyası,27,Cdc_pos,470e-6,0.00047,F,pozitif DC bara kapasitörü,2,1,1,1,1,1,1,inverter_s1_kal/Capacitor.c | inverter_s2_kal/Capacitor3.c | inverter_senaryo3_kal/Capacitor.c | (+1)
+parametre dosyası,28,Cdc_neg,470e-6,0.00047,F,negatif DC bara kapasitörü,2,1,1,1,1,1,1,inverter_s1_kal/Capacitor1.c | inverter_s2_kal/Capacitor4.c | inverter_senaryo3_kal/Capacitor1.c | (+1)
+parametre dosyası,29,Cdc_esr,0.10,0.1,Ohm,DC bara kapasitörü ESR,4,2,2,2,2,2,2,inverter_s1_kal/Capacitor.r | inverter_s1_kal/Capacitor1.r | inverter_s2_kal/Capacitor3.r | (+5)
+parametre dosyası,30,C_emc_aux,1e-6,1e-06,F,EMI yardimci kapasitörü,2,1,1,-,-,-,-,inverter_scenario1_parametric5_etiquetli/Capacitor6.c | inverter_scenario1_parametric5_etiquetli/Capacitor7.c | inverter_senaryo3/Capacitor6.c | (+1)
+parametre dosyası,31,R_emc_aux,0.01,0.01,Ohm,EMI yardimci kapasitörü ESR,2,1,1,-,-,-,-,inverter_scenario1_parametric5_etiquetli/Capacitor6.r | inverter_scenario1_parametric5_etiquetli/Capacitor7.r | inverter_senaryo3/Capacitor6.r | (+1)
+parametre dosyası,32,R_bleed_1,220e3,220000,Ohm,EMI/ag referans direnci 1,2,1,1,1,1,1,1,inverter_s1_kal/Resistor1.R | inverter_s2_kal/Resistor4.R | inverter_senaryo3_kal/Resistor1.R | (+1)
+parametre dosyası,33,R_bleed_2,220e3,220000,Ohm,EMI/ag referans direnci 2,2,1,1,1,1,1,1,inverter_s1_kal/Resistor2.R | inverter_s2_kal/Resistor5.R | inverter_senaryo3_kal/Resistor2.R | (+1)
+parametre dosyası,36,DCB_Vf,0.05,0.05,V,,2,1,1,1,1,1,1,inverter_s1_kal/DC Blocking Diode.Vf | inverter_s2_kal/DC Blocking Diode1.Vf | inverter_senaryo3_kal/DC Blocking Diode.Vf | (+1)
+parametre dosyası,37,DCB_Ron,1.0,1,Ohm,,2,1,1,1,1,1,1,inverter_s1_kal/DC Blocking Diode.Ron | inverter_s2_kal/DC Blocking Diode1.Ron | inverter_senaryo3_kal/DC Blocking Diode.Ron | (+1)
+parametre dosyası,38,DCB_Goff,1e-8,1e-08,S,,2,1,1,1,1,1,1,inverter_s1_kal/DC Blocking Diode.Goff | inverter_s2_kal/DC Blocking Diode1.Goff | inverter_senaryo3_kal/DC Blocking Diode.Goff | (+1)
+parametre dosyası,39,DCB_Cj,1e-12,1e-12,F,,2,1,1,1,1,1,1,inverter_s1_kal/DC Blocking Diode.CJ | inverter_s2_kal/DC Blocking Diode1.CJ | inverter_senaryo3_kal/DC Blocking Diode.CJ | (+1)
+parametre dosyası,40,DCB_iRM,-7.15,-7.15,A,,2,1,1,1,1,1,1,inverter_s1_kal/DC Blocking Diode.iRM | inverter_s2_kal/DC Blocking Diode1.iRM | inverter_senaryo3_kal/DC Blocking Diode.iRM | (+1)
+parametre dosyası,41,DCB_If,4.0,4,A,,2,1,1,1,1,1,1,inverter_s1_kal/DC Blocking Diode.iF | inverter_s2_kal/DC Blocking Diode1.iF | inverter_senaryo3_kal/DC Blocking Diode.iF | (+1)
+parametre dosyası,42,DCB_didt,-750e6,-750000000,A/s,,2,1,1,1,1,1,1,inverter_s1_kal/DC Blocking Diode.didt | inverter_s2_kal/DC Blocking Diode1.didt | inverter_senaryo3_kal/DC Blocking Diode.didt | (+1)
+parametre dosyası,43,DCB_trr,115e-9,1.15e-07,s,,2,1,1,1,1,1,1,inverter_s1_kal/DC Blocking Diode.trr | inverter_s2_kal/DC Blocking Diode1.trr | inverter_senaryo3_kal/DC Blocking Diode.trr | (+1)
+parametre dosyası,44,DCB_Qrr,150e-9,1.5e-07,C,,2,1,1,1,1,1,1,inverter_s1_kal/DC Blocking Diode.Qrr | inverter_s2_kal/DC Blocking Diode1.Qrr | inverter_senaryo3_kal/DC Blocking Diode.Qrr | (+1)
+parametre dosyası,45,DCB_Vr,-600,-600,V,,2,1,1,1,1,1,1,inverter_s1_kal/DC Blocking Diode.Vr | inverter_s2_kal/DC Blocking Diode1.Vr | inverter_senaryo3_kal/DC Blocking Diode.Vr | (+1)
+parametre dosyası,46,DCB_Ls,150e-9,1.5e-07,H,,2,1,1,1,1,1,1,inverter_s1_kal/DC Blocking Diode.Ls | inverter_s2_kal/DC Blocking Diode1.Ls | inverter_senaryo3_kal/DC Blocking Diode.Ls | (+1)
+parametre dosyası,47,DCB_Tdevice,25,25,degC,,2,1,1,1,1,1,1,inverter_s1_kal/DC Blocking Diode.Tdevice | inverter_s2_kal/DC Blocking Diode1.Tdevice | inverter_senaryo3_kal/DC Blocking Diode.Tdevice | (+1)
+parametre dosyası,52,EMC_Lw,400e-6,0.0004,H,her sarginin oz enduktansi,8,4,4,4,4,4,4,inverter_s1_kal/EMC Common Mode Choke S1.L1 | inverter_s1_kal/EMC Common Mode Choke S1.L2 | inverter_s1_kal/EMC Common Mode Choke S3.L1 | (+13)
+parametre dosyası,53,EMC_Rw,5e-3,0.005,Ohm,her sarginin seri direnci,4,2,2,2,2,2,2,inverter_s1_kal/EMC Common Mode Choke S1.r | inverter_s1_kal/EMC Common Mode Choke S3.r | inverter_s2_kal/EMC Common Mode Choke S2.r | (+5)
+parametre dosyası,54,EMC_M,398e-6,0.000398,H,karsilikli enduktans,dolaylı,dolaylı,dolaylı,dolaylı,dolaylı,dolaylı,dolaylı,
+parametre dosyası,55,EMC_k,EMC_M/EMC_Lw,0.995,-,= 0.995,4,2,2,2,2,2,2,inverter_s1_kal/EMC Common Mode Choke S1.k | inverter_s1_kal/EMC Common Mode Choke S3.k | inverter_s2_kal/EMC Common Mode Choke S2.k | (+5)
+parametre dosyası,56,EMC_Rcore,1e5,100000,Ohm,her CMC sargisina paralel 100 kOhm cekirdek kaybi direnci,8,4,4,4,4,4,4,inverter_s1_kal/EMC Core Loss R1_1.R | inverter_s1_kal/EMC Core Loss R1_2.R | inverter_s1_kal/EMC Core Loss R2_1.R | (+13)
+parametre dosyası,57,EMC_Cx_each,1e-6,1e-06,F,iki seri X2 kolunun her biri,-,-,-,dolaylı,dolaylı,dolaylı,dolaylı,
+parametre dosyası,58,EMC_Rx_each,0.1,0.1,Ohm,her X2 kolunun seri direnci,-,-,-,dolaylı,dolaylı,dolaylı,dolaylı,
+parametre dosyası,60,EMC_Ldm_stage,2*(EMC_Lw-EMC_M),4e-06,H,"= 4 uH, her CMC kademesi",-,-,-,-,-,-,-,
+parametre dosyası,61,EMC_Rdm_stage,2*EMC_Rw,0.01,Ohm,"= 10 mOhm, iki sargi toplami",-,-,-,-,-,-,-,
+parametre dosyası,62,EMC_Cx_eq,EMC_Cx_each/2,5e-07,F,"= 0.5 uF, iki esit C seri",-,-,-,1,1,1,1,inverter_s1_kal/Capacitor6.c | inverter_s2_kal/Capacitor7.c | inverter_senaryo3_kal/Capacitor6.c | (+1)
+parametre dosyası,63,EMC_Rx_eq,2*EMC_Rx_each,0.2,Ohm,= 0.2 Ohm,-,-,-,1,1,1,1,inverter_s1_kal/Capacitor6.r | inverter_s2_kal/Capacitor7.r | inverter_senaryo3_kal/Capacitor6.r | (+1)
+parametre dosyası,64,EMC_Rref,1e9,1000000000,Ohm,floating AC network numerical reference only,-,-,-,-,-,-,-,
+parametre dosyası,66,Tj_operating,25,25,degC,ortak calisma/jonksiyon sicakligi,dolaylı,dolaylı,dolaylı,dolaylı,dolaylı,dolaylı,dolaylı,
+parametre dosyası,67,Tj_operating_K,Tj_operating + 273.15,298.15,K,IGBT bloklarinin kullandigi birim,8,4,4,4,4,4,4,inverter_s1_kal/N-Channel IGBT.Tdevice | inverter_s1_kal/N-Channel IGBT1.Tdevice | inverter_s1_kal/N-Channel IGBT2.Tdevice | (+13)
+parametre dosyası,68,RG_total,15,15,Ohm,harici+dahili toplam etkin gate direnci,16,8,8,8,8,8,8,inverter_s1_kal/Gate Drive5/Gate Driver1.rHigh | inverter_s1_kal/Gate Drive5/Gate Driver1.rLow | inverter_s1_kal/Gate Drive6/Gate Driver1.rHigh | (+29)
+parametre dosyası,69,Vgate_on,15,15,V,gate surucu yuksek seviyesi,8,4,4,4,4,4,4,inverter_s1_kal/Gate Drive5/Gate Driver1.vHigh | inverter_s1_kal/Gate Drive6/Gate Driver1.vHigh | inverter_s1_kal/Gate Drive7/Gate Driver1.vHigh | (+13)
+parametre dosyası,70,Vgate_off,-5,-5,V,gate surucu dusuk seviyesi,8,4,4,4,4,4,4,inverter_s1_kal/Gate Drive5/Gate Driver1.vLow | inverter_s1_kal/Gate Drive6/Gate Driver1.vLow | inverter_s1_kal/Gate Drive7/Gate Driver1.vLow | (+13)
+parametre dosyası,71,gate_logic_high,0.7,0.7,1,gate driver mantiksal 1 esigi,8,4,4,4,4,4,4,inverter_s1_kal/Gate Drive5/Gate Driver1.uHighValue | inverter_s1_kal/Gate Drive6/Gate Driver1.uHighValue | inverter_s1_kal/Gate Drive7/Gate Driver1.uHighValue | (+13)
+parametre dosyası,72,gate_logic_low,0.3,0.3,1,gate driver mantiksal 0 esigi,8,4,4,4,4,4,4,inverter_s1_kal/Gate Drive5/Gate Driver1.uLowValue | inverter_s1_kal/Gate Drive6/Gate Driver1.uLowValue | inverter_s1_kal/Gate Drive7/Gate Driver1.uLowValue | (+13)
+parametre dosyası,73,gate_driver_rise,20e-9,2e-08,s,gate driver cikis rise time,8,4,4,4,4,4,4,inverter_s1_kal/Gate Drive5/Gate Driver1.tRise | inverter_s1_kal/Gate Drive6/Gate Driver1.tRise | inverter_s1_kal/Gate Drive7/Gate Driver1.tRise | (+13)
+parametre dosyası,74,gate_driver_fall,20e-9,2e-08,s,gate driver cikis fall time,8,4,4,4,4,4,4,inverter_s1_kal/Gate Drive5/Gate Driver1.tFall | inverter_s1_kal/Gate Drive6/Gate Driver1.tFall | inverter_s1_kal/Gate Drive7/Gate Driver1.tFall | (+13)
+parametre dosyası,75,gate_driver_cload,10e-9,1e-08,F,gate driver esdeger yuk kapasitansi,8,4,4,4,4,4,4,inverter_s1_kal/Gate Drive5/Gate Driver1.cLoad | inverter_s1_kal/Gate Drive6/Gate Driver1.cLoad | inverter_s1_kal/Gate Drive7/Gate Driver1.cLoad | (+13)
+parametre dosyası,76,gate_driver_ton,0,0,s,gate driver ilave on delay,8,4,4,4,4,4,4,inverter_s1_kal/Gate Drive5/Gate Driver1.tHigh | inverter_s1_kal/Gate Drive6/Gate Driver1.tHigh | inverter_s1_kal/Gate Drive7/Gate Driver1.tHigh | (+13)
+parametre dosyası,77,gate_driver_toff,0,0,s,gate driver ilave off delay,8,4,4,4,4,4,4,inverter_s1_kal/Gate Drive5/Gate Driver1.tLow | inverter_s1_kal/Gate Drive6/Gate Driver1.tLow | inverter_s1_kal/Gate Drive7/Gate Driver1.tLow | (+13)
+parametre dosyası,78,fsw,10e3,10000,Hz,PWM anahtarlama frekansi,4,4,4,4,4,4,4,inverter_s1_kal/Subsystem/PWM Generator (DC-DC)10.Fsw | inverter_s1_kal/Subsystem/PWM Generator (DC-DC)10.Ts | inverter_s1_kal/Subsystem/PWM Generator (DC-DC)11.Fsw | (+13)
+parametre dosyası,79,deadtime,1e-6,1e-06,s,"PIC32: DTR=ALTDTR=120, PTPER=12000 @ 10 kHz",4,4,4,4,4,4,4,inverter_s1_kal/Subsystem/On Delay.delay | inverter_s1_kal/Subsystem/On Delay1.delay | inverter_s1_kal/Subsystem/On Delay2.delay | (+13)
+parametre dosyası,80,f_grid,50,50,Hz,AC kaynak/PWM referans frekansi,3,2,2,2,2,2,3,inverter_s1_kal/Grid1.frequency | inverter_s1_kal/Sine Wave1.Frequency | inverter_s2_kal/Grid2.frequency | (+6)
+parametre dosyası,81,pwm_ref_amp,1,1,1,PWM sinüs referans genligi,1,1,1,1,1,1,1,inverter_s1_kal/Sine Wave1.Amplitude | inverter_s2_kal/S2 Sine Wave.Amplitude | inverter_senaryo3_kal/Sine Wave3.Amplitude | (+1)
+parametre dosyası,82,pwm_ref_Ts,1e-6,1e-06,s,PWM sinüs referans örnekleme zamani,1,1,1,1,1,1,9,inverter_s1_kal/Sine Wave1.SampleTime | inverter_s2_kal/S2 Sine Wave.SampleTime | inverter_senaryo3_kal/Sine Wave3.SampleTime | (+9)
+parametre dosyası,85,sim_max_step,1e-6,1e-06,s,,1,1,1,1,1,1,1,<model yapılandırması>.MaxStep
+parametre dosyası,86,sim_min_step,1e-9,1e-09,s,low-step convergence test,-,-,-,-,-,-,-,
+parametre dosyası,87,sim_rel_tol,1e-6,1e-06,,,1,1,1,1,1,1,1,<model yapılandırması>.RelTol
+parametre dosyası,88,sim_abs_tol,1e-6,1e-06,,,1,1,1,1,1,1,1,<model yapılandırması>.AbsTol
+parametre dosyası,89,simscape_residual_tolerance,1e-6,1e-06,,,2,1,1,1,1,1,1,inverter_s1_kal/Solver Configuration1.ResidualTolerance | inverter_s2_kal/Solver Configuration2.ResidualTolerance | inverter_senaryo3_kal/Solver Configuration1.ResidualTolerance | (+1)
+parametre dosyası,99,S12_Tj_cond,"[298.15, 298.1501]",[298.15 298.15],K,"25 degC; epsilon second grid point",4,2,2,2,2,2,2,inverter_s1_kal/N-Channel IGBT.Tj_vec1 | inverter_s1_kal/N-Channel IGBT1.Tj_vec1 | inverter_s2_kal/N-Channel IGBT4.Tj_vec1 | (+5)
+parametre dosyası,100,S12_Ic_cond,"[0, 1, 2, 5, 8, 10, 20, 30, 40, 50]",[0 1 2 5 8 10 20 30 40 50],A,,4,2,2,2,2,2,2,inverter_s1_kal/N-Channel IGBT.Ic_vec1 | inverter_s1_kal/N-Channel IGBT1.Ic_vec1 | inverter_s2_kal/N-Channel IGBT4.Ic_vec1 | (+5)
+parametre dosyası,101,S12_Vce_cond_25C,"[0, 0.9115, 0.9230, 0.9575, 0.9920, 1.0150, 1.1300, 1.2450, 1.3600, 1.4750]",[0 0.9115 0.923 0.9575 0.992 1.015 1.13 1.245 1.36 1.475],V,,dolaylı,dolaylı,dolaylı,dolaylı,dolaylı,dolaylı,dolaylı,
+parametre dosyası,102,S12_Vce_cond,"[S12_Vce_cond_25C; S12_Vce_cond_25C]","[0 0.9115 0.923 0.9575 0.992 1.015 1.13 1.245 1.36 1.475;0 0.9115 0.923 0.9575 0.992 1.015 1.13 1.245 1.36 1.475]",,,4,2,2,2,2,2,2,inverter_s1_kal/N-Channel IGBT.Vce_mat1 | inverter_s1_kal/N-Channel IGBT1.Vce_mat1 | inverter_s2_kal/N-Channel IGBT4.Vce_mat1 | (+5)
+parametre dosyası,103,S12_Rmiller,0.1,0.1,Ohm,,4,2,2,2,2,2,2,inverter_s1_kal/N-Channel IGBT.Rmiller | inverter_s1_kal/N-Channel IGBT1.Rmiller | inverter_s2_kal/N-Channel IGBT4.Rmiller | (+5)
+parametre dosyası,104,S12_Goff,1e-5,1e-05,S,,4,2,2,2,2,2,2,inverter_s1_kal/N-Channel IGBT.Goff | inverter_s1_kal/N-Channel IGBT1.Goff | inverter_s2_kal/N-Channel IGBT4.Goff | (+5)
+parametre dosyası,105,S12_Vge_threshold,6,6,V,,-,-,-,-,-,-,-,
+parametre dosyası,114,S12_Tj_loss,"[298.15, 298.1501]",[298.15 298.15],K,monotonic 25 degC grid,4,2,2,2,2,2,2,inverter_s1_kal/N-Channel IGBT.Tj_vec_loss | inverter_s1_kal/N-Channel IGBT1.Tj_vec_loss | inverter_s2_kal/N-Channel IGBT4.Tj_vec_loss | (+5)
+parametre dosyası,115,S12_Ic_loss,S12_Ic_cond,[0 1 2 5 8 10 20 30 40 50],A,[0 1 2 5 8 10 20 30 40 50],4,2,2,2,2,2,2,inverter_s1_kal/N-Channel IGBT.Ic_vec_loss | inverter_s1_kal/N-Channel IGBT1.Ic_vec_loss | inverter_s2_kal/N-Channel IGBT4.Ic_vec_loss | (+5)
+parametre dosyası,116,S12_Eon_25C,"[0, .020, .040, .100, .160, .200, .400, .600, .800, 1.000]*1e-3",[0 2e-05 4e-05 0.0001 0.00016 0.0002 0.0004 0.0006 0.0008 0.001],J,,dolaylı,dolaylı,dolaylı,dolaylı,dolaylı,dolaylı,dolaylı,
+parametre dosyası,117,S12_Eoff_25C,"[0, .030, .060, .150, .240, .300, .600, .900, 1.200, 1.500]*1e-3",[0 3e-05 6e-05 0.00015 0.00024 0.0003 0.0006 0.0009 0.0012 0.0015],J,,dolaylı,dolaylı,dolaylı,dolaylı,dolaylı,dolaylı,dolaylı,
+parametre dosyası,118,S12_Eon,"[S12_Eon_25C; S12_Eon_25C]","[0 2e-05 4e-05 0.0001 0.00016 0.0002 0.0004 0.0006 0.0008 0.001;0 2e-05 4e-05 0.0001 0.00016 0.0002 0.0004 0.0006 0.0008 0.001]",,,4,2,2,2,2,2,2,inverter_s1_kal/N-Channel IGBT.E_turn_on_mat1 | inverter_s1_kal/N-Channel IGBT1.E_turn_on_mat1 | inverter_s2_kal/N-Channel IGBT4.E_turn_on_mat1 | (+5)
+parametre dosyası,119,S12_Eoff,"[S12_Eoff_25C; S12_Eoff_25C]","[0 3e-05 6e-05 0.00015 0.00024 0.0003 0.0006 0.0009 0.0012 0.0015;0 3e-05 6e-05 0.00015 0.00024 0.0003 0.0006 0.0009 0.0012 0.0015]",,,4,2,2,2,2,2,2,inverter_s1_kal/N-Channel IGBT.E_turn_off_mat1 | inverter_s1_kal/N-Channel IGBT1.E_turn_off_mat1 | inverter_s2_kal/N-Channel IGBT4.E_turn_off_mat1 | (+5)
+parametre dosyası,124,S12_tondly,200e-9,2e-07,s,,4,2,2,2,2,2,2,inverter_s1_kal/N-Channel IGBT.t_on | inverter_s1_kal/N-Channel IGBT1.t_on | inverter_s2_kal/N-Channel IGBT4.t_on | (+5)
+parametre dosyası,125,S12_toffdly,600e-9,6e-07,s,,4,2,2,2,2,2,2,inverter_s1_kal/N-Channel IGBT.t_off | inverter_s1_kal/N-Channel IGBT1.t_off | inverter_s2_kal/N-Channel IGBT4.t_off | (+5)
+parametre dosyası,126,S12_risetime,60e-9,6e-08,s,,4,2,2,2,2,2,2,inverter_s1_kal/N-Channel IGBT.t_rise | inverter_s1_kal/N-Channel IGBT1.t_rise | inverter_s2_kal/N-Channel IGBT4.t_rise | (+5)
+parametre dosyası,127,S12_falltime,110e-9,1.1e-07,s,,4,2,2,2,2,2,2,inverter_s1_kal/N-Channel IGBT.t_fall | inverter_s1_kal/N-Channel IGBT1.t_fall | inverter_s2_kal/N-Channel IGBT4.t_fall | (+5)
+parametre dosyası,128,S12_Voff_ref,600,600,V,SKM datasheet Eon/Eoff test gerilimi,4,2,2,2,2,2,2,inverter_s1_kal/N-Channel IGBT.v_meas | inverter_s1_kal/N-Channel IGBT1.v_meas | inverter_s2_kal/N-Channel IGBT4.v_meas | (+5)
+parametre dosyası,129,S12_thermal_network,ee.enum.thermalNetworkTopology.junctionCase,1,,,-,-,-,-,-,-,-,
+parametre dosyası,130,S12_Rth,"[0, 10]",[0 10],K/W,,-,-,-,-,-,-,-,
+parametre dosyası,131,S12_thermal_mass_parameterization,ee.enum.thermalNetwork.timeconstant,1,,,-,-,-,-,-,-,-,
+parametre dosyası,132,S12_thermal_mass,"[0, 1]",[0 1],J/K,,-,-,-,-,-,-,-,
+parametre dosyası,133,S12_thermal_time_constant,"[0, 10]",[0 10],s,,-,-,-,-,-,-,-,
+parametre dosyası,134,S12_thermal_initial_temperature,"[25, 25]",[25 25],degC,,-,-,-,-,-,-,-,
+parametre dosyası,140,S34_Tj_cond,"[298.15, 298.1501]",[298.15 298.15],,,4,2,2,2,2,2,2,inverter_s1_kal/N-Channel IGBT2.Tj_vec1 | inverter_s1_kal/N-Channel IGBT3.Tj_vec1 | inverter_s2_kal/N-Channel IGBT6.Tj_vec1 | (+5)
+parametre dosyası,144,S34_Ic_cond,"[0, 1, 2, 5, 8, 10, 20, 30, 40, 50]",[0 1 2 5 8 10 20 30 40 50],,,4,2,2,2,2,2,2,inverter_s1_kal/N-Channel IGBT2.Ic_vec1 | inverter_s1_kal/N-Channel IGBT3.Ic_vec1 | inverter_s2_kal/N-Channel IGBT6.Ic_vec1 | (+5)
+parametre dosyası,145,S34_Vce_cond_25C,"[0, 0.800, 0.820, 0.880, 0.940, 1.000, 1.180, 1.360, 1.540, 1.680]",[0 0.8 0.82 0.88 0.94 1 1.18 1.36 1.54 1.68],V,,dolaylı,dolaylı,dolaylı,dolaylı,dolaylı,dolaylı,dolaylı,
+parametre dosyası,146,S34_Vce_cond,"[S34_Vce_cond_25C; S34_Vce_cond_25C]","[0 0.8 0.82 0.88 0.94 1 1.18 1.36 1.54 1.68;0 0.8 0.82 0.88 0.94 1 1.18 1.36 1.54 1.68]",,,4,2,2,2,2,2,2,inverter_s1_kal/N-Channel IGBT2.Vce_mat1 | inverter_s1_kal/N-Channel IGBT3.Vce_mat1 | inverter_s2_kal/N-Channel IGBT6.Vce_mat1 | (+5)
+parametre dosyası,147,S34_Rmiller,S12_Rmiller,0.1,,,4,2,2,2,2,2,2,inverter_s1_kal/N-Channel IGBT2.Rmiller | inverter_s1_kal/N-Channel IGBT3.Rmiller | inverter_s2_kal/N-Channel IGBT6.Rmiller | (+5)
+parametre dosyası,148,S34_Goff,S12_Goff,1e-05,,,4,2,2,2,2,2,2,inverter_s1_kal/N-Channel IGBT2.Goff | inverter_s1_kal/N-Channel IGBT3.Goff | inverter_s2_kal/N-Channel IGBT6.Goff | (+5)
+parametre dosyası,149,S34_Vge_threshold,S12_Vge_threshold,6,,,-,-,-,-,-,-,-,
+parametre dosyası,150,S34_Tj_loss,"[298.15, 298.1501]",[298.15 298.15],,,4,2,2,2,2,2,2,inverter_s1_kal/N-Channel IGBT2.Tj_vec_loss | inverter_s1_kal/N-Channel IGBT3.Tj_vec_loss | inverter_s2_kal/N-Channel IGBT6.Tj_vec_loss | (+5)
+parametre dosyası,151,S34_Ic_loss,S34_Ic_cond,[0 1 2 5 8 10 20 30 40 50],,,4,2,2,2,2,2,2,inverter_s1_kal/N-Channel IGBT2.Ic_vec_loss | inverter_s1_kal/N-Channel IGBT3.Ic_vec_loss | inverter_s2_kal/N-Channel IGBT6.Ic_vec_loss | (+5)
+parametre dosyası,157,S34_Eon_25C,"[0, .05, .08, .17, .24, .26, .52, .78, 1.04, 1.30]*1e-3",[0 5e-05 8e-05 0.00017 0.00024 0.00026 0.00052 0.00078 0.00104 0.0013],,,dolaylı,dolaylı,dolaylı,dolaylı,dolaylı,dolaylı,dolaylı,
+parametre dosyası,158,S34_Eon,"[S34_Eon_25C; S34_Eon_25C]","[0 5e-05 8e-05 0.00017 0.00024 0.00026 0.00052 0.00078 0.00104 0.0013;0 5e-05 8e-05 0.00017 0.00024 0.00026 0.00052 0.00078 0.00104 0.0013]",,,4,2,2,2,2,2,2,inverter_s1_kal/N-Channel IGBT2.E_turn_on_mat1 | inverter_s1_kal/N-Channel IGBT3.E_turn_on_mat1 | inverter_s2_kal/N-Channel IGBT6.E_turn_on_mat1 | (+5)
+parametre dosyası,159,S34_Eoff_25C,"[0, .07, .12, .25, .34, .38, .4925, .605, .7175, .83]*1e-3",[0 7e-05 0.00012 0.00025 0.00034 0.00038 0.0004925 0.000605 0.0007175 0.00083],,,dolaylı,dolaylı,dolaylı,dolaylı,dolaylı,dolaylı,dolaylı,
+parametre dosyası,160,S34_Eoff,"[S34_Eoff_25C; S34_Eoff_25C]","[0 7e-05 0.00012 0.00025 0.00034 0.00038 0.0004925 0.000605 0.0007175 0.00083;0 7e-05 0.00012 0.00025 0.00034 0.00038 0.0004925 0.000605 0.0007175 0.00083]",,,4,2,2,2,2,2,2,inverter_s1_kal/N-Channel IGBT2.E_turn_off_mat1 | inverter_s1_kal/N-Channel IGBT3.E_turn_off_mat1 | inverter_s2_kal/N-Channel IGBT6.E_turn_off_mat1 | (+5)
+parametre dosyası,163,S34_tondly,200e-9,2e-07,s,td(on),4,2,2,2,2,2,2,inverter_s1_kal/N-Channel IGBT2.t_on | inverter_s1_kal/N-Channel IGBT3.t_on | inverter_s2_kal/N-Channel IGBT6.t_on | (+5)
+parametre dosyası,164,S34_toffdly,50e-9,5e-08,s,td(off),4,2,2,2,2,2,2,inverter_s1_kal/N-Channel IGBT2.t_off | inverter_s1_kal/N-Channel IGBT3.t_off | inverter_s2_kal/N-Channel IGBT6.t_off | (+5)
+parametre dosyası,165,S34_risetime,100e-9,1e-07,s,tri,4,2,2,2,2,2,2,inverter_s1_kal/N-Channel IGBT2.t_rise | inverter_s1_kal/N-Channel IGBT3.t_rise | inverter_s2_kal/N-Channel IGBT6.t_rise | (+5)
+parametre dosyası,166,S34_falltime,1000e-9,1e-06,s,tfi,4,2,2,2,2,2,2,inverter_s1_kal/N-Channel IGBT2.t_fall | inverter_s1_kal/N-Channel IGBT3.t_fall | inverter_s2_kal/N-Channel IGBT6.t_fall | (+5)
+parametre dosyası,167,S34_Voff_ref,400,400,V,IXYS datasheet Eon/Eoff test gerilimi,4,2,2,2,2,2,2,inverter_s1_kal/N-Channel IGBT2.v_meas | inverter_s1_kal/N-Channel IGBT3.v_meas | inverter_s2_kal/N-Channel IGBT6.v_meas | (+5)
+parametre dosyası,168,S34_thermal_network,S12_thermal_network,1,,,-,-,-,-,-,-,-,
+parametre dosyası,169,S34_Rth,S12_Rth,[0 10],,,-,-,-,-,-,-,-,
+parametre dosyası,170,S34_thermal_mass_parameterization,S12_thermal_mass_parameterization,1,,,-,-,-,-,-,-,-,
+parametre dosyası,171,S34_thermal_mass,S12_thermal_mass,[0 1],,,-,-,-,-,-,-,-,
+parametre dosyası,172,S34_thermal_time_constant,S12_thermal_time_constant,[0 10],,,-,-,-,-,-,-,-,
+parametre dosyası,173,S34_thermal_initial_temperature,S12_thermal_initial_temperature,[25 25],,,-,-,-,-,-,-,-,
+parametre dosyası,176,DS12_Vf,1.50,1.5,V,SKM100GB12T4 diode VF0 max/konservatif,4,2,2,2,2,2,2,inverter_s1_kal/Diode2.Vf | inverter_s1_kal/Diode9.Vf | inverter_s2_kal/Diode1.Vf | (+5)
+parametre dosyası,177,DS12_Ron,10.2e-3,0.0102,Ohm,SKM datasheet rF max,4,2,2,2,2,2,2,inverter_s1_kal/Diode2.Ron | inverter_s1_kal/Diode9.Ron | inverter_s2_kal/Diode1.Ron | (+5)
+parametre dosyası,178,DS12_Goff,1e-8,1e-08,S,,4,2,2,2,2,2,2,inverter_s1_kal/Diode2.Goff | inverter_s1_kal/Diode9.Goff | inverter_s2_kal/Diode1.Goff | (+5)
+parametre dosyası,179,DS12_Cj,0,0,F,,4,2,2,2,2,2,2,inverter_s1_kal/Diode2.CJ | inverter_s1_kal/Diode9.CJ | inverter_s2_kal/Diode1.CJ | (+5)
+parametre dosyası,180,DS12_iRM,-54,-54,A,,4,2,2,2,2,2,2,inverter_s1_kal/Diode2.iRM | inverter_s1_kal/Diode9.iRM | inverter_s2_kal/Diode1.iRM | (+5)
+parametre dosyası,181,DS12_Iif,100,100,A,SKM datasheet reverse-recovery test ileri akimi,4,2,2,2,2,2,2,inverter_s1_kal/Diode2.iF | inverter_s1_kal/Diode9.iF | inverter_s2_kal/Diode1.iF | (+5)
+parametre dosyası,182,DS12_Iroffcrg,-1600e6,-1600000000,A/s,,4,2,2,2,2,2,2,inverter_s1_kal/Diode2.didt | inverter_s1_kal/Diode9.didt | inverter_s2_kal/Diode1.didt | (+5)
+parametre dosyası,185,DS12_trr,115e-9,1.15e-07,s,engineering placeholder (not tabulated),4,2,2,2,2,2,2,inverter_s1_kal/Diode2.trr | inverter_s1_kal/Diode9.trr | inverter_s2_kal/Diode1.trr | (+5)
+parametre dosyası,186,DS12_Qrr,15.7e-6,1.57e-05,C,,4,2,2,2,2,2,2,inverter_s1_kal/Diode2.Qrr | inverter_s1_kal/Diode9.Qrr | inverter_s2_kal/Diode1.Qrr | (+5)
+parametre dosyası,187,DS12_Vr_test,-600,-600,V,,4,2,2,2,2,2,2,inverter_s1_kal/Diode2.Vr | inverter_s1_kal/Diode9.Vr | inverter_s2_kal/Diode1.Vr | (+5)
+parametre dosyası,188,DS12_Ls,150e-9,1.5e-07,H,,4,2,2,2,2,2,2,inverter_s1_kal/Diode2.Ls | inverter_s1_kal/Diode9.Ls | inverter_s2_kal/Diode1.Ls | (+5)
+parametre dosyası,189,DS12_Tdevice,25,25,degC,,-,-,-,-,-,-,-,
+parametre dosyası,190,DS12_junction_thermal_mass,0.01,0.01,J/K,,4,2,2,2,2,2,2,inverter_s1_kal/Diode2.junction_thermal_mass | inverter_s1_kal/Diode9.junction_thermal_mass | inverter_s2_kal/Diode1.junction_thermal_mass | (+5)
+parametre dosyası,191,DS12_diode_model,ee.enum.diode.modelType.pwl,1,,,4,2,2,2,2,2,2,inverter_s1_kal/Diode2.ModelType | inverter_s1_kal/Diode9.ModelType | inverter_s2_kal/Diode1.ModelType | (+5)
+parametre dosyası,192,DS12_cap_model,ee.enum.diode.capParam.fixed,1,,,4,2,2,2,2,2,2,inverter_s1_kal/Diode2.C_param | inverter_s1_kal/Diode9.C_param | inverter_s2_kal/Diode1.C_param | (+5)
+parametre dosyası,193,DS12_recovery_model,ee.enum.diode.recoveryParam.peakcharge,3,,,4,2,2,2,2,2,2,inverter_s1_kal/Diode2.Q_param | inverter_s1_kal/Diode9.Q_param | inverter_s2_kal/Diode1.Q_param | (+5)
+parametre dosyası,194,DS12_fidelity,ee.enum.diode.fidelity.includeChargeDyn,2,,,4,2,2,2,2,2,2,inverter_s1_kal/Diode2.fidelity_level | inverter_s1_kal/Diode9.fidelity_level | inverter_s2_kal/Diode1.fidelity_level | (+5)
+parametre dosyası,195,DS12_temperature_model,ee.enum.diode.temperatureParam.off,1,,,4,2,2,2,2,2,2,inverter_s1_kal/Diode2.T_param | inverter_s1_kal/Diode9.T_param | inverter_s2_kal/Diode1.T_param | (+5)
+parametre dosyası,196,DS12_thermal_network,ee.enum.thermalNetworkTopology.external,3,,,4,2,2,2,2,2,2,inverter_s1_kal/Diode2.thermal_network_parameterization | inverter_s1_kal/Diode9.thermal_network_parameterization | inverter_s2_kal/Diode1.thermal_network_parameterization | (+5)
+parametre dosyası,201,DS34_Vf,1.70,1.7,V,,4,2,2,2,2,2,2,inverter_s1_kal/Diode6.Vf | inverter_s1_kal/Diode7.Vf | inverter_s2_kal/Diode10.Vf | (+5)
+parametre dosyası,202,DS34_Ron,6e-3,0.006,Ohm,derived PWL slope to 2.3 V at 100 A,4,2,2,2,2,2,2,inverter_s1_kal/Diode6.Ron | inverter_s1_kal/Diode7.Ron | inverter_s2_kal/Diode10.Ron | (+5)
+parametre dosyası,203,DS34_Goff,1e-8,1e-08,S,,4,2,2,2,2,2,2,inverter_s1_kal/Diode6.Goff | inverter_s1_kal/Diode7.Goff | inverter_s2_kal/Diode10.Goff | (+5)
+parametre dosyası,205,DS34_Cj,0,0,F,not specified for the IXYN FRD,4,2,2,2,2,2,2,inverter_s1_kal/Diode6.CJ | inverter_s1_kal/Diode7.CJ | inverter_s2_kal/Diode10.CJ | (+5)
+parametre dosyası,208,DS34_iRM,-95,-95,A,typ.,4,2,2,2,2,2,2,inverter_s1_kal/Diode6.iRM | inverter_s1_kal/Diode7.iRM | inverter_s2_kal/Diode10.iRM | (+5)
+parametre dosyası,209,DS34_Iif,100,100,A,,4,2,2,2,2,2,2,inverter_s1_kal/Diode6.iF | inverter_s1_kal/Diode7.iF | inverter_s2_kal/Diode10.iF | (+5)
+parametre dosyası,210,DS34_Iroffcrg,-1500e6,-1500000000,A/s,,4,2,2,2,2,2,2,inverter_s1_kal/Diode6.didt | inverter_s1_kal/Diode7.didt | inverter_s2_kal/Diode10.didt | (+5)
+parametre dosyası,211,DS34_trr,100e-9,1e-07,s,typ.,4,2,2,2,2,2,2,inverter_s1_kal/Diode6.trr | inverter_s1_kal/Diode7.trr | inverter_s2_kal/Diode10.trr | (+5)
+parametre dosyası,212,DS34_Qrr,9.5e-6,9.5e-06,C,approx. Fig. 24 value at IF=100 A,4,2,2,2,2,2,2,inverter_s1_kal/Diode6.Qrr | inverter_s1_kal/Diode7.Qrr | inverter_s2_kal/Diode10.Qrr | (+5)
+parametre dosyası,213,DS34_Vr_test,-400,-400,V,,4,2,2,2,2,2,2,inverter_s1_kal/Diode6.Vr | inverter_s1_kal/Diode7.Vr | inverter_s2_kal/Diode10.Vr | (+5)
+parametre dosyası,214,DS34_Ls,150e-9,1.5e-07,H,,4,2,2,2,2,2,2,inverter_s1_kal/Diode6.Ls | inverter_s1_kal/Diode7.Ls | inverter_s2_kal/Diode10.Ls | (+5)
+parametre dosyası,215,DS34_Tdevice,25,25,degC,,-,-,-,-,-,-,-,
+parametre dosyası,216,DS34_junction_thermal_mass,0.01,0.01,J/K,,4,2,2,2,2,2,2,inverter_s1_kal/Diode6.junction_thermal_mass | inverter_s1_kal/Diode7.junction_thermal_mass | inverter_s2_kal/Diode10.junction_thermal_mass | (+5)
+parametre dosyası,217,DS34_diode_model,ee.enum.diode.modelType.pwl,1,,,4,2,2,2,2,2,2,inverter_s1_kal/Diode6.ModelType | inverter_s1_kal/Diode7.ModelType | inverter_s2_kal/Diode10.ModelType | (+5)
+parametre dosyası,218,DS34_cap_model,ee.enum.diode.capParam.fixed,1,,,4,2,2,2,2,2,2,inverter_s1_kal/Diode6.C_param | inverter_s1_kal/Diode7.C_param | inverter_s2_kal/Diode10.C_param | (+5)
+parametre dosyası,219,DS34_recovery_model,ee.enum.diode.recoveryParam.peaktime,2,,,4,2,2,2,2,2,2,inverter_s1_kal/Diode6.Q_param | inverter_s1_kal/Diode7.Q_param | inverter_s2_kal/Diode10.Q_param | (+5)
+parametre dosyası,220,DS34_fidelity,ee.enum.diode.fidelity.includeChargeDyn,2,,,4,2,2,2,2,2,2,inverter_s1_kal/Diode6.fidelity_level | inverter_s1_kal/Diode7.fidelity_level | inverter_s2_kal/Diode10.fidelity_level | (+5)
+parametre dosyası,221,DS34_temperature_model,ee.enum.diode.temperatureParam.off,1,,,4,2,2,2,2,2,2,inverter_s1_kal/Diode6.T_param | inverter_s1_kal/Diode7.T_param | inverter_s2_kal/Diode10.T_param | (+5)
+parametre dosyası,222,DS34_thermal_network,ee.enum.thermalNetworkTopology.external,3,,,4,2,2,2,2,2,2,inverter_s1_kal/Diode6.thermal_network_parameterization | inverter_s1_kal/Diode7.thermal_network_parameterization | inverter_s2_kal/Diode10.thermal_network_parameterization | (+5)
+parametre dosyası,226,D12_Vf,1.58,1.58,V,DSEI equivalent VF0 at TJ=150 C,4,2,2,2,2,2,2,inverter_s1_kal/Diode3.Vf | inverter_s1_kal/Diode5.Vf | inverter_s2_kal/Diode4.Vf | (+5)
+parametre dosyası,227,D12_Ron,8.5e-3,0.0085,Ohm,"DSEI rF (power-loss fit; TJ=150 C)",4,2,2,2,2,2,2,inverter_s1_kal/Diode3.Ron | inverter_s1_kal/Diode5.Ron | inverter_s2_kal/Diode4.Ron | (+5)
+parametre dosyası,228,D12_Goff,1e-8,1e-08,S,,4,2,2,2,2,2,2,inverter_s1_kal/Diode3.Goff | inverter_s1_kal/Diode5.Goff | inverter_s2_kal/Diode4.Goff | (+5)
+parametre dosyası,229,D12_Cj,31e-12,3.1e-11,F,,4,2,2,2,2,2,2,inverter_s1_kal/Diode3.CJ | inverter_s1_kal/Diode5.CJ | inverter_s2_kal/Diode4.CJ | (+5)
+parametre dosyası,230,D12_iRM,-13,-13,A,,4,2,2,2,2,2,2,inverter_s1_kal/Diode3.iRM | inverter_s1_kal/Diode5.iRM | inverter_s2_kal/Diode4.iRM | (+5)
+parametre dosyası,231,D12_Iif,60,60,A,,4,2,2,2,2,2,2,inverter_s1_kal/Diode3.iF | inverter_s1_kal/Diode5.iF | inverter_s2_kal/Diode4.iF | (+5)
+parametre dosyası,232,D12_Iroffcrg,-300e6,-300000000,A/s,,4,2,2,2,2,2,2,inverter_s1_kal/Diode3.didt | inverter_s1_kal/Diode5.didt | inverter_s2_kal/Diode4.didt | (+5)
+parametre dosyası,235,D12_trr,190e-9,1.9e-07,s,,4,2,2,2,2,2,2,inverter_s1_kal/Diode3.trr | inverter_s1_kal/Diode5.trr | inverter_s2_kal/Diode4.trr | (+5)
+parametre dosyası,238,D12_Qrr,3.0e-6,3e-06,C,approximate datasheet-curve value,4,2,2,2,2,2,2,inverter_s1_kal/Diode3.Qrr | inverter_s1_kal/Diode5.Qrr | inverter_s2_kal/Diode4.Qrr | (+5)
+parametre dosyası,239,D12_Vr_test,-540,-540,V,DSEI reverse-recovery test voltage,4,2,2,2,2,2,2,inverter_s1_kal/Diode3.Vr | inverter_s1_kal/Diode5.Vr | inverter_s2_kal/Diode4.Vr | (+5)
+parametre dosyası,240,D12_Ls,150e-9,1.5e-07,H,,4,2,2,2,2,2,2,inverter_s1_kal/Diode3.Ls | inverter_s1_kal/Diode5.Ls | inverter_s2_kal/Diode4.Ls | (+5)
+parametre dosyası,241,D12_Tdevice,25,25,degC,,-,-,-,-,-,-,-,
+parametre dosyası,242,D12_junction_thermal_mass,0.01,0.01,J/K,,4,2,2,2,2,2,2,inverter_s1_kal/Diode3.junction_thermal_mass | inverter_s1_kal/Diode5.junction_thermal_mass | inverter_s2_kal/Diode4.junction_thermal_mass | (+5)
+parametre dosyası,243,D12_diode_model,ee.enum.diode.modelType.pwl,1,,,4,2,2,2,2,2,2,inverter_s1_kal/Diode3.ModelType | inverter_s1_kal/Diode5.ModelType | inverter_s2_kal/Diode4.ModelType | (+5)
+parametre dosyası,244,D12_cap_model,ee.enum.diode.capParam.fixed,1,,,4,2,2,2,2,2,2,inverter_s1_kal/Diode3.C_param | inverter_s1_kal/Diode5.C_param | inverter_s2_kal/Diode4.C_param | (+5)
+parametre dosyası,245,D12_recovery_model,ee.enum.diode.recoveryParam.peaktime,2,,,4,2,2,2,2,2,2,inverter_s1_kal/Diode3.Q_param | inverter_s1_kal/Diode5.Q_param | inverter_s2_kal/Diode4.Q_param | (+5)
+parametre dosyası,246,D12_fidelity,ee.enum.diode.fidelity.includeChargeDyn,2,,,4,2,2,2,2,2,2,inverter_s1_kal/Diode3.fidelity_level | inverter_s1_kal/Diode5.fidelity_level | inverter_s2_kal/Diode4.fidelity_level | (+5)
+parametre dosyası,247,D12_temperature_model,ee.enum.diode.temperatureParam.off,1,,,4,2,2,2,2,2,2,inverter_s1_kal/Diode3.T_param | inverter_s1_kal/Diode5.T_param | inverter_s2_kal/Diode4.T_param | (+5)
+parametre dosyası,248,D12_thermal_network,ee.enum.thermalNetworkTopology.external,3,,,4,2,2,2,2,2,2,inverter_s1_kal/Diode3.thermal_network_parameterization | inverter_s1_kal/Diode5.thermal_network_parameterization | inverter_s2_kal/Diode4.thermal_network_parameterization | (+5)
+parametre dosyası,262,Vdc_target,"[431.50, 395.00, 427.50, 427.50]",[431.5 395 427.5 427.5],V,,dolaylı,dolaylı,dolaylı,dolaylı,dolaylı,dolaylı,dolaylı,
+parametre dosyası,263,Idc_target,"[0.624,  0.684,  0.697,  NaN]",[0.624 0.684 0.697 NaN],A,,-,-,-,-,-,-,-,
+parametre dosyası,264,Vac_rms_target,"[119.80, 121.00, 124.30, 120.0]",[119.8 121 124.3 120],V,,dolaylı,dolaylı,dolaylı,dolaylı,dolaylı,dolaylı,dolaylı,
+parametre dosyası,265,Ifaz_rms_target,"[2.26,   2.33,   2.31,   25.00]",[2.26 2.33 2.31 25],A,,-,-,-,-,-,-,dolaylı,
+parametre dosyası,266,Pout_target,"[249.60, 253.20, 281.20, NaN]",[249.6 253.2 281.2 NaN],W,,-,-,-,-,-,-,-,
+parametre dosyası,267,cosphi_target,"[1.000, -0.995, -0.997, 1.000]",[1 -0.995 -0.997 1],1,,-,-,-,-,-,-,-,
+parametre dosyası,268,THD_target_pct,"[15.00,  47.00,  14.00,  NaN]",[15 47 14 NaN],%,,-,-,-,-,-,-,-,
+parametre dosyası,269,Qout_target,"[0.00,  -25.42, -21.83,  NaN]",[0 -25.42 -21.83 NaN],var,,-,-,-,-,-,-,-,
+parametre dosyası,270,Vout_target,"[119.950,121.170, NaN,    NaN]",[119.95 121.17 NaN NaN],V,,-,-,-,-,-,-,-,
+parametre dosyası,271,eff_target,"[0.9250, 0.9420, 0.9450, NaN]",[0.925 0.942 0.945 NaN],1,,-,-,-,-,-,-,-,
+parametre dosyası,276,Vdc1,Vdc_target(1),431.5,V,Senaryo 1 DC kaynak gerilimi,1,-,-,1,-,-,-,inverter_s1_kal/Voltage Source.dc_voltage
+parametre dosyası,277,Vdc2,Vdc_target(2),395,V,Senaryo 2 DC kaynak gerilimi,1,-,-,-,1,-,-,inverter_s2_kal/Voltage Source1.dc_voltage
+parametre dosyası,278,Vdc3,Vdc_target(3),427.5,V,Senaryo 3 DC kaynak gerilimi,-,1,1,-,-,1,-,inverter_senaryo3_kal/Voltage Source.dc_voltage
+parametre dosyası,279,Vdc4,Vdc_target(4),427.5,V,Senaryo 4 DC kaynak gerilimi,-,-,-,-,-,-,1,inverter_senaryo4_kc/Voltage Source.dc_voltage
+parametre dosyası,280,Vac1_rms,Vac_rms_target(1),119.8,V,Senaryo 1 sebeke/Varyak RMS gerilimi,dolaylı,-,-,dolaylı,-,-,-,
+parametre dosyası,281,Vac2_rms,Vac_rms_target(2),121,V,Senaryo 2 sebeke/Varyak RMS gerilimi,dolaylı,-,-,-,dolaylı,-,-,
+parametre dosyası,282,Vac3_rms,Vac_rms_target(3),124.3,V,Senaryo 3 sebeke/Varyak RMS gerilimi,-,dolaylı,dolaylı,-,-,dolaylı,-,
+parametre dosyası,283,Vac4_rms,Vac_rms_target(4),120,V,Senaryo 4 sebeke/Varyak RMS gerilimi,-,-,-,-,-,-,dolaylı,
+parametre dosyası,284,Vac1_peak,sqrt(2)*Vac1_rms,169.4227848,V,Simscape AC kaynak tepe genligi,1,-,-,1,-,-,-,inverter_s1_kal/Grid1.amp
+parametre dosyası,285,Vac2_peak,sqrt(2)*Vac2_rms,171.119841,V,Simscape AC kaynak tepe genligi,1,-,-,-,1,-,-,inverter_s2_kal/Grid2.amp
+parametre dosyası,286,Vac3_peak,sqrt(2)*Vac3_rms,175.7867458,V,Simscape AC kaynak tepe genligi,-,1,1,-,-,1,-,inverter_senaryo3_kal/Grid1.amp
+parametre dosyası,287,Vac4_peak,sqrt(2)*Vac4_rms,169.7056275,V,Simscape AC kaynak tepe genligi,-,-,-,-,-,-,1,inverter_senaryo4_kc/Grid1.amp
+parametre dosyası,292,K11,0.7865,0.7865,,,1,-,-,1,-,-,-,inverter_s1_kal/K11.Gain
+parametre dosyası,293,K12,0.79400,0.794,,,-,-,-,-,1,-,-,inverter_s2_kal/S2 K1.Gain
+parametre dosyası,294,K13,0.45,0.45,,,-,1,1,-,-,1,dolaylı,inverter_senaryo3_kal/K1.Gain
+parametre dosyası,295,K14,K13,0.45,,,-,-,-,-,-,-,1,inverter_senaryo4_kc/K1.Gain
+parametre dosyası,296,K33,0.39,0.39,,,-,1,1,-,-,1,dolaylı,inverter_senaryo3_kal/K3.Gain
+parametre dosyası,297,K34,K33,0.39,,,-,-,-,-,-,-,1,inverter_senaryo4_kc/K3.Gain
+parametre dosyası,298,K_pwm,"[K11, K12, K13, K14]",[0.7865 0.794 0.45 0.45],,,-,-,-,-,-,-,-,
+parametre dosyası,302,K3_pwm,"[NaN, NaN, K33, NaN]",[NaN NaN 0.39 NaN],,,-,-,-,-,-,-,-,
+parametre dosyası,303,phase_deg1,-0.44,-0.44,deg,Senaryo 1 PWM sinüs referans fazi,1,-,-,1,-,-,-,inverter_s1_kal/Sine Wave1.Phase
+parametre dosyası,304,phase_deg2,0,0,deg,Senaryo 2 PWM sinüs referans fazi,-,-,-,-,1,-,-,inverter_s2_kal/S2 Sine Wave.Phase
+parametre dosyası,305,phase_deg3,0,0,,,-,1,1,-,-,1,-,inverter_senaryo3_kal/Sine Wave3.Phase
+parametre dosyası,306,phase_deg4,0,0,,,-,-,-,-,-,-,1,inverter_senaryo4_kc/Sine Wave3.Phase
+parametre dosyası,307,phase_deg,"[phase_deg1, phase_deg2, phase_deg3, phase_deg4]",[-0.44 0 0 0],,sonraki senaryolar icin saklanir,-,-,-,-,-,-,-,
+parametre dosyası,308,measurement_gain,20,20,-,iki semadaki ortak olcum ölçekleme kazanci,2,1,1,1,1,1,1,inverter_s1_kal/Gain1.Gain | inverter_s2_kal/Gain2.Gain | inverter_senaryo3_kal/Gain1.Gain | (+1)
+parametre dosyası,309,L2,1000e-6,0.001,,,2,1,1,1,1,1,1,inverter_s1_kal/CL1.l | inverter_s2_kal/CL2.l | inverter_senaryo3_kal/CL1.l | (+1)
+parametre dosyası,310,L1_core_Rp,600,600,,,2,1,1,1,1,1,-,inverter_s1_kal/L1 Core Loss Rp.R | inverter_s2_kal/L1 Core Loss Rp1.R | inverter_senaryo3_kal/L1 Core Loss Rp.R
+parametre dosyası,311,L1_core_Rp4,1500,1500,,,-,-,-,-,-,-,1,inverter_senaryo4_kc/L1 Core Loss Rp.R
+parametre dosyası,312,Kp,0.03,0.03,,,-,-,-,-,-,-,dolaylı,
+S4 denetleyici dosyası,25,S4_Ts_c,pwm_ref_Ts,1e-06,s,denetleyici örnekleme periyodu (1 µs),-,-,-,-,-,-,3,inverter_senaryo4_kc/S4 Akim Denetleyicisi/Integrator.SampleTime | inverter_senaryo4_kc/S4 Akim Denetleyicisi/Rezonans.SampleTime | inverter_senaryo4_kc/S4 iL1 Olcum Suzgeci.SampleTime
+S4 denetleyici dosyası,26,S4_f_lp,fsw/2,5000,Hz,ölçüm süzgeci köşe frekansı,-,-,-,-,-,-,dolaylı,
+S4 denetleyici dosyası,27,S4_lp_a,exp(-2*pi*S4_f_lp*S4_Ts_c),0.9690724263,-,ayrık tek kutup: y = a*y + (1-a)*x,-,-,-,-,-,-,dolaylı,
+S4 denetleyici dosyası,28,S4_lp_num,1 - S4_lp_a,0.0309275737,,,-,-,-,-,-,-,1,inverter_senaryo4_kc/S4 iL1 Olcum Suzgeci.Numerator
+S4 denetleyici dosyası,29,S4_lp_den,"[1, -S4_lp_a]",[1 -0.969072],,,-,-,-,-,-,-,1,inverter_senaryo4_kc/S4 iL1 Olcum Suzgeci.Denominator
+S4 denetleyici dosyası,30,S4_iL1_sign,1,1,-,Current Sensor1 yönü: +1 = faz -> L1 (evirici -> şebeke),-,-,-,-,-,-,1,inverter_senaryo4_kc/S4 iL1 Isaret.Gain
+S4 denetleyici dosyası,35,S4_Iref,Ifaz_rms_target(4),25,A RMS,basamak öncesi referans,-,-,-,-,-,-,1,inverter_senaryo4_kc/S4 Iref Basamak.Before
+S4 denetleyici dosyası,36,S4_Iref_step,S4_Iref,25,A RMS,basamak sonrası referans,-,-,-,-,-,-,1,inverter_senaryo4_kc/S4 Iref Basamak.After
+S4 denetleyici dosyası,37,S4_t_step,1e3,1000,s,basamak anı (1e3: basamak yok),-,-,-,-,-,-,1,inverter_senaryo4_kc/S4 Iref Basamak.Time
+S4 denetleyici dosyası,43,S4_Kp_c,Kp,0.03,1/A,,-,-,-,-,-,-,1,inverter_senaryo4_kc/S4 Akim Denetleyicisi/Kp.Gain
+S4 denetleyici dosyası,44,S4_PI_fz,60,60,Hz,PI sıfırı (geçiş frekansının ~1/10'u),-,-,-,-,-,-,-,
+S4 denetleyici dosyası,45,S4_Ki_c,0,0,1/(A s),P kipinde 0,-,-,-,-,-,-,1,inverter_senaryo4_kc/S4 Akim Denetleyicisi/Ki.Gain
+S4 denetleyici dosyası,46,S4_Kaw,0,0,1/s,geri hesaplama kazancı (PI: 1/Ti),-,-,-,-,-,-,1,inverter_senaryo4_kc/S4 Akim Denetleyicisi/Kaw.Gain
+S4 denetleyici dosyası,47,S4_Kr,0,0,1/A,rezonans kazancı (0: rezonans kapalı),-,-,-,-,-,-,1,inverter_senaryo4_kc/S4 Akim Denetleyicisi/Rezonans.Numerator
+S4 denetleyici dosyası,48,S4_PIR_Kr,10*Kp,0.3,1/A,PIR kipinde kullanılan tasarım değeri,-,-,-,-,-,-,-,
+S4 denetleyici dosyası,49,S4_R_wb,2*pi*2,12.56637061,rad/s,rezonans bant genişliği (ωb),-,-,-,-,-,-,dolaylı,
+S4 denetleyici dosyası,50,S4_int_lim,1,1,-,integratör durum sınırı (görev oranı),-,-,-,-,-,-,2,inverter_senaryo4_kc/S4 Akim Denetleyicisi/Integrator.UpperSaturationLimit | inverter_senaryo4_kc/S4 Akim Denetleyicisi/Integrator.LowerSaturationLimit
+S4 denetleyici dosyası,51,S4_u_lim,1,1,-,modülasyon sınırı |u| <= 1,-,-,-,-,-,-,4,inverter_senaryo4_kc/S4 AW Asim.LowerValue | inverter_senaryo4_kc/S4 AW Asim.UpperValue | inverter_senaryo4_kc/S4 Modulasyon Siniri.UpperLimit | (+1)
+S4 denetleyici dosyası,56,s4_w0,2*pi*f_grid,<tanımsız>,,,-,-,-,-,-,-,dolaylı,
+S4 denetleyici dosyası,57,s4_K,s4_w0/tan(s4_w0*S4_Ts_c/2),<tanımsız>,,ön bükmeli Tustin sabiti,-,-,-,-,-,-,dolaylı,
+S4 denetleyici dosyası,58,s4_a0,s4_K^2 + 2*S4_R_wb*s4_K + s4_w0^2,<tanımsız>,,,-,-,-,-,-,-,dolaylı,
+S4 denetleyici dosyası,59,S4_R_num1,2*S4_R_wb*s4_K*[1 0 -1]/s4_a0,[1.25662e-05 0 -1.25662e-05],,Kr = 1 için pay,-,-,-,-,-,-,1,inverter_senaryo4_kc/S4 Akim Denetleyicisi/Rezonans.Numerator
+S4 denetleyici dosyası,60,S4_R_den,"[1, (2*s4_w0^2 - 2*s4_K^2)/s4_a0, (s4_K^2 - 2*S4_R_wb*s4_K + s4_w0^2)/s4_a0]",[1 -1.99997 0.999975],,,-,-,-,-,-,-,1,inverter_senaryo4_kc/S4 Akim Denetleyicisi/Rezonans.Denominator
+kalibrasyon: inverter_s1_kal_kalibrasyon.m,3,K11,0.7865023595,0.7865023595,,m-dosyası 0.7865,,,,,,,,
+kalibrasyon: inverter_s1_kal_kalibrasyon.m,4,phase_deg1,-0.36607,-0.36607,,,,,,,,,,
+kalibrasyon: inverter_s2_kal_kalibrasyon.m,3,K12,0.7679568,0.7679568,,m-dosyası 0.794,,,,,,,,
+kalibrasyon: inverter_s2_kal_kalibrasyon.m,4,phase_deg2,0.1121,0.1121,,,,,,,,,,
+kalibrasyon: inverter_senaryo3_kal_kalibrasyon.m,3,K13,0.44343,0.44343,,m-dosyası 0.45,,,,,,,,
+kalibrasyon: inverter_senaryo3_kal_kalibrasyon.m,4,K33,0.384306,0.384306,,m-dosyası 0.39,,,,,,,,
+kalibrasyon: inverter_senaryo3_kal_kalibrasyon.m,5,phase_deg3,0.6575,0.6575,,,,,,,,,,

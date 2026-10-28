@@ -1,0 +1,641 @@
+model,blok,kaynak,parametre,ifade
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/DC Blocking Diode,ee.semiconductors.diode,Rth,"[0, 10]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/DC Blocking Diode,ee.semiconductors.diode,thermal_mass,"[0, 1]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/DC Blocking Diode,ee.semiconductors.diode,thermal_time_constant,"[0, 10]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/DC Blocking Diode,ee.semiconductors.diode,thermal_mass_initial_temperatures,"[25, 25]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/DC Blocking Diode1,ee.semiconductors.diode,Rth,"[0, 10]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/DC Blocking Diode1,ee.semiconductors.diode,thermal_mass,"[0, 1]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/DC Blocking Diode1,ee.semiconductors.diode,thermal_time_constant,"[0, 10]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/DC Blocking Diode1,ee.semiconductors.diode,thermal_mass_initial_temperatures,"[25, 25]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/DC Source R,ee.passive.resistor,Tdevice,25
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/DC Source R,ee.passive.resistor,thermal_mass,100
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/DC Source R1,ee.passive.resistor,Tdevice,25
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/DC Source R1,ee.passive.resistor,thermal_mass,100
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Diode1,ee.semiconductors.diode_thermal,Tdevice,25
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Diode1,ee.semiconductors.diode_thermal,Rth,"[0, 10]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Diode1,ee.semiconductors.diode_thermal,thermal_mass,"[0, 1]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Diode1,ee.semiconductors.diode_thermal,thermal_time_constant,"[0, 10]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Diode1,ee.semiconductors.diode_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Diode10,ee.semiconductors.diode_thermal,Tdevice,25
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Diode10,ee.semiconductors.diode_thermal,Rth,"[0, 10]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Diode10,ee.semiconductors.diode_thermal,thermal_mass,"[0, 1]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Diode10,ee.semiconductors.diode_thermal,thermal_time_constant,"[0, 10]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Diode10,ee.semiconductors.diode_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Diode11,ee.semiconductors.diode_thermal,Tdevice,25
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Diode11,ee.semiconductors.diode_thermal,Rth,"[0, 10]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Diode11,ee.semiconductors.diode_thermal,thermal_mass,"[0, 1]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Diode11,ee.semiconductors.diode_thermal,thermal_time_constant,"[0, 10]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Diode11,ee.semiconductors.diode_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Diode12,ee.semiconductors.diode_thermal,Tdevice,25
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Diode12,ee.semiconductors.diode_thermal,Rth,"[0, 10]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Diode12,ee.semiconductors.diode_thermal,thermal_mass,"[0, 1]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Diode12,ee.semiconductors.diode_thermal,thermal_time_constant,"[0, 10]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Diode12,ee.semiconductors.diode_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Diode2,ee.semiconductors.diode_thermal,Tdevice,25
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Diode2,ee.semiconductors.diode_thermal,Rth,"[0, 10]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Diode2,ee.semiconductors.diode_thermal,thermal_mass,"[0, 1]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Diode2,ee.semiconductors.diode_thermal,thermal_time_constant,"[0, 10]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Diode2,ee.semiconductors.diode_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Diode3,ee.semiconductors.diode_thermal,Tdevice,25
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Diode3,ee.semiconductors.diode_thermal,Rth,"[0, 10]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Diode3,ee.semiconductors.diode_thermal,thermal_mass,"[0, 1]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Diode3,ee.semiconductors.diode_thermal,thermal_time_constant,"[0, 10]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Diode3,ee.semiconductors.diode_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Diode4,ee.semiconductors.diode_thermal,Tdevice,25
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Diode4,ee.semiconductors.diode_thermal,Rth,"[0, 10]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Diode4,ee.semiconductors.diode_thermal,thermal_mass,"[0, 1]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Diode4,ee.semiconductors.diode_thermal,thermal_time_constant,"[0, 10]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Diode4,ee.semiconductors.diode_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Diode5,ee.semiconductors.diode_thermal,Tdevice,25
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Diode5,ee.semiconductors.diode_thermal,Rth,"[0, 10]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Diode5,ee.semiconductors.diode_thermal,thermal_mass,"[0, 1]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Diode5,ee.semiconductors.diode_thermal,thermal_time_constant,"[0, 10]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Diode5,ee.semiconductors.diode_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Diode6,ee.semiconductors.diode_thermal,Tdevice,25
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Diode6,ee.semiconductors.diode_thermal,Rth,"[0, 10]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Diode6,ee.semiconductors.diode_thermal,thermal_mass,"[0, 1]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Diode6,ee.semiconductors.diode_thermal,thermal_time_constant,"[0, 10]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Diode6,ee.semiconductors.diode_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Diode7,ee.semiconductors.diode_thermal,Tdevice,25
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Diode7,ee.semiconductors.diode_thermal,Rth,"[0, 10]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Diode7,ee.semiconductors.diode_thermal,thermal_mass,"[0, 1]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Diode7,ee.semiconductors.diode_thermal,thermal_time_constant,"[0, 10]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Diode7,ee.semiconductors.diode_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Diode8,ee.semiconductors.diode_thermal,Tdevice,25
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Diode8,ee.semiconductors.diode_thermal,Rth,"[0, 10]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Diode8,ee.semiconductors.diode_thermal,thermal_mass,"[0, 1]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Diode8,ee.semiconductors.diode_thermal,thermal_time_constant,"[0, 10]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Diode8,ee.semiconductors.diode_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Diode9,ee.semiconductors.diode_thermal,Tdevice,25
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Diode9,ee.semiconductors.diode_thermal,Rth,"[0, 10]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Diode9,ee.semiconductors.diode_thermal,thermal_mass,"[0, 1]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Diode9,ee.semiconductors.diode_thermal,thermal_time_constant,"[0, 10]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Diode9,ee.semiconductors.diode_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/EMC Core Loss R1_1,ee.passive.resistor,Tdevice,25
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/EMC Core Loss R1_1,ee.passive.resistor,thermal_mass,100
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/EMC Core Loss R1_2,ee.passive.resistor,Tdevice,25
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/EMC Core Loss R1_2,ee.passive.resistor,thermal_mass,100
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/EMC Core Loss R1_3,ee.passive.resistor,Tdevice,25
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/EMC Core Loss R1_3,ee.passive.resistor,thermal_mass,100
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/EMC Core Loss R1_4,ee.passive.resistor,Tdevice,25
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/EMC Core Loss R1_4,ee.passive.resistor,thermal_mass,100
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/EMC Core Loss R2_1,ee.passive.resistor,Tdevice,25
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/EMC Core Loss R2_1,ee.passive.resistor,thermal_mass,100
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/EMC Core Loss R2_2,ee.passive.resistor,Tdevice,25
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/EMC Core Loss R2_2,ee.passive.resistor,thermal_mass,100
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/EMC Core Loss R2_3,ee.passive.resistor,Tdevice,25
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/EMC Core Loss R2_3,ee.passive.resistor,thermal_mass,100
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/EMC Core Loss R2_4,ee.passive.resistor,Tdevice,25
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/EMC Core Loss R2_4,ee.passive.resistor,thermal_mass,100
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Gate Drive1/Gate Driver1,ee.semiconductors.gate_driver,uHigh,4
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Gate Drive1/Gate Driver1,ee.semiconductors.gate_driver,uLow,3
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Gate Drive2/Gate Driver1,ee.semiconductors.gate_driver,uHigh,4
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Gate Drive2/Gate Driver1,ee.semiconductors.gate_driver,uLow,3
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Gate Drive3/Gate Driver1,ee.semiconductors.gate_driver,uHigh,4
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Gate Drive3/Gate Driver1,ee.semiconductors.gate_driver,uLow,3
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Gate Drive4/Gate Driver1,ee.semiconductors.gate_driver,uHigh,4
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Gate Drive4/Gate Driver1,ee.semiconductors.gate_driver,uLow,3
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Gate Drive5/Gate Driver1,ee.semiconductors.gate_driver,uHigh,4
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Gate Drive5/Gate Driver1,ee.semiconductors.gate_driver,uLow,3
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Gate Drive6/Gate Driver1,ee.semiconductors.gate_driver,uHigh,4
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Gate Drive6/Gate Driver1,ee.semiconductors.gate_driver,uLow,3
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Gate Drive7/Gate Driver1,ee.semiconductors.gate_driver,uHigh,4
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Gate Drive7/Gate Driver1,ee.semiconductors.gate_driver,uLow,3
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Gate Drive8/Gate Driver1,ee.semiconductors.gate_driver,uHigh,4
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Gate Drive8/Gate Driver1,ee.semiconductors.gate_driver,uLow,3
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/L1 Core Loss Rp,ee.passive.resistor,Tdevice,25
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/L1 Core Loss Rp,ee.passive.resistor,thermal_mass,100
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/L1 Core Loss Rp1,ee.passive.resistor,Tdevice,25
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/L1 Core Loss Rp1,ee.passive.resistor,thermal_mass,100
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/N-Channel IGBT,ee.semiconductors.igbt_event_based_thermal,Vth,6
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/N-Channel IGBT,ee.semiconductors.igbt_event_based_thermal,Rth,"[0, 10]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/N-Channel IGBT,ee.semiconductors.igbt_event_based_thermal,thermal_mass,"[0, 1]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/N-Channel IGBT,ee.semiconductors.igbt_event_based_thermal,thermal_time_constant,"[0, 10]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/N-Channel IGBT,ee.semiconductors.igbt_event_based_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/N-Channel IGBT1,ee.semiconductors.igbt_event_based_thermal,Vth,6
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/N-Channel IGBT1,ee.semiconductors.igbt_event_based_thermal,Rth,"[0, 10]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/N-Channel IGBT1,ee.semiconductors.igbt_event_based_thermal,thermal_mass,"[0, 1]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/N-Channel IGBT1,ee.semiconductors.igbt_event_based_thermal,thermal_time_constant,"[0, 10]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/N-Channel IGBT1,ee.semiconductors.igbt_event_based_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/N-Channel IGBT2,ee.semiconductors.igbt_event_based_thermal,Vth,6
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/N-Channel IGBT2,ee.semiconductors.igbt_event_based_thermal,Rth,"[0, 10]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/N-Channel IGBT2,ee.semiconductors.igbt_event_based_thermal,thermal_mass,"[0, 1]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/N-Channel IGBT2,ee.semiconductors.igbt_event_based_thermal,thermal_time_constant,"[0, 10]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/N-Channel IGBT2,ee.semiconductors.igbt_event_based_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/N-Channel IGBT3,ee.semiconductors.igbt_event_based_thermal,Vth,6
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/N-Channel IGBT3,ee.semiconductors.igbt_event_based_thermal,Rth,"[0, 10]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/N-Channel IGBT3,ee.semiconductors.igbt_event_based_thermal,thermal_mass,"[0, 1]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/N-Channel IGBT3,ee.semiconductors.igbt_event_based_thermal,thermal_time_constant,"[0, 10]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/N-Channel IGBT3,ee.semiconductors.igbt_event_based_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/N-Channel IGBT4,ee.semiconductors.igbt_event_based_thermal,Vth,6
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/N-Channel IGBT4,ee.semiconductors.igbt_event_based_thermal,Rth,"[0, 10]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/N-Channel IGBT4,ee.semiconductors.igbt_event_based_thermal,thermal_mass,"[0, 1]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/N-Channel IGBT4,ee.semiconductors.igbt_event_based_thermal,thermal_time_constant,"[0, 10]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/N-Channel IGBT4,ee.semiconductors.igbt_event_based_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/N-Channel IGBT5,ee.semiconductors.igbt_event_based_thermal,Vth,6
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/N-Channel IGBT5,ee.semiconductors.igbt_event_based_thermal,Rth,"[0, 10]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/N-Channel IGBT5,ee.semiconductors.igbt_event_based_thermal,thermal_mass,"[0, 1]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/N-Channel IGBT5,ee.semiconductors.igbt_event_based_thermal,thermal_time_constant,"[0, 10]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/N-Channel IGBT5,ee.semiconductors.igbt_event_based_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/N-Channel IGBT6,ee.semiconductors.igbt_event_based_thermal,Vth,6
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/N-Channel IGBT6,ee.semiconductors.igbt_event_based_thermal,Rth,"[0, 10]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/N-Channel IGBT6,ee.semiconductors.igbt_event_based_thermal,thermal_mass,"[0, 1]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/N-Channel IGBT6,ee.semiconductors.igbt_event_based_thermal,thermal_time_constant,"[0, 10]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/N-Channel IGBT6,ee.semiconductors.igbt_event_based_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/N-Channel IGBT7,ee.semiconductors.igbt_event_based_thermal,Vth,6
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/N-Channel IGBT7,ee.semiconductors.igbt_event_based_thermal,Rth,"[0, 10]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/N-Channel IGBT7,ee.semiconductors.igbt_event_based_thermal,thermal_mass,"[0, 1]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/N-Channel IGBT7,ee.semiconductors.igbt_event_based_thermal,thermal_time_constant,"[0, 10]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/N-Channel IGBT7,ee.semiconductors.igbt_event_based_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Resistor,ee.passive.resistor,Tdevice,25
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Resistor,ee.passive.resistor,thermal_mass,100
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Resistor1,ee.passive.resistor,Tdevice,25
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Resistor1,ee.passive.resistor,thermal_mass,100
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Resistor2,ee.passive.resistor,Tdevice,25
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Resistor2,ee.passive.resistor,thermal_mass,100
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Resistor3,ee.passive.resistor,Tdevice,25
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Resistor3,ee.passive.resistor,thermal_mass,100
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Resistor4,ee.passive.resistor,Tdevice,25
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Resistor4,ee.passive.resistor,thermal_mass,100
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Resistor5,ee.passive.resistor,Tdevice,25
+ham_S1S2,inverter_scenario1_parametric5_etiquetli/Resistor5,ee.passive.resistor,thermal_mass,100
+ham_S3,inverter_senaryo3/DC Blocking Diode,ee.semiconductors.diode,Rth,"[0, 10]"
+ham_S3,inverter_senaryo3/DC Blocking Diode,ee.semiconductors.diode,thermal_mass,"[0, 1]"
+ham_S3,inverter_senaryo3/DC Blocking Diode,ee.semiconductors.diode,thermal_time_constant,"[0, 10]"
+ham_S3,inverter_senaryo3/DC Blocking Diode,ee.semiconductors.diode,thermal_mass_initial_temperatures,"[25, 25]"
+ham_S3,inverter_senaryo3/DC Source R,ee.passive.resistor,Tdevice,25
+ham_S3,inverter_senaryo3/DC Source R,ee.passive.resistor,thermal_mass,100
+ham_S3,inverter_senaryo3/Diode2,ee.semiconductors.diode_thermal,Tdevice,25
+ham_S3,inverter_senaryo3/Diode2,ee.semiconductors.diode_thermal,Rth,"[0, 10]"
+ham_S3,inverter_senaryo3/Diode2,ee.semiconductors.diode_thermal,thermal_mass,"[0, 1]"
+ham_S3,inverter_senaryo3/Diode2,ee.semiconductors.diode_thermal,thermal_time_constant,"[0, 10]"
+ham_S3,inverter_senaryo3/Diode2,ee.semiconductors.diode_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+ham_S3,inverter_senaryo3/Diode3,ee.semiconductors.diode_thermal,Tdevice,25
+ham_S3,inverter_senaryo3/Diode3,ee.semiconductors.diode_thermal,Rth,"[0, 10]"
+ham_S3,inverter_senaryo3/Diode3,ee.semiconductors.diode_thermal,thermal_mass,"[0, 1]"
+ham_S3,inverter_senaryo3/Diode3,ee.semiconductors.diode_thermal,thermal_time_constant,"[0, 10]"
+ham_S3,inverter_senaryo3/Diode3,ee.semiconductors.diode_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+ham_S3,inverter_senaryo3/Diode5,ee.semiconductors.diode_thermal,Tdevice,25
+ham_S3,inverter_senaryo3/Diode5,ee.semiconductors.diode_thermal,Rth,"[0, 10]"
+ham_S3,inverter_senaryo3/Diode5,ee.semiconductors.diode_thermal,thermal_mass,"[0, 1]"
+ham_S3,inverter_senaryo3/Diode5,ee.semiconductors.diode_thermal,thermal_time_constant,"[0, 10]"
+ham_S3,inverter_senaryo3/Diode5,ee.semiconductors.diode_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+ham_S3,inverter_senaryo3/Diode6,ee.semiconductors.diode_thermal,Tdevice,25
+ham_S3,inverter_senaryo3/Diode6,ee.semiconductors.diode_thermal,Rth,"[0, 10]"
+ham_S3,inverter_senaryo3/Diode6,ee.semiconductors.diode_thermal,thermal_mass,"[0, 1]"
+ham_S3,inverter_senaryo3/Diode6,ee.semiconductors.diode_thermal,thermal_time_constant,"[0, 10]"
+ham_S3,inverter_senaryo3/Diode6,ee.semiconductors.diode_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+ham_S3,inverter_senaryo3/Diode7,ee.semiconductors.diode_thermal,Tdevice,25
+ham_S3,inverter_senaryo3/Diode7,ee.semiconductors.diode_thermal,Rth,"[0, 10]"
+ham_S3,inverter_senaryo3/Diode7,ee.semiconductors.diode_thermal,thermal_mass,"[0, 1]"
+ham_S3,inverter_senaryo3/Diode7,ee.semiconductors.diode_thermal,thermal_time_constant,"[0, 10]"
+ham_S3,inverter_senaryo3/Diode7,ee.semiconductors.diode_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+ham_S3,inverter_senaryo3/Diode9,ee.semiconductors.diode_thermal,Tdevice,25
+ham_S3,inverter_senaryo3/Diode9,ee.semiconductors.diode_thermal,Rth,"[0, 10]"
+ham_S3,inverter_senaryo3/Diode9,ee.semiconductors.diode_thermal,thermal_mass,"[0, 1]"
+ham_S3,inverter_senaryo3/Diode9,ee.semiconductors.diode_thermal,thermal_time_constant,"[0, 10]"
+ham_S3,inverter_senaryo3/Diode9,ee.semiconductors.diode_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+ham_S3,inverter_senaryo3/EMC Core Loss R1_1,ee.passive.resistor,Tdevice,25
+ham_S3,inverter_senaryo3/EMC Core Loss R1_1,ee.passive.resistor,thermal_mass,100
+ham_S3,inverter_senaryo3/EMC Core Loss R1_2,ee.passive.resistor,Tdevice,25
+ham_S3,inverter_senaryo3/EMC Core Loss R1_2,ee.passive.resistor,thermal_mass,100
+ham_S3,inverter_senaryo3/EMC Core Loss R2_1,ee.passive.resistor,Tdevice,25
+ham_S3,inverter_senaryo3/EMC Core Loss R2_1,ee.passive.resistor,thermal_mass,100
+ham_S3,inverter_senaryo3/EMC Core Loss R2_2,ee.passive.resistor,Tdevice,25
+ham_S3,inverter_senaryo3/EMC Core Loss R2_2,ee.passive.resistor,thermal_mass,100
+ham_S3,inverter_senaryo3/Gate Drive5/Gate Driver1,ee.semiconductors.gate_driver,uHigh,4
+ham_S3,inverter_senaryo3/Gate Drive5/Gate Driver1,ee.semiconductors.gate_driver,uLow,3
+ham_S3,inverter_senaryo3/Gate Drive6/Gate Driver1,ee.semiconductors.gate_driver,uHigh,4
+ham_S3,inverter_senaryo3/Gate Drive6/Gate Driver1,ee.semiconductors.gate_driver,uLow,3
+ham_S3,inverter_senaryo3/Gate Drive7/Gate Driver1,ee.semiconductors.gate_driver,uHigh,4
+ham_S3,inverter_senaryo3/Gate Drive7/Gate Driver1,ee.semiconductors.gate_driver,uLow,3
+ham_S3,inverter_senaryo3/Gate Drive8/Gate Driver1,ee.semiconductors.gate_driver,uHigh,4
+ham_S3,inverter_senaryo3/Gate Drive8/Gate Driver1,ee.semiconductors.gate_driver,uLow,3
+ham_S3,inverter_senaryo3/L1 Core Loss Rp,ee.passive.resistor,Tdevice,25
+ham_S3,inverter_senaryo3/L1 Core Loss Rp,ee.passive.resistor,thermal_mass,100
+ham_S3,inverter_senaryo3/N-Channel IGBT,ee.semiconductors.igbt_event_based_thermal,Vth,6
+ham_S3,inverter_senaryo3/N-Channel IGBT,ee.semiconductors.igbt_event_based_thermal,Rth,"[0, 10]"
+ham_S3,inverter_senaryo3/N-Channel IGBT,ee.semiconductors.igbt_event_based_thermal,thermal_mass,"[0, 1]"
+ham_S3,inverter_senaryo3/N-Channel IGBT,ee.semiconductors.igbt_event_based_thermal,thermal_time_constant,"[0, 10]"
+ham_S3,inverter_senaryo3/N-Channel IGBT,ee.semiconductors.igbt_event_based_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+ham_S3,inverter_senaryo3/N-Channel IGBT1,ee.semiconductors.igbt_event_based_thermal,Vth,6
+ham_S3,inverter_senaryo3/N-Channel IGBT1,ee.semiconductors.igbt_event_based_thermal,Rth,"[0, 10]"
+ham_S3,inverter_senaryo3/N-Channel IGBT1,ee.semiconductors.igbt_event_based_thermal,thermal_mass,"[0, 1]"
+ham_S3,inverter_senaryo3/N-Channel IGBT1,ee.semiconductors.igbt_event_based_thermal,thermal_time_constant,"[0, 10]"
+ham_S3,inverter_senaryo3/N-Channel IGBT1,ee.semiconductors.igbt_event_based_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+ham_S3,inverter_senaryo3/N-Channel IGBT2,ee.semiconductors.igbt_event_based_thermal,Vth,6
+ham_S3,inverter_senaryo3/N-Channel IGBT2,ee.semiconductors.igbt_event_based_thermal,Rth,"[0, 10]"
+ham_S3,inverter_senaryo3/N-Channel IGBT2,ee.semiconductors.igbt_event_based_thermal,thermal_mass,"[0, 1]"
+ham_S3,inverter_senaryo3/N-Channel IGBT2,ee.semiconductors.igbt_event_based_thermal,thermal_time_constant,"[0, 10]"
+ham_S3,inverter_senaryo3/N-Channel IGBT2,ee.semiconductors.igbt_event_based_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+ham_S3,inverter_senaryo3/N-Channel IGBT3,ee.semiconductors.igbt_event_based_thermal,Vth,6
+ham_S3,inverter_senaryo3/N-Channel IGBT3,ee.semiconductors.igbt_event_based_thermal,Rth,"[0, 10]"
+ham_S3,inverter_senaryo3/N-Channel IGBT3,ee.semiconductors.igbt_event_based_thermal,thermal_mass,"[0, 1]"
+ham_S3,inverter_senaryo3/N-Channel IGBT3,ee.semiconductors.igbt_event_based_thermal,thermal_time_constant,"[0, 10]"
+ham_S3,inverter_senaryo3/N-Channel IGBT3,ee.semiconductors.igbt_event_based_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+ham_S3,inverter_senaryo3/Resistor,ee.passive.resistor,Tdevice,25
+ham_S3,inverter_senaryo3/Resistor,ee.passive.resistor,thermal_mass,100
+ham_S3,inverter_senaryo3/Resistor1,ee.passive.resistor,Tdevice,25
+ham_S3,inverter_senaryo3/Resistor1,ee.passive.resistor,thermal_mass,100
+ham_S3,inverter_senaryo3/Resistor2,ee.passive.resistor,Tdevice,25
+ham_S3,inverter_senaryo3/Resistor2,ee.passive.resistor,thermal_mass,100
+ham_S4,inverter_senaryo4/DC Blocking Diode,ee.semiconductors.diode,Rth,"[0, 10]"
+ham_S4,inverter_senaryo4/DC Blocking Diode,ee.semiconductors.diode,thermal_mass,"[0, 1]"
+ham_S4,inverter_senaryo4/DC Blocking Diode,ee.semiconductors.diode,thermal_time_constant,"[0, 10]"
+ham_S4,inverter_senaryo4/DC Blocking Diode,ee.semiconductors.diode,thermal_mass_initial_temperatures,"[25, 25]"
+ham_S4,inverter_senaryo4/DC Source R,ee.passive.resistor,Tdevice,25
+ham_S4,inverter_senaryo4/DC Source R,ee.passive.resistor,thermal_mass,100
+ham_S4,inverter_senaryo4/Diode2,ee.semiconductors.diode_thermal,Tdevice,25
+ham_S4,inverter_senaryo4/Diode2,ee.semiconductors.diode_thermal,Rth,"[0, 10]"
+ham_S4,inverter_senaryo4/Diode2,ee.semiconductors.diode_thermal,thermal_mass,"[0, 1]"
+ham_S4,inverter_senaryo4/Diode2,ee.semiconductors.diode_thermal,thermal_time_constant,"[0, 10]"
+ham_S4,inverter_senaryo4/Diode2,ee.semiconductors.diode_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+ham_S4,inverter_senaryo4/Diode3,ee.semiconductors.diode_thermal,Tdevice,25
+ham_S4,inverter_senaryo4/Diode3,ee.semiconductors.diode_thermal,Rth,"[0, 10]"
+ham_S4,inverter_senaryo4/Diode3,ee.semiconductors.diode_thermal,thermal_mass,"[0, 1]"
+ham_S4,inverter_senaryo4/Diode3,ee.semiconductors.diode_thermal,thermal_time_constant,"[0, 10]"
+ham_S4,inverter_senaryo4/Diode3,ee.semiconductors.diode_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+ham_S4,inverter_senaryo4/Diode5,ee.semiconductors.diode_thermal,Tdevice,25
+ham_S4,inverter_senaryo4/Diode5,ee.semiconductors.diode_thermal,Rth,"[0, 10]"
+ham_S4,inverter_senaryo4/Diode5,ee.semiconductors.diode_thermal,thermal_mass,"[0, 1]"
+ham_S4,inverter_senaryo4/Diode5,ee.semiconductors.diode_thermal,thermal_time_constant,"[0, 10]"
+ham_S4,inverter_senaryo4/Diode5,ee.semiconductors.diode_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+ham_S4,inverter_senaryo4/Diode6,ee.semiconductors.diode_thermal,Tdevice,25
+ham_S4,inverter_senaryo4/Diode6,ee.semiconductors.diode_thermal,Rth,"[0, 10]"
+ham_S4,inverter_senaryo4/Diode6,ee.semiconductors.diode_thermal,thermal_mass,"[0, 1]"
+ham_S4,inverter_senaryo4/Diode6,ee.semiconductors.diode_thermal,thermal_time_constant,"[0, 10]"
+ham_S4,inverter_senaryo4/Diode6,ee.semiconductors.diode_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+ham_S4,inverter_senaryo4/Diode7,ee.semiconductors.diode_thermal,Tdevice,25
+ham_S4,inverter_senaryo4/Diode7,ee.semiconductors.diode_thermal,Rth,"[0, 10]"
+ham_S4,inverter_senaryo4/Diode7,ee.semiconductors.diode_thermal,thermal_mass,"[0, 1]"
+ham_S4,inverter_senaryo4/Diode7,ee.semiconductors.diode_thermal,thermal_time_constant,"[0, 10]"
+ham_S4,inverter_senaryo4/Diode7,ee.semiconductors.diode_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+ham_S4,inverter_senaryo4/Diode9,ee.semiconductors.diode_thermal,Tdevice,25
+ham_S4,inverter_senaryo4/Diode9,ee.semiconductors.diode_thermal,Rth,"[0, 10]"
+ham_S4,inverter_senaryo4/Diode9,ee.semiconductors.diode_thermal,thermal_mass,"[0, 1]"
+ham_S4,inverter_senaryo4/Diode9,ee.semiconductors.diode_thermal,thermal_time_constant,"[0, 10]"
+ham_S4,inverter_senaryo4/Diode9,ee.semiconductors.diode_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+ham_S4,inverter_senaryo4/EMC Core Loss R1_1,ee.passive.resistor,Tdevice,25
+ham_S4,inverter_senaryo4/EMC Core Loss R1_1,ee.passive.resistor,thermal_mass,100
+ham_S4,inverter_senaryo4/EMC Core Loss R1_2,ee.passive.resistor,Tdevice,25
+ham_S4,inverter_senaryo4/EMC Core Loss R1_2,ee.passive.resistor,thermal_mass,100
+ham_S4,inverter_senaryo4/EMC Core Loss R2_1,ee.passive.resistor,Tdevice,25
+ham_S4,inverter_senaryo4/EMC Core Loss R2_1,ee.passive.resistor,thermal_mass,100
+ham_S4,inverter_senaryo4/EMC Core Loss R2_2,ee.passive.resistor,Tdevice,25
+ham_S4,inverter_senaryo4/EMC Core Loss R2_2,ee.passive.resistor,thermal_mass,100
+ham_S4,inverter_senaryo4/Gate Drive5/Gate Driver1,ee.semiconductors.gate_driver,uHigh,4
+ham_S4,inverter_senaryo4/Gate Drive5/Gate Driver1,ee.semiconductors.gate_driver,uLow,3
+ham_S4,inverter_senaryo4/Gate Drive6/Gate Driver1,ee.semiconductors.gate_driver,uHigh,4
+ham_S4,inverter_senaryo4/Gate Drive6/Gate Driver1,ee.semiconductors.gate_driver,uLow,3
+ham_S4,inverter_senaryo4/Gate Drive7/Gate Driver1,ee.semiconductors.gate_driver,uHigh,4
+ham_S4,inverter_senaryo4/Gate Drive7/Gate Driver1,ee.semiconductors.gate_driver,uLow,3
+ham_S4,inverter_senaryo4/Gate Drive8/Gate Driver1,ee.semiconductors.gate_driver,uHigh,4
+ham_S4,inverter_senaryo4/Gate Drive8/Gate Driver1,ee.semiconductors.gate_driver,uLow,3
+ham_S4,inverter_senaryo4/L1 Core Loss Rp,ee.passive.resistor,Tdevice,25
+ham_S4,inverter_senaryo4/L1 Core Loss Rp,ee.passive.resistor,thermal_mass,100
+ham_S4,inverter_senaryo4/N-Channel IGBT,ee.semiconductors.igbt_event_based_thermal,Vth,6
+ham_S4,inverter_senaryo4/N-Channel IGBT,ee.semiconductors.igbt_event_based_thermal,Rth,"[0, 10]"
+ham_S4,inverter_senaryo4/N-Channel IGBT,ee.semiconductors.igbt_event_based_thermal,thermal_mass,"[0, 1]"
+ham_S4,inverter_senaryo4/N-Channel IGBT,ee.semiconductors.igbt_event_based_thermal,thermal_time_constant,"[0, 10]"
+ham_S4,inverter_senaryo4/N-Channel IGBT,ee.semiconductors.igbt_event_based_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+ham_S4,inverter_senaryo4/N-Channel IGBT1,ee.semiconductors.igbt_event_based_thermal,Vth,6
+ham_S4,inverter_senaryo4/N-Channel IGBT1,ee.semiconductors.igbt_event_based_thermal,Rth,"[0, 10]"
+ham_S4,inverter_senaryo4/N-Channel IGBT1,ee.semiconductors.igbt_event_based_thermal,thermal_mass,"[0, 1]"
+ham_S4,inverter_senaryo4/N-Channel IGBT1,ee.semiconductors.igbt_event_based_thermal,thermal_time_constant,"[0, 10]"
+ham_S4,inverter_senaryo4/N-Channel IGBT1,ee.semiconductors.igbt_event_based_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+ham_S4,inverter_senaryo4/N-Channel IGBT2,ee.semiconductors.igbt_event_based_thermal,Vth,6
+ham_S4,inverter_senaryo4/N-Channel IGBT2,ee.semiconductors.igbt_event_based_thermal,Rth,"[0, 10]"
+ham_S4,inverter_senaryo4/N-Channel IGBT2,ee.semiconductors.igbt_event_based_thermal,thermal_mass,"[0, 1]"
+ham_S4,inverter_senaryo4/N-Channel IGBT2,ee.semiconductors.igbt_event_based_thermal,thermal_time_constant,"[0, 10]"
+ham_S4,inverter_senaryo4/N-Channel IGBT2,ee.semiconductors.igbt_event_based_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+ham_S4,inverter_senaryo4/N-Channel IGBT3,ee.semiconductors.igbt_event_based_thermal,Vth,6
+ham_S4,inverter_senaryo4/N-Channel IGBT3,ee.semiconductors.igbt_event_based_thermal,Rth,"[0, 10]"
+ham_S4,inverter_senaryo4/N-Channel IGBT3,ee.semiconductors.igbt_event_based_thermal,thermal_mass,"[0, 1]"
+ham_S4,inverter_senaryo4/N-Channel IGBT3,ee.semiconductors.igbt_event_based_thermal,thermal_time_constant,"[0, 10]"
+ham_S4,inverter_senaryo4/N-Channel IGBT3,ee.semiconductors.igbt_event_based_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+ham_S4,inverter_senaryo4/Resistor,ee.passive.resistor,Tdevice,25
+ham_S4,inverter_senaryo4/Resistor,ee.passive.resistor,thermal_mass,100
+ham_S4,inverter_senaryo4/Resistor1,ee.passive.resistor,Tdevice,25
+ham_S4,inverter_senaryo4/Resistor1,ee.passive.resistor,thermal_mass,100
+ham_S4,inverter_senaryo4/Resistor2,ee.passive.resistor,Tdevice,25
+ham_S4,inverter_senaryo4/Resistor2,ee.passive.resistor,thermal_mass,100
+tez_S1,inverter_s1_kal/DC Blocking Diode,ee.semiconductors.diode,Rth,"[0, 10]"
+tez_S1,inverter_s1_kal/DC Blocking Diode,ee.semiconductors.diode,thermal_mass,"[0, 1]"
+tez_S1,inverter_s1_kal/DC Blocking Diode,ee.semiconductors.diode,thermal_time_constant,"[0, 10]"
+tez_S1,inverter_s1_kal/DC Blocking Diode,ee.semiconductors.diode,thermal_mass_initial_temperatures,"[25, 25]"
+tez_S1,inverter_s1_kal/DC Source R,ee.passive.resistor,Tdevice,25
+tez_S1,inverter_s1_kal/DC Source R,ee.passive.resistor,thermal_mass,100
+tez_S1,inverter_s1_kal/Diode2,ee.semiconductors.diode_thermal,Tdevice,25
+tez_S1,inverter_s1_kal/Diode2,ee.semiconductors.diode_thermal,Rth,"[0, 10]"
+tez_S1,inverter_s1_kal/Diode2,ee.semiconductors.diode_thermal,thermal_mass,"[0, 1]"
+tez_S1,inverter_s1_kal/Diode2,ee.semiconductors.diode_thermal,thermal_time_constant,"[0, 10]"
+tez_S1,inverter_s1_kal/Diode2,ee.semiconductors.diode_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+tez_S1,inverter_s1_kal/Diode3,ee.semiconductors.diode_thermal,Tdevice,25
+tez_S1,inverter_s1_kal/Diode3,ee.semiconductors.diode_thermal,Rth,"[0, 10]"
+tez_S1,inverter_s1_kal/Diode3,ee.semiconductors.diode_thermal,thermal_mass,"[0, 1]"
+tez_S1,inverter_s1_kal/Diode3,ee.semiconductors.diode_thermal,thermal_time_constant,"[0, 10]"
+tez_S1,inverter_s1_kal/Diode3,ee.semiconductors.diode_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+tez_S1,inverter_s1_kal/Diode5,ee.semiconductors.diode_thermal,Tdevice,25
+tez_S1,inverter_s1_kal/Diode5,ee.semiconductors.diode_thermal,Rth,"[0, 10]"
+tez_S1,inverter_s1_kal/Diode5,ee.semiconductors.diode_thermal,thermal_mass,"[0, 1]"
+tez_S1,inverter_s1_kal/Diode5,ee.semiconductors.diode_thermal,thermal_time_constant,"[0, 10]"
+tez_S1,inverter_s1_kal/Diode5,ee.semiconductors.diode_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+tez_S1,inverter_s1_kal/Diode6,ee.semiconductors.diode_thermal,Tdevice,25
+tez_S1,inverter_s1_kal/Diode6,ee.semiconductors.diode_thermal,Rth,"[0, 10]"
+tez_S1,inverter_s1_kal/Diode6,ee.semiconductors.diode_thermal,thermal_mass,"[0, 1]"
+tez_S1,inverter_s1_kal/Diode6,ee.semiconductors.diode_thermal,thermal_time_constant,"[0, 10]"
+tez_S1,inverter_s1_kal/Diode6,ee.semiconductors.diode_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+tez_S1,inverter_s1_kal/Diode7,ee.semiconductors.diode_thermal,Tdevice,25
+tez_S1,inverter_s1_kal/Diode7,ee.semiconductors.diode_thermal,Rth,"[0, 10]"
+tez_S1,inverter_s1_kal/Diode7,ee.semiconductors.diode_thermal,thermal_mass,"[0, 1]"
+tez_S1,inverter_s1_kal/Diode7,ee.semiconductors.diode_thermal,thermal_time_constant,"[0, 10]"
+tez_S1,inverter_s1_kal/Diode7,ee.semiconductors.diode_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+tez_S1,inverter_s1_kal/Diode9,ee.semiconductors.diode_thermal,Tdevice,25
+tez_S1,inverter_s1_kal/Diode9,ee.semiconductors.diode_thermal,Rth,"[0, 10]"
+tez_S1,inverter_s1_kal/Diode9,ee.semiconductors.diode_thermal,thermal_mass,"[0, 1]"
+tez_S1,inverter_s1_kal/Diode9,ee.semiconductors.diode_thermal,thermal_time_constant,"[0, 10]"
+tez_S1,inverter_s1_kal/Diode9,ee.semiconductors.diode_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+tez_S1,inverter_s1_kal/EMC Core Loss R1_1,ee.passive.resistor,Tdevice,25
+tez_S1,inverter_s1_kal/EMC Core Loss R1_1,ee.passive.resistor,thermal_mass,100
+tez_S1,inverter_s1_kal/EMC Core Loss R1_2,ee.passive.resistor,Tdevice,25
+tez_S1,inverter_s1_kal/EMC Core Loss R1_2,ee.passive.resistor,thermal_mass,100
+tez_S1,inverter_s1_kal/EMC Core Loss R2_1,ee.passive.resistor,Tdevice,25
+tez_S1,inverter_s1_kal/EMC Core Loss R2_1,ee.passive.resistor,thermal_mass,100
+tez_S1,inverter_s1_kal/EMC Core Loss R2_2,ee.passive.resistor,Tdevice,25
+tez_S1,inverter_s1_kal/EMC Core Loss R2_2,ee.passive.resistor,thermal_mass,100
+tez_S1,inverter_s1_kal/Gate Drive5/Gate Driver1,ee.semiconductors.gate_driver,uHigh,4
+tez_S1,inverter_s1_kal/Gate Drive5/Gate Driver1,ee.semiconductors.gate_driver,uLow,3
+tez_S1,inverter_s1_kal/Gate Drive6/Gate Driver1,ee.semiconductors.gate_driver,uHigh,4
+tez_S1,inverter_s1_kal/Gate Drive6/Gate Driver1,ee.semiconductors.gate_driver,uLow,3
+tez_S1,inverter_s1_kal/Gate Drive7/Gate Driver1,ee.semiconductors.gate_driver,uHigh,4
+tez_S1,inverter_s1_kal/Gate Drive7/Gate Driver1,ee.semiconductors.gate_driver,uLow,3
+tez_S1,inverter_s1_kal/Gate Drive8/Gate Driver1,ee.semiconductors.gate_driver,uHigh,4
+tez_S1,inverter_s1_kal/Gate Drive8/Gate Driver1,ee.semiconductors.gate_driver,uLow,3
+tez_S1,inverter_s1_kal/L1 Core Loss Rp,ee.passive.resistor,Tdevice,25
+tez_S1,inverter_s1_kal/L1 Core Loss Rp,ee.passive.resistor,thermal_mass,100
+tez_S1,inverter_s1_kal/N-Channel IGBT,ee.semiconductors.igbt_event_based_thermal,Vth,6
+tez_S1,inverter_s1_kal/N-Channel IGBT,ee.semiconductors.igbt_event_based_thermal,Rth,"[0, 10]"
+tez_S1,inverter_s1_kal/N-Channel IGBT,ee.semiconductors.igbt_event_based_thermal,thermal_mass,"[0, 1]"
+tez_S1,inverter_s1_kal/N-Channel IGBT,ee.semiconductors.igbt_event_based_thermal,thermal_time_constant,"[0, 10]"
+tez_S1,inverter_s1_kal/N-Channel IGBT,ee.semiconductors.igbt_event_based_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+tez_S1,inverter_s1_kal/N-Channel IGBT1,ee.semiconductors.igbt_event_based_thermal,Vth,6
+tez_S1,inverter_s1_kal/N-Channel IGBT1,ee.semiconductors.igbt_event_based_thermal,Rth,"[0, 10]"
+tez_S1,inverter_s1_kal/N-Channel IGBT1,ee.semiconductors.igbt_event_based_thermal,thermal_mass,"[0, 1]"
+tez_S1,inverter_s1_kal/N-Channel IGBT1,ee.semiconductors.igbt_event_based_thermal,thermal_time_constant,"[0, 10]"
+tez_S1,inverter_s1_kal/N-Channel IGBT1,ee.semiconductors.igbt_event_based_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+tez_S1,inverter_s1_kal/N-Channel IGBT2,ee.semiconductors.igbt_event_based_thermal,Vth,6
+tez_S1,inverter_s1_kal/N-Channel IGBT2,ee.semiconductors.igbt_event_based_thermal,Rth,"[0, 10]"
+tez_S1,inverter_s1_kal/N-Channel IGBT2,ee.semiconductors.igbt_event_based_thermal,thermal_mass,"[0, 1]"
+tez_S1,inverter_s1_kal/N-Channel IGBT2,ee.semiconductors.igbt_event_based_thermal,thermal_time_constant,"[0, 10]"
+tez_S1,inverter_s1_kal/N-Channel IGBT2,ee.semiconductors.igbt_event_based_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+tez_S1,inverter_s1_kal/N-Channel IGBT3,ee.semiconductors.igbt_event_based_thermal,Vth,6
+tez_S1,inverter_s1_kal/N-Channel IGBT3,ee.semiconductors.igbt_event_based_thermal,Rth,"[0, 10]"
+tez_S1,inverter_s1_kal/N-Channel IGBT3,ee.semiconductors.igbt_event_based_thermal,thermal_mass,"[0, 1]"
+tez_S1,inverter_s1_kal/N-Channel IGBT3,ee.semiconductors.igbt_event_based_thermal,thermal_time_constant,"[0, 10]"
+tez_S1,inverter_s1_kal/N-Channel IGBT3,ee.semiconductors.igbt_event_based_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+tez_S1,inverter_s1_kal/Resistor,ee.passive.resistor,Tdevice,25
+tez_S1,inverter_s1_kal/Resistor,ee.passive.resistor,thermal_mass,100
+tez_S1,inverter_s1_kal/Resistor1,ee.passive.resistor,Tdevice,25
+tez_S1,inverter_s1_kal/Resistor1,ee.passive.resistor,thermal_mass,100
+tez_S1,inverter_s1_kal/Resistor2,ee.passive.resistor,Tdevice,25
+tez_S1,inverter_s1_kal/Resistor2,ee.passive.resistor,thermal_mass,100
+tez_S2,inverter_s2_kal/DC Blocking Diode1,ee.semiconductors.diode,Rth,"[0, 10]"
+tez_S2,inverter_s2_kal/DC Blocking Diode1,ee.semiconductors.diode,thermal_mass,"[0, 1]"
+tez_S2,inverter_s2_kal/DC Blocking Diode1,ee.semiconductors.diode,thermal_time_constant,"[0, 10]"
+tez_S2,inverter_s2_kal/DC Blocking Diode1,ee.semiconductors.diode,thermal_mass_initial_temperatures,"[25, 25]"
+tez_S2,inverter_s2_kal/DC Source R1,ee.passive.resistor,Tdevice,25
+tez_S2,inverter_s2_kal/DC Source R1,ee.passive.resistor,thermal_mass,100
+tez_S2,inverter_s2_kal/Diode1,ee.semiconductors.diode_thermal,Tdevice,25
+tez_S2,inverter_s2_kal/Diode1,ee.semiconductors.diode_thermal,Rth,"[0, 10]"
+tez_S2,inverter_s2_kal/Diode1,ee.semiconductors.diode_thermal,thermal_mass,"[0, 1]"
+tez_S2,inverter_s2_kal/Diode1,ee.semiconductors.diode_thermal,thermal_time_constant,"[0, 10]"
+tez_S2,inverter_s2_kal/Diode1,ee.semiconductors.diode_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+tez_S2,inverter_s2_kal/Diode10,ee.semiconductors.diode_thermal,Tdevice,25
+tez_S2,inverter_s2_kal/Diode10,ee.semiconductors.diode_thermal,Rth,"[0, 10]"
+tez_S2,inverter_s2_kal/Diode10,ee.semiconductors.diode_thermal,thermal_mass,"[0, 1]"
+tez_S2,inverter_s2_kal/Diode10,ee.semiconductors.diode_thermal,thermal_time_constant,"[0, 10]"
+tez_S2,inverter_s2_kal/Diode10,ee.semiconductors.diode_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+tez_S2,inverter_s2_kal/Diode11,ee.semiconductors.diode_thermal,Tdevice,25
+tez_S2,inverter_s2_kal/Diode11,ee.semiconductors.diode_thermal,Rth,"[0, 10]"
+tez_S2,inverter_s2_kal/Diode11,ee.semiconductors.diode_thermal,thermal_mass,"[0, 1]"
+tez_S2,inverter_s2_kal/Diode11,ee.semiconductors.diode_thermal,thermal_time_constant,"[0, 10]"
+tez_S2,inverter_s2_kal/Diode11,ee.semiconductors.diode_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+tez_S2,inverter_s2_kal/Diode12,ee.semiconductors.diode_thermal,Tdevice,25
+tez_S2,inverter_s2_kal/Diode12,ee.semiconductors.diode_thermal,Rth,"[0, 10]"
+tez_S2,inverter_s2_kal/Diode12,ee.semiconductors.diode_thermal,thermal_mass,"[0, 1]"
+tez_S2,inverter_s2_kal/Diode12,ee.semiconductors.diode_thermal,thermal_time_constant,"[0, 10]"
+tez_S2,inverter_s2_kal/Diode12,ee.semiconductors.diode_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+tez_S2,inverter_s2_kal/Diode4,ee.semiconductors.diode_thermal,Tdevice,25
+tez_S2,inverter_s2_kal/Diode4,ee.semiconductors.diode_thermal,Rth,"[0, 10]"
+tez_S2,inverter_s2_kal/Diode4,ee.semiconductors.diode_thermal,thermal_mass,"[0, 1]"
+tez_S2,inverter_s2_kal/Diode4,ee.semiconductors.diode_thermal,thermal_time_constant,"[0, 10]"
+tez_S2,inverter_s2_kal/Diode4,ee.semiconductors.diode_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+tez_S2,inverter_s2_kal/Diode8,ee.semiconductors.diode_thermal,Tdevice,25
+tez_S2,inverter_s2_kal/Diode8,ee.semiconductors.diode_thermal,Rth,"[0, 10]"
+tez_S2,inverter_s2_kal/Diode8,ee.semiconductors.diode_thermal,thermal_mass,"[0, 1]"
+tez_S2,inverter_s2_kal/Diode8,ee.semiconductors.diode_thermal,thermal_time_constant,"[0, 10]"
+tez_S2,inverter_s2_kal/Diode8,ee.semiconductors.diode_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+tez_S2,inverter_s2_kal/EMC Core Loss R1_3,ee.passive.resistor,Tdevice,25
+tez_S2,inverter_s2_kal/EMC Core Loss R1_3,ee.passive.resistor,thermal_mass,100
+tez_S2,inverter_s2_kal/EMC Core Loss R1_4,ee.passive.resistor,Tdevice,25
+tez_S2,inverter_s2_kal/EMC Core Loss R1_4,ee.passive.resistor,thermal_mass,100
+tez_S2,inverter_s2_kal/EMC Core Loss R2_3,ee.passive.resistor,Tdevice,25
+tez_S2,inverter_s2_kal/EMC Core Loss R2_3,ee.passive.resistor,thermal_mass,100
+tez_S2,inverter_s2_kal/EMC Core Loss R2_4,ee.passive.resistor,Tdevice,25
+tez_S2,inverter_s2_kal/EMC Core Loss R2_4,ee.passive.resistor,thermal_mass,100
+tez_S2,inverter_s2_kal/Gate Drive1/Gate Driver1,ee.semiconductors.gate_driver,uHigh,4
+tez_S2,inverter_s2_kal/Gate Drive1/Gate Driver1,ee.semiconductors.gate_driver,uLow,3
+tez_S2,inverter_s2_kal/Gate Drive2/Gate Driver1,ee.semiconductors.gate_driver,uHigh,4
+tez_S2,inverter_s2_kal/Gate Drive2/Gate Driver1,ee.semiconductors.gate_driver,uLow,3
+tez_S2,inverter_s2_kal/Gate Drive3/Gate Driver1,ee.semiconductors.gate_driver,uHigh,4
+tez_S2,inverter_s2_kal/Gate Drive3/Gate Driver1,ee.semiconductors.gate_driver,uLow,3
+tez_S2,inverter_s2_kal/Gate Drive4/Gate Driver1,ee.semiconductors.gate_driver,uHigh,4
+tez_S2,inverter_s2_kal/Gate Drive4/Gate Driver1,ee.semiconductors.gate_driver,uLow,3
+tez_S2,inverter_s2_kal/L1 Core Loss Rp1,ee.passive.resistor,Tdevice,25
+tez_S2,inverter_s2_kal/L1 Core Loss Rp1,ee.passive.resistor,thermal_mass,100
+tez_S2,inverter_s2_kal/N-Channel IGBT4,ee.semiconductors.igbt_event_based_thermal,Vth,6
+tez_S2,inverter_s2_kal/N-Channel IGBT4,ee.semiconductors.igbt_event_based_thermal,Rth,"[0, 10]"
+tez_S2,inverter_s2_kal/N-Channel IGBT4,ee.semiconductors.igbt_event_based_thermal,thermal_mass,"[0, 1]"
+tez_S2,inverter_s2_kal/N-Channel IGBT4,ee.semiconductors.igbt_event_based_thermal,thermal_time_constant,"[0, 10]"
+tez_S2,inverter_s2_kal/N-Channel IGBT4,ee.semiconductors.igbt_event_based_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+tez_S2,inverter_s2_kal/N-Channel IGBT5,ee.semiconductors.igbt_event_based_thermal,Vth,6
+tez_S2,inverter_s2_kal/N-Channel IGBT5,ee.semiconductors.igbt_event_based_thermal,Rth,"[0, 10]"
+tez_S2,inverter_s2_kal/N-Channel IGBT5,ee.semiconductors.igbt_event_based_thermal,thermal_mass,"[0, 1]"
+tez_S2,inverter_s2_kal/N-Channel IGBT5,ee.semiconductors.igbt_event_based_thermal,thermal_time_constant,"[0, 10]"
+tez_S2,inverter_s2_kal/N-Channel IGBT5,ee.semiconductors.igbt_event_based_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+tez_S2,inverter_s2_kal/N-Channel IGBT6,ee.semiconductors.igbt_event_based_thermal,Vth,6
+tez_S2,inverter_s2_kal/N-Channel IGBT6,ee.semiconductors.igbt_event_based_thermal,Rth,"[0, 10]"
+tez_S2,inverter_s2_kal/N-Channel IGBT6,ee.semiconductors.igbt_event_based_thermal,thermal_mass,"[0, 1]"
+tez_S2,inverter_s2_kal/N-Channel IGBT6,ee.semiconductors.igbt_event_based_thermal,thermal_time_constant,"[0, 10]"
+tez_S2,inverter_s2_kal/N-Channel IGBT6,ee.semiconductors.igbt_event_based_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+tez_S2,inverter_s2_kal/N-Channel IGBT7,ee.semiconductors.igbt_event_based_thermal,Vth,6
+tez_S2,inverter_s2_kal/N-Channel IGBT7,ee.semiconductors.igbt_event_based_thermal,Rth,"[0, 10]"
+tez_S2,inverter_s2_kal/N-Channel IGBT7,ee.semiconductors.igbt_event_based_thermal,thermal_mass,"[0, 1]"
+tez_S2,inverter_s2_kal/N-Channel IGBT7,ee.semiconductors.igbt_event_based_thermal,thermal_time_constant,"[0, 10]"
+tez_S2,inverter_s2_kal/N-Channel IGBT7,ee.semiconductors.igbt_event_based_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+tez_S2,inverter_s2_kal/Resistor3,ee.passive.resistor,Tdevice,25
+tez_S2,inverter_s2_kal/Resistor3,ee.passive.resistor,thermal_mass,100
+tez_S2,inverter_s2_kal/Resistor4,ee.passive.resistor,Tdevice,25
+tez_S2,inverter_s2_kal/Resistor4,ee.passive.resistor,thermal_mass,100
+tez_S2,inverter_s2_kal/Resistor5,ee.passive.resistor,Tdevice,25
+tez_S2,inverter_s2_kal/Resistor5,ee.passive.resistor,thermal_mass,100
+tez_S3,inverter_senaryo3_kal/DC Blocking Diode,ee.semiconductors.diode,Rth,"[0, 10]"
+tez_S3,inverter_senaryo3_kal/DC Blocking Diode,ee.semiconductors.diode,thermal_mass,"[0, 1]"
+tez_S3,inverter_senaryo3_kal/DC Blocking Diode,ee.semiconductors.diode,thermal_time_constant,"[0, 10]"
+tez_S3,inverter_senaryo3_kal/DC Blocking Diode,ee.semiconductors.diode,thermal_mass_initial_temperatures,"[25, 25]"
+tez_S3,inverter_senaryo3_kal/DC Source R,ee.passive.resistor,Tdevice,25
+tez_S3,inverter_senaryo3_kal/DC Source R,ee.passive.resistor,thermal_mass,100
+tez_S3,inverter_senaryo3_kal/Diode2,ee.semiconductors.diode_thermal,Tdevice,25
+tez_S3,inverter_senaryo3_kal/Diode2,ee.semiconductors.diode_thermal,Rth,"[0, 10]"
+tez_S3,inverter_senaryo3_kal/Diode2,ee.semiconductors.diode_thermal,thermal_mass,"[0, 1]"
+tez_S3,inverter_senaryo3_kal/Diode2,ee.semiconductors.diode_thermal,thermal_time_constant,"[0, 10]"
+tez_S3,inverter_senaryo3_kal/Diode2,ee.semiconductors.diode_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+tez_S3,inverter_senaryo3_kal/Diode3,ee.semiconductors.diode_thermal,Tdevice,25
+tez_S3,inverter_senaryo3_kal/Diode3,ee.semiconductors.diode_thermal,Rth,"[0, 10]"
+tez_S3,inverter_senaryo3_kal/Diode3,ee.semiconductors.diode_thermal,thermal_mass,"[0, 1]"
+tez_S3,inverter_senaryo3_kal/Diode3,ee.semiconductors.diode_thermal,thermal_time_constant,"[0, 10]"
+tez_S3,inverter_senaryo3_kal/Diode3,ee.semiconductors.diode_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+tez_S3,inverter_senaryo3_kal/Diode5,ee.semiconductors.diode_thermal,Tdevice,25
+tez_S3,inverter_senaryo3_kal/Diode5,ee.semiconductors.diode_thermal,Rth,"[0, 10]"
+tez_S3,inverter_senaryo3_kal/Diode5,ee.semiconductors.diode_thermal,thermal_mass,"[0, 1]"
+tez_S3,inverter_senaryo3_kal/Diode5,ee.semiconductors.diode_thermal,thermal_time_constant,"[0, 10]"
+tez_S3,inverter_senaryo3_kal/Diode5,ee.semiconductors.diode_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+tez_S3,inverter_senaryo3_kal/Diode6,ee.semiconductors.diode_thermal,Tdevice,25
+tez_S3,inverter_senaryo3_kal/Diode6,ee.semiconductors.diode_thermal,Rth,"[0, 10]"
+tez_S3,inverter_senaryo3_kal/Diode6,ee.semiconductors.diode_thermal,thermal_mass,"[0, 1]"
+tez_S3,inverter_senaryo3_kal/Diode6,ee.semiconductors.diode_thermal,thermal_time_constant,"[0, 10]"
+tez_S3,inverter_senaryo3_kal/Diode6,ee.semiconductors.diode_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+tez_S3,inverter_senaryo3_kal/Diode7,ee.semiconductors.diode_thermal,Tdevice,25
+tez_S3,inverter_senaryo3_kal/Diode7,ee.semiconductors.diode_thermal,Rth,"[0, 10]"
+tez_S3,inverter_senaryo3_kal/Diode7,ee.semiconductors.diode_thermal,thermal_mass,"[0, 1]"
+tez_S3,inverter_senaryo3_kal/Diode7,ee.semiconductors.diode_thermal,thermal_time_constant,"[0, 10]"
+tez_S3,inverter_senaryo3_kal/Diode7,ee.semiconductors.diode_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+tez_S3,inverter_senaryo3_kal/Diode9,ee.semiconductors.diode_thermal,Tdevice,25
+tez_S3,inverter_senaryo3_kal/Diode9,ee.semiconductors.diode_thermal,Rth,"[0, 10]"
+tez_S3,inverter_senaryo3_kal/Diode9,ee.semiconductors.diode_thermal,thermal_mass,"[0, 1]"
+tez_S3,inverter_senaryo3_kal/Diode9,ee.semiconductors.diode_thermal,thermal_time_constant,"[0, 10]"
+tez_S3,inverter_senaryo3_kal/Diode9,ee.semiconductors.diode_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+tez_S3,inverter_senaryo3_kal/EMC Core Loss R1_1,ee.passive.resistor,Tdevice,25
+tez_S3,inverter_senaryo3_kal/EMC Core Loss R1_1,ee.passive.resistor,thermal_mass,100
+tez_S3,inverter_senaryo3_kal/EMC Core Loss R1_2,ee.passive.resistor,Tdevice,25
+tez_S3,inverter_senaryo3_kal/EMC Core Loss R1_2,ee.passive.resistor,thermal_mass,100
+tez_S3,inverter_senaryo3_kal/EMC Core Loss R2_1,ee.passive.resistor,Tdevice,25
+tez_S3,inverter_senaryo3_kal/EMC Core Loss R2_1,ee.passive.resistor,thermal_mass,100
+tez_S3,inverter_senaryo3_kal/EMC Core Loss R2_2,ee.passive.resistor,Tdevice,25
+tez_S3,inverter_senaryo3_kal/EMC Core Loss R2_2,ee.passive.resistor,thermal_mass,100
+tez_S3,inverter_senaryo3_kal/Gate Drive5/Gate Driver1,ee.semiconductors.gate_driver,uHigh,4
+tez_S3,inverter_senaryo3_kal/Gate Drive5/Gate Driver1,ee.semiconductors.gate_driver,uLow,3
+tez_S3,inverter_senaryo3_kal/Gate Drive6/Gate Driver1,ee.semiconductors.gate_driver,uHigh,4
+tez_S3,inverter_senaryo3_kal/Gate Drive6/Gate Driver1,ee.semiconductors.gate_driver,uLow,3
+tez_S3,inverter_senaryo3_kal/Gate Drive7/Gate Driver1,ee.semiconductors.gate_driver,uHigh,4
+tez_S3,inverter_senaryo3_kal/Gate Drive7/Gate Driver1,ee.semiconductors.gate_driver,uLow,3
+tez_S3,inverter_senaryo3_kal/Gate Drive8/Gate Driver1,ee.semiconductors.gate_driver,uHigh,4
+tez_S3,inverter_senaryo3_kal/Gate Drive8/Gate Driver1,ee.semiconductors.gate_driver,uLow,3
+tez_S3,inverter_senaryo3_kal/L1 Core Loss Rp,ee.passive.resistor,Tdevice,25
+tez_S3,inverter_senaryo3_kal/L1 Core Loss Rp,ee.passive.resistor,thermal_mass,100
+tez_S3,inverter_senaryo3_kal/N-Channel IGBT,ee.semiconductors.igbt_event_based_thermal,Vth,6
+tez_S3,inverter_senaryo3_kal/N-Channel IGBT,ee.semiconductors.igbt_event_based_thermal,Rth,"[0, 10]"
+tez_S3,inverter_senaryo3_kal/N-Channel IGBT,ee.semiconductors.igbt_event_based_thermal,thermal_mass,"[0, 1]"
+tez_S3,inverter_senaryo3_kal/N-Channel IGBT,ee.semiconductors.igbt_event_based_thermal,thermal_time_constant,"[0, 10]"
+tez_S3,inverter_senaryo3_kal/N-Channel IGBT,ee.semiconductors.igbt_event_based_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+tez_S3,inverter_senaryo3_kal/N-Channel IGBT1,ee.semiconductors.igbt_event_based_thermal,Vth,6
+tez_S3,inverter_senaryo3_kal/N-Channel IGBT1,ee.semiconductors.igbt_event_based_thermal,Rth,"[0, 10]"
+tez_S3,inverter_senaryo3_kal/N-Channel IGBT1,ee.semiconductors.igbt_event_based_thermal,thermal_mass,"[0, 1]"
+tez_S3,inverter_senaryo3_kal/N-Channel IGBT1,ee.semiconductors.igbt_event_based_thermal,thermal_time_constant,"[0, 10]"
+tez_S3,inverter_senaryo3_kal/N-Channel IGBT1,ee.semiconductors.igbt_event_based_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+tez_S3,inverter_senaryo3_kal/N-Channel IGBT2,ee.semiconductors.igbt_event_based_thermal,Vth,6
+tez_S3,inverter_senaryo3_kal/N-Channel IGBT2,ee.semiconductors.igbt_event_based_thermal,Rth,"[0, 10]"
+tez_S3,inverter_senaryo3_kal/N-Channel IGBT2,ee.semiconductors.igbt_event_based_thermal,thermal_mass,"[0, 1]"
+tez_S3,inverter_senaryo3_kal/N-Channel IGBT2,ee.semiconductors.igbt_event_based_thermal,thermal_time_constant,"[0, 10]"
+tez_S3,inverter_senaryo3_kal/N-Channel IGBT2,ee.semiconductors.igbt_event_based_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+tez_S3,inverter_senaryo3_kal/N-Channel IGBT3,ee.semiconductors.igbt_event_based_thermal,Vth,6
+tez_S3,inverter_senaryo3_kal/N-Channel IGBT3,ee.semiconductors.igbt_event_based_thermal,Rth,"[0, 10]"
+tez_S3,inverter_senaryo3_kal/N-Channel IGBT3,ee.semiconductors.igbt_event_based_thermal,thermal_mass,"[0, 1]"
+tez_S3,inverter_senaryo3_kal/N-Channel IGBT3,ee.semiconductors.igbt_event_based_thermal,thermal_time_constant,"[0, 10]"
+tez_S3,inverter_senaryo3_kal/N-Channel IGBT3,ee.semiconductors.igbt_event_based_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+tez_S3,inverter_senaryo3_kal/Resistor,ee.passive.resistor,Tdevice,25
+tez_S3,inverter_senaryo3_kal/Resistor,ee.passive.resistor,thermal_mass,100
+tez_S3,inverter_senaryo3_kal/Resistor1,ee.passive.resistor,Tdevice,25
+tez_S3,inverter_senaryo3_kal/Resistor1,ee.passive.resistor,thermal_mass,100
+tez_S3,inverter_senaryo3_kal/Resistor2,ee.passive.resistor,Tdevice,25
+tez_S3,inverter_senaryo3_kal/Resistor2,ee.passive.resistor,thermal_mass,100
+tez_S4,inverter_senaryo4_kc/DC Blocking Diode,ee.semiconductors.diode,Rth,"[0, 10]"
+tez_S4,inverter_senaryo4_kc/DC Blocking Diode,ee.semiconductors.diode,thermal_mass,"[0, 1]"
+tez_S4,inverter_senaryo4_kc/DC Blocking Diode,ee.semiconductors.diode,thermal_time_constant,"[0, 10]"
+tez_S4,inverter_senaryo4_kc/DC Blocking Diode,ee.semiconductors.diode,thermal_mass_initial_temperatures,"[25, 25]"
+tez_S4,inverter_senaryo4_kc/DC Source R,ee.passive.resistor,Tdevice,25
+tez_S4,inverter_senaryo4_kc/DC Source R,ee.passive.resistor,thermal_mass,100
+tez_S4,inverter_senaryo4_kc/Diode2,ee.semiconductors.diode_thermal,Tdevice,25
+tez_S4,inverter_senaryo4_kc/Diode2,ee.semiconductors.diode_thermal,Rth,"[0, 10]"
+tez_S4,inverter_senaryo4_kc/Diode2,ee.semiconductors.diode_thermal,thermal_mass,"[0, 1]"
+tez_S4,inverter_senaryo4_kc/Diode2,ee.semiconductors.diode_thermal,thermal_time_constant,"[0, 10]"
+tez_S4,inverter_senaryo4_kc/Diode2,ee.semiconductors.diode_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+tez_S4,inverter_senaryo4_kc/Diode3,ee.semiconductors.diode_thermal,Tdevice,25
+tez_S4,inverter_senaryo4_kc/Diode3,ee.semiconductors.diode_thermal,Rth,"[0, 10]"
+tez_S4,inverter_senaryo4_kc/Diode3,ee.semiconductors.diode_thermal,thermal_mass,"[0, 1]"
+tez_S4,inverter_senaryo4_kc/Diode3,ee.semiconductors.diode_thermal,thermal_time_constant,"[0, 10]"
+tez_S4,inverter_senaryo4_kc/Diode3,ee.semiconductors.diode_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+tez_S4,inverter_senaryo4_kc/Diode5,ee.semiconductors.diode_thermal,Tdevice,25
+tez_S4,inverter_senaryo4_kc/Diode5,ee.semiconductors.diode_thermal,Rth,"[0, 10]"
+tez_S4,inverter_senaryo4_kc/Diode5,ee.semiconductors.diode_thermal,thermal_mass,"[0, 1]"
+tez_S4,inverter_senaryo4_kc/Diode5,ee.semiconductors.diode_thermal,thermal_time_constant,"[0, 10]"
+tez_S4,inverter_senaryo4_kc/Diode5,ee.semiconductors.diode_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+tez_S4,inverter_senaryo4_kc/Diode6,ee.semiconductors.diode_thermal,Tdevice,25
+tez_S4,inverter_senaryo4_kc/Diode6,ee.semiconductors.diode_thermal,Rth,"[0, 10]"
+tez_S4,inverter_senaryo4_kc/Diode6,ee.semiconductors.diode_thermal,thermal_mass,"[0, 1]"
+tez_S4,inverter_senaryo4_kc/Diode6,ee.semiconductors.diode_thermal,thermal_time_constant,"[0, 10]"
+tez_S4,inverter_senaryo4_kc/Diode6,ee.semiconductors.diode_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+tez_S4,inverter_senaryo4_kc/Diode7,ee.semiconductors.diode_thermal,Tdevice,25
+tez_S4,inverter_senaryo4_kc/Diode7,ee.semiconductors.diode_thermal,Rth,"[0, 10]"
+tez_S4,inverter_senaryo4_kc/Diode7,ee.semiconductors.diode_thermal,thermal_mass,"[0, 1]"
+tez_S4,inverter_senaryo4_kc/Diode7,ee.semiconductors.diode_thermal,thermal_time_constant,"[0, 10]"
+tez_S4,inverter_senaryo4_kc/Diode7,ee.semiconductors.diode_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+tez_S4,inverter_senaryo4_kc/Diode9,ee.semiconductors.diode_thermal,Tdevice,25
+tez_S4,inverter_senaryo4_kc/Diode9,ee.semiconductors.diode_thermal,Rth,"[0, 10]"
+tez_S4,inverter_senaryo4_kc/Diode9,ee.semiconductors.diode_thermal,thermal_mass,"[0, 1]"
+tez_S4,inverter_senaryo4_kc/Diode9,ee.semiconductors.diode_thermal,thermal_time_constant,"[0, 10]"
+tez_S4,inverter_senaryo4_kc/Diode9,ee.semiconductors.diode_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+tez_S4,inverter_senaryo4_kc/EMC Core Loss R1_1,ee.passive.resistor,Tdevice,25
+tez_S4,inverter_senaryo4_kc/EMC Core Loss R1_1,ee.passive.resistor,thermal_mass,100
+tez_S4,inverter_senaryo4_kc/EMC Core Loss R1_2,ee.passive.resistor,Tdevice,25
+tez_S4,inverter_senaryo4_kc/EMC Core Loss R1_2,ee.passive.resistor,thermal_mass,100
+tez_S4,inverter_senaryo4_kc/EMC Core Loss R2_1,ee.passive.resistor,Tdevice,25
+tez_S4,inverter_senaryo4_kc/EMC Core Loss R2_1,ee.passive.resistor,thermal_mass,100
+tez_S4,inverter_senaryo4_kc/EMC Core Loss R2_2,ee.passive.resistor,Tdevice,25
+tez_S4,inverter_senaryo4_kc/EMC Core Loss R2_2,ee.passive.resistor,thermal_mass,100
+tez_S4,inverter_senaryo4_kc/Gate Drive5/Gate Driver1,ee.semiconductors.gate_driver,uHigh,4
+tez_S4,inverter_senaryo4_kc/Gate Drive5/Gate Driver1,ee.semiconductors.gate_driver,uLow,3
+tez_S4,inverter_senaryo4_kc/Gate Drive6/Gate Driver1,ee.semiconductors.gate_driver,uHigh,4
+tez_S4,inverter_senaryo4_kc/Gate Drive6/Gate Driver1,ee.semiconductors.gate_driver,uLow,3
+tez_S4,inverter_senaryo4_kc/Gate Drive7/Gate Driver1,ee.semiconductors.gate_driver,uHigh,4
+tez_S4,inverter_senaryo4_kc/Gate Drive7/Gate Driver1,ee.semiconductors.gate_driver,uLow,3
+tez_S4,inverter_senaryo4_kc/Gate Drive8/Gate Driver1,ee.semiconductors.gate_driver,uHigh,4
+tez_S4,inverter_senaryo4_kc/Gate Drive8/Gate Driver1,ee.semiconductors.gate_driver,uLow,3
+tez_S4,inverter_senaryo4_kc/L1 Core Loss Rp,ee.passive.resistor,Tdevice,25
+tez_S4,inverter_senaryo4_kc/L1 Core Loss Rp,ee.passive.resistor,thermal_mass,100
+tez_S4,inverter_senaryo4_kc/N-Channel IGBT,ee.semiconductors.igbt_event_based_thermal,Vth,6
+tez_S4,inverter_senaryo4_kc/N-Channel IGBT,ee.semiconductors.igbt_event_based_thermal,Rth,"[0, 10]"
+tez_S4,inverter_senaryo4_kc/N-Channel IGBT,ee.semiconductors.igbt_event_based_thermal,thermal_mass,"[0, 1]"
+tez_S4,inverter_senaryo4_kc/N-Channel IGBT,ee.semiconductors.igbt_event_based_thermal,thermal_time_constant,"[0, 10]"
+tez_S4,inverter_senaryo4_kc/N-Channel IGBT,ee.semiconductors.igbt_event_based_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+tez_S4,inverter_senaryo4_kc/N-Channel IGBT1,ee.semiconductors.igbt_event_based_thermal,Vth,6
+tez_S4,inverter_senaryo4_kc/N-Channel IGBT1,ee.semiconductors.igbt_event_based_thermal,Rth,"[0, 10]"
+tez_S4,inverter_senaryo4_kc/N-Channel IGBT1,ee.semiconductors.igbt_event_based_thermal,thermal_mass,"[0, 1]"
+tez_S4,inverter_senaryo4_kc/N-Channel IGBT1,ee.semiconductors.igbt_event_based_thermal,thermal_time_constant,"[0, 10]"
+tez_S4,inverter_senaryo4_kc/N-Channel IGBT1,ee.semiconductors.igbt_event_based_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+tez_S4,inverter_senaryo4_kc/N-Channel IGBT2,ee.semiconductors.igbt_event_based_thermal,Vth,6
+tez_S4,inverter_senaryo4_kc/N-Channel IGBT2,ee.semiconductors.igbt_event_based_thermal,Rth,"[0, 10]"
+tez_S4,inverter_senaryo4_kc/N-Channel IGBT2,ee.semiconductors.igbt_event_based_thermal,thermal_mass,"[0, 1]"
+tez_S4,inverter_senaryo4_kc/N-Channel IGBT2,ee.semiconductors.igbt_event_based_thermal,thermal_time_constant,"[0, 10]"
+tez_S4,inverter_senaryo4_kc/N-Channel IGBT2,ee.semiconductors.igbt_event_based_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+tez_S4,inverter_senaryo4_kc/N-Channel IGBT3,ee.semiconductors.igbt_event_based_thermal,Vth,6
+tez_S4,inverter_senaryo4_kc/N-Channel IGBT3,ee.semiconductors.igbt_event_based_thermal,Rth,"[0, 10]"
+tez_S4,inverter_senaryo4_kc/N-Channel IGBT3,ee.semiconductors.igbt_event_based_thermal,thermal_mass,"[0, 1]"
+tez_S4,inverter_senaryo4_kc/N-Channel IGBT3,ee.semiconductors.igbt_event_based_thermal,thermal_time_constant,"[0, 10]"
+tez_S4,inverter_senaryo4_kc/N-Channel IGBT3,ee.semiconductors.igbt_event_based_thermal,thermal_mass_initial_temperatures,"[25, 25]"
+tez_S4,inverter_senaryo4_kc/Resistor,ee.passive.resistor,Tdevice,25
+tez_S4,inverter_senaryo4_kc/Resistor,ee.passive.resistor,thermal_mass,100
+tez_S4,inverter_senaryo4_kc/Resistor1,ee.passive.resistor,Tdevice,25
+tez_S4,inverter_senaryo4_kc/Resistor1,ee.passive.resistor,thermal_mass,100
+tez_S4,inverter_senaryo4_kc/Resistor2,ee.passive.resistor,Tdevice,25
+tez_S4,inverter_senaryo4_kc/Resistor2,ee.passive.resistor,thermal_mass,100

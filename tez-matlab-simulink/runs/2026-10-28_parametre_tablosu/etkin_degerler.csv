@@ -1,0 +1,114 @@
+model,degisken,deger,kaynak,ek
+tez_S1,Vdc1,431.5,inverter_s1_kal_kalibrasyon.m,
+tez_S1,Vdc2,395,inverter_s1_kal_kalibrasyon.m,
+tez_S1,Vdc3,427.5,inverter_s1_kal_kalibrasyon.m,
+tez_S1,Vdc4,427.5,inverter_s1_kal_kalibrasyon.m,
+tez_S1,Vac1_peak,169.4227848,inverter_s1_kal_kalibrasyon.m,
+tez_S1,Vac2_peak,171.119841,inverter_s1_kal_kalibrasyon.m,
+tez_S1,Vac3_peak,175.7867458,inverter_s1_kal_kalibrasyon.m,
+tez_S1,Vac4_peak,169.7056275,inverter_s1_kal_kalibrasyon.m,
+tez_S1,K11,0.7865023595,inverter_s1_kal_kalibrasyon.m,
+tez_S1,K12,0.794,inverter_s1_kal_kalibrasyon.m,
+tez_S1,K13,0.45,inverter_s1_kal_kalibrasyon.m,
+tez_S1,K14,0.45,inverter_s1_kal_kalibrasyon.m,
+tez_S1,K33,0.39,inverter_s1_kal_kalibrasyon.m,
+tez_S1,K34,0.39,inverter_s1_kal_kalibrasyon.m,
+tez_S1,phase_deg1,-0.36607,inverter_s1_kal_kalibrasyon.m,
+tez_S1,phase_deg2,0,inverter_s1_kal_kalibrasyon.m,
+tez_S1,phase_deg3,0,inverter_s1_kal_kalibrasyon.m,
+tez_S1,phase_deg4,0,inverter_s1_kal_kalibrasyon.m,
+tez_S1,Cdc_pos,0.00047,inverter_s1_kal_kalibrasyon.m,
+tez_S1,Cdc_neg,0.00047,inverter_s1_kal_kalibrasyon.m,
+tez_S1,L1_core_Rp,600,inverter_s1_kal_kalibrasyon.m,
+tez_S1,L1_core_Rp4,1500,inverter_s1_kal_kalibrasyon.m,
+tez_S1,EMC_Cx_eq,5e-07,inverter_s1_kal_kalibrasyon.m,
+tez_S1,EMC_Rx_eq,0.2,inverter_s1_kal_kalibrasyon.m,
+tez_S1,C_emc_aux,1e-06,inverter_s1_kal_kalibrasyon.m,
+tez_S1,R_emc_aux,0.01,inverter_s1_kal_kalibrasyon.m,
+tez_S2,Vdc1,431.5,inverter_s2_kal_kalibrasyon.m,
+tez_S2,Vdc2,395,inverter_s2_kal_kalibrasyon.m,
+tez_S2,Vdc3,427.5,inverter_s2_kal_kalibrasyon.m,
+tez_S2,Vdc4,427.5,inverter_s2_kal_kalibrasyon.m,
+tez_S2,Vac1_peak,169.4227848,inverter_s2_kal_kalibrasyon.m,
+tez_S2,Vac2_peak,171.119841,inverter_s2_kal_kalibrasyon.m,
+tez_S2,Vac3_peak,175.7867458,inverter_s2_kal_kalibrasyon.m,
+tez_S2,Vac4_peak,169.7056275,inverter_s2_kal_kalibrasyon.m,
+tez_S2,K11,0.7865,inverter_s2_kal_kalibrasyon.m,
+tez_S2,K12,0.7679568,inverter_s2_kal_kalibrasyon.m,
+tez_S2,K13,0.45,inverter_s2_kal_kalibrasyon.m,
+tez_S2,K14,0.45,inverter_s2_kal_kalibrasyon.m,
+tez_S2,K33,0.39,inverter_s2_kal_kalibrasyon.m,
+tez_S2,K34,0.39,inverter_s2_kal_kalibrasyon.m,
+tez_S2,phase_deg1,-0.44,inverter_s2_kal_kalibrasyon.m,
+tez_S2,phase_deg2,0.1121,inverter_s2_kal_kalibrasyon.m,
+tez_S2,phase_deg3,0,inverter_s2_kal_kalibrasyon.m,
+tez_S2,phase_deg4,0,inverter_s2_kal_kalibrasyon.m,
+tez_S2,Cdc_pos,0.00047,inverter_s2_kal_kalibrasyon.m,
+tez_S2,Cdc_neg,0.00047,inverter_s2_kal_kalibrasyon.m,
+tez_S2,L1_core_Rp,600,inverter_s2_kal_kalibrasyon.m,
+tez_S2,L1_core_Rp4,1500,inverter_s2_kal_kalibrasyon.m,
+tez_S2,EMC_Cx_eq,5e-07,inverter_s2_kal_kalibrasyon.m,
+tez_S2,EMC_Rx_eq,0.2,inverter_s2_kal_kalibrasyon.m,
+tez_S2,C_emc_aux,1e-06,inverter_s2_kal_kalibrasyon.m,
+tez_S2,R_emc_aux,0.01,inverter_s2_kal_kalibrasyon.m,
+tez_S3,Vdc1,431.5,inverter_senaryo3_kal_kalibrasyon.m,
+tez_S3,Vdc2,395,inverter_senaryo3_kal_kalibrasyon.m,
+tez_S3,Vdc3,427.5,inverter_senaryo3_kal_kalibrasyon.m,
+tez_S3,Vdc4,427.5,inverter_senaryo3_kal_kalibrasyon.m,
+tez_S3,Vac1_peak,169.4227848,inverter_senaryo3_kal_kalibrasyon.m,
+tez_S3,Vac2_peak,171.119841,inverter_senaryo3_kal_kalibrasyon.m,
+tez_S3,Vac3_peak,175.7867458,inverter_senaryo3_kal_kalibrasyon.m,
+tez_S3,Vac4_peak,169.7056275,inverter_senaryo3_kal_kalibrasyon.m,
+tez_S3,K11,0.7865,inverter_senaryo3_kal_kalibrasyon.m,
+tez_S3,K12,0.794,inverter_senaryo3_kal_kalibrasyon.m,
+tez_S3,K13,0.44343,inverter_senaryo3_kal_kalibrasyon.m,
+tez_S3,K14,0.45,inverter_senaryo3_kal_kalibrasyon.m,
+tez_S3,K33,0.384306,inverter_senaryo3_kal_kalibrasyon.m,
+tez_S3,K34,0.39,inverter_senaryo3_kal_kalibrasyon.m,
+tez_S3,phase_deg1,-0.44,inverter_senaryo3_kal_kalibrasyon.m,
+tez_S3,phase_deg2,0,inverter_senaryo3_kal_kalibrasyon.m,
+tez_S3,phase_deg3,0.6575,inverter_senaryo3_kal_kalibrasyon.m,
+tez_S3,phase_deg4,0,inverter_senaryo3_kal_kalibrasyon.m,
+tez_S3,Cdc_pos,0.00047,inverter_senaryo3_kal_kalibrasyon.m,
+tez_S3,Cdc_neg,0.00047,inverter_senaryo3_kal_kalibrasyon.m,
+tez_S3,L1_core_Rp,600,inverter_senaryo3_kal_kalibrasyon.m,
+tez_S3,L1_core_Rp4,1500,inverter_senaryo3_kal_kalibrasyon.m,
+tez_S3,EMC_Cx_eq,5e-07,inverter_senaryo3_kal_kalibrasyon.m,
+tez_S3,EMC_Rx_eq,0.2,inverter_senaryo3_kal_kalibrasyon.m,
+tez_S3,C_emc_aux,1e-06,inverter_senaryo3_kal_kalibrasyon.m,
+tez_S3,R_emc_aux,0.01,inverter_senaryo3_kal_kalibrasyon.m,
+tez_S4,Vdc1,431.5,s4_denetleyici_parametreleri.m,"KC_* koşu eki (D-11, K-20)"
+tez_S4,Vdc2,395,s4_denetleyici_parametreleri.m,"KC_* koşu eki (D-11, K-20)"
+tez_S4,Vdc3,427.5,s4_denetleyici_parametreleri.m,"KC_* koşu eki (D-11, K-20)"
+tez_S4,Vdc4,427.5,s4_denetleyici_parametreleri.m,"KC_* koşu eki (D-11, K-20)"
+tez_S4,Vac1_peak,169.4227848,s4_denetleyici_parametreleri.m,"KC_* koşu eki (D-11, K-20)"
+tez_S4,Vac2_peak,171.119841,s4_denetleyici_parametreleri.m,"KC_* koşu eki (D-11, K-20)"
+tez_S4,Vac3_peak,175.7867458,s4_denetleyici_parametreleri.m,"KC_* koşu eki (D-11, K-20)"
+tez_S4,Vac4_peak,169.7056275,s4_denetleyici_parametreleri.m,"KC_* koşu eki (D-11, K-20)"
+tez_S4,K11,0.7865,s4_denetleyici_parametreleri.m,"KC_* koşu eki (D-11, K-20)"
+tez_S4,K12,0.794,s4_denetleyici_parametreleri.m,"KC_* koşu eki (D-11, K-20)"
+tez_S4,K13,0.45,s4_denetleyici_parametreleri.m,"KC_* koşu eki (D-11, K-20)"
+tez_S4,K14,0.44343,s4_denetleyici_parametreleri.m,"KC_* koşu eki (D-11, K-20)"
+tez_S4,K33,0.39,s4_denetleyici_parametreleri.m,"KC_* koşu eki (D-11, K-20)"
+tez_S4,K34,0.384306,s4_denetleyici_parametreleri.m,"KC_* koşu eki (D-11, K-20)"
+tez_S4,phase_deg1,-0.44,s4_denetleyici_parametreleri.m,"KC_* koşu eki (D-11, K-20)"
+tez_S4,phase_deg2,0,s4_denetleyici_parametreleri.m,"KC_* koşu eki (D-11, K-20)"
+tez_S4,phase_deg3,0,s4_denetleyici_parametreleri.m,"KC_* koşu eki (D-11, K-20)"
+tez_S4,phase_deg4,0.6575,s4_denetleyici_parametreleri.m,"KC_* koşu eki (D-11, K-20)"
+tez_S4,Cdc_pos,0.0056,s4_denetleyici_parametreleri.m,"KC_* koşu eki (D-11, K-20)"
+tez_S4,Cdc_neg,0.0056,s4_denetleyici_parametreleri.m,"KC_* koşu eki (D-11, K-20)"
+tez_S4,L1_core_Rp,600,s4_denetleyici_parametreleri.m,"KC_* koşu eki (D-11, K-20)"
+tez_S4,L1_core_Rp4,1500,s4_denetleyici_parametreleri.m,"KC_* koşu eki (D-11, K-20)"
+tez_S4,EMC_Cx_eq,5e-07,s4_denetleyici_parametreleri.m,"KC_* koşu eki (D-11, K-20)"
+tez_S4,EMC_Rx_eq,0.2,s4_denetleyici_parametreleri.m,"KC_* koşu eki (D-11, K-20)"
+tez_S4,C_emc_aux,1e-06,s4_denetleyici_parametreleri.m,"KC_* koşu eki (D-11, K-20)"
+tez_S4,R_emc_aux,0.01,s4_denetleyici_parametreleri.m,"KC_* koşu eki (D-11, K-20)"
+tez_S4,S4_Kp (P/PI/PIR),0.03,s4_denetleyici_parametreleri.m + run_s4_closed_loop_20261028.m kip tablosu,
+tez_S4,S4_Ki (PI/PIR),11.30973355,s4_denetleyici_parametreleri.m + run_s4_closed_loop_20261028.m kip tablosu,
+tez_S4,S4_Kaw (PI/PIR),376.9911184,s4_denetleyici_parametreleri.m + run_s4_closed_loop_20261028.m kip tablosu,
+tez_S4,S4_Kr (PIR),0.3,s4_denetleyici_parametreleri.m + run_s4_closed_loop_20261028.m kip tablosu,
+tez_S4,S4_R_wb,12.56637061,s4_denetleyici_parametreleri.m + run_s4_closed_loop_20261028.m kip tablosu,
+tez_S4,S4_f_lp,5000,s4_denetleyici_parametreleri.m + run_s4_closed_loop_20261028.m kip tablosu,
+tez_S4,S4_Ts_c,1e-06,s4_denetleyici_parametreleri.m + run_s4_closed_loop_20261028.m kip tablosu,
+tez_S4,S4_u_lim,1,s4_denetleyici_parametreleri.m + run_s4_closed_loop_20261028.m kip tablosu,
+tez_S4,S4_int_lim,1,s4_denetleyici_parametreleri.m + run_s4_closed_loop_20261028.m kip tablosu,

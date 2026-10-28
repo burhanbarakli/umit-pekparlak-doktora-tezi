@@ -1,0 +1,1110 @@
+model,blok,tip,referans,parametre,ifade,tur
+tez_S1,inverter_s1_kal/AC instantaneous power,Product,,Inputs,2,sabit sayı
+tez_S1,inverter_s1_kal/AC instantaneous power,Product,,CollapseDim,1,sabit sayı
+tez_S1,inverter_s1_kal/AC instantaneous power1,Product,,Inputs,2,sabit sayı
+tez_S1,inverter_s1_kal/AC instantaneous power1,Product,,CollapseDim,1,sabit sayı
+tez_S1,inverter_s1_kal/AC instantaneous power2,Product,,Inputs,2,sabit sayı
+tez_S1,inverter_s1_kal/AC instantaneous power2,Product,,CollapseDim,1,sabit sayı
+tez_S1,inverter_s1_kal/AC instantaneous power6,Product,,Inputs,2,sabit sayı
+tez_S1,inverter_s1_kal/AC instantaneous power6,Product,,CollapseDim,1,sabit sayı
+tez_S1,inverter_s1_kal/AC instantaneous power7,Product,,Inputs,2,sabit sayı
+tez_S1,inverter_s1_kal/AC instantaneous power7,Product,,CollapseDim,1,sabit sayı
+tez_S1,inverter_s1_kal/Divide1,Product,,CollapseDim,1,sabit sayı
+tez_S1,inverter_s1_kal/Divide3,Product,,CollapseDim,1,sabit sayı
+tez_S1,inverter_s1_kal/Divide5,Product,,CollapseDim,1,sabit sayı
+tez_S1,inverter_s1_kal/Gain1,Gain,,Gain,measurement_gain,ifade/değişken
+tez_S1,inverter_s1_kal/Gate Drive5/DeadTime_g3_5V,Gain,,Gain,5,sabit sayı
+tez_S1,inverter_s1_kal/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,port_option_unit,1,sabit sayı
+tez_S1,inverter_s1_kal/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uHigh,4,sabit sayı
+tez_S1,inverter_s1_kal/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uLow,3,sabit sayı
+tez_S1,inverter_s1_kal/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uHighValue,gate_logic_high,ifade/değişken
+tez_S1,inverter_s1_kal/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uHighValue_unit,1,sabit sayı
+tez_S1,inverter_s1_kal/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uLowValue,gate_logic_low,ifade/değişken
+tez_S1,inverter_s1_kal/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uLowValue_unit,1,sabit sayı
+tez_S1,inverter_s1_kal/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,vHigh,Vgate_on,ifade/değişken
+tez_S1,inverter_s1_kal/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,vLow,Vgate_off,ifade/değişken
+tez_S1,inverter_s1_kal/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,tHigh,gate_driver_ton,ifade/değişken
+tez_S1,inverter_s1_kal/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,tLow,gate_driver_toff,ifade/değişken
+tez_S1,inverter_s1_kal/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,parameterization,1,sabit sayı
+tez_S1,inverter_s1_kal/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,parameterization_unit,1,sabit sayı
+tez_S1,inverter_s1_kal/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,rHigh,RG_total,ifade/değişken
+tez_S1,inverter_s1_kal/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,rLow,RG_total,ifade/değişken
+tez_S1,inverter_s1_kal/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,tRise,gate_driver_rise,ifade/değişken
+tez_S1,inverter_s1_kal/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,tFall,gate_driver_fall,ifade/değişken
+tez_S1,inverter_s1_kal/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,cLoad,gate_driver_cload,ifade/değişken
+tez_S1,inverter_s1_kal/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,enable_faults,0,sabit sayı
+tez_S1,inverter_s1_kal/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,enable_faults_unit,1,sabit sayı
+tez_S1,inverter_s1_kal/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,t_fault,1,sabit sayı
+tez_S1,inverter_s1_kal/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,fault_type,1,sabit sayı
+tez_S1,inverter_s1_kal/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,fault_type_unit,1,sabit sayı
+tez_S1,inverter_s1_kal/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,ZonTime,0,sabit sayı
+tez_S1,inverter_s1_kal/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,ZoffTime,0,sabit sayı
+tez_S1,inverter_s1_kal/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,port_option_unit,1,sabit sayı
+tez_S1,inverter_s1_kal/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uHigh,4,sabit sayı
+tez_S1,inverter_s1_kal/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uLow,3,sabit sayı
+tez_S1,inverter_s1_kal/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uHighValue,gate_logic_high,ifade/değişken
+tez_S1,inverter_s1_kal/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uHighValue_unit,1,sabit sayı
+tez_S1,inverter_s1_kal/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uLowValue,gate_logic_low,ifade/değişken
+tez_S1,inverter_s1_kal/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uLowValue_unit,1,sabit sayı
+tez_S1,inverter_s1_kal/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,vHigh,Vgate_on,ifade/değişken
+tez_S1,inverter_s1_kal/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,vLow,Vgate_off,ifade/değişken
+tez_S1,inverter_s1_kal/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,tHigh,gate_driver_ton,ifade/değişken
+tez_S1,inverter_s1_kal/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,tLow,gate_driver_toff,ifade/değişken
+tez_S1,inverter_s1_kal/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,parameterization,1,sabit sayı
+tez_S1,inverter_s1_kal/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,parameterization_unit,1,sabit sayı
+tez_S1,inverter_s1_kal/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,rHigh,RG_total,ifade/değişken
+tez_S1,inverter_s1_kal/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,rLow,RG_total,ifade/değişken
+tez_S1,inverter_s1_kal/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,tRise,gate_driver_rise,ifade/değişken
+tez_S1,inverter_s1_kal/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,tFall,gate_driver_fall,ifade/değişken
+tez_S1,inverter_s1_kal/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,cLoad,gate_driver_cload,ifade/değişken
+tez_S1,inverter_s1_kal/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,enable_faults,0,sabit sayı
+tez_S1,inverter_s1_kal/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,enable_faults_unit,1,sabit sayı
+tez_S1,inverter_s1_kal/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,t_fault,1,sabit sayı
+tez_S1,inverter_s1_kal/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,fault_type,1,sabit sayı
+tez_S1,inverter_s1_kal/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,fault_type_unit,1,sabit sayı
+tez_S1,inverter_s1_kal/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,ZonTime,0,sabit sayı
+tez_S1,inverter_s1_kal/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,ZoffTime,0,sabit sayı
+tez_S1,inverter_s1_kal/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,port_option_unit,1,sabit sayı
+tez_S1,inverter_s1_kal/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uHigh,4,sabit sayı
+tez_S1,inverter_s1_kal/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uLow,3,sabit sayı
+tez_S1,inverter_s1_kal/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uHighValue,gate_logic_high,ifade/değişken
+tez_S1,inverter_s1_kal/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uHighValue_unit,1,sabit sayı
+tez_S1,inverter_s1_kal/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uLowValue,gate_logic_low,ifade/değişken
+tez_S1,inverter_s1_kal/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uLowValue_unit,1,sabit sayı
+tez_S1,inverter_s1_kal/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,vHigh,Vgate_on,ifade/değişken
+tez_S1,inverter_s1_kal/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,vLow,Vgate_off,ifade/değişken
+tez_S1,inverter_s1_kal/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,tHigh,gate_driver_ton,ifade/değişken
+tez_S1,inverter_s1_kal/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,tLow,gate_driver_toff,ifade/değişken
+tez_S1,inverter_s1_kal/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,parameterization,1,sabit sayı
+tez_S1,inverter_s1_kal/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,parameterization_unit,1,sabit sayı
+tez_S1,inverter_s1_kal/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,rHigh,RG_total,ifade/değişken
+tez_S1,inverter_s1_kal/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,rLow,RG_total,ifade/değişken
+tez_S1,inverter_s1_kal/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,tRise,gate_driver_rise,ifade/değişken
+tez_S1,inverter_s1_kal/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,tFall,gate_driver_fall,ifade/değişken
+tez_S1,inverter_s1_kal/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,cLoad,gate_driver_cload,ifade/değişken
+tez_S1,inverter_s1_kal/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,enable_faults,0,sabit sayı
+tez_S1,inverter_s1_kal/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,enable_faults_unit,1,sabit sayı
+tez_S1,inverter_s1_kal/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,t_fault,1,sabit sayı
+tez_S1,inverter_s1_kal/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,fault_type,1,sabit sayı
+tez_S1,inverter_s1_kal/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,fault_type_unit,1,sabit sayı
+tez_S1,inverter_s1_kal/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,ZonTime,0,sabit sayı
+tez_S1,inverter_s1_kal/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,ZoffTime,0,sabit sayı
+tez_S1,inverter_s1_kal/Gate Drive8/DeadTime_g4_5V,Gain,,Gain,5,sabit sayı
+tez_S1,inverter_s1_kal/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,port_option_unit,1,sabit sayı
+tez_S1,inverter_s1_kal/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uHigh,4,sabit sayı
+tez_S1,inverter_s1_kal/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uLow,3,sabit sayı
+tez_S1,inverter_s1_kal/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uHighValue,gate_logic_high,ifade/değişken
+tez_S1,inverter_s1_kal/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uHighValue_unit,1,sabit sayı
+tez_S1,inverter_s1_kal/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uLowValue,gate_logic_low,ifade/değişken
+tez_S1,inverter_s1_kal/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uLowValue_unit,1,sabit sayı
+tez_S1,inverter_s1_kal/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,vHigh,Vgate_on,ifade/değişken
+tez_S1,inverter_s1_kal/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,vLow,Vgate_off,ifade/değişken
+tez_S1,inverter_s1_kal/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,tHigh,gate_driver_ton,ifade/değişken
+tez_S1,inverter_s1_kal/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,tLow,gate_driver_toff,ifade/değişken
+tez_S1,inverter_s1_kal/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,parameterization,1,sabit sayı
+tez_S1,inverter_s1_kal/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,parameterization_unit,1,sabit sayı
+tez_S1,inverter_s1_kal/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,rHigh,RG_total,ifade/değişken
+tez_S1,inverter_s1_kal/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,rLow,RG_total,ifade/değişken
+tez_S1,inverter_s1_kal/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,tRise,gate_driver_rise,ifade/değişken
+tez_S1,inverter_s1_kal/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,tFall,gate_driver_fall,ifade/değişken
+tez_S1,inverter_s1_kal/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,cLoad,gate_driver_cload,ifade/değişken
+tez_S1,inverter_s1_kal/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,enable_faults,0,sabit sayı
+tez_S1,inverter_s1_kal/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,enable_faults_unit,1,sabit sayı
+tez_S1,inverter_s1_kal/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,t_fault,1,sabit sayı
+tez_S1,inverter_s1_kal/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,fault_type,1,sabit sayı
+tez_S1,inverter_s1_kal/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,fault_type_unit,1,sabit sayı
+tez_S1,inverter_s1_kal/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,ZonTime,0,sabit sayı
+tez_S1,inverter_s1_kal/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,ZoffTime,0,sabit sayı
+tez_S1,inverter_s1_kal/K11,Gain,,Gain,K11,ifade/değişken
+tez_S1,inverter_s1_kal/Mean1,SubSystem,spsMeanLib/Mean,Freq,50,sabit sayı
+tez_S1,inverter_s1_kal/Mean1,SubSystem,spsMeanLib/Mean,Vinit,0.0001,sabit sayı
+tez_S1,inverter_s1_kal/Mean1,SubSystem,spsMeanLib/Mean,Ts,0,sabit sayı
+tez_S1,inverter_s1_kal/Mean10,SubSystem,spsMeanLib/Mean,Freq,50,sabit sayı
+tez_S1,inverter_s1_kal/Mean10,SubSystem,spsMeanLib/Mean,Vinit,0.0001,sabit sayı
+tez_S1,inverter_s1_kal/Mean10,SubSystem,spsMeanLib/Mean,Ts,0,sabit sayı
+tez_S1,inverter_s1_kal/Mean2,SubSystem,spsMeanLib/Mean,Freq,50,sabit sayı
+tez_S1,inverter_s1_kal/Mean2,SubSystem,spsMeanLib/Mean,Vinit,0.0001,sabit sayı
+tez_S1,inverter_s1_kal/Mean2,SubSystem,spsMeanLib/Mean,Ts,0,sabit sayı
+tez_S1,inverter_s1_kal/Mean3,SubSystem,spsMeanLib/Mean,Freq,50,sabit sayı
+tez_S1,inverter_s1_kal/Mean3,SubSystem,spsMeanLib/Mean,Vinit,0.0001,sabit sayı
+tez_S1,inverter_s1_kal/Mean3,SubSystem,spsMeanLib/Mean,Ts,0,sabit sayı
+tez_S1,inverter_s1_kal/Mean9,SubSystem,spsMeanLib/Mean,Freq,50,sabit sayı
+tez_S1,inverter_s1_kal/Mean9,SubSystem,spsMeanLib/Mean,Vinit,0.0001,sabit sayı
+tez_S1,inverter_s1_kal/Mean9,SubSystem,spsMeanLib/Mean,Ts,0,sabit sayı
+tez_S1,inverter_s1_kal/Power Measurement,SubSystem,eePowerMeasurement/Power ⏎ Measurement,F,50,sabit sayı
+tez_S1,inverter_s1_kal/Power Measurement,SubSystem,eePowerMeasurement/Power ⏎ Measurement,Ts,0,sabit sayı
+tez_S1,inverter_s1_kal/Power3,SubSystem,spsPowerLib/Power,Freq,50,sabit sayı
+tez_S1,inverter_s1_kal/Power3,SubSystem,spsPowerLib/Power,Vinit,"[0.001, 0]",sabit sayı
+tez_S1,inverter_s1_kal/Power3,SubSystem,spsPowerLib/Power,Iinit,"[0.001, 0]",sabit sayı
+tez_S1,inverter_s1_kal/Power3,SubSystem,spsPowerLib/Power,Ts,0,sabit sayı
+tez_S1,inverter_s1_kal/RMS1,SubSystem,spsRMSLib/RMS,Freq,50,sabit sayı
+tez_S1,inverter_s1_kal/RMS1,SubSystem,spsRMSLib/RMS,RMSInit,0,sabit sayı
+tez_S1,inverter_s1_kal/RMS1,SubSystem,spsRMSLib/RMS,Ts,0,sabit sayı
+tez_S1,inverter_s1_kal/Sine Wave1,Sin,,Amplitude,pwm_ref_amp,ifade/değişken
+tez_S1,inverter_s1_kal/Sine Wave1,Sin,,Bias,0,sabit sayı
+tez_S1,inverter_s1_kal/Sine Wave1,Sin,,Frequency,2*pi*f_grid,ifade/değişken
+tez_S1,inverter_s1_kal/Sine Wave1,Sin,,Phase,phase_deg1*pi/180,ifade/değişken
+tez_S1,inverter_s1_kal/Sine Wave1,Sin,,Samples,10,sabit sayı
+tez_S1,inverter_s1_kal/Sine Wave1,Sin,,Offset,0,sabit sayı
+tez_S1,inverter_s1_kal/Sine Wave1,Sin,,SampleTime,pwm_ref_Ts,ifade/değişken
+tez_S1,inverter_s1_kal/Solver Configuration1,SubSystem,nesl_utility/Solver ⏎ Configuration,ResidualTolerance,simscape_residual_tolerance,ifade/değişken
+tez_S1,inverter_s1_kal/Solver Configuration1,SubSystem,nesl_utility/Solver ⏎ Configuration,ConsistencyAbsTol,0.001,sabit sayı
+tez_S1,inverter_s1_kal/Solver Configuration1,SubSystem,nesl_utility/Solver ⏎ Configuration,ConsistencyRelTol,0.001,sabit sayı
+tez_S1,inverter_s1_kal/Solver Configuration1,SubSystem,nesl_utility/Solver ⏎ Configuration,ConsistencyTolFactor,0.001,sabit sayı
+tez_S1,inverter_s1_kal/Solver Configuration1,SubSystem,nesl_utility/Solver ⏎ Configuration,FunctionEvalNumThread,1,sabit sayı
+tez_S1,inverter_s1_kal/Solver Configuration1,SubSystem,nesl_utility/Solver ⏎ Configuration,LocalSolverSampleTime,1e-7,sabit sayı
+tez_S1,inverter_s1_kal/Solver Configuration1,SubSystem,nesl_utility/Solver ⏎ Configuration,MaxNonlinIter,10,sabit sayı
+tez_S1,inverter_s1_kal/Solver Configuration1,SubSystem,nesl_utility/Solver ⏎ Configuration,MaxModeIter,2,sabit sayı
+tez_S1,inverter_s1_kal/Solver Configuration1,SubSystem,nesl_utility/Solver ⏎ Configuration,ImpulseIterations,1,sabit sayı
+tez_S1,inverter_s1_kal/Solver Configuration1,SubSystem,nesl_utility/Solver ⏎ Configuration,LinearAlgebraNumThread,0,sabit sayı
+tez_S1,inverter_s1_kal/Solver Configuration1,SubSystem,nesl_utility/Solver ⏎ Configuration,DelaysMemoryBudget,1024,sabit sayı
+tez_S1,inverter_s1_kal/Solver Configuration1,SubSystem,nesl_utility/Solver ⏎ Configuration,FilteringTimeConstant,0.001,sabit sayı
+tez_S1,inverter_s1_kal/Solver Configuration1,SubSystem,nesl_utility/Solver ⏎ Configuration,PartitionMemoryBudget,1024,sabit sayı
+tez_S1,inverter_s1_kal/Solver Configuration1,SubSystem,nesl_utility/Solver ⏎ Configuration,MultibodyLocalSolverSampleTime,0.001,sabit sayı
+tez_S1,inverter_s1_kal/Subsystem,SubSystem,,SystemSampleTime,-1,sabit sayı
+tez_S1,inverter_s1_kal/Subsystem,SubSystem,,Latency,0,sabit sayı
+tez_S1,inverter_s1_kal/Subsystem/In1,Inport,,Port,1,sabit sayı
+tez_S1,inverter_s1_kal/Subsystem/In1,Inport,,PortDimensions,-1,sabit sayı
+tez_S1,inverter_s1_kal/Subsystem/In1,Inport,,MessageQueueCapacity,1,sabit sayı
+tez_S1,inverter_s1_kal/Subsystem/Constant1,Constant,,Value,0,sabit sayı
+tez_S1,inverter_s1_kal/Subsystem/Constant1,Constant,,SampleTime,inf,sabit sayı
+tez_S1,inverter_s1_kal/Subsystem/Constant1,Constant,,FramePeriod,inf,sabit sayı
+tez_S1,inverter_s1_kal/Subsystem/Constant2,Constant,,Value,0,sabit sayı
+tez_S1,inverter_s1_kal/Subsystem/Constant2,Constant,,SampleTime,inf,sabit sayı
+tez_S1,inverter_s1_kal/Subsystem/Constant2,Constant,,FramePeriod,inf,sabit sayı
+tez_S1,inverter_s1_kal/Subsystem/Gain11,Gain,,Gain,-1,sabit sayı
+tez_S1,inverter_s1_kal/Subsystem/Gain12,Gain,,Gain,1,sabit sayı
+tez_S1,inverter_s1_kal/Subsystem/Mux2,Mux,,Inputs,2,sabit sayı
+tez_S1,inverter_s1_kal/Subsystem/Mux5,Mux,,Inputs,2,sabit sayı
+tez_S1,inverter_s1_kal/Subsystem/NOT,Logic,,Inputs,2,sabit sayı
+tez_S1,inverter_s1_kal/Subsystem/NOT1,Logic,,Inputs,2,sabit sayı
+tez_S1,inverter_s1_kal/Subsystem/On Delay,SubSystem,spsOnDelayLib/On Delay,delay,deadtime,ifade/değişken
+tez_S1,inverter_s1_kal/Subsystem/On Delay,SubSystem,spsOnDelayLib/On Delay,ic,0,sabit sayı
+tez_S1,inverter_s1_kal/Subsystem/On Delay,SubSystem,spsOnDelayLib/On Delay,Ts,0,sabit sayı
+tez_S1,inverter_s1_kal/Subsystem/On Delay1,SubSystem,spsOnDelayLib/On Delay,delay,deadtime,ifade/değişken
+tez_S1,inverter_s1_kal/Subsystem/On Delay1,SubSystem,spsOnDelayLib/On Delay,ic,0,sabit sayı
+tez_S1,inverter_s1_kal/Subsystem/On Delay1,SubSystem,spsOnDelayLib/On Delay,Ts,0,sabit sayı
+tez_S1,inverter_s1_kal/Subsystem/On Delay2,SubSystem,spsOnDelayLib/On Delay,delay,deadtime,ifade/değişken
+tez_S1,inverter_s1_kal/Subsystem/On Delay2,SubSystem,spsOnDelayLib/On Delay,ic,0,sabit sayı
+tez_S1,inverter_s1_kal/Subsystem/On Delay2,SubSystem,spsOnDelayLib/On Delay,Ts,0,sabit sayı
+tez_S1,inverter_s1_kal/Subsystem/On Delay3,SubSystem,spsOnDelayLib/On Delay,delay,deadtime,ifade/değişken
+tez_S1,inverter_s1_kal/Subsystem/On Delay3,SubSystem,spsOnDelayLib/On Delay,ic,0,sabit sayı
+tez_S1,inverter_s1_kal/Subsystem/On Delay3,SubSystem,spsOnDelayLib/On Delay,Ts,0,sabit sayı
+tez_S1,inverter_s1_kal/Subsystem/PWM Generator (DC-DC)10,SubSystem,spsPWMGeneratorDCDCLib/PWM Generator ⏎ (DC-DC),Fsw,fsw,ifade/değişken
+tez_S1,inverter_s1_kal/Subsystem/PWM Generator (DC-DC)10,SubSystem,spsPWMGeneratorDCDCLib/PWM Generator ⏎ (DC-DC),Ts,1/fsw/100,ifade/değişken
+tez_S1,inverter_s1_kal/Subsystem/PWM Generator (DC-DC)11,SubSystem,spsPWMGeneratorDCDCLib/PWM Generator ⏎ (DC-DC),Fsw,fsw,ifade/değişken
+tez_S1,inverter_s1_kal/Subsystem/PWM Generator (DC-DC)11,SubSystem,spsPWMGeneratorDCDCLib/PWM Generator ⏎ (DC-DC),Ts,1/fsw/100,ifade/değişken
+tez_S1,inverter_s1_kal/Subsystem/Scope2,Scope,,NumInputPorts,3,sabit sayı
+tez_S1,inverter_s1_kal/Subsystem/Scope2,Scope,,LayoutDimensionsString,[3 1],sabit sayı
+tez_S1,inverter_s1_kal/Subsystem/Scope2,Scope,,AxesScalingNumUpdates,10,sabit sayı
+tez_S1,inverter_s1_kal/Subsystem/Scope2,Scope,,TimeDisplayOffset,0,sabit sayı
+tez_S1,inverter_s1_kal/Subsystem/Scope2,Scope,,ActiveDisplayString,1,sabit sayı
+tez_S1,inverter_s1_kal/Subsystem/Scope2,Scope,,ActiveDisplayYMinimum,-1.025,sabit sayı
+tez_S1,inverter_s1_kal/Subsystem/Scope2,Scope,,ActiveDisplayYMaximum,1.025,sabit sayı
+tez_S1,inverter_s1_kal/Subsystem/Scope2,Scope,,DataLoggingMaxPoints,5000,sabit sayı
+tez_S1,inverter_s1_kal/Subsystem/Scope2,Scope,,DataLoggingDecimation,2,sabit sayı
+tez_S1,inverter_s1_kal/Subsystem/Switch1,Switch,,Threshold,0,sabit sayı
+tez_S1,inverter_s1_kal/Subsystem/Switch2,Switch,,Threshold,0,sabit sayı
+tez_S1,inverter_s1_kal/Subsystem/Out1,Outport,,Port,1,sabit sayı
+tez_S1,inverter_s1_kal/Subsystem/Out1,Outport,,PortDimensions,-1,sabit sayı
+tez_S1,inverter_s1_kal/Subsystem/Out1,Outport,,OutputWhenUnconnectedValue,0,sabit sayı
+tez_S1,inverter_s1_kal/Subsystem/Out2,Outport,,Port,2,sabit sayı
+tez_S1,inverter_s1_kal/Subsystem/Out2,Outport,,PortDimensions,-1,sabit sayı
+tez_S1,inverter_s1_kal/Subsystem/Out2,Outport,,OutputWhenUnconnectedValue,0,sabit sayı
+tez_S1,inverter_s1_kal/Subsystem/Out3,Outport,,Port,3,sabit sayı
+tez_S1,inverter_s1_kal/Subsystem/Out3,Outport,,PortDimensions,-1,sabit sayı
+tez_S1,inverter_s1_kal/Subsystem/Out3,Outport,,OutputWhenUnconnectedValue,0,sabit sayı
+tez_S1,inverter_s1_kal/Subsystem/Out4,Outport,,Port,4,sabit sayı
+tez_S1,inverter_s1_kal/Subsystem/Out4,Outport,,PortDimensions,-1,sabit sayı
+tez_S1,inverter_s1_kal/Subsystem/Out4,Outport,,OutputWhenUnconnectedValue,0,sabit sayı
+tez_S1,inverter_s1_kal/Subsystem/Out5,Outport,,Port,5,sabit sayı
+tez_S1,inverter_s1_kal/Subsystem/Out5,Outport,,PortDimensions,-1,sabit sayı
+tez_S1,inverter_s1_kal/Subsystem/Out5,Outport,,OutputWhenUnconnectedValue,0,sabit sayı
+tez_S1,inverter_s1_kal/Subsystem/Out6,Outport,,Port,6,sabit sayı
+tez_S1,inverter_s1_kal/Subsystem/Out6,Outport,,PortDimensions,-1,sabit sayı
+tez_S1,inverter_s1_kal/Subsystem/Out6,Outport,,OutputWhenUnconnectedValue,0,sabit sayı
+tez_S1,inverter_s1_kal/THD,SubSystem,spsTHDLib/THD,Freq,50,sabit sayı
+tez_S1,inverter_s1_kal/THD,SubSystem,spsTHDLib/THD,Ts,0,sabit sayı
+tez_S1,inverter_s1_kal/THD2,SubSystem,spsTHDLib/THD,Freq,50,sabit sayı
+tez_S1,inverter_s1_kal/THD2,SubSystem,spsTHDLib/THD,Ts,0,sabit sayı
+tez_S1,inverter_s1_kal/powergui,SubSystem,spspowerguiLib/powergui,SampleTime,50e-6,sabit sayı
+tez_S1,inverter_s1_kal/powergui,SubSystem,spspowerguiLib/powergui,frequency,50,sabit sayı
+tez_S1,inverter_s1_kal/powergui,SubSystem,spspowerguiLib/powergui,Iterations,50,sabit sayı
+tez_S1,inverter_s1_kal/powergui,SubSystem,spspowerguiLib/powergui,frequencyindice,60,sabit sayı
+tez_S1,inverter_s1_kal/powergui,SubSystem,spspowerguiLib/powergui,Pbase,100e6,sabit sayı
+tez_S1,inverter_s1_kal/powergui,SubSystem,spspowerguiLib/powergui,ErrMax,1e-4,sabit sayı
+tez_S1,inverter_s1_kal/powergui,SubSystem,spspowerguiLib/powergui,buscounter,0,sabit sayı
+tez_S1,inverter_s1_kal/powergui,SubSystem,spspowerguiLib/powergui,Ts,100,sabit sayı
+tez_S1,inverter_s1_kal/powergui,SubSystem,spspowerguiLib/powergui,SwTol,0,sabit sayı
+tez_S1,inverter_s1_kal/powergui,SubSystem,spspowerguiLib/powergui,NonlinearTolerance,1e-4,sabit sayı
+tez_S1,inverter_s1_kal/powergui,SubSystem,spspowerguiLib/powergui,nMaxIteration,100,sabit sayı
+tez_S1,inverter_s1_kal/powergui,SubSystem,spspowerguiLib/powergui,structure,0,sabit sayı
+tez_S1,inverter_s1_kal/powergui,SubSystem,spspowerguiLib/powergui,StartTime,0.0,sabit sayı
+tez_S1,inverter_s1_kal/powergui,SubSystem,spspowerguiLib/powergui,cycles,1,sabit sayı
+tez_S1,inverter_s1_kal/powergui,SubSystem,spspowerguiLib/powergui,DisplayStyle,1,sabit sayı
+tez_S1,inverter_s1_kal/powergui,SubSystem,spspowerguiLib/powergui,fundamental,50,sabit sayı
+tez_S1,inverter_s1_kal/powergui,SubSystem,spspowerguiLib/powergui,MaxFrequency,1000,sabit sayı
+tez_S1,inverter_s1_kal/powergui,SubSystem,spspowerguiLib/powergui,frequencyindicesteady,1,sabit sayı
+tez_S1,inverter_s1_kal/powergui,SubSystem,spspowerguiLib/powergui,RmsSteady,1,sabit sayı
+tez_S2,inverter_s2_kal/AC instantaneous power3,Product,,Inputs,2,sabit sayı
+tez_S2,inverter_s2_kal/AC instantaneous power3,Product,,CollapseDim,1,sabit sayı
+tez_S2,inverter_s2_kal/AC instantaneous power4,Product,,Inputs,2,sabit sayı
+tez_S2,inverter_s2_kal/AC instantaneous power4,Product,,CollapseDim,1,sabit sayı
+tez_S2,inverter_s2_kal/AC instantaneous power5,Product,,Inputs,2,sabit sayı
+tez_S2,inverter_s2_kal/AC instantaneous power5,Product,,CollapseDim,1,sabit sayı
+tez_S2,inverter_s2_kal/AC instantaneous power8,Product,,Inputs,2,sabit sayı
+tez_S2,inverter_s2_kal/AC instantaneous power8,Product,,CollapseDim,1,sabit sayı
+tez_S2,inverter_s2_kal/AC instantaneous power9,Product,,Inputs,2,sabit sayı
+tez_S2,inverter_s2_kal/AC instantaneous power9,Product,,CollapseDim,1,sabit sayı
+tez_S2,inverter_s2_kal/Divide2,Product,,CollapseDim,1,sabit sayı
+tez_S2,inverter_s2_kal/Divide4,Product,,CollapseDim,1,sabit sayı
+tez_S2,inverter_s2_kal/Divide6,Product,,CollapseDim,1,sabit sayı
+tez_S2,inverter_s2_kal/Gain2,Gain,,Gain,measurement_gain,ifade/değişken
+tez_S2,inverter_s2_kal/Gate Drive1/DeadTime_g3_5V,Gain,,Gain,5,sabit sayı
+tez_S2,inverter_s2_kal/Gate Drive1/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,port_option_unit,1,sabit sayı
+tez_S2,inverter_s2_kal/Gate Drive1/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uHigh,4,sabit sayı
+tez_S2,inverter_s2_kal/Gate Drive1/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uLow,3,sabit sayı
+tez_S2,inverter_s2_kal/Gate Drive1/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uHighValue,gate_logic_high,ifade/değişken
+tez_S2,inverter_s2_kal/Gate Drive1/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uHighValue_unit,1,sabit sayı
+tez_S2,inverter_s2_kal/Gate Drive1/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uLowValue,gate_logic_low,ifade/değişken
+tez_S2,inverter_s2_kal/Gate Drive1/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uLowValue_unit,1,sabit sayı
+tez_S2,inverter_s2_kal/Gate Drive1/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,vHigh,Vgate_on,ifade/değişken
+tez_S2,inverter_s2_kal/Gate Drive1/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,vLow,Vgate_off,ifade/değişken
+tez_S2,inverter_s2_kal/Gate Drive1/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,tHigh,gate_driver_ton,ifade/değişken
+tez_S2,inverter_s2_kal/Gate Drive1/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,tLow,gate_driver_toff,ifade/değişken
+tez_S2,inverter_s2_kal/Gate Drive1/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,parameterization,1,sabit sayı
+tez_S2,inverter_s2_kal/Gate Drive1/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,parameterization_unit,1,sabit sayı
+tez_S2,inverter_s2_kal/Gate Drive1/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,rHigh,RG_total,ifade/değişken
+tez_S2,inverter_s2_kal/Gate Drive1/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,rLow,RG_total,ifade/değişken
+tez_S2,inverter_s2_kal/Gate Drive1/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,tRise,gate_driver_rise,ifade/değişken
+tez_S2,inverter_s2_kal/Gate Drive1/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,tFall,gate_driver_fall,ifade/değişken
+tez_S2,inverter_s2_kal/Gate Drive1/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,cLoad,gate_driver_cload,ifade/değişken
+tez_S2,inverter_s2_kal/Gate Drive1/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,enable_faults,0,sabit sayı
+tez_S2,inverter_s2_kal/Gate Drive1/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,enable_faults_unit,1,sabit sayı
+tez_S2,inverter_s2_kal/Gate Drive1/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,t_fault,1,sabit sayı
+tez_S2,inverter_s2_kal/Gate Drive1/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,fault_type,1,sabit sayı
+tez_S2,inverter_s2_kal/Gate Drive1/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,fault_type_unit,1,sabit sayı
+tez_S2,inverter_s2_kal/Gate Drive1/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,ZonTime,0,sabit sayı
+tez_S2,inverter_s2_kal/Gate Drive1/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,ZoffTime,0,sabit sayı
+tez_S2,inverter_s2_kal/Gate Drive2/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,port_option_unit,1,sabit sayı
+tez_S2,inverter_s2_kal/Gate Drive2/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uHigh,4,sabit sayı
+tez_S2,inverter_s2_kal/Gate Drive2/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uLow,3,sabit sayı
+tez_S2,inverter_s2_kal/Gate Drive2/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uHighValue,gate_logic_high,ifade/değişken
+tez_S2,inverter_s2_kal/Gate Drive2/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uHighValue_unit,1,sabit sayı
+tez_S2,inverter_s2_kal/Gate Drive2/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uLowValue,gate_logic_low,ifade/değişken
+tez_S2,inverter_s2_kal/Gate Drive2/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uLowValue_unit,1,sabit sayı
+tez_S2,inverter_s2_kal/Gate Drive2/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,vHigh,Vgate_on,ifade/değişken
+tez_S2,inverter_s2_kal/Gate Drive2/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,vLow,Vgate_off,ifade/değişken
+tez_S2,inverter_s2_kal/Gate Drive2/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,tHigh,gate_driver_ton,ifade/değişken
+tez_S2,inverter_s2_kal/Gate Drive2/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,tLow,gate_driver_toff,ifade/değişken
+tez_S2,inverter_s2_kal/Gate Drive2/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,parameterization,1,sabit sayı
+tez_S2,inverter_s2_kal/Gate Drive2/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,parameterization_unit,1,sabit sayı
+tez_S2,inverter_s2_kal/Gate Drive2/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,rHigh,RG_total,ifade/değişken
+tez_S2,inverter_s2_kal/Gate Drive2/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,rLow,RG_total,ifade/değişken
+tez_S2,inverter_s2_kal/Gate Drive2/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,tRise,gate_driver_rise,ifade/değişken
+tez_S2,inverter_s2_kal/Gate Drive2/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,tFall,gate_driver_fall,ifade/değişken
+tez_S2,inverter_s2_kal/Gate Drive2/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,cLoad,gate_driver_cload,ifade/değişken
+tez_S2,inverter_s2_kal/Gate Drive2/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,enable_faults,0,sabit sayı
+tez_S2,inverter_s2_kal/Gate Drive2/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,enable_faults_unit,1,sabit sayı
+tez_S2,inverter_s2_kal/Gate Drive2/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,t_fault,1,sabit sayı
+tez_S2,inverter_s2_kal/Gate Drive2/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,fault_type,1,sabit sayı
+tez_S2,inverter_s2_kal/Gate Drive2/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,fault_type_unit,1,sabit sayı
+tez_S2,inverter_s2_kal/Gate Drive2/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,ZonTime,0,sabit sayı
+tez_S2,inverter_s2_kal/Gate Drive2/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,ZoffTime,0,sabit sayı
+tez_S2,inverter_s2_kal/Gate Drive3/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,port_option_unit,1,sabit sayı
+tez_S2,inverter_s2_kal/Gate Drive3/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uHigh,4,sabit sayı
+tez_S2,inverter_s2_kal/Gate Drive3/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uLow,3,sabit sayı
+tez_S2,inverter_s2_kal/Gate Drive3/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uHighValue,gate_logic_high,ifade/değişken
+tez_S2,inverter_s2_kal/Gate Drive3/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uHighValue_unit,1,sabit sayı
+tez_S2,inverter_s2_kal/Gate Drive3/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uLowValue,gate_logic_low,ifade/değişken
+tez_S2,inverter_s2_kal/Gate Drive3/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uLowValue_unit,1,sabit sayı
+tez_S2,inverter_s2_kal/Gate Drive3/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,vHigh,Vgate_on,ifade/değişken
+tez_S2,inverter_s2_kal/Gate Drive3/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,vLow,Vgate_off,ifade/değişken
+tez_S2,inverter_s2_kal/Gate Drive3/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,tHigh,gate_driver_ton,ifade/değişken
+tez_S2,inverter_s2_kal/Gate Drive3/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,tLow,gate_driver_toff,ifade/değişken
+tez_S2,inverter_s2_kal/Gate Drive3/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,parameterization,1,sabit sayı
+tez_S2,inverter_s2_kal/Gate Drive3/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,parameterization_unit,1,sabit sayı
+tez_S2,inverter_s2_kal/Gate Drive3/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,rHigh,RG_total,ifade/değişken
+tez_S2,inverter_s2_kal/Gate Drive3/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,rLow,RG_total,ifade/değişken
+tez_S2,inverter_s2_kal/Gate Drive3/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,tRise,gate_driver_rise,ifade/değişken
+tez_S2,inverter_s2_kal/Gate Drive3/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,tFall,gate_driver_fall,ifade/değişken
+tez_S2,inverter_s2_kal/Gate Drive3/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,cLoad,gate_driver_cload,ifade/değişken
+tez_S2,inverter_s2_kal/Gate Drive3/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,enable_faults,0,sabit sayı
+tez_S2,inverter_s2_kal/Gate Drive3/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,enable_faults_unit,1,sabit sayı
+tez_S2,inverter_s2_kal/Gate Drive3/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,t_fault,1,sabit sayı
+tez_S2,inverter_s2_kal/Gate Drive3/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,fault_type,1,sabit sayı
+tez_S2,inverter_s2_kal/Gate Drive3/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,fault_type_unit,1,sabit sayı
+tez_S2,inverter_s2_kal/Gate Drive3/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,ZonTime,0,sabit sayı
+tez_S2,inverter_s2_kal/Gate Drive3/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,ZoffTime,0,sabit sayı
+tez_S2,inverter_s2_kal/Gate Drive4/DeadTime_g4_5V,Gain,,Gain,5,sabit sayı
+tez_S2,inverter_s2_kal/Gate Drive4/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,port_option_unit,1,sabit sayı
+tez_S2,inverter_s2_kal/Gate Drive4/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uHigh,4,sabit sayı
+tez_S2,inverter_s2_kal/Gate Drive4/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uLow,3,sabit sayı
+tez_S2,inverter_s2_kal/Gate Drive4/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uHighValue,gate_logic_high,ifade/değişken
+tez_S2,inverter_s2_kal/Gate Drive4/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uHighValue_unit,1,sabit sayı
+tez_S2,inverter_s2_kal/Gate Drive4/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uLowValue,gate_logic_low,ifade/değişken
+tez_S2,inverter_s2_kal/Gate Drive4/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uLowValue_unit,1,sabit sayı
+tez_S2,inverter_s2_kal/Gate Drive4/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,vHigh,Vgate_on,ifade/değişken
+tez_S2,inverter_s2_kal/Gate Drive4/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,vLow,Vgate_off,ifade/değişken
+tez_S2,inverter_s2_kal/Gate Drive4/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,tHigh,gate_driver_ton,ifade/değişken
+tez_S2,inverter_s2_kal/Gate Drive4/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,tLow,gate_driver_toff,ifade/değişken
+tez_S2,inverter_s2_kal/Gate Drive4/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,parameterization,1,sabit sayı
+tez_S2,inverter_s2_kal/Gate Drive4/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,parameterization_unit,1,sabit sayı
+tez_S2,inverter_s2_kal/Gate Drive4/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,rHigh,RG_total,ifade/değişken
+tez_S2,inverter_s2_kal/Gate Drive4/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,rLow,RG_total,ifade/değişken
+tez_S2,inverter_s2_kal/Gate Drive4/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,tRise,gate_driver_rise,ifade/değişken
+tez_S2,inverter_s2_kal/Gate Drive4/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,tFall,gate_driver_fall,ifade/değişken
+tez_S2,inverter_s2_kal/Gate Drive4/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,cLoad,gate_driver_cload,ifade/değişken
+tez_S2,inverter_s2_kal/Gate Drive4/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,enable_faults,0,sabit sayı
+tez_S2,inverter_s2_kal/Gate Drive4/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,enable_faults_unit,1,sabit sayı
+tez_S2,inverter_s2_kal/Gate Drive4/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,t_fault,1,sabit sayı
+tez_S2,inverter_s2_kal/Gate Drive4/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,fault_type,1,sabit sayı
+tez_S2,inverter_s2_kal/Gate Drive4/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,fault_type_unit,1,sabit sayı
+tez_S2,inverter_s2_kal/Gate Drive4/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,ZonTime,0,sabit sayı
+tez_S2,inverter_s2_kal/Gate Drive4/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,ZoffTime,0,sabit sayı
+tez_S2,inverter_s2_kal/Mean4,SubSystem,spsMeanLib/Mean,Freq,50,sabit sayı
+tez_S2,inverter_s2_kal/Mean4,SubSystem,spsMeanLib/Mean,Vinit,0.0001,sabit sayı
+tez_S2,inverter_s2_kal/Mean4,SubSystem,spsMeanLib/Mean,Ts,0,sabit sayı
+tez_S2,inverter_s2_kal/Mean5,SubSystem,spsMeanLib/Mean,Freq,50,sabit sayı
+tez_S2,inverter_s2_kal/Mean5,SubSystem,spsMeanLib/Mean,Vinit,0.0001,sabit sayı
+tez_S2,inverter_s2_kal/Mean5,SubSystem,spsMeanLib/Mean,Ts,0,sabit sayı
+tez_S2,inverter_s2_kal/Mean6,SubSystem,spsMeanLib/Mean,Freq,50,sabit sayı
+tez_S2,inverter_s2_kal/Mean6,SubSystem,spsMeanLib/Mean,Vinit,0.0001,sabit sayı
+tez_S2,inverter_s2_kal/Mean6,SubSystem,spsMeanLib/Mean,Ts,0,sabit sayı
+tez_S2,inverter_s2_kal/Mean7,SubSystem,spsMeanLib/Mean,Freq,50,sabit sayı
+tez_S2,inverter_s2_kal/Mean7,SubSystem,spsMeanLib/Mean,Vinit,0.0001,sabit sayı
+tez_S2,inverter_s2_kal/Mean7,SubSystem,spsMeanLib/Mean,Ts,0,sabit sayı
+tez_S2,inverter_s2_kal/Mean8,SubSystem,spsMeanLib/Mean,Freq,50,sabit sayı
+tez_S2,inverter_s2_kal/Mean8,SubSystem,spsMeanLib/Mean,Vinit,0.0001,sabit sayı
+tez_S2,inverter_s2_kal/Mean8,SubSystem,spsMeanLib/Mean,Ts,0,sabit sayı
+tez_S2,inverter_s2_kal/Power Measurement1,SubSystem,eePowerMeasurement/Power ⏎ Measurement,F,50,sabit sayı
+tez_S2,inverter_s2_kal/Power Measurement1,SubSystem,eePowerMeasurement/Power ⏎ Measurement,Ts,0,sabit sayı
+tez_S2,inverter_s2_kal/Power1,SubSystem,spsPowerLib/Power,Freq,50,sabit sayı
+tez_S2,inverter_s2_kal/Power1,SubSystem,spsPowerLib/Power,Vinit,"[0.001, 0]",sabit sayı
+tez_S2,inverter_s2_kal/Power1,SubSystem,spsPowerLib/Power,Iinit,"[0.001, 0]",sabit sayı
+tez_S2,inverter_s2_kal/Power1,SubSystem,spsPowerLib/Power,Ts,0,sabit sayı
+tez_S2,inverter_s2_kal/RMS2,SubSystem,spsRMSLib/RMS,Freq,50,sabit sayı
+tez_S2,inverter_s2_kal/RMS2,SubSystem,spsRMSLib/RMS,RMSInit,0,sabit sayı
+tez_S2,inverter_s2_kal/RMS2,SubSystem,spsRMSLib/RMS,Ts,0,sabit sayı
+tez_S2,inverter_s2_kal/S2 K1,Gain,,Gain,K12,ifade/değişken
+tez_S2,inverter_s2_kal/S2 K3,Gain,,Gain,0,sabit sayı
+tez_S2,inverter_s2_kal/S2 PWM susturma,SubSystem,,SystemSampleTime,-1,sabit sayı
+tez_S2,inverter_s2_kal/S2 PWM susturma,SubSystem,,Latency,0,sabit sayı
+tez_S2,inverter_s2_kal/S2 PWM susturma/In1,Inport,,Port,1,sabit sayı
+tez_S2,inverter_s2_kal/S2 PWM susturma/In1,Inport,,PortDimensions,-1,sabit sayı
+tez_S2,inverter_s2_kal/S2 PWM susturma/In1,Inport,,MessageQueueCapacity,1,sabit sayı
+tez_S2,inverter_s2_kal/S2 PWM susturma/Constant1,Constant,,Value,0,sabit sayı
+tez_S2,inverter_s2_kal/S2 PWM susturma/Constant1,Constant,,SampleTime,inf,sabit sayı
+tez_S2,inverter_s2_kal/S2 PWM susturma/Constant1,Constant,,FramePeriod,inf,sabit sayı
+tez_S2,inverter_s2_kal/S2 PWM susturma/Constant2,Constant,,Value,0,sabit sayı
+tez_S2,inverter_s2_kal/S2 PWM susturma/Constant2,Constant,,SampleTime,inf,sabit sayı
+tez_S2,inverter_s2_kal/S2 PWM susturma/Constant2,Constant,,FramePeriod,inf,sabit sayı
+tez_S2,inverter_s2_kal/S2 PWM susturma/Constant3,Constant,,Value,0,sabit sayı
+tez_S2,inverter_s2_kal/S2 PWM susturma/Constant3,Constant,,SampleTime,inf,sabit sayı
+tez_S2,inverter_s2_kal/S2 PWM susturma/Constant3,Constant,,FramePeriod,inf,sabit sayı
+tez_S2,inverter_s2_kal/S2 PWM susturma/Constant4,Constant,,Value,1,sabit sayı
+tez_S2,inverter_s2_kal/S2 PWM susturma/Constant4,Constant,,SampleTime,inf,sabit sayı
+tez_S2,inverter_s2_kal/S2 PWM susturma/Constant4,Constant,,FramePeriod,inf,sabit sayı
+tez_S2,inverter_s2_kal/S2 PWM susturma/Constant5,Constant,,Value,1,sabit sayı
+tez_S2,inverter_s2_kal/S2 PWM susturma/Constant5,Constant,,SampleTime,inf,sabit sayı
+tez_S2,inverter_s2_kal/S2 PWM susturma/Constant5,Constant,,FramePeriod,inf,sabit sayı
+tez_S2,inverter_s2_kal/S2 PWM susturma/Constant6,Constant,,Value,0,sabit sayı
+tez_S2,inverter_s2_kal/S2 PWM susturma/Constant6,Constant,,SampleTime,inf,sabit sayı
+tez_S2,inverter_s2_kal/S2 PWM susturma/Constant6,Constant,,FramePeriod,inf,sabit sayı
+tez_S2,inverter_s2_kal/S2 PWM susturma/Gain11,Gain,,Gain,-1,sabit sayı
+tez_S2,inverter_s2_kal/S2 PWM susturma/Gain12,Gain,,Gain,1,sabit sayı
+tez_S2,inverter_s2_kal/S2 PWM susturma/Mux2,Mux,,Inputs,2,sabit sayı
+tez_S2,inverter_s2_kal/S2 PWM susturma/Mux5,Mux,,Inputs,2,sabit sayı
+tez_S2,inverter_s2_kal/S2 PWM susturma/On Delay,SubSystem,spsOnDelayLib/On Delay,delay,deadtime,ifade/değişken
+tez_S2,inverter_s2_kal/S2 PWM susturma/On Delay,SubSystem,spsOnDelayLib/On Delay,ic,0,sabit sayı
+tez_S2,inverter_s2_kal/S2 PWM susturma/On Delay,SubSystem,spsOnDelayLib/On Delay,Ts,0,sabit sayı
+tez_S2,inverter_s2_kal/S2 PWM susturma/On Delay1,SubSystem,spsOnDelayLib/On Delay,delay,deadtime,ifade/değişken
+tez_S2,inverter_s2_kal/S2 PWM susturma/On Delay1,SubSystem,spsOnDelayLib/On Delay,ic,0,sabit sayı
+tez_S2,inverter_s2_kal/S2 PWM susturma/On Delay1,SubSystem,spsOnDelayLib/On Delay,Ts,0,sabit sayı
+tez_S2,inverter_s2_kal/S2 PWM susturma/On Delay2,SubSystem,spsOnDelayLib/On Delay,delay,deadtime,ifade/değişken
+tez_S2,inverter_s2_kal/S2 PWM susturma/On Delay2,SubSystem,spsOnDelayLib/On Delay,ic,0,sabit sayı
+tez_S2,inverter_s2_kal/S2 PWM susturma/On Delay2,SubSystem,spsOnDelayLib/On Delay,Ts,0,sabit sayı
+tez_S2,inverter_s2_kal/S2 PWM susturma/On Delay3,SubSystem,spsOnDelayLib/On Delay,delay,deadtime,ifade/değişken
+tez_S2,inverter_s2_kal/S2 PWM susturma/On Delay3,SubSystem,spsOnDelayLib/On Delay,ic,0,sabit sayı
+tez_S2,inverter_s2_kal/S2 PWM susturma/On Delay3,SubSystem,spsOnDelayLib/On Delay,Ts,0,sabit sayı
+tez_S2,inverter_s2_kal/S2 PWM susturma/PWM Generator (DC-DC)10,SubSystem,spsPWMGeneratorDCDCLib/PWM Generator ⏎ (DC-DC),Fsw,fsw,ifade/değişken
+tez_S2,inverter_s2_kal/S2 PWM susturma/PWM Generator (DC-DC)10,SubSystem,spsPWMGeneratorDCDCLib/PWM Generator ⏎ (DC-DC),Ts,1/fsw/100,ifade/değişken
+tez_S2,inverter_s2_kal/S2 PWM susturma/PWM Generator (DC-DC)11,SubSystem,spsPWMGeneratorDCDCLib/PWM Generator ⏎ (DC-DC),Fsw,fsw,ifade/değişken
+tez_S2,inverter_s2_kal/S2 PWM susturma/PWM Generator (DC-DC)11,SubSystem,spsPWMGeneratorDCDCLib/PWM Generator ⏎ (DC-DC),Ts,1/fsw/100,ifade/değişken
+tez_S2,inverter_s2_kal/S2 PWM susturma/Scope2,Scope,,NumInputPorts,3,sabit sayı
+tez_S2,inverter_s2_kal/S2 PWM susturma/Scope2,Scope,,LayoutDimensionsString,[3 1],sabit sayı
+tez_S2,inverter_s2_kal/S2 PWM susturma/Scope2,Scope,,AxesScalingNumUpdates,10,sabit sayı
+tez_S2,inverter_s2_kal/S2 PWM susturma/Scope2,Scope,,TimeDisplayOffset,0,sabit sayı
+tez_S2,inverter_s2_kal/S2 PWM susturma/Scope2,Scope,,ActiveDisplayString,1,sabit sayı
+tez_S2,inverter_s2_kal/S2 PWM susturma/Scope2,Scope,,ActiveDisplayYMinimum,-1.025,sabit sayı
+tez_S2,inverter_s2_kal/S2 PWM susturma/Scope2,Scope,,ActiveDisplayYMaximum,1.025,sabit sayı
+tez_S2,inverter_s2_kal/S2 PWM susturma/Scope2,Scope,,DataLoggingMaxPoints,5000,sabit sayı
+tez_S2,inverter_s2_kal/S2 PWM susturma/Scope2,Scope,,DataLoggingDecimation,2,sabit sayı
+tez_S2,inverter_s2_kal/S2 PWM susturma/Switch1,Switch,,Threshold,0,sabit sayı
+tez_S2,inverter_s2_kal/S2 PWM susturma/Switch2,Switch,,Threshold,0,sabit sayı
+tez_S2,inverter_s2_kal/S2 PWM susturma/Switch3,Switch,,Threshold,0,sabit sayı
+tez_S2,inverter_s2_kal/S2 PWM susturma/Switch4,Switch,,Threshold,0,sabit sayı
+tez_S2,inverter_s2_kal/S2 PWM susturma/Out1,Outport,,Port,1,sabit sayı
+tez_S2,inverter_s2_kal/S2 PWM susturma/Out1,Outport,,PortDimensions,-1,sabit sayı
+tez_S2,inverter_s2_kal/S2 PWM susturma/Out1,Outport,,OutputWhenUnconnectedValue,0,sabit sayı
+tez_S2,inverter_s2_kal/S2 PWM susturma/Out2,Outport,,Port,2,sabit sayı
+tez_S2,inverter_s2_kal/S2 PWM susturma/Out2,Outport,,PortDimensions,-1,sabit sayı
+tez_S2,inverter_s2_kal/S2 PWM susturma/Out2,Outport,,OutputWhenUnconnectedValue,0,sabit sayı
+tez_S2,inverter_s2_kal/S2 PWM susturma/Out3,Outport,,Port,3,sabit sayı
+tez_S2,inverter_s2_kal/S2 PWM susturma/Out3,Outport,,PortDimensions,-1,sabit sayı
+tez_S2,inverter_s2_kal/S2 PWM susturma/Out3,Outport,,OutputWhenUnconnectedValue,0,sabit sayı
+tez_S2,inverter_s2_kal/S2 PWM susturma/Out4,Outport,,Port,4,sabit sayı
+tez_S2,inverter_s2_kal/S2 PWM susturma/Out4,Outport,,PortDimensions,-1,sabit sayı
+tez_S2,inverter_s2_kal/S2 PWM susturma/Out4,Outport,,OutputWhenUnconnectedValue,0,sabit sayı
+tez_S2,inverter_s2_kal/S2 PWM susturma/Out5,Outport,,Port,5,sabit sayı
+tez_S2,inverter_s2_kal/S2 PWM susturma/Out5,Outport,,PortDimensions,-1,sabit sayı
+tez_S2,inverter_s2_kal/S2 PWM susturma/Out5,Outport,,OutputWhenUnconnectedValue,0,sabit sayı
+tez_S2,inverter_s2_kal/S2 PWM susturma/Out6,Outport,,Port,6,sabit sayı
+tez_S2,inverter_s2_kal/S2 PWM susturma/Out6,Outport,,PortDimensions,-1,sabit sayı
+tez_S2,inverter_s2_kal/S2 PWM susturma/Out6,Outport,,OutputWhenUnconnectedValue,0,sabit sayı
+tez_S2,inverter_s2_kal/S2 Sine Wave,Sin,,Amplitude,pwm_ref_amp,ifade/değişken
+tez_S2,inverter_s2_kal/S2 Sine Wave,Sin,,Bias,0,sabit sayı
+tez_S2,inverter_s2_kal/S2 Sine Wave,Sin,,Frequency,2*pi*f_grid,ifade/değişken
+tez_S2,inverter_s2_kal/S2 Sine Wave,Sin,,Phase,phase_deg2*pi/180,ifade/değişken
+tez_S2,inverter_s2_kal/S2 Sine Wave,Sin,,Samples,10,sabit sayı
+tez_S2,inverter_s2_kal/S2 Sine Wave,Sin,,Offset,0,sabit sayı
+tez_S2,inverter_s2_kal/S2 Sine Wave,Sin,,SampleTime,pwm_ref_Ts,ifade/değişken
+tez_S2,inverter_s2_kal/S2 sin2,Product,,Inputs,2,sabit sayı
+tez_S2,inverter_s2_kal/S2 sin2,Product,,CollapseDim,1,sabit sayı
+tez_S2,inverter_s2_kal/S2 sin3,Product,,Inputs,2,sabit sayı
+tez_S2,inverter_s2_kal/S2 sin3,Product,,CollapseDim,1,sabit sayı
+tez_S2,inverter_s2_kal/Solver Configuration2,SubSystem,nesl_utility/Solver ⏎ Configuration,ResidualTolerance,simscape_residual_tolerance,ifade/değişken
+tez_S2,inverter_s2_kal/Solver Configuration2,SubSystem,nesl_utility/Solver ⏎ Configuration,ConsistencyAbsTol,0.001,sabit sayı
+tez_S2,inverter_s2_kal/Solver Configuration2,SubSystem,nesl_utility/Solver ⏎ Configuration,ConsistencyRelTol,0.001,sabit sayı
+tez_S2,inverter_s2_kal/Solver Configuration2,SubSystem,nesl_utility/Solver ⏎ Configuration,ConsistencyTolFactor,0.001,sabit sayı
+tez_S2,inverter_s2_kal/Solver Configuration2,SubSystem,nesl_utility/Solver ⏎ Configuration,FunctionEvalNumThread,1,sabit sayı
+tez_S2,inverter_s2_kal/Solver Configuration2,SubSystem,nesl_utility/Solver ⏎ Configuration,LocalSolverSampleTime,1e-7,sabit sayı
+tez_S2,inverter_s2_kal/Solver Configuration2,SubSystem,nesl_utility/Solver ⏎ Configuration,MaxNonlinIter,10,sabit sayı
+tez_S2,inverter_s2_kal/Solver Configuration2,SubSystem,nesl_utility/Solver ⏎ Configuration,MaxModeIter,2,sabit sayı
+tez_S2,inverter_s2_kal/Solver Configuration2,SubSystem,nesl_utility/Solver ⏎ Configuration,ImpulseIterations,1,sabit sayı
+tez_S2,inverter_s2_kal/Solver Configuration2,SubSystem,nesl_utility/Solver ⏎ Configuration,LinearAlgebraNumThread,0,sabit sayı
+tez_S2,inverter_s2_kal/Solver Configuration2,SubSystem,nesl_utility/Solver ⏎ Configuration,DelaysMemoryBudget,1024,sabit sayı
+tez_S2,inverter_s2_kal/Solver Configuration2,SubSystem,nesl_utility/Solver ⏎ Configuration,FilteringTimeConstant,0.001,sabit sayı
+tez_S2,inverter_s2_kal/Solver Configuration2,SubSystem,nesl_utility/Solver ⏎ Configuration,PartitionMemoryBudget,1024,sabit sayı
+tez_S2,inverter_s2_kal/Solver Configuration2,SubSystem,nesl_utility/Solver ⏎ Configuration,MultibodyLocalSolverSampleTime,0.001,sabit sayı
+tez_S2,inverter_s2_kal/THD1,SubSystem,spsTHDLib/THD,Freq,50,sabit sayı
+tez_S2,inverter_s2_kal/THD1,SubSystem,spsTHDLib/THD,Ts,0,sabit sayı
+tez_S2,inverter_s2_kal/THD3,SubSystem,spsTHDLib/THD,Freq,50,sabit sayı
+tez_S2,inverter_s2_kal/THD3,SubSystem,spsTHDLib/THD,Ts,0,sabit sayı
+tez_S2,inverter_s2_kal/powergui,SubSystem,spspowerguiLib/powergui,SampleTime,50e-6,sabit sayı
+tez_S2,inverter_s2_kal/powergui,SubSystem,spspowerguiLib/powergui,frequency,50,sabit sayı
+tez_S2,inverter_s2_kal/powergui,SubSystem,spspowerguiLib/powergui,Iterations,50,sabit sayı
+tez_S2,inverter_s2_kal/powergui,SubSystem,spspowerguiLib/powergui,frequencyindice,60,sabit sayı
+tez_S2,inverter_s2_kal/powergui,SubSystem,spspowerguiLib/powergui,Pbase,100e6,sabit sayı
+tez_S2,inverter_s2_kal/powergui,SubSystem,spspowerguiLib/powergui,ErrMax,1e-4,sabit sayı
+tez_S2,inverter_s2_kal/powergui,SubSystem,spspowerguiLib/powergui,buscounter,0,sabit sayı
+tez_S2,inverter_s2_kal/powergui,SubSystem,spspowerguiLib/powergui,Ts,100,sabit sayı
+tez_S2,inverter_s2_kal/powergui,SubSystem,spspowerguiLib/powergui,SwTol,0,sabit sayı
+tez_S2,inverter_s2_kal/powergui,SubSystem,spspowerguiLib/powergui,NonlinearTolerance,1e-4,sabit sayı
+tez_S2,inverter_s2_kal/powergui,SubSystem,spspowerguiLib/powergui,nMaxIteration,100,sabit sayı
+tez_S2,inverter_s2_kal/powergui,SubSystem,spspowerguiLib/powergui,structure,0,sabit sayı
+tez_S2,inverter_s2_kal/powergui,SubSystem,spspowerguiLib/powergui,StartTime,0.0,sabit sayı
+tez_S2,inverter_s2_kal/powergui,SubSystem,spspowerguiLib/powergui,cycles,1,sabit sayı
+tez_S2,inverter_s2_kal/powergui,SubSystem,spspowerguiLib/powergui,DisplayStyle,1,sabit sayı
+tez_S2,inverter_s2_kal/powergui,SubSystem,spspowerguiLib/powergui,fundamental,50,sabit sayı
+tez_S2,inverter_s2_kal/powergui,SubSystem,spspowerguiLib/powergui,MaxFrequency,1000,sabit sayı
+tez_S2,inverter_s2_kal/powergui,SubSystem,spspowerguiLib/powergui,frequencyindicesteady,1,sabit sayı
+tez_S2,inverter_s2_kal/powergui,SubSystem,spspowerguiLib/powergui,RmsSteady,1,sabit sayı
+tez_S3,inverter_senaryo3_kal/AC instantaneous power,Product,,Inputs,2,sabit sayı
+tez_S3,inverter_senaryo3_kal/AC instantaneous power,Product,,CollapseDim,1,sabit sayı
+tez_S3,inverter_senaryo3_kal/AC instantaneous power1,Product,,Inputs,2,sabit sayı
+tez_S3,inverter_senaryo3_kal/AC instantaneous power1,Product,,CollapseDim,1,sabit sayı
+tez_S3,inverter_senaryo3_kal/AC instantaneous power2,Product,,Inputs,2,sabit sayı
+tez_S3,inverter_senaryo3_kal/AC instantaneous power2,Product,,CollapseDim,1,sabit sayı
+tez_S3,inverter_senaryo3_kal/AC instantaneous power6,Product,,Inputs,2,sabit sayı
+tez_S3,inverter_senaryo3_kal/AC instantaneous power6,Product,,CollapseDim,1,sabit sayı
+tez_S3,inverter_senaryo3_kal/AC instantaneous power7,Product,,Inputs,2,sabit sayı
+tez_S3,inverter_senaryo3_kal/AC instantaneous power7,Product,,CollapseDim,1,sabit sayı
+tez_S3,inverter_senaryo3_kal/Divide1,Product,,CollapseDim,1,sabit sayı
+tez_S3,inverter_senaryo3_kal/Divide3,Product,,CollapseDim,1,sabit sayı
+tez_S3,inverter_senaryo3_kal/Divide5,Product,,CollapseDim,1,sabit sayı
+tez_S3,inverter_senaryo3_kal/Gain1,Gain,,Gain,measurement_gain,ifade/değişken
+tez_S3,inverter_senaryo3_kal/Gate Drive5/DeadTime_g3_5V,Gain,,Gain,5,sabit sayı
+tez_S3,inverter_senaryo3_kal/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,port_option_unit,1,sabit sayı
+tez_S3,inverter_senaryo3_kal/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uHigh,4,sabit sayı
+tez_S3,inverter_senaryo3_kal/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uLow,3,sabit sayı
+tez_S3,inverter_senaryo3_kal/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uHighValue,gate_logic_high,ifade/değişken
+tez_S3,inverter_senaryo3_kal/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uHighValue_unit,1,sabit sayı
+tez_S3,inverter_senaryo3_kal/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uLowValue,gate_logic_low,ifade/değişken
+tez_S3,inverter_senaryo3_kal/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uLowValue_unit,1,sabit sayı
+tez_S3,inverter_senaryo3_kal/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,vHigh,Vgate_on,ifade/değişken
+tez_S3,inverter_senaryo3_kal/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,vLow,Vgate_off,ifade/değişken
+tez_S3,inverter_senaryo3_kal/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,tHigh,gate_driver_ton,ifade/değişken
+tez_S3,inverter_senaryo3_kal/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,tLow,gate_driver_toff,ifade/değişken
+tez_S3,inverter_senaryo3_kal/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,parameterization,1,sabit sayı
+tez_S3,inverter_senaryo3_kal/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,parameterization_unit,1,sabit sayı
+tez_S3,inverter_senaryo3_kal/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,rHigh,RG_total,ifade/değişken
+tez_S3,inverter_senaryo3_kal/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,rLow,RG_total,ifade/değişken
+tez_S3,inverter_senaryo3_kal/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,tRise,gate_driver_rise,ifade/değişken
+tez_S3,inverter_senaryo3_kal/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,tFall,gate_driver_fall,ifade/değişken
+tez_S3,inverter_senaryo3_kal/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,cLoad,gate_driver_cload,ifade/değişken
+tez_S3,inverter_senaryo3_kal/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,enable_faults,0,sabit sayı
+tez_S3,inverter_senaryo3_kal/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,enable_faults_unit,1,sabit sayı
+tez_S3,inverter_senaryo3_kal/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,t_fault,1,sabit sayı
+tez_S3,inverter_senaryo3_kal/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,fault_type,1,sabit sayı
+tez_S3,inverter_senaryo3_kal/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,fault_type_unit,1,sabit sayı
+tez_S3,inverter_senaryo3_kal/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,ZonTime,0,sabit sayı
+tez_S3,inverter_senaryo3_kal/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,ZoffTime,0,sabit sayı
+tez_S3,inverter_senaryo3_kal/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,port_option_unit,1,sabit sayı
+tez_S3,inverter_senaryo3_kal/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uHigh,4,sabit sayı
+tez_S3,inverter_senaryo3_kal/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uLow,3,sabit sayı
+tez_S3,inverter_senaryo3_kal/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uHighValue,gate_logic_high,ifade/değişken
+tez_S3,inverter_senaryo3_kal/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uHighValue_unit,1,sabit sayı
+tez_S3,inverter_senaryo3_kal/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uLowValue,gate_logic_low,ifade/değişken
+tez_S3,inverter_senaryo3_kal/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uLowValue_unit,1,sabit sayı
+tez_S3,inverter_senaryo3_kal/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,vHigh,Vgate_on,ifade/değişken
+tez_S3,inverter_senaryo3_kal/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,vLow,Vgate_off,ifade/değişken
+tez_S3,inverter_senaryo3_kal/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,tHigh,gate_driver_ton,ifade/değişken
+tez_S3,inverter_senaryo3_kal/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,tLow,gate_driver_toff,ifade/değişken
+tez_S3,inverter_senaryo3_kal/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,parameterization,1,sabit sayı
+tez_S3,inverter_senaryo3_kal/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,parameterization_unit,1,sabit sayı
+tez_S3,inverter_senaryo3_kal/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,rHigh,RG_total,ifade/değişken
+tez_S3,inverter_senaryo3_kal/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,rLow,RG_total,ifade/değişken
+tez_S3,inverter_senaryo3_kal/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,tRise,gate_driver_rise,ifade/değişken
+tez_S3,inverter_senaryo3_kal/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,tFall,gate_driver_fall,ifade/değişken
+tez_S3,inverter_senaryo3_kal/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,cLoad,gate_driver_cload,ifade/değişken
+tez_S3,inverter_senaryo3_kal/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,enable_faults,0,sabit sayı
+tez_S3,inverter_senaryo3_kal/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,enable_faults_unit,1,sabit sayı
+tez_S3,inverter_senaryo3_kal/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,t_fault,1,sabit sayı
+tez_S3,inverter_senaryo3_kal/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,fault_type,1,sabit sayı
+tez_S3,inverter_senaryo3_kal/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,fault_type_unit,1,sabit sayı
+tez_S3,inverter_senaryo3_kal/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,ZonTime,0,sabit sayı
+tez_S3,inverter_senaryo3_kal/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,ZoffTime,0,sabit sayı
+tez_S3,inverter_senaryo3_kal/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,port_option_unit,1,sabit sayı
+tez_S3,inverter_senaryo3_kal/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uHigh,4,sabit sayı
+tez_S3,inverter_senaryo3_kal/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uLow,3,sabit sayı
+tez_S3,inverter_senaryo3_kal/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uHighValue,gate_logic_high,ifade/değişken
+tez_S3,inverter_senaryo3_kal/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uHighValue_unit,1,sabit sayı
+tez_S3,inverter_senaryo3_kal/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uLowValue,gate_logic_low,ifade/değişken
+tez_S3,inverter_senaryo3_kal/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uLowValue_unit,1,sabit sayı
+tez_S3,inverter_senaryo3_kal/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,vHigh,Vgate_on,ifade/değişken
+tez_S3,inverter_senaryo3_kal/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,vLow,Vgate_off,ifade/değişken
+tez_S3,inverter_senaryo3_kal/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,tHigh,gate_driver_ton,ifade/değişken
+tez_S3,inverter_senaryo3_kal/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,tLow,gate_driver_toff,ifade/değişken
+tez_S3,inverter_senaryo3_kal/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,parameterization,1,sabit sayı
+tez_S3,inverter_senaryo3_kal/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,parameterization_unit,1,sabit sayı
+tez_S3,inverter_senaryo3_kal/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,rHigh,RG_total,ifade/değişken
+tez_S3,inverter_senaryo3_kal/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,rLow,RG_total,ifade/değişken
+tez_S3,inverter_senaryo3_kal/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,tRise,gate_driver_rise,ifade/değişken
+tez_S3,inverter_senaryo3_kal/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,tFall,gate_driver_fall,ifade/değişken
+tez_S3,inverter_senaryo3_kal/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,cLoad,gate_driver_cload,ifade/değişken
+tez_S3,inverter_senaryo3_kal/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,enable_faults,0,sabit sayı
+tez_S3,inverter_senaryo3_kal/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,enable_faults_unit,1,sabit sayı
+tez_S3,inverter_senaryo3_kal/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,t_fault,1,sabit sayı
+tez_S3,inverter_senaryo3_kal/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,fault_type,1,sabit sayı
+tez_S3,inverter_senaryo3_kal/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,fault_type_unit,1,sabit sayı
+tez_S3,inverter_senaryo3_kal/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,ZonTime,0,sabit sayı
+tez_S3,inverter_senaryo3_kal/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,ZoffTime,0,sabit sayı
+tez_S3,inverter_senaryo3_kal/Gate Drive8/DeadTime_g4_5V,Gain,,Gain,5,sabit sayı
+tez_S3,inverter_senaryo3_kal/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,port_option_unit,1,sabit sayı
+tez_S3,inverter_senaryo3_kal/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uHigh,4,sabit sayı
+tez_S3,inverter_senaryo3_kal/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uLow,3,sabit sayı
+tez_S3,inverter_senaryo3_kal/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uHighValue,gate_logic_high,ifade/değişken
+tez_S3,inverter_senaryo3_kal/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uHighValue_unit,1,sabit sayı
+tez_S3,inverter_senaryo3_kal/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uLowValue,gate_logic_low,ifade/değişken
+tez_S3,inverter_senaryo3_kal/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uLowValue_unit,1,sabit sayı
+tez_S3,inverter_senaryo3_kal/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,vHigh,Vgate_on,ifade/değişken
+tez_S3,inverter_senaryo3_kal/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,vLow,Vgate_off,ifade/değişken
+tez_S3,inverter_senaryo3_kal/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,tHigh,gate_driver_ton,ifade/değişken
+tez_S3,inverter_senaryo3_kal/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,tLow,gate_driver_toff,ifade/değişken
+tez_S3,inverter_senaryo3_kal/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,parameterization,1,sabit sayı
+tez_S3,inverter_senaryo3_kal/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,parameterization_unit,1,sabit sayı
+tez_S3,inverter_senaryo3_kal/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,rHigh,RG_total,ifade/değişken
+tez_S3,inverter_senaryo3_kal/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,rLow,RG_total,ifade/değişken
+tez_S3,inverter_senaryo3_kal/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,tRise,gate_driver_rise,ifade/değişken
+tez_S3,inverter_senaryo3_kal/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,tFall,gate_driver_fall,ifade/değişken
+tez_S3,inverter_senaryo3_kal/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,cLoad,gate_driver_cload,ifade/değişken
+tez_S3,inverter_senaryo3_kal/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,enable_faults,0,sabit sayı
+tez_S3,inverter_senaryo3_kal/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,enable_faults_unit,1,sabit sayı
+tez_S3,inverter_senaryo3_kal/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,t_fault,1,sabit sayı
+tez_S3,inverter_senaryo3_kal/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,fault_type,1,sabit sayı
+tez_S3,inverter_senaryo3_kal/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,fault_type_unit,1,sabit sayı
+tez_S3,inverter_senaryo3_kal/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,ZonTime,0,sabit sayı
+tez_S3,inverter_senaryo3_kal/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,ZoffTime,0,sabit sayı
+tez_S3,inverter_senaryo3_kal/K1,Gain,,Gain,K13,ifade/değişken
+tez_S3,inverter_senaryo3_kal/K3,Gain,,Gain,K33,ifade/değişken
+tez_S3,inverter_senaryo3_kal/Mean1,SubSystem,spsMeanLib/Mean,Freq,50,sabit sayı
+tez_S3,inverter_senaryo3_kal/Mean1,SubSystem,spsMeanLib/Mean,Vinit,0.0001,sabit sayı
+tez_S3,inverter_senaryo3_kal/Mean1,SubSystem,spsMeanLib/Mean,Ts,0,sabit sayı
+tez_S3,inverter_senaryo3_kal/Mean10,SubSystem,spsMeanLib/Mean,Freq,50,sabit sayı
+tez_S3,inverter_senaryo3_kal/Mean10,SubSystem,spsMeanLib/Mean,Vinit,0.0001,sabit sayı
+tez_S3,inverter_senaryo3_kal/Mean10,SubSystem,spsMeanLib/Mean,Ts,0,sabit sayı
+tez_S3,inverter_senaryo3_kal/Mean11,SubSystem,spsMeanLib/Mean,Freq,50,sabit sayı
+tez_S3,inverter_senaryo3_kal/Mean11,SubSystem,spsMeanLib/Mean,Vinit,0.0001,sabit sayı
+tez_S3,inverter_senaryo3_kal/Mean11,SubSystem,spsMeanLib/Mean,Ts,0,sabit sayı
+tez_S3,inverter_senaryo3_kal/Mean2,SubSystem,spsMeanLib/Mean,Freq,50,sabit sayı
+tez_S3,inverter_senaryo3_kal/Mean2,SubSystem,spsMeanLib/Mean,Vinit,0.0001,sabit sayı
+tez_S3,inverter_senaryo3_kal/Mean2,SubSystem,spsMeanLib/Mean,Ts,0,sabit sayı
+tez_S3,inverter_senaryo3_kal/Mean3,SubSystem,spsMeanLib/Mean,Freq,50,sabit sayı
+tez_S3,inverter_senaryo3_kal/Mean3,SubSystem,spsMeanLib/Mean,Vinit,0.0001,sabit sayı
+tez_S3,inverter_senaryo3_kal/Mean3,SubSystem,spsMeanLib/Mean,Ts,0,sabit sayı
+tez_S3,inverter_senaryo3_kal/Mean9,SubSystem,spsMeanLib/Mean,Freq,50,sabit sayı
+tez_S3,inverter_senaryo3_kal/Mean9,SubSystem,spsMeanLib/Mean,Vinit,0.0001,sabit sayı
+tez_S3,inverter_senaryo3_kal/Mean9,SubSystem,spsMeanLib/Mean,Ts,0,sabit sayı
+tez_S3,inverter_senaryo3_kal/Power Measurement,SubSystem,eePowerMeasurement/Power ⏎ Measurement,F,50,sabit sayı
+tez_S3,inverter_senaryo3_kal/Power Measurement,SubSystem,eePowerMeasurement/Power ⏎ Measurement,Ts,0,sabit sayı
+tez_S3,inverter_senaryo3_kal/Power3,SubSystem,spsPowerLib/Power,Freq,50,sabit sayı
+tez_S3,inverter_senaryo3_kal/Power3,SubSystem,spsPowerLib/Power,Vinit,"[0.001, 0]",sabit sayı
+tez_S3,inverter_senaryo3_kal/Power3,SubSystem,spsPowerLib/Power,Iinit,"[0.001, 0]",sabit sayı
+tez_S3,inverter_senaryo3_kal/Power3,SubSystem,spsPowerLib/Power,Ts,0,sabit sayı
+tez_S3,inverter_senaryo3_kal/Product,Product,,Inputs,2,sabit sayı
+tez_S3,inverter_senaryo3_kal/Product,Product,,CollapseDim,1,sabit sayı
+tez_S3,inverter_senaryo3_kal/Product1,Product,,Inputs,2,sabit sayı
+tez_S3,inverter_senaryo3_kal/Product1,Product,,CollapseDim,1,sabit sayı
+tez_S3,inverter_senaryo3_kal/Product15,Product,,Inputs,2,sabit sayı
+tez_S3,inverter_senaryo3_kal/Product15,Product,,CollapseDim,1,sabit sayı
+tez_S3,inverter_senaryo3_kal/RMS1,SubSystem,spsRMSLib/RMS,Freq,50,sabit sayı
+tez_S3,inverter_senaryo3_kal/RMS1,SubSystem,spsRMSLib/RMS,RMSInit,0,sabit sayı
+tez_S3,inverter_senaryo3_kal/RMS1,SubSystem,spsRMSLib/RMS,Ts,0,sabit sayı
+tez_S3,inverter_senaryo3_kal/Sine Wave3,Sin,,Amplitude,pwm_ref_amp,ifade/değişken
+tez_S3,inverter_senaryo3_kal/Sine Wave3,Sin,,Bias,0,sabit sayı
+tez_S3,inverter_senaryo3_kal/Sine Wave3,Sin,,Frequency,2*pi*f_grid,ifade/değişken
+tez_S3,inverter_senaryo3_kal/Sine Wave3,Sin,,Phase,phase_deg3*pi/180,ifade/değişken
+tez_S3,inverter_senaryo3_kal/Sine Wave3,Sin,,Samples,10,sabit sayı
+tez_S3,inverter_senaryo3_kal/Sine Wave3,Sin,,Offset,0,sabit sayı
+tez_S3,inverter_senaryo3_kal/Sine Wave3,Sin,,SampleTime,pwm_ref_Ts,ifade/değişken
+tez_S3,inverter_senaryo3_kal/Solver Configuration1,SubSystem,nesl_utility/Solver ⏎ Configuration,ResidualTolerance,simscape_residual_tolerance,ifade/değişken
+tez_S3,inverter_senaryo3_kal/Solver Configuration1,SubSystem,nesl_utility/Solver ⏎ Configuration,ConsistencyAbsTol,0.001,sabit sayı
+tez_S3,inverter_senaryo3_kal/Solver Configuration1,SubSystem,nesl_utility/Solver ⏎ Configuration,ConsistencyRelTol,0.001,sabit sayı
+tez_S3,inverter_senaryo3_kal/Solver Configuration1,SubSystem,nesl_utility/Solver ⏎ Configuration,ConsistencyTolFactor,0.001,sabit sayı
+tez_S3,inverter_senaryo3_kal/Solver Configuration1,SubSystem,nesl_utility/Solver ⏎ Configuration,FunctionEvalNumThread,1,sabit sayı
+tez_S3,inverter_senaryo3_kal/Solver Configuration1,SubSystem,nesl_utility/Solver ⏎ Configuration,LocalSolverSampleTime,1e-7,sabit sayı
+tez_S3,inverter_senaryo3_kal/Solver Configuration1,SubSystem,nesl_utility/Solver ⏎ Configuration,MaxNonlinIter,10,sabit sayı
+tez_S3,inverter_senaryo3_kal/Solver Configuration1,SubSystem,nesl_utility/Solver ⏎ Configuration,MaxModeIter,2,sabit sayı
+tez_S3,inverter_senaryo3_kal/Solver Configuration1,SubSystem,nesl_utility/Solver ⏎ Configuration,ImpulseIterations,1,sabit sayı
+tez_S3,inverter_senaryo3_kal/Solver Configuration1,SubSystem,nesl_utility/Solver ⏎ Configuration,LinearAlgebraNumThread,0,sabit sayı
+tez_S3,inverter_senaryo3_kal/Solver Configuration1,SubSystem,nesl_utility/Solver ⏎ Configuration,DelaysMemoryBudget,1024,sabit sayı
+tez_S3,inverter_senaryo3_kal/Solver Configuration1,SubSystem,nesl_utility/Solver ⏎ Configuration,FilteringTimeConstant,0.001,sabit sayı
+tez_S3,inverter_senaryo3_kal/Solver Configuration1,SubSystem,nesl_utility/Solver ⏎ Configuration,PartitionMemoryBudget,1024,sabit sayı
+tez_S3,inverter_senaryo3_kal/Solver Configuration1,SubSystem,nesl_utility/Solver ⏎ Configuration,MultibodyLocalSolverSampleTime,0.001,sabit sayı
+tez_S3,inverter_senaryo3_kal/Subsystem2,SubSystem,,SystemSampleTime,-1,sabit sayı
+tez_S3,inverter_senaryo3_kal/Subsystem2,SubSystem,,Latency,0,sabit sayı
+tez_S3,inverter_senaryo3_kal/Subsystem2/In1,Inport,,Port,1,sabit sayı
+tez_S3,inverter_senaryo3_kal/Subsystem2/In1,Inport,,PortDimensions,-1,sabit sayı
+tez_S3,inverter_senaryo3_kal/Subsystem2/In1,Inport,,MessageQueueCapacity,1,sabit sayı
+tez_S3,inverter_senaryo3_kal/Subsystem2/Constant1,Constant,,Value,0,sabit sayı
+tez_S3,inverter_senaryo3_kal/Subsystem2/Constant1,Constant,,SampleTime,inf,sabit sayı
+tez_S3,inverter_senaryo3_kal/Subsystem2/Constant1,Constant,,FramePeriod,inf,sabit sayı
+tez_S3,inverter_senaryo3_kal/Subsystem2/Constant2,Constant,,Value,0,sabit sayı
+tez_S3,inverter_senaryo3_kal/Subsystem2/Constant2,Constant,,SampleTime,inf,sabit sayı
+tez_S3,inverter_senaryo3_kal/Subsystem2/Constant2,Constant,,FramePeriod,inf,sabit sayı
+tez_S3,inverter_senaryo3_kal/Subsystem2/Constant3,Constant,,Value,0,sabit sayı
+tez_S3,inverter_senaryo3_kal/Subsystem2/Constant3,Constant,,SampleTime,inf,sabit sayı
+tez_S3,inverter_senaryo3_kal/Subsystem2/Constant3,Constant,,FramePeriod,inf,sabit sayı
+tez_S3,inverter_senaryo3_kal/Subsystem2/Constant4,Constant,,Value,1,sabit sayı
+tez_S3,inverter_senaryo3_kal/Subsystem2/Constant4,Constant,,SampleTime,inf,sabit sayı
+tez_S3,inverter_senaryo3_kal/Subsystem2/Constant4,Constant,,FramePeriod,inf,sabit sayı
+tez_S3,inverter_senaryo3_kal/Subsystem2/Constant5,Constant,,Value,1,sabit sayı
+tez_S3,inverter_senaryo3_kal/Subsystem2/Constant5,Constant,,SampleTime,inf,sabit sayı
+tez_S3,inverter_senaryo3_kal/Subsystem2/Constant5,Constant,,FramePeriod,inf,sabit sayı
+tez_S3,inverter_senaryo3_kal/Subsystem2/Constant6,Constant,,Value,0,sabit sayı
+tez_S3,inverter_senaryo3_kal/Subsystem2/Constant6,Constant,,SampleTime,inf,sabit sayı
+tez_S3,inverter_senaryo3_kal/Subsystem2/Constant6,Constant,,FramePeriod,inf,sabit sayı
+tez_S3,inverter_senaryo3_kal/Subsystem2/Gain11,Gain,,Gain,-1,sabit sayı
+tez_S3,inverter_senaryo3_kal/Subsystem2/Gain12,Gain,,Gain,1,sabit sayı
+tez_S3,inverter_senaryo3_kal/Subsystem2/Mux2,Mux,,Inputs,2,sabit sayı
+tez_S3,inverter_senaryo3_kal/Subsystem2/Mux5,Mux,,Inputs,2,sabit sayı
+tez_S3,inverter_senaryo3_kal/Subsystem2/On Delay,SubSystem,spsOnDelayLib/On Delay,delay,deadtime,ifade/değişken
+tez_S3,inverter_senaryo3_kal/Subsystem2/On Delay,SubSystem,spsOnDelayLib/On Delay,ic,0,sabit sayı
+tez_S3,inverter_senaryo3_kal/Subsystem2/On Delay,SubSystem,spsOnDelayLib/On Delay,Ts,0,sabit sayı
+tez_S3,inverter_senaryo3_kal/Subsystem2/On Delay1,SubSystem,spsOnDelayLib/On Delay,delay,deadtime,ifade/değişken
+tez_S3,inverter_senaryo3_kal/Subsystem2/On Delay1,SubSystem,spsOnDelayLib/On Delay,ic,0,sabit sayı
+tez_S3,inverter_senaryo3_kal/Subsystem2/On Delay1,SubSystem,spsOnDelayLib/On Delay,Ts,0,sabit sayı
+tez_S3,inverter_senaryo3_kal/Subsystem2/On Delay2,SubSystem,spsOnDelayLib/On Delay,delay,deadtime,ifade/değişken
+tez_S3,inverter_senaryo3_kal/Subsystem2/On Delay2,SubSystem,spsOnDelayLib/On Delay,ic,0,sabit sayı
+tez_S3,inverter_senaryo3_kal/Subsystem2/On Delay2,SubSystem,spsOnDelayLib/On Delay,Ts,0,sabit sayı
+tez_S3,inverter_senaryo3_kal/Subsystem2/On Delay3,SubSystem,spsOnDelayLib/On Delay,delay,deadtime,ifade/değişken
+tez_S3,inverter_senaryo3_kal/Subsystem2/On Delay3,SubSystem,spsOnDelayLib/On Delay,ic,0,sabit sayı
+tez_S3,inverter_senaryo3_kal/Subsystem2/On Delay3,SubSystem,spsOnDelayLib/On Delay,Ts,0,sabit sayı
+tez_S3,inverter_senaryo3_kal/Subsystem2/PWM Generator (DC-DC)10,SubSystem,spsPWMGeneratorDCDCLib/PWM Generator ⏎ (DC-DC),Fsw,fsw,ifade/değişken
+tez_S3,inverter_senaryo3_kal/Subsystem2/PWM Generator (DC-DC)10,SubSystem,spsPWMGeneratorDCDCLib/PWM Generator ⏎ (DC-DC),Ts,1/fsw/100,ifade/değişken
+tez_S3,inverter_senaryo3_kal/Subsystem2/PWM Generator (DC-DC)11,SubSystem,spsPWMGeneratorDCDCLib/PWM Generator ⏎ (DC-DC),Fsw,fsw,ifade/değişken
+tez_S3,inverter_senaryo3_kal/Subsystem2/PWM Generator (DC-DC)11,SubSystem,spsPWMGeneratorDCDCLib/PWM Generator ⏎ (DC-DC),Ts,1/fsw/100,ifade/değişken
+tez_S3,inverter_senaryo3_kal/Subsystem2/Scope2,Scope,,NumInputPorts,3,sabit sayı
+tez_S3,inverter_senaryo3_kal/Subsystem2/Scope2,Scope,,LayoutDimensionsString,[3 1],sabit sayı
+tez_S3,inverter_senaryo3_kal/Subsystem2/Scope2,Scope,,AxesScalingNumUpdates,10,sabit sayı
+tez_S3,inverter_senaryo3_kal/Subsystem2/Scope2,Scope,,TimeDisplayOffset,0,sabit sayı
+tez_S3,inverter_senaryo3_kal/Subsystem2/Scope2,Scope,,ActiveDisplayString,1,sabit sayı
+tez_S3,inverter_senaryo3_kal/Subsystem2/Scope2,Scope,,ActiveDisplayYMinimum,-1.025,sabit sayı
+tez_S3,inverter_senaryo3_kal/Subsystem2/Scope2,Scope,,ActiveDisplayYMaximum,1.025,sabit sayı
+tez_S3,inverter_senaryo3_kal/Subsystem2/Scope2,Scope,,DataLoggingMaxPoints,5000,sabit sayı
+tez_S3,inverter_senaryo3_kal/Subsystem2/Scope2,Scope,,DataLoggingDecimation,2,sabit sayı
+tez_S3,inverter_senaryo3_kal/Subsystem2/Switch1,Switch,,Threshold,0,sabit sayı
+tez_S3,inverter_senaryo3_kal/Subsystem2/Switch2,Switch,,Threshold,0,sabit sayı
+tez_S3,inverter_senaryo3_kal/Subsystem2/Switch3,Switch,,Threshold,0,sabit sayı
+tez_S3,inverter_senaryo3_kal/Subsystem2/Switch4,Switch,,Threshold,0,sabit sayı
+tez_S3,inverter_senaryo3_kal/Subsystem2/Out1,Outport,,Port,1,sabit sayı
+tez_S3,inverter_senaryo3_kal/Subsystem2/Out1,Outport,,PortDimensions,-1,sabit sayı
+tez_S3,inverter_senaryo3_kal/Subsystem2/Out1,Outport,,OutputWhenUnconnectedValue,0,sabit sayı
+tez_S3,inverter_senaryo3_kal/Subsystem2/Out2,Outport,,Port,2,sabit sayı
+tez_S3,inverter_senaryo3_kal/Subsystem2/Out2,Outport,,PortDimensions,-1,sabit sayı
+tez_S3,inverter_senaryo3_kal/Subsystem2/Out2,Outport,,OutputWhenUnconnectedValue,0,sabit sayı
+tez_S3,inverter_senaryo3_kal/Subsystem2/Out3,Outport,,Port,3,sabit sayı
+tez_S3,inverter_senaryo3_kal/Subsystem2/Out3,Outport,,PortDimensions,-1,sabit sayı
+tez_S3,inverter_senaryo3_kal/Subsystem2/Out3,Outport,,OutputWhenUnconnectedValue,0,sabit sayı
+tez_S3,inverter_senaryo3_kal/Subsystem2/Out4,Outport,,Port,4,sabit sayı
+tez_S3,inverter_senaryo3_kal/Subsystem2/Out4,Outport,,PortDimensions,-1,sabit sayı
+tez_S3,inverter_senaryo3_kal/Subsystem2/Out4,Outport,,OutputWhenUnconnectedValue,0,sabit sayı
+tez_S3,inverter_senaryo3_kal/Subsystem2/Out5,Outport,,Port,5,sabit sayı
+tez_S3,inverter_senaryo3_kal/Subsystem2/Out5,Outport,,PortDimensions,-1,sabit sayı
+tez_S3,inverter_senaryo3_kal/Subsystem2/Out5,Outport,,OutputWhenUnconnectedValue,0,sabit sayı
+tez_S3,inverter_senaryo3_kal/Subsystem2/Out6,Outport,,Port,6,sabit sayı
+tez_S3,inverter_senaryo3_kal/Subsystem2/Out6,Outport,,PortDimensions,-1,sabit sayı
+tez_S3,inverter_senaryo3_kal/Subsystem2/Out6,Outport,,OutputWhenUnconnectedValue,0,sabit sayı
+tez_S3,inverter_senaryo3_kal/THD,SubSystem,spsTHDLib/THD,Freq,50,sabit sayı
+tez_S3,inverter_senaryo3_kal/THD,SubSystem,spsTHDLib/THD,Ts,0,sabit sayı
+tez_S3,inverter_senaryo3_kal/THD2,SubSystem,spsTHDLib/THD,Freq,50,sabit sayı
+tez_S3,inverter_senaryo3_kal/THD2,SubSystem,spsTHDLib/THD,Ts,0,sabit sayı
+tez_S3,inverter_senaryo3_kal/powergui,SubSystem,spspowerguiLib/powergui,SampleTime,50e-6,sabit sayı
+tez_S3,inverter_senaryo3_kal/powergui,SubSystem,spspowerguiLib/powergui,frequency,50,sabit sayı
+tez_S3,inverter_senaryo3_kal/powergui,SubSystem,spspowerguiLib/powergui,Iterations,50,sabit sayı
+tez_S3,inverter_senaryo3_kal/powergui,SubSystem,spspowerguiLib/powergui,frequencyindice,60,sabit sayı
+tez_S3,inverter_senaryo3_kal/powergui,SubSystem,spspowerguiLib/powergui,Pbase,100e6,sabit sayı
+tez_S3,inverter_senaryo3_kal/powergui,SubSystem,spspowerguiLib/powergui,ErrMax,1e-4,sabit sayı
+tez_S3,inverter_senaryo3_kal/powergui,SubSystem,spspowerguiLib/powergui,buscounter,0,sabit sayı
+tez_S3,inverter_senaryo3_kal/powergui,SubSystem,spspowerguiLib/powergui,Ts,100,sabit sayı
+tez_S3,inverter_senaryo3_kal/powergui,SubSystem,spspowerguiLib/powergui,SwTol,0,sabit sayı
+tez_S3,inverter_senaryo3_kal/powergui,SubSystem,spspowerguiLib/powergui,NonlinearTolerance,1e-4,sabit sayı
+tez_S3,inverter_senaryo3_kal/powergui,SubSystem,spspowerguiLib/powergui,nMaxIteration,100,sabit sayı
+tez_S3,inverter_senaryo3_kal/powergui,SubSystem,spspowerguiLib/powergui,structure,0,sabit sayı
+tez_S3,inverter_senaryo3_kal/powergui,SubSystem,spspowerguiLib/powergui,StartTime,0.0,sabit sayı
+tez_S3,inverter_senaryo3_kal/powergui,SubSystem,spspowerguiLib/powergui,cycles,1,sabit sayı
+tez_S3,inverter_senaryo3_kal/powergui,SubSystem,spspowerguiLib/powergui,DisplayStyle,1,sabit sayı
+tez_S3,inverter_senaryo3_kal/powergui,SubSystem,spspowerguiLib/powergui,fundamental,50,sabit sayı
+tez_S3,inverter_senaryo3_kal/powergui,SubSystem,spspowerguiLib/powergui,MaxFrequency,1000,sabit sayı
+tez_S3,inverter_senaryo3_kal/powergui,SubSystem,spspowerguiLib/powergui,frequencyindicesteady,1,sabit sayı
+tez_S3,inverter_senaryo3_kal/powergui,SubSystem,spspowerguiLib/powergui,RmsSteady,1,sabit sayı
+tez_S4,inverter_senaryo4_kc/AC instantaneous power,Product,,Inputs,2,sabit sayı
+tez_S4,inverter_senaryo4_kc/AC instantaneous power,Product,,CollapseDim,1,sabit sayı
+tez_S4,inverter_senaryo4_kc/AC instantaneous power1,Product,,Inputs,2,sabit sayı
+tez_S4,inverter_senaryo4_kc/AC instantaneous power1,Product,,CollapseDim,1,sabit sayı
+tez_S4,inverter_senaryo4_kc/AC instantaneous power2,Product,,Inputs,2,sabit sayı
+tez_S4,inverter_senaryo4_kc/AC instantaneous power2,Product,,CollapseDim,1,sabit sayı
+tez_S4,inverter_senaryo4_kc/AC instantaneous power6,Product,,Inputs,2,sabit sayı
+tez_S4,inverter_senaryo4_kc/AC instantaneous power6,Product,,CollapseDim,1,sabit sayı
+tez_S4,inverter_senaryo4_kc/AC instantaneous power7,Product,,Inputs,2,sabit sayı
+tez_S4,inverter_senaryo4_kc/AC instantaneous power7,Product,,CollapseDim,1,sabit sayı
+tez_S4,inverter_senaryo4_kc/Divide1,Product,,CollapseDim,1,sabit sayı
+tez_S4,inverter_senaryo4_kc/Divide3,Product,,CollapseDim,1,sabit sayı
+tez_S4,inverter_senaryo4_kc/Divide5,Product,,CollapseDim,1,sabit sayı
+tez_S4,inverter_senaryo4_kc/Gain1,Gain,,Gain,measurement_gain,ifade/değişken
+tez_S4,inverter_senaryo4_kc/Gate Drive5/DeadTime_g3_5V,Gain,,Gain,5,sabit sayı
+tez_S4,inverter_senaryo4_kc/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,port_option_unit,1,sabit sayı
+tez_S4,inverter_senaryo4_kc/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uHigh,4,sabit sayı
+tez_S4,inverter_senaryo4_kc/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uLow,3,sabit sayı
+tez_S4,inverter_senaryo4_kc/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uHighValue,gate_logic_high,ifade/değişken
+tez_S4,inverter_senaryo4_kc/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uHighValue_unit,1,sabit sayı
+tez_S4,inverter_senaryo4_kc/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uLowValue,gate_logic_low,ifade/değişken
+tez_S4,inverter_senaryo4_kc/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uLowValue_unit,1,sabit sayı
+tez_S4,inverter_senaryo4_kc/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,vHigh,Vgate_on,ifade/değişken
+tez_S4,inverter_senaryo4_kc/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,vLow,Vgate_off,ifade/değişken
+tez_S4,inverter_senaryo4_kc/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,tHigh,gate_driver_ton,ifade/değişken
+tez_S4,inverter_senaryo4_kc/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,tLow,gate_driver_toff,ifade/değişken
+tez_S4,inverter_senaryo4_kc/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,parameterization,1,sabit sayı
+tez_S4,inverter_senaryo4_kc/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,parameterization_unit,1,sabit sayı
+tez_S4,inverter_senaryo4_kc/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,rHigh,RG_total,ifade/değişken
+tez_S4,inverter_senaryo4_kc/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,rLow,RG_total,ifade/değişken
+tez_S4,inverter_senaryo4_kc/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,tRise,gate_driver_rise,ifade/değişken
+tez_S4,inverter_senaryo4_kc/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,tFall,gate_driver_fall,ifade/değişken
+tez_S4,inverter_senaryo4_kc/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,cLoad,gate_driver_cload,ifade/değişken
+tez_S4,inverter_senaryo4_kc/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,enable_faults,0,sabit sayı
+tez_S4,inverter_senaryo4_kc/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,enable_faults_unit,1,sabit sayı
+tez_S4,inverter_senaryo4_kc/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,t_fault,1,sabit sayı
+tez_S4,inverter_senaryo4_kc/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,fault_type,1,sabit sayı
+tez_S4,inverter_senaryo4_kc/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,fault_type_unit,1,sabit sayı
+tez_S4,inverter_senaryo4_kc/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,ZonTime,0,sabit sayı
+tez_S4,inverter_senaryo4_kc/Gate Drive5/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,ZoffTime,0,sabit sayı
+tez_S4,inverter_senaryo4_kc/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,port_option_unit,1,sabit sayı
+tez_S4,inverter_senaryo4_kc/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uHigh,4,sabit sayı
+tez_S4,inverter_senaryo4_kc/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uLow,3,sabit sayı
+tez_S4,inverter_senaryo4_kc/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uHighValue,gate_logic_high,ifade/değişken
+tez_S4,inverter_senaryo4_kc/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uHighValue_unit,1,sabit sayı
+tez_S4,inverter_senaryo4_kc/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uLowValue,gate_logic_low,ifade/değişken
+tez_S4,inverter_senaryo4_kc/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uLowValue_unit,1,sabit sayı
+tez_S4,inverter_senaryo4_kc/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,vHigh,Vgate_on,ifade/değişken
+tez_S4,inverter_senaryo4_kc/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,vLow,Vgate_off,ifade/değişken
+tez_S4,inverter_senaryo4_kc/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,tHigh,gate_driver_ton,ifade/değişken
+tez_S4,inverter_senaryo4_kc/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,tLow,gate_driver_toff,ifade/değişken
+tez_S4,inverter_senaryo4_kc/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,parameterization,1,sabit sayı
+tez_S4,inverter_senaryo4_kc/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,parameterization_unit,1,sabit sayı
+tez_S4,inverter_senaryo4_kc/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,rHigh,RG_total,ifade/değişken
+tez_S4,inverter_senaryo4_kc/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,rLow,RG_total,ifade/değişken
+tez_S4,inverter_senaryo4_kc/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,tRise,gate_driver_rise,ifade/değişken
+tez_S4,inverter_senaryo4_kc/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,tFall,gate_driver_fall,ifade/değişken
+tez_S4,inverter_senaryo4_kc/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,cLoad,gate_driver_cload,ifade/değişken
+tez_S4,inverter_senaryo4_kc/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,enable_faults,0,sabit sayı
+tez_S4,inverter_senaryo4_kc/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,enable_faults_unit,1,sabit sayı
+tez_S4,inverter_senaryo4_kc/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,t_fault,1,sabit sayı
+tez_S4,inverter_senaryo4_kc/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,fault_type,1,sabit sayı
+tez_S4,inverter_senaryo4_kc/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,fault_type_unit,1,sabit sayı
+tez_S4,inverter_senaryo4_kc/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,ZonTime,0,sabit sayı
+tez_S4,inverter_senaryo4_kc/Gate Drive6/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,ZoffTime,0,sabit sayı
+tez_S4,inverter_senaryo4_kc/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,port_option_unit,1,sabit sayı
+tez_S4,inverter_senaryo4_kc/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uHigh,4,sabit sayı
+tez_S4,inverter_senaryo4_kc/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uLow,3,sabit sayı
+tez_S4,inverter_senaryo4_kc/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uHighValue,gate_logic_high,ifade/değişken
+tez_S4,inverter_senaryo4_kc/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uHighValue_unit,1,sabit sayı
+tez_S4,inverter_senaryo4_kc/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uLowValue,gate_logic_low,ifade/değişken
+tez_S4,inverter_senaryo4_kc/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uLowValue_unit,1,sabit sayı
+tez_S4,inverter_senaryo4_kc/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,vHigh,Vgate_on,ifade/değişken
+tez_S4,inverter_senaryo4_kc/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,vLow,Vgate_off,ifade/değişken
+tez_S4,inverter_senaryo4_kc/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,tHigh,gate_driver_ton,ifade/değişken
+tez_S4,inverter_senaryo4_kc/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,tLow,gate_driver_toff,ifade/değişken
+tez_S4,inverter_senaryo4_kc/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,parameterization,1,sabit sayı
+tez_S4,inverter_senaryo4_kc/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,parameterization_unit,1,sabit sayı
+tez_S4,inverter_senaryo4_kc/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,rHigh,RG_total,ifade/değişken
+tez_S4,inverter_senaryo4_kc/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,rLow,RG_total,ifade/değişken
+tez_S4,inverter_senaryo4_kc/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,tRise,gate_driver_rise,ifade/değişken
+tez_S4,inverter_senaryo4_kc/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,tFall,gate_driver_fall,ifade/değişken
+tez_S4,inverter_senaryo4_kc/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,cLoad,gate_driver_cload,ifade/değişken
+tez_S4,inverter_senaryo4_kc/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,enable_faults,0,sabit sayı
+tez_S4,inverter_senaryo4_kc/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,enable_faults_unit,1,sabit sayı
+tez_S4,inverter_senaryo4_kc/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,t_fault,1,sabit sayı
+tez_S4,inverter_senaryo4_kc/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,fault_type,1,sabit sayı
+tez_S4,inverter_senaryo4_kc/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,fault_type_unit,1,sabit sayı
+tez_S4,inverter_senaryo4_kc/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,ZonTime,0,sabit sayı
+tez_S4,inverter_senaryo4_kc/Gate Drive7/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,ZoffTime,0,sabit sayı
+tez_S4,inverter_senaryo4_kc/Gate Drive8/DeadTime_g4_5V,Gain,,Gain,5,sabit sayı
+tez_S4,inverter_senaryo4_kc/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,port_option_unit,1,sabit sayı
+tez_S4,inverter_senaryo4_kc/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uHigh,4,sabit sayı
+tez_S4,inverter_senaryo4_kc/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uLow,3,sabit sayı
+tez_S4,inverter_senaryo4_kc/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uHighValue,gate_logic_high,ifade/değişken
+tez_S4,inverter_senaryo4_kc/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uHighValue_unit,1,sabit sayı
+tez_S4,inverter_senaryo4_kc/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uLowValue,gate_logic_low,ifade/değişken
+tez_S4,inverter_senaryo4_kc/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,uLowValue_unit,1,sabit sayı
+tez_S4,inverter_senaryo4_kc/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,vHigh,Vgate_on,ifade/değişken
+tez_S4,inverter_senaryo4_kc/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,vLow,Vgate_off,ifade/değişken
+tez_S4,inverter_senaryo4_kc/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,tHigh,gate_driver_ton,ifade/değişken
+tez_S4,inverter_senaryo4_kc/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,tLow,gate_driver_toff,ifade/değişken
+tez_S4,inverter_senaryo4_kc/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,parameterization,1,sabit sayı
+tez_S4,inverter_senaryo4_kc/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,parameterization_unit,1,sabit sayı
+tez_S4,inverter_senaryo4_kc/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,rHigh,RG_total,ifade/değişken
+tez_S4,inverter_senaryo4_kc/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,rLow,RG_total,ifade/değişken
+tez_S4,inverter_senaryo4_kc/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,tRise,gate_driver_rise,ifade/değişken
+tez_S4,inverter_senaryo4_kc/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,tFall,gate_driver_fall,ifade/değişken
+tez_S4,inverter_senaryo4_kc/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,cLoad,gate_driver_cload,ifade/değişken
+tez_S4,inverter_senaryo4_kc/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,enable_faults,0,sabit sayı
+tez_S4,inverter_senaryo4_kc/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,enable_faults_unit,1,sabit sayı
+tez_S4,inverter_senaryo4_kc/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,t_fault,1,sabit sayı
+tez_S4,inverter_senaryo4_kc/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,fault_type,1,sabit sayı
+tez_S4,inverter_senaryo4_kc/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,fault_type_unit,1,sabit sayı
+tez_S4,inverter_senaryo4_kc/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,ZonTime,0,sabit sayı
+tez_S4,inverter_senaryo4_kc/Gate Drive8/Gate Driver1,SimscapeBlock,ee_lib/Semiconductors & ⏎ Converters/Gate Driver,ZoffTime,0,sabit sayı
+tez_S4,inverter_senaryo4_kc/K1,Gain,,Gain,K14,ifade/değişken
+tez_S4,inverter_senaryo4_kc/K3,Gain,,Gain,K34,ifade/değişken
+tez_S4,inverter_senaryo4_kc/Mean1,SubSystem,spsMeanLib/Mean,Freq,50,sabit sayı
+tez_S4,inverter_senaryo4_kc/Mean1,SubSystem,spsMeanLib/Mean,Vinit,0.0001,sabit sayı
+tez_S4,inverter_senaryo4_kc/Mean1,SubSystem,spsMeanLib/Mean,Ts,0,sabit sayı
+tez_S4,inverter_senaryo4_kc/Mean10,SubSystem,spsMeanLib/Mean,Freq,50,sabit sayı
+tez_S4,inverter_senaryo4_kc/Mean10,SubSystem,spsMeanLib/Mean,Vinit,0.0001,sabit sayı
+tez_S4,inverter_senaryo4_kc/Mean10,SubSystem,spsMeanLib/Mean,Ts,0,sabit sayı
+tez_S4,inverter_senaryo4_kc/Mean11,SubSystem,spsMeanLib/Mean,Freq,50,sabit sayı
+tez_S4,inverter_senaryo4_kc/Mean11,SubSystem,spsMeanLib/Mean,Vinit,0.0001,sabit sayı
+tez_S4,inverter_senaryo4_kc/Mean11,SubSystem,spsMeanLib/Mean,Ts,0,sabit sayı
+tez_S4,inverter_senaryo4_kc/Mean2,SubSystem,spsMeanLib/Mean,Freq,50,sabit sayı
+tez_S4,inverter_senaryo4_kc/Mean2,SubSystem,spsMeanLib/Mean,Vinit,0.0001,sabit sayı
+tez_S4,inverter_senaryo4_kc/Mean2,SubSystem,spsMeanLib/Mean,Ts,0,sabit sayı
+tez_S4,inverter_senaryo4_kc/Mean3,SubSystem,spsMeanLib/Mean,Freq,50,sabit sayı
+tez_S4,inverter_senaryo4_kc/Mean3,SubSystem,spsMeanLib/Mean,Vinit,0.0001,sabit sayı
+tez_S4,inverter_senaryo4_kc/Mean3,SubSystem,spsMeanLib/Mean,Ts,0,sabit sayı
+tez_S4,inverter_senaryo4_kc/Mean9,SubSystem,spsMeanLib/Mean,Freq,50,sabit sayı
+tez_S4,inverter_senaryo4_kc/Mean9,SubSystem,spsMeanLib/Mean,Vinit,0.0001,sabit sayı
+tez_S4,inverter_senaryo4_kc/Mean9,SubSystem,spsMeanLib/Mean,Ts,0,sabit sayı
+tez_S4,inverter_senaryo4_kc/Power Measurement,SubSystem,eePowerMeasurement/Power ⏎ Measurement,F,50,sabit sayı
+tez_S4,inverter_senaryo4_kc/Power Measurement,SubSystem,eePowerMeasurement/Power ⏎ Measurement,Ts,0,sabit sayı
+tez_S4,inverter_senaryo4_kc/Power3,SubSystem,spsPowerLib/Power,Freq,50,sabit sayı
+tez_S4,inverter_senaryo4_kc/Power3,SubSystem,spsPowerLib/Power,Vinit,"[0.001, 0]",sabit sayı
+tez_S4,inverter_senaryo4_kc/Power3,SubSystem,spsPowerLib/Power,Iinit,"[0.001, 0]",sabit sayı
+tez_S4,inverter_senaryo4_kc/Power3,SubSystem,spsPowerLib/Power,Ts,0,sabit sayı
+tez_S4,inverter_senaryo4_kc/Product,Product,,Inputs,2,sabit sayı
+tez_S4,inverter_senaryo4_kc/Product,Product,,CollapseDim,1,sabit sayı
+tez_S4,inverter_senaryo4_kc/Product1,Product,,Inputs,2,sabit sayı
+tez_S4,inverter_senaryo4_kc/Product1,Product,,CollapseDim,1,sabit sayı
+tez_S4,inverter_senaryo4_kc/Product15,Product,,Inputs,2,sabit sayı
+tez_S4,inverter_senaryo4_kc/Product15,Product,,CollapseDim,1,sabit sayı
+tez_S4,inverter_senaryo4_kc/RMS1,SubSystem,spsRMSLib/RMS,Freq,50,sabit sayı
+tez_S4,inverter_senaryo4_kc/RMS1,SubSystem,spsRMSLib/RMS,RMSInit,0,sabit sayı
+tez_S4,inverter_senaryo4_kc/RMS1,SubSystem,spsRMSLib/RMS,Ts,0,sabit sayı
+tez_S4,inverter_senaryo4_kc/S4 AW Asim,DeadZone,,LowerValue,-S4_u_lim,ifade/değişken
+tez_S4,inverter_senaryo4_kc/S4 AW Asim,DeadZone,,UpperValue,S4_u_lim,ifade/değişken
+tez_S4,inverter_senaryo4_kc/S4 Akim Denetleyicisi,SubSystem,,SystemSampleTime,-1,sabit sayı
+tez_S4,inverter_senaryo4_kc/S4 Akim Denetleyicisi,SubSystem,,Latency,0,sabit sayı
+tez_S4,inverter_senaryo4_kc/S4 Akim Denetleyicisi/i_ref,Inport,,Port,1,sabit sayı
+tez_S4,inverter_senaryo4_kc/S4 Akim Denetleyicisi/i_ref,Inport,,PortDimensions,-1,sabit sayı
+tez_S4,inverter_senaryo4_kc/S4 Akim Denetleyicisi/i_ref,Inport,,MessageQueueCapacity,1,sabit sayı
+tez_S4,inverter_senaryo4_kc/S4 Akim Denetleyicisi/iL1_olcum,Inport,,Port,2,sabit sayı
+tez_S4,inverter_senaryo4_kc/S4 Akim Denetleyicisi/iL1_olcum,Inport,,PortDimensions,-1,sabit sayı
+tez_S4,inverter_senaryo4_kc/S4 Akim Denetleyicisi/iL1_olcum,Inport,,MessageQueueCapacity,1,sabit sayı
+tez_S4,inverter_senaryo4_kc/S4 Akim Denetleyicisi/aw_asim,Inport,,Port,3,sabit sayı
+tez_S4,inverter_senaryo4_kc/S4 Akim Denetleyicisi/aw_asim,Inport,,PortDimensions,-1,sabit sayı
+tez_S4,inverter_senaryo4_kc/S4 Akim Denetleyicisi/aw_asim,Inport,,MessageQueueCapacity,1,sabit sayı
+tez_S4,inverter_senaryo4_kc/S4 Akim Denetleyicisi/I_giris,Sum,,CollapseDim,1,sabit sayı
+tez_S4,inverter_senaryo4_kc/S4 Akim Denetleyicisi/Integrator,DiscreteIntegrator,,gainval,1,sabit sayı
+tez_S4,inverter_senaryo4_kc/S4 Akim Denetleyicisi/Integrator,DiscreteIntegrator,,InitialCondition,0,sabit sayı
+tez_S4,inverter_senaryo4_kc/S4 Akim Denetleyicisi/Integrator,DiscreteIntegrator,,SampleTime,S4_Ts_c,ifade/değişken
+tez_S4,inverter_senaryo4_kc/S4 Akim Denetleyicisi/Integrator,DiscreteIntegrator,,UpperSaturationLimit,S4_int_lim,ifade/değişken
+tez_S4,inverter_senaryo4_kc/S4 Akim Denetleyicisi/Integrator,DiscreteIntegrator,,LowerSaturationLimit,-S4_int_lim,ifade/değişken
+tez_S4,inverter_senaryo4_kc/S4 Akim Denetleyicisi/Kaw,Gain,,Gain,S4_Kaw,ifade/değişken
+tez_S4,inverter_senaryo4_kc/S4 Akim Denetleyicisi/Ki,Gain,,Gain,S4_Ki_c,ifade/değişken
+tez_S4,inverter_senaryo4_kc/S4 Akim Denetleyicisi/Kp,Gain,,Gain,S4_Kp_c,ifade/değişken
+tez_S4,inverter_senaryo4_kc/S4 Akim Denetleyicisi/Rezonans,DiscreteTransferFcn,,Numerator,S4_Kr*S4_R_num1,ifade/değişken
+tez_S4,inverter_senaryo4_kc/S4 Akim Denetleyicisi/Rezonans,DiscreteTransferFcn,,Denominator,S4_R_den,ifade/değişken
+tez_S4,inverter_senaryo4_kc/S4 Akim Denetleyicisi/Rezonans,DiscreteTransferFcn,,InitialStates,0,sabit sayı
+tez_S4,inverter_senaryo4_kc/S4 Akim Denetleyicisi/Rezonans,DiscreteTransferFcn,,InitialDenominatorStates,0,sabit sayı
+tez_S4,inverter_senaryo4_kc/S4 Akim Denetleyicisi/Rezonans,DiscreteTransferFcn,,SampleTime,S4_Ts_c,ifade/değişken
+tez_S4,inverter_senaryo4_kc/S4 Akim Denetleyicisi/e_hesap,Sum,,CollapseDim,1,sabit sayı
+tez_S4,inverter_senaryo4_kc/S4 Akim Denetleyicisi/u_fb_toplam,Sum,,CollapseDim,1,sabit sayı
+tez_S4,inverter_senaryo4_kc/S4 Akim Denetleyicisi/u_fb,Outport,,Port,1,sabit sayı
+tez_S4,inverter_senaryo4_kc/S4 Akim Denetleyicisi/u_fb,Outport,,PortDimensions,-1,sabit sayı
+tez_S4,inverter_senaryo4_kc/S4 Akim Denetleyicisi/u_fb,Outport,,OutputWhenUnconnectedValue,0,sabit sayı
+tez_S4,inverter_senaryo4_kc/S4 Iref Basamak,Step,,Time,S4_t_step,ifade/değişken
+tez_S4,inverter_senaryo4_kc/S4 Iref Basamak,Step,,Before,S4_Iref,ifade/değişken
+tez_S4,inverter_senaryo4_kc/S4 Iref Basamak,Step,,After,S4_Iref_step,ifade/değişken
+tez_S4,inverter_senaryo4_kc/S4 Iref Basamak,Step,,SampleTime,pwm_ref_Ts,ifade/değişken
+tez_S4,inverter_senaryo4_kc/S4 Kayit iL1,ZeroOrderHold,,SampleTime,pwm_ref_Ts,ifade/değişken
+tez_S4,inverter_senaryo4_kc/S4 Kayit i_ac,ZeroOrderHold,,SampleTime,pwm_ref_Ts,ifade/değişken
+tez_S4,inverter_senaryo4_kc/S4 Kayit i_dc,ZeroOrderHold,,SampleTime,pwm_ref_Ts,ifade/değişken
+tez_S4,inverter_senaryo4_kc/S4 Kayit v_ac,ZeroOrderHold,,SampleTime,pwm_ref_Ts,ifade/değişken
+tez_S4,inverter_senaryo4_kc/S4 Kayit v_dc,ZeroOrderHold,,SampleTime,pwm_ref_Ts,ifade/değişken
+tez_S4,inverter_senaryo4_kc/S4 Kayit v_inv,ZeroOrderHold,,SampleTime,pwm_ref_Ts,ifade/değişken
+tez_S4,inverter_senaryo4_kc/S4 Modulasyon Siniri,Saturate,,UpperLimit,S4_u_lim,ifade/değişken
+tez_S4,inverter_senaryo4_kc/S4 Modulasyon Siniri,Saturate,,LowerLimit,-S4_u_lim,ifade/değişken
+tez_S4,inverter_senaryo4_kc/S4 Modulasyon Toplami,Sum,,CollapseDim,1,sabit sayı
+tez_S4,inverter_senaryo4_kc/S4 Sebeke Faz Referansi,Sin,,Amplitude,1,sabit sayı
+tez_S4,inverter_senaryo4_kc/S4 Sebeke Faz Referansi,Sin,,Bias,0,sabit sayı
+tez_S4,inverter_senaryo4_kc/S4 Sebeke Faz Referansi,Sin,,Frequency,2*pi*f_grid,ifade/değişken
+tez_S4,inverter_senaryo4_kc/S4 Sebeke Faz Referansi,Sin,,Phase,0,sabit sayı
+tez_S4,inverter_senaryo4_kc/S4 Sebeke Faz Referansi,Sin,,Samples,10,sabit sayı
+tez_S4,inverter_senaryo4_kc/S4 Sebeke Faz Referansi,Sin,,Offset,0,sabit sayı
+tez_S4,inverter_senaryo4_kc/S4 Sebeke Faz Referansi,Sin,,SampleTime,pwm_ref_Ts,ifade/değişken
+tez_S4,inverter_senaryo4_kc/S4 iL1 Isaret,Gain,,Gain,S4_iL1_sign,ifade/değişken
+tez_S4,inverter_senaryo4_kc/S4 iL1 Olcum Suzgeci,DiscreteTransferFcn,,Numerator,S4_lp_num,ifade/değişken
+tez_S4,inverter_senaryo4_kc/S4 iL1 Olcum Suzgeci,DiscreteTransferFcn,,Denominator,S4_lp_den,ifade/değişken
+tez_S4,inverter_senaryo4_kc/S4 iL1 Olcum Suzgeci,DiscreteTransferFcn,,InitialStates,0,sabit sayı
+tez_S4,inverter_senaryo4_kc/S4 iL1 Olcum Suzgeci,DiscreteTransferFcn,,InitialDenominatorStates,0,sabit sayı
+tez_S4,inverter_senaryo4_kc/S4 iL1 Olcum Suzgeci,DiscreteTransferFcn,,SampleTime,S4_Ts_c,ifade/değişken
+tez_S4,inverter_senaryo4_kc/S4 iref Carpim,Product,,Inputs,2,sabit sayı
+tez_S4,inverter_senaryo4_kc/S4 iref Carpim,Product,,CollapseDim,1,sabit sayı
+tez_S4,inverter_senaryo4_kc/Sine Wave3,Sin,,Amplitude,pwm_ref_amp,ifade/değişken
+tez_S4,inverter_senaryo4_kc/Sine Wave3,Sin,,Bias,0,sabit sayı
+tez_S4,inverter_senaryo4_kc/Sine Wave3,Sin,,Frequency,2*pi*f_grid,ifade/değişken
+tez_S4,inverter_senaryo4_kc/Sine Wave3,Sin,,Phase,phase_deg4*pi/180,ifade/değişken
+tez_S4,inverter_senaryo4_kc/Sine Wave3,Sin,,Samples,10,sabit sayı
+tez_S4,inverter_senaryo4_kc/Sine Wave3,Sin,,Offset,0,sabit sayı
+tez_S4,inverter_senaryo4_kc/Sine Wave3,Sin,,SampleTime,pwm_ref_Ts,ifade/değişken
+tez_S4,inverter_senaryo4_kc/Solver Configuration1,SubSystem,nesl_utility/Solver ⏎ Configuration,ResidualTolerance,simscape_residual_tolerance,ifade/değişken
+tez_S4,inverter_senaryo4_kc/Solver Configuration1,SubSystem,nesl_utility/Solver ⏎ Configuration,ConsistencyAbsTol,0.001,sabit sayı
+tez_S4,inverter_senaryo4_kc/Solver Configuration1,SubSystem,nesl_utility/Solver ⏎ Configuration,ConsistencyRelTol,0.001,sabit sayı
+tez_S4,inverter_senaryo4_kc/Solver Configuration1,SubSystem,nesl_utility/Solver ⏎ Configuration,ConsistencyTolFactor,0.001,sabit sayı
+tez_S4,inverter_senaryo4_kc/Solver Configuration1,SubSystem,nesl_utility/Solver ⏎ Configuration,FunctionEvalNumThread,1,sabit sayı
+tez_S4,inverter_senaryo4_kc/Solver Configuration1,SubSystem,nesl_utility/Solver ⏎ Configuration,LocalSolverSampleTime,1e-7,sabit sayı
+tez_S4,inverter_senaryo4_kc/Solver Configuration1,SubSystem,nesl_utility/Solver ⏎ Configuration,MaxNonlinIter,10,sabit sayı
+tez_S4,inverter_senaryo4_kc/Solver Configuration1,SubSystem,nesl_utility/Solver ⏎ Configuration,MaxModeIter,2,sabit sayı
+tez_S4,inverter_senaryo4_kc/Solver Configuration1,SubSystem,nesl_utility/Solver ⏎ Configuration,ImpulseIterations,1,sabit sayı
+tez_S4,inverter_senaryo4_kc/Solver Configuration1,SubSystem,nesl_utility/Solver ⏎ Configuration,LinearAlgebraNumThread,0,sabit sayı
+tez_S4,inverter_senaryo4_kc/Solver Configuration1,SubSystem,nesl_utility/Solver ⏎ Configuration,DelaysMemoryBudget,1024,sabit sayı
+tez_S4,inverter_senaryo4_kc/Solver Configuration1,SubSystem,nesl_utility/Solver ⏎ Configuration,FilteringTimeConstant,0.001,sabit sayı
+tez_S4,inverter_senaryo4_kc/Solver Configuration1,SubSystem,nesl_utility/Solver ⏎ Configuration,PartitionMemoryBudget,1024,sabit sayı
+tez_S4,inverter_senaryo4_kc/Solver Configuration1,SubSystem,nesl_utility/Solver ⏎ Configuration,MultibodyLocalSolverSampleTime,0.001,sabit sayı
+tez_S4,inverter_senaryo4_kc/Subsystem2,SubSystem,,SystemSampleTime,-1,sabit sayı
+tez_S4,inverter_senaryo4_kc/Subsystem2,SubSystem,,Latency,0,sabit sayı
+tez_S4,inverter_senaryo4_kc/Subsystem2/In1,Inport,,Port,1,sabit sayı
+tez_S4,inverter_senaryo4_kc/Subsystem2/In1,Inport,,PortDimensions,-1,sabit sayı
+tez_S4,inverter_senaryo4_kc/Subsystem2/In1,Inport,,MessageQueueCapacity,1,sabit sayı
+tez_S4,inverter_senaryo4_kc/Subsystem2/Constant1,Constant,,Value,0,sabit sayı
+tez_S4,inverter_senaryo4_kc/Subsystem2/Constant1,Constant,,SampleTime,inf,sabit sayı
+tez_S4,inverter_senaryo4_kc/Subsystem2/Constant1,Constant,,FramePeriod,inf,sabit sayı
+tez_S4,inverter_senaryo4_kc/Subsystem2/Constant2,Constant,,Value,0,sabit sayı
+tez_S4,inverter_senaryo4_kc/Subsystem2/Constant2,Constant,,SampleTime,inf,sabit sayı
+tez_S4,inverter_senaryo4_kc/Subsystem2/Constant2,Constant,,FramePeriod,inf,sabit sayı
+tez_S4,inverter_senaryo4_kc/Subsystem2/Constant3,Constant,,Value,0,sabit sayı
+tez_S4,inverter_senaryo4_kc/Subsystem2/Constant3,Constant,,SampleTime,inf,sabit sayı
+tez_S4,inverter_senaryo4_kc/Subsystem2/Constant3,Constant,,FramePeriod,inf,sabit sayı
+tez_S4,inverter_senaryo4_kc/Subsystem2/Constant4,Constant,,Value,1,sabit sayı
+tez_S4,inverter_senaryo4_kc/Subsystem2/Constant4,Constant,,SampleTime,inf,sabit sayı
+tez_S4,inverter_senaryo4_kc/Subsystem2/Constant4,Constant,,FramePeriod,inf,sabit sayı
+tez_S4,inverter_senaryo4_kc/Subsystem2/Constant5,Constant,,Value,1,sabit sayı
+tez_S4,inverter_senaryo4_kc/Subsystem2/Constant5,Constant,,SampleTime,inf,sabit sayı
+tez_S4,inverter_senaryo4_kc/Subsystem2/Constant5,Constant,,FramePeriod,inf,sabit sayı
+tez_S4,inverter_senaryo4_kc/Subsystem2/Constant6,Constant,,Value,0,sabit sayı
+tez_S4,inverter_senaryo4_kc/Subsystem2/Constant6,Constant,,SampleTime,inf,sabit sayı
+tez_S4,inverter_senaryo4_kc/Subsystem2/Constant6,Constant,,FramePeriod,inf,sabit sayı
+tez_S4,inverter_senaryo4_kc/Subsystem2/Gain11,Gain,,Gain,-1,sabit sayı
+tez_S4,inverter_senaryo4_kc/Subsystem2/Gain12,Gain,,Gain,1,sabit sayı
+tez_S4,inverter_senaryo4_kc/Subsystem2/Mux2,Mux,,Inputs,2,sabit sayı
+tez_S4,inverter_senaryo4_kc/Subsystem2/Mux5,Mux,,Inputs,2,sabit sayı
+tez_S4,inverter_senaryo4_kc/Subsystem2/On Delay,SubSystem,spsOnDelayLib/On Delay,delay,deadtime,ifade/değişken
+tez_S4,inverter_senaryo4_kc/Subsystem2/On Delay,SubSystem,spsOnDelayLib/On Delay,ic,0,sabit sayı
+tez_S4,inverter_senaryo4_kc/Subsystem2/On Delay,SubSystem,spsOnDelayLib/On Delay,Ts,0,sabit sayı
+tez_S4,inverter_senaryo4_kc/Subsystem2/On Delay1,SubSystem,spsOnDelayLib/On Delay,delay,deadtime,ifade/değişken
+tez_S4,inverter_senaryo4_kc/Subsystem2/On Delay1,SubSystem,spsOnDelayLib/On Delay,ic,0,sabit sayı
+tez_S4,inverter_senaryo4_kc/Subsystem2/On Delay1,SubSystem,spsOnDelayLib/On Delay,Ts,0,sabit sayı
+tez_S4,inverter_senaryo4_kc/Subsystem2/On Delay2,SubSystem,spsOnDelayLib/On Delay,delay,deadtime,ifade/değişken
+tez_S4,inverter_senaryo4_kc/Subsystem2/On Delay2,SubSystem,spsOnDelayLib/On Delay,ic,0,sabit sayı
+tez_S4,inverter_senaryo4_kc/Subsystem2/On Delay2,SubSystem,spsOnDelayLib/On Delay,Ts,0,sabit sayı
+tez_S4,inverter_senaryo4_kc/Subsystem2/On Delay3,SubSystem,spsOnDelayLib/On Delay,delay,deadtime,ifade/değişken
+tez_S4,inverter_senaryo4_kc/Subsystem2/On Delay3,SubSystem,spsOnDelayLib/On Delay,ic,0,sabit sayı
+tez_S4,inverter_senaryo4_kc/Subsystem2/On Delay3,SubSystem,spsOnDelayLib/On Delay,Ts,0,sabit sayı
+tez_S4,inverter_senaryo4_kc/Subsystem2/PWM Generator (DC-DC)10,SubSystem,spsPWMGeneratorDCDCLib/PWM Generator ⏎ (DC-DC),Fsw,fsw,ifade/değişken
+tez_S4,inverter_senaryo4_kc/Subsystem2/PWM Generator (DC-DC)10,SubSystem,spsPWMGeneratorDCDCLib/PWM Generator ⏎ (DC-DC),Ts,1/fsw/100,ifade/değişken
+tez_S4,inverter_senaryo4_kc/Subsystem2/PWM Generator (DC-DC)11,SubSystem,spsPWMGeneratorDCDCLib/PWM Generator ⏎ (DC-DC),Fsw,fsw,ifade/değişken
+tez_S4,inverter_senaryo4_kc/Subsystem2/PWM Generator (DC-DC)11,SubSystem,spsPWMGeneratorDCDCLib/PWM Generator ⏎ (DC-DC),Ts,1/fsw/100,ifade/değişken
+tez_S4,inverter_senaryo4_kc/Subsystem2/Scope2,Scope,,NumInputPorts,3,sabit sayı
+tez_S4,inverter_senaryo4_kc/Subsystem2/Scope2,Scope,,LayoutDimensionsString,[3 1],sabit sayı
+tez_S4,inverter_senaryo4_kc/Subsystem2/Scope2,Scope,,AxesScalingNumUpdates,10,sabit sayı
+tez_S4,inverter_senaryo4_kc/Subsystem2/Scope2,Scope,,TimeDisplayOffset,0,sabit sayı
+tez_S4,inverter_senaryo4_kc/Subsystem2/Scope2,Scope,,ActiveDisplayString,1,sabit sayı
+tez_S4,inverter_senaryo4_kc/Subsystem2/Scope2,Scope,,ActiveDisplayYMinimum,-1.025,sabit sayı
+tez_S4,inverter_senaryo4_kc/Subsystem2/Scope2,Scope,,ActiveDisplayYMaximum,1.025,sabit sayı
+tez_S4,inverter_senaryo4_kc/Subsystem2/Scope2,Scope,,DataLoggingMaxPoints,5000,sabit sayı
+tez_S4,inverter_senaryo4_kc/Subsystem2/Scope2,Scope,,DataLoggingDecimation,2,sabit sayı
+tez_S4,inverter_senaryo4_kc/Subsystem2/Switch1,Switch,,Threshold,0,sabit sayı
+tez_S4,inverter_senaryo4_kc/Subsystem2/Switch2,Switch,,Threshold,0,sabit sayı
+tez_S4,inverter_senaryo4_kc/Subsystem2/Switch3,Switch,,Threshold,0,sabit sayı
+tez_S4,inverter_senaryo4_kc/Subsystem2/Switch4,Switch,,Threshold,0,sabit sayı
+tez_S4,inverter_senaryo4_kc/Subsystem2/Out1,Outport,,Port,1,sabit sayı
+tez_S4,inverter_senaryo4_kc/Subsystem2/Out1,Outport,,PortDimensions,-1,sabit sayı
+tez_S4,inverter_senaryo4_kc/Subsystem2/Out1,Outport,,OutputWhenUnconnectedValue,0,sabit sayı
+tez_S4,inverter_senaryo4_kc/Subsystem2/Out2,Outport,,Port,2,sabit sayı
+tez_S4,inverter_senaryo4_kc/Subsystem2/Out2,Outport,,PortDimensions,-1,sabit sayı
+tez_S4,inverter_senaryo4_kc/Subsystem2/Out2,Outport,,OutputWhenUnconnectedValue,0,sabit sayı
+tez_S4,inverter_senaryo4_kc/Subsystem2/Out3,Outport,,Port,3,sabit sayı
+tez_S4,inverter_senaryo4_kc/Subsystem2/Out3,Outport,,PortDimensions,-1,sabit sayı
+tez_S4,inverter_senaryo4_kc/Subsystem2/Out3,Outport,,OutputWhenUnconnectedValue,0,sabit sayı
+tez_S4,inverter_senaryo4_kc/Subsystem2/Out4,Outport,,Port,4,sabit sayı
+tez_S4,inverter_senaryo4_kc/Subsystem2/Out4,Outport,,PortDimensions,-1,sabit sayı
+tez_S4,inverter_senaryo4_kc/Subsystem2/Out4,Outport,,OutputWhenUnconnectedValue,0,sabit sayı
+tez_S4,inverter_senaryo4_kc/Subsystem2/Out5,Outport,,Port,5,sabit sayı
+tez_S4,inverter_senaryo4_kc/Subsystem2/Out5,Outport,,PortDimensions,-1,sabit sayı
+tez_S4,inverter_senaryo4_kc/Subsystem2/Out5,Outport,,OutputWhenUnconnectedValue,0,sabit sayı
+tez_S4,inverter_senaryo4_kc/Subsystem2/Out6,Outport,,Port,6,sabit sayı
+tez_S4,inverter_senaryo4_kc/Subsystem2/Out6,Outport,,PortDimensions,-1,sabit sayı
+tez_S4,inverter_senaryo4_kc/Subsystem2/Out6,Outport,,OutputWhenUnconnectedValue,0,sabit sayı
+tez_S4,inverter_senaryo4_kc/THD,SubSystem,spsTHDLib/THD,Freq,50,sabit sayı
+tez_S4,inverter_senaryo4_kc/THD,SubSystem,spsTHDLib/THD,Ts,0,sabit sayı
+tez_S4,inverter_senaryo4_kc/THD2,SubSystem,spsTHDLib/THD,Freq,50,sabit sayı
+tez_S4,inverter_senaryo4_kc/THD2,SubSystem,spsTHDLib/THD,Ts,0,sabit sayı
+tez_S4,inverter_senaryo4_kc/powergui,SubSystem,spspowerguiLib/powergui,SampleTime,50e-6,sabit sayı
+tez_S4,inverter_senaryo4_kc/powergui,SubSystem,spspowerguiLib/powergui,frequency,50,sabit sayı
+tez_S4,inverter_senaryo4_kc/powergui,SubSystem,spspowerguiLib/powergui,Iterations,50,sabit sayı
+tez_S4,inverter_senaryo4_kc/powergui,SubSystem,spspowerguiLib/powergui,frequencyindice,60,sabit sayı
+tez_S4,inverter_senaryo4_kc/powergui,SubSystem,spspowerguiLib/powergui,Pbase,100e6,sabit sayı
+tez_S4,inverter_senaryo4_kc/powergui,SubSystem,spspowerguiLib/powergui,ErrMax,1e-4,sabit sayı
+tez_S4,inverter_senaryo4_kc/powergui,SubSystem,spspowerguiLib/powergui,buscounter,0,sabit sayı
+tez_S4,inverter_senaryo4_kc/powergui,SubSystem,spspowerguiLib/powergui,Ts,100,sabit sayı
+tez_S4,inverter_senaryo4_kc/powergui,SubSystem,spspowerguiLib/powergui,SwTol,0,sabit sayı
+tez_S4,inverter_senaryo4_kc/powergui,SubSystem,spspowerguiLib/powergui,NonlinearTolerance,1e-4,sabit sayı
+tez_S4,inverter_senaryo4_kc/powergui,SubSystem,spspowerguiLib/powergui,nMaxIteration,100,sabit sayı
+tez_S4,inverter_senaryo4_kc/powergui,SubSystem,spspowerguiLib/powergui,structure,0,sabit sayı
+tez_S4,inverter_senaryo4_kc/powergui,SubSystem,spspowerguiLib/powergui,StartTime,0.0,sabit sayı
+tez_S4,inverter_senaryo4_kc/powergui,SubSystem,spspowerguiLib/powergui,cycles,1,sabit sayı
+tez_S4,inverter_senaryo4_kc/powergui,SubSystem,spspowerguiLib/powergui,DisplayStyle,1,sabit sayı
+tez_S4,inverter_senaryo4_kc/powergui,SubSystem,spspowerguiLib/powergui,fundamental,50,sabit sayı
+tez_S4,inverter_senaryo4_kc/powergui,SubSystem,spspowerguiLib/powergui,MaxFrequency,1000,sabit sayı
+tez_S4,inverter_senaryo4_kc/powergui,SubSystem,spspowerguiLib/powergui,frequencyindicesteady,1,sabit sayı
+tez_S4,inverter_senaryo4_kc/powergui,SubSystem,spspowerguiLib/powergui,RmsSteady,1,sabit sayı

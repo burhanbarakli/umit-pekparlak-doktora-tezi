@@ -407,45 +407,116 @@ kompanzasyonun temel ve üçüncü harmonik bileşenlerini açıkça göstermekt
 
 \section{Elektriksel ve Denetim Parametreleri}
 
-Elektriksel değerler; e-posta ile iletilen parametre seti (22.08.2026), tam topoloji şeması, Senaryo~1 kaynak modeli ve deney kayıtlarından derlenmiş, Tablo~\ref{tab:sistem-parametreleri} altında tek yerde toplanmıştır. ``DOĞRULANACAK'' ifadesi bilinmeyen değeri tahminle doldurmak yerine; kod, şema, bobin etiketi, ölçüm dosyası veya danışman onayı gerektiren alanı göstermektedir.
+Benzetim modellerinin ve deney düzeneğinin elektriksel, yarı iletken, modülasyon, denetim ve sayısal çözüm parametreleri Tablo~\ref{tab:sistem-parametreleri} altında tek yerde toplanmıştır; tezin diğer kesimleri parametre değerini yinelemez, bu tabloya başvurur. Tablonun omurgası, dört senaryo modelinin ortak okuduğu parametre dosyasıdır (\texttt{inverter\_common\_parameters.m}). Bir değerin bu dosyada tanımlı olması yeterli sayılmamış; değerin hangi model bloğunda gerçekten kullanıldığı, sonuçların dayandığı dört taban modelin blok parametreleri ve model yapılandırması taranarak ayrıca denetlenmiştir. Parametre dosyasında tanımlı olup hiçbir taban modelde kullanılmayan deney hedefleri, yedek ısıl ağ değişkenleri ve ara değişkenler tabloya alınmamıştır. Tür sütunu her değerin dayanağını altı sınıftan birine bağlar. \emph{Ölçülmüş} değer, deney düzeneğinin güç analizörü ya da ölçüm ekranından okunan çalışma noktasıdır. \emph{Veri sayfası} değeri, üretici veri sayfasından okunan ya da veri sayfası eğrisine oturtulan cihaz büyüklüğüdür. \emph{Tasarım} değeri, parametre dosyasında ya da donanım tasarım belgelerinde tanımlanan ve ayrıca ölçülmemiş büyüklüktür. \emph{Kalibre} değer, benzetim modelini deney özetinin etkin ve reaktif gücüne oturtmak için ayarlanmıştır; parametre dosyasındaki ilk değer parantez içinde verilmiştir. \emph{Benzetim seçimi} yalnız benzetime ait modelleme, denetim ya da sayısal çözüm kararını gösterir. \emph{Düzeltilmiş (D-$n$)} değer, benzetim modelinin doğrulanması sırasında tez tanımına uyacak biçimde değiştirilmiştir; $n$, model düzeltmeleri listesindeki kayıt numarasıdır. Donanımda karşılığı belgelenmemiş bir büyüklük tahminle doldurulmamış, ilgili satırda ``sınırlılık'' olarak işaretlenmiştir.
 
-\begin{longtable}{>{\raggedright\arraybackslash}p{0.26\textwidth} >{\raggedright\arraybackslash}p{0.24\textwidth} >{\raggedright\arraybackslash}p{0.39\textwidth}}
-\caption{Elektriksel, denetim ve ölçüm parametrelerinin birleşik tablosu.}\label{tab:sistem-parametreleri}\\
+\begingroup
+\setlength{\tabcolsep}{4pt}
+\begin{longtable}{>{\footnotesize\raggedright\arraybackslash}p{0.215\textwidth} >{\footnotesize\raggedright\arraybackslash}p{0.235\textwidth} >{\footnotesize\raggedright\arraybackslash}p{0.075\textwidth} >{\footnotesize\raggedright\arraybackslash}p{0.265\textwidth} >{\footnotesize\raggedright\arraybackslash}p{0.135\textwidth}}
+\caption{Elektriksel, yarı iletken, modülasyon, denetim ve sayısal çözüm parametrelerinin birleşik tablosu.}\label{tab:sistem-parametreleri}\\
 \toprule
-Parametre & Değer & Durum / doğrulama kaynağı \\
+Parametre & Değer & Birim & Kaynak & Tür \\
 \midrule
 \endfirsthead
+\caption[]{Elektriksel, yarı iletken, modülasyon, denetim ve sayısal çözüm parametrelerinin birleşik tablosu (devamı).}\\
 \toprule
-Parametre & Değer & Durum / doğrulama kaynağı \\
+Parametre & Değer & Birim & Kaynak & Tür \\
 \midrule
 \endhead
-Faz yapısı & Üç faz, dört telli & Prototip açıklaması ve tam topoloji şeması; doğrulandı. \\
-Tasarım güç aralığı & \SI{20}{\kilo\watt}--\SI{25}{\kilo\watt} & Deney düzeneği için verilen tasarım aralığı. \\
-Prototip anma gücü & \SI{20}{\kilo\volt\ampere} & Akım sensörü boyutlandırma hesabındaki değer; kW/kVA adlandırması nihai sürümde kilitlenecek. \\
-Şebeke frekansı & \SI{50}{\hertz} & Türkiye şebeke koşulu; kaynak modelde de \SI{50}{\hertz}. \\
-Şebeke anma gerilimi & \SI{230}{\volt} faz--nötr, \SI{400}{\volt} faz--faz & Donanım tasarım açıklaması; deneyler varyak nedeniyle daha düşük gerilimde yürütülmüştür. \\
-Deney faz--nötr gerilimi & Yaklaşık \SI{120}{\volt}--\SI{130}{\volt} & Karşılaştırmalı düşük güç deneylerinde raporlanan aralık; kaynak modelde tepe \SI{169.4}{\volt}. \\
-DA bara gerilimi & \SI{431.5}{\volt} (deneylerde \SI{395}{\volt}--\SI{430}{\volt}) & Kaynak model ve deney kayıtları; toplam/yarım bara tanımı DOĞRULANACAK. \\
-DA bara ölçüm aralığı & \SI{470}{\volt} & AMC1200 giriş bölücüsü için verilen tasarım değeri. \\
-Faz RMS akım tasarımı & Yaklaşık \SI{30}{\ampere} & \SI{20}{\kilo\volt\ampere} ve faz başına güç hesabı. \\
-Faz RMS akım üst sınırı & Yaklaşık \SI{36}{\ampere} & Yüzde 20 tasarım toleransıyla verilen hedef. \\
-Mevcut aşırı akım eşiği & Yaklaşık \SI{30.4}{\ampere} & Pencere karşılaştırıcı ve \SI{23}{\milli\volt\per\ampere} sensör kazancından hesaplanmıştır. \\
-Akım sensörü & HLSR 20-P SP33 & Ölçüm kartı donanım kaydı; ölçülebilir tepe akımı \SI{56.5}{\ampere}. \\
-Gerilim ölçümü & AMC1200, 12 bit ADC & Ölçüm zinciri; \SI{1.3}{\volt} ofset ve \SI{2.6}{\volt} ADC referansı. \\
-Sayısal denetleyici & PIC32MK ailesi, 32 bit & Kontrol kartı açıklaması; tam parça kodu DOĞRULANACAK. \\
-Anahtarlama frekansı $f_s$ & \SI{10}{\kilo\hertz} & Kaynak Senaryo~1 modeli ve parametre dosyası; donanım yazılım değeri DOĞRULANACAK. \\
-Örnekleme frekansı $f_{\mathrm{samp}}$ & {\small DOĞRULANACAK} & Kontrol yazılımı veya zamanlayıcı yapılandırmasından çıkarılacak; \texttt{Ts=1e-7 s} kaynak modelde çözücü adımıdır. \\
-Ölü zaman $t_d$ & {\small DOĞRULANACAK} & Kaynak benzetim parametre dosyası ölü zamansızdır; donanım değeri sürücü/PWM yapılandırması ve osiloskop kaydı gerektirir. \\
-$L_1$, $C_f$, $L_2$ & \SI{600}{\micro\henry}, \SI{8}{\micro\farad}, \SI{200}{\micro\henry} & 26.08.2026 kaynak ayrıştırmasıyla kilitlendi: \SI{600}{\micro\henry} tam topolojide faz başına bobin; \SI{200}{\micro\henry} e-posta ve deney özet tablosundaki ikinci filtre bobini; \SI{400}{\micro\henry} yalnız arşivlenen Senaryo~1 modelindeki eski \texttt{CL1} ayarıdır. \\
-$R_1$, $R_{C_f}$, $R_2$ & \SI{0.02}{\ohm}, \SI{0.01}{\ohm}, \SI{0.02}{\ohm} & 22.08.2026 e-posta parametre seti; ESR yorumu DOĞRULANACAK. \\
-Ana anahtarlar $S_1$--$S_2$ & SKM100GB12T4 & Tam topoloji şeması ve veri sayfası ekranı. \\
-Nötr anahtarlar $S_3$--$S_4$ & IXYN100N65C3H1 & Tam topoloji şeması ve veri sayfası ekranı. \\
-Harici diyotlar $D_1$--$D_2$ & DSEI2x61-12B & $V_f=\SI{1.35}{\volt}$, $R_{\mathrm{on}}=\SI{8.5}{\milli\ohm}$, $t_{rr}=\SI{380}{\nano\second}$; 22.08.2026 parametre seti. \\
-Anahtar geçiş süreleri & 165/400/600/600 \si{\nano\second} & Açılma/kapanma gecikmesi ile yükselme/düşme süreleri; 22.08.2026 parametre seti. \\
-PR/akım denetleyici katsayıları & {\small DOĞRULANACAK} & Denetleyici türü ve katsayıları kaynak kodla eşleştirilecek. \\
-Sin\textsuperscript{3} kazancı ve etkinleşme eşiği & {\small DOĞRULANACAK} & Benzetim dosyası, deney kodu ve çalışma noktası kayıtları birlikte incelenecek; düzeltilmiş analitik aday değerler Bölüm~\ref{chap:sin3} içindedir. \\
 \bottomrule
+\endfoot
+%
+\multicolumn{5}{@{}l}{\small\textbf{Sistem tanımı ve çalışma noktaları}} \\
+Prototip faz yapısı & Üç faz, dört telli; nötr hattı DA bara orta noktasına bağlı & -- & Tam topoloji şeması & Tasarım \\
+Benzetim ve deney kapsamı & Tek faz kolu; nötr dönüşü DA bara orta noktasına & -- & Benzetim modelleri; deney özet tablosunun tek faz büyüklükleri & Benzetim seçimi \\
+Tasarım güç aralığı & 20--25 & \si{\kilo\watt} & Donanım tasarım belgesi & Tasarım; sınırlılık: anma gücünde deney yapılmamıştır \\
+Prototip anma görünür gücü & 20 & \si{\kilo\volt\ampere} & Akım sensörü boyutlandırma hesabı & Tasarım \\
+Faz akımı tasarım değeri; üst sınırı & Yaklaşık 30; yaklaşık 36 & \si{\ampere} & \SI{20}{\kilo\volt\ampere} için faz başına güç hesabı; \%20 tasarım payı & Tasarım \\
+Şebeke anma gerilimi & 230 faz--nötr; 400 faz--faz & \si{\volt} & Donanım tasarım belgesi & Tasarım \\
+Şebeke frekansı $f_g$ & \num{50} & \si{\hertz} & Parametre dosyası (\texttt{f\_grid}) & Tasarım \\
+Deney şebeke gerilimi $V_g$ (RMS, varyak çıkışı) & S1 \num{119.80}; S2 \num{121.00}; S3 \num{124.30} & \si{\volt} & Deney özet tablosu; parametre dosyası (\texttt{Vac\_rms\_target}) & Ölçülmüş \\
+S4 şebeke gerilimi $V_g$ (RMS) & \num{120.0} & \si{\volt} & Parametre dosyası & Benzetim seçimi \\
+DA bara gerilimi $V_{\mathrm{dc}}$ & S1 \num{431.5}; S2 \num{395.0}; S3 \num{427.5} & \si{\volt} & Deney özet tablosu; parametre dosyası (\texttt{Vdc\_target}) & Ölçülmüş \\
+S4 DA bara gerilimi $V_{\mathrm{dc}}$ & \num{427.5} & \si{\volt} & Parametre dosyası (S3 noktası) & Benzetim seçimi \\
+DA bara tanımı & $V_{\mathrm{dc}}$: DA$+$ ile DA$-$ arasındaki toplam gerilim; yarım bara $V_{\mathrm{dc}}/2$ & -- & Benzetim modeli: tek DA kaynağı, iki seri bara kapasitörü, orta nokta nötre bağlı & Benzetim seçimi \\
+Deney faz akımı $I_g$ (RMS) & S1 \num{2.26}; S2 \num{2.33}; S3 \num{2.31} & \si{\ampere} & Deney özet tablosu; parametre dosyası (\texttt{Ifaz\_rms\_target}) & Ölçülmüş \\
+S4 akım referansı $I_{\mathrm{ref}}$ (RMS) & \num{2.3}; \num{10}; \num{25} & \si{\ampere} & Parametre dosyası (\SI{25}{\ampere}); düşük, orta ve anma akımı taraması & Benzetim seçimi \\
+\midrule
+\multicolumn{5}{@{}l}{\small\textbf{Ölçüm ve sayısal denetim donanımı}} \\
+DA bara ölçüm aralığı & \num{470} & \si{\volt} & AMC1200 giriş bölücüsü tasarımı & Tasarım \\
+Gerilim ölçümü & AMC1200, 12 bit ADC; ofset \SI{1.3}{\volt}, ADC referansı \SI{2.6}{\volt} & -- & Ölçüm kartı tasarımı & Tasarım \\
+Akım sensörü & HLSR 20-P/SP33; \SI{23}{\milli\volt\per\ampere}; ölçülebilir tepe \SI{56.5}{\ampere} & -- & Sensör veri sayfası; ölçüm kartı tasarımı & Veri sayfası \\
+Aşırı akım eşiği & Yaklaşık 30,4 & \si{\ampere} & Pencere karşılaştırıcı eşikleri ve sensör kazancından hesap & Tasarım \\
+Sayısal denetleyici & PIC32MK ailesi, 32 bit & -- & Kontrol kartı açıklaması & Tasarım; sınırlılık: tam parça kodu ve denetim yazılımı belgelenmemiştir \\
+PWM zamanlayıcı yapılandırması & PTPER $=12000$ (\SI{10}{\kilo\hertz}); DTR $=$ ALTDTR $=120$ & sayım & Parametre dosyası açıklaması (zamanlayıcı yazmaçları) & Tasarım \\
+\midrule
+\multicolumn{5}{@{}l}{\small\textbf{LCL filtre, EMC süzgeci ve DA bara}} \\
+Evirici tarafı endüktansı $L_1$ & \num{600} & \si{\micro\henry} & Parametre dosyası (\texttt{L1}); tam topoloji şeması & Tasarım \\
+$L_1$ seri direnci & \num{0.03} & \si{\ohm} & Parametre dosyası (\texttt{L1r}) & Tasarım \\
+$L_1$ çekirdek kaybı paralel direnci $R_p$ & S1--S3 \num{600}; S4 \num{1500} & \si{\ohm} & Parametre dosyası (\texttt{L1\_core\_Rp}, \texttt{L1\_core\_Rp4}) & Tasarım; S4 verimi S1--S3 verimiyle doğrudan karşılaştırılmaz \\
+Filtre kapasitörü $C_f$ & \num{8} & \si{\micro\farad} & Parametre dosyası (\texttt{C}); tam topoloji şeması & Tasarım \\
+$C_f$ seri direnci & \num{0.01} & \si{\ohm} & Parametre dosyası (\texttt{Cr}) & Tasarım \\
+Şebeke tarafı endüktansı $L_2$ (şebeke ve varyak eşdeğeri) & \num{1000} & \si{\micro\henry} & Parametre dosyası (\texttt{L2}) & Tasarım; sınırlılık: doğrudan empedans ölçümü yoktur \\
+$L_2$ seri direnci & \num{0.01} & \si{\ohm} & Parametre dosyası (\texttt{L2r}) & Tasarım \\
+Ortak kip bobinleri (iki kademe) & Sargı \SI{400}{\micro\henry}; karşılıklı \SI{398}{\micro\henry} ($k=\num{0.995}$); sargı direnci \SI{5}{\milli\ohm}; çekirdek kaybı \SI{100}{\kilo\ohm}; diferansiyel eşdeğer kademe başına \SI{4}{\micro\henry} & -- & Parametre dosyası (\texttt{EMC\_*}); şemadaki ilk kademe \SI{460}{\micro\henry} & Tasarım \\
+X kapasitörü ağı (tek faz eşdeğeri) & \SI{0.5}{\micro\farad}, \SI{0.2}{\ohm} (iki seri \SI{1}{\micro\farad}/\SI{0.1}{\ohm} kol) & -- & Parametre dosyası (\texttt{EMC\_Cx\_eq}, \texttt{EMC\_Rx\_eq}) & Düzeltilmiş (D-09) \\
+DA bara kapasitörleri $C_{\mathrm{dc}+}=C_{\mathrm{dc}-}$ & \num{470} & \si{\micro\farad} & Parametre dosyası (\texttt{Cdc\_pos}, \texttt{Cdc\_neg}); şemada \SI{470}{\micro\farad}/\SI{450}{\volt} & Tasarım (S1--S3, deney donanımı) \\
+DA bara kapasitörleri, S4 anma akımı koşuları & \num{5600} & \si{\micro\farad} & Orta nokta salınımını \SI{25}{\ampere} akımda $V_{\mathrm{dc}}/2$ değerinin \%5'i altında tutan boyut & Düzeltilmiş (D-11) \\
+DA bara kapasitörü eşdeğer seri direnci & \num{0.10} & \si{\ohm} & Parametre dosyası (\texttt{Cdc\_esr}) & Tasarım \\
+Bara dengeleme dirençleri & \num{220} & \si{\kilo\ohm} & Parametre dosyası (\texttt{R\_bleed\_1}, \texttt{R\_bleed\_2}) & Tasarım \\
+DA kaynak bağlantısı ve çıkış rölesi kontak direnci & \num{1} & \si{\milli\ohm} & Parametre dosyası (\texttt{Rdc}) & Tasarım \\
+DA kaynağı ters akım diyotu & $V_f=\SI{0.05}{\volt}$, $R_{\mathrm{on}}=\SI{1}{\ohm}$ & -- & Parametre dosyası (\texttt{DCB\_*}); laboratuvar kaynağının akım çekememesinin temsili, donanımda eleman yoktur & Benzetim seçimi \\
+Modele katılmayan donanım öğeleri & SKM modülündeki \SI{4}{\micro\farad} bastırma kapasitörü; \SI{26}{\nano\farad} Y kapasitörü (koruma iletkeni yolu) & -- & Tam topoloji şeması & Benzetim seçimi \\
+\midrule
+\multicolumn{5}{@{}l}{\small\textbf{Yarı iletkenler ve kapı sürücüsü}} \\
+Dış anahtarlar $S_1$--$S_2$ & SKM100GB12T4 & -- & Tam topoloji şeması; veri sayfası & Veri sayfası \\
+$S_1$--$S_2$ iletim karakteristiği & $V_{CE}=\SI{0.9}{\volt}+\SI{11.5}{\milli\ohm}\cdot I_C$ (\SI{25}{\celsius}, $V_{GE}=\SI{15}{\volt}$) & -- & Veri sayfası ($V_{CE0}$ ve $r_{CE}$ en büyük değerleri) & Veri sayfası \\
+$S_1$--$S_2$ anahtarlama enerjisi (1--\SI{50}{\ampere}) & $E_{\mathrm{on}}$ 0,02--1,00; $E_{\mathrm{off}}$ 0,03--1,50 & \si{\milli\joule} & Parametre dosyası; veri sayfası eğilimine dayalı düşük akım ara değerlemesi (veri sayfası noktası \SI{600}{\volt}, \SI{100}{\ampere}, \SI{150}{\celsius}) & Tasarım \\
+$S_1$--$S_2$ gecikme ve geçiş süreleri $t_{d(\mathrm{on})}$/$t_{d(\mathrm{off})}$/$t_r$/$t_f$ & 200/600/60/110 & \si{\nano\second} & Parametre dosyası (2--\SI{3}{\ampere} bölgesi için başlangıç değeri) & Tasarım \\
+Nötr anahtarlar $S_3$--$S_4$ & IXYN100N65C3H1 & -- & Tam topoloji şeması; veri sayfası & Veri sayfası \\
+$S_3$--$S_4$ iletim karakteristiği & $V_{CE}$: \SI{0.80}{\volt} (\SI{1}{\ampere}) ile \SI{1.68}{\volt} (\SI{50}{\ampere}) arası tablo & -- & Veri sayfası çıkış eğrisi (\SI{25}{\celsius}, $V_{GE}=\SI{15}{\volt}$) & Veri sayfası \\
+$S_3$--$S_4$ anahtarlama enerjisi (1--\SI{50}{\ampere}) & $E_{\mathrm{on}}$ 0,05--1,30; $E_{\mathrm{off}}$ 0,07--0,83 & \si{\milli\joule} & Parametre dosyası; \SI{50}{\ampere} noktası veri sayfasından, düşük akım bölgesi ara değerleme & Tasarım \\
+$S_3$--$S_4$ gecikme ve geçiş süreleri $t_{d(\mathrm{on})}$/$t_{d(\mathrm{off})}$/$t_r$/$t_f$ & 200/50/100/1000 & \si{\nano\second} & Parametre dosyası & Tasarım \\
+Dış anahtar ters paralel diyotları $DS_1$--$DS_2$ & $V_f=\SI{1.50}{\volt}$; $r_F=\SI{10.2}{\milli\ohm}$; $Q_{rr}=\SI{15.7}{\micro\coulomb}$; $I_{RM}=\SI{54}{\ampere}$ & -- & SKM100GB12T4 veri sayfası (en büyük değerler; \SI{100}{\ampere} toparlanma testi) & Veri sayfası \\
+Nötr anahtar ters paralel diyotları $DS_3$--$DS_4$ & $V_f=\SI{1.70}{\volt}$; $r_F=\SI{6}{\milli\ohm}$; $Q_{rr}=\SI{9.5}{\micro\coulomb}$; $t_{rr}=\SI{100}{\nano\second}$ & -- & IXYN100N65C3H1 iç diyot veri sayfası (\SI{100}{\ampere}; $Q_{rr}$ eğriden) & Veri sayfası; eşleme düzeltilmiş (D-08) \\
+Harici diyotlar $D_1$--$D_2$ & DSEI2x61-12B; $V_f=\SI{1.58}{\volt}$; $r_F=\SI{8.5}{\milli\ohm}$; $t_{rr}=\SI{190}{\nano\second}$; $Q_{rr}=\SI{3.0}{\micro\coulomb}$; $C_j=\SI{31}{\pico\farad}$ & -- & DSEI2x61-12B veri sayfası ($t_{rr}$ için \SI{25}{\celsius} değeri; $Q_{rr}$ eğriden) & Veri sayfası; eşleme düzeltilmiş (D-08) \\
+Kapı sürücüsü & $+15/-5$~\si{\volt}; toplam kapı direnci \SI{15}{\ohm}; çıkış yükselme ve düşme süresi \SI{20}{\nano\second}; IGBT kapı eşiği $V_{GE(th)}=\SI{6}{\volt}$ & -- & Parametre dosyası (\texttt{Vgate\_*}, \texttt{RG\_total}, \texttt{gate\_driver\_*}) & Tasarım \\
+Jonksiyon sıcaklığı & \num{25}, sabit; ısıl model etkisiz & \si{\celsius} & Parametre dosyası (\texttt{Tj\_operating}) & Benzetim seçimi \\
+\midrule
+\multicolumn{5}{@{}l}{\small\textbf{Modülasyon ve PWM}} \\
+Anahtarlama frekansı $f_s$ & \num{10} & \si{\kilo\hertz} & Parametre dosyası (\texttt{fsw}); PWM zamanlayıcı periyodu & Tasarım \\
+Ölü zaman $t_d$ & \num{1} & \si{\micro\second} & Parametre dosyası (\texttt{deadtime}; DTR $=120$); modelde her kapı komutunun yükselen kenarında gecikme & Tasarım \\
+Taşıyıcı ve görev oranı & Testere dişi 0--1; yarım periyot ayrımlı tek kutuplu görev oranı $d=|u|$; $V_{\mathrm{dc}}$ normalizasyonu yok & -- & Benzetim modeli PWM alt sistemi & Benzetim seçimi \\
+Modülasyon referansı örnekleme adımı & \num{1} & \si{\micro\second} & Parametre dosyası (\texttt{pwm\_ref\_Ts}) & Benzetim seçimi; sınırlılık: donanımın ADC örnekleme ve görev oranı güncelleme anı belgelenmemiştir \\
+Temel modülasyon genliği $K_1$ & S1 \num{0.7865} (\num{0.7865}); S2 \num{0.76796} (\num{0.794}); S3 \num{0.44343} (\num{0.45}) & -- & Kalibrasyon (Bölüm~\ref{chap:deney}) & Kalibre \\
+Sin\textsuperscript{3} kazancı $K_3$ & S3 \num{0.38431} (\num{0.39}); S1--S2 \num{0} & -- & Kalibrasyon (Bölüm~\ref{chap:deney}); $K_3/K_1$ oranı sabit & Kalibre \\
+Referans fazı $\varphi$ & S1 \num{-0.3661} (\num{-0.44}); S2 \num{0.1121} (\num{0}); S3 \num{0.6575} (\num{0}) & \si{\degree} & Kalibrasyon (Bölüm~\ref{chap:deney}) & Kalibre \\
+S4 ileri besleme $K_1$, $K_3$, $\varphi$ & S3 kalibre değerleri & -- & Kalibrasyon (Bölüm~\ref{chap:deney}) & Kalibre \\
+Sin\textsuperscript{3} teriminin biçimi & $K_3\sin^3\theta$; birim genlikli referansın küpü, pozitif işaretli; görev oranı toplamına çevrim dışından eklenir & -- & Benzetim modeli modülasyon toplamı & Tasarım \\
+Susturma ve Sin\textsuperscript{3} etkinleşme ölçütü & Senaryo boyunca sürekli etkin; akım eşiği ve histerezis tanımlı değil & -- & Benzetim modelleri & Benzetim seçimi; sınırlılık: donanımdaki etkinleşme eşiği belgelenmemiştir \\
+\midrule
+\multicolumn{5}{@{}l}{\small\textbf{S4 akım denetimi}} \\
+Geri besleme büyüklüğü ve ölçüm süzgeci & $i_{L1}$; tek kutuplu alçak geçiren süzgeç, köşe \SI{5}{\kilo\hertz} ($f_s/2$) & -- & Denetleyici tasarımı (Bölüm~\ref{chap:sin3}) & Benzetim seçimi \\
+Akım referansı & $\sqrt{2}\,I_{\mathrm{ref}}\sin\theta_g$; şebeke fazına kilitli, ideal faz bilgisi & -- & Denetleyici tasarımı & Benzetim seçimi \\
+Oransal kazanç $K_p$ & \num{0.03} & \si{\per\ampere} & Parametre dosyası (\texttt{Kp}) & Tasarım \\
+İntegral kazancı $K_i=2\pi\cdot\SI{60}{\hertz}\cdot K_p$ & \num{11.31} & \si{\per\ampere\per\second} & Denetleyici tasarımı (PI sıfırı \SI{60}{\hertz}) & Benzetim seçimi \\
+Geri hesaplamalı doyum önleme kazancı $K_{aw}$ & \num{377} ($2\pi\cdot60$) & \si{\per\second} & Denetleyici tasarımı & Benzetim seçimi \\
+PIR rezonans terimi & $K_r=\SI{0.3}{\per\ampere}$ ($10K_p$); $\omega_b=2\pi\cdot2$~\si{\radian\per\second}; $\omega_0=2\pi\cdot50$~\si{\radian\per\second} & -- & Denetleyici tasarımı & Benzetim seçimi \\
+Modülasyon ve integratör sınırı & $|u|\le1$ & -- & Denetleyici tasarımı & Benzetim seçimi \\
+Denetim adımı ve hesaplama gecikmesi & \SI{1}{\micro\second}; gecikme yok (analog eşdeğer) & -- & Denetleyici tasarımı (Bölüm~\ref{chap:sin3}) & Benzetim seçimi; sınırlılık: periyot başında tek örnekli sayısal gerçekleme etkin sönümleme gerektirir \\
+\midrule
+\multicolumn{5}{@{}l}{\small\textbf{Sayısal çözüm ve değerlendirme}} \\
+Çözücü & ode15s (değişken adımlı, katı sistemler için) & -- & Model yapılandırması & Benzetim seçimi \\
+En büyük çözücü adımı & \num{1} & \si{\micro\second} & Parametre dosyası (\texttt{sim\_max\_step}) & Benzetim seçimi \\
+Bağıl, mutlak ve Simscape artık toleransı & \num{1e-6}; \num{1e-6}; \num{1e-6} & -- & Parametre dosyası (\texttt{sim\_rel\_tol}, \texttt{sim\_abs\_tol}, \texttt{simscape\_residual\_tolerance}) & Benzetim seçimi \\
+Simscape yerel çözücüsü ve powergui & Yerel çözücü kapalı (kayıtlı \SI{0.1}{\micro\second} adımı etkisiz); powergui sürekli kip & -- & Model yapılandırması & Benzetim seçimi \\
+Benzetim süresi & S1--S3 \num{0.1}; S4 P ve PI \num{0.06}; S4 PIR \num{0.2} & \si{\second} & Koşu yapılandırması & Benzetim seçimi \\
+Değerlendirme penceresi ve THD tanımı & Son tam şebeke periyodu (\SI{20}{\milli\second}); THD, temel bileşene göre bir periyotluk kayan pencereyle & -- & Modelin ortalama, RMS ve THD blokları (\SI{50}{\hertz}) & Benzetim seçimi \\
+Güç ölçüm noktası ve işaret kuralı & Evirici çıkış uçları (EMC süzgeci sonrası, $L_2$ öncesi); evirici$\to$şebeke yönü pozitif & -- & Benzetim modeli ölçüm zinciri & Benzetim seçimi \\
+Osiloskop akım ölçekleme kazancı & \num{20} & -- & Parametre dosyası (\texttt{measurement\_gain}); yalnız görüntülemede, hesaplara girmez & Benzetim seçimi \\
 \end{longtable}
+\endgroup
+
+Tablo~\ref{tab:sistem-parametreleri} içindeki sınırlılıklar üç kümede toplanır. Birinci küme donanım tanımına ilişkindir: anma gücü ifadeleri tasarım hedefi olarak kalmakta, laboratuvar şebeke gerilimi sınırı nedeniyle deneyler yaklaşık \SI{120}{\volt} ve \SI{2.3}{\ampere} düzeyinde yürütülmüştür. İkinci küme sayısal denetim yazılımına ilişkindir: denetim yazılımı, ADC örnekleme anı ve susturma ile Sin\textsuperscript{3} teriminin donanımdaki etkinleşme eşiği belgelenmemiştir; benzetimde bu işlevler analog eşdeğer ve senaryo boyunca sürekli etkin kip olarak temsil edilmiştir. Üçüncü küme pasif elemanlara ilişkindir: $L_2$, şebeke ve varyak kaçak endüktansının eşdeğeri olarak tanımlanmış, doğrudan empedans ölçümüyle doğrulanmamıştır; S4 anma akımı koşularının DA bara kapasitörleri deney donanımındaki değerden büyüktür. Bu sınırlılıkların sonuçlara etkisi Bölüm~\ref{chap:sonuc} içinde değerlendirilir.
 
 \subsection{Üç Endüktans Değerinin Ayrıştırılması ve $L_2$ Seçimi}
 
@@ -501,8 +572,6 @@ Veri sayfaları, blok ekranları ve Senaryo~1 modelinin bağlı elemanları birl
 \end{table}
 
 Tam veri sayfası akım--gerilim ve anahtarlama kaybı tabloları, kısa süreli cihaz stresi ve kayıp teyidi için ayrıntılı model katmanını oluşturur. Kararlı hâl THD ve senaryo taraması ise aynı topoloji ve filtreyi kullanan, fakat cihaz dinamikleri sadeleştirilmiş sistem katmanında yürütülmelidir. İki katmanın sonuçları aynı kanıt olarak birleştirilmeyecek; sistem katmanındaki verim, ayrıntılı cihaz kayıplarıyla çapraz denetlenmeden nihai kabul edilmeyecektir.
-
-\eksikistek{Kalan parametrelerin kaynak dosyalarla kilitlenmesi}{Tablo~\ref{tab:sistem-parametreleri} içindeki DOĞRULANACAK alanlar için istiyoruz: (1) gerçek PWM/denetleyici kaynak kodu ve zamanlayıcı yapılandırması (örnekleme frekansı, ölü zaman, sınırlayıcılar); (2) toplam/yarım DA bara tanımı; (3) 20~kVA--25~kW anma ifadelerinin ham tasarım belgesi; (4) PR/PI katsayıları ve Sin\textsuperscript{3} kazanç/eşik değerleri (istek listesi R05--R08).}
 
 \section{Benzetim ve Deneysel Doğrulama Metodolojisi}
 
