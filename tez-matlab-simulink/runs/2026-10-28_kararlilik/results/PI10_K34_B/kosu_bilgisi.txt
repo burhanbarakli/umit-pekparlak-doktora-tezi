@@ -1,0 +1,18 @@
+model: inverter_senaryo4_enj
+matlab: 23.2.0.2515942 (R2023b) Update 7
+baslangic: 28-Oct-2026 20:55:11
+kip: PI
+kazanc [Kp Ki Kaw Kr]: [0.03 11.3097 376.991 0]
+I_ref [A RMS]: [10 10]
+t_step: 1000
+StopTime: 0.11
+mod: accelerator
+model klasoru: C:\CODES\ümit abi\tez-matlab-simulink\runs\2026-10-28_kararlilik\model_b
+InitFcn eki: K14 = 0.44343; K34 = 0.384306; phase_deg4 = 0.6575; Cdc_pos = 0.0056; Cdc_neg = 0.0056;
+tonlar [Hz]: [587.5 2025 3362.5]
+ton genligi: [0.015 0.015 0.015]
+ton fazi [rad]: [0 1.047 4.189]
+pencere [s]: [0.03 0.11]
+duvar_suresi_s: 1602.6
+etkin K14 K34 phase_deg4 Cdc_pos Cdc_neg: [0.44343 0.384306 0.6575 0.0056 0.0056]
+etkin S6_inj_A: [0.015 0.015 0.015]

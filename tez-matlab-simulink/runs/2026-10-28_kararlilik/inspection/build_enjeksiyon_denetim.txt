@@ -1,0 +1,13 @@
+build_enjeksiyon_kararlilik_20261028 — 28-Oct-2026 19:18:49 — 23.2.0.2515942 (R2023b) Update 7
+kaynak: C:\CODES\ümit abi\tez-matlab-simulink\runs\2026-10-28_s4_kapali_cevrim\model\inverter_senaryo4_kc.slx (SHA-256 7033aeb4294e9293fd94fe04105436f53b063a3722cf84e40d046a110fb90f03)
+u_fb hattinin hedefleri (silinmeden once): inverter_senaryo4_enj/S4 Modulasyon Toplami
+PreLoadFcn: s4_pre_dir = fileparts(which('inverter_senaryo4_enj')); if isempty(s4_pre_dir), s4_pre_dir = pwd; end; run(fullfile(s4_pre_dir, 'inverter_common_parameters.m')); run(fullfile(s4_pre_dir, 's4_denetleyici_parametreleri.m')); S6_inj_A = [0 0 0]; S6_inj_f = [212.5 525 1037.5]; S6_inj_ph = [0 0 0]; clear s4_pre_dir
+InitFcn (degismedi): run(fullfile(fileparts(get_param(bdroot,'FileName')),'inverter_common_parameters.m'));
+derleme (update): basarili
+--- eklenen bloklar (3) ---
+inverter_senaryo4_enj/S6 Enjeksiyon Tonlari
+inverter_senaryo4_enj/S6 Enjeksiyon Toplami
+inverter_senaryo4_enj/S6 Ton Toplami
+model SHA-256: 8f7145fa810d4aa1eb12d5878cc88a6d5d9e8c7e1106add60fbefcbe027c94c3
+kopya: C:\CODES\ümit abi\tez-matlab-simulink\runs\2026-10-28_kararlilik\model_b
+kopya: C:\CODES\ümit abi\tez-matlab-simulink\runs\2026-10-28_kararlilik\model_c

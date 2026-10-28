@@ -1,0 +1,74 @@
+[Warning: Square root of a negative number in 'inverter_senaryo4_enj/RMS1/TrueRMS /Sqrt'. Consider setting the 'Output signal type' to complex.] 
+[> In linearize.jacobian.InitialJacobian (line 27)
+In linearize.jacobian.create (line 12)
+In slLinearizer.computeJacobians>LocalCreateJacobian
+In slLinearizer/computeJacobians
+In slLinearizer/updateJacobians (line 784)
+In slLinearizer/getSystem (line 14)
+In slLinearizer/getIOTransfer (line 128)
+In linearize (line 340)
+In linearize_anahtarlamali_kararlilik_20261028 (line 27)] 
+[Warning: Square root of a negative number in 'inverter_senaryo4_enj/THD/RMS1/TrueRMS /Sqrt'. Consider setting the 'Output signal type' to complex.] 
+[> In linearize.jacobian.InitialJacobian (line 27)
+In linearize.jacobian.create (line 12)
+In slLinearizer.computeJacobians>LocalCreateJacobian
+In slLinearizer/computeJacobians
+In slLinearizer/updateJacobians (line 784)
+In slLinearizer/getSystem (line 14)
+In slLinearizer/getIOTransfer (line 128)
+In linearize (line 340)
+In linearize_anahtarlamali_kararlilik_20261028 (line 27)] 
+[Warning: Square root of a negative number in 'inverter_senaryo4_enj/THD/Sqrt'. Consider setting the 'Output signal type' to complex.] 
+[> In linearize.jacobian.InitialJacobian (line 27)
+In linearize.jacobian.create (line 12)
+In slLinearizer.computeJacobians>LocalCreateJacobian
+In slLinearizer/computeJacobians
+In slLinearizer/updateJacobians (line 784)
+In slLinearizer/getSystem (line 14)
+In slLinearizer/getIOTransfer (line 128)
+In linearize (line 340)
+In linearize_anahtarlamali_kararlilik_20261028 (line 27)] 
+[Warning: Square root of a negative number in 'inverter_senaryo4_enj/THD2/RMS1/TrueRMS /Sqrt'. Consider setting the 'Output signal type' to complex.] 
+[> In linearize.jacobian.InitialJacobian (line 27)
+In linearize.jacobian.create (line 12)
+In slLinearizer.computeJacobians>LocalCreateJacobian
+In slLinearizer/computeJacobians
+In slLinearizer/updateJacobians (line 784)
+In slLinearizer/getSystem (line 14)
+In slLinearizer/getIOTransfer (line 128)
+In linearize (line 340)
+In linearize_anahtarlamali_kararlilik_20261028 (line 27)] 
+[Warning: Square root of a negative number in 'inverter_senaryo4_enj/THD2/Sqrt'. Consider setting the 'Output signal type' to complex.] 
+[> In linearize.jacobian.InitialJacobian (line 27)
+In linearize.jacobian.create (line 12)
+In slLinearizer.computeJacobians>LocalCreateJacobian
+In slLinearizer/computeJacobians
+In slLinearizer/updateJacobians (line 784)
+In slLinearizer/getSystem (line 14)
+In slLinearizer/getIOTransfer (line 128)
+In linearize (line 340)
+In linearize_anahtarlamali_kararlilik_20261028 (line 27)] 
+[Warning: Square root of a negative number in 'inverter_senaryo4_enj/Sqrt'. Consider setting the 'Output signal type' to complex.] 
+[> In linearize.jacobian.InitialJacobian (line 27)
+In linearize.jacobian.create (line 12)
+In slLinearizer.computeJacobians>LocalCreateJacobian
+In slLinearizer/computeJacobians
+In slLinearizer/updateJacobians (line 784)
+In slLinearizer/getSystem (line 14)
+In slLinearizer/getIOTransfer (line 128)
+In linearize (line 340)
+In linearize_anahtarlamali_kararlilik_20261028 (line 27)] 
+[Warning: Square root of a negative number in 'inverter_senaryo4_enj/Sqrt2'. Consider setting the 'Output signal type' to complex.] 
+[> In linearize.jacobian.InitialJacobian (line 27)
+In linearize.jacobian.create (line 12)
+In slLinearizer.computeJacobians>LocalCreateJacobian
+In slLinearizer/computeJacobians
+In slLinearizer/updateJacobians (line 784)
+In slLinearizer/getSystem (line 14)
+In slLinearizer/getIOTransfer (line 128)
+In linearize (line 340)
+In linearize_anahtarlamali_kararlilik_20261028 (line 27)] 
+
+linearize_anahtarlamali_kararlilik_20261028  28-Oct-2026 19:48:16  23.2.0.2515942 (R2023b) Update 7
+linearize HATA: Error using linearize
+Error executing the model API call because the block 'inverter_senaryo4_enj/Sine Wave3' is configured to disallow model API calls for the 'update' method

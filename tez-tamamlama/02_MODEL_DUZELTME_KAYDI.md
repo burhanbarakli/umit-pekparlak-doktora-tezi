@@ -43,6 +43,7 @@ Her satır şu öğeleri içerir:
 | D-10 | Tüm modeller · IGBT/diyot ısıl ve eşik parametreleri | Parametre (izlenebilirlik) | `Vth = 6`, ısıl ağ dizileri ve diyot `Tdevice = 25` değişken yerine sayı olarak yazılmış; m-dosyasındaki karşılıkları kullanılmıyor. Değerler aynı, sonuca etkisi yok | açık — düşük öncelik |
 | D-12 | `inverter_s1s2_s2onarim_d08.slx` · iki bağımsız devre | Paket (koşu yöntemi) | İki fiziksel ağ aynı ode15s çözücüsünü paylaşıyor; 0,1 s koşu ~4 saat. Diğer devre `Commented = 'on'` yapılarak ayrık kopyalar koşturuldu | doğrulandı — fark P_ac ≤ %0,017, Q₁ ≤ 0,02 var; süre 22–69 dk. Tezde yer almaz |
 | D-11 | `inverter_common_parameters.m` · `Cdc_pos/Cdc_neg` (S4) | **Parametre / topoloji boyutu** | 2 × 470 µF DC bara, 25 A'da orta noktayı ±120 V salındırıyor; S4 akımı hedefin %32 altında, modülasyon doyumda. Ümit'in "20 A civarı" tavanı bu | doğrulandı — 2 × 5,6 mF ile PI 25 A: −%31,9 → −%2,1, doyum %20,6 → %0, THD %57 → %9 |
+| D-13 | 12.10 paketindeki üç model ve kopyaları · model CloseFcn | Paket | MathWorks Solar Power Inverter örneğinden kalma geri çağrı, model kapanınca taban çalışma alanından `C` (Cf) ve `L`'yi siliyor | düzeltildi (betikte; model kapandıktan sonra parametre dosyası yeniden çalıştırılır). Koşu sonuçlarına etkisi yok, tezde yer almaz |
 
 ## Ayrıntılı kayıtlar
 
@@ -149,7 +150,9 @@ Her satır şu öğeleri içerir:
   - 25 A, doyum yok:
     - PI: 24,47 A (−%2,1), THD %9,2
     - PIR (0,2 s): 24,75 A (−%1,0, +0,2°), THD %8,5
-  - 10 → 25 A basamağında aşım %7,3.
+  - 10 → 25 A basamağı: son kararlı zarfa göre aşım %0,2, yerleşme ≈ 0,4 ms
+    (İP-6 yeniden tanımı, K-21). İP-5'teki "%7,3" i_L1 tepesinin referans tepesine
+    oranıdır; fark kararlı durumdaki 3. harmonikten gelir.
   - 10 A'da P/PI genlik hatası −%23/−%11; PIR −%2,2. THD %20, kaynağı susturmanın
     süreksiz iletimi.
   - Kaynak: `review/2026-10-28_S4_KAPALI_CEVRIM.md`
@@ -393,6 +396,27 @@ Her satır şu öğeleri içerir:
   Süre 4 sa → 22–69 dk. Kaynak: `review/2026-10-28_KALIBRASYON_S1_S3.md` Tablo 1.
 - **Tezde:** yer almaz (yalnız yöntem).
 - **Durum:** doğrulandı
+
+### D-13 — Model CloseFcn'i taban çalışma alanından `C` ve `L`'yi siliyor
+
+- **Dosya / blok:** 12.10 paketindeki `inverter_scenario1_parametric5_etiquetli`,
+  `inverter_senaryo3`, `inverter_senaryo4` ve bunlardan türetilen bütün kopyaların model
+  CloseFcn'i: `try,close(h1_SolarPowerInverter),end … clear C L efficiency f_pwm …`
+  (MathWorks "Solar Power Inverter" örneğinden kalma).
+- **Sınıf:** Paket
+- **Sorun ve kanıt:** Model kapanınca taban çalışma alanındaki `C` (= Cf, 8 µF) ve `L`
+  silinir. İP-6'da S4 modelinden blok kopyalayıp modeli kapattıktan sonra yeni modelin
+  derlemesi "Unrecognized function or variable 'C'" hatası verdi
+  (`ortalama_model_kararlilik_20261028.m`, `kur`). Geri çağrının ham pakette de olduğu
+  `blockdiagram.xml` taramasıyla doğrulandı (üç dosyada 4'er eşleşme).
+- **Tez kapsamındaki doğru durum:** Model kapanışı parametreleri değiştirmemeli (D-03'teki
+  tekrar üretilebilirlik ilkesi).
+- **Düzeltme:** Model değiştirilmez; betikler model kapandıktan sonra parametre dosyasını
+  yeniden çalıştırır (`taban()`).
+- **Etki:** Koşu sonuçlarına etkisi yok; koşu betikleri modeli en sonda kapatır.
+  Kaynak: `review/2026-10-28_KARARLILIK_BODE.md`, "Önerilen kayıtlar".
+- **Tezde:** yer almaz.
+- **Durum:** düzeltildi (betikte)
 
 ### D-07 — Cihaz eşlemesi denetimi
 

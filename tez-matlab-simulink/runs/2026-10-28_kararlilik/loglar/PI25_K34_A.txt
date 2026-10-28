@@ -1,0 +1,103 @@
+model: inverter_senaryo4_enj
+matlab: 23.2.0.2515942 (R2023b) Update 7
+baslangic: 28-Oct-2026 19:23:15
+kip: PI
+kazanc [Kp Ki Kaw Kr]: [0.03 11.3097 376.991 0]
+I_ref [A RMS]: [25 25]
+t_step: 1000
+StopTime: 0.11
+mod: accelerator
+model klasoru: C:\CODES\mit abi\tez-matlab-simulink\runs\2026-10-28_kararlilik\model_a
+InitFcn eki: K14 = 0.44343; K34 = 0.384306; phase_deg4 = 0.6575; Cdc_pos = 0.0056; Cdc_neg = 0.0056;
+tonlar [Hz]: [212.5 525 1037.5]
+ton genligi: [0.015 0.015 0.015]
+ton fazi [rad]: [0 1.047 4.189]
+pencere [s]: [0.03 0.11]
+[Warning: 'Output Port 5' of 'inverter_senaryo4_enj/Subsystem2' is not connected.] 
+[> In run_enjeksiyon_kararlilik_20261028 (line 72)] 
+[Warning: 'Output Port 6' of 'inverter_senaryo4_enj/Subsystem2' is not connected.] 
+[> In run_enjeksiyon_kararlilik_20261028 (line 72)] 
+[Warning: The specified buffer for 'inverter_senaryo4_enj/RMS1/TrueRMS /Mean value/Model/Transport Delay' was too small. During simulation,
+the buffer size was temporarily increased to 410624. In order to generate code, you need to update the buffer size parameter] 
+[> In run_enjeksiyon_kararlilik_20261028 (line 72)] 
+[Warning: The specified buffer for 'inverter_senaryo4_enj/THD/RMS1/TrueRMS /Mean value/Model/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 410624. In order to generate code, you need to update the buffer size parameter] 
+[> In run_enjeksiyon_kararlilik_20261028 (line 72)] 
+[Warning: The specified buffer for 'inverter_senaryo4_enj/THD/RMS2/RMS /Fourier1/Mean value1/Model/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 410624. In order to generate code, you need to update the buffer size parameter] 
+[> In run_enjeksiyon_kararlilik_20261028 (line 72)] 
+[Warning: The specified buffer for 'inverter_senaryo4_enj/THD/RMS2/RMS /Fourier1/Mean/Model/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 410624. In order to generate code, you need to update the buffer size parameter] 
+[> In run_enjeksiyon_kararlilik_20261028 (line 72)] 
+[Warning: The specified buffer for 'inverter_senaryo4_enj/THD2/RMS1/TrueRMS /Mean value/Model/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 410624. In order to generate code, you need to update the buffer size parameter] 
+[> In run_enjeksiyon_kararlilik_20261028 (line 72)] 
+[Warning: The specified buffer for 'inverter_senaryo4_enj/THD2/RMS2/RMS /Fourier1/Mean value1/Model/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 410624. In order to generate code, you need to update the buffer size parameter] 
+[> In run_enjeksiyon_kararlilik_20261028 (line 72)] 
+[Warning: The specified buffer for 'inverter_senaryo4_enj/THD2/RMS2/RMS /Fourier1/Mean/Model/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 410624. In order to generate code, you need to update the buffer size parameter] 
+[> In run_enjeksiyon_kararlilik_20261028 (line 72)] 
+[Warning: The specified buffer for 'inverter_senaryo4_enj/Mean9/Model/Transport Delay' was too small. During simulation, the buffer size
+was temporarily increased to 410624. In order to generate code, you need to update the buffer size parameter] 
+[> In run_enjeksiyon_kararlilik_20261028 (line 72)] 
+[Warning: The specified buffer for 'inverter_senaryo4_enj/THD/Mean/Model/Transport Delay' was too small. During simulation, the buffer size
+was temporarily increased to 410624. In order to generate code, you need to update the buffer size parameter] 
+[> In run_enjeksiyon_kararlilik_20261028 (line 72)] 
+[Warning: The specified buffer for 'inverter_senaryo4_enj/THD2/Mean/Model/Transport Delay' was too small. During simulation, the buffer
+size was temporarily increased to 410624. In order to generate code, you need to update the buffer size parameter] 
+[> In run_enjeksiyon_kararlilik_20261028 (line 72)] 
+[Warning: The specified buffer for 'inverter_senaryo4_enj/Mean10/Model/Transport Delay' was too small. During simulation, the buffer size
+was temporarily increased to 410624. In order to generate code, you need to update the buffer size parameter] 
+[> In run_enjeksiyon_kararlilik_20261028 (line 72)] 
+[Warning: The specified buffer for 'inverter_senaryo4_enj/Mean1/Model/Transport Delay' was too small. During simulation, the buffer size
+was temporarily increased to 410624. In order to generate code, you need to update the buffer size parameter] 
+[> In run_enjeksiyon_kararlilik_20261028 (line 72)] 
+[Warning: The specified buffer for 'inverter_senaryo4_enj/Mean3/Model/Transport Delay' was too small. During simulation, the buffer size
+was temporarily increased to 410624. In order to generate code, you need to update the buffer size parameter] 
+[> In run_enjeksiyon_kararlilik_20261028 (line 72)] 
+[Warning: The specified buffer for 'inverter_senaryo4_enj/Power Measurement/Continuous/Transport Delay' was too small. During simulation,
+the buffer size was temporarily increased to 410624. In order to generate code, you need to update the buffer size parameter] 
+[> In run_enjeksiyon_kararlilik_20261028 (line 72)] 
+[Warning: The specified buffer for 'inverter_senaryo4_enj/Power Measurement/Continuous/Transport Delay1' was too small. During simulation,
+the buffer size was temporarily increased to 410624. In order to generate code, you need to update the buffer size parameter] 
+[> In run_enjeksiyon_kararlilik_20261028 (line 72)] 
+[Warning: The specified buffer for 'inverter_senaryo4_enj/Mean2/Model/Transport Delay' was too small. During simulation, the buffer size
+was temporarily increased to 410624. In order to generate code, you need to update the buffer size parameter] 
+[> In run_enjeksiyon_kararlilik_20261028 (line 72)] 
+[Warning: The specified buffer for 'inverter_senaryo4_enj/Power3/Fourier/Mean value1/Model/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 410624. In order to generate code, you need to update the buffer size parameter] 
+[> In run_enjeksiyon_kararlilik_20261028 (line 72)] 
+[Warning: The specified buffer for 'inverter_senaryo4_enj/Power3/Fourier/Mean/Model/Transport Delay' was too small. During simulation, the
+buffer size was temporarily increased to 410624. In order to generate code, you need to update the buffer size parameter] 
+[> In run_enjeksiyon_kararlilik_20261028 (line 72)] 
+[Warning: The specified buffer for 'inverter_senaryo4_enj/Power3/Fourier1/Mean value1/Model/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 410624. In order to generate code, you need to update the buffer size parameter] 
+[> In run_enjeksiyon_kararlilik_20261028 (line 72)] 
+[Warning: The specified buffer for 'inverter_senaryo4_enj/Power3/Fourier1/Mean/Model/Transport Delay' was too small. During simulation, the
+buffer size was temporarily increased to 410624. In order to generate code, you need to update the buffer size parameter] 
+[> In run_enjeksiyon_kararlilik_20261028 (line 72)] 
+[Warning: The specified buffer for 'inverter_senaryo4_enj/Mean11/Model/Transport Delay' was too small. During simulation, the buffer size
+was temporarily increased to 410624. In order to generate code, you need to update the buffer size parameter] 
+[> In run_enjeksiyon_kararlilik_20261028 (line 72)] 
+     f_Hz      L_dB       L_deg      P_dB      P_deg      C_abs       C_deg       S_dB  
+    ______    _______    _______    ______    _______    ________    _______    ________
+
+     212.5     9.8961    -94.388    40.067    -78.038    0.031006     -16.35     -10.122
+       525     1.2886    -94.534    31.677    -88.326     0.03024    -6.2087     -3.3486
+    1037.5    -6.0543    -98.621    24.425    -95.465    0.029926    -3.1568    -0.40896
+
+        case        mode    I_ref_rms    IL1_1_rms_A    izleme_genlik_hatasi_pct    izleme_faz_hatasi_deg    IL1_3_rms_A    IL1_3_faz_deg    THD_I_L1_h50_pct    u_top_max    doyum_orani_pct    u_fb_1_tepe    u_fb_3_tepe    u_ff_1_tepe    u_ff_3_tepe    Vdc_ort_V    wall_s    stop_time      K14        K34      phase_deg4    Cdc_F 
+    ____________    ____    _________    ___________    ________________________    _____________________    ___________    _____________    ________________    _________    _______________    ___________    ___________    ___________    ___________    _________    ______    _________    _______    _______    __________    ______
+
+    "PI25_K34_A"    "PI"       25          24.462               -2.1518                    -4.1251             2.1336          101.94             9.4236          0.94054            0             0.1394        0.097439        0.73166       0.096077       427.44      1762.6      0.11       0.44343    0.38431      0.6575      0.0056
+
+PI25_K34_A: tamamlandi (1762.6 s)
+
+ans = 
+
+  struct with fields:
+
+    T: [3x29 table]
+    M: [1x1 struct]
+

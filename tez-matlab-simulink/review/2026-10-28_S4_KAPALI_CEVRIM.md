@@ -84,7 +84,8 @@ Kaynak: `results/KC_PI_basamak_10_25A/metrik.csv`.
 |---|---|
 | Basamak öncesi I_L1,1 (ref 10 A) | 8,91 A |
 | Basamak sonrası I_L1,1 (ref 25 A) | 24,48 A (−%2,1) |
-| Aşım (zarf) | %7,3 |
+| Aşım (son kararlı zarfa göre; İP-6 yeniden tanımı, K-21) | %0,2 |
+| i_L1 tepesi / referans tepesi (kararlı durumdaki 3. harmonik dahil) | %7,3 üstünde |
 | Yerleşme (hata bandı) | 0,44 ms |
 | Geçişte doyum | %0,8 oranında, u tepe 1,49 |
 | Basamak sonrası THD | %9,1 |
@@ -185,7 +186,7 @@ koşunun metrikleri özgün koşularla bayt bayt aynı. Ayrıntı: klasördeki `
   izliyor:
   - PI: −%2,1 genlik hatası
   - PIR: −%1,0 genlik hatası, +0,2° faz hatası, THD %8,5
-- 10 → 25 A basamağında aşım %7,3; çözüm başlangıçtan bağımsız aynı kararlı noktaya
+- 10 → 25 A basamağında son kararlı zarfa göre aşım %0,2 (İP-6, K-21); çözüm başlangıçtan bağımsız aynı kararlı noktaya
   oturuyor.
 - Önkoşul: DC baranın orta noktayı tutabilecek boyutta olması (D-11).
 - Orta akımda (10 A) susturmanın yarattığı süreksiz iletim THD'yi %20'ye çıkarıyor.
