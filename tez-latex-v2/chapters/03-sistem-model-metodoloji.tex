@@ -411,7 +411,7 @@ Benzetim modellerinin ve deney düzeneğinin elektriksel, yarı iletken, modüla
 
 \begingroup
 \setlength{\tabcolsep}{4pt}
-\begin{longtable}{>{\footnotesize\raggedright\arraybackslash}p{0.215\textwidth} >{\footnotesize\raggedright\arraybackslash}p{0.235\textwidth} >{\footnotesize\raggedright\arraybackslash}p{0.075\textwidth} >{\footnotesize\raggedright\arraybackslash}p{0.265\textwidth} >{\footnotesize\raggedright\arraybackslash}p{0.135\textwidth}}
+\begin{longtable}{>{\footnotesize\raggedright\arraybackslash}p{0.21\textwidth} >{\footnotesize\raggedright\arraybackslash}p{0.225\textwidth} >{\footnotesize\raggedright\arraybackslash}p{0.08\textwidth} >{\footnotesize\raggedright\arraybackslash}p{0.25\textwidth} >{\footnotesize\raggedright\arraybackslash}p{0.135\textwidth}}
 \caption{Elektriksel, yarı iletken, modülasyon, denetim ve sayısal çözüm parametrelerinin birleşik tablosu.}\label{tab:sistem-parametreleri}\\
 \toprule
 Parametre & Değer & Birim & Kaynak & Tür \\
@@ -498,7 +498,7 @@ Susturma ve Sin\textsuperscript{3} etkinleşme ölçütü & Senaryo boyunca sür
 Geri besleme büyüklüğü ve ölçüm süzgeci & $i_{L1}$; tek kutuplu alçak geçiren süzgeç, köşe \SI{5}{\kilo\hertz} ($f_s/2$) & -- & Denetleyici tasarımı (Bölüm~\ref{chap:sin3}) & Benzetim seçimi \\
 Akım referansı & $\sqrt{2}\,I_{\mathrm{ref}}\sin\theta_g$; şebeke fazına kilitli, ideal faz bilgisi & -- & Denetleyici tasarımı & Benzetim seçimi \\
 Oransal kazanç $K_p$ & \num{0.03} & \si{\per\ampere} & Parametre dosyası (\texttt{Kp}) & Tasarım \\
-İntegral kazancı $K_i=2\pi\cdot\SI{60}{\hertz}\cdot K_p$ & \num{11.31} & \si{\per\ampere\per\second} & Denetleyici tasarımı (PI sıfırı \SI{60}{\hertz}) & Benzetim seçimi \\
+İntegral kazancı $K_i$ & \num{11.31} ($2\pi\cdot\SI{60}{\hertz}\cdot K_p$) & \si{\per\ampere\per\second} & Denetleyici tasarımı (PI sıfırı \SI{60}{\hertz}) & Benzetim seçimi \\
 Geri hesaplamalı doyum önleme kazancı $K_{aw}$ & \num{377} ($2\pi\cdot60$) & \si{\per\second} & Denetleyici tasarımı & Benzetim seçimi \\
 PIR rezonans terimi & $K_r=\SI{0.3}{\per\ampere}$ ($10K_p$); $\omega_b=2\pi\cdot2$~\si{\radian\per\second}; $\omega_0=2\pi\cdot50$~\si{\radian\per\second} & -- & Denetleyici tasarımı & Benzetim seçimi \\
 Modülasyon ve integratör sınırı & $|u|\le1$ & -- & Denetleyici tasarımı & Benzetim seçimi \\
@@ -507,7 +507,7 @@ Denetim adımı ve hesaplama gecikmesi & \SI{1}{\micro\second}; gecikme yok (ana
 \multicolumn{5}{@{}l}{\small\textbf{Sayısal çözüm ve değerlendirme}} \\
 Çözücü & ode15s (değişken adımlı, katı sistemler için) & -- & Model yapılandırması & Benzetim seçimi \\
 En büyük çözücü adımı & \num{1} & \si{\micro\second} & Parametre dosyası (\texttt{sim\_max\_step}) & Benzetim seçimi \\
-Bağıl, mutlak ve Simscape artık toleransı & \num{1e-6}; \num{1e-6}; \num{1e-6} & -- & Parametre dosyası (\texttt{sim\_rel\_tol}, \texttt{sim\_abs\_tol}, \texttt{simscape\_residual\_tolerance}) & Benzetim seçimi \\
+Bağıl, mutlak ve Simscape artık toleransı & \num{1e-6}; \num{1e-6}; \num{1e-6} & -- & Parametre dosyası (\texttt{sim\_rel\_tol}, \texttt{sim\_abs\_tol}, \texttt{simscape\_residual\_\allowbreak tolerance}) & Benzetim seçimi \\
 Simscape yerel çözücüsü ve powergui & Yerel çözücü kapalı (kayıtlı \SI{0.1}{\micro\second} adımı etkisiz); powergui sürekli kip & -- & Model yapılandırması & Benzetim seçimi \\
 Benzetim süresi & S1--S3 \num{0.1}; S4 P ve PI \num{0.06}; S4 PIR \num{0.2} & \si{\second} & Koşu yapılandırması & Benzetim seçimi \\
 Değerlendirme penceresi ve THD tanımı & Son tam şebeke periyodu (\SI{20}{\milli\second}); THD, temel bileşene göre bir periyotluk kayan pencereyle & -- & Modelin ortalama, RMS ve THD blokları (\SI{50}{\hertz}) & Benzetim seçimi \\
