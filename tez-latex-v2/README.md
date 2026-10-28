@@ -39,7 +39,12 @@ klasör tek başına taşınamaz; proje köküyle birlikte taşınmalıdır.
 - Her bölüm/kesim köprüyle açılır (önceki bölümden devir + neden şimdi + ne yapacak).
 - Şekil/tablo/denklem yalnız `\label`/`\ref`; metin içinde amaç–bulgu–sınır
   yorumu olmadan "verilmiştir" denip geçilmez.
-- "Bu / bu nedenle" zincirleri kurulmaz; gösterme zamiri yerine kavramın adı.
+- Göndergesel bağlaç ve gösterme sözcükleri kullanılmaz: "bu", "bunlar",
+  "bundan dolayı", "bu nedenle", "bu yüzden", "bu durum", "buna göre",
+  "bununla birlikte", "söz konusu". Yerine kavramın kendi adı yazılır ya da
+  cümle neden–sonuç yapısıyla yeniden kurulur ("Orta nokta salınımı … ;
+  sonuç olarak …" değil, "DA bara orta nokta salınımı akım genliğini sınırlar").
+  "Bu çalışmada" yerine "tezde" ya da "önerilen yöntemde" yazılır.
 - İddialar metrik + baz çizgi + koşul + belirsizlikle yazılır.
 - Benzetim ve deney sonuçları ayrı raporlanır; DENEME/temsilî veriler tez
   bulgusu gibi sunulmaz.

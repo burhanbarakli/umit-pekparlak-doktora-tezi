@@ -34,8 +34,8 @@ Durum değerleri: ☐ başlamadı · ◐ sürüyor · ☑ bitti
 | İP-5 | S4 kapalı çevrim modelinin kurulması (D-02, K-05): önce P, sonra PI; 2,3 / 10 / 25 A taraması. Kesin tarama `KC_*` = kalibre S3 ileri beslemesi (K-20) + DC bara 2 × 5,6 mF (D-11) | `build_s4_closed_loop_20261028.m` → `review/2026-10-28_S4_KAPALI_CEVRIM.md` + `runs/2026-10-28_s4_kapali_cevrim/s4_tarama_KC.csv` (D-02, D-11 doğrulandı) | 8 | İP-2, İP-4 | ☑ |
 | İP-6 | Kararlılık analizi (K-07): L/S/T Bode eğrileri, kazanç/faz marjı, K3 açık/kapalı; kutup karşılaştırması; L_g duyarlılığı | S4 doğrusallaştırması → `review/2026-10-28_KARARLILIK_BODE.md` + `runs/2026-10-28_kararlilik/` (vektörel PDF + CSV); K-21, D-13 | 7 | İP-5 | ☑ |
 | İP-7 | Tek parametre tablosu (K-09, K-22) | 12.10 m-dosyası → `tab:sistem-parametreleri` (75 satır, 7 grup; değer, birim, kaynak, tür) + `review/2026-10-28_PARAMETRE_TABLOSU.md`; D-14. Derleme 29.10.2026: 171 sayfa, Undefined yok, tablo s. 36–43 taşmasız | 9 | İP-2 | ☑ |
-| İP-8 | Tez metni: bölümlere aktarım ve "düşük akımda benzetim modelleme" kesimi | review notları → v2 Bölüm 3–6 + model düzeltme kesimi (K-13) | 2, 3, 8, 10 | İP-1…İP-7 | ☐ |
-| İP-9 | Bütün `\eksikistek` barlarının kapatılması (13 adet, 03:505 kapandı → 12; tablo aşağıda) | İP-1…İP-8 → 0 bar | 10, 11 | İP-8 | ☐ |
+| İP-8 | Tez metni: bölümlere aktarım ve "düşük akımda benzetim modelleme" kesimi | review notları → v2 Bölüm 2–8: `sec:model-dogrulama-duzeltme`, `sec:dusuk-akim-modelleme`, `sec:s4-kapali-cevrim`, `sec:kararlilik-bode`, `sec:kalibrasyon` (29.10.2026; 197 sayfa, Undefined/Overfull yok; "bu" ailesi 0) | 2, 3, 8, 10 | İP-1…İP-7 | ☑ |
+| İP-9 | Bütün `\eksikistek` barlarının kapatılması (13 adet, 03:505 kapandı → 12; tablo aşağıda) | İP-1…İP-8 → 0 bar | 10, 11 | İP-8 | ◐ (12/13 kapandı; kalan 01:56 → İP-11) |
 | İP-10 | Başlık, akış, katkı ilanı ve "eski tez" temizliği (K-11) | metadata + Bölüm 1 + Bölüm 8 | 1, 2, 3 | İP-8 | ☐ |
 | İP-11 | Şekiller: genel blok diyagram, çalışma modu şekilleri, düşük çözünürlüklü görsellerin yenilenmesi | TikZ/MATLAB vektör → `figures/` | 4, 5, 6 | İP-8 | ☐ |
 | İP-12 | Literatür sentezi ve karşılaştırma tablosu | Bölüm 2 | 11 | — | ☐ |
@@ -65,18 +65,18 @@ uzun bir MATLAB koşusudur (Normal modda ~2 saat, tek Accelerator koşusunda ~30
 | Bölüm:satır | Bar | Kapanış |
 |---|---|---|
 | 01:56 | Problem–yöntem–katkı akış şekli | İP-11 TikZ şekli |
-| 02:267 | Gerçek FV profili ve ticari evirici ham kaydı | Sınırlılık (K-12/İ4); temsilî profil "motivasyon" olarak kalır |
-| 02:284 | Kapı işaretleri ve endüktör akımı | İP-1/İP-4 koşusundan S2 kapı + iL1 dalga biçimi |
-| 03:406 | Gerçek denetim kodu ve kapı mantığı | İ2: modelden okunan PWM yapısı + İP-2 |
+| 02:267 | Gerçek FV profili ve ticari evirici ham kaydı | **Kapandı** — İP-8 (K-12/İ4 sınırlılık paragrafı) |
+| 02:284 | Kapı işaretleri ve endüktör akımı | **Kapandı** — İP-8 (`fig:s2-kapi-isaretleri`, `fig:s1-s2-kalibre-dalga`) |
+| 03:406 | Gerçek denetim kodu ve kapı mantığı | **Kapandı** — İP-8 (`sec:denetim-modelden`) |
 | 03:505 | Kalan parametrelerin kilitlenmesi | **Kapandı** (İP-7 tablosu, K-09/K-22) |
-| 04:138 | Kapı mantığı ve senaryo eşlemesi | İP-1 + İP-2 (R2023b'de koşu tamam) |
-| 04:289 | Verim ve güç adlandırma çelişkileri | İP-4: P_dc/P_ac, işaret ve pencere tanımı; anma güç ifadeleri K-08 |
-| 05:42 | Gerçek Sin³ kodu ve harmonik bağlaşım | K-06a (modelden okunan biçim) + İP-6 notu Katman 1 ve Bulgu 3–4 (150 Hz bastırması \|S\| = 0,23) |
-| 05:240 | Gerçek parametrelerle kararlılık doğrulaması | İP-6 notu (K-21); İP-8/İP-9'da metne aktarılır |
-| 06:6 | Deney protokolü ve ham kayıtlar | Sınırlılık (K-10) + elde olan ekranlar |
-| 06:465 | Düşük–orta–anma deney seti | İP-5 benzetim taraması + sınırlılık (K-08, K-10) |
-| 07:259 | GT-tipi model paketi | K-12: nitel mimari + sınırlılık |
-| 07:317 | Tetikleme mantığı ve gömülü yazılım | K-12: nitel + sınırlılık |
+| 04:138 | Kapı mantığı ve senaryo eşlemesi | **Kapandı** — İP-8 (`sec:model-kapi-mantigi`) |
+| 04:289 | Verim ve güç adlandırma çelişkileri | **Kapandı** — İP-8 (`sec:guc-tanimlari`, `tab:s1-s2-kalibre`) |
+| 05:42 | Gerçek Sin³ kodu ve harmonik bağlaşım | **Kapandı** — İP-8 (K-06a + harmonik bağlaşım ölçümü) |
+| 05:240 | Gerçek parametrelerle kararlılık doğrulaması | **Kapandı** — İP-8 (`sec:kararlilik-bode`) |
+| 06:6 | Deney protokolü ve ham kayıtlar | **Kapandı** — İP-8 (K-10 deneysel kanıt kapsamı) |
+| 06:465 | Düşük–orta–anma deney seti | **Kapandı** — İP-8 (`sec:s4-kapali-cevrim` + K-08/K-10) |
+| 07:259 | GT-tipi model paketi | **Kapandı** — İP-8 (K-12 nitel + sınırlılık) |
+| 07:317 | Tetikleme mantığı ve gömülü yazılım | **Kapandı** — İP-8 (K-12 nitel + sınırlılık) |
 
 ## TODO.md R01–R16 → kapanış (K-16)
 

@@ -111,7 +111,7 @@ mekanizma koşulardan ölçüldü:
 1. **S2/S3 süreksiz iletim.** Kutup gerilimi üç seviyeden hiçbirinde değilken köprü
    akımı sıfırdır ve kutup filtre kapasitörü gerilimini izler. Bu durumun zaman oranı
    (`sureksiz_iletim.csv`, 0,08–0,10 s): S1 %0,5 (yalnız ölü zaman geçişleri), S2
-   %12,4, S3 %22,6 (kalibre noktada ~%26). Bu, tezin senkron olmayan buck eşdeğeriyle
+   %12,4, S3 %22,6 (kalibre noktada S2 %15,0, S3 %23,5; `sureksiz_iletim.csv`; 29.10 düzeltmesi: önceki "~%26" yanlıştı). Bu, tezin senkron olmayan buck eşdeğeriyle
    aynı davranıştır: susturmalı çalışmada köprü düşük akımda akım kaynağına
    yaklaşır, V_A şebeke tarafından belirlenir.
 2. **S1 ölü zaman.** Tamamlayıcı anahtarlamada akım dalgalanması her periyotta sıfırı

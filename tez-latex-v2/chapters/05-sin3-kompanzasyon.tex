@@ -1,16 +1,16 @@
 \chapter{SİN\texorpdfstring{\textsuperscript{3}}{3} TABANLI İLERİ BESLEME KOMPANZASYONU VE KAPALI ÇEVRİM ANALİZİ}
 \label{chap:sin3}
 
-Nötr anahtar susturma yöntemi ters akım dolaşımını azaltmayı hedeflerken akımı süreksiz iletime zorlamakta ve özellikle düşük mertebeli harmonikleri büyütmektedir. Bölüm~\ref{chap:anahtarlama} altındaki senaryo kayıtları, çıkış akımı THD değerinin klasik yöntemdeki \%2,14 düzeyinden susturma sonrasında \%46,35 düzeyine çıktığını; Sin\textsuperscript{3} kompanzasyonu eklendiğinde ise \%7,79'a gerilediğini göstermiştir. Bölümün amacı bu iyileşmenin arkasındaki matematiksel yapıyı kurmak, kompanzasyon katsayılarını doğru trigonometrik özdeşlikle ve doğrulanmış parametre setiyle yeniden hesaplamak ve kapalı çevrim ile kararlılık incelemesinin yöntemini vermektir.
+Nötr anahtar susturma yöntemi ters akım dolaşımını keserken akımı süreksiz iletime zorlamakta ve özellikle düşük mertebeli harmonikleri büyütmektedir. Bölüm~\ref{chap:anahtarlama} altındaki senaryo benzetim kayıtlarında çıkış akımı THD değeri klasik yöntemde \%2,14 iken susturma sonrasında \%46,35'e çıkmış, Sin\textsuperscript{3} kompanzasyonu eklendiğinde \%7,79'a gerilemiştir. Bölümün amacı, THD iyileşmesinin arkasındaki matematiksel yapıyı kurmak; Sin\textsuperscript{3} teriminin benzetim modelindeki biçimini ve kompanzasyon katsayılarını doğru trigonometrik özdeşlikle vermek; ardından akım geri beslemeli Senaryo~4 (S4) modelinde düşük, orta ve anma akımında kapalı çevrim başarımını ve kararlılığı göstermektir. Sin\textsuperscript{3} teriminin bir denetleyici değil, modülasyon toplamına çevrim dışından eklenen bir ileri besleme girişi olduğu ve kararlılık marjlarını değiştirmediği Kesim~\ref{sec:kararlilik-bode} altında analitik, frekans alanı ve zaman alanı kanıtlarıyla gösterilmektedir.
 
 \section{Sin\texorpdfstring{\textsuperscript{3}}{3} Bileşeninin Matematiksel Tanımı}
 
-Zaman $t$, şebeke temel açısal frekansı $\omega_0$, PLL faz başlangıcı/ofseti $\phi$ ve boyutsuz elektriksel açı $\theta=\omega_0t+\phi$ ile gösterilsin. Kullanılan trigonometrik özdeşlik
+Zaman $t$, şebeke temel açısal frekansı $\omega_0$, PLL faz başlangıcı $\phi$ ve boyutsuz elektriksel açı $\theta=\omega_0t+\phi$ ile gösterilsin. Kullanılan trigonometrik özdeşlik
 \begin{equation}
   \sin^3\theta=\frac{3}{4}\sin\theta-\frac{1}{4}\sin(3\theta)
   \label{eq:sin3-acilimi}
 \end{equation}
-biçimindedir. Eşitlik~\eqref{eq:sin3-acilimi} uyarınca $\sin^3\theta$ terimi yalnız üçüncü harmonikten oluşmaz; temel bileşen ile ters işaretli üçüncü harmonik bileşenini sabit bir oranla birlikte taşır. Boyutsuz Sin\textsuperscript{3} ileri besleme komutu $u_{\mathrm{ff},\sin^3}(\theta)$, temel bileşen kazanç katsayısı $K_1$ ve küp teriminin kazanç katsayısı $K_3$ ile
+biçimindedir. Eşitlik~\eqref{eq:sin3-acilimi} uyarınca $\sin^3\theta$ terimi yalnız üçüncü harmonikten oluşmaz; temel bileşen ile ters işaretli üçüncü harmonik bileşenini sabit bir oranla birlikte taşır. Boyutsuz Sin\textsuperscript{3} ileri besleme komutu $u_{\mathrm{ff},\sin^3}(\theta)$, temel bileşen kazancı $K_1$ ve küp teriminin kazancı $K_3$ ile
 \begin{equation}
   u_{\mathrm{ff},\sin^3}(\theta)=K_1\sin\theta+K_3\sin^3\theta
   \label{eq:sin3-genel-komut}
@@ -22,33 +22,37 @@ olarak tanımlandığında Eşitlik~\eqref{eq:sin3-acilimi} kullanılarak
   =A_1\sin\theta+A_3\sin(3\theta)
   \label{eq:sin3-esdeger-katsayilar}
 \end{equation}
-elde edilir. Eşitlik~\eqref{eq:sin3-genel-komut} ile Eşitlik~\eqref{eq:sin3-esdeger-katsayilar} arasındaki dönüşümde $A_1=K_1+3K_3/4$ temel sinüs katsayısını, $A_3=-K_3/4$ ise doğrudan üçüncü harmonik katsayısını gösterir. Yazılımda doğrudan $\sin(3\theta)$ kullanılması ile $\sin^3\theta$ kullanılması aynı işlem değildir; gerçek uygulama kodu geldiğinde kullanılan gösterim, katsayı ve işaret Eşitlik~\eqref{eq:sin3-esdeger-katsayilar} üzerinden kilitlenecektir.
+elde edilir. Eşitlik~\eqref{eq:sin3-esdeger-katsayilar} içinde $A_1=K_1+3K_3/4$ temel sinüs katsayısını, $A_3=-K_3/4$ ise doğrudan üçüncü harmonik katsayısını gösterir. Doğrudan $\sin(3\theta)$ enjeksiyonu ile $\sin^3\theta$ terimi aynı işlem değildir: aynı sayısal $K_3$ değeri iki gösterimde farklı temel ve üçüncü harmonik genliği üretir.
+
+Uygulamanın yürütülebilir tanımı Simulink benzetim modelleridir; gösterim, modelin blok yapısından okunmuştur. Senaryo~3 (S3) modelinde birim genlikli sinüs işaretinin küpü alınmakta ve $K_3$ kazancıyla çarpılarak temel bileşen terimine eklenmektedir; terim pozitif işaretlidir, ek bir normalizasyon içermez ve modelde $\sin(3\theta)$ üreten blok bulunmamaktadır. Toplam, görev oranı komutuna açık çevrim ileri besleme olarak girer. Parametre dosyasındaki ilk değerlerle Eşitlik~\eqref{eq:sin3-esdeger-katsayilar} $m(\theta)=0{,}7425\sin\theta-0{,}0975\sin3\theta$ verir ve komutun tepe değeri $K_1+K_3=0{,}84$'tür. Kesim~\ref{sec:kalibrasyon} altında deney özetine kalibre edilen S3 kazançlarıyla (Tablo~\ref{tab:sistem-parametreleri}) eşdeğer katsayılar $A_1=0{,}7317$ ve $A_3=-0{,}0961$ olur.
+
+Tezde iki katsayı takımı ayrı adlandırılmaktadır. $(D_1,D_3)$, Kesim~\ref{sec:sin3-yeniden-tarama} altındaki tek endüktanslı analitik modelin görev oranı katsayılarıdır ve aday değer niteliğindedir. $(K_{1x},K_{3x})$ ise $x$ numaralı senaryonun anahtarlamalı benzetim modelinde kullanılan modülasyon kazançlarıdır; S3 ve S4 değerleri kalibre değerlerdir. İki takım aynı simgeyle anılmamakta ve birbirinin yerine kullanılmamaktadır.
 
 \section{Basitleştirilmiş Türetimlerin Geçerlilik Sınırı}
 
-Kompanzasyon katsayılarının tek bir cebirsel iptal koşulundan (örneğin sabit bir $K_1/K_3$ oranından) türetilmesi cazip görünse de anahtarlamalı dönüştürücüde geçerli değildir. Bunun üç nedeni vardır. Birincisi, belirli bir çalışma noktasında gözlenen temel ve üçüncü harmonik genliklerinin oranı, girişten bağımsız bir sistem transfer fonksiyonu değildir; yalnız o dalga biçimini ve o çalışma noktasını tarif eder. İkincisi, anahtarlamalı, doğrusal olmayan veya periyodik zamanla değişen bir sistemde süperpozisyon kanıtlanmadan uygulanamaz; giriş dalga biçimi değiştirildiğinde aynı skaler oranın yeniden kullanılması örtük bir doğrusallık varsayımıdır. Üçüncüsü, komutun frekans içeriği ile dönüştürücünün çıkış akımı aynı büyüklük değildir; çıkıştaki harmonik iptal koşulu, bitki dinamiği ve harmonikler arası bağlaşım bilinmeden yalnız trigonometrik özdeşlikten çıkarılamaz.
+Kompanzasyon katsayılarının tek bir cebirsel iptal koşulundan, örneğin sabit bir $K_1/K_3$ oranından türetilmesi anahtarlamalı dönüştürücüde geçerli değildir. Birinci gerekçe, belirli bir çalışma noktasında gözlenen temel ve üçüncü harmonik genliklerinin oranının girişten bağımsız bir sistem aktarım fonksiyonu olmamasıdır; oran yalnız o dalga biçimini ve o çalışma noktasını tarif eder. İkinci gerekçe, anahtarlamalı, doğrusal olmayan ya da periyodik zamanla değişen bir sistemde süperpozisyonun kanıtlanmadan uygulanamamasıdır; giriş dalga biçimi değiştiğinde aynı skaler oranın yeniden kullanılması örtük bir doğrusallık varsayımıdır. Üçüncü gerekçe, komutun frekans içeriği ile dönüştürücünün çıkış akımının aynı büyüklük olmamasıdır; çıkıştaki harmonik iptal koşulu, bitki dinamiği ve harmonikler arası bağlaşım bilinmeden yalnız trigonometrik özdeşlikten çıkarılamaz.
 
-Periyodik zamanla değişen sistemin doğru genel çerçevesi harmonik transfer fonksiyonudur. Kesilmiş harmonik giriş ve çıkış vektörleri $\mathbf{U}(s)$ ile $\mathbf{I}(s)$, harmonik transfer matrisi $\mathbf{G}_{\mathrm{H}}(s)$, matrisin $(k,n)$ elemanı $G_{k,n}(s)$ ve kesme mertebesi $N_h$ ile gösterildiğinde
+Periyodik zamanla değişen sistemin genel çerçevesi harmonik aktarım fonksiyonudur (harmonic transfer function, HTF). Kesilmiş harmonik giriş ve çıkış vektörleri $\mathbf{U}(s)$ ile $\mathbf{I}(s)$, harmonik aktarım matrisi $\mathbf{G}_{\mathrm{H}}(s)$, matrisin $(k,n)$ elemanı $G_{k,n}(s)$ ve kesme mertebesi $N_h$ ile gösterildiğinde
 \begin{equation}
   \mathbf{I}(s)=\mathbf{G}_{\mathrm{H}}(s)\mathbf{U}(s),
   \qquad
   I_k(s)=\sum_{n=-N_h}^{N_h}G_{k,n}(s)U_n(s)
   \label{eq:htf-matris-iliskisi}
 \end{equation}
-yazılır \citep{Wereley1991,Liao2022}. Eşitlik~\eqref{eq:htf-matris-iliskisi}, tek bir giriş harmoniğinin birden fazla çıkış harmoniğine bağlaşabileceğini gösterir. Geçerli bir HTF modeli için çalışma noktası, frekans taraması, $N_h$ ve kesme hatası birlikte belirtilmelidir. Kompanzasyon katsayıları bu çerçevede ya periyodik çalışma noktası çevresinde doğrusallaştırılmış model üzerinden ya da küçük işaretli temel ve üçüncü harmonik enjeksiyon ölçümleriyle belirlenmelidir; katsayıların çalışma noktasına bağlılığı Kesim~\ref{sec:sin3-yeniden-tarama} altında sayısal olarak da gösterilmektedir.
+yazılır \citep{Wereley1991,Liao2022}. Eşitlik~\eqref{eq:htf-matris-iliskisi}, tek bir giriş harmoniğinin birden fazla çıkış harmoniğine bağlaşabileceğini gösterir. Geçerli bir HTF modeli için çalışma noktası, frekans taraması, $N_h$ ve kesme hatası birlikte belirtilmelidir. Kompanzasyon katsayıları HTF çerçevesinde ya periyodik çalışma noktası çevresinde doğrusallaştırılmış model üzerinden ya da küçük işaretli harmonik enjeksiyon ölçümleriyle belirlenmelidir; katsayıların çalışma noktasına bağlılığı Kesim~\ref{sec:sin3-yeniden-tarama} altında sayısal olarak gösterilmektedir.
 
-Kompanzasyonun hedefi, akımın ölçülen üçüncü harmonik fazına ters yönde bir modülasyon bileşeni üretirken temel akım genliğini korumaktır. Uygulama kazancı yalnız THD eniyilemesiyle seçilmemeli; modülasyon doygunluğu, DA bara kullanımı, akım RMS değeri, kontrol eforu ve düşük güçten orta güce geçişte süreklilik koşulları birlikte değerlendirilmelidir. Üçüncü harmonik enjeksiyonunun modülasyon kullanımını değiştirebildiği bilinse de buradaki amaç klasik üçüncü harmonik PWM ile DA bara kullanımını artırmak değil, nötr susturmanın oluşturduğu akım zarfı bozulmasını azaltmaktır \citep{Holmes2003}.
+Tezde temel--üçüncü harmonik bağlaşımı, anma akımı çalışma noktasında anahtarlamalı S4 modeli üzerinden doğrudan ölçülmüştür. $K_3$ açık ve kapalı iki koşu arasındaki $L_1$ akımı farkı, Sin\textsuperscript{3} girişinin akıma katkısını verir. Anahtarlamalı modelde fark temel bileşende \SI{4.44}{\ampere} RMS, $\angle-43{,}4^{\circ}$; üçüncü harmonikte \SI{2.32}{\ampere} RMS, $\angle110{,}4^{\circ}$'dir. Doğrusal zamanla değişmeyen ortalama model aynı farkı \SI{4.51}{\ampere}, $\angle-40{,}7^{\circ}$ ve \SI{2.23}{\ampere}, $\angle102{,}9^{\circ}$ olarak öngörmektedir. Ortalama modelde çapraz harmonik terimi bulunmadığından, \SI{25}{\ampere} noktasında Eşitlik~\eqref{eq:htf-matris-iliskisi} matrisinin köşegen dışı katkısı en çok temel bileşende \%1,5 ve $2{,}7^{\circ}$, üçüncü harmonikte \%3,8 ve $7{,}5^{\circ}$ düzeyindedir. Düşük akımda süreksiz iletim köprünün etkin kazancını frekansla değiştirdiğinden (Kesim~\ref{sec:kararlilik-bode}) aynı sonuç \SI{2.3}{\ampere} noktasına genellenmemektedir.
 
-\eksikistek{Gerçek Sin\textsuperscript{3} kodu ve harmonik bağlaşım ölçümü}{(1) Uygulamadaki ileri besleme ifadesinin $K_1\sin\theta+K_3\sin^3\theta$ mı yoksa $K_1\sin\theta+K_3\sin(3\theta)$ mı olduğunu; işaret, normalizasyon, birim, doyum ve etkinleştirme koşullarıyla birlikte gösteren kaynak kodu istiyoruz (istek listesi R07). (2) Temel ve üçüncü harmonik giriş--çıkış bağlaşımını belirlemek için model doğrusallaştırması veya küçük işaretli harmonik enjeksiyon taraması istiyoruz; Eşitlik~\eqref{eq:htf-matris-iliskisi} bu veriler olmadan sayısallaştırılamaz.}
+Kompanzasyonun hedefi, akımın üçüncü harmonik fazına ters yönde bir modülasyon bileşeni üretirken temel akım genliğini korumaktır. Uygulama kazancı yalnız THD eniyilemesiyle seçilmemeli; modülasyon doygunluğu, DA bara kullanımı, akım RMS değeri, denetim eforu ve düşük güçten orta güce geçişte süreklilik koşulları birlikte değerlendirilmelidir. Üçüncü harmonik enjeksiyonunun modülasyon kullanımını değiştirebildiği bilinmektedir; tezdeki amaç ise klasik üçüncü harmonik PWM ile DA bara kullanımını artırmak değil, nötr susturmanın oluşturduğu akım zarfı bozulmasını azaltmaktır \citep{Holmes2003}.
 
 \section{Düşük Güçte Harmonik Oluşum Mekanizması}
 
-Şekil~\ref{fig:senkron-buck-esdeger} altında verilen iki-buck eşdeğeri, pozitif ve negatif alternansların aynı fiziksel mekanizmayla incelenmesini sağlar. Pozitif alternansta etkin yarım bara gerilimi $V_h$, anık şebeke gerilimi $v_g(\theta)>0$, anahtarlama periyodu $T_s$, boyutsuz görev oranı $d(\theta)\in[0,1]$ ve eşdeğer endüktans $L$ olarak tanımlansın. İdeal anahtarlama-periyodu modeli ve periyot boyunca yaklaşık sabit gerilim kabulü altında anahtar iletim süresindeki akım tepe değeri $I_{\mathrm{pk}}(\theta)$
+Şekil~\ref{fig:senkron-buck-esdeger} altında verilen iki-buck eşdeğeri, pozitif ve negatif alternansların aynı fiziksel mekanizmayla incelenmesini sağlar. Pozitif alternansta etkin yarım bara gerilimi $V_h$, anlık şebeke gerilimi $v_g(\theta)>0$, anahtarlama periyodu $T_s$, boyutsuz görev oranı $d(\theta)\in[0,1]$ ve eşdeğer endüktans $L$ olarak tanımlansın. İdeal anahtarlama periyodu modeli ve periyot boyunca yaklaşık sabit gerilim kabulü altında anahtar iletim süresindeki akım tepe değeri $I_{\mathrm{pk}}(\theta)$
 \begin{equation}
   I_{\mathrm{pk}}(\theta)=\frac{V_h-v_g(\theta)}{L}\,d(\theta)T_s
   \label{eq:dcm-tepe-akimi}
 \end{equation}
-olur. Eşitlik~\eqref{eq:dcm-tepe-akimi}, iletim başlangıcında akımın sıfır olduğu DCM darbesi içindir. Anahtar kesime girdiğinde akım $-v_g/L$ eğimiyle sıfıra düşerse, gerçek boşalma süresinin $T_s$'ye oranı olan boyutsuz $\delta(\theta)$
+olur. Eşitlik~\eqref{eq:dcm-tepe-akimi}, iletim başlangıcında akımın sıfır olduğu süreksiz iletim (discontinuous conduction mode, DCM) darbesi içindir. Anahtar kesime girdiğinde akım $-v_g/L$ eğimiyle sıfıra düşerse, boşalma süresinin $T_s$'ye oranı olan boyutsuz $\delta(\theta)$
 \begin{equation}
   \delta(\theta)=\left(\frac{V_h}{v_g(\theta)}-1\right)d(\theta)
   \label{eq:dcm-bosalma-suresi}
@@ -74,14 +78,14 @@ DCM koşulu darbenin aynı anahtarlama periyodunda sona ermesini gerektirir:
   d(\theta)\leq d_{\mathrm{krit}}(\theta)=\frac{v_g(\theta)}{V_h}.
   \label{eq:dcm-kritik-gorev}
 \end{equation}
-Eşitlik~\eqref{eq:dcm-kritik-gorev} içindeki kritik görev oranı faz açısına ve gerilim oranına bağlıdır; tek bir evrensel sayı değildir. Doğrulanmış parametre setinde ($V_h=\SI{215.75}{\volt}$, $V_m=\SI{169.4}{\volt}$) tepe değeri $V_m/V_h\simeq0{,}785$'tir ve Kesim~\ref{sec:sin3-yeniden-tarama} altındaki sayısal tarama, $d_m$ bu sınırı aştığında alternans ortasında CCM'ye geçildiğini doğrulamaktadır. Sıfır geçişte $v_g\rightarrow0$ olduğundan ideal ifadenin tek başına kullanılması uygun değildir; ölü zaman, minimum darbe ve sonlu akım eşiği ayrıca uygulanmalıdır.
+Eşitlik~\eqref{eq:dcm-kritik-gorev} içindeki kritik görev oranı faz açısına ve gerilim oranına bağlıdır; tek bir evrensel sayı değildir. Senaryo~1 (S1) çalışma noktasının DA bara ve şebeke gerilimleriyle (Tablo~\ref{tab:sistem-parametreleri}) kritik görev oranının tepe değeri $V_m/V_h\simeq0{,}785$'tir ve Kesim~\ref{sec:sin3-yeniden-tarama} altındaki sayısal tarama, $d_m$ sınırı aştığında alternans ortasında sürekli iletime (continuous conduction mode, CCM) geçildiğini doğrulamaktadır. Sıfır geçişte $v_g\rightarrow0$ olduğundan ideal ifadenin tek başına kullanılması uygun değildir; ölü zaman, en küçük darbe süresi ve sonlu akım eşiği ayrıca uygulanmalıdır.
 
-DCM zarfı ile sürekli iletim modeli ortak bir görev oranı üzerinden birleştirilebilir. Temel ve üçüncü harmonik görev katsayıları $D_1$ ve $D_3$ kullanılarak
+DCM zarfı ile sürekli iletim modeli ortak bir görev oranı üzerinden birleştirilebilir. Analitik modelin temel ve küp terimi görev katsayıları $D_1$ ve $D_3$ kullanılarak
 \begin{equation}
   d(\theta)=D_1\sin\theta+D_3\sin^3\theta
   \label{eq:ccm-gorev-harmonik}
 \end{equation}
-yazılsın; Eşitlik~\eqref{eq:ccm-gorev-harmonik} içindeki $D_1$ ve $D_3$, Eşitlik~\eqref{eq:sin3-esdeger-katsayilar} altındaki $K_1$ ile $K_3$'e uygulama ölçeklemesi sonrası karşılık gelen görev katsayılarıdır. Pozitif alternansta kayıpsız CCM ortalama diferansiyel denklemi
+yazılsın. Eşitlik~\eqref{eq:ccm-gorev-harmonik}, Eşitlik~\eqref{eq:sin3-genel-komut} ile aynı yapıdadır; ancak $D_1$ ve $D_3$ tek endüktanslı kayıpsız modelin katsayılarıdır ve benzetim modelinin $K_{1x}$, $K_{3x}$ kazançlarına bire bir eşit değildir. Pozitif alternansta kayıpsız CCM ortalama diferansiyel denklemi
 \begin{equation}
   L\frac{\mathrm{d}\bar i_{L,\mathrm{CCM}}}{\mathrm{d}t}
   =V_h d(\theta)-V_m\sin\theta
@@ -94,7 +98,7 @@ biçimindedir \citep{Erickson2001,Mohan2003}. Eşitlik~\eqref{eq:ccm-diferansiye
   -\frac{V_hD_3}{3\omega_0L}\cos(3\theta)
   \label{eq:ccm-akim-cozumu}
 \end{equation}
-elde edilir; burada $\sin^3\theta$ önce Eşitlik~\eqref{eq:sin3-acilimi} ile harmonik bileşenlerine ayrılmıştır ve $I_0$, DCM--CCM geçişinde akım sürekliliğinden belirlenen integrasyon sabitidir. Anahtarlama-periyodu ortalama akımının parçalı modeli
+elde edilir; $\sin^3\theta$ önce Eşitlik~\eqref{eq:sin3-acilimi} ile harmonik bileşenlerine ayrılmıştır ve $I_0$, DCM--CCM geçişinde akım sürekliliğinden belirlenen integrasyon sabitidir. Anahtarlama periyodu ortalama akımının parçalı modeli
 \begin{equation}
   \bar i_L(\theta)=
   \begin{cases}
@@ -111,12 +115,12 @@ ile ifade edilir. Tam periyot şebeke akımı $i_g(\theta)$ yarım dalga tek sim
 \end{equation}
 olarak hesaplanır \citep{Oppenheim1997}. Eşitlik~\eqref{eq:akim-fourier-katsayisi} içindeki $B_1$ ve $B_3$ sırasıyla temel ve üçüncü harmonik sinüs katsayılarını verir; yarım dalga simetrisi sağlanmazsa DA ve kosinüs katsayıları da ayrıca hesaplanmalıdır.
 
-\section{Katsayıların Doğru Özdeşlikle Yeniden Hesabı}
+\section{Analitik Katsayıların Doğru Özdeşlikle Hesabı}
 \label{sec:sin3-yeniden-tarama}
 
-Eşitlik~\eqref{eq:dcm-tepe-akimi}--\eqref{eq:dcm-ccm-parcali-model} ile kurulan parçalı model, kompanzasyon katsayılarının sayısal olarak taranmasına olanak tanır. Tarama 01.09.2026 tarihli MATLAB koşusuyla, doğrulanmış parametre seti ($V_{\mathrm{dc}}=\SI{431.5}{\volt}$, $V_h=\SI{215.75}{\volt}$, $V_m=\SI{169.4}{\volt}$, $f_0=\SI{50}{\hertz}$, $f_s=\SI{10}{\kilo\hertz}$, $L=L_1=\SI{600}{\micro\henry}$) üzerinde yapılmıştır. Model, nötr anahtarı susturulmuş faz kolunu anahtarlama periyodu bazında parçalı doğrusal çözmekte; susturma nedeniyle akım tabanı sıfırda kesilmekte ve DCM--CCM geçişleri periyotlar arası başlangıç akımıyla doğal olarak oluşmaktadır. Kanıt sınırı açıktır: bu, Tablo~\ref{tab:model-katmanlari} içindeki analitik/ortalama katmandır; ölü zaman, denetleyici, $C_f$--$L_2$ dinamiği ve kayıplar içermez, verim sonucu üretmez.
+Eşitlik~\eqref{eq:dcm-tepe-akimi}--\eqref{eq:dcm-ccm-parcali-model} ile kurulan parçalı model, kompanzasyon katsayılarının sayısal olarak taranmasına olanak tanır. Tarama 01.09.2026 tarihli MATLAB koşusuyla, S1 çalışma noktasının DA bara gerilimi, şebeke gerilimi, şebeke frekansı, anahtarlama frekansı ve $L=L_1$ değerleriyle (Tablo~\ref{tab:sistem-parametreleri}) yapılmıştır. Model, nötr anahtarı susturulmuş faz kolunu anahtarlama periyodu bazında parçalı doğrusal çözmekte; susturma nedeniyle akım tabanı sıfırda kesilmekte ve DCM--CCM geçişleri periyotlar arası başlangıç akımıyla doğal olarak oluşmaktadır. Kanıt sınırı açıktır: tarama, Tablo~\ref{tab:model-katmanlari} içindeki analitik/ortalama katmandır; ölü zaman, denetleyici, $C_f$--$L_2$ dinamiği ve kayıplar içermez, verim sonucu üretmez.
 
-Üç bulgu öne çıkmaktadır. Birincisi, saf sinüzoidal görev oranıyla ($D_3=0$) süreksiz iletimdeki üçüncü harmonik oranı $d_m=0{,}1$--$0{,}7$ aralığında sabit \%39,96 çıkmaktadır; Tablo~\ref{tab:dcm-saf-sinus-harmonikleri} bu taramayı vermektedir. Oranın $d_m$'den bağımsızlığı, Eşitlik~\eqref{eq:dcm-sinus-zarfi} zarfının şeklinin $d_m^2$ ölçeklemesinden bağımsız olmasının doğrudan sonucudur. $d_m=0{,}8$ satırında oran değişmekte ve akım hızla büyümektedir; bu, $d_{\mathrm{krit}}$ tepe değerinin ($\simeq0{,}785$) aşılıp alternans ortasında CCM'ye geçilmesinin göstergesidir ve ideal tam-DCM modelinin geçerlilik sınırını işaretler.
+Taramadan üç bulgu çıkmaktadır. Birincisi, saf sinüzoidal görev oranıyla ($D_3=0$) süreksiz iletimdeki üçüncü harmonik oranı $d_m=0{,}1$--$0{,}7$ aralığında sabit \%39,96 çıkmaktadır; Tablo~\ref{tab:dcm-saf-sinus-harmonikleri} taramayı vermektedir. Oranın $d_m$'den bağımsızlığı, Eşitlik~\eqref{eq:dcm-sinus-zarfi} zarfının şeklinin $d_m^2$ ölçeklemesinden bağımsız olmasının doğrudan sonucudur. $d_m=0{,}8$ satırında oran değişmekte ve akım hızla büyümektedir; $d_{\mathrm{krit}}$ tepe değerinin ($\simeq0{,}785$) aşılıp alternans ortasında CCM'ye geçilmesi ideal tam-DCM modelinin geçerlilik sınırını işaretler.
 
 \begin{table}[htbp]
   \centering
@@ -138,16 +142,19 @@ Eşitlik~\eqref{eq:dcm-tepe-akimi}--\eqref{eq:dcm-ccm-parcali-model} ile kurulan
   \end{tabular}
 \end{table}
 
-İkincisi, önceki katsayı taramalarında öne çıkan aday çiftler doğrulanmış parametre setine taşınamamaktadır. $(D_1,D_3)$ için $(0{,}45,\ 0{,}37)$, $(0{,}44,\ 0{,}38)$ ve $(0{,}41,\ 0{,}41)$ noktaları bu sette $I_1\simeq8{,}5$--\SI{9.2}{\ampere} temel akım (gerçek düşük güç çalışma noktasının yaklaşık dört katı), $I_3/I_1\simeq\%50$ ve $\mathrm{THD}\simeq\%68$ üretmektedir. Aynı adayların daha önce \%1--2 düzeyinde üçüncü harmonik oranıyla raporlanmış olması çelişki değildir; katsayıların gerilim oranına, endüktansa ve akım seviyesine bağlı olduğunu, tek bir $(D_1,D_3)$ çiftinin bütün çalışma noktalarına genellenemeyeceğini gösterir. Bulgu, üç fazlı fiziksel modeldeki bağımsız yeniden koşunun (Kesim~\ref{sec:sin3-guc-karsilastirma}) tarihsel THD iyileşmesini üretememesiyle de tutarlıdır.
+İkincisi, farklı bir çalışma noktası için elle seçilmiş $(D_1,D_3)$ çiftleri, $(0{,}45,\ 0{,}37)$, $(0{,}44,\ 0{,}38)$ ve $(0{,}41,\ 0{,}41)$, S1 çalışma noktasına taşınamamaktadır. Üç çift S1 noktasında $I_1\simeq8{,}5$--\SI{9.2}{\ampere} temel akım (düşük güç çalışma noktasının yaklaşık dört katı), $I_3/I_1\simeq\%50$ ve $\mathrm{THD}\simeq\%68$ üretmektedir. Aynı çiftlerin kendi çalışma noktalarında \%1--2 düzeyinde üçüncü harmonik oranı vermesi çelişki değildir; katsayılar gerilim oranına, endüktansa ve akım düzeyine bağlıdır ve tek bir $(D_1,D_3)$ çifti bütün çalışma noktalarına genellenemez.
 
-Üçüncüsü, aynı tarama gerçek düşük güç çalışma noktası için düzeltilmiş bir aday vermektedir. $I_{\mathrm{rms}}$ değeri deney kayıtlarındaki \SI{2.26}{\ampere} düzeyiyle uyumlu ($2{,}0$--\SI{2.6}{\ampere}) tutulup görev oranı kırpılması dışlandığında en iyi nokta
+Üçüncüsü, tarama düşük güç çalışma noktası için düzeltilmiş bir aday vermektedir. $I_{\mathrm{rms}}$ değeri deney özetindeki \SI{2.26}{\ampere} düzeyiyle uyumlu bir bantta ($2{,}0$--\SI{2.6}{\ampere}) tutulup görev oranı kırpılması dışlandığında en iyi nokta
 \begin{equation}
-  (D_1, D_3)=(0{,}34,\ 0{,}40)
-  \;\Longrightarrow\;
-  \frac{I_3}{I_1}=\%0{,}15,\quad \mathrm{THD}=\%4{,}72,\quad I_{\mathrm{rms}}=\SI{2.02}{\ampere},\quad d_{\max}=0{,}74
+  \begin{gathered}
+    (D_1, D_3)=(0{,}34,\ 0{,}40)
+    \;\Longrightarrow\;
+    \frac{I_3}{I_1}=\%0{,}15,\quad \mathrm{THD}=\%4{,}72,\\
+    I_{\mathrm{rms}}=\SI{2.02}{\ampere},\quad d_{\max}=0{,}74
+  \end{gathered}
   \label{eq:sin3-duzeltilmis-optimum}
 \end{equation}
-olarak bulunmuştur; Eşitlik~\eqref{eq:sin3-esdeger-katsayilar} ile doğrudan-harmonik eşdeğeri $(A_1,A_3)=(0{,}64,\ -0{,}10)$'dur. Şekil~\ref{fig:sin3-yeniden-tarama}, katsayı düzlemindeki üçüncü harmonik oranını, uygun akım bölgesini ve en iyi noktadaki akım zarfının saf sinüs görev oranına göre düzelmesini birlikte göstermektedir. Kompanzasyonlu zarfta kalan \%4,7'lik THD, ağırlıkla beşinci ve yedinci harmoniklerden gelmektedir; Sin\textsuperscript{3} terimi yapısı gereği yalnız temel ve üçüncü harmoniği şekillendirdiğinden bu kalıntı, yöntemin yapısal sınırıdır.
+olarak bulunmuştur; Eşitlik~\eqref{eq:sin3-esdeger-katsayilar} ile doğrudan harmonik eşdeğeri $(A_1,A_3)=(0{,}64,\ -0{,}10)$'dur. Şekil~\ref{fig:sin3-yeniden-tarama}, katsayı düzlemindeki üçüncü harmonik oranını, uygun akım bölgesini ve en iyi noktadaki akım zarfının saf sinüs görev oranına göre düzelmesini birlikte göstermektedir. Kompanzasyonlu zarfta kalan \%4,7'lik THD ağırlıkla beşinci ve yedinci harmoniklerden gelmektedir; Sin\textsuperscript{3} terimi yapısı gereği yalnız temel ve üçüncü harmoniği şekillendirdiğinden kalıntı, yöntemin yapısal sınırıdır.
 
 \begin{figure}[htbp]
   \centering
@@ -156,11 +163,11 @@ olarak bulunmuştur; Eşitlik~\eqref{eq:sin3-esdeger-katsayilar} ile doğrudan-h
   \label{fig:sin3-yeniden-tarama}
 \end{figure}
 
-Eşitlik~\eqref{eq:sin3-duzeltilmis-optimum} ile verilen çift, uygulanacak nihai kazanç değil, doğrulanmış parametre setiyle tutarlı ilk analitik adaydır. Nihai seçim; gerçek koddaki gösterim (Eşitlik~\eqref{eq:sin3-esdeger-katsayilar} ayrımı), anahtarlamalı model, ölü zaman ve kapalı çevrim etkileşimi doğrulandıktan sonra yapılacaktır.
+Eşitlik~\eqref{eq:sin3-duzeltilmis-optimum} ile verilen çift, uygulanan kazanç değil, tek endüktanslı analitik katmanın adayıdır. Anahtarlamalı benzetimde kullanılan S3 kazançları Kesim~\ref{sec:kalibrasyon} altında deney özetinin etkin ve reaktif gücüne kalibre edilmiştir ve eşdeğer katsayıları $(A_1,A_3)=(0{,}7317,\ -0{,}0961)$'dir. Üçüncü harmonik katsayıları iki katmanda birbirine yakındır ($-0{,}10$ ile $-0{,}096$); temel katsayıdaki fark ($0{,}64$ ile $0{,}73$), analitik modelin içermediği $C_f$--$L_2$ ağı, ölü zaman, kayıplar ve köprünün süreksiz iletimdeki yumuşak gerilim kaynağı davranışından (Kesim~\ref{sec:kalibrasyon}) kaynaklanır ve analitik adayın \SI{2.02}{\ampere}, kalibre noktanın \SI{2.28}{\ampere} RMS akımda tanımlı olduğu da göz önünde tutulmalıdır. İki katsayı takımının karşılaştırması bir doğrulama değil, analitik katmanın üçüncü harmonik ihtiyacını doğru büyüklükte öngördüğüne ilişkin bir tutarlılık gözlemidir.
 
 \section{Önerilen Yapı ve İleri Besleme Mekanizması}
 
-İleri besleme yolunun fiziksel işlevi, evirici tarafındaki eşdeğer kaynak gerilimini şebeke gerilimine yaklaştırmaktır. PLL şebekeye kilitlendikten sonra, akım komutu uygulanmadan önce, evirici çıkışı ile şebeke eşpotansiyel ise seri $Z_1+Z_2$ filtre ve şebeke empedansından akan akım sıfıra yaklaşır; Şekil~\ref{fig:eski-feedforward-etkisi} bu durumu eşdeğer kaynaklar üzerinde, Şekil~\ref{fig:eski-espotansiyel-dalga} ise gerilim dalga biçimleri ve sıfır akım kaydıyla göstermektedir. Akım referansı uygulandığında denetleyicinin üretmesi gereken ek gerilim yalnız empedans düşümünü karşılayacak küçük bir bileşendir; akım küçüldükçe bu bileşen mutlak olarak küçülür ve modeldeki küçük gerilim hataları göreli olarak daha görünür hâle gelir. İleri besleme teriminin düşük akımdaki göreli önemi bu mekanizmadan kaynaklanır.
+İleri besleme yolunun fiziksel işlevi, evirici tarafındaki eşdeğer kaynak gerilimini şebeke gerilimine yaklaştırmaktır. PLL şebekeye kilitlendikten sonra, akım komutu uygulanmadan önce, evirici çıkışı ile şebeke eşpotansiyel ise seri $Z_1+Z_2$ filtre ve şebeke empedansından akan akım sıfıra yaklaşır; Şekil~\ref{fig:eski-feedforward-etkisi} eşpotansiyel durumu eşdeğer kaynaklar üzerinde, Şekil~\ref{fig:eski-espotansiyel-dalga} ise gerilim dalga biçimleri ve sıfır akım kaydıyla göstermektedir. Akım referansı uygulandığında denetleyicinin üretmesi gereken ek gerilim yalnız empedans düşümünü karşılayan küçük bir bileşendir; akım küçüldükçe ek bileşen mutlak olarak küçülür ve modeldeki küçük gerilim hataları göreli olarak daha görünür hâle gelir. İleri besleme teriminin düşük akımdaki göreli önemi aynı mekanizmadan kaynaklanır.
 
 \begin{figure}[htbp]
   \centering
@@ -172,77 +179,16 @@ Eşitlik~\eqref{eq:sin3-duzeltilmis-optimum} ile verilen çift, uygulanacak niha
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.90\textwidth]{sonuclar/eski_sekil_4_19_espotansiyel_dalga.png}
-  \caption{Eşpotansiyel kaynakların gerilim dalga biçimleri ve kaynaklar arasındaki akımın sıfır oluşu. Kayıt, akım komutu öncesi başlangıç durumunu gösterir; kapalı çevrim izleme performansını kanıtlamaz.}
+  \caption{Eşpotansiyel kaynakların gerilim dalga biçimleri ve kaynaklar arasındaki akımın sıfır oluşu. Kayıt, akım komutu öncesi başlangıç durumunu gösterir; kapalı çevrim izleme başarımını kanıtlamaz.}
   \label{fig:eski-espotansiyel-dalga}
 \end{figure}
 
-Denetleyici devre dışı bırakılıp yalnız ileri besleme katsayısının değiştirildiği benzetim koşulu, yöntemin açık çevrim mekanizmasını ayırmak için yararlıdır; ancak kapalı çevrim performansı veya kararlılık kanıtı değildir. Şebeke gerilimi ileri beslemesi ideal durumda evirici ile şebeke gerilimini yaklaştırarak düşük akımdaki göreli gerilim hatasını azaltabilir; LCL filtre, ortak bağlantı noktası ölçümü ve dijital gecikme eklendiğinde aynı yol sanal empedans ve aktif sönümleme etkisi de oluşturabilir \citep{Lu2016}. İleri besleme yolunun etkisi bu nedenle yalnız gerilim düşümü hesabıyla sınırlandırılmamıştır. Güncel işlevsel zincir Şekil~\ref{fig:denetim-modulasyon-blok} üzerinde verilmiştir: Sin\textsuperscript{3} yolu akım denetleyicisiyle seri değil, modülasyon toplamında paralel bir ileri besleme bileşenidir ve nötr anahtar susturma kararı PWM üretiminden sonra kapı mantığında uygulanır.
+Denetleyicinin devre dışı bırakılıp yalnız ileri besleme katsayısının değiştirildiği benzetim koşulu, yöntemin açık çevrim mekanizmasını ayırmak için yararlıdır; ancak kapalı çevrim başarımı ya da kararlılık kanıtı değildir. Şebeke gerilimi ileri beslemesi ideal durumda evirici ile şebeke gerilimini yaklaştırarak düşük akımdaki göreli gerilim hatasını azaltabilir; LCL filtre, ortak bağlantı noktası ölçümü ve sayısal gecikme eklendiğinde aynı yol sanal empedans ve etkin sönümleme etkisi de oluşturabilir \citep{Lu2016}. İleri besleme yolunun etkisi yalnız gerilim düşümü hesabıyla sınırlandırılmamıştır. İşlevsel zincir Şekil~\ref{fig:denetim-modulasyon-blok} üzerinde verilmiştir: Sin\textsuperscript{3} yolu akım denetleyicisiyle seri değil, modülasyon toplamında paralel bir ileri besleme bileşenidir ve nötr anahtar susturma kararı PWM üretiminden sonra kapı mantığında uygulanır.
 
-\section{Kapalı Çevrim Modeli}
+\section{Senaryo~3 Benzetim Kayıtları}
+\label{sec:sin3-senaryo3-kayitlari}
 
-Faz başına gerilimden akıma LCL bitkisi $G_{vi}(s)$ Bölüm~\ref{chap:sistem} içinde Eşitlik~\eqref{eq:lcl-aktarim} ile tanımlanmıştır. PR denetleyicisi $C_i(s)$ Eşitlik~\eqref{eq:pr-denetleyici}, normalize modülasyon komutunu evirici kutup gerilimine dönüştüren PWM eşdeğer kazancı $K_{\mathrm{pwm}}$ ve toplam hesaplama--örnekleme--PWM gecikmesi $G_d(s)$ ile gösterilsin. Boyutsuz açık çevrim kazanç fonksiyonu $L(s)$
-\begin{equation}
-  L(s)=C_i(s)K_{\mathrm{pwm}}G_d(s)G_{vi}(s)
-  \label{eq:sin3-acik-cevrim}
-\end{equation}
-olarak yazılır. Eşitlik~\eqref{eq:sin3-acik-cevrim} içindeki çarpanlar aynı işaret yönü ve birim sistemiyle kurulmalıdır. Toplam gecikme süresi $T_d$ olmak üzere sürekli-zaman yaklaşımında $G_d(s)=\exp(-sT_d)$ kullanılabilir; rasyonel Bode hesabında ise mertebesi belirtilmiş Padé yaklaşımı uygulanır. PR yapısının temel frekansta yüksek kazanç sağlaması sinüzoidal izleme hatasını azaltırken LCL rezonansı ek sönümleme veya uygun aktif sönümleme tasarımı gerektirir \citep{Teodorescu2006PR,Zhang2014PR}.
-
-Referans izleme ve bozucu bastırma incelemesinde duyarlılık fonksiyonları
-\begin{equation}
-  S(s)=\frac{1}{1+L(s)},
-  \qquad
-  T(s)=\frac{L(s)}{1+L(s)}
-  \label{eq:sin3-duyarlilik}
-\end{equation}
-biçimindedir. Eşitlik~\eqref{eq:sin3-duyarlilik} içindeki $S(s)$ duyarlılık, $T(s)$ tamamlayıcı duyarlılık fonksiyonudur. Doğrusal modelde toplama noktasına dışsal olarak eklenen $u_{\mathrm{ff},\sin^3}$ terimi Eşitlik~\eqref{eq:sin3-acik-cevrim} içindeki karakteristik paydayı tek başına değiştirmez. Gerçek uygulamada ise doygunluk, örnekleme, PLL faz hatası, anahtarlama kip değişimi ve ortak bağlantı noktası gerilimi üzerinden oluşan iç bağlaşım söz konusu ayrımı bozabilir. Şebeke gerilimi ileri beslemesinin dijital gecikmeyle birlikte LCL rezonansına sönümleme veya kararsızlaştırıcı etki verebilmesi literatürde hem model hem deneyle gösterilmiştir \citep{Lu2016,Wang2024}.
-
-Şebeke akımı, akım referansı, Sin\textsuperscript{3} ileri besleme komutu ve şebeke geriliminin Laplace dönüşümleri sırasıyla $I_g(s)$, $I^{\ast}(s)$, $U_{\mathrm{ff},\sin^3}(s)$ ve $V_g(s)$ ile; şebeke geriliminden akıma bozucu aktarım $G_{vg}(s)$ ile gösterilsin. Harmonik kompanzasyonun doğrusal küçük işaret modeli, seçilen çalışma noktası çevresinde
-\begin{equation}
-  I_g(s)=T(s)I^{\ast}(s)+S(s)K_{\mathrm{pwm}}G_d(s)G_{vi}(s)U_{\mathrm{ff},\sin^3}(s)
-  +S(s)G_{vg}(s)V_g(s)
-  \label{eq:sin3-kapali-cevrim-girisleri}
-\end{equation}
-şeklinde ayrıştırılabilir; $G_{vg}(s)$'nin işareti seçilen gerilim ve akım yönlerine bağlıdır. Eşitlik~\eqref{eq:sin3-kapali-cevrim-girisleri}, Sin\textsuperscript{3} yolunun akım geri beslemesiyle seri bir denetleyici olmadığını, kapalı çevrim tarafından süzülen ayrı bir giriş olduğunu göstermektedir.
-
-\section{Bode ve Kararlılık Marjı Analizi}
-
-Kapalı çevrim incelemesi $L(s)$, $S(s)$ ve $T(s)$ fonksiyonlarının aynı fiziksel bitki, denetleyici ve gecikme modeliyle üretilmesine dayanır. Gerçek PR katsayıları, sönümleme ve gecikme henüz kilitlenmediğinden Şekil~\ref{fig:gecici-bode-lst} nihai kararlılık kanıtı değil, analiz zincirinin doğrulanmış filtre setiyle çalışan MATLAB çıktısıdır. Geçici parametrelerle elde edilen eğrilerin tezde tutulması yöntemi görünür kılmakta; sayısal marjların gerçek kod ve model geldiğinde aynı betikle değiştirilmesini sağlamaktadır.
-
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=0.96\textwidth]{../tez-matlab-simulink/results/stability/bode_LST.pdf}
-  \caption{Geçici LCL--PR--gecikme modeli için MATLAB ile üretilen $L(s)$, $S(s)$ ve $T(s)$ büyüklük eğrileri; nihai parametre doğrulaması beklenmektedir.}
-  \label{fig:gecici-bode-lst}
-\end{figure}
-
-Geçici modelde toplam gecikme \SI{150}{\micro\second} alınmış, kazanç marjı \SI{9.09}{\decibel} ve faz marjı $64{,}16^{\circ}$ hesaplanmıştır. Ek şebeke endüktansı $0$--\SI{2}{\milli\henry} arasında tarandığında aday model kararlı kalmış ve faz marjı $61{,}40^{\circ}$--$64{,}16^{\circ}$ aralığında değişmiştir. Sonuçlar analiz zincirinin çalıştığını gösterir; gerçek denetleyici katsayıları ve gecikme doğrulanmadan tezin nihai kararlılık marjı olarak savunulmayacaktır. Tablo~\ref{tab:sin3-kararlilik-kontrol-listesi}, incelemenin tamamlanma ölçütlerini ve mevcut durumu ayırmaktadır.
-
-\begin{table}[htbp]
-  \centering
-  \caption{Kapalı çevrim kararlılık incelemesinin tamamlanma ölçütleri.}
-  \label{tab:sin3-kararlilik-kontrol-listesi}
-  \small
-  \begin{tabularx}{\textwidth}{p{0.24\textwidth} X p{0.24\textwidth}}
-    \toprule
-    İnceleme & Değişkenler ve raporlanacak çıktı & Mevcut durum \\
-    \midrule
-    Nominal model & $L,S,T$, kesişim frekansları, kazanç/faz marjı & Geçici MATLAB çıktısı mevcut \\
-    Şebeke dayanıklılığı & $R_g,L_g$ taraması ve en kötü marj & $L_g=0$--\SI{2}{\milli\henry} geçici taraması mevcut \\
-    Sayısal gecikme & Örnekleme, hesaplama, PWM güncelleme ve ölçüm filtresi & Gerçek kodla doğrulanacak \\
-    Çalışma noktası & Düşük, orta ve anma gücünde kip/doğrusallaştırma geçerliliği & Gerçek modelle doğrulanacak \\
-    Doğrusal olmayan sınırlar & Modülasyon doyumu, akım sınırlama, nötr susturma geçişi & Zaman alanı testiyle doğrulanacak \\
-    \bottomrule
-  \end{tabularx}
-\end{table}
-
-Klasik doğrusal zamanla değişmeyen Bode incelemesi seçilen çalışma noktası çevresindeki yerel dinamiği verir. Nötr susturma periyodik kip değiştirdiği için harmonikler arası bağlaşım önemli hâle gelirse Eşitlik~\eqref{eq:htf-matris-iliskisi} çerçevesinde HTF veya harmonik durum uzayı modeli ayrıca kurulmalıdır; sonlu model için kesme mertebesi ve hata ölçütü raporlanmalıdır \citep{Liao2022}.
-
-\eksikistek{Gerçek parametrelerle kararlılık doğrulaması}{Gerçek PR/PI katsayıları, örnekleme ve hesaplama gecikmeleri ile LCL sönümleme yöntemi geldiğinde $L$, $S$ ve $T$ eğrilerinin; kazanç/faz marjlarının ve $L_g$ taramasının düşük, orta ve anma gücü çalışma noktalarında yeniden üretilmesini istiyoruz. Nötr susturma kaynaklı kip değişimi anlamlıysa temel--üçüncü harmonik HTF matrisinin model doğrusallaştırması veya küçük işaret enjeksiyonuyla çıkarılmasını istiyoruz.}
-
-\section{Düşük, Orta ve Nominal Güç Karşılaştırması}
-\label{sec:sin3-guc-karsilastirma}
-
-Senaryo~3 kayıtları, Sin\textsuperscript{3} kompanzasyonunun görsel kanıt zincirini tamamlamaktadır. Şekil~\ref{fig:sin3-l1-yakin} kompanzasyonlu $L_1$ akımının anahtarlama ölçeğindeki yapısını; Şekil~\ref{fig:sin3-dort-kanal} gerilim ve akım kanallarını ortak zaman ekseninde; Şekil~\ref{fig:sin3-l1-fft} ile Şekil~\ref{fig:sin3-iout-fft} iki akım ölçüm noktasındaki harmonik sonuçları göstermektedir.
+Senaryo~3 benzetim ekranları, Sin\textsuperscript{3} kompanzasyonunun açık çevrim etkisini görsel olarak göstermektedir. Şekil~\ref{fig:sin3-l1-yakin} kompanzasyonlu $L_1$ akımının anahtarlama ölçeğindeki yapısını; Şekil~\ref{fig:sin3-dort-kanal} gerilim ve akım kanallarını ortak zaman ekseninde; Şekil~\ref{fig:sin3-l1-fft} ile Şekil~\ref{fig:sin3-iout-fft} iki akım ölçüm noktasındaki harmonik sonuçları göstermektedir.
 
 \begin{figure}[H]
   \centering
@@ -258,7 +204,7 @@ Senaryo~3 kayıtları, Sin\textsuperscript{3} kompanzasyonunun görsel kanıt zi
   \label{fig:sin3-dort-kanal}
 \end{figure}
 
-Şekil~\ref{fig:sin3-dort-kanal} altında, susturma yönteminin Şekil~\ref{fig:susturma-dort-kanal} üzerindeki belirgin zarf bozulması kompanzasyon sonrasında azalmıştır; ancak çıkış akımı klasik yöntemdeki kadar sinüzoidal hâle gelmemiştir. Görsel karşılaştırma, aynı analiz penceresindeki FFT değerleriyle birlikte okunmalıdır.
+Şekil~\ref{fig:sin3-dort-kanal} üzerinde, susturma yönteminin Şekil~\ref{fig:susturma-dort-kanal} üzerindeki belirgin zarf bozulması kompanzasyon sonrasında azalmıştır; çıkış akımı ise klasik yöntemdeki kadar sinüzoidal hâle gelmemiştir. Görsel karşılaştırma, aynı analiz penceresindeki FFT değerleriyle birlikte okunmalıdır.
 
 \begin{figure}[H]
   \centering
@@ -274,110 +220,298 @@ Senaryo~3 kayıtları, Sin\textsuperscript{3} kompanzasyonunun görsel kanıt zi
   \label{fig:sin3-iout-fft}
 \end{figure}
 
-Senaryo~3'te $L_1$ THD değeri susturma durumundaki \%46,86'dan \%9,46'ya, çıkış THD değeri ise \%46,35'ten \%7,79'a düşmüştür. İyileşme, Sin\textsuperscript{3} yolunun üçüncü harmonik cezasını önemli ölçüde azalttığını destekler. Klasik çıkış THD değerinin \%2,14 olması, kompanzasyonlu yöntemin harmonik bakımından klasik yöntemi geçmediğini de açıkça gösterir. Raporlanan \%93,70 verim değeri, ham kayıp modeli mevcut olmadığından yeniden doğrulanmış bir sonuç değildir.
+Senaryo~3 ekranlarında $L_1$ THD değeri susturma durumundaki \%46,86'dan \%9,46'ya, çıkış THD değeri ise \%46,35'ten \%7,79'a düşmüştür. Sonuç, Sin\textsuperscript{3} yolunun üçüncü harmonik cezasını önemli ölçüde azalttığını destekler. Klasik çıkış THD değerinin \%2,14 olması, kompanzasyonlu yöntemin harmonik bakımından klasik yöntemi geçmediğini de açıkça gösterir. Ekranlardaki \%93,70 verim değeri, ekranın ait olduğu modelin kayıp ayrıştırması mevcut olmadığından yeniden üretilmiş bir sonuç değildir. Deney özetinin S1--S3 noktalarına kalibre edilmiş benzetim modelinin verim ve THD karşılaştırması Kesim~\ref{sec:kalibrasyon} altında verilmektedir; kalibre S3 modeli deneydeki \%14 akım THD'sini \%14,8 ile yeniden üretmektedir.
 
-Düşük, orta ve nominal güçte aynı denetim yapısının karşılaştırılması henüz tamamlanmış bir sonuç seti değildir; mevcut arşiv yalnız düşük güç kayıtlarını içermektedir. Tablo~\ref{tab:sin3-guc-karsilastirma-plani}, gelecek gerçek veri setinde doldurulacak ortak değerlendirme biçimini kilitlemektedir.
+\section{Senaryo~4: Akım Geri Beslemeli Kapalı Çevrim}
+\label{sec:s4-kapali-cevrim}
+
+Senaryo~1--3 açık çevrim modülasyonla, deney donanımının yaklaşık \SI{2.3}{\ampere} faz akımında çalışmaktadır. Nötr susturma ve Sin\textsuperscript{3} ileri beslemesinin anma akımına taşınıp taşınamayacağı ve akım denetimiyle birlikte nasıl davrandığı Senaryo~4 (S4) ile incelenmiştir. S4, S3 modeline $L_1$ akımı geri beslemesi eklenerek kurulmuştur; benzetim paketindeki S4 model dosyası S3'ün kopyası olduğundan denetleyici, S3 tabanına betikle eklenmiştir (Kesim~\ref{sec:model-dogrulama-duzeltme}). S4 için donanım deneyi yoktur; kesimdeki bütün sayılar benzetim sonucudur ve kalibre S3 modelinin kapalı çevrimle anma akımına taşınmasını gösterir.
+
+\subsection{Model ve denetleyici yapısı}
+
+S4 modülasyon komutu, ileri besleme ve geri besleme terimlerinin doyumlu toplamıdır:
+\begin{equation}
+  \begin{gathered}
+    u=\operatorname{sat}_{\pm1}\!\left(u_{\mathrm{ff}}+u_{\mathrm{fb}}\right),\qquad
+    u_{\mathrm{ff}}=K_{14}\sin(\theta+\varphi_4)+K_{34}\sin^3(\theta+\varphi_4),\\
+    u_{\mathrm{fb}}=C(s)\left[i_{\mathrm{ref}}-H_m(s)\,i_{L1}\right],\qquad
+    i_{\mathrm{ref}}=\sqrt2\,I_{\mathrm{ref}}\sin\theta .
+  \end{gathered}
+  \label{eq:s4-denetim-yapisi}
+\end{equation}
+Eşitlik~\eqref{eq:s4-denetim-yapisi} içinde $\theta$ şebekeye kilitli açı (ideal PLL), $H_m(s)$ tek kutuplu ölçüm süzgeci ve $C(s)$ akım denetleyicisidir. İleri besleme kazançları $K_{14}$, $K_{34}$ ve faz $\varphi_4$, kalibre S3 değerleridir (Tablo~\ref{tab:sistem-parametreleri}). Üç denetleyici aynı alt sistemde kazanç seçimiyle gerçeklenmiştir:
+\begin{equation}
+  C_{\mathrm{P}}(s)=K_p,\qquad
+  C_{\mathrm{PI}}(s)=K_p+\frac{K_i}{s},\qquad
+  C_{\mathrm{PIR}}(s)=C_{\mathrm{PI}}(s)+\frac{2K_r\omega_b s}{s^2+2\omega_b s+\omega_0^2}.
+  \label{eq:s4-denetleyiciler}
+\end{equation}
+Oransal kazanç parametre dosyasındaki değerdir; PI sıfırı \SI{60}{\hertz}'e yerleştirilmiş, doyum önleme geri hesaplama yöntemiyle kurulmuştur. Kazançların tamamı Tablo~\ref{tab:sistem-parametreleri} içindeki S4 akım denetimi grubundadır. Denetim, modelde analog eşdeğeri olarak gerçeklenmiştir: denetleyici \SI{1}{\micro\second} adımla çalışır ve hesaplama gecikmesi yoktur. Analog eşdeğerin seçilme gerekçesi, PWM periyodu başında örnekleyip bir periyot gecikmeyle uygulayan sayısal gerçeklemenin LCL rezonansında kararsız olmasıdır; gerekçe Kesim~\ref{sec:kararlilik-bode} altında sayısal olarak verilmektedir. $L_1$ doyumu modellenmemiştir.
+
+\textbf{DA bara önkoşulu.} Tek fazlı T-tipi bacakta şebeke dönüş akımı DA bara orta noktasına girer ve \SI{50}{\hertz} faz akımının tamamı iki bara kapasitörünün paralel eşdeğerinden geçer. Orta nokta salınımının tepe değeri $\Delta V_{\mathrm{orta}}\simeq\hat I/[\omega_0(C_{\mathrm{dc}+}+C_{\mathrm{dc}-})]$ ile yaklaşık hesaplanır. Deney donanımının bara kapasitörleriyle salınım \SI{2.3}{\ampere}'de yaklaşık \SI{11}{\volt} ($V_{\mathrm{dc}}/2$'nin \%5'i), \SI{25}{\ampere}'de ise yaklaşık \SI{120}{\volt} (\%56) olmaktadır. Özgün barayla yapılan PI koşusunda evirici darbe yüksekliği pozitif alternans boyunca yaklaşık \SI{270}{\volt}'tan \SI{100}{\volt}'a inmiş, modülasyon zamanın \%20,6'sında doyuma girmiş ve kararlı durum oluşmamıştır: temel akım genlik hatası $-$\%31,9, THD \%57,4'tür. Anma akımı koşuları, salınımı \SI{25}{\ampere}'de yaklaşık \SI{10}{\volt}'a (\%4,7) indiren büyütülmüş DA bara ile yapılmıştır (Tablo~\ref{tab:sistem-parametreleri}, D-11). Aynı PI denetleyicide genlik hatası $-$\%2,1'e, THD \%9,2'ye iner ve doyum ortadan kalkar. Anma akımında kapalı çevrim çalışmanın önkoşulu, DA bara orta noktasının tutulabilmesidir; deney donanımının barası \SI{25}{\ampere} için yetersizdir.
+
+\subsection{Düşük, orta ve anma akımı taraması}
+
+Tablo~\ref{tab:s4-tarama}, büyütülmüş DA bara ve kalibre ileri beslemeyle yapılan kesin taramayı vermektedir. Kararlı durum büyüklükleri son tam şebeke periyodundan alınmıştır; P ve PI koşuları \SI{0.06}{\second}, PIR koşuları rezonans teriminin dar bandı nedeniyle \SI{0.2}{\second} sürmüştür. Oturma ölçütü olarak son iki periyodun etkin güç farkı kullanılmış, tablodaki bütün koşularda fark \%0,12'nin altında kalmıştır. Verim sütunu modelin DA ve AA güç ölçüm bloklarından alınmıştır. S4, $L_1$ çekirdek kaybı için S1--S3'ten farklı bir paralel direnç kullandığından (Tablo~\ref{tab:sistem-parametreleri}) S4 verimi yalnız S4 içinde karşılaştırılır; yaklaşık \SI{280}{\watt} çıkışta S4 verimi \%96,2, kalibre S3 verimi \%94,25'tir ve aradaki farkın yaklaşık \SI{7.2}{\watt}'lık kayıp karşılığı yalnız çekirdek kaybı parametresinden gelir.
 
 \begin{table}[htbp]
   \centering
-  \caption{Sin\textsuperscript{3} kompanzasyonu için güç seviyesine bağlı ortak karşılaştırma tablosu.}
-  \label{tab:sin3-guc-karsilastirma-plani}
-  \small
-  \begin{tabularx}{\textwidth}{p{0.14\textwidth} p{0.17\textwidth} X X}
-    \toprule
-    Güç bölgesi & Karşılaştırma kolları & Ölçülecek kararlı durum büyüklükleri & Geçici durum ve sınır kontrolleri \\
-    \midrule
-    Düşük & Klasik; susturma; susturma + Sin\textsuperscript{3} & Verim, $I_1$, THD, $I_3/I_1$, ters akım alanı, RMS akım & Kip geçişi, sıfır geçişi, minimum darbe, doyum \\
-    Orta & Aynı üç kol & Aynı metrikler ve aynı FFT penceresi & Kompanzasyonun yumuşak azaltılması, akım basamağı \\
-    Nominal & Klasik ve nihai öneri; güvenliyse üç kol & Verim, THD, sıcaklık, DA bara dengesi, güç faktörü & Akım sınırı, modülasyon doyumu, koruma ve toparlanma \\
-    \bottomrule
-  \end{tabularx}
-\end{table}
-
-\subsection{Bağımsız Yeniden Üretim Koşuları}
-
-Eldeki dosya paketi Senaryo~1'e ait tek bir kaynak model ve Senaryo~1--3 için özet değerler içeren bir çalışma kitabı sağlamaktadır; Senaryo~2 ve Senaryo~3'e ait kaynak model ya da ham zaman serisi mevcut değildir. Senaryo~1 modeli R2023b ile kaydedilmiştir ve R2025b'de kaldırılan Specialized Power Systems ölçüm bloklarını içerdiği için değişmeden koşturulamamıştır. R2025b çalışma kopyasında $L_1$--$C_f$--$L_2$ değerleri \SI{600}{\micro\henry}--\SI{8}{\micro\farad}--\SI{200}{\micro\henry} yapılmış; dış IGBT'ler SKM100GB12T4, iç IGBT'ler IXYN100N65C3H1 ve yalnız harici iki diyot DSEI2x61-12B olarak eşlenmiştir.
-
-Tablo~\ref{tab:r2025b-senaryo1-dogrulama}, çalışma kopyasıyla yapılan kademeli koşuları ayırmaktadır. Tam cihaz dinamikli \SI{1}{\milli\second} sağlık kontrolü başarıyla tamamlanmış, böylece blok eşlemesi ve elektriksel çözümün R2025b'de ilerlediği doğrulanmıştır. Aynı katmanda \SI{5}{\milli\second} koşu 1200~s duvar süresi içinde tamamlanmadığından hesap maliyeti sınırıyla sonlandırılmış, sayısal başarısızlık olarak etiketlenmemiştir. Cihaz dinamikleri sadeleştirilen \SI{25}{\milli\second} sistem koşusu ise \SI{21.3324}{\milli\second} anında diyot denklemlerinin yakınsamamasıyla durmuştur. Tam bir \SI{50}{\hertz} kararlı hâl penceresi ve geçerli THD/verim sonucu bu yüzden oluşmamıştır.
-
-\begin{table}[htbp]
-  \centering
-  \caption{Seçilen LCL ve yarıiletken eşlemesiyle R2025b Senaryo~1 kademeli doğrulama koşuları.}
-  \label{tab:r2025b-senaryo1-dogrulama}
+  \caption{S4 kapalı çevrim benzetimi: düşük, orta ve anma akımında akım izleme, harmonik, verim ve doyum (büyütülmüş DA bara, kalibre ileri besleme). PIR koşuları \SI{0.2}{\second}, diğerleri \SI{0.06}{\second}.}
+  \label{tab:s4-tarama}
   \footnotesize
-  \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.19\textwidth} >{\raggedright\arraybackslash}p{0.16\textwidth} >{\raggedright\arraybackslash}p{0.20\textwidth} >{\raggedright\arraybackslash}X}
+  \setlength{\tabcolsep}{2.6pt}
+  \begin{tabular}{@{}l c c r r r r r c c@{}}
     \toprule
-    Koşu & Ufuk & Sonuç & Kanıt sınırı \\
+    Den., $I_{\mathrm{ref}}$ & $I_{L1,1}$ (A) & Genlik h. & Faz h. & THD$_I$ & $I_3/I_1$ & $P_{\mathrm{ac}}$ (W) & $\eta$ & Doyum & $|u|_{\max}$ \\
     \midrule
-    Seçilen filtre, sade sistem & \SI{5}{\milli\second} & Başarılı; son \%20 pencerede $I_{\mathrm{ac,rms}}=\SI{2.428}{\ampere}$ & Kısa süreli fiziksel tutarlılık; THD/verim değil. \\
-    Seçilen filtre ve doğrulanmış cihazlar & \SI{1}{\milli\second} & Başarılı; 26,7~s hesap süresi & Cihaz/blok sağlık kontrolü; başlangıç geçicisi baskın. \\
-    Aynı ayrıntılı cihaz katmanı & \SI{5}{\milli\second} & 1200~s içinde tamamlanmadı & Hesap maliyeti sınırı; performans sonucu yok. \\
-    Seçilen filtre, sade sistem & \SI{25}{\milli\second} & \SI{21.3324}{\milli\second}'de yakınsama hatası & Kararlı hâl, THD ve verim geçersiz. \\
+    P, \SI{2.3}{\ampere}   & 2,336 & $+$\%1,6  & $+1{,}0^{\circ}$ & \%7,0  & \%6,5  & 280,7 & \%96,24 & \%0 & 0,86 \\
+    PI, \SI{2.3}{\ampere}  & 2,327 & $+$\%1,2  & $+1{,}4^{\circ}$ & \%7,2  & \%6,6  & 279,5 & \%96,20 & \%0 & 0,86 \\
+    \midrule
+    P, \SI{10}{\ampere}    & 7,677 & $-$\%23,2 & $-1{,}1^{\circ}$ & \%22,6 & \%20,9 & 922,5 & \%97,44 & \%0 & 0,87 \\
+    PI, \SI{10}{\ampere}   & 8,918 & $-$\%10,8 & $-6{,}3^{\circ}$ & \%20,8 & \%18,7 & 1065  & \%97,31 & \%0 & 0,88 \\
+    PIR, \SI{10}{\ampere}  & 9,777 & $-$\%2,2  & $+0{,}4^{\circ}$ & \%19,6 & \%18,7 & 1175  & \%97,28 & \%0 & 0,87 \\
+    \midrule
+    P, \SI{25}{\ampere}    & 22,15 & $-$\%11,4 & $-2{,}6^{\circ}$ & \%9,8  & \%9,6  & 2662  & \%96,69 & \%0 & 0,90 \\
+    PI, \SI{25}{\ampere}   & 24,47 & $-$\%2,1  & $-4{,}0^{\circ}$ & \%9,2  & \%8,7  & 2938  & \%96,45 & \%0 & 0,90 \\
+    PIR, \SI{25}{\ampere}  & 24,75 & $-$\%1,0  & $+0{,}2^{\circ}$ & \%8,5  & \%8,1  & 2978  & \%96,03 & \%0 & 0,93 \\
     \bottomrule
-  \end{tabularx}
+  \end{tabular}
 \end{table}
 
-\SI{1}{\milli\second} koşuda ham DA bara gerilimi \SI{431.5}{\volt} olarak korunurken ideal gerilim kaynağının boş DA-link kapasitörlerini aniden şarj etmesi \SI{43.1}{\kilo\ampere} düzeyinde fiziksel olmayan bir başlangıç tepesi oluşturmuştur. Bu ilk koşul giderilmeden ve en az iki kararlı temel periyot tamamlanmadan ekrandaki anık güç, THD ve verim değerleri kullanılmamıştır; çalışma kitabında bildirilen \%92,5 verim ve yaklaşık \%15 THD, yeniden üretilmiş sonuç değil deney özeti olarak tutulmuştur.
-
-Topoloji ve kapı mantığı bakımından bağımsız kontrol amacıyla, 12 IGBT'li üç fazlı Simscape modeli aynı koşullarda koşturulmuştur. Modelde klasik, nötr susturma ve susturma+$K_{\mathrm{sin3}}=-\SI{2}{\volt}$ kolları için geçersiz anahtarlama durumu sayısı sıfırdır; Tablo~\ref{tab:yeniden-uretim-fiziksel-s123} sonuçları vermektedir. Geçici model değerleri ($V_{\mathrm{dc}}=\SI{400}{\volt}$, $L_1=\SI{2}{\milli\henry}$, $L_2=\SI{1}{\milli\henry}$ ve \SI{2}{\micro\second} deneme ölü zamanı) kaynak modelle aynı olmadığından koşu bir parça-kayıp veya verim doğrulaması değildir.
-
-\begin{table}[htbp]
-  \centering
-  \caption{Üç fazlı fiziksel model koşusu (22.08.2026); kaynak Senaryo~1--3'ün sayısal yeniden üretimi değil, kapı durumu ve yöntem yönelimi kontrolüdür.}
-  \label{tab:yeniden-uretim-fiziksel-s123}
-  \small
-  \begin{tabularx}{\textwidth}{X r r r r}
-    \toprule
-    Yöntem & Faz RMS (A) & Ortalama THD (\%) & Nötr RMS (A) & Geçersiz durum \\
-    \midrule
-    Klasik & 2,227 & 10,898 & 0,639 & 0 \\
-    Nötr susturma & 2,238 & 13,625 & 0,711 & 0 \\
-    Susturma+Sin\textsuperscript{3} & 2,209 & 13,772 & 0,694 & 0 \\
-    \bottomrule
-  \end{tabularx}
-\end{table}
-
-Bu yeniden koşuda Sin\textsuperscript{3} terimi nötr RMS akımını yalnız susturmaya göre yaklaşık \%2,46 azaltmış, fakat faz THD'sini iyileştirmemiştir. Sonucun Senaryo~3 eğilimini yeniden üretmemesi bir başarısızlık gizleme nedeni değil, enjeksiyon noktası ile $K_1/K_3$ ölçeklerinin gerçek koddan kilitlenmesi gerektiğini gösteren negatif doğrulamadır; Kesim~\ref{sec:sin3-yeniden-tarama} altındaki katsayı taşınamazlığı bulgusuyla da tutarlıdır. Şekil~\ref{fig:yeniden-uretim-fiziksel-s123} kullanılan kazanç noktalarını ve iki metriği birlikte göstermektedir.
+Anma akımında PI ve PIR denetleyicileri referansı doyumsuz izlemektedir. PIR, \SI{50}{\hertz} rezonans terimiyle temel bileşen hatasını $-$\%1,0 ve $+0{,}2^{\circ}$'ye indirir; THD \%8,5, temel bileşen yer değiştirme faktörü 0,997'dir. Oransal denetleyici aynı noktada $-$\%11,4 genlik hatası bırakır; \SI{50}{\hertz}'teki sonlu çevrim kazancı kalıcı hatayı sıfırlamaz. Şekil~\ref{fig:s4-akim-izleme-25a}, \SI{25}{\ampere} noktasında üç denetleyicinin son iki şebeke periyodundaki $L_1$ akımını, referansı, çıkış akımını ve şebeke gerilimini birlikte göstermektedir. Şekil~\ref{fig:s4-tarama-ozet} ise verim, THD ve genlik hatasının akıma göre değişimini özetlemektedir.
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.96\textwidth]{sonuclar/fiziksel_senaryo123_20260822.png}
-  \caption{Üç fazlı fiziksel yeniden koşuda nötr RMS ve ortalama faz THD karşılaştırması. Sonuçlar geçici fiziksel model parametreleriyle sınırlıdır.}
-  \label{fig:yeniden-uretim-fiziksel-s123}
+  \includegraphics[width=\textwidth,height=0.62\textheight,keepaspectratio]{s4/s4_akim_izleme_25A_KC.pdf}
+  \caption{S4 benzetiminde \SI{25}{\ampere} anma akımında P (üst), PI (orta) ve PIR (alt) denetleyicileriyle $L_1$ akımı (anlık ve anahtarlama periyodu ortalaması), akım referansı, çıkış akımı ve şebeke gerilimi; son iki şebeke periyodu.}
+  \label{fig:s4-akim-izleme-25a}
 \end{figure}
 
-Senaryo~4 için ayrıca, verilen $L_1=\SI{600}{\micro\henry}$, $R_1=\SI{0.02}{\ohm}$, $V_{\mathrm{dc}}=\SI{431}{\volt}$ ve \SI{120}{\volt} RMS şebeke değerleriyle ortalama-değerli bir akım-döngüsü fizibilite deneyi yapılmıştır. İleri besleme $K_1\sin(\theta+\phi)+K_3\sin^3(\theta)$ biçiminde, geri besleme ise $L_1$ akımıyla çalışan PI çıkışı olarak aynı gerilim komutunda toplanmıştır. Hedef ``30~A'' ifadesi tepe mi RMS mi belirtmediğinden iki yorum da sınanmıştır. PI kazançları $K_p=\SI{3}{\volt\per\ampere}$ ve $K_i=\SI{100}{\volt\per\ampere\second}$, denetim periyodu \SI{100}{\micro\second} ve $K_3=-\SI{2}{\volt}$ seçilmiştir.
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{s4/s4_tarama_ozet_KC.pdf}
+  \caption{S4 benzetiminde verim, akım THD'si ($h\leq50$) ve temel bileşen genlik hatasının akım referansına göre değişimi; P, PI ve PIR denetleyicileri.}
+  \label{fig:s4-tarama-ozet}
+\end{figure}
+
+\textbf{Orta akımda süreksiz iletim.} İzleme hatası akımla monoton değişmemektedir: \SI{10}{\ampere} noktası \SI{25}{\ampere} noktasından kötüdür. $L_1$ akım dalgalanması yaklaşık \SI{9}{\ampere} tepeden tepeye olduğundan anlık akımın mutlak değeri yaklaşık \SI{4.5}{\ampere}'in altına indiği her bölgede nötr susturmalı köprü süreksiz iletime girer ve senkron olmayan buck gibi davranır (Kesim~\ref{sec:dusuk-akim-modelleme}). \SI{25}{\ampere}'de süreksiz bölge yalnız sıfır geçişleri çevresindedir; \SI{10}{\ampere}'de ise çevrimin büyük kısmını kaplar. \SI{10}{\ampere}'de üçüncü harmonik baskındır ($I_3/I_1$ \%19--21). Kalibre Sin\textsuperscript{3} terimi \SI{2.3}{\ampere} noktasındaki bozulmaya göre ayarlandığından, süreksiz iletim bölgesi akımla değiştiğinde aynı terim \SI{10}{\ampere} noktasına uymamaktadır. PI'nin integral terimi genlik hatasını $-$\%23'ten $-$\%11'e indirir; PIR temel bileşeni $-$\%2,2 ve $+0{,}4^{\circ}$ ile kapatır, ancak THD \%19,6'da kalır, çünkü rezonans terimi yalnız \SI{50}{\hertz}'te etkilidir ve üçüncü harmonik bozulması süreksiz iletimden gelmektedir. Kararlılık analizi (Kesim~\ref{sec:kararlilik-bode}), \SI{10}{\ampere}'deki genlik hatasının bir kararlılık sorunu değil, köprünün etkin kazancındaki düşüşten doğan bir izleme sorunu olduğunu göstermektedir. Nötr susturma bir düşük güç yöntemidir: orta ve anma akımında tamamlayıcı anahtarlamaya dönüş ya da akım düzeyine göre ayarlanan ileri besleme gerekir. Kip geçişi tezin kapsamı dışındadır ve Bölüm~\ref{chap:sonuc} içinde öneri olarak yer almaktadır.
+
+\subsection{Basamak yanıtı}
+
+PI denetleyiciyle akım referansı $t=\SI{55}{\milli\second}$ anında \SI{10}{\ampere}'den \SI{25}{\ampere}'e basamak olarak değiştirilmiştir. Tablo~\ref{tab:s4-basamak} sonuçları vermektedir. Aşım, $L_1$ akım zarfının basamak sonrasındaki en büyük tepesinin son kararlı zarfa oranı olarak tanımlanmıştır. Kararlı durumda bile $L_1$ akımının tepesi, Sin\textsuperscript{3} kaynaklı üçüncü harmonik nedeniyle referans tepesinden \%7,3 yüksektir; aşım referans tepesine göre tanımlansaydı kararlı durumdaki dalga biçimi aşım gibi sayılırdı. Basamak sonrası kararlı değer, doğrudan \SI{25}{\ampere}'de başlatılan PI koşusuyla aynıdır (\SI{24.48}{\ampere} ve \SI{24.47}{\ampere}); çözüm başlangıç koşulundan bağımsızdır. Basamak süresince geçici bileşenin sönümü Şekil~\ref{fig:s4-basamak} üzerinde, $K_{34}$ açık ve kapalı karşılaştırması ise Kesim~\ref{sec:kararlilik-bode} altında verilmektedir.
 
 \begin{table}[htbp]
   \centering
-  \caption{Senaryo~4 ortalama-değerli PI fizibilite deneyi; yarı iletken anahtarlama kaybı ve verim kapsam dışıdır.}
-  \label{tab:senaryo4-pi-30a}
+  \caption{S4 benzetiminde PI denetleyiciyle \SI{10}{\ampere}$\rightarrow$\SI{25}{\ampere} referans basamağı.}
+  \label{tab:s4-basamak}
   \small
-  \begin{tabularx}{\textwidth}{p{0.17\textwidth} X r r r r}
+  \begin{tabularx}{0.9\textwidth}{@{}X r@{}}
     \toprule
-    30 A yorumu & Denetim & Ölçülen RMS (A) & RMSE (A) & THD (\%) & $|m|_{\max}$ \\
+    Büyüklük & Değer \\
     \midrule
-    Tepe (21,213 A RMS) & İleri besleme & 11,742 & 11,187 & 5,326 & 0,781 \\
-    Tepe (21,213 A RMS) & İleri besleme+PI & 20,922 & 0,665 & 0,559 & 0,791 \\
-    RMS & İleri besleme & 20,138 & 11,135 & 3,103 & 0,783 \\
-    RMS & İleri besleme+PI & 29,715 & 0,662 & 0,393 & 0,793 \\
+    Basamak öncesi $I_{L1,1}$ (referans \SI{10}{\ampere}) & \SI{8.91}{\ampere} \\
+    Basamak sonrası $I_{L1,1}$ (referans \SI{25}{\ampere}) & \SI{24.48}{\ampere} ($-$\%2,1) \\
+    Aşım (son kararlı zarfa göre) & \%0,2 \\
+    $L_1$ akım tepesinin referans tepesine oranı (kararlı durum, üçüncü harmonik dahil) & \%7,3 üstünde \\
+    Yerleşme süresi (hata bandı) & \SI{0.44}{\milli\second} \\
+    Geçişte doyum & zamanın \%0,8'i; $|u|_{\max}=1{,}49$ \\
+    Basamak sonrası THD$_I$ & \%9,1 \\
     \bottomrule
   \end{tabularx}
 \end{table}
 
-Her iki PI koşusunda da modülasyon doyumu oluşmamış ve referans izleme belirgin biçimde iyileşmiştir. Şekil~\ref{fig:senaryo4-pi-30a}, son iki periyottaki akımları ve modülasyon payını göstermektedir. Sonuç, yaklaşık 30~A akımın ileri besleme+PI yapısıyla ortalama modelde izlenebildiğini kanıtlar; anahtarlamalı LCL model, cihaz kayıpları, termal portlar ve gerçek PI kodu eklenmeden verim veya donanım kararlılığı iddiası kurmaz.
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth,height=0.5\textheight,keepaspectratio]{s4/s4_basamak_PI_10_25A_KC.pdf}
+  \caption{S4 benzetiminde PI denetleyiciyle \SI{10}{\ampere}$\rightarrow$\SI{25}{\ampere} akım referansı basamağı: $L_1$ akımı, anahtarlama periyodu ortalaması ve modülasyon komutu.}
+  \label{fig:s4-basamak}
+\end{figure}
+
+\section{Kararlılık ve Bode Analizi}
+\label{sec:kararlilik-bode}
+
+Sin\textsuperscript{3} yönteminin kapalı çevrim kararlılığı üç katmanda incelenmiştir. Birinci katman, Sin\textsuperscript{3} teriminin karakteristik denklemde yer almadığını analitik olarak gösterir. İkinci katman, S4 akım çevriminin $L$, $S$ ve $T$ Bode eğrilerini, kazanç ve faz marjlarını ve kapalı çevrim kutuplarını $K_{34}$ açık ve kapalı hesaplar. Üçüncü katman, anahtarlamalı S4 modelinde küçük işaret enjeksiyonuyla ölçülen çevrim kazancını ve basamak yanıtını ortalama modelle karşılaştırır. Bütün sonuçlar benzetim modelinin kendi içindeki kararlılık kanıtıdır; S4 için donanım deneyi yoktur.
+
+\subsection{Analitik katman: Sin\texorpdfstring{\textsuperscript{3}}{3} terimi çevrimin dışındadır}
+
+Bitki $G(s)=i_{L1}/v_{\mathrm{inv}}$, evirici kutup geriliminden $L_1$ akımına ortalama aktarım fonksiyonudur ve güç ağı anahtarlamalı modeldeki sırayla kurulmuştur: $L_1$ ve çekirdek kaybı direnci, $C_f$, EMC süzgecinin diferansiyel kip endüktansları ve X kapasitörü, $L_2$ ve şebeke (Tablo~\ref{tab:sistem-parametreleri}). Ortalama bitkinin rezonansı \SI{2815}{\hertz} ($\zeta=0{,}0041$), antirezonansı \SI{1720}{\hertz}'tir. Normalize modülasyon komutunu kutup gerilimine dönüştüren PWM kazancı $K_{\mathrm{pwm}}=V_{\mathrm{dc}}/2$, toplam gecikme $T_d$ ve şebeke geriliminden akıma aktarım $G_g(s)$ ile gösterilsin. Doyum dışında Eşitlik~\eqref{eq:s4-denetim-yapisi} çevrimi
+\begin{equation}
+  L(s)=C(s)\,K_{\mathrm{pwm}}\,e^{-sT_d}\,G(s)\,H_m(s)
+  \label{eq:sin3-acik-cevrim}
+\end{equation}
+açık çevrim kazancını tanımlar. Duyarlılık ve tamamlayıcı duyarlılık fonksiyonları
+\begin{equation}
+  S(s)=\frac{1}{1+L(s)},
+  \qquad
+  T(s)=\frac{L(s)}{1+L(s)}
+  \label{eq:sin3-duyarlilik}
+\end{equation}
+biçimindedir. Kapalı çevrimde $L_1$ akımı
+\begin{equation}
+  i_{L1}=\frac{K_{\mathrm{pwm}}e^{-sT_d}G(s)\left[u_{\mathrm{ff}}+C(s)\,i_{\mathrm{ref}}\right]+G_g(s)\,v_g}{1+L(s)}
+  \label{eq:sin3-kapali-cevrim-girisleri}
+\end{equation}
+olarak yazılır. $\theta$ yalnız zamana bağlıdır ve şebekeye kilitlidir; $\sin^3\theta$ işaretinin hiçbir girişi çevrimdeki bir büyüklükten gelmez. Eşitlik~\eqref{eq:sin3-kapali-cevrim-girisleri} içinde $u_{\mathrm{ff}}$ yalnız payda, dış bir giriş olarak yer alır; karakteristik denklem $1+L(s)=0$, $K_{34}$'ü içermez. Kapalı çevrim kutupları, kazanç ve faz marjları $K_{34}$'ten bağımsızdır; $K_{34}$ yalnız dış girişin genliğini değiştirir. Doyum sınırı bütün kararlı durum pencerelerinde aşılmamıştır ($|u|_{\max}\leq0{,}93$, Tablo~\ref{tab:s4-tarama}), dolayısıyla doğrusal ayrım çalışma noktalarında geçerlidir.
+
+Sin\textsuperscript{3} teriminin akıma etkisi $S(j\omega)K_{\mathrm{pwm}}G(j\omega)$ ile belirlenir. Eşitlik~\eqref{eq:sin3-esdeger-katsayilar} ile kalibre ileri besleme $0{,}7317\sin(\theta+\varphi_4)-0{,}0961\sin(3\theta+3\varphi_4)$ biçimindedir. PI denetleyicide $|S(j2\pi\cdot\SI{150}{\hertz})|=0{,}234$ ($-12{,}6$~dB) olduğundan, üçüncü harmonik modülasyonun çevrimsiz durumda üreteceği \SI{9.53}{\ampere} RMS \SI{150}{\hertz} akımı çevrim \SI{2.23}{\ampere} RMS'ye indirir; P ve PIR için oran 0,231 ve 0,214'tür. Temel bileşende Sin\textsuperscript{3}'ün payı ($3K_{34}/4$), ortalama modelde PI ile $L_1$ temel akımını \SI{22.71}{\ampere}'den \SI{25.18}{\ampere} RMS'ye taşır. Kapalı çevrimde ileri besleme, denetleyicinin karşılaması gereken temel bileşeni azaltır ve çevrim açısından bilinen bir dış giriştir; çevrimin kendisi, yani $L$, $S$ ve $T$, değişmez.
+
+\subsection{Frekans alanı: marjlar, Bode eğrileri ve kutuplar}
+
+Gerçekleme (A), modeldeki analog eşdeğerdir: sürekli denetleyici, \SI{5}{\kilo\hertz} ölçüm süzgeci ve üst sınır olarak $T_d=\SI{2}{\micro\second}$ toplam gecikme. Aynı yapının \SI{1}{\micro\second} ayrık karşılığı marjları en çok $0{,}02^{\circ}$ ve \SI{0.1}{\decibel} değiştirdiğinden ayrıca tablolanmamıştır. Gerçekleme (B) sayısal bir denetleyiciyi temsil eder: denetim periyodu bir PWM periyodu ($T_s=\SI{100}{\micro\second}$), periyot ortalamalı örnekleme, bir periyotluk hesaplama gecikmesi ve sıfırıncı mertebe tutucu. (B2), aynı yapının periyotta iki güncellemeli ($T_s=\SI{50}{\micro\second}$) biçimidir.
+
+LCL bitkisi nedeniyle $|L(j\omega)|$ eğrisi 0~dB eksenini üç kez keser: birinci geçişten sonra antirezonansta düşen kazanç, rezonansa doğru yeniden yükselir ve rezonans tepesinden sonra tekrar düşer. Tek bir kesişim frekansıyla verilen marj tanımı eksik kalır. Tezde faz marjı her kazanç geçişi $f_i$ için ayrı hesaplanmıştır: $\mathrm{PM}_i=180^{\circ}-|\angle L(j2\pi f_i)|$; gecikme marjı $\mathrm{DM}_i$, $-1$ noktasına ulaşmak için gereken ek saf gecikmedir. Kazanç marjı, $L$'nin negatif gerçel ekseni kestiği faz geçişinde $\mathrm{GM}=-20\log_{10}|L|$ olarak tanımlanmıştır. LCL rezonansında $L$'nin fazı $0^{\circ}$'dan geçer ve $|L|\simeq\SI{30}{\decibel}$'dir; nokta pozitif gerçel eksendedir ve faz geçişi değildir. Kararlılık hükmü Nyquist ölçütüne dayanır: açık çevrimde kararsız kutup bulunmadığından ($P=0$), $(-\infty,-1)$ ışınının net kesişim sayısı sıfır olmalıdır. Ek olarak kapalı çevrim kutupları doğrudan hesaplanmış ve modül marjı $1/\|S\|_\infty$ verilmiştir. Üç ölçüt her satırda aynı sonucu vermektedir.
+
+\begin{table}[htbp]
+  \centering
+  \caption{S4 akım çevriminin marjları (\SI{25}{\ampere}, ortalama model). Nyquist sütunu $(-\infty,-1)$ ışınının net kesişim sayısıdır; 0 kararlı, 1 kararsız. Bütün değerler $K_{34}$ açık ve $K_{34}=0$ için bit düzeyinde aynıdır.}
+  \label{tab:kararlilik-marjlar}
+  \scriptsize
+  \setlength{\tabcolsep}{2.8pt}
+  \begin{tabular}{@{}l l c c c r r c c@{}}
+    \toprule
+    Gerç. & Den. & Kazanç geçişleri (Hz) & $\mathrm{PM}_i$ ($^{\circ}$) & $\mathrm{DM}_{\min}$ (\si{\micro\second}) & Faz geçişi (Hz) & GM (dB) & $\|S\|_\infty$ (dB) & Nyquist \\
+    \midrule
+    A  & P   & 583 / 2454 / 3386 & 83,6 / 119,4 / 55,2 & 45,3 & 22\,167 & $+$35,3 & 2,28 & 0 \\
+    A  & PI  & 586 / 2454 / 3386 & 77,7 / 120,8 / 54,2 & 44,4 & 22\,029 & $+$35,2 & 2,36 & 0 \\
+    A  & PIR & 590 / 2454 / 3386 & 73,8 / 121,7 / 53,5 & 43,9 & 21\,937 & $+$35,2 & 2,42 & 0 \\
+    \midrule
+    B  & P   & 581 / 2474 / 3254 & 48,8 / 90,2 / 142,1 & 101 & 2811 & $-$30,3 & 5,12 & 1 \\
+    B  & PI  & 574 / 2479 / 3246 & 43,3 / 88,7 / 142,1 & 99  & 2811 & $-$30,1 & 5,57 & 1 \\
+    B  & PIR & 579 / 2479 / 3246 & 39,1 / 88,0 / 142,6 & 99  & 2810 & $-$30,0 & 6,02 & 1 \\
+    B2 & PI  & 583 / 2440 / 3444 & 63,7 / 179,4 / 33,3 & 204 & 2863 & $-$20,4 & 4,97 & 1 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Tablo~\ref{tab:kararlilik-marjlar}, gerçekleme (A) için anma noktasındaki PI çevriminin kazanç geçişlerini \SI{586}{}, \SI{2454}{} ve \SI{3386}{\hertz}'te, faz marjlarını sırasıyla $77{,}7^{\circ}$, $120{,}8^{\circ}$ ve $54{,}2^{\circ}$ olarak vermektedir. Kritik faz marjı \SI{3.4}{\kilo\hertz}'teki $54^{\circ}$'dir; tek faz geçişi \SI{22}{\kilo\hertz}'tedir ve kazanç marjı $+$\SI{35}{\decibel}'dir (çevrim kazancı 57 katına kadar artabilir). Gecikme marjı \SI{44}{\micro\second}, $\|S\|_\infty$ \SI{2.4}{\decibel}'dir. Gerçekleme (A)'da faz rezonans çevresinde $+60^{\circ}$'den $-121^{\circ}$'ye iner ama $-180^{\circ}$'ye ulaşmaz, çünkü \SI{5}{\kilo\hertz} süzgeç ve \SI{2}{\micro\second} gecikme \SI{2.8}{\kilo\hertz}'te yalnız yaklaşık $31^{\circ}$ faz gecikmesi getirir; rezonans tepesi $-1$ noktasını çevrelemez. Şekil~\ref{fig:kararlilik-l-bode}, üç denetleyicinin $L$ Bode eğrilerini $K_{34}$ açık (çizgi) ve kapalı (işaretçi) olarak üst üste göstermektedir; eğriler örtüşmektedir. Şekil~\ref{fig:kararlilik-s-t}, $|S|$ ve $|T|$ eğrilerini \SI{50}{\hertz} ve \SI{150}{\hertz} işaretleriyle vermektedir.
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.98\textwidth]{sonuclar/senaryo4_pi_30a_20260822.png}
-  \caption{Senaryo~4 için 30~A tepe ve 30~A RMS yorumlarında ileri besleme+PI akım izleme fizibilitesi ve modülasyon payı.}
-  \label{fig:senaryo4-pi-30a}
+  \includegraphics[width=\textwidth,height=0.5\textheight,keepaspectratio]{../tez-matlab-simulink/runs/2026-10-28_kararlilik/frekans/kararlilik_L_bode_K34.pdf}
+  \caption{S4 akım çevriminin açık çevrim kazancı $L(j\omega)$, P, PI ve PIR denetleyicileri, gerçekleme (A), \SI{25}{\ampere}; $K_{34}$ açık (çizgi) ve $K_{34}=0$ (işaretçi) eğrileri örtüşür.}
+  \label{fig:kararlilik-l-bode}
 \end{figure}
 
-Nihai kazanç seçimi düşük güçte tek bir THD minimumuna göre yapılmayacaktır. Aday kazançlar önce düşük güçte ters akım--THD ödünleşimiyle taranacak, ardından orta ve nominal güçte kompanzasyonun gereksiz temel bileşen değişimi veya doyum üretmediği doğrulanacaktır. Aynı denetleyici katsayılarının bütün güç aralığında korunması hedeflenecek; kazanç çizelgelemesi gerekirse etkinleştirme eşiği, histerezis ve geçiş sürekliliği açıkça raporlanacaktır.
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth,height=0.45\textheight,keepaspectratio]{../tez-matlab-simulink/runs/2026-10-28_kararlilik/frekans/kararlilik_S_T.pdf}
+  \caption{S4 akım çevriminin duyarlılık $|S(j\omega)|$ ve tamamlayıcı duyarlılık $|T(j\omega)|$ eğrileri; \SI{50}{\hertz} ve \SI{150}{\hertz} noktaları işaretlidir.}
+  \label{fig:kararlilik-s-t}
+\end{figure}
+
+Kapalı çevrim kutupları kararlılık hükmünü bağımsız olarak doğrulamaktadır. Gerçekleme (A)'da en az sönümlü kutup çifti P için \SI{3097}{\hertz} ($\zeta=0{,}184$), PI için \SI{3109}{\hertz} ($\zeta=0{,}181$), PIR için \SI{3117}{\hertz} ($\zeta=0{,}179$) çevresindedir. PI'de PI sıfırına yakın \SI{66}{\hertz}'lik gerçel bir kutup, PIR'de ise rezonans teriminden gelen \SI{40.1}{\hertz}, $\zeta=0{,}155$ yavaş bir çift bulunur. Yavaş çiftin yaklaşık \SI{26}{\milli\second} zaman sabiti, PIR koşularının \SI{0.06}{\second}'de oturmayıp \SI{0.2}{\second} gerektirmesinin nedenidir.
+
+Kararlılık sonucu, ortalama Simulink/Simscape modelinin Simulink Control Design ile doğrusallaştırılmasıyla ayrıca doğrulanmıştır. Ortalama modelde denetleyici alt sistemi, ölçüm süzgeci, doyum, doyum önleme ve ileri besleme blokları anahtarlamalı S4 modelindekilerle aynıdır; köprü, $K_{\mathrm{pwm}}$ kazançlı denetimli gerilim kaynağıyla temsil edilmiştir. Doğrusallaştırılan $L$ ile analitik $L$ arasındaki en büyük göreli fark P, PI ve PIR için sırasıyla $1{,}6\cdot10^{-11}$, $3{,}5\cdot10^{-10}$ ve $6{,}4\cdot10^{-4}$'tür (faz $\leq0{,}04^{\circ}$); $K_{34}$ açık ve kapalı doğrusallaştırmalar arasındaki fark sıfırdır.
+
+\textbf{Sayısal gerçeklemenin kararsızlığı.} Gerçekleme (B)'de ortalama örnekleme, hesaplama ve tutucu gecikmelerinin toplamı iki PWM periyodudur (\SI{200}{\micro\second}) ve rezonansta fazı $-180^{\circ}$'nin altına iter. $L$, $|L|\simeq\SI{30}{\decibel}$ iken negatif gerçel ekseni $-32{,}7$ noktasında keser; Nyquist net kesişimi 1'dir ve \SI{2.72}{\kilo\hertz}'te bir çift kararsız kutup oluşur ($|z|=1{,}175$--$1{,}179$). Periyotta iki güncelleme (B2) de yetmez ($|z|=1{,}085$): gecikme \SI{100}{\micro\second}'ye inse de analog eşdeğerin \SI{44}{\micro\second}'lik gecikme marjının üstündedir. Gecikme taraması aynı sınırı doğrular: PI çevrimi $T_d=\SI{45}{\micro\second}$'de kararlı, \SI{50}{\micro\second}'de kararsızdır. Rezonans frekansı $f_s/6\simeq\SI{1.67}{\kilo\hertz}$'in üstünde olan LCL filtrede $L_1$ akımı geri beslemesi, sayısal gecikmeyle birlikte etkin sönümleme olmadan kararsızdır \citep{Lu2016,Wang2024}. S4, sayısal gerçeklemenin kararsızlığı göz önünde tutularak analog eşdeğer olarak sunulmuştur; sayısal gerçekleme için kapasitör akımı geri beslemesi gibi bir etkin sönümleme yöntemi ya da şebeke akımı geri beslemesi gereklidir. Şekil~\ref{fig:kararlilik-nyquist} iki gerçeklemenin Nyquist eğrilerini $-1$ noktası çevresinde göstermektedir. Gerçekleme (A)'da gecikme 0--\SI{10}{\micro\second} aralığında değiştirildiğinde en küçük faz marjı $56{,}6^{\circ}$'den $44{,}4^{\circ}$'ye iner; kararlılık hükmü değişmez.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth,height=0.45\textheight,keepaspectratio]{../tez-matlab-simulink/runs/2026-10-28_kararlilik/frekans/kararlilik_nyquist_A_B.pdf}
+  \caption{S4 akım çevriminin Nyquist eğrileri: analog eşdeğer (A) $-1$ noktasını çevrelemez; bir periyot hesaplama gecikmeli sayısal gerçekleme (B) rezonansta negatif gerçel ekseni $-1$'in solunda keser.}
+  \label{fig:kararlilik-nyquist}
+\end{figure}
+
+\textbf{Şebeke endüktansı duyarlılığı.} $L_2$, şebeke ve varyak endüktansını içerir. Zayıf şebeke ya da uzun hat etkisi için $L_2$'ye 0--\SI{5}{\milli\henry} ek endüktans $L_g$ eklenmiştir (Tablo~\ref{tab:kararlilik-lg}, Şekil~\ref{fig:kararlilik-lg}). Gerçekleme (A) bütün aralıkta kararlıdır; kritik geçişin faz marjı $54^{\circ}$'den $56^{\circ}$'ye hafifçe artar, kazanç marjı değişmez, çünkü yüksek frekansta $L$, $L_1$ ile belirlenir. Bedeli izleme bant genişliğidir: $L_g$ büyüdükçe antirezonans aşağı iner ve birinci geçiş \SI{586}{\hertz}'ten \SI{158}{\hertz}'e düşer. Gerçekleme (B) her $L_g$ değerinde kararsızdır ve kötüleşir.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Ek şebeke endüktansının S4 PI çevrimine etkisi.}
+  \label{tab:kararlilik-lg}
+  \small
+  \begin{tabular}{@{}c c c c c c@{}}
+    \toprule
+    $L_g$ (mH) & $f_{\mathrm{res}}$ / $f_{\mathrm{antirez}}$ (Hz) & 1. geçiş (Hz) & $\mathrm{PM}_{\min}$ ($^{\circ}$) & GM (dB) & (B) $\max|z|$ \\
+    \midrule
+    0   & 2815 / 1720 & 586 & 54,2 & 35,2 & 1,175 \\
+    0,5 & 2635 / 1406 & 450 & 54,9 & 35,2 & 1,215 \\
+    1   & 2540 / 1218 & 367 & 55,3 & 35,2 & 1,236 \\
+    2   & 2441 / 995  & 271 & 55,7 & 35,2 & 1,257 \\
+    5   & 2337 / 704  & 158 & 56,1 & 35,2 & 1,277 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth,height=0.42\textheight,keepaspectratio]{../tez-matlab-simulink/runs/2026-10-28_kararlilik/frekans/kararlilik_Lg_taramasi.pdf}
+  \caption{Ek şebeke endüktansı $L_g=0$--\SI{5}{\milli\henry} için S4 PI çevriminin $L(j\omega)$ eğrileri, gerçekleme (A).}
+  \label{fig:kararlilik-lg}
+\end{figure}
+
+Köprünün etkin küçük işaret kazancı süreksiz iletimde değişir. PWM kazancı $\lambda K_{\mathrm{pwm}}$ ile ölçeklendiğinde çevrim $\lambda=0{,}05$--50 aralığında kararlı, $\lambda=60$'ta kararsızdır; sınır $+$\SI{35.2}{\decibel} kazanç marjıyla tutarlıdır. Kazanç azalması kararlılığı bozmaz, yalnız birinci geçişi aşağı çeker ($\lambda=0{,}1$'de \SI{79}{\hertz}) ve izleme hatasını büyütür.
+
+\subsection{Zaman alanı: anahtarlamalı modelde doğrulama}
+
+Anahtarlamalı model doğrudan doğrusallaştırılamaz: PWM karşılaştırıcısının ve kip mantığının yerel türevi hemen her yerde sıfırdır ve doğrusallaştırma bitki yolunu keser. Çevrim kazancı, doğrusallaştırma yerine enjeksiyonla ölçülmüştür. Anahtarlamalı S4 modelinin bir ölçüm kopyasında modülasyon toplamına küçük bir işaret $d$ eklenmiştir ($u_x=u_{\mathrm{fb}}+d$); $d=0$ iken model taramadaki modelle matematiksel olarak aynıdır. $d$, her biri 0,015 genlikli üç tonlu (Schroeder fazlı) bir toplamdır; \SI{80}{\milli\second} pencerede tonlar \SI{50}{\hertz} harmoniklerine ve \SI{100}{\hertz} dönüşüm ürünlerine dik seçilmiştir (212,5 / 525 / 1037,5~Hz ve 587,5 / 2025 / 3362,5~Hz). Çevrim kazancı $L=-U_{\mathrm{fb}}/U_x$ olarak kestirilmiştir. Belirsizlik, tona komşu ve ton taşımayan ızgara noktalarındaki $u_x$ düzeyinden, yani anahtarlama ve kip dönüşümü kaynaklı arka plandan hesaplanmıştır. Enjeksiyonlu koşuların temel bileşeni enjeksiyonsuz koşularla aynıdır (PI, \SI{25}{\ampere}: \SI{24.46}{\ampere} ve \SI{24.47}{\ampere}); enjeksiyon çalışma noktasını bozmamıştır.
+
+\begin{table}[htbp]
+  \centering
+  \caption{S4 PI çevrim kazancı $L(j\omega)$: analitik gerçekleme (A) ile anahtarlamalı modelde enjeksiyonla ölçülen değerler; hücrelerde $|L|$ (dB) / $\angle L$ ($^{\circ}$).}
+  \label{tab:kararlilik-olcum}
+  \scriptsize
+  \setlength{\tabcolsep}{3pt}
+  \begin{tabular}{@{}r c c c c c c@{}}
+    \toprule
+    $f$ (Hz) & Analitik (A) & \SI{25}{\ampere}, $K_{34}$ açık & \SI{25}{\ampere}, $K_{34}=0$ & \SI{10}{\ampere} & \SI{2.3}{\ampere} & Belirsizlik \\
+    \midrule
+    212,5  & 9,74 / $-106{,}7^{\circ}$ & 9,90 / $-94{,}4^{\circ}$ & 10,19 / $-90{,}2^{\circ}$ & 8,36 / $-68{,}5^{\circ}$ & $-7{,}25$ / $-25{,}8^{\circ}$ & $\pm1{,}4$~dB / $\pm10^{\circ}$ \\
+    525    & 1,11 / $-102{,}2^{\circ}$ & 1,29 / $-94{,}5^{\circ}$ & 1,31 / $-93{,}4^{\circ}$ & 0,66 / $-84{,}7^{\circ}$ & $-8{,}11$ / $-30{,}1^{\circ}$ & $\pm0{,}8$~dB / $\pm6^{\circ}$ \\
+    587,5  & $-0{,}03$ / $-102{,}3^{\circ}$ & 0,18 / $-95{,}3^{\circ}$ & 0,32 / $-93{,}8^{\circ}$ & $-0{,}19$ / $-86{,}5^{\circ}$ & -- & $\pm0{,}6$~dB / $\pm4^{\circ}$ \\
+    1037,5 & $-7{,}10$ / $-105{,}3^{\circ}$ & $-6{,}05$ / $-98{,}6^{\circ}$ & $-6{,}75$ / $-90{,}4^{\circ}$ & $-7{,}00$ / $-91{,}6^{\circ}$ & $-10{,}05$ / $-48{,}8^{\circ}$ & $\pm1{,}0$~dB / $\pm7^{\circ}$ \\
+    2025   & $-12{,}67$ / $+63{,}9^{\circ}$ & $-11{,}00$ / $+60{,}5^{\circ}$ & $-10{,}08$ / $+54{,}4^{\circ}$ & $-10{,}62$ / $+49{,}1^{\circ}$ & -- & $\pm0{,}7$~dB / $\pm5^{\circ}$ \\
+    3362,5 & 0,31 / $-125{,}6^{\circ}$ & 0,47 / $-126{,}7^{\circ}$ & 0,59 / $-122{,}5^{\circ}$ & 0,25 / $-114{,}9^{\circ}$ & -- & $\pm0{,}4$~dB / $\pm2{,}5^{\circ}$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Tablo~\ref{tab:kararlilik-olcum} ve Şekil~\ref{fig:kararlilik-olcum}, ölçülen ve analitik çevrim kazançlarını karşılaştırmaktadır. Ölçüm yönteminin kendisi iki yoldan denetlenmiştir: ölçülen denetleyici tasarım değerine 0,995--1,004 oranında ve $0{,}6^{\circ}$ içinde, ölçülen pasif ağ $I_{L1}/V_{\mathrm{inv}}$ analitik $G$'ye 0,987--1,028 oranında ve $3{,}4^{\circ}$ içinde eşittir. Ölçülen ve analitik $L$ arasındaki fark, köprünün etkin küçük işaret kazancından gelmektedir. Anma akımında ortalama model kritik bölgeyi doğru vermektedir: \SI{3362.5}{\hertz}'te fark $+$\SI{0.16}{\decibel} ve $-1{,}1^{\circ}$, ölçüm belirsizliği $\pm$\SI{0.4}{\decibel} ve $\pm2{,}5^{\circ}$'dir. Ölçümden kestirilen kritik faz marjı \SI{25}{\ampere}'de $K_{34}$ açıkken yaklaşık $53\pm3^{\circ}$, $K_{34}=0$ iken yaklaşık $57\pm3^{\circ}$, \SI{10}{\ampere}'de yaklaşık $65\pm2^{\circ}$'dir; analitik değer $54{,}2^{\circ}$'dir. \SI{212}{}--\SI{1037}{\hertz} aralığında anahtarlamalı model $7$--$12^{\circ}$ faz önü göstermektedir; faz önü sıfır geçişleri çevresindeki süreksiz iletim ve ölü zaman davranışından gelir ve marjı artırır. $K_{34}$ açık ve kapalı ölçümler arasındaki fark 0,02--\SI{0.9}{\decibel} ve $1$--$8^{\circ}$'dir; fark her noktada iki ölçümün birleşik belirsizliği içinde ya da sınırındadır ve iki koşunun farklı akımda (\SI{24.5}{\ampere} ve \SI{21.9}{\ampere}) çalışmasından kaynaklanır.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth,height=0.45\textheight,keepaspectratio]{../tez-matlab-simulink/runs/2026-10-28_kararlilik/karsilastirma/kararlilik_L_olcum_karsilastirma.pdf}
+  \caption{S4 PI çevrim kazancı: analitik $L(j\omega)$ eğrisi ile ortalama modelde ve anahtarlamalı modelde enjeksiyonla ölçülen noktalar (\SI{25}{\ampere} $K_{34}$ açık ve kapalı, \SI{10}{\ampere}, \SI{2.3}{\ampere}).}
+  \label{fig:kararlilik-olcum}
+\end{figure}
+
+Orta ve düşük akımda köprünün etkin kazancı düşer ve faz önü artar. \SI{10}{\ampere}'de etkin kazanç \SI{212}{\hertz}'te tasarım değerinin 0,87 katı ve $+40^{\circ}$ önde, \SI{2.3}{\ampere}'de ise 0,14--0,71 kat ve $+56$--$84^{\circ}$ öndedir. \SI{2.3}{\ampere}'de köprü süreksiz iletimde akım kaynağına yakın davranır: çevrim kazancı \SI{212}{}--\SI{1037}{\hertz} aralığında $-7$ ile \SI{-10}{\decibel} arasında, fazı $-49^{\circ}$'den öndedir; çevrim yavaş ama kararlıdır. Ortalama model düşük akımda izleme başarımını gerçekte olduğundan iyi gösterir; kararlılık sonucu ise korunur, çünkü ölçülen bütün noktalarda faz analitik değerden önde ya da ona eşittir ve köprü kazancının azalması kararlılığı bozmaz.
+
+\textbf{Sin\textsuperscript{3}'ün üçüncü harmonik bulgusu.} Anma akımında $L_1$ akımındaki üçüncü harmoniğin kaynağı Sin\textsuperscript{3} teriminin kendisidir: \SI{25}{\ampere}'de $I_{L1,3}$, $K_{34}$ açıkken \SI{2.13}{\ampere}, $K_{34}=0$ iken \SI{0.43}{\ampere}'dir; THD sırasıyla \%9,4 ve \%5,6'dır. Kalibre $K_{34}$, \SI{2.3}{\ampere}'deki süreksiz iletim bozulmasını kompanze edecek büyüklüktedir; anma akımında bozulma küçük olduğundan terim fazla gelir ve çevrim onu $|S(j2\pi\cdot\SI{150}{\hertz})|=0{,}23$ oranında bastırır ama sıfırlamaz. Temel bileşende ise terim yararlıdır: $K_{34}=0$ iken PI genlik hatası $-$\%2,1'den $-$\%12,3'e çıkar. Kapalı çevrimde ileri besleme genliğinin akım düzeyine göre ayarlanması önerilir; öneri tezde uygulanmamıştır.
+
+\textbf{Basamak yanıtı.} \SI{10}{\ampere}$\rightarrow$\SI{25}{\ampere} basamağı anahtarlamalı ve ortalama modelde $K_{34}$ açık ve kapalı olarak yinelenmiştir (Tablo~\ref{tab:kararlilik-basamak}, Şekil~\ref{fig:kararlilik-basamak}). Geçici bileşen, $i_{L1}(t)-i_{L1}(t+\SI{20}{\milli\second})$ farkı olarak tanımlanmıştır. Dört koşuda da geçici bileşen aynı biçimde yaklaşık \SI{1}{\milli\second}'de söner; süre \SI{3.1}{\kilo\hertz}, $\zeta=0{,}18$ kutup çiftiyle ve 0,8--\SI{3}{\kilo\hertz} gerçel kutuplarla uyumludur ve ardından \SI{66}{\hertz}'lik PI kipi gelir. Anahtarlamalı modelde $K_{34}$ açık ve kapalı geçici bileşenler arasındaki fark \SI{0.61}{\ampere} RMS'dir (basamak tepesinin \%2,9'u).
+
+\begin{table}[htbp]
+  \centering
+  \caption{S4 PI \SI{10}{\ampere}$\rightarrow$\SI{25}{\ampere} basamağında $K_{34}$ açık ve kapalı geçici yanıt.}
+  \label{tab:kararlilik-basamak}
+  \small
+  \begin{tabularx}{\textwidth}{@{}X c c >{\raggedright\arraybackslash}p{0.34\textwidth}@{}}
+    \toprule
+    Koşu & Zarf aşımı & Yerleşme (ms) & Ortalama modelden geçici fark (ilk \SI{15}{\milli\second}) \\
+    \midrule
+    Anahtarlamalı, $K_{34}$ açık & \%0,17 & 0,43 & \SI{0.38}{\ampere} RMS (\%1,8) \\
+    Anahtarlamalı, $K_{34}=0$    & $-$\%0,5 & 0,69 & \SI{0.67}{\ampere} RMS (\%3,1) \\
+    Ortalama, $K_{34}$ açık      & \%0,0 & 0,41 & -- \\
+    Ortalama, $K_{34}=0$         & \%1,5 & 0,66 & -- \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth,height=0.45\textheight,keepaspectratio]{../tez-matlab-simulink/runs/2026-10-28_kararlilik/karsilastirma/kararlilik_basamak_K34.pdf}
+  \caption{S4 PI \SI{10}{\ampere}$\rightarrow$\SI{25}{\ampere} basamağının geçici bileşeni; anahtarlamalı ve ortalama model, $K_{34}$ açık ve kapalı.}
+  \label{fig:kararlilik-basamak}
+\end{figure}
+
+\subsection{Kararlılık analizinin sınırları}
+
+Ortalama model, anma akımında sürekli iletim bölgesinde kritik frekans aralığını $\pm$\SI{0.2}{\decibel} ve $\pm1^{\circ}$ içinde vermektedir; orta ve düşük akımda köprünün etkin kazancı frekansa bağlı değiştiğinden ortalama model izleme başarımını iyimser gösterir. \SI{2.3}{\ampere}'de 2--\SI{3.4}{\kilo\hertz} bölgesi ölçülmemiştir. P ve PIR anahtarlamalı modelde ayrıca ölçülmemiştir; bitki ölçüldüğü ve denetleyicinin doğrusal olduğu doğrulandığı için çevrim kazançları ölçülen bitkiden yazılabilir. Gecikme $T_d=\SI{2}{\micro\second}$ bir üst sınırdır; donanımın denetim kodu ve örnekleme yapısı belgelenmemiştir. Nötr susturmanın periyodik kip değişimi düşük akımda harmonikler arası bağlaşımı belirginleştirebilir; düşük akım için Eşitlik~\eqref{eq:htf-matris-iliskisi} çerçevesinde bir HTF ya da harmonik durum uzayı modeli kurulmamıştır \citep{Liao2022}. Özgün DA bara ile \SI{25}{\ampere}'de kararlı durum oluşmadığından kararlılık analizi büyütülmüş bara ile yapılmıştır.
 
 \section{Bölüm Sonucu}
 
-Sin\textsuperscript{3} özdeşliği temel ve üçüncü harmonik bileşenini tek bir anlık terimde birleştirmekte, ancak doğrudan $\sin(3\theta)$ enjeksiyonuyla aynı katsayı anlamını taşımamaktadır. DCM/CCM parçalı modeli, nötr susturma sonrasında sinüzoidal görev oranının neden sinüzoidal akım üretmediğini göstermiş; doğru özdeşlikle yapılan katsayı taraması saf sinüs görev oranındaki \%39,96'lık üçüncü harmonik oranını, doğrulanmış parametre setiyle uyumlu $(D_1,D_3)=(0{,}34,\ 0{,}40)$ noktasında \%0,15'e indiren düzeltilmiş bir aday üretmiştir. Aynı tarama, önceki aday katsayıların bu parametre setine taşınamadığını sayısal olarak göstermiştir; katsayı seçimi çalışma noktasına bağlıdır.
+Sin\textsuperscript{3} özdeşliği temel ve üçüncü harmonik bileşenini tek bir anlık terimde birleştirmekte, doğrudan $\sin(3\theta)$ enjeksiyonuyla aynı katsayı anlamını taşımamaktadır. Benzetim modelinde terim birim sinüsün küpü olarak, pozitif işaretle ve normalizasyonsuz biçimde modülasyon toplamına eklenmektedir. DCM/CCM parçalı modeli, nötr susturma sonrasında sinüzoidal görev oranının neden sinüzoidal akım üretmediğini göstermiş; doğru özdeşlikle yapılan analitik tarama, saf sinüs görev oranındaki \%39,96'lık üçüncü harmonik oranını $(D_1,D_3)=(0{,}34,\ 0{,}40)$ adayında \%0,15'e indirmiştir. Analitik adayın üçüncü harmonik katsayısı ($-0{,}10$), anahtarlamalı modelin kalibre katsayısına ($-0{,}096$) yakındır; katsayı seçimi çalışma noktasına bağlıdır.
 
-Kapalı çevrim yapı Sin\textsuperscript{3} terimini bağımsız kontrolcü olarak değil, akım döngüsünün modülasyon toplamına eklenen ileri besleme girişi olarak konumlandırmıştır. Geçici MATLAB modeli $L$, $S$ ve $T$ analiz zincirini ve şebeke endüktansı taramasını çalıştırmaktadır; sayısal kararlılık marjları gerçek parametre doğrulaması beklemektedir. Bağımsız fiziksel koşu tarihsel THD iyileşmesini yeniden üretmemiş ve gerçek enjeksiyon/kazanç eşleşmesinin zorunluluğunu göstermiştir. Senaryo~4 ortalama modeli, yaklaşık 30~A akımın PI ile doyumsuz izlenebildiğini göstermiştir; orta ve nominal güçte anahtarlamalı verim, termal durum, THD ve geçici rejim karşılaştırması gerçek model ve ölçüm verileriyle tamamlanmalıdır.
+S4 benzetiminde PI ve PIR akım denetimi \SI{25}{\ampere} anma akımında referansı sırasıyla $-$\%2,1 ve $-$\%1,0 genlik hatasıyla, doyumsuz ve \%8,5--9,2 THD ile izlemektedir; \SI{10}{\ampere}$\rightarrow$\SI{25}{\ampere} basamağında son kararlı zarfa göre aşım \%0,2, yerleşme \SI{0.44}{\milli\second}'dir. Anma akımı sonuçlarının önkoşulu DA bara orta noktasını tutabilen bir bara boyutudur. Orta akımda (\SI{10}{\ampere}) nötr susturmanın yarattığı süreksiz iletim THD'yi \%20 düzeyine çıkarmakta ve yöntemin düşük güç kapsamını sınırlamaktadır.
+
+Kararlılık analizi Sin\textsuperscript{3} teriminin bir denetleyici değil, çevrim dışından eklenen bilinen bir giriş olduğunu üç katmanda göstermiştir: karakteristik denklem $1+L(s)=0$ terimi içermez; $L$, $S$ ve $T$, $K_{34}$ açık ve kapalıyken ortalama modelde ve doğrusallaştırmada aynıdır, anahtarlamalı modelde ise farklar ölçüm belirsizliği düzeyindedir; terimin akıma etkisi $S(j\omega)K_{\mathrm{pwm}}G(j\omega)$ ile belirlenir ve \SI{150}{\hertz} bileşeni $|S|=0{,}23$ oranında bastırılır. Analog eşdeğer S4 çevrimi kritik geçişte $54^{\circ}$ faz marjı, $+$\SI{35}{\decibel} kazanç marjı ve \SI{44}{\micro\second} gecikme marjıyla kararlıdır ve 0--\SI{5}{\milli\henry} ek şebeke endüktansında kararlı kalır. Bir periyot gecikmeli sayısal gerçekleme ise etkin sönümleme olmadan kararsızdır; donanım uygulaması için etkin sönümleme gereklidir.
