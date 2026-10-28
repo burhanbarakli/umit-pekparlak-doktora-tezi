@@ -1,0 +1,81 @@
+[Warning: 'Output Port 5' of 'inverter_senaryo3_d08/Subsystem2' is not connected.] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: 'Output Port 6' of 'inverter_senaryo3_d08/Subsystem2' is not connected.] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+### Building the Accelerator target for model: inverter_senaryo3_d08
+### Successfully built the Accelerator target for model: inverter_senaryo3_d08
+
+Build Summary
+
+Top model accelerator targets built:
+
+Model                  Action                        Rebuild Reason                                    
+=======================================================================================================
+inverter_senaryo3_d08  Code generated and compiled.  Code generation information file does not exist.  
+
+1 of 1 models built (0 models already up to date)
+Build duration: 0h 0m 34.653s
+[Warning: The specified buffer for 'inverter_senaryo3_d08/RMS1/TrueRMS /Mean value/Model/Transport Delay' was too small. During simulation,
+the buffer size was temporarily increased to 355328. In order to generate code, you need to update the buffer size parameter] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: The specified buffer for 'inverter_senaryo3_d08/THD/RMS1/TrueRMS /Mean value/Model/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 355328. In order to generate code, you need to update the buffer size parameter] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: The specified buffer for 'inverter_senaryo3_d08/THD/RMS2/RMS /Fourier1/Mean value1/Model/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 355328. In order to generate code, you need to update the buffer size parameter] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: The specified buffer for 'inverter_senaryo3_d08/THD/RMS2/RMS /Fourier1/Mean/Model/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 355328. In order to generate code, you need to update the buffer size parameter] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: The specified buffer for 'inverter_senaryo3_d08/THD2/RMS1/TrueRMS /Mean value/Model/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 355328. In order to generate code, you need to update the buffer size parameter] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: The specified buffer for 'inverter_senaryo3_d08/THD2/RMS2/RMS /Fourier1/Mean value1/Model/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 355328. In order to generate code, you need to update the buffer size parameter] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: The specified buffer for 'inverter_senaryo3_d08/THD2/RMS2/RMS /Fourier1/Mean/Model/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 355328. In order to generate code, you need to update the buffer size parameter] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: The specified buffer for 'inverter_senaryo3_d08/Mean9/Model/Transport Delay' was too small. During simulation, the buffer size
+was temporarily increased to 355328. In order to generate code, you need to update the buffer size parameter] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: The specified buffer for 'inverter_senaryo3_d08/THD/Mean/Model/Transport Delay' was too small. During simulation, the buffer size
+was temporarily increased to 355328. In order to generate code, you need to update the buffer size parameter] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: The specified buffer for 'inverter_senaryo3_d08/THD2/Mean/Model/Transport Delay' was too small. During simulation, the buffer
+size was temporarily increased to 355328. In order to generate code, you need to update the buffer size parameter] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: The specified buffer for 'inverter_senaryo3_d08/Mean10/Model/Transport Delay' was too small. During simulation, the buffer size
+was temporarily increased to 355328. In order to generate code, you need to update the buffer size parameter] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: The specified buffer for 'inverter_senaryo3_d08/Mean1/Model/Transport Delay' was too small. During simulation, the buffer size
+was temporarily increased to 355328. In order to generate code, you need to update the buffer size parameter] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: The specified buffer for 'inverter_senaryo3_d08/Mean3/Model/Transport Delay' was too small. During simulation, the buffer size
+was temporarily increased to 355328. In order to generate code, you need to update the buffer size parameter] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: The specified buffer for 'inverter_senaryo3_d08/Power Measurement/Continuous/Transport Delay' was too small. During simulation,
+the buffer size was temporarily increased to 355328. In order to generate code, you need to update the buffer size parameter] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: The specified buffer for 'inverter_senaryo3_d08/Power Measurement/Continuous/Transport Delay1' was too small. During simulation,
+the buffer size was temporarily increased to 355328. In order to generate code, you need to update the buffer size parameter] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: The specified buffer for 'inverter_senaryo3_d08/Mean2/Model/Transport Delay' was too small. During simulation, the buffer size
+was temporarily increased to 355328. In order to generate code, you need to update the buffer size parameter] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: The specified buffer for 'inverter_senaryo3_d08/Power3/Fourier/Mean value1/Model/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 355328. In order to generate code, you need to update the buffer size parameter] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: The specified buffer for 'inverter_senaryo3_d08/Power3/Fourier/Mean/Model/Transport Delay' was too small. During simulation, the
+buffer size was temporarily increased to 355328. In order to generate code, you need to update the buffer size parameter] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: The specified buffer for 'inverter_senaryo3_d08/Power3/Fourier1/Mean value1/Model/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 355328. In order to generate code, you need to update the buffer size parameter] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: The specified buffer for 'inverter_senaryo3_d08/Power3/Fourier1/Mean/Model/Transport Delay' was too small. During simulation, the
+buffer size was temporarily increased to 355328. In order to generate code, you need to update the buffer size parameter] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: The specified buffer for 'inverter_senaryo3_d08/Mean11/Model/Transport Delay' was too small. During simulation, the buffer size
+was temporarily increased to 355328. In order to generate code, you need to update the buffer size parameter] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+inverter_senaryo3_d08: tamamlandi (10454.6 s)

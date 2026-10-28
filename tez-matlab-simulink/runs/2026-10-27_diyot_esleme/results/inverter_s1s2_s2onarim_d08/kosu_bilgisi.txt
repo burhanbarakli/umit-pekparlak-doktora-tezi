@@ -1,0 +1,8 @@
+model: inverter_s1s2_s2onarim_d08
+matlab: 23.2.0.2515942 (R2023b) Update 7
+baslangic: 27-Oct-2026 19:22:14
+durum: tamamlandi
+duvar_suresi_s: 14578.5
+StopTime: 0.1
+SimulationMode: accelerator -> accelerator
+

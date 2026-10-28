@@ -1,0 +1,8 @@
+model: inverter_senaryo3_d08
+matlab: 23.2.0.2515942 (R2023b) Update 7
+baslangic: 27-Oct-2026 19:18:37
+durum: tamamlandi
+duvar_suresi_s: 10454.6
+StopTime: 0.1
+SimulationMode: accelerator -> accelerator
+

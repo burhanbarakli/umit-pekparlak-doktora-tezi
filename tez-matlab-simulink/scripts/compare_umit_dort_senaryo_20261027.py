@@ -21,8 +21,9 @@ DEFAULT_RUN = "2026-10-27_dort_senaryo_ilk_kosu"
 RUN = ROOT / "runs" / DEFAULT_RUN
 
 # İki devreli (S1 + S2) modeller: ham paket modeli ve D-01 onarımlı kopyası
-S12_MODELS = ("inverter_scenario1_parametric5_etiquetli", "inverter_s1s2_s2onarim")
-S3_MODELS = ("inverter_senaryo3", "inverter_senaryo4")
+S12_MODELS = ("inverter_scenario1_parametric5_etiquetli", "inverter_s1s2_s2onarim",
+              "inverter_s1s2_s2onarim_d08")  # _d08: D-08 diyot eşlemesi düzeltilmiş kopya
+S3_MODELS = ("inverter_senaryo3", "inverter_senaryo4", "inverter_senaryo3_d08")
 
 # Deney hedefleri: değerler.xlsx (17.08.2026) = inverter_common_parameters.m (12.10.2026)
 TARGETS = {

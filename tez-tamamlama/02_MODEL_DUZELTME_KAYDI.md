@@ -31,14 +31,14 @@ Her satır şu öğeleri içerir:
 
 | No | Dosya / blok | Sınıf | Sorun (kısa) | Durum |
 |---|---|---|---|---|
-| D-01 | `inverter_scenario1_parametric5_etiquetli.slx` · Gate Drive1–4 | Kapı/denetim | S2 devresinin kapı sürücüleri `g12…g42` etiketlerini okuyor, bu etiketleri üreten Goto yok; S2 IGBT'leri hiç anahtarlanmıyor | düzeltildi, kapı mantığı doğrulandı — tam koşu sürüyor |
+| D-01 | `inverter_scenario1_parametric5_etiquetli.slx` · Gate Drive1–4 | Kapı/denetim | S2 devresinin kapı sürücüleri `g12…g42` etiketlerini okuyor, bu etiketleri üreten Goto yok; S2 IGBT'leri hiç anahtarlanmıyor | doğrulandı — S2 anahtarlıyor, η 94,07 % (hedef 94,2 %) |
 | D-02 | `inverter_senaryo4.slx` | Paket | Dosya S3 modelinin kopyası; S4'ün L1 akım geri beslemeli denetleyicisi yok | açık |
 | D-03 | Dört modelin tümü · model geri çağrıları | Paket | Parametre dosyası yalnız InitFcn'de çalışıyor, PreLoadFcn yok; temiz oturumda Simscape diyotları "Qrr/didt … type string" hatasıyla derlenmiyor | düzeltildi (koşu betiğinde) |
 | D-04 | S1+S2 ve S3 · sinyal kayıt adları | Ölçüm | Farklı hatlar aynı kayıt adını taşıyor (ör. `Idc_s1`); ada göre okunan değer yanlış hatta ait olabiliyor | düzeltildi (çıkarım betiğinde) |
 | D-05 | `inverter_common_parameters.m` | Parametre | `Kp`, `K12`, `phase_deg2`, `L1_core_Rp4` tanımlı ama hiçbir blokta kullanılmıyor | açık — D-01 ve D-02 ile kapanacak |
 | D-06 | S1, S3 · Power blokları | Ölçüm | Benzetimde Q pozitif (+33…+35 var), deney tablosunda Q negatif ya da sıfır; yön kuralı belgelenmemiş | kapandı — C noktasında üretici kuralı doğrulandı; deney Qo hesaplanmış, karşılaştırma \|Q\| ile (İP-3) |
 | D-07 | Tüm modeller · IGBT eşlemesi | Topoloji | Ağustos incelemesindeki "bağlantısız IGBT" sorunu 12.10 modellerinde yok: 12/12 IGBT doğru tabloya bağlı, sarkık blok yok | denetlendi — uygun (diyotlar → D-08) |
-| D-08 | Tüm modeller · Diode3/5/6/7 (S2 devresinde Diode4/8/10/11) | **Topoloji / cihaz** | Harici D1–D2 (faz–DA rayı) diyotlarıyla nötr IGBT ters paralel diyotlarının (DS3–DS4) parametre kümeleri **yer değiştirmiş**: D1–D2'de IXYN iç diyotu, DS3–DS4'te DSEI var | açık — **yüksek öncelik**, kalibrasyondan önce |
+| D-08 | Tüm modeller · Diode3/5/6/7 (S2 devresinde Diode4/8/10/11) | **Topoloji / cihaz** | Harici D1–D2 (faz–DA rayı) diyotlarıyla nötr IGBT ters paralel diyotlarının (DS3–DS4) parametre kümeleri **yer değiştirmiş**: D1–D2'de IXYN iç diyotu, DS3–DS4'te DSEI var | doğrulandı — etki S3'te −%0,15, S1'de −%0,9 P_ac; İP-4 tabanı `*_d08` |
 | D-09 | Tüm modeller · Capacitor6/7 (EMC X kapasitörü) | Parametre | X kapasitörü `C_emc_aux` = 1 µF ile modellenmiş; m-dosyasının kendi tek faz eşdeğeri `EMC_Cx_eq` = 0,5 µF / `EMC_Rx_eq` = 0,2 Ω hiç kullanılmıyor | açık — K-17 |
 | D-10 | Tüm modeller · IGBT/diyot ısıl ve eşik parametreleri | Parametre (izlenebilirlik) | `Vth = 6`, ısıl ağ dizileri ve diyot `Tdevice = 25` değişken yerine sayı olarak yazılmış; m-dosyasındaki karşılıkları kullanılmıyor. Değerler aynı, sonuca etkisi yok | açık — düşük öncelik |
 
@@ -100,8 +100,16 @@ Her satır şu öğeleri içerir:
 
   - Nötr IGBT'ler alternans boyunca sabit 1/0 kalıyor; bu, K-03'teki susturma tanımıdır.
   - Hiçbir kapı çiftinde örtüşme yok.
-- **Etki:** — (tam koşu sürüyor)
-- **Durum:** düzeltildi; tam koşu bekleniyor
+- **Etki** (D-01 + D-08 modeliyle, `review/2026-10-27_D08_DIYOT_ESLEME.md` Tablo 5):
+  - S2 devresi ilk kez anahtarlıyor: P_dc 1,1 → 286,6 W, P_ac −0,4 → 269,6 W,
+    I_ac 0,35 → 2,57 A.
+  - Hedefe göre: η 94,07 % (hedef 94,2 %), kayıp P_dc − P_ac 16,99 W (hedef 16,98 W),
+    THD %56,7 (hedef %47), |Q| 29,1 var (hedef bandı 24,1–26,7 var).
+  - P_ac ve I_ac'deki +%6–10 fazlalık S1/S3'teki sistematik fazlalıkla aynı yönde;
+    İP-4'te K12/phase_deg2 ile kalibre edilecek.
+  - D-08'siz onarılmış modelin tam koşusu 15 saatte bitmedi ve durduruldu
+    (28.10.2026); D-01'in doğrulaması D-08'li koşuya dayanır.
+- **Durum:** doğrulandı
 
 ### D-02 — Senaryo 4 modeli teslim edilmemiş
 
@@ -234,11 +242,20 @@ Her satır şu öğeleri içerir:
 - **Düzeltme:** Bağlantıya dokunmadan yalnız diyot parametre önekleri takas edilir.
   - `Diode3`, `Diode5`, `Diode4`, `Diode8`: `DS34_*` → `D12_*`
   - `Diode6`, `Diode7`, `Diode10`, `Diode11`: `D12_*` → `DS34_*`
-  - Betik: `scripts/fix_diode_mapping_20261027.m` (planlandı)
-- **Etki:** Henüz ölçülmedi. Beklenti: sıfır durumunun serbest dolaşım akımı her
-  senaryoda DS3/DS4'ten geçer. Bu diyotların Qrr değeri (DSEI ≈ 3 µC, IXYN ≈ 9,5 µC)
-  S1/S2'nin açılma kaybını değiştirir; dolayısıyla verim ve P_dc da değişir.
-- **Durum:** açık — İP-4 kalibrasyonundan önce uygulanacak
+  - Betik: `scripts/fix_diode_mapping_20261027.m`. Her diyodun rolü bağlantı
+    grafiğinden çıkarılır, yalnız yanlış önekli 18 diyalog parametresi yeniden
+    yazılır. Modele PreLoadFcn eklenir (D-03).
+  - Çıktılar: `runs/2026-10-27_diyot_esleme/model/inverter_senaryo3_d08.slx` ve
+    `inverter_s1s2_s2onarim_d08.slx`.
+- **Etki** (`review/2026-10-27_D08_DIYOT_ESLEME.md`):
+  - S3: P_ac −0,46 W (−%0,15), η −0,04 puan; DS3/DS4 kaybı diyot başına
+    0,59 → 0,63 W. Çalışma noktası pratikte değişmiyor.
+  - S1: P_ac −2,40 W (−%0,9), I_ac −%1,3, η +0,07 puan. Etki S3'tekinin yaklaşık on
+    katı; S1'de nötr kol tamamlayıcı anahtarlandığından DS3/DS4 her periyotta
+    toparlanmaya giriyor.
+  - Kararlı çalışmada D1–D2 iletime girmiyor (yalnız bağlantı kapasitesi akımı).
+  - Hedeften sapmanın kaynağı D-08 değil; İP-4'te kapanacak.
+- **Durum:** doğrulandı — İP-4 taban modeli `*_d08` modelleridir
 
 ### D-09 — EMC X kapasitörü m-dosyasındaki eşdeğerle modellenmemiş
 

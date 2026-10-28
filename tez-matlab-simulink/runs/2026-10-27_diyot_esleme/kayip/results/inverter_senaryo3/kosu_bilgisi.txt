@@ -1,0 +1,10 @@
+model: inverter_senaryo3
+matlab: 23.2.0.2515942 (R2023b) Update 7
+baslangic: 27-Oct-2026 19:35:15
+mod: accelerator
+SimscapeLogDataHistory: 1200000
+duvar_suresi_s: 10263.1
+mod_son: accelerator
+kayit_penceresi_s: 0.065501 - 0.100000 (1200000 adım tutuldu)
+ortalama_penceresi_s: 0.080000 - 0.100000
+toplam_kayip_W: 18.8726

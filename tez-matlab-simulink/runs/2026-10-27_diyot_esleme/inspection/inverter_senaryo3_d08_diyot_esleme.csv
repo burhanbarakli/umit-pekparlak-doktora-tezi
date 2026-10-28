@@ -1,0 +1,7 @@
+devre,blok,rol,A,K,onek_once,onek_sonra,onek_beklenen,Vf_once,Vf_sonra,Qrr_once,Qrr_sonra,trr_once,trr_sonra,iRM_once,iRM_sonra
+1 (N-Channel IGBT),Diode2,DS2 (S2 ters paralel),DA−,dış orta,DS12,DS12,DS12,1.5,1.5,1.57e-05,1.57e-05,1.15e-07,1.15e-07,-54,-54
+1 (N-Channel IGBT),Diode3,D2 harici (DA- -> faz),DA−,faz,DS34,D12,D12,1.7,1.58,9.5e-06,3e-06,1e-07,1.9e-07,-95,-13
+1 (N-Channel IGBT),Diode5,D1 harici (faz -> DA+),faz,DA+,DS34,D12,D12,1.7,1.58,9.5e-06,3e-06,1e-07,1.9e-07,-95,-13
+1 (N-Channel IGBT),Diode6,DS3 (S3 ters paralel),ortak E,orta nokta,D12,DS34,DS34,1.58,1.7,3e-06,9.5e-06,1.9e-07,1e-07,-13,-95
+1 (N-Channel IGBT),Diode7,DS4 (S4 ters paralel),ortak E,faz,D12,DS34,DS34,1.58,1.7,3e-06,9.5e-06,1.9e-07,1e-07,-13,-95
+1 (N-Channel IGBT),Diode9,DS1 (S1 ters paralel),dış orta,DA+,DS12,DS12,DS12,1.5,1.5,1.57e-05,1.57e-05,1.15e-07,1.15e-07,-54,-54

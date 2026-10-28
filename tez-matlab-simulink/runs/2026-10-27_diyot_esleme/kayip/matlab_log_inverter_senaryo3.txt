@@ -1,0 +1,81 @@
+[Warning: 'Output Port 5' of 'inverter_senaryo3/Subsystem2' is not connected.] 
+[> In run_diode_losses_20261027 (line 39)] 
+[Warning: 'Output Port 6' of 'inverter_senaryo3/Subsystem2' is not connected.] 
+[> In run_diode_losses_20261027 (line 39)] 
+### Building the Accelerator target for model: inverter_senaryo3
+### Successfully built the Accelerator target for model: inverter_senaryo3
+
+Build Summary
+
+Top model accelerator targets built:
+
+Model              Action                        Rebuild Reason                                    
+===================================================================================================
+inverter_senaryo3  Code generated and compiled.  Code generation information file does not exist.  
+
+1 of 1 models built (0 models already up to date)
+Build duration: 0h 0m 16.995s
+[Warning: The specified buffer for 'inverter_senaryo3/RMS1/TrueRMS /Mean value/Model/Transport Delay' was too small. During simulation, the
+buffer size was temporarily increased to 366592. In order to generate code, you need to update the buffer size parameter] 
+[> In run_diode_losses_20261027 (line 39)] 
+[Warning: The specified buffer for 'inverter_senaryo3/THD/RMS1/TrueRMS /Mean value/Model/Transport Delay' was too small. During simulation,
+the buffer size was temporarily increased to 366592. In order to generate code, you need to update the buffer size parameter] 
+[> In run_diode_losses_20261027 (line 39)] 
+[Warning: The specified buffer for 'inverter_senaryo3/THD/RMS2/RMS /Fourier1/Mean value1/Model/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 366592. In order to generate code, you need to update the buffer size parameter] 
+[> In run_diode_losses_20261027 (line 39)] 
+[Warning: The specified buffer for 'inverter_senaryo3/THD/RMS2/RMS /Fourier1/Mean/Model/Transport Delay' was too small. During simulation,
+the buffer size was temporarily increased to 366592. In order to generate code, you need to update the buffer size parameter] 
+[> In run_diode_losses_20261027 (line 39)] 
+[Warning: The specified buffer for 'inverter_senaryo3/THD2/RMS1/TrueRMS /Mean value/Model/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 366592. In order to generate code, you need to update the buffer size parameter] 
+[> In run_diode_losses_20261027 (line 39)] 
+[Warning: The specified buffer for 'inverter_senaryo3/THD2/RMS2/RMS /Fourier1/Mean value1/Model/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 366592. In order to generate code, you need to update the buffer size parameter] 
+[> In run_diode_losses_20261027 (line 39)] 
+[Warning: The specified buffer for 'inverter_senaryo3/THD2/RMS2/RMS /Fourier1/Mean/Model/Transport Delay' was too small. During simulation,
+the buffer size was temporarily increased to 366592. In order to generate code, you need to update the buffer size parameter] 
+[> In run_diode_losses_20261027 (line 39)] 
+[Warning: The specified buffer for 'inverter_senaryo3/Mean9/Model/Transport Delay' was too small. During simulation, the buffer size was
+temporarily increased to 366592. In order to generate code, you need to update the buffer size parameter] 
+[> In run_diode_losses_20261027 (line 39)] 
+[Warning: The specified buffer for 'inverter_senaryo3/THD/Mean/Model/Transport Delay' was too small. During simulation, the buffer size was
+temporarily increased to 366592. In order to generate code, you need to update the buffer size parameter] 
+[> In run_diode_losses_20261027 (line 39)] 
+[Warning: The specified buffer for 'inverter_senaryo3/THD2/Mean/Model/Transport Delay' was too small. During simulation, the buffer size
+was temporarily increased to 366592. In order to generate code, you need to update the buffer size parameter] 
+[> In run_diode_losses_20261027 (line 39)] 
+[Warning: The specified buffer for 'inverter_senaryo3/Mean10/Model/Transport Delay' was too small. During simulation, the buffer size was
+temporarily increased to 366592. In order to generate code, you need to update the buffer size parameter] 
+[> In run_diode_losses_20261027 (line 39)] 
+[Warning: The specified buffer for 'inverter_senaryo3/Mean1/Model/Transport Delay' was too small. During simulation, the buffer size was
+temporarily increased to 366592. In order to generate code, you need to update the buffer size parameter] 
+[> In run_diode_losses_20261027 (line 39)] 
+[Warning: The specified buffer for 'inverter_senaryo3/Mean3/Model/Transport Delay' was too small. During simulation, the buffer size was
+temporarily increased to 366592. In order to generate code, you need to update the buffer size parameter] 
+[> In run_diode_losses_20261027 (line 39)] 
+[Warning: The specified buffer for 'inverter_senaryo3/Power Measurement/Continuous/Transport Delay' was too small. During simulation, the
+buffer size was temporarily increased to 366592. In order to generate code, you need to update the buffer size parameter] 
+[> In run_diode_losses_20261027 (line 39)] 
+[Warning: The specified buffer for 'inverter_senaryo3/Power Measurement/Continuous/Transport Delay1' was too small. During simulation, the
+buffer size was temporarily increased to 366592. In order to generate code, you need to update the buffer size parameter] 
+[> In run_diode_losses_20261027 (line 39)] 
+[Warning: The specified buffer for 'inverter_senaryo3/Mean2/Model/Transport Delay' was too small. During simulation, the buffer size was
+temporarily increased to 366592. In order to generate code, you need to update the buffer size parameter] 
+[> In run_diode_losses_20261027 (line 39)] 
+[Warning: The specified buffer for 'inverter_senaryo3/Power3/Fourier/Mean value1/Model/Transport Delay' was too small. During simulation,
+the buffer size was temporarily increased to 366592. In order to generate code, you need to update the buffer size parameter] 
+[> In run_diode_losses_20261027 (line 39)] 
+[Warning: The specified buffer for 'inverter_senaryo3/Power3/Fourier/Mean/Model/Transport Delay' was too small. During simulation, the
+buffer size was temporarily increased to 366592. In order to generate code, you need to update the buffer size parameter] 
+[> In run_diode_losses_20261027 (line 39)] 
+[Warning: The specified buffer for 'inverter_senaryo3/Power3/Fourier1/Mean value1/Model/Transport Delay' was too small. During simulation,
+the buffer size was temporarily increased to 366592. In order to generate code, you need to update the buffer size parameter] 
+[> In run_diode_losses_20261027 (line 39)] 
+[Warning: The specified buffer for 'inverter_senaryo3/Power3/Fourier1/Mean/Model/Transport Delay' was too small. During simulation, the
+buffer size was temporarily increased to 366592. In order to generate code, you need to update the buffer size parameter] 
+[> In run_diode_losses_20261027 (line 39)] 
+[Warning: The specified buffer for 'inverter_senaryo3/Mean11/Model/Transport Delay' was too small. During simulation, the buffer size was
+temporarily increased to 366592. In order to generate code, you need to update the buffer size parameter] 
+[> In run_diode_losses_20261027 (line 39)] 
+inverter_senaryo3: kayip ozeti yazildi (10269 s)

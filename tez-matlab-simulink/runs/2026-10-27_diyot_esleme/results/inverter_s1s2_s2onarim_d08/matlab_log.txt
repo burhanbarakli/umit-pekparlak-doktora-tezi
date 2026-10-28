@@ -1,0 +1,257 @@
+[Warning: Matching "From" for "Goto" 'inverter_s1s2_s2onarim_d08/G1' not found] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: Matching "From" for "Goto" 'inverter_s1s2_s2onarim_d08/G2' not found] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: Matching "From" for "Goto" 'inverter_s1s2_s2onarim_d08/G3' not found] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: Matching "From" for "Goto" 'inverter_s1s2_s2onarim_d08/G4' not found] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: Matching "From" for "Goto" 'inverter_s1s2_s2onarim_d08/G5' not found] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: Matching "From" for "Goto" 'inverter_s1s2_s2onarim_d08/G6' not found] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: Matching "From" for "Goto" 'inverter_s1s2_s2onarim_d08/G7' not found] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: Matching "From" for "Goto" 'inverter_s1s2_s2onarim_d08/G8' not found] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: 'Output Port 5' of 'inverter_s1s2_s2onarim_d08/S2 PWM susturma' is not connected.] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: 'Output Port 6' of 'inverter_s1s2_s2onarim_d08/S2 PWM susturma' is not connected.] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+### Building the Accelerator target for model: inverter_s1s2_s2onarim_d08
+### Successfully built the Accelerator target for model: inverter_s1s2_s2onarim_d08
+
+Build Summary
+
+Top model accelerator targets built:
+
+Model                       Action                        Rebuild Reason                                    
+============================================================================================================
+inverter_s1s2_s2onarim_d08  Code generated and compiled.  Code generation information file does not exist.  
+
+1 of 1 models built (0 models already up to date)
+Build duration: 0h 0m 19.687s
+[Warning: Solver is encountering difficulty in simulating model 'inverter_s1s2_s2onarim_d08' at time 0.0028862998487754711. Simulink will
+continue to simulate with warnings. Please check the model for errors.] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: Solver was unable to reduce the step size without violating the minimum step size value of 1.02542E-17 for 50 consecutive times
+at time 0.0028863. This usually may be caused by violating algebraic constraints in the differential-algebraic system or by the high
+stiffness of the system. Try tightening the error tolerances, and/or the tolerances for computing consistent conditions. If the problem
+persists, please check the system or increase the solver Number of consecutive min steps violation parameter.
+Suggested Actions:
+    • Open Solver Profiler to explore such issues - Open
+] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: Solver is encountering difficulty in simulating model 'inverter_s1s2_s2onarim_d08' at time 0.0086851323160978405. Simulink will
+continue to simulate with warnings. Please check the model for errors.] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: Solver was unable to reduce the step size without violating the minimum step size value of 3.08558E-17 for 50 consecutive times
+at time 0.00868513. This usually may be caused by violating algebraic constraints in the differential-algebraic system or by the high
+stiffness of the system. Try tightening the error tolerances, and/or the tolerances for computing consistent conditions. If the problem
+persists, please check the system or increase the solver Number of consecutive min steps violation parameter.
+Suggested Actions:
+    • Open Solver Profiler to explore such issues - Open
+] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: Solver is encountering difficulty in simulating model 'inverter_s1s2_s2onarim_d08' at time 0.020982504977167658. Simulink will
+continue to simulate with warnings. Please check the model for errors.] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: Solver was unable to reduce the step size without violating the minimum step size value of 7.45448E-17 for 50 consecutive times
+at time 0.0209825. This usually may be caused by violating algebraic constraints in the differential-algebraic system or by the high
+stiffness of the system. Try tightening the error tolerances, and/or the tolerances for computing consistent conditions. If the problem
+persists, please check the system or increase the solver Number of consecutive min steps violation parameter.
+Suggested Actions:
+    • Open Solver Profiler to explore such issues - Open
+] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: Solver is encountering difficulty in simulating model 'inverter_s1s2_s2onarim_d08' at time 0.020982504977171374. Simulink will
+continue to simulate with warnings. Please check the model for errors.] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: Solver was unable to reduce the step size without violating the minimum step size value of 7.45448E-17 for 100 consecutive times
+at time 0.0209825. This usually may be caused by violating algebraic constraints in the differential-algebraic system or by the high
+stiffness of the system. Try tightening the error tolerances, and/or the tolerances for computing consistent conditions. If the problem
+persists, please check the system or increase the solver Number of consecutive min steps violation parameter.
+Suggested Actions:
+    • Open Solver Profiler to explore such issues - Open
+] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: Solver is encountering difficulty in simulating model 'inverter_s1s2_s2onarim_d08' at time 0.02098250497717509. Simulink will
+continue to simulate with warnings. Please check the model for errors.] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: Solver was unable to reduce the step size without violating the minimum step size value of 7.45448E-17 for 150 consecutive times
+at time 0.0209825. This usually may be caused by violating algebraic constraints in the differential-algebraic system or by the high
+stiffness of the system. Try tightening the error tolerances, and/or the tolerances for computing consistent conditions. If the problem
+persists, please check the system or increase the solver Number of consecutive min steps violation parameter.
+Suggested Actions:
+    • Open Solver Profiler to explore such issues - Open
+] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: Solver is encountering difficulty in simulating model 'inverter_s1s2_s2onarim_d08' at time 0.020982504977178879. Simulink will
+continue to simulate with warnings. Please check the model for errors.] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: Solver was unable to reduce the step size without violating the minimum step size value of 7.45448E-17 for 200 consecutive times
+at time 0.0209825. This usually may be caused by violating algebraic constraints in the differential-algebraic system or by the high
+stiffness of the system. Try tightening the error tolerances, and/or the tolerances for computing consistent conditions. If the problem
+persists, please check the system or increase the solver Number of consecutive min steps violation parameter.
+Suggested Actions:
+    • Open Solver Profiler to explore such issues - Open
+] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: Solver is encountering difficulty in simulating model 'inverter_s1s2_s2onarim_d08' at time 0.034389389835600782. Simulink will
+continue to simulate with warnings. Please check the model for errors.] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: Solver was unable to reduce the step size without violating the minimum step size value of 1.22176E-16 for 50 consecutive times
+at time 0.0343894. This usually may be caused by violating algebraic constraints in the differential-algebraic system or by the high
+stiffness of the system. Try tightening the error tolerances, and/or the tolerances for computing consistent conditions. If the problem
+persists, please check the system or increase the solver Number of consecutive min steps violation parameter.
+Suggested Actions:
+    • Open Solver Profiler to explore such issues - Open
+] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: Solver is encountering difficulty in simulating model 'inverter_s1s2_s2onarim_d08' at time 0.045290275553678282. Simulink will
+continue to simulate with warnings. Please check the model for errors.] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: Solver was unable to reduce the step size without violating the minimum step size value of 1.60903E-16 for 50 consecutive times
+at time 0.0452903. This usually may be caused by violating algebraic constraints in the differential-algebraic system or by the high
+stiffness of the system. Try tightening the error tolerances, and/or the tolerances for computing consistent conditions. If the problem
+persists, please check the system or increase the solver Number of consecutive min steps violation parameter.
+Suggested Actions:
+    • Open Solver Profiler to explore such issues - Open
+] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: Solver is encountering difficulty in simulating model 'inverter_s1s2_s2onarim_d08' at time 0.050755098150791128. Simulink will
+continue to simulate with warnings. Please check the model for errors.] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: Solver was unable to reduce the step size without violating the minimum step size value of 1.80318E-16 for 50 consecutive times
+at time 0.0507551. This usually may be caused by violating algebraic constraints in the differential-algebraic system or by the high
+stiffness of the system. Try tightening the error tolerances, and/or the tolerances for computing consistent conditions. If the problem
+persists, please check the system or increase the solver Number of consecutive min steps violation parameter.
+Suggested Actions:
+    • Open Solver Profiler to explore such issues - Open
+] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim_d08/RMS1/TrueRMS /Mean value/Model/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 624640. In order to generate code, you need to update the buffer size parameter] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim_d08/RMS2/TrueRMS /Mean value/Model/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 624640. In order to generate code, you need to update the buffer size parameter] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim_d08/THD/RMS1/TrueRMS /Mean value/Model/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 624640. In order to generate code, you need to update the buffer size parameter] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim_d08/THD/RMS2/RMS /Fourier1/Mean value1/Model/Transport Delay' was too small.
+During simulation, the buffer size was temporarily increased to 624640. In order to generate code, you need to update the buffer size
+parameter] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim_d08/THD/RMS2/RMS /Fourier1/Mean/Model/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 624640. In order to generate code, you need to update the buffer size parameter] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim_d08/THD1/RMS1/TrueRMS /Mean value/Model/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 624640. In order to generate code, you need to update the buffer size parameter] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim_d08/THD1/RMS2/RMS /Fourier1/Mean value1/Model/Transport Delay' was too small.
+During simulation, the buffer size was temporarily increased to 624640. In order to generate code, you need to update the buffer size
+parameter] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim_d08/THD1/RMS2/RMS /Fourier1/Mean/Model/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 624640. In order to generate code, you need to update the buffer size parameter] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim_d08/THD2/RMS1/TrueRMS /Mean value/Model/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 624640. In order to generate code, you need to update the buffer size parameter] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim_d08/THD2/RMS2/RMS /Fourier1/Mean value1/Model/Transport Delay' was too small.
+During simulation, the buffer size was temporarily increased to 624640. In order to generate code, you need to update the buffer size
+parameter] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim_d08/THD2/RMS2/RMS /Fourier1/Mean/Model/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 624640. In order to generate code, you need to update the buffer size parameter] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim_d08/THD3/RMS1/TrueRMS /Mean value/Model/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 624640. In order to generate code, you need to update the buffer size parameter] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim_d08/THD3/RMS2/RMS /Fourier1/Mean value1/Model/Transport Delay' was too small.
+During simulation, the buffer size was temporarily increased to 624640. In order to generate code, you need to update the buffer size
+parameter] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim_d08/THD3/RMS2/RMS /Fourier1/Mean/Model/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 624640. In order to generate code, you need to update the buffer size parameter] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim_d08/Mean9/Model/Transport Delay' was too small. During simulation, the buffer
+size was temporarily increased to 624640. In order to generate code, you need to update the buffer size parameter] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim_d08/THD/Mean/Model/Transport Delay' was too small. During simulation, the buffer
+size was temporarily increased to 624640. In order to generate code, you need to update the buffer size parameter] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim_d08/THD2/Mean/Model/Transport Delay' was too small. During simulation, the
+buffer size was temporarily increased to 624640. In order to generate code, you need to update the buffer size parameter] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim_d08/Mean10/Model/Transport Delay' was too small. During simulation, the buffer
+size was temporarily increased to 624640. In order to generate code, you need to update the buffer size parameter] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim_d08/Mean1/Model/Transport Delay' was too small. During simulation, the buffer
+size was temporarily increased to 624640. In order to generate code, you need to update the buffer size parameter] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim_d08/Mean3/Model/Transport Delay' was too small. During simulation, the buffer
+size was temporarily increased to 624640. In order to generate code, you need to update the buffer size parameter] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim_d08/Power Measurement/Continuous/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 624640. In order to generate code, you need to update the buffer size parameter] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim_d08/Power Measurement/Continuous/Transport Delay1' was too small. During
+simulation, the buffer size was temporarily increased to 624640. In order to generate code, you need to update the buffer size parameter] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim_d08/Mean2/Model/Transport Delay' was too small. During simulation, the buffer
+size was temporarily increased to 624640. In order to generate code, you need to update the buffer size parameter] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim_d08/Mean8/Model/Transport Delay' was too small. During simulation, the buffer
+size was temporarily increased to 624640. In order to generate code, you need to update the buffer size parameter] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim_d08/THD1/Mean/Model/Transport Delay' was too small. During simulation, the
+buffer size was temporarily increased to 624640. In order to generate code, you need to update the buffer size parameter] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim_d08/THD3/Mean/Model/Transport Delay' was too small. During simulation, the
+buffer size was temporarily increased to 624640. In order to generate code, you need to update the buffer size parameter] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim_d08/Mean5/Model/Transport Delay' was too small. During simulation, the buffer
+size was temporarily increased to 624640. In order to generate code, you need to update the buffer size parameter] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim_d08/Mean4/Model/Transport Delay' was too small. During simulation, the buffer
+size was temporarily increased to 624640. In order to generate code, you need to update the buffer size parameter] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim_d08/Mean7/Model/Transport Delay' was too small. During simulation, the buffer
+size was temporarily increased to 624640. In order to generate code, you need to update the buffer size parameter] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim_d08/Power Measurement1/Continuous/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 624640. In order to generate code, you need to update the buffer size parameter] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim_d08/Power Measurement1/Continuous/Transport Delay1' was too small. During
+simulation, the buffer size was temporarily increased to 624640. In order to generate code, you need to update the buffer size parameter] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim_d08/Mean6/Model/Transport Delay' was too small. During simulation, the buffer
+size was temporarily increased to 624640. In order to generate code, you need to update the buffer size parameter] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim_d08/Power3/Fourier/Mean value1/Model/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 624640. In order to generate code, you need to update the buffer size parameter] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim_d08/Power3/Fourier/Mean/Model/Transport Delay' was too small. During simulation,
+the buffer size was temporarily increased to 624640. In order to generate code, you need to update the buffer size parameter] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim_d08/Power3/Fourier1/Mean value1/Model/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 624640. In order to generate code, you need to update the buffer size parameter] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim_d08/Power3/Fourier1/Mean/Model/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 624640. In order to generate code, you need to update the buffer size parameter] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim_d08/Power1/Fourier/Mean value1/Model/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 624640. In order to generate code, you need to update the buffer size parameter] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim_d08/Power1/Fourier/Mean/Model/Transport Delay' was too small. During simulation,
+the buffer size was temporarily increased to 624640. In order to generate code, you need to update the buffer size parameter] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim_d08/Power1/Fourier1/Mean value1/Model/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 624640. In order to generate code, you need to update the buffer size parameter] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+[Warning: The specified buffer for 'inverter_s1s2_s2onarim_d08/Power1/Fourier1/Mean/Model/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 624640. In order to generate code, you need to update the buffer size parameter] 
+[> In run_umit_dort_senaryo_20261027 (line 68)] 
+inverter_s1s2_s2onarim_d08: tamamlandi (14578.5 s)

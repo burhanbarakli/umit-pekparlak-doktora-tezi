@@ -1,0 +1,32 @@
+fix_diode_mapping_20261027 — 27-Oct-2026 19:15:14 — MATLAB 23.2.0.2515942 (R2023b) Update 7
+Kaynak: C:\CODES\ümit abi\tez-matlab-simulink\runs\2026-10-27_diyot_esleme\model\inverter_senaryo3.slx (SHA-256 eb5068d270873b70cc8857ea8f0de878607053afa8620ff61e84cf3112e38eec, değişmedi)
+Yeni:   C:\CODES\ümit abi\tez-matlab-simulink\runs\2026-10-27_diyot_esleme\model\inverter_senaryo3_d08.slx
+Parametre dosyası: C:\CODES\ümit abi\tez-matlab-simulink\runs\2026-10-27_diyot_esleme\model\inverter_common_parameters.m (load_system öncesi taban çalışma alanında)
+Önceki PreLoadFcn: (yok)
+Yeni PreLoadFcn:   d08_pre_dir = fileparts(which('inverter_senaryo3_d08')); if isempty(d08_pre_dir), d08_pre_dir = pwd; end; run(fullfile(d08_pre_dir, 'inverter_common_parameters.m')); clear d08_pre_dir
+Blok kümesi değişmedi (1540 blok); bağlantı değişmedi (A/K düğümleri önce = sonra).
+Takaslanan diyot: 4
+  Diode3: ModelType, Vf, Ron, Goff, C_param, CJ, Q_param, iRM, iF, didt, trr, Qrr, Vr, Ls, T_param, fidelity_level, thermal_network_parameterization, junction_thermal_mass
+  Diode5: ModelType, Vf, Ron, Goff, C_param, CJ, Q_param, iRM, iF, didt, trr, Qrr, Vr, Ls, T_param, fidelity_level, thermal_network_parameterization, junction_thermal_mass
+  Diode6: ModelType, Vf, Ron, Goff, C_param, CJ, Q_param, iRM, iF, didt, trr, Qrr, Vr, Ls, T_param, fidelity_level, thermal_network_parameterization, junction_thermal_mass
+  Diode7: ModelType, Vf, Ron, Goff, C_param, CJ, Q_param, iRM, iF, didt, trr, Qrr, Vr, Ls, T_param, fidelity_level, thermal_network_parameterization, junction_thermal_mass
+Temiz çalışma alanında yükleme: PreLoadFcn D12_Qrr/DS34_Qrr tanımladı = 1
+Derleme (SimulationCommand=update): başarılı
+
+TAKAS ÖNCESİ
+devre   blok      rol                      A           K           önek   beklenen  durum    Vf[V]  Qrr[µC]   trr[ns]   iRM[A]
+1       Diode2    DS2 (S2 ters paralel)    DA−         dış orta    DS12   DS12      UYGUN    1.50   15.70     115       -54
+1       Diode3    D2 harici (DA- -> faz)   DA−         faz         DS34   D12       UYUMSUZ  1.70   9.50      100       -95
+1       Diode5    D1 harici (faz -> DA+)   faz         DA+         DS34   D12       UYUMSUZ  1.70   9.50      100       -95
+1       Diode6    DS3 (S3 ters paralel)    ortak E     orta nokta  D12    DS34      UYUMSUZ  1.58   3.00      190       -13
+1       Diode7    DS4 (S4 ters paralel)    ortak E     faz         D12    DS34      UYUMSUZ  1.58   3.00      190       -13
+1       Diode9    DS1 (S1 ters paralel)    dış orta    DA+         DS12   DS12      UYGUN    1.50   15.70     115       -54
+
+TAKAS SONRASI (diskten yeniden yüklenen model)
+devre   blok      rol                      A           K           önek   beklenen  durum    Vf[V]  Qrr[µC]   trr[ns]   iRM[A]
+1       Diode2    DS2 (S2 ters paralel)    DA−         dış orta    DS12   DS12      UYGUN    1.50   15.70     115       -54
+1       Diode3    D2 harici (DA- -> faz)   DA−         faz         D12    D12       UYGUN    1.58   3.00      190       -13
+1       Diode5    D1 harici (faz -> DA+)   faz         DA+         D12    D12       UYGUN    1.58   3.00      190       -13
+1       Diode6    DS3 (S3 ters paralel)    ortak E     orta nokta  DS34   DS34      UYGUN    1.70   9.50      100       -95
+1       Diode7    DS4 (S4 ters paralel)    ortak E     faz         DS34   DS34      UYGUN    1.70   9.50      100       -95
+1       Diode9    DS1 (S1 ters paralel)    dış orta    DA+         DS12   DS12      UYGUN    1.50   15.70     115       -54

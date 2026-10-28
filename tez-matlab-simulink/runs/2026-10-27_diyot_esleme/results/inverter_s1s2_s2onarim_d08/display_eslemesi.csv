@@ -1,0 +1,27 @@
+kayit_adi,kaynak_kayit_adi,display_adi
+AC_Aktif_Guc,Idc_s1,AC Aktif Güç
+AC_Aktif_Guc1,Idc_s1,AC Aktif Güç1
+AC_Akim_RMS,Iac_s1,AC Akım RMS
+AC_Akim_RMS1,Iac_s1,AC Akım RMS1
+AC_Akim_THD,THD_s1,AC Akım THD
+AC_Akim_THD1,THD_s1,AC Akım THD1
+AC_Gerilim_THD1,THD_s1,AC Gerilim THD1
+AC_Gerilim_THD2,THD_s1,AC Gerilim THD2
+AC_Reaktif_Guc,Idc_s1,AC Reaktif Güç
+AC_Reaktif_Guc1,Idc_s1,AC Reaktif Güç1
+DC_Guc,DC_Guc,DC Güç
+DC_Guc1,DC_Guc1,DC Güç1
+Idc,Idc_s1,Idc
+Idc1,Idc_s1,Idc1
+Vdc,Vdc_s1,Vdc
+Vdc1,Vdc_s1,Vdc1
+Verim,eff_s1,Verim
+Verim1,eff_s1,Verim1
+cosfi,cos_s1,cosfi
+cosfi1,cos_s1,cosfi1
+cosfi2,P_s1,cosfi2
+cosfi3,Q_s1,cosfi3
+cosfi4,cos_s1,cosfi4
+cosfi5,P_s1,cosfi5
+cosfi6,Q_s1,cosfi6
+cosfi7,cos_s1,cosfi7
