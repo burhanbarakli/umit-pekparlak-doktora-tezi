@@ -33,13 +33,13 @@ Durum değerleri: ☐ başlamadı · ◐ sürüyor · ☑ bitti
 | İP-4 | S1–S3 ortak parametre kalibrasyonu. Taban model: D-01 + D-03 + D-08 + D-09 uygulanmış. Devre parametreleri sabit, `K1x`/faz serbest; birincil ölçütler P_ac, I_ac, η; THD ikincil (K-01) | İP-1, İP-2b, İP-3 → `review/2026-10-28_KALIBRASYON_S1_S3.md` + `runs/2026-10-28_kalibrasyon/kalibrasyon_tablosu.csv` (K-02b, K-20, D-12) | 8, 10 | İP-1, İP-2b, İP-3 | ☑ |
 | İP-5 | S4 kapalı çevrim modelinin kurulması (D-02, K-05): önce P, sonra PI; 2,3 / 10 / 25 A taraması. Kesin tarama `KC_*` = kalibre S3 ileri beslemesi (K-20) + DC bara 2 × 5,6 mF (D-11) | `build_s4_closed_loop_20261028.m` → `review/2026-10-28_S4_KAPALI_CEVRIM.md` + `runs/2026-10-28_s4_kapali_cevrim/s4_tarama_KC.csv` (D-02, D-11 doğrulandı) | 8 | İP-2, İP-4 | ☑ |
 | İP-6 | Kararlılık analizi (K-07): L/S/T Bode eğrileri, kazanç/faz marjı, K3 açık/kapalı; kutup karşılaştırması; L_g duyarlılığı | S4 doğrusallaştırması → `review/2026-10-28_KARARLILIK_BODE.md` + `runs/2026-10-28_kararlilik/` (vektörel PDF + CSV); K-21, D-13 | 7 | İP-5 | ☑ |
-| İP-7 | Tek parametre tablosu (K-09, K-22) | 12.10 m-dosyası → `tab:sistem-parametreleri` (75 satır, 7 grup; değer, birim, kaynak, tür) + `review/2026-10-28_PARAMETRE_TABLOSU.md`; D-14. Derleme 29.10.2026: 171 sayfa, Undefined yok, tablo s. 36–43 taşmasız | 9 | İP-2 | ☑ |
+| İP-7 | Tek parametre tablosu (K-09, K-22) | 12.10 m-dosyası → `tab:sistem-parametreleri` (75 satır, 7 grup; değer, birim, kaynak, tür) + `review/2026-10-28_PARAMETRE_TABLOSU.md`; D-14. Derleme 29.10.2026: 171 sayfa, Undefined yok, tablo s. 37–44 taşmasız (İP-8 sonrası) | 9 | İP-2 | ☑ |
 | İP-8 | Tez metni: bölümlere aktarım ve "düşük akımda benzetim modelleme" kesimi | review notları → v2 Bölüm 2–8: `sec:model-dogrulama-duzeltme`, `sec:dusuk-akim-modelleme`, `sec:s4-kapali-cevrim`, `sec:kararlilik-bode`, `sec:kalibrasyon` (29.10.2026; 197 sayfa, Undefined/Overfull yok; "bu" ailesi 0) | 2, 3, 8, 10 | İP-1…İP-7 | ☑ |
 | İP-9 | Bütün `\eksikistek` barlarının kapatılması (13 adet, 03:505 kapandı → 12; tablo aşağıda) | İP-1…İP-8 → 0 bar | 10, 11 | İP-8 | ◐ (12/13 kapandı; kalan 01:56 → İP-11) |
 | İP-10 | Başlık, akış, katkı ilanı ve "eski tez" temizliği (K-11) | metadata + Bölüm 1 + Bölüm 8 | 1, 2, 3 | İP-8 | ☐ |
-| İP-11 | Şekiller: genel blok diyagram, çalışma modu şekilleri, düşük çözünürlüklü görsellerin yenilenmesi | TikZ/MATLAB vektör → `figures/` | 4, 5, 6 | İP-8 | ☐ |
+| İP-11 | Şekiller: genel blok diyagram, çalışma modu şekilleri, düşük çözünürlüklü görsellerin yenilenmesi | TikZ/MATLAB vektör → `figures/`; 71 raster şekil (bkz. `03_ILK_TEZ_YENI_TEZ_KARSILASTIRMA.md` jüri 5); Şekil 4.2/4.3 basım sırası (`[H]`); Bölüm 4'teki "LC filtre" başlıklarının ölçüm noktasına göre denetimi | 4, 5, 6 | İP-8 | ☐ |
 | İP-12 | Literatür sentezi ve karşılaştırma tablosu | Bölüm 2 | 11 | — | ☐ |
-| İP-13 | Son derleme, denetim ve sürüm kaydı | `build_YYYY-MM-DD/`, `tez_guncel_YYYY-MM-DD.pdf` | hepsi | hepsi | ☐ |
+| İP-13 | Son derleme, denetim ve sürüm kaydı | `build_YYYY-MM-DD/`, `tez_guncel_YYYY-MM-DD.pdf`; EKLER (K-23), ÖZGEÇMİŞ, kimlik yer tutucuları (öğrenci no, anabilim dalı, savunma/teslim tarihi) | hepsi | hepsi | ☐ |
 
 Paralel yürütülebilecekler: İP-2, İP-3 ve İP-12 birbirinden bağımsızdır. İP-1
 uzun bir MATLAB koşusudur (Normal modda ~2 saat, tek Accelerator koşusunda ~30 dk).
