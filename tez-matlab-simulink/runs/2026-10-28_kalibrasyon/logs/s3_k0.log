@@ -1,0 +1,144 @@
+[Warning: Using find_system without the 'Variants' argument skips inactive Variant Subsystem blocks in the search. This behavior will change in a future release to look at all
+choices of the Variant Subsystem. To find blocks that are active in simulation or code generation, compile the model and use the built-in variant filters with the 'MatchFilter'
+option. To find all blocks use filter '@Simulink.match.allVariants' with the 'MatchFilter' option.] 
+[> In calibrate_s1s3_20261028>do_run (line 270)
+In calibrate_s1s3_20261028 (line 42)] 
+[Warning: Using find_system without the 'Variants' argument skips inactive Variant Subsystem blocks in the search. This behavior will change in a future release to look at all
+choices of the Variant Subsystem. To find blocks that are active in simulation or code generation, compile the model and use the built-in variant filters with the 'MatchFilter'
+option. To find all blocks use filter '@Simulink.match.allVariants' with the 'MatchFilter' option.] 
+[> In calibrate_s1s3_20261028>do_run (line 270)
+In calibrate_s1s3_20261028 (line 42)] 
+[Warning: Using find_system without the 'Variants' argument skips inactive Variant Subsystem blocks in the search. This behavior will change in a future release to look at all
+choices of the Variant Subsystem. To find blocks that are active in simulation or code generation, compile the model and use the built-in variant filters with the 'MatchFilter'
+option. To find all blocks use filter '@Simulink.match.allVariants' with the 'MatchFilter' option.] 
+[> In calibrate_s1s3_20261028>do_run (line 270)
+In calibrate_s1s3_20261028 (line 42)] 
+[Warning: 'Output Port 5' of 'inverter_senaryo3_kal/Subsystem2' is not connected.] 
+[> In calibrate_s1s3_20261028>do_run (line 284)
+In calibrate_s1s3_20261028 (line 42)] 
+[Warning: 'Output Port 6' of 'inverter_senaryo3_kal/Subsystem2' is not connected.] 
+[> In calibrate_s1s3_20261028>do_run (line 284)
+In calibrate_s1s3_20261028 (line 42)] 
+### Building the Accelerator target for model: inverter_senaryo3_kal
+### Successfully built the Accelerator target for model: inverter_senaryo3_kal
+
+Build Summary
+
+Top model accelerator targets built:
+
+Model                  Action                        Rebuild Reason                                    
+=======================================================================================================
+inverter_senaryo3_kal  Code generated and compiled.  Code generation information file does not exist.  
+
+1 of 1 models built (0 models already up to date)
+Build duration: 0h 0m 24.276s
+[Warning: The specified buffer for 'inverter_senaryo3_kal/RMS1/TrueRMS /Mean value/Model/Transport Delay' was too small. During simulation,
+the buffer size was temporarily increased to 354304. In order to generate code, you need to update the buffer size parameter] 
+[> In calibrate_s1s3_20261028>do_run (line 284)
+In calibrate_s1s3_20261028 (line 42)] 
+[Warning: The specified buffer for 'inverter_senaryo3_kal/THD/RMS1/TrueRMS /Mean value/Model/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 354304. In order to generate code, you need to update the buffer size parameter] 
+[> In calibrate_s1s3_20261028>do_run (line 284)
+In calibrate_s1s3_20261028 (line 42)] 
+[Warning: The specified buffer for 'inverter_senaryo3_kal/THD/RMS2/RMS /Fourier1/Mean value1/Model/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 354304. In order to generate code, you need to update the buffer size parameter] 
+[> In calibrate_s1s3_20261028>do_run (line 284)
+In calibrate_s1s3_20261028 (line 42)] 
+[Warning: The specified buffer for 'inverter_senaryo3_kal/THD/RMS2/RMS /Fourier1/Mean/Model/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 354304. In order to generate code, you need to update the buffer size parameter] 
+[> In calibrate_s1s3_20261028>do_run (line 284)
+In calibrate_s1s3_20261028 (line 42)] 
+[Warning: The specified buffer for 'inverter_senaryo3_kal/THD2/RMS1/TrueRMS /Mean value/Model/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 354304. In order to generate code, you need to update the buffer size parameter] 
+[> In calibrate_s1s3_20261028>do_run (line 284)
+In calibrate_s1s3_20261028 (line 42)] 
+[Warning: The specified buffer for 'inverter_senaryo3_kal/THD2/RMS2/RMS /Fourier1/Mean value1/Model/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 354304. In order to generate code, you need to update the buffer size parameter] 
+[> In calibrate_s1s3_20261028>do_run (line 284)
+In calibrate_s1s3_20261028 (line 42)] 
+[Warning: The specified buffer for 'inverter_senaryo3_kal/THD2/RMS2/RMS /Fourier1/Mean/Model/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 354304. In order to generate code, you need to update the buffer size parameter] 
+[> In calibrate_s1s3_20261028>do_run (line 284)
+In calibrate_s1s3_20261028 (line 42)] 
+[Warning: The specified buffer for 'inverter_senaryo3_kal/Mean9/Model/Transport Delay' was too small. During simulation, the buffer size
+was temporarily increased to 354304. In order to generate code, you need to update the buffer size parameter] 
+[> In calibrate_s1s3_20261028>do_run (line 284)
+In calibrate_s1s3_20261028 (line 42)] 
+[Warning: The specified buffer for 'inverter_senaryo3_kal/THD/Mean/Model/Transport Delay' was too small. During simulation, the buffer size
+was temporarily increased to 354304. In order to generate code, you need to update the buffer size parameter] 
+[> In calibrate_s1s3_20261028>do_run (line 284)
+In calibrate_s1s3_20261028 (line 42)] 
+[Warning: The specified buffer for 'inverter_senaryo3_kal/THD2/Mean/Model/Transport Delay' was too small. During simulation, the buffer
+size was temporarily increased to 354304. In order to generate code, you need to update the buffer size parameter] 
+[> In calibrate_s1s3_20261028>do_run (line 284)
+In calibrate_s1s3_20261028 (line 42)] 
+[Warning: The specified buffer for 'inverter_senaryo3_kal/Mean10/Model/Transport Delay' was too small. During simulation, the buffer size
+was temporarily increased to 354304. In order to generate code, you need to update the buffer size parameter] 
+[> In calibrate_s1s3_20261028>do_run (line 284)
+In calibrate_s1s3_20261028 (line 42)] 
+[Warning: The specified buffer for 'inverter_senaryo3_kal/Mean1/Model/Transport Delay' was too small. During simulation, the buffer size
+was temporarily increased to 354304. In order to generate code, you need to update the buffer size parameter] 
+[> In calibrate_s1s3_20261028>do_run (line 284)
+In calibrate_s1s3_20261028 (line 42)] 
+[Warning: The specified buffer for 'inverter_senaryo3_kal/Mean3/Model/Transport Delay' was too small. During simulation, the buffer size
+was temporarily increased to 354304. In order to generate code, you need to update the buffer size parameter] 
+[> In calibrate_s1s3_20261028>do_run (line 284)
+In calibrate_s1s3_20261028 (line 42)] 
+[Warning: The specified buffer for 'inverter_senaryo3_kal/Power Measurement/Continuous/Transport Delay' was too small. During simulation,
+the buffer size was temporarily increased to 354304. In order to generate code, you need to update the buffer size parameter] 
+[> In calibrate_s1s3_20261028>do_run (line 284)
+In calibrate_s1s3_20261028 (line 42)] 
+[Warning: The specified buffer for 'inverter_senaryo3_kal/Power Measurement/Continuous/Transport Delay1' was too small. During simulation,
+the buffer size was temporarily increased to 354304. In order to generate code, you need to update the buffer size parameter] 
+[> In calibrate_s1s3_20261028>do_run (line 284)
+In calibrate_s1s3_20261028 (line 42)] 
+[Warning: The specified buffer for 'inverter_senaryo3_kal/Mean2/Model/Transport Delay' was too small. During simulation, the buffer size
+was temporarily increased to 354304. In order to generate code, you need to update the buffer size parameter] 
+[> In calibrate_s1s3_20261028>do_run (line 284)
+In calibrate_s1s3_20261028 (line 42)] 
+[Warning: The specified buffer for 'inverter_senaryo3_kal/Power3/Fourier/Mean value1/Model/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 354304. In order to generate code, you need to update the buffer size parameter] 
+[> In calibrate_s1s3_20261028>do_run (line 284)
+In calibrate_s1s3_20261028 (line 42)] 
+[Warning: The specified buffer for 'inverter_senaryo3_kal/Power3/Fourier/Mean/Model/Transport Delay' was too small. During simulation, the
+buffer size was temporarily increased to 354304. In order to generate code, you need to update the buffer size parameter] 
+[> In calibrate_s1s3_20261028>do_run (line 284)
+In calibrate_s1s3_20261028 (line 42)] 
+[Warning: The specified buffer for 'inverter_senaryo3_kal/Power3/Fourier1/Mean value1/Model/Transport Delay' was too small. During
+simulation, the buffer size was temporarily increased to 354304. In order to generate code, you need to update the buffer size parameter] 
+[> In calibrate_s1s3_20261028>do_run (line 284)
+In calibrate_s1s3_20261028 (line 42)] 
+[Warning: The specified buffer for 'inverter_senaryo3_kal/Power3/Fourier1/Mean/Model/Transport Delay' was too small. During simulation, the
+buffer size was temporarily increased to 354304. In order to generate code, you need to update the buffer size parameter] 
+[> In calibrate_s1s3_20261028>do_run (line 284)
+In calibrate_s1s3_20261028 (line 42)] 
+[Warning: The specified buffer for 'inverter_senaryo3_kal/Mean11/Model/Transport Delay' was too small. During simulation, the buffer size
+was temporarily increased to 354304. In order to generate code, you need to update the buffer size parameter] 
+[> In calibrate_s1s3_20261028>do_run (line 284)
+In calibrate_s1s3_20261028 (line 42)] 
+s3_k0: Pac=299.396 W Q1=+30.388 var Irms=2.4335 A eta=0.9438 THD=0.1092 | VA=124.5037 V 0.55800ø (E ref) |E|=124.3000
+s3_k0: tamamlandi (3792.2 s)
+
+ans = 
+
+  struct with fields:
+
+       case: 's3'
+        tag: 's3_k0'
+      model: 'inverter_senaryo3_kal'
+          s: 1
+      phase: 0
+          k: [0.4500 0.3900]
+         k0: [0.4500 0.3900]
+      start: '28-Oct-2026 10:17:40'
+       mode: 'accelerator'
+       prev: ''
+     status: 'tamamlandi'
+    message: ''
+     wall_s: 3.7922e+03
+        end: '28-Oct-2026 11:20:52'
+        met: [1x1 struct]
+          P: [1x1 struct]
+         ph: [1x1 struct]
+        d09: 1
+

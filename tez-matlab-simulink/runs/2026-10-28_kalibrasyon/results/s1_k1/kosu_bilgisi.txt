@@ -1,0 +1,14 @@
+model: inverter_s1_kal
+case: s1
+tag: s1_k1
+s: 0.998968006145
+faz_deg: -0.4507456293
+K11: 0.785688336833
+baslangic: 28-Oct-2026 12:08:26
+bitis: 28-Oct-2026 13:17:41
+mod: accelerator
+durum: tamamlandi
+duvar_suresi_s: 4154.5
+StopTime: 0.1
+
+

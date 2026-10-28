@@ -1,0 +1,14 @@
+model: inverter_senaryo3_kal
+case: s3
+tag: s3_k0
+s: 1
+faz_deg: 0
+K13/K33: [0.45 0.39]
+baslangic: 28-Oct-2026 10:17:40
+bitis: 28-Oct-2026 11:20:52
+mod: accelerator
+durum: tamamlandi
+duvar_suresi_s: 3792.2
+StopTime: 0.1
+
+

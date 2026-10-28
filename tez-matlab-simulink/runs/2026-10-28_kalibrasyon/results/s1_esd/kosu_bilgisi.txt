@@ -1,0 +1,14 @@
+model: inverter_s1_esd
+case: s1_esd
+tag: s1_esd
+s: 1
+faz_deg: -0.44
+K11: 0.7865
+baslangic: 28-Oct-2026 10:18:01
+bitis: 28-Oct-2026 11:25:19
+mod: accelerator
+durum: tamamlandi
+duvar_suresi_s: 4038.7
+StopTime: 0.1
+
+

@@ -32,15 +32,17 @@ Her satır şu öğeleri içerir:
 | No | Dosya / blok | Sınıf | Sorun (kısa) | Durum |
 |---|---|---|---|---|
 | D-01 | `inverter_scenario1_parametric5_etiquetli.slx` · Gate Drive1–4 | Kapı/denetim | S2 devresinin kapı sürücüleri `g12…g42` etiketlerini okuyor, bu etiketleri üreten Goto yok; S2 IGBT'leri hiç anahtarlanmıyor | doğrulandı — S2 anahtarlıyor, η 94,07 % (hedef 94,2 %) |
-| D-02 | `inverter_senaryo4.slx` | Paket | Dosya S3 modelinin kopyası; S4'ün L1 akım geri beslemeli denetleyicisi yok | açık |
+| D-02 | `inverter_senaryo4.slx` | Paket | Dosya S3 modelinin kopyası; S4'ün L1 akım geri beslemeli denetleyicisi yok | düzeltildi — S4 modeli kuruldu (İP-5), tarama koşuları sürüyor |
 | D-03 | Dört modelin tümü · model geri çağrıları | Paket | Parametre dosyası yalnız InitFcn'de çalışıyor, PreLoadFcn yok; temiz oturumda Simscape diyotları "Qrr/didt … type string" hatasıyla derlenmiyor | düzeltildi (koşu betiğinde) |
 | D-04 | S1+S2 ve S3 · sinyal kayıt adları | Ölçüm | Farklı hatlar aynı kayıt adını taşıyor (ör. `Idc_s1`); ada göre okunan değer yanlış hatta ait olabiliyor | düzeltildi (çıkarım betiğinde) |
-| D-05 | `inverter_common_parameters.m` | Parametre | `Kp`, `K12`, `phase_deg2`, `L1_core_Rp4` tanımlı ama hiçbir blokta kullanılmıyor | açık — D-01 ve D-02 ile kapanacak |
+| D-05 | `inverter_common_parameters.m` | Parametre | `Kp`, `K12`, `phase_deg2`, `L1_core_Rp4` tanımlı ama hiçbir blokta kullanılmıyor | kapandı — hepsi S2/S4 modellerinde bağlı |
 | D-06 | S1, S3 · Power blokları | Ölçüm | Benzetimde Q pozitif (+33…+35 var), deney tablosunda Q negatif ya da sıfır; yön kuralı belgelenmemiş | kapandı — C noktasında üretici kuralı doğrulandı; deney Qo hesaplanmış, karşılaştırma \|Q\| ile (İP-3) |
 | D-07 | Tüm modeller · IGBT eşlemesi | Topoloji | Ağustos incelemesindeki "bağlantısız IGBT" sorunu 12.10 modellerinde yok: 12/12 IGBT doğru tabloya bağlı, sarkık blok yok | denetlendi — uygun (diyotlar → D-08) |
 | D-08 | Tüm modeller · Diode3/5/6/7 (S2 devresinde Diode4/8/10/11) | **Topoloji / cihaz** | Harici D1–D2 (faz–DA rayı) diyotlarıyla nötr IGBT ters paralel diyotlarının (DS3–DS4) parametre kümeleri **yer değiştirmiş**: D1–D2'de IXYN iç diyotu, DS3–DS4'te DSEI var | doğrulandı — etki S3'te −%0,15, S1'de −%0,9 P_ac; İP-4 tabanı `*_d08` |
-| D-09 | Tüm modeller · Capacitor6/7 (EMC X kapasitörü) | Parametre | X kapasitörü `C_emc_aux` = 1 µF ile modellenmiş; m-dosyasının kendi tek faz eşdeğeri `EMC_Cx_eq` = 0,5 µF / `EMC_Rx_eq` = 0,2 Ω hiç kullanılmıyor | açık — K-17 |
+| D-09 | Tüm modeller · Capacitor6/7 (EMC X kapasitörü) | Parametre | X kapasitörü `C_emc_aux` = 1 µF ile modellenmiş; m-dosyasının kendi tek faz eşdeğeri `EMC_Cx_eq` = 0,5 µF / `EMC_Rx_eq` = 0,2 Ω hiç kullanılmıyor | doğrulandı — S3'te ölçülen ΔQ₁ −2,5 var, ΔP_ac +%0,3 (İP-4) |
 | D-10 | Tüm modeller · IGBT/diyot ısıl ve eşik parametreleri | Parametre (izlenebilirlik) | `Vth = 6`, ısıl ağ dizileri ve diyot `Tdevice = 25` değişken yerine sayı olarak yazılmış; m-dosyasındaki karşılıkları kullanılmıyor. Değerler aynı, sonuca etkisi yok | açık — düşük öncelik |
+| D-12 | `inverter_s1s2_s2onarim_d08.slx` · iki bağımsız devre | Paket (koşu yöntemi) | İki fiziksel ağ aynı ode15s çözücüsünü paylaşıyor; 0,1 s koşu ~4 saat. Diğer devre `Commented = 'on'` yapılarak ayrık kopyalar koşturuldu | doğrulandı — fark P_ac ≤ %0,017, Q₁ ≤ 0,02 var; süre 22–69 dk. Tezde yer almaz |
+| D-11 | `inverter_common_parameters.m` · `Cdc_pos/Cdc_neg` (S4) | **Parametre / topoloji boyutu** | 2 × 470 µF DC bara, 25 A'da orta noktayı ±120 V salındırıyor; S4 akımı hedefin %32 altında, modülasyon doyumda. Ümit'in "20 A civarı" tavanı bu | düzeltildi — S4'te 2 × 5,6 mF; `KC_*` taraması sürüyor |
 
 ## Ayrıntılı kayıtlar
 
@@ -134,9 +136,16 @@ Her satır şu öğeleri içerir:
 - **Düzeltme:** S3 kopyasından betikle S4 kurulur.
   - L1 akım ölçümü ve referans `Ifaz_rms_target(4)·√2·sin θ` eklenir.
   - Hata → Kp (sonra PI) → modülasyon toplamı; Sin³ ileri beslemesi aynı toplama dış giriş olarak bağlanır.
-  - Betik: `scripts/build_s4_closed_loop_20261027.m` (planlandı).
-- **Etki:** —
-- **Durum:** açık
+  - Betik: `scripts/build_s4_closed_loop_20261028.m`; çıktı
+    `runs/2026-10-28_s4_kapali_cevrim/model/inverter_senaryo4_kc.slx` (taban S3 `*_d08`
+    + D-09). Denetleyici K-19 (analog eşdeğeri, 5 kHz ölçüm süzgeci).
+- **Etki (28.10.2026, özgün Cdc):**
+  - 2,3 A'da S4 çalışıyor:
+    - P: I_L1,1 = 2,41 A (+%4,8), THD %8,1, η %97,2
+    - PI: 2,38 A (+%3,6), THD %9,9, η %97,3
+  - 10 A ve 25 A'da akım hedefin %22–32 altında kalıyor ve modülasyon doyuyor.
+    Neden DC bara orta noktası (D-11).
+- **Durum:** düzeltildi — anma akımı doğrulaması D-11 `Cb_*` taramasıyla
 
 ### D-03 — Parametre dosyası yükleme sırası
 
@@ -171,7 +180,11 @@ Her satır şu öğeleri içerir:
   - `K12` ve `phase_deg2` D-01 ile bağlanır.
   - `Kp` D-02 ile bağlanır.
   - `L1_core_Rp4` S4 yüksek akım çekirdek kaybı için D-02'de değerlendirilir (K-14).
-- **Durum:** açık
+- **Uygulama (28.10.2026, İP-5):** `Kp` S4 denetleyicisine bağlandı; `L1_core_Rp4`
+  = 1500 Ω S4'te `L1 Core Loss Rp`'ye bağlandı; `K14`, `K34`, `phase_deg4`, `Vdc4`,
+  `Vac4_peak` S4'te kullanılıyor (`scripts/build_s4_closed_loop_20261028.m`).
+  `K12` ve `phase_deg2` D-01 ile bağlıydı.
+- **Durum:** kapandı
 
 ### D-06 — Reaktif güç işareti
 
@@ -202,9 +215,13 @@ Her satır şu öğeleri içerir:
 - **Etki:**
   - Model değişikliği yok; sayısal sonuç değişmiyor.
   - Kalibrasyonsuz benzetim–deney |Q| farkı S1'de ~26 var, S3'te ~10 var. Bu fark
-    %0,04–0,12 genlik farkına karşılık gelir ve İP-4'te kapanır.
-  - Kanıt: `review/2026-10-27_Q_ISARET_ANALIZI.md`, `runs/2026-10-27_q_isaret_dalga/`.
-- **Durum:** kapandı (ölçüm kuralı). Sayısal uyum İP-4'te.
+    %0,04–0,12 genlik farkına karşılık gelir; bu tahmin sert kaynak varsayımına
+    dayanıyordu.
+  - İP-4'te |Q| farkı kapandı, ancak genlikle değil, **fazla** (K-02b): S1 1,93 var,
+    S2 24,43 var, S3 21,41 var; üçü de bant içinde.
+  - Kanıt: `review/2026-10-27_Q_ISARET_ANALIZI.md`, `runs/2026-10-27_q_isaret_dalga/`,
+    `review/2026-10-28_KALIBRASYON_S1_S3.md`.
+- **Durum:** kapandı (ölçüm kuralı); sayısal uyum İP-4'te sağlandı.
 
 ### D-08 — Harici diyotlarla nötr kol diyotlarının parametreleri yer değiştirmiş
 
@@ -273,7 +290,15 @@ Her satır şu öğeleri içerir:
   - Farkın kalanı köprü tarafına gider: S3'te Q_A −9,79 → −8,28 var.
   - Evirici akımı sabit tutulduğunda üst sınır ΔQ ≈ −2,3/−2,4 var.
   - P'ye etkisi ihmal edilebilir.
-- **Durum:** açık — İP-4 kalibrasyon taban modelinde uygulanacak
+- **Ölçülen etki (İP-4, 28.10.2026):** S3, kalibrasyonsuz; `runs/2026-10-28_kalibrasyon/results/s3_k0`
+  ile D-08 koşusu karşılaştırıldı.
+  - P_ac +0,91 W (+%0,31), Q₁ −2,50 var, I_ac +%0,21, η +0,006 puan, THD +0,02 puan.
+  - Q₁ etkisi açık çevrim ağ hesabının (−0,92 var) değil, "evirici akımı sabit"
+    üst sınırının (−2,43 var) düzeyinde. Nedeni, susturmalı köprünün sert bir gerilim
+    kaynağı olmaması (K-02b).
+  - S1/S2'de ayrıca ölçülmedi; kalibrasyon D-09'lu modellerle yapıldı.
+  - Kaynak: `review/2026-10-28_KALIBRASYON_S1_S3.md`
+- **Durum:** doğrulandı
 
 ### D-10 — Sabit yazılmış eşdeğer değerler
 
@@ -287,6 +312,70 @@ Her satır şu öğeleri içerir:
 - **Düzeltme:** İP-7 parametre tablosunun tek kaynaklı olması için değişkenlere
   bağlanır. Değerler aynı olduğundan sonuç değişmez.
 - **Durum:** açık — düşük öncelik
+
+### D-11 — DC bara kapasitörleri anma akımında orta noktayı tutamıyor
+
+- **Dosya / blok:** `inverter_common_parameters.m` · `Cdc_pos`, `Cdc_neg` (= 470 µF);
+  S4 modeli `inverter_senaryo4_kc.slx` (S3 devresi)
+- **Sınıf:** Parametre (topoloji boyutlandırması)
+- **Sorun ve kanıt:**
+  - Tek faz T-tipi bacakta şebeke dönüş akımı DC bara orta noktasına girer. Bu yüzden
+    50 Hz faz akımının tamamı iki kapasitörün paralel eşdeğerinden geçer:
+    ΔV_orta,tepe ≈ Î/(ω·(C₊ + C₋)).
+  - 2 × 470 µF ile orta nokta salınımı şöyle:
+
+    | Faz akımı | Orta nokta salınımı (tepe) | Vdc/2'ye oranı |
+    |---|---|---|
+    | 2,3 A | ≈ 11 V | %5 |
+    | 10 A | ≈ 48 V | %22 |
+    | 25 A | ≈ 120 V | %56 |
+
+  - 28.10.2026 S4 taraması (`runs/2026-10-28_s4_kapali_cevrim/results/`, özgün Cdc):
+    - 2,3 A'da izleme iyi: P %4,8, PI %3,6 genlik hatası; THD %8–10.
+    - 10 A'da hata büyüyor: P −%22, PI −%28.
+    - 25 A'da PI −%32; modülasyon %21 oranında doyumda (u_top tepe 2,1), THD %57.
+  - Dalga biçiminde evirici darbe yüksekliği pozitif alternans boyunca ~270 V'tan
+    ~100 V'a iniyor: üst kapasitör boşalıyor, alttaki doluyor.
+  - Evirici bu durumda gereken gerilimi üretemiyor; denetleyici doyuma gidiyor.
+  - Bu tavan, 12.10 e-postasındaki "sistem 20 A civarına çıkıyor" gözlemiyle uyumlu.
+- **Tez kapsamındaki doğru durum (K-05):**
+  - Jüri maddesi 8, 25 A anma noktasında kapalı çevrimin gösterilmesini istiyor.
+  - Laboratuvar deneyleri yalnız ~2,3 A'da yapıldı (470 µF orada yeterli).
+  - Anma akımı benzetimi, orta noktayı tutabilen bir DC bara ile yapılmalı. Yarım
+    köprü tipi bacakta orta nokta salınımı genellikle Vdc/2'nin ≲ %5'inde tutulur.
+- **Düzeltme:**
+  - Yalnız S4 koşularında: `Cdc_pos = Cdc_neg = 5,6 mF`.
+  - Hesap: C₊ + C₋ ≥ 35,4 A / (314 rad/s · 10,7 V) = 10,5 mF. 25 A'da ≈ 10 V
+    salınım, Vdc/2'nin %4,7'si.
+  - Uygulama: `run_s4_closed_loop_20261028.m` içinde `opts.Cdc` değeri, bellekteki
+    modelin InitFcn'inin sonuna eklenir. m-dosyası ve ham paket değişmez.
+  - İlk deneme (`Cb_*`, 14:35–16:07) geçersiz. Değer yalnız taban çalışma alanına
+    yazılmıştı; InitFcn parametre dosyasını yeniden çalıştırıp 470 µF'a döndürdü.
+    Sonuçlar özgün koşularla bayt bayt aynı çıktı. Bu koşular
+    `results/_gecersiz_Cb_InitFcn_ezdi/` altında, `OKU.txt` notuyla saklanıyor.
+  - Kesin koşular `KC_*` adlarını taşır: D-11 ile K-20'nin kalibre S3 ileri beslemesi
+    birlikte uygulanır. Üç paralel kuyruk, ayrı `model_a|b|c` kopyalarında çalışır.
+  - Özgün Cdc'li koşular sınırlılık kanıtı olarak saklanır.
+- **Tezde:**
+  - Bölüm 3 model düzeltme kesimi ve Bölüm 8 sınırlılık: "anma akımı sonuçları
+    boyutlandırılmış DC bara ile; deney donanımının 470 µF barası 25 A için yetersiz".
+- **Etki:** `KC_*` taraması sürüyor (28.10.2026, 16:14'ten itibaren).
+- **Durum:** düzeltildi — doğrulama bekliyor
+
+### D-12 — S1+S2 birleşik modelinin ayrık kopyalarla koşturulması
+
+- **Dosya / blok:** `runs/2026-10-27_diyot_esleme/model/inverter_s1s2_s2onarim_d08.slx`
+- **Sınıf:** Paket (koşu yöntemi)
+- **Sorun:** İki bağımsız fiziksel ağ (S1 ve S2 devreleri) aynı ode15s çözücüsünü
+  paylaşıyor. Bir 0,1 s koşusu ~4 saat sürüyor; D-08'siz koşu 15 saatte bitmedi.
+- **Düzeltme:** `calibrate_s1s3_20261028('prepare')`, diğer devrenin bağlantı bileşenini
+  (çizgiler + global Goto/From) `Commented = 'on'` yapar; blok silinmez.
+  - Çıktı: `runs/2026-10-28_kalibrasyon/model_s1|model_s2/`
+  - Kalan blok sayısı: S1 tarafında 128, S2 tarafında 132.
+- **Etki:** ayrık ve birleşik model farkı P_ac'da ≤ %0,017, Q₁'de ≤ 0,02 var, η'da ≤ 0,001 puan.
+  Süre 4 sa → 22–69 dk. Kaynak: `review/2026-10-28_KALIBRASYON_S1_S3.md` Tablo 1.
+- **Tezde:** yer almaz (yalnız yöntem).
+- **Durum:** doğrulandı
 
 ### D-07 — Cihaz eşlemesi denetimi
 

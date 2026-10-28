@@ -1,0 +1,14 @@
+model: inverter_s2_kal
+case: s2
+tag: s2_k2
+s: 0.96687
+faz_deg: 0.1906
+K12: 0.76769478
+baslangic: 28-Oct-2026 14:29:14
+bitis: 28-Oct-2026 14:57:25
+mod: accelerator
+durum: tamamlandi
+duvar_suresi_s: 1691.5
+StopTime: 0.1
+
+

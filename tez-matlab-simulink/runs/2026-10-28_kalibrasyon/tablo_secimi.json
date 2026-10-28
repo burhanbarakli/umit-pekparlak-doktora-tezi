@@ -1,0 +1,3 @@
+{"S1": {"case": "s1", "once": "s1_esd", "sonra": "s1_k4"},
+ "S2": {"case": "s2", "once": "s2_esd", "sonra": "s2_k4"},
+ "S3": {"case": "s3", "once": "s3_k0", "sonra": "s3_k6"}}
