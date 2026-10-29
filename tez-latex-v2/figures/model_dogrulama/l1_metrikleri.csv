@@ -1,0 +1,4 @@
+senaryo,iL1_blok,ig_blok,IL1_1_rms,Ig_1_rms,iL1_max,iL1_min,poz_yari_ters_orani,poz_yari_sifir_orani
+S1 (klasik),inverter_s1_kal/PS-Simulink Converter3,inverter_s1_kal/AC Current Sensor1/PS-Simulink Converter,2.08535929762484,2.06315752227805,8.51234676066406,-8.51262031182674,0.251967480325197,0.0149998500015
+S2 (susturma),inverter_s2_kal/PS-Simulink Converter5,inverter_s2_kal/AC Current Sensor2/PS-Simulink Converter,2.09532992249197,2.10149507432864,8.19655307830549,-8.30481434673191,0,0.169868301316987
+S3 (susturma + Sin^3),inverter_senaryo3_kal/PS-Simulink Converter3,inverter_senaryo3_kal/AC Current Sensor1/PS-Simulink Converter,2.25322660710606,2.25410262901655,7.71271798802329,-7.76156619423543,0,0.276377236227638

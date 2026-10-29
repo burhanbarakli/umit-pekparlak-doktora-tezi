@@ -35,9 +35,9 @@ Durum değerleri: ☐ başlamadı · ◐ sürüyor · ☑ bitti
 | İP-6 | Kararlılık analizi (K-07): L/S/T Bode eğrileri, kazanç/faz marjı, K3 açık/kapalı; kutup karşılaştırması; L_g duyarlılığı | S4 doğrusallaştırması → `review/2026-10-28_KARARLILIK_BODE.md` + `runs/2026-10-28_kararlilik/` (vektörel PDF + CSV); K-21, D-13 | 7 | İP-5 | ☑ |
 | İP-7 | Tek parametre tablosu (K-09, K-22) | 12.10 m-dosyası → `tab:sistem-parametreleri` (75 satır, 7 grup; değer, birim, kaynak, tür) + `review/2026-10-28_PARAMETRE_TABLOSU.md`; D-14. Derleme 29.10.2026: 171 sayfa, Undefined yok, tablo s. 37–44 taşmasız (İP-8 sonrası) | 9 | İP-2 | ☑ |
 | İP-8 | Tez metni: bölümlere aktarım ve "düşük akımda benzetim modelleme" kesimi | review notları → v2 Bölüm 2–8: `sec:model-dogrulama-duzeltme`, `sec:dusuk-akim-modelleme`, `sec:s4-kapali-cevrim`, `sec:kararlilik-bode`, `sec:kalibrasyon` (29.10.2026; 197 sayfa, Undefined/Overfull yok; "bu" ailesi 0) | 2, 3, 8, 10 | İP-1…İP-7 | ☑ |
-| İP-9 | Bütün `\eksikistek` barlarının kapatılması (13 adet, 03:505 kapandı → 12; tablo aşağıda) | İP-1…İP-8 → 0 bar | 10, 11 | İP-8 | ◐ (12/13 kapandı; kalan 01:56 → İP-11) |
+| İP-9 | Bütün `\eksikistek` barlarının kapatılması (13 adet, 03:505 kapandı → 12; tablo aşağıda) | İP-1…İP-8 → 0 bar | 10, 11 | İP-8 | ☑ (13/13; son bar 01:56 İP-11'de Şekil 1.1 ile kapandı) |
 | İP-10 | Başlık, akış, katkı ilanı ve "eski tez" temizliği (K-11, K-24) | Bölüm 1 beş kesim + Tablo 1.1 `tab:katki-yontem-kanit` (başlık bileşeni → katkı → yöntem → bulgu → kanıt); Bölüm 4/5/7 köprüleri, Kesim 7.3 konumu; Bölüm 8 AS2–AS3 ve Kesim 8.2 kalibre değerlerle; Özet (2 s.) ve Summary (4 s.) yeniden yazıldı. Derleme 29.10.2026: 205 sayfa, Undefined/Overfull yok. Basılı metinde "eski/önceki tez" yok (dosya/etiket adları İP-11) | 1, 2, 3 | İP-8 | ☑ |
-| İP-11 | Şekiller: genel blok diyagram, çalışma modu şekilleri, düşük çözünürlüklü görsellerin yenilenmesi | TikZ/MATLAB vektör → `figures/`; 71 raster şekil (bkz. `03_ILK_TEZ_YENI_TEZ_KARSILASTIRMA.md` jüri 5); Şekil 4.2/4.3 basım sırası (`[H]`); Bölüm 4'teki "LC filtre" başlıklarının ölçüm noktasına göre denetimi | 4, 5, 6 | İP-8 | ☐ |
+| İP-11 | Şekiller: genel blok diyagram, çalışma modu şekilleri, düşük çözünürlüklü görsellerin yenilenmesi | TikZ/MATLAB vektör → `figures/` (K-25): Şekil 1.1 akış (bar 01:56 kapandı), 2.1, 2.3, 2.10, 5.2 TikZ; 2.2 MATLAB vektör; kalibre S1/S2/S3 yeniden koşusundan (`runs/2026-10-29_tez_sekilleri`, metrikler 6 basamak aynı) Şekil 4.2 S1 kapı, 4.4 S1/S2 L1, 5.3 S3 L1; 4.3 model çizimi vektör. Eski 4 kapı ekranı, 5 L1 ekranı, yanlış etiketli faz modeli (C1 = 1 nF), Chicco grafiği ve eşpotansiyel ekranı çıktı. Şekil sırası hatası yok (87 şekil). 300 dpi altı raster 60 → 42; kalanlar Bölüm 6–7 fotoğraf/ekran/GT şemaları, yeniden üretilemez, bölüm girişinde kaynak notu. "LC filtre" başlıkları doğru (fiziksel süzgeç L1–Cf; Kesim 3.6.1 notu). Derleme 29.10.2026: 205 sayfa, Undefined/Overfull yok. Review: `review/2026-10-29_TEZ_SEKILLERI.md` | 4, 5, 6 | İP-8 | ☑ |
 | İP-12 | Literatür sentezi ve karşılaştırma tablosu | Bölüm 2 | 11 | — | ☐ |
 | İP-13 | Son derleme, denetim ve sürüm kaydı | `build_YYYY-MM-DD/`, `tez_guncel_YYYY-MM-DD.pdf`; EKLER (K-23), ÖZGEÇMİŞ, kimlik yer tutucuları (öğrenci no, anabilim dalı, savunma/teslim tarihi) | hepsi | hepsi | ☐ |
 
@@ -64,7 +64,7 @@ uzun bir MATLAB koşusudur (Normal modda ~2 saat, tek Accelerator koşusunda ~30
 
 | Bölüm:satır | Bar | Kapanış |
 |---|---|---|
-| 01:56 | Problem–yöntem–katkı akış şekli | İP-11 TikZ şekli |
+| 01:56 | Problem–yöntem–katkı akış şekli | İP-11 TikZ şekli — **Kapandı**: Şekil 1.1 `fig:tez-akisi` (TikZ) |
 | 02:267 | Gerçek FV profili ve ticari evirici ham kaydı | **Kapandı** — İP-8 (K-12/İ4 sınırlılık paragrafı) |
 | 02:284 | Kapı işaretleri ve endüktör akımı | **Kapandı** — İP-8 (`fig:s2-kapi-isaretleri`, `fig:s1-s2-kalibre-dalga`) |
 | 03:406 | Gerçek denetim kodu ve kapı mantığı | **Kapandı** — İP-8 (`sec:denetim-modelden`) |

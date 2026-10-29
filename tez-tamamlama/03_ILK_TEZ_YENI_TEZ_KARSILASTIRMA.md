@@ -269,3 +269,22 @@ numaraları İP-13'teki son derlemede yeniden alınacak.
   "yeniden üretilemedi" cümlesi çıktı.
 - **Yazım kuralı.** Özet ve Bölüm 1–8'de "bu" ailesi ve "dolayısıyla" yok. Tek istisna
   Kesim 1.5'teki `\eksikistek` barı (İP-11).
+
+---
+
+## 9. İP-11 güncellemesi (29.10.2026)
+
+Derleme 205 sayfa, 87 şekil (İP-10 sonrası 95). Ayrıntı: `tez-matlab-simulink/review/2026-10-29_TEZ_SEKILLERI.md`, karar K-25.
+
+| Jüri | Önceki durum | Yeni durum | Kanıt |
+|---|---|---|---|
+| 4 Blok diyagramlar | kısmen | **karşılandı** | Şekil 1.1 problem–yöntem–katkı akışı (TikZ, s. 8; son `\eksikistek` barı kapandı); Şekil 2.1 EDS ve 2.3 BYS mimarisi TikZ'ye çevrildi; Şekil 3.1, 3.6, 3.7, 6.25, 7.9, 7.19 korunuyor |
+| 5 Şekil çözünürlüğü | kısmen | kısmen | 300 dpi altı raster 60 → 42. Benzetim şekilleri kalibre modellerden vektör olarak yeniden üretildi (Şekil 4.2 S1 kapı, 4.4 S1/S2 L1, 5.3 S3 L1, 4.3 model çizimi); kavram şekilleri TikZ (2.9 DE/CCM, 5.2 eşpotansiyel), Şekil 2.2 MATLAB vektör. Kalan 42 görsel Bölüm 6 (25) ve 7 (17): fotoğraf, kart çizimi, osiloskop/PC ekranı, GT-tipi ilk katman şeması ve başvuru şeması; kaynak dosya yok, yapay büyütme yapılmadı, bölüm girişlerinde kaynak ve çözünürlük notu var |
+| 6 Çalışma modları | karşılandı | karşılandı | Değişmedi |
+
+- **Şekil 4.2/4.3 sıra hatası giderildi.** Eski kapı ekranları çıktı; LOF'ta sıra hatası yok.
+- **"LC filtre" başlıkları doğru.** Fiziksel süzgeç L1–Cf; L2 şebeke ve varyak eşdeğeri. Kesim 3.6.1'e not eklendi.
+- **Hatalı görsel çıkarıldı.** Eski faz modeli görselinde C1 = 1 nF yazıyordu (tasarım değeri 8 µF); Şekil 3.4 aynı yapıyı vektör olarak veriyor.
+- **Kalibre koşuların yeniden üretimi.** S1/S2/S3 L1 ve kapı kaydı için yeniden koşuldu; η ve THD kalibrasyon koşularıyla 6 basamak aynı.
+
+**Sayım (İP-11 sonrası):** 8 madde karşılandı (1, 2, 3, 4, 6, 7, 8, 9), 3 madde kısmen (5, 10, 11), 0 açık.

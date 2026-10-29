@@ -98,9 +98,60 @@ Doğrulama, tez kapsamında erişilebilen benzetim modelleri ve mevcut deneysel 
 \section{Tezin Düzeni}
 \label{sec:giris-duzen}
 
-\eksikistek{Problem--yöntem--katkı akış şekli}{EDS $\rightarrow$ T-tipi dönüştürücü $\rightarrow$ düşük güçte ters akım $\rightarrow$ nötr anahtar susturma $\rightarrow$ Sin\textsuperscript{3} kompanzasyonu $\rightarrow$ GT-tipi mimari zincirini tek bakışta gösteren kavramsal bir şekil istiyoruz (teknik blok diyagramından farklı; TikZ veya MATLAB ile vektörel). Bölüm~4--7'nin nihai kanıtları kesinleştiğinde üretilip bu noktaya yerleştirilecektir.}
+Tez sekiz bölümden oluşmaktadır ve genelden özele, faz kolundan sisteme doğru ilerler. Şekil~\ref{fig:tez-akisi}, problemden katkılara uzanan zinciri, her katkının bölümünü ve kanıtını tek bakışta göstermektedir.
 
-Tez sekiz bölümden oluşmaktadır ve genelden özele, faz kolundan sisteme doğru ilerler. Birinci bölümde araştırma problemi kurulmuş; amaç, araştırma soruları, katkılar ve sınırlar tanımlanmıştır. İkinci bölümde EDS güç dönüşüm mimarileri, T-tipi eviriciler, düşük güç verimi ve harmonik bozulma, akım kontrolü ve ileri besleme yaklaşımları incelenerek araştırma boşluğu belirlenmektedir. Üçüncü bölüm, sonraki bütün bölümlerin ortak tabanı olan sistem mimarisini, T-tipi çalışma kiplerini, LCL filtre ve şebeke modelini, kontrol yapısını, elektriksel parametreleri, doğrulama yöntemini ve benzetim modelinin doğrulanmasını sunmaktadır.
+\begin{figure}[htbp]
+  \centering
+  \resizebox{\textwidth}{!}{%
+  \begin{tikzpicture}[
+    node distance=6mm and 7mm,
+    kutu/.style={draw, rounded corners=1.5pt, align=center, font=\small, minimum height=12mm, text width=32mm, fill=blue!5, execute at begin node=\nohyph},
+    sorun/.style={kutu, fill=red!8},
+    katki/.style={kutu, fill=orange!15, very thick},
+    bedel/.style={kutu, fill=gray!10},
+    kanit/.style={kutu, fill=green!8},
+    akis/.style={-{Latex[length=2mm]}, thick},
+    ince/.style={-{Latex[length=1.6mm]}, dashed},
+    grup/.style={draw, dashed, rounded corners=3pt, inner sep=3.5mm}
+  ]
+    \def\nohyph{\hyphenpenalty=10000\relax}
+    \node[kutu] (eds) {Enerji depolama sistemi:\\güç dönüşüm arayüzü};
+    \node[kutu, right=of eds] (tt) {Üç seviyeli T-tipi\\dönüştürücü\\(Bölüm~\ref{chap:literatur}--\ref{chap:sistem})};
+    \node[sorun, right=of tt] (ters) {Düşük güçte nötr kol\\üzerinden ters akım\\dolaşımı};
+    \node[kutu, right=of ters] (odun) {Verim--THD\\ödünleşimi};
+    \draw[akis] (eds) -- (tt);
+    \draw[akis] (tt) -- (ters);
+    \draw[akis] (ters) -- (odun);
+
+    \node[katki, below=14mm of ters] (k1) {\textbf{Katkı 1}\\Nötr anahtar susturma\\(Bölüm~\ref{chap:anahtarlama})};
+    \node[bedel, right=of k1] (dcm) {Bedel: süreksiz iletim,\\üçüncü harmonik};
+    \node[katki, below=of dcm] (k2) {\textbf{Katkı 2}\\Sin\textsuperscript{3} ileri besleme\\kompanzasyonu (Bölüm~\ref{chap:sin3})};
+    \node[kanit, left=of k2] (kc) {Kapalı çevrim S4\\ve kararlılık analizi\\(Kesim~\ref{sec:s4-kapali-cevrim}--\ref{sec:kararlilik-bode})};
+    \node[kanit, below=of kc] (dny) {Deney kayıtları ve\\kalibre benzetim\\(Bölüm~\ref{chap:deney})};
+    \draw[akis] (ters) -- (k1);
+    \draw[akis] (k1) -- (dcm);
+    \draw[akis] (dcm) -- (k2);
+    \draw[ince] (k2) -- (kc);
+    \draw[ince] (k1.west) -- ++(-5mm,0) |- (dny.west);
+    \draw[ince] (k2.south) |- (dny.east);
+    \node[grup, fit=(k1)(dcm)(k2)(kc)(dny), label={[font=\small\itshape]above right:Faz kolu ölçeği}] (faz) {};
+
+    \node[katki, below=14mm of tt, xshift=-20mm] (k3) {\textbf{Katkı 3}\\GT-tipi yeniden\\yapılandırılabilir mimari\\(Bölüm~\ref{chap:gttipi})};
+    \node[bedel, below=of k3] (isl) {Evirici, Vienna PFC ve\\aktif batarya yönetimi\\aynı yarı iletkenlerle};
+    \draw[akis] (tt.south) -- ++(0,-5mm) -| (k3.north);
+    \draw[ince] (k3) -- (isl);
+    \node[grup, fit=(k3)(isl), label={[font=\small\itshape]above left:Sistem ölçeği}] (sis) {};
+
+    \node[kutu, anchor=north west, text width=96mm] (taban) at ([yshift=-8mm]sis.south west |- faz.south) {Ortak taban: sistem modeli, tek parametre tablosu ve benzetim modelinin doğrulanması (Bölüm~\ref{chap:sistem})};
+    \node[kutu, right=of taban, text width=44mm] (son) {Araştırma sorularının yanıtları,\\sınırlılıklar (Bölüm~\ref{chap:sonuc})};
+    \draw[ince] (taban.north -| sis.south) -- (sis.south);
+    \draw[ince] (taban.north -| dny.south) -- (faz.south -| dny.south);
+    \draw[akis] (son.north |- faz.south) -- (son.north);
+  \end{tikzpicture}%
+  }
+  \caption[Tezin problem--yöntem--katkı akışı]{Tezin problem--yöntem--katkı akışı. Faz kolu ölçeğindeki iki katkı düşük güç ters akım problemine, sistem ölçeğindeki GT-tipi mimari aynı T-tipi donanımın yeniden görevlendirilmesine dayanır; yeşil kutular kanıt katmanlarını gösterir.}
+  \label{fig:tez-akisi}
+\end{figure} Birinci bölümde araştırma problemi kurulmuş; amaç, araştırma soruları, katkılar ve sınırlar tanımlanmıştır. İkinci bölümde EDS güç dönüşüm mimarileri, T-tipi eviriciler, düşük güç verimi ve harmonik bozulma, akım kontrolü ve ileri besleme yaklaşımları incelenerek araştırma boşluğu belirlenmektedir. Üçüncü bölüm, sonraki bütün bölümlerin ortak tabanı olan sistem mimarisini, T-tipi çalışma kiplerini, LCL filtre ve şebeke modelini, kontrol yapısını, elektriksel parametreleri, doğrulama yöntemini ve benzetim modelinin doğrulanmasını sunmaktadır.
 
 Dördüncü, beşinci ve altıncı bölümler faz kolu ölçeğindeki zinciri oluşturur. Dördüncü bölümde düşük güç ters akım mekanizması çözümlenmekte ve nötr anahtar susturma yöntemi klasik anahtarlamayla karşılaştırılmaktadır (katkı~1). Beşinci bölüm Sin\textsuperscript{3} tabanlı ileri besleme kompanzasyonunu matematiksel olarak tanımlamakta; akım geri beslemeli kapalı çevrim modelini, düşük, orta ve anma akımı başarımını ve kararlılık incelemesini vermektedir (katkı~2). Altıncı bölüm, iki yöntemi prototipin deney kayıtlarıyla karşılaştırmakta ve benzetim modelini deney özetine kalibre etmektedir; tam anma gücünde deney bulunmadığını sınırlılık olarak belirtmektedir.
 

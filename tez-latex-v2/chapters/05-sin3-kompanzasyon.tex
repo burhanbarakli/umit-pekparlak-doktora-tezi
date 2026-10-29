@@ -167,20 +167,42 @@ Eşitlik~\eqref{eq:sin3-duzeltilmis-optimum} ile verilen çift, uygulanan kazan�
 
 \section{Önerilen Yapı ve İleri Besleme Mekanizması}
 
-İleri besleme yolunun fiziksel işlevi, evirici tarafındaki eşdeğer kaynak gerilimini şebeke gerilimine yaklaştırmaktır. PLL şebekeye kilitlendikten sonra, akım komutu uygulanmadan önce, evirici çıkışı ile şebeke eşpotansiyel ise seri $Z_1+Z_2$ filtre ve şebeke empedansından akan akım sıfıra yaklaşır; Şekil~\ref{fig:eski-feedforward-etkisi} eşpotansiyel durumu eşdeğer kaynaklar üzerinde, Şekil~\ref{fig:eski-espotansiyel-dalga} ise gerilim dalga biçimleri ve sıfır akım kaydıyla göstermektedir. Akım referansı uygulandığında denetleyicinin üretmesi gereken ek gerilim yalnız empedans düşümünü karşılayan küçük bir bileşendir; akım küçüldükçe ek bileşen mutlak olarak küçülür ve modeldeki küçük gerilim hataları göreli olarak daha görünür hâle gelir. İleri besleme teriminin düşük akımdaki göreli önemi aynı mekanizmadan kaynaklanır.
+İleri besleme yolunun fiziksel işlevi, evirici tarafındaki eşdeğer kaynak gerilimini şebeke gerilimine yaklaştırmaktır. PLL şebekeye kilitlendikten sonra, akım komutu uygulanmadan önce, evirici çıkışı ile şebeke eşpotansiyel ise seri $Z_1+Z_2$ filtre ve şebeke empedansından akan akım sıfıra yaklaşır. Şekil~\ref{fig:espotansiyel}, eşpotansiyel durumu eşdeğer kaynaklar ve iki kaynağın eşit gerilim dalga biçimleri üzerinde göstermektedir. Akım referansı uygulandığında denetleyicinin üretmesi gereken ek gerilim yalnız empedans düşümünü karşılayan küçük bir bileşendir; akım küçüldükçe ek bileşen mutlak olarak küçülür ve modeldeki küçük gerilim hataları göreli olarak daha görünür hâle gelir. İleri besleme teriminin düşük akımdaki göreli önemi aynı mekanizmadan kaynaklanır.
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.96\textwidth]{sonuclar/eski_sekil_4_18_feedforward_etkisi.png}
-  \caption{İleri besleme bileşeninin eşdeğer kaynaklar ve seri empedanslar üzerindeki etkisini gösteren benzetim modeli.}
-  \label{fig:eski-feedforward-etkisi}
-\end{figure}
-
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=0.90\textwidth]{sonuclar/eski_sekil_4_19_espotansiyel_dalga.png}
-  \caption{Eşpotansiyel kaynakların gerilim dalga biçimleri ve kaynaklar arasındaki akımın sıfır oluşu. Kayıt, akım komutu öncesi başlangıç durumunu gösterir; kapalı çevrim izleme başarımını kanıtlamaz.}
-  \label{fig:eski-espotansiyel-dalga}
+  \resizebox{\textwidth}{!}{%
+  \begin{tikzpicture}[font=\small, x=1mm, y=1mm,
+    tel/.style={thick},
+    emp/.style={draw, thick, fill=white, minimum width=12mm, minimum height=5mm, inner sep=1pt}]
+    % eşdeğer devre
+    \draw[tel] (0,0) -- (0,30) -- (60,30) -- (60,0) -- cycle;
+    \node[emp] at (20,30) {$Z_1$};
+    \node[emp] at (42,30) {$Z_2$};
+    \draw[thick, fill=white] (0,15) circle (5); \draw (-2.5,15) sin (-1.25,16.5) cos (0,15) sin (1.25,13.5) cos (2.5,15);
+    \draw[thick, fill=white] (60,15) circle (5); \draw (57.5,15) sin (58.75,16.5) cos (60,15) sin (61.25,13.5) cos (62.5,15);
+    \node[left] at (-6,15) {$v_{\mathrm{inv}}$};
+    \node[right] at (66,15) {$v_g$};
+    \draw[-{Latex[length=2mm]}, thick, red!70!black] (28,34) -- node[above]{$i=(v_{\mathrm{inv}}-v_g)/(Z_1+Z_2)=0$} (36,34);
+    \node[align=center, font=\footnotesize] at (30,-6) {evirici eşdeğer kaynağı \hspace{14mm} şebeke};
+    % dalga biçimleri
+    \begin{scope}[xshift=82mm, yshift=18mm]
+      \draw[-{Latex[length=1.5mm]}] (0,0) -- (52,0) node[right]{$t$};
+      \draw[-{Latex[length=1.5mm]}] (0,-13) -- (0,14) node[above]{$v$};
+      \draw[very thick, blue!70!black] plot[domain=0:50, samples=80] (\x, {11*sin(9*\x)});
+      \draw[thick, dashed, orange!90!black] plot[domain=0:50, samples=80] (\x, {11*sin(9*\x)});
+      \node[font=\footnotesize, align=left, anchor=west] at (2,-17) {\textcolor{blue!70!black}{---} $v_{\mathrm{inv}}$ \quad \textcolor{orange!90!black}{-\,-} $v_g$};
+    \end{scope}
+    \begin{scope}[xshift=82mm, yshift=-12mm]
+      \draw[-{Latex[length=1.5mm]}] (0,0) -- (52,0) node[right]{$t$};
+      \draw[-{Latex[length=1.5mm]}] (0,-5) -- (0,6) node[above]{$i$};
+      \draw[very thick, red!70!black] (0,0) -- (50,0);
+      \node[font=\footnotesize, anchor=west] at (2,3) {$i=0$};
+    \end{scope}
+  \end{tikzpicture}%
+  }
+  \caption[Eşpotansiyel evirici ve şebeke kaynakları]{İleri beslemenin eşpotansiyel durumu: evirici eşdeğer kaynağı ile şebeke kaynağı aynı genlik ve fazda olduğunda seri $Z_1$ (filtre) ve $Z_2$ (şebeke) empedanslarından akım akmaz. Şekil, akım komutu öncesindeki başlangıç durumunun ideal çözümüdür; kapalı çevrim izleme başarımını göstermez.}
+  \label{fig:espotansiyel}
 \end{figure}
 
 Denetleyicinin devre dışı bırakılıp yalnız ileri besleme katsayısının değiştirildiği benzetim koşulu, yöntemin açık çevrim mekanizmasını ayırmak için yararlıdır; ancak kapalı çevrim başarımı ya da kararlılık kanıtı değildir. Şebeke gerilimi ileri beslemesi ideal durumda evirici ile şebeke gerilimini yaklaştırarak düşük akımdaki göreli gerilim hatasını azaltabilir; LCL filtre, ortak bağlantı noktası ölçümü ve sayısal gecikme eklendiğinde aynı yol sanal empedans ve etkin sönümleme etkisi de oluşturabilir \citep{Lu2016}. İleri besleme yolunun etkisi yalnız gerilim düşümü hesabıyla sınırlandırılmamıştır. İşlevsel zincir Şekil~\ref{fig:denetim-modulasyon-blok} üzerinde verilmiştir: Sin\textsuperscript{3} yolu akım denetleyicisiyle seri değil, modülasyon toplamında paralel bir ileri besleme bileşenidir ve nötr anahtar susturma kararı PWM üretiminden sonra kapı mantığında uygulanır.
@@ -188,14 +210,16 @@ Denetleyicinin devre dışı bırakılıp yalnız ileri besleme katsayısının 
 \section{Senaryo~3 Benzetim Kayıtları}
 \label{sec:sin3-senaryo3-kayitlari}
 
-Senaryo~3 benzetim ekranları, Sin\textsuperscript{3} kompanzasyonunun açık çevrim etkisini görsel olarak göstermektedir. Şekil~\ref{fig:sin3-l1-yakin} kompanzasyonlu $L_1$ akımının anahtarlama ölçeğindeki yapısını; Şekil~\ref{fig:sin3-dort-kanal} gerilim ve akım kanallarını ortak zaman ekseninde; Şekil~\ref{fig:sin3-l1-fft} ile Şekil~\ref{fig:sin3-iout-fft} iki akım ölçüm noktasındaki harmonik sonuçları göstermektedir.
+Şekil~\ref{fig:s3-kalibre-l1}, kalibre S3 modelinde $L_1$ akımını ve şebeke akımını gösterir. Sin\textsuperscript{3} terimi, S2'de alternans ortasında çöken şebeke akımı zarfını sinüse yaklaştırır; $L_1$ akımı susturmalı çalışmanın süreksiz iletim yapısını korur, ters akım aralığı yoktur ve pozitif yarım periyodun \%27,6'sında akım sıfırdadır. Kompanzasyon süreksiz iletimi ortadan kaldırmaz; darbe genişliklerini, süreksiz iletimin ürettiği üçüncü harmoniği karşılayacak biçimde değiştirir.
 
-\begin{figure}[H]
+\begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.82\textwidth]{sonuclar/eski_sekil_4_29_sin3_l1.png}
-  \caption{Sin\textsuperscript{3} kompanzasyonlu nötr susturma benzetiminde $L_1$ akımının büyütülmüş görünümü (Senaryo~3).}
-  \label{fig:sin3-l1-yakin}
+  \includegraphics[width=0.96\textwidth]{model_dogrulama/s3_kalibre_l1.pdf}
+  \caption[Kalibre benzetimde S3 $L_1$ akımı]{Kalibre benzetimde S3 (susturma + Sin\textsuperscript{3}): (a) son tam şebeke periyodunda $i_{L1}$, şebeke akımı $i_g$ ve karşılaştırma için S2 şebeke akımı; (b) pozitif yarım periyottan \SI{400}{\micro\second} kesitte $i_{L1}$.}
+  \label{fig:s3-kalibre-l1}
 \end{figure}
+
+Senaryo~3 benzetim ekranları, kalibre edilmemiş modülasyon değerleriyle üretilmiş bir nitel kanıt kümesidir. Şekil~\ref{fig:sin3-dort-kanal} gerilim ve akım kanallarını ortak zaman ekseninde; Şekil~\ref{fig:sin3-l1-fft} ile Şekil~\ref{fig:sin3-iout-fft} iki akım ölçüm noktasındaki harmonik sonuçları göstermektedir.
 
 \begin{figure}[H]
   \centering

@@ -132,38 +132,22 @@ S2 devresinin kapı yolu, ortak model dosyasında eksik olduğu için tezdeki ta
   \label{fig:s2-kapi-isaretleri}
 \end{figure}
 
-Senaryo ekran kayıtlarındaki kapı dizileri de aynı mantığı göstermektedir. Klasik yöntem Şekil~\ref{fig:klasik-kapi-darbeleri-tam} ve Şekil~\ref{fig:klasik-kapi-darbeleri-yakin}, önerilen yöntem Şekil~\ref{fig:susturma-kapi-darbeleri-tam} ve Şekil~\ref{fig:susturma-kapi-darbeleri-yakin} altında verilmektedir; dört kayıt aynı içeriğin tekrarı olmadığından birleştirilmemiştir.
+Klasik anahtarlamanın aynı pencerelerdeki kapı komutları Şekil~\ref{fig:s1-kapi-isaretleri} üzerinde verilmiştir. Pozitif yarım periyotta $Q_1$ ile $Q_4$ tamamlayıcı darbelerle anahtarlanırken $Q_2$ kesimde, $Q_3$ iletimde tutulur; negatif yarım periyotta $Q_2$ ile $Q_3$ tamamlayıcı çalışır. İki şekil karşılaştırıldığında tek fark, S2'de sıfır durumundaki karşı nötr anahtar komutunun ($Q_4$ pozitif, $Q_3$ negatif yarım periyotta) bastırılmasıdır. Kapı dizileri Tablo~\ref{tab:model-kapi-mantigi} ile örtüşür; ölü zaman ve kapı polaritesi model bloklarından okunmuştur.
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.98\textwidth]{sistem/onceki_tez_klasik_kapi_darbeleri.jpg}
-  \caption{Klasik tamamlayıcı anahtarlamada $Q_1$--$Q_4$ kapı darbelerinin bir temel periyot boyunca görünümü (senaryo ekran kaydı, benzetim).}
-  \label{fig:klasik-kapi-darbeleri-tam}
+  \includegraphics[width=0.96\textwidth]{model_dogrulama/s1_kapi_isaretleri.pdf}
+  \caption[Klasik anahtarlamada (S1) $Q_1$--$Q_4$ kapı komutları]{Klasik tamamlayıcı anahtarlamada (S1) $Q_1$--$Q_4$ kapı komutları: solda son tam şebeke periyodu (\num{80}--\SI{100}{\milli\second}), sağda pozitif yarım periyottan \SI{400}{\micro\second} kesit. Kayıt, kalibre S1 benzetim modelinden alınmıştır.}
+  \label{fig:s1-kapi-isaretleri}
 \end{figure}
 
-\begin{figure}[H]
+Faz kolunun devre yapısı Şekil~\ref{fig:t-tipi-akim-yollari}, elemanların değerleri Tablo~\ref{tab:sistem-parametreleri} içinde verilmiştir. Şekil~\ref{fig:s3-simulink-modeli}, ölçüm, filtre, şebeke eşdeğeri ve güç hesabı bloklarını içeren benzetim modelinin üst düzey çizimidir. S1 ve S2 modelleri aynı güç katı ve ölçüm yapısına sahiptir; yalnız modülasyon ve kapı mantığı farklıdır. Bölümdeki sayısal sonuçlar Kesim~\ref{sec:model-dogrulama-duzeltme} içindeki düzeltmeler uygulanmış ve kalibre edilmiş modellerden alınmıştır.
+
+\begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.98\textwidth]{sistem/onceki_tez_klasik_kapi_darbeleri_yakin.jpg}
-  \caption{Klasik tamamlayıcı anahtarlamada seçilmiş anahtarlama penceresinin yakın görünümü (senaryo ekran kaydı, benzetim).}
-  \label{fig:klasik-kapi-darbeleri-yakin}
-\end{figure}
-
-Şekil~\ref{fig:klasik-kapi-darbeleri-yakin} altındaki pozitif alternans kesitinde $Q_1$ ile $Q_4$ tamamlayıcı darbelerle anahtarlanırken $Q_2$ kesimde, $Q_3$ iletimde tutulmaktadır. Aynı zaman aralığında önerilen yöntemi gösteren Şekil~\ref{fig:susturma-kapi-darbeleri-yakin} altında $Q_1$ anahtarlamayı sürdürmekte, nötr kola ait $Q_4$ komutu ise sıfırda tutulmaktadır; simetrik olarak negatif alternansta $Q_3$ komutu bastırılmaktadır. Ekran kayıtlarındaki diziler Tablo~\ref{tab:model-kapi-mantigi} ile örtüşür; ölü zaman ve kapı polaritesi ise ekran çözünürlüğünden değil, model bloklarından okunmuştur.
-
-Benzetim modelinin faz kolu ve tüm sistem ekranı, sonuç dalga biçimlerinden ayrı kanıt türleridir. Şekil~\ref{fig:onceki-faz-modeli}, $Q_1$--$Q_4$, bölünmüş DA bara, $L_1$, $C_f$ ve $L_2$ elemanlarının tek fazlı T-tipi kola bağlantısını; Şekil~\ref{fig:onceki-simulasyon-modeli} ise ölçüm, filtre, şebeke eşdeğeri ve güç hesabı bloklarını içeren üst düzey Simulink çalışma alanını göstermektedir. Ekranlar, sonuçların dayandığı modellerle aynı güç katı ve ölçüm yapısına sahiptir; bölümdeki sayısal sonuçlar ise Kesim~\ref{sec:model-dogrulama-duzeltme} içindeki düzeltmeler uygulanmış ve kalibre edilmiş modellerden alınmıştır.
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.90\textwidth]{sonuclar/onceki_tez_t_tipi_faz_modeli.png}
-  \caption{Benzetimde kullanılan tek fazlı T-tipi evirici ve LC filtre yapısı.}
-  \label{fig:onceki-faz-modeli}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[angle=90,width=0.96\textwidth]{sonuclar/onceki_tez_simulasyon_modeli.jpg}
-  \caption{Benzetimde kullanılan Simulink modelinin genel görünümü: güç katı, LCL ve EMC süzgeci, şebeke eşdeğeri, ölçüm ve güç hesabı blokları.}
-  \label{fig:onceki-simulasyon-modeli}
+  \includegraphics[angle=90,height=0.80\textheight]{model_dogrulama/s3_model_ust_duzey.pdf}
+  \caption[Kalibre S3 benzetim modelinin üst düzey çizimi]{Kalibre S3 benzetim modelinin üst düzey çizimi: DA kaynak ve bölünmüş bara, T-tipi güç katı, $L_1$ ve çekirdek kaybı, iki kademeli EMC süzgeci, şebeke eşdeğeri ($L_2$), modülasyon (\textsc{anahtarlama}) ve ölçüm ile güç hesabı blokları. Çizim model dosyasından vektör olarak alınmıştır.}
+  \label{fig:s3-simulink-modeli}
 \end{figure}
 
 Güvenli uygulamada dört koşul birlikte sağlanmalıdır. İlk olarak, akım işareti sensör ofsetinden büyük bir güven payıyla belirlenmelidir. İkinci olarak, nötr kolun kesilmesi endüktör akımı için kesintisiz ve aşırı gerilim üretmeyen alternatif bir yol bırakmalıdır; susturmalı çalışmada akım sıfıra inince yol kendiliğinden kapanır, ters akım yönünde ise $D_1$--$D_2$ ve dış anahtar diyotları yol sağlar. Üçüncü olarak, karşılıklı anahtarların ölü zamanı ve minimum darbe genişliği korunmalıdır. Benzetim modelinde ölü zaman $t_d=\SI{1}{\micro\second}$'dir; değer, donanımın PWM zamanlayıcısındaki ölü zaman yazmacından gelen tasarım değeridir (Tablo~\ref{tab:sistem-parametreleri}). Donanımdaki gerçek ölü zaman ve sürücü yayılım gecikmesi ölçülmemiştir; düşük akımda ölü zamanın akıma bağlı gerilim hatası Kesim~\ref{sec:dusuk-akim-modelleme} içinde değerlendirilmiştir \citep{Zhang2014Deadtime}. Son olarak, ölçüm geçersizliği veya aşırı akım durumunda denetim önceden tanımlanmış güvenli anahtarlamaya dönmelidir.
@@ -210,7 +194,14 @@ Tablo~\ref{tab:s1-s2-kalibre} üç bulguyu destekler. Birinci bulgu verimdir. Su
 
 Üçüncü bulgu, susturmanın köprü davranışını değiştirmesidir. Kutup geriliminin ara seviyede kaldığı zaman oranı S1'de \%0,5, S2'de \%12,4'tür; susturmalı köprü düşük akımda akım kaynağına yaklaşır ve etkin güç modülasyon genliğine daha duyarlı hâle gelir (Tablo~\ref{tab:kopru-ic-empedansi}). Kalibre S2 genliğinin parametre dosyasındaki ilk değerden \%3,3 düşük olması da aynı davranışın sonucudur.
 
-Şekil~\ref{fig:s1-s2-kalibre-dalga}, iki kalibre noktanın son şebeke periyodundaki dalga biçimlerini karşılaştırır. S1'de şebeke akımı sinüs zarfının üzerinde anahtarlama kaynaklı bozulma taşır; S2'de akım zarfı alternans ortasında çöker ve sıfır geçişlerinin iki yanında tepe yapar. Akım zarfının biçimi Kesim~\ref{sec:dusuk-akim-modelleme} içindeki süreksiz iletim açıklamasıyla ve üçüncü harmonik artışıyla uyumludur. Alt panel aynı zaman aralığında iki senaryonun kutup gerilimini gösterir: S2'de sıfır durumundan sonra $L_1$ akımı söndüğünde kutup gerilimi ara bir seviyeye sıçrar ve bir sonraki darbeye kadar orada kalır. Kalibre koşuların kayıtları $L_1$ akımını içermez; $L_1$ akımının sıfıra oturan aralıkları senaryo ekran kayıtlarından okunur (Şekil~\ref{fig:susturma-l1-tam} ve Şekil~\ref{fig:susturma-l1-yakin}).
+Şekil~\ref{fig:s1-s2-kalibre-dalga}, iki kalibre noktanın son şebeke periyodundaki dalga biçimlerini karşılaştırır. S1'de şebeke akımı sinüs zarfının üzerinde anahtarlama kaynaklı bozulma taşır; S2'de akım zarfı alternans ortasında çöker ve sıfır geçişlerinin iki yanında tepe yapar. Akım zarfının biçimi Kesim~\ref{sec:dusuk-akim-modelleme} içindeki süreksiz iletim açıklamasıyla ve üçüncü harmonik artışıyla uyumludur. Alt panel aynı zaman aralığında iki senaryonun kutup gerilimini gösterir: S2'de sıfır durumundan sonra $L_1$ akımı söndüğünde kutup gerilimi ara bir seviyeye sıçrar ve bir sonraki darbeye kadar orada kalır. Şekil~\ref{fig:s1-s2-kalibre-l1}, aynı kalibre noktalarda $L_1$ akımını gösterir; kayıt, kalibrasyon değerleri değiştirilmeden $L_1$ akımı ve kapı işaretleri de kaydedilerek yinelenen koşulardan alınmıştır. S1'de yaklaşık \SI{9}{\ampere} tepe--tepe dalgalanma temel bileşenden büyük olduğundan $L_1$ akımı her anahtarlama periyodunda işaret değiştirir. Pozitif yarım periyodun \%25,2'sinde akım $-\SI{0.05}{\ampere}$'in altındadır, yani ters yöndedir; 400~\si{\micro\second} kesitte akım her periyotta yaklaşık $-\SI{2.6}{\ampere}$'e iner. S2'de ters akım aralığı yoktur: akım sıfıra indiğinde bir sonraki darbeye kadar sıfırda kalır ve pozitif yarım periyodun \%17'sinde sıfırdadır. Şekil, Kesim~\ref{sec:dusuk-akim-modelleme} içindeki süreksiz iletim açıklamasının ve susturmanın ters akım yolunu kestiğinin doğrudan görsel kanıtıdır.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.96\textwidth]{model_dogrulama/s1_s2_kalibre_l1.pdf}
+  \caption[Kalibre benzetimde S1 ve S2 $L_1$ akımı]{Kalibre benzetimde $L_1$ akımı: (a) S1 ve (c) S2 için son tam şebeke periyodunda $i_{L1}$ ve şebeke akımı $i_g$; (b) S1 ve (d) S2 için pozitif yarım periyottan \SI{400}{\micro\second} kesit. S1'de akım her anahtarlama periyodunda ters yöne geçer, S2'de sıfırda kalır.}
+  \label{fig:s1-s2-kalibre-l1}
+\end{figure}
 
 \begin{figure}[htbp]
   \centering
@@ -258,24 +249,6 @@ Ekran kayıtlarıyla birlikte raporlanmış bir verim ve THD özeti de vardır; 
 
 Ekran kayıtlarında S2'nin $I_{L1}$ ve $I_{\mathrm{out}}$ THD değerlerinin sırasıyla \%46,86 ve \%46,35'e çıkması, nötr anahtar susturmanın tek başına oluşturduğu harmonik cezayı göstermektedir. S3'te aynı değerlerin \%9,46 ve \%7,79'a gerilemesi, S2'ye göre yaklaşık \%79,8 ve \%83,2 bağıl azalma anlamına gelir. Kompanzasyon sonrasında temel akım genliklerinin S1 ile yakın seviyeye dönmesi, yöntemin düşük güç akımını bütünüyle bastırmadığını da gösterir. S3 çıkış THD değeri ise S1'in \%2,14 seviyesine ulaşmamıştır; kompanzasyonun iyileştirici fakat ideal olmayan sonucu açıkça korunmalıdır. Ekranlardaki S1 THD değerinin deney ve kalibre benzetimden düşük olması, ekranların farklı ve kalibre edilmemiş bir çalışma noktasına ait olmasıyla tutarlıdır; mutlak THD karşılaştırması Tablo~\ref{tab:s1-s2-kalibre} üzerinden yapılmıştır.
 
-Senaryo~1'in yüksek çözünürlüklü kayıtları klasik anahtarlamanın referans davranışını belgelemektedir. Şekil~\ref{fig:klasik-l1-tam}, $L_1$ endüktör akımının bir temel periyot içindeki anahtarlama dalgalanmasını göstermektedir; akım zarfının temel bileşen boyunca değişmesi ve yüksek frekanslı üçgensel dalgalanmanın zarf üzerine binmesi, düşük güçte anlık akımın sıfır çevresine yaklaşabildiğini gösterir.
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.82\textwidth]{sonuclar/onceki_tez_l1_tam.png}
-  \caption{Klasik anahtarlama benzetiminde $L_1$ endüktör akımının tam-periyot dalga biçimi (Senaryo~1, ekran kaydı).}
-  \label{fig:klasik-l1-tam}
-\end{figure}
-
-Şekil~\ref{fig:klasik-l1-yakin}, yaklaşık \SI{0.9}{\milli\second}--\SI{1.8}{\milli\second} aralığını büyüterek akım dalgalanmasının anahtarlama periyodu ölçeğindeki yapısını görünür kılmaktadır. Yaklaşık \SI{10}{\kilo\hertz} anahtarlama frekansıyla uyumlu üçgensel değişim, $L_1$ akımındaki dalgalanmanın yalnız düşük frekanslı zarf üzerinden değerlendirilmemesi gerektiğini gösterir.
-
-\begin{figure}[!htbp]
-  \centering
-  \includegraphics[width=0.82\textwidth]{sonuclar/onceki_tez_l1_yakin_0_9_1_8ms.png}
-  \caption{Klasik anahtarlama benzetimindeki $L_1$ endüktör akımından büyütülmüş kesit (Senaryo~1, ekran kaydı).}
-  \label{fig:klasik-l1-yakin}
-\end{figure}
-
 Senaryo~1'in dört kanallı kaynak ekranı Şekil~\ref{fig:klasik-dort-kanal} altında verilmiştir. Yukarıdan aşağıya kanallar; anahtarlama devresi çıkışındaki filtre giriş gerilimini, filtrelenmiş gerilimi, $L_1$ endüktör akımını ve LC filtre çıkış akımını göstermektedir. İlk iki kanal anahtarlama geriliminin filtrelenmesini, son iki kanal ise $L_1$ dalgalanmasının çıkış akımında ne ölçüde bastırıldığını aynı zaman ekseninde izlemeyi sağlamaktadır.
 
 \begin{figure}[H]
@@ -301,41 +274,7 @@ FFT sonuçları, aynı klasik anahtarlama koşulunda filtrenin akım harmonikler
   \label{fig:klasik-iout-fft}
 \end{figure}
 
-Nötr anahtar susturma yöntemine ait ekran kayıtları yedi ayrı görselden oluşmaktadır: Şekil~\ref{fig:susturma-kapi-darbeleri-tam} ve Şekil~\ref{fig:susturma-kapi-darbeleri-yakin} kapı komutlarını; Şekil~\ref{fig:susturma-l1-tam} ve Şekil~\ref{fig:susturma-l1-yakin} $L_1$ akımını; Şekil~\ref{fig:susturma-dort-kanal} dört ölçüm kanalını; Şekil~\ref{fig:susturma-l1-fft} ile Şekil~\ref{fig:susturma-iout-fft} iki akım ölçüm noktasının FFT sonuçlarını göstermektedir. Görsellerin ayrı tutulması, anahtarlama müdahalesi ile ortaya çıkan akım ve harmonik sonuçları arasındaki neden--sonuç zincirini izlenebilir kılmaktadır.
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.98\textwidth]{sistem/onceki_tez_susturma_kapi_darbeleri.jpg}
-  \caption{Önerilen nötr anahtar susturma yönteminde $Q_1$--$Q_4$ kapı darbelerinin bir temel periyot boyunca görünümü (Senaryo~2, ekran kaydı).}
-  \label{fig:susturma-kapi-darbeleri-tam}
-\end{figure}
-
-Şekil~\ref{fig:susturma-kapi-darbeleri-tam} altında pozitif alternansta $Q_1$ anahtarlamayı sürdürürken $Q_4$ komutunun sıfırda tutulduğu; negatif alternansta simetrik anahtarlama rolünün karşı kola geçtiği görülmektedir. Şekil~\ref{fig:susturma-kapi-darbeleri-yakin}, yaklaşık \SI{2.2}{\milli\second}--\SI{2.7}{\milli\second} aralığında $Q_1$ darbeleri devam ederken $Q_4$ ve $Q_2$ komutlarının sıfırda, $Q_3$ komutunun iletimde kaldığını daha açık göstermektedir.
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.98\textwidth]{sistem/onceki_tez_susturma_kapi_darbeleri_yakin.jpg}
-  \caption{Önerilen nötr anahtar susturma yönteminde seçilmiş anahtarlama penceresinin yakın görünümü (Senaryo~2, ekran kaydı).}
-  \label{fig:susturma-kapi-darbeleri-yakin}
-\end{figure}
-
-Şekil~\ref{fig:susturma-l1-tam}, nötr anahtar susturulduğunda $L_1$ akımının sıfırın ters yönünde sürekli dolaşmak yerine her anahtarlama çevriminde sıfıra oturan aralıklar oluşturduğunu göstermektedir. Klasik yöntemin Şekil~\ref{fig:klasik-l1-tam} altındaki iki yönlü dalgalanmasına karşılık susturmalı çalışmadaki sıfır-akım aralıkları, süreksiz iletim davranışının doğrudan görsel kanıtıdır.
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.82\textwidth]{sonuclar/onceki_tez_susturma_l1_tam.png}
-  \caption{Nötr anahtar susturma benzetiminde $L_1$ endüktör akımının tam-periyot dalga biçimi (Senaryo~2, ekran kaydı).}
-  \label{fig:susturma-l1-tam}
-\end{figure}
-
-Yakın görünüm Şekil~\ref{fig:susturma-l1-yakin} altında verilmiştir. Akımın pozitif eğimle yükselmesinin ardından sıfıra düşmesi ve bir sonraki çevrime kadar sıfırda kalması, nötr kolun klasik senkron serbest dolaşım yolunu sürdürmediğini göstermektedir. Tepe değerinin temel periyot boyunca değişmesi, süreksiz iletim zarfının saf sinüzoidal biçimde kalmadığını da açıklamaktadır.
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.82\textwidth]{sonuclar/onceki_tez_susturma_l1_yakin.png}
-  \caption{Nötr anahtar susturma benzetimindeki $L_1$ endüktör akımından büyütülmüş kesit (Senaryo~2, ekran kaydı).}
-  \label{fig:susturma-l1-yakin}
-\end{figure}
+Nötr anahtar susturma yöntemine ait ekran kayıtları üç görselden oluşmaktadır: Şekil~\ref{fig:susturma-dort-kanal} dört ölçüm kanalını, Şekil~\ref{fig:susturma-l1-fft} ile Şekil~\ref{fig:susturma-iout-fft} iki akım ölçüm noktasının FFT sonuçlarını göstermektedir. Kapı komutları ve $L_1$ akımının anahtarlama ölçeğindeki yapısı kalibre benzetimden Şekil~\ref{fig:s2-kapi-isaretleri} ve Şekil~\ref{fig:s1-s2-kalibre-l1} üzerinde verilmiştir.
 
 Senaryo~2'nin dört kanallı ekranı Şekil~\ref{fig:susturma-dort-kanal} altında verilmiştir; kanal sırası Senaryo~1 ile aynıdır. $L_1$ ve çıkış akımında görülen düşük frekanslı zarf bozulması, susturmanın tek başına oluşturduğu üçüncü harmonik artışıyla uyumludur.
 

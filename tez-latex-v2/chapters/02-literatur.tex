@@ -11,8 +11,39 @@ Tipik bir şebeke bağlantılı EDS'nin güç ve bilgi akışları Şekil~\ref{f
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.96\textwidth]{literatur/gecici_eds_mimarisi_eski_tez.png}
-  \caption{Şebeke bağlantılı bir enerji depolama sisteminin temel bileşenleri ve bilgi akışları.}
+  \resizebox{0.98\textwidth}{!}{%
+  \begin{tikzpicture}[
+    node distance=7mm and 7mm,
+    guc/.style={draw, rounded corners=1.5pt, align=center, font=\small, minimum height=14mm, text width=27mm, fill=blue!5},
+    yon/.style={draw, rounded corners=1.5pt, align=center, font=\small, minimum height=12mm, text width=34mm, fill=orange!10},
+    alt/.style={draw, rounded corners=1.5pt, align=center, font=\small, minimum height=11mm, text width=24mm, fill=gray!10},
+    akis/.style={-{Latex[length=2mm]}, thick},
+    bilgi/.style={{Latex[length=1.6mm]}-{Latex[length=1.6mm]}, dashed}
+  ]
+    \node[guc] (bat) {Enerji depolama\\elemanı\\(batarya)};
+    \node[guc, right=of bat] (da) {DA bara};
+    \node[guc, right=of da] (cev) {Çift yönlü güç\\dönüştürücüsü\\(AA/DA)};
+    \node[guc, right=of cev] (fil) {LCL filtre};
+    \node[guc, right=of fil] (seb) {Şebeke / yük};
+    \draw[{Latex[length=2mm]}-{Latex[length=2mm]}, thick] (bat) -- (da);
+    \draw[{Latex[length=2mm]}-{Latex[length=2mm]}, thick] (da) -- (cev);
+    \draw[{Latex[length=2mm]}-{Latex[length=2mm]}, thick] (cev) -- (fil);
+    \draw[{Latex[length=2mm]}-{Latex[length=2mm]}, thick] (fil) -- (seb);
+    \node[yon, below=14mm of cev] (eys) {Denetim ve yönetim\\sistemi (EYS / BYS)};
+    \draw[bilgi] (bat.south) |- ([yshift=-3mm]eys.west);
+    \draw[bilgi] (da.south) |- ([yshift=3mm]eys.west);
+    \draw[bilgi] (cev.south) -- (eys.north);
+    \draw[bilgi] (seb.south) |- (eys.east);
+    \node[alt, below=16mm of eys, xshift=-46mm] (olc) {Ölçüm ve\\izleme sistemi};
+    \node[alt, right=of olc] (isi) {Isıl yönetim\\sistemi};
+    \node[alt, right=of isi] (yrd) {Yardımcı güç\\kaynakları};
+    \node[alt, right=of yrd] (kor) {Koruma ve\\güvenlik sistemi};
+    \coordinate (dal) at ([yshift=-7mm]eys.south);
+    \draw[dashed] (eys.south) -- (dal);
+    \foreach \n in {olc,isi,yrd,kor} {\draw[dashed, -{Latex[length=1.6mm]}] (dal) -| (\n.north);}
+  \end{tikzpicture}%
+  }
+  \caption{Şebeke bağlantılı bir enerji depolama sisteminin temel bileşenleri ve bilgi akışları. Kesintisiz oklar güç yolunu, kesikli oklar ölçüm ve yönetim bağlantılarını gösterir.}
   \label{fig:eds-mimarisi}
 \end{figure}
 
@@ -46,12 +77,12 @@ Batarya paketinin kullanılabilir ömrü; deşarj derinliği, hücre gerilimi, s
   \centering
   \begin{subfigure}[t]{0.49\textwidth}
     \centering
-    \includegraphics[width=\textwidth]{literatur/onceki_tez_dod_cevrim.jpg}
+    \includegraphics[width=\textwidth]{literatur/batarya_dod_cevrim.pdf}
     \caption{Deşarj derinliği--çevrim ömrü ilişkisi.}
   \end{subfigure}\hfill
   \begin{subfigure}[t]{0.49\textwidth}
     \centering
-    \includegraphics[width=\textwidth]{literatur/onceki_tez_guvenli_calisma.png}
+    \includegraphics[width=\textwidth]{literatur/batarya_guvenli_calisma.pdf}
     \caption{Temsilî gerilim ve doluluk sınırları.}
   \end{subfigure}
   \caption{Batarya ömrü ve güvenli işletim için kullanılan temsilî eğriler; \citet{Smith2017}, \citet{Chen2021} ve \citet{Feng2018} temel alınarak uyarlanmıştır.}
@@ -62,7 +93,35 @@ Hücre gerilimi, akım ve sıcaklık ölçümleri BYS denetleyicisine taşınır
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.94\textwidth]{literatur/onceki_tez_bys_mimarisi.png}
+  \resizebox{0.86\textwidth}{!}{%
+  \begin{tikzpicture}[
+    node distance=6mm and 12mm,
+    ana/.style={draw, rounded corners=1.5pt, align=center, font=\small, minimum height=10mm, text width=50mm, fill=blue!5},
+    yan/.style={draw, rounded corners=1.5pt, align=center, font=\small, minimum height=10mm, text width=32mm, fill=gray!10},
+    cik/.style={draw, rounded corners=1.5pt, align=center, font=\small, minimum height=10mm, text width=26mm, fill=orange!10},
+    akis/.style={-{Latex[length=2mm]}, thick}
+  ]
+    \node[ana] (eys) {EYS / SCADA};
+    \node[ana, below=of eys] (bys) {\textbf{BYS denetleyicisi}};
+    \node[ana, below=of bys] (izl) {Hücre izleme ve ölçüm birimi};
+    \node[ana, below=of izl] (den) {Hücre dengeleme devreleri};
+    \node[ana, below=of den] (bat) {Batarya hücre grubu};
+    \foreach \a/\b in {eys/bys,bys/izl,izl/den,den/bat} {\draw[akis] (\a) -- (\b);}
+    \node[yan, left=of bys, yshift=4mm] (ak) {Akım algılayıcısı};
+    \node[yan, below=4mm of ak] (sic) {Sıcaklık algılayıcıları};
+    \node[yan, below=4mm of sic] (ger) {Gerilim ölçümü};
+    \draw[akis] (ak.east) -- ([yshift=2mm]bys.west);
+    \draw[akis] (sic.east) -- ([yshift=-3mm]bys.west);
+    \draw[akis] (ger.east) -- (izl.west);
+    \node[cik, right=of bys] (kor) {Koruma devreleri};
+    \node[cik, right=of izl] (kon) {Kontaktör sürücüleri};
+    \node[cik, right=of bat] (inv) {Evirici / şarj cihazı};
+    \draw[akis] (bys.east) -- (kor.west);
+    \draw[akis] (izl.east) -- (kon.west);
+    \draw[akis] (kon.south) -- (inv.north);
+    \draw[akis] (bat.east) -- (inv.west);
+  \end{tikzpicture}%
+  }
   \caption{Tipik bir batarya yönetim sisteminin ölçüm, karar, koruma ve dengeleme işlevleri.}
   \label{fig:bys-mimarisi}
 \end{figure}
@@ -222,14 +281,7 @@ Kısmi yük davranışının verim ve harmonik boyutları Şekil~\ref{fig:fv-ver
 
 Şekil~\ref{fig:fv-verim-thd-profilleri}(a)'daki dizide verim, \SI{5}{\percent} yükte yaklaşık \SI{91.5}{\percent}, \SI{10}{\percent} yükte \SI{94.5}{\percent} ve \SI{80}{\percent} yükte \SI{98.7}{\percent} düzeyindedir. Aynı şeklin (c) panelinde akım THD'si \SI{5}{\percent} yükte \SI{9.5}{\percent}, \SI{20}{\percent} yükte \SI{5.0}{\percent} ve anma gücünde \SI{2.5}{\percent} olarak verilmiştir. Şeklin bölümdeki amacı, yalnızca tepe veriminin ve anma gücündeki THD'nin yıllık davranışı açıklamaya yetmediğini ortaya koymaktır.
 
-Düşük güçte THD artışının dış literatür kanıtı, \citet{Chicco2009} tarafından raporlanan günlük güç ve akım THD kaydıyla Şekil~\ref{fig:chicco-guc-thd} üzerinde gösterilmiştir. Sabah ve akşam düşük güç bölgelerinde THD'nin yükselmesi, tezin kısmi yük odağını destekler; belirli harmoniklerin T-tipi nötr kol mekanizmasından kaynaklandığını tek başına kanıtlamaz.
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.62\textwidth]{literatur/chicco2009_guc_thd.png}
-  \caption{\SI{5}{\kilo\watt} sınıfındaki bir FV eviricinin gün içi çıkış gücü ve akım THD'si; \citet{Chicco2009}'dan alınmıştır.}
-  \label{fig:chicco-guc-thd}
-\end{figure}
+Düşük güçte THD artışının dış literatür kanıtı \citet{Chicco2009} tarafından raporlanan günlük kayıttır: \SI{5}{\kilo\watt} sınıfındaki bir FV eviricide akım THD'si öğle saatlerinde birkaç yüzde düzeyinde kalırken, çıkış gücünün birkaç yüz watta indiği sabah ve akşam saatlerinde yüzde 30--40 düzeyine yükselmektedir. Sabah ve akşam düşük güç bölgelerinde THD'nin yükselmesi, tezin kısmi yük odağını destekler; belirli harmoniklerin T-tipi nötr kol mekanizmasından kaynaklandığını tek başına kanıtlamaz.
 
 Şebekeye bağlı \SI{10}{\kilo\watt} sınıfındaki ticari bir eviricinin sabah devreye giriş kaydı Tablo~\ref{tab:ticari-evirici-thd} üzerinde verilmiştir. Cihaz seri numarası, güç analizörü, örnekleme penceresi, şebeke gerilimi ve ham dosya mevcut olmadığından satırlar yeni deney kanıtı değil, düşük güç bölgesinin önemini gösteren ve ham kaydı belgelenmemiş bir gözlem kaydıdır.
 
@@ -274,14 +326,47 @@ Diyot benzetimi ile sürekli iletim kipindeki endüktör akımları Şekil~\ref{
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.68\textwidth]{literatur/gecici_de_ccm_akim_chen34.png}
-  \caption{Diyot benzetimi (DE) ve sürekli iletim (CCM) kiplerinde endüktör akımının karşılaştırılması; Chen ve arkadaşlarından alınmıştır \citep{Chen2010}.}
+  \begin{tikzpicture}[x=9mm, y=9mm, font=\small,
+    eks/.style={-{Latex[length=1.8mm]}},
+    kes/.style={dashed, thin},
+    akim/.style={very thick, blue!70!black}]
+    % (a) diyot benzetimi
+    \begin{scope}[yshift=0mm]
+      \draw[eks] (0,0) -- (11.2,0) node[right]{$t$};
+      \draw[eks] (0,-0.3) -- (0,3.3) node[above]{$i_L$};
+      \draw[akim] (0.6,0) -- (1.4,2.8) -- (4.2,0) -- (5.6,0) -- (6.4,2.8) -- (9.2,0) -- (10.6,0);
+      \draw[kes] (0,1.0) -- (10.8,1.0) node[right]{$\langle i_L\rangle=I_o$};
+      \draw[kes] (1.4,2.8) -- (5.2,2.8);
+      \draw[{Latex[length=1.5mm]}-{Latex[length=1.5mm]}] (4.9,0) -- node[right]{$I_{\mathrm{pk(DE)}}$} (4.9,2.8);
+      \draw[kes] (0.6,0) -- (0.6,-0.7); \draw[kes] (1.4,2.8) -- (1.4,-0.7); \draw[kes] (4.2,0) -- (4.2,-0.7);
+      \draw[{Latex[length=1.3mm]}-{Latex[length=1.3mm]}] (0.6,-0.55) -- node[below]{$D_1T_s$} (1.4,-0.55);
+      \draw[{Latex[length=1.3mm]}-{Latex[length=1.3mm]}] (1.4,-0.55) -- node[below]{$D_2T_s$} (4.2,-0.55);
+      \node[above] at (1.4,2.8) {A}; \node[above right] at (4.2,0) {B};
+      \node at (5.6,-1.5) {(a) Diyot benzetimi (DE): akım sıfırda tutulur};
+    \end{scope}
+    % (b) zorlanmış sürekli iletim
+    \begin{scope}[yshift=-58mm]
+      \draw[eks] (0,0) -- (11.2,0) node[right]{$t$};
+      \draw[eks] (0,-1.8) -- (0,3.3) node[above]{$i_L$};
+      \fill[red!20] (4.524,0) -- (5.6,-1.05) -- (5.805,0) -- cycle;
+      \draw[akim] (0.6,-1.05) -- (1.4,3.05) -- (5.6,-1.05) -- (6.4,3.05) -- (10.6,-1.05);
+      \draw[kes] (0,1.0) -- (10.8,1.0) node[right]{$\langle i_L\rangle=I_o$};
+      \draw[kes] (1.4,3.05) -- (3.9,3.05); \draw[kes] (3.4,-1.05) -- (5.6,-1.05);
+      \draw[{Latex[length=1.5mm]}-{Latex[length=1.5mm]}] (3.7,-1.05) -- node[right, pos=0.78]{$2\Delta i_{\mathrm{(CCM)}}$} (3.7,3.05);
+      \node[red!60!black, right] at (6.2,-0.75) {ters akım aralığı ($i_L<0$)};
+      \draw[kes] (0.6,-1.05) -- (0.6,-2.1); \draw[kes] (1.4,3.05) -- (1.4,-2.1);
+      \draw[{Latex[length=1.3mm]}-{Latex[length=1.3mm]}] (0.6,-1.95) -- node[below]{$DT_s$} (1.4,-1.95);
+      \node[above] at (1.4,3.05) {A$'$}; \node[below] at (5.6,-1.05) {B$'$};
+      \node at (5.6,-2.9) {(b) Zorlanmış sürekli iletim (CCM): akım işaret değiştirir};
+    \end{scope}
+  \end{tikzpicture}
+  \caption{Hafif yükteki senkron alçaltıcı dönüştürücüde diyot benzetimi (DE) ve zorlanmış sürekli iletim (CCM) kiplerinde endüktör akımı. Aynı ortalama akımda CCM kipinde tepe--tepe dalgalanma büyür ve akım periyodun bir bölümünde ters yöne geçer; \citet{Chen2010}'daki şekle göre yeniden çizilmiştir.}
   \label{fig:de-ccm-akim}
 \end{figure}
 
 Şebekeye bağlı T-tipi eviricide sıfır gerilim durumunu oluşturan nötr kol, akımın işaret değiştirmesine izin verdiğinde benzer bir senkron alçaltıcı davranışı gösterebilir. Nötr anahtarın susturulması ters akım yolunu keserken faz düğümünün doğal diyot yolları üzerinden farklı bir gerilim durumuna geçmesine neden olur. Kayıp azalması ile anahtarlama darbe dizisinin değişmesi böylece aynı fiziksel müdahalenin iki sonucudur. Literatürdeki genel süreksiz iletim bilgisi ters akımı açıklamak için gerekli kuramsal temeli sağlasa da T-tipi faz kolunda oluşan gerilim hatasının üçüncü harmonik etkisini ve şebeke akım kontrolüyle etkileşimini tek başına açıklamamaktadır.
 
-Senkron alçaltıcıdaki CCM/DCM ayrımının T-tipi nötr kol üzerindeki karşılığı, tezin benzetim modelinden aynı zaman tabanında üretilmiştir. Nötr anahtar susturmada $Q_1$--$Q_4$ kapı komutları Şekil~\ref{fig:s2-kapi-isaretleri} üzerinde, klasik anahtarlama ile susturmanın kutup gerilimi ve şebeke akımı Şekil~\ref{fig:s1-s2-kalibre-dalga} üzerinde verilmiştir. Susturmalı çalışmada $L_1$ akımı söndüğünde kutup gerilimi üç seviyeden hiçbirinde bulunmaz; sürmesiz aralık, Şekil~\ref{fig:de-ccm-akim} içindeki diyot benzetimi kipinin sıfır akım aralığına karşılık gelir. $L_1$ akımının her anahtarlama çevriminde sıfıra oturduğu aralıklar Şekil~\ref{fig:susturma-l1-yakin} üzerinde, sürmesiz aralığın zaman oranı ve köprü davranışına etkisi Kesim~\ref{sec:dusuk-akim-modelleme} içinde gösterilmiştir.
+Senkron alçaltıcıdaki CCM/DCM ayrımının T-tipi nötr kol üzerindeki karşılığı, tezin benzetim modelinden aynı zaman tabanında üretilmiştir. Nötr anahtar susturmada $Q_1$--$Q_4$ kapı komutları Şekil~\ref{fig:s2-kapi-isaretleri} üzerinde, klasik anahtarlama ile susturmanın kutup gerilimi ve şebeke akımı Şekil~\ref{fig:s1-s2-kalibre-dalga} üzerinde verilmiştir. Susturmalı çalışmada $L_1$ akımı söndüğünde kutup gerilimi üç seviyeden hiçbirinde bulunmaz; sürmesiz aralık, Şekil~\ref{fig:de-ccm-akim} içindeki diyot benzetimi kipinin sıfır akım aralığına karşılık gelir. $L_1$ akımının her anahtarlama çevriminde sıfıra oturduğu aralıklar Şekil~\ref{fig:s1-s2-kalibre-l1} üzerinde, sürmesiz aralığın zaman oranı ve köprü davranışına etkisi Kesim~\ref{sec:dusuk-akim-modelleme} içinde gösterilmiştir.
 
 \section{Şebeke Akım Kontrolü ve İleri Besleme Yaklaşımları}
 
