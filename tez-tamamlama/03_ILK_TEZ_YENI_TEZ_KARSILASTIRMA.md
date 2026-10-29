@@ -288,3 +288,18 @@ Derleme 205 sayfa, 87 şekil (İP-10 sonrası 95). Ayrıntı: `tez-matlab-simuli
 - **Kalibre koşuların yeniden üretimi.** S1/S2/S3 L1 ve kapı kaydı için yeniden koşuldu; η ve THD kalibrasyon koşularıyla 6 basamak aynı.
 
 **Sayım (İP-11 sonrası):** 8 madde karşılandı (1, 2, 3, 4, 6, 7, 8, 9), 3 madde kısmen (5, 10, 11), 0 açık.
+
+---
+
+## 10. İP-12 güncellemesi (29.10.2026)
+
+Derleme 207 sayfa, kaynak 50 → 60. Karar K-26.
+
+| Jüri | Önceki durum | Yeni durum | Kanıt |
+|---|---|---|---|
+| 11 Akademik temel; doktora tezi örnekleri | kısmen | **karşılandı** (ulusal tez örneği yok) | Kesim 2.5'te doktora tezi örnekleri paragrafı: Kerekes (Aalborg 2009), Hartmann (ETH 2011), Dong (Virginia Tech 2012), Wereley (MIT 1991). Tablo 2.7: 9 → 19 satır, dört öbek, araştırma sorusu sütunu. Kesim 2.4: süreksiz iletim bozulmasının görev oranı ileri beslemesiyle kompanzasyonu (De Gussemé 2005, Van de Sype 2005, Le ve Itoh 2019, Wu 2013) ve Sin³ ile farkı. Kesim 2.1: tümleşik şarj (Haghbin 2013, Yilmaz ve Krein 2013). Kesim 2.6: araştırma boşluğu dört kümeyle yeniden yazıldı |
+
+- **Ulusal tez örneği.** Ulusal Tez Merkezi ve YÖK Açık Bilim kayıtlarına çalışma ortamından erişilemedi. Doğrulanamayan kaynak eklenmedi; erişim olursa İP-13'te eklenecek.
+- **Sin³ konumu daha kesin.** Eski metin "doğrudan bir karşılık belirlenememiştir" diyordu. Yeni metin en yakın literatürü (süreksiz iletim kompanzasyonu) adlandırıyor ve farkı iki noktada veriyor: bozulmanın kaynağı ve düzeltmenin biçimi.
+
+**Sayım (İP-12 sonrası):** 9 madde karşılandı (1, 2, 3, 4, 6, 7, 8, 9, 11), 2 madde kısmen (5: yeniden üretilemeyen 42 görsel; 10: yeni deney yapılamadı), 0 açık.
