@@ -10,13 +10,13 @@
 2. Yeni tezin görselleri kaynakla karşılaştırıldı. Bayt düzeyinde aynı olanlar (MD5) ve 32×32 gri ölçek benzerliğiyle aynı olanlar eşlendi. Senaryo ekranları ilk tezde EMF, yeni tezde JPG'dir; benzerlik farkı 0,4–1,9/255 olduğundan aynı görsel sayıldı.
 3. Görseli farklı olan şekiller başlık ve içerik üzerinden elle eşlendi.
 
-Betik: `scratchpad/sekil_esle/cikar.py`.
+Betik (geçici oturum klasörü): `C:\Users\burha\AppData\Local\Temp\claude\C--CODES--mit-abi\0fce3b75-0fd4-4af6-aca5-dde06b9a5cd1\scratchpad\sekil_esle\cikar.py`.
 
 ---
 
 ## A. İlk tezde olup yeni tezde OLMAYANLAR
 
-### A.1 Şekiller (21)
+### A.1 Şekiller (14)
 
 | İlk tez | Başlık | Neden çıktı / yerini ne aldı |
 |---|---|---|
@@ -34,10 +34,8 @@ Betik: `scratchpad/sekil_esle/cikar.py`.
 | Ş 4.25 | dmax = 0,1…0,8 için L1 pozitif yarım periyot akımları | Sayısal sonuç Tablo 5.1'de |
 | Ş 4.26 | sin ve sin+sin³ görev oranlarında L1 akımı | Kaynak katsayı yanlış özdeşlikle türetilmişti; yerini Şekil 5.1 aldı |
 | Ş 4.27 | d = Vm·sin için farklı dmax değerlerinde harmonik içeriği | Tablo 5.1 ile birleşti |
-| Ş 1.6, 1.7, 1.8, 1.9 | Pasif / kapasitif / endüktif / transformatörlü dengeleme | Ayrı şekil olarak çıktı; tek bileşik şekil oldu (Şekil 2.4) → C bölümü |
-| Ş 3.2–3.8 | Üç seviye durumu ve dört akım yolu ekranları | Ayrı şekil olarak çıktı; TikZ alt şekillere dönüştü (Şekil 3.3, 3.4) → C bölümü |
 
-Ayrı şekil olarak kalkan ama içeriği yeni tezde bulunanlar C bölümündedir. **İçeriğiyle birlikte gerçekten çıkan şekiller 14 tanedir:** Ş 1.4, 1.10, 3.13–3.16, 4.18, 4.20–4.22, 4.24–4.27.
+Numarası kalkan ama içeriği birleştirilerek ya da yeniden çizilerek yeni tezde bulunan şekiller (örneğin Ş 1.6–1.9, Ş 3.2–3.8) C bölümündedir. İlk tezin 107 şeklinden 93'ü yeni tezde bir karşılığa sahiptir.
 
 ### A.2 Tablolar (2)
 
@@ -50,7 +48,7 @@ Ayrı şekil olarak kalkan ama içeriği yeni tezde bulunanlar C bölümündedir
 
 ## B. Yeni tezde olup ilk tezde OLMAYANLAR
 
-### B.1 Şekiller (yeni içerik, 37)
+### B.1 Şekiller (yeni içerik, 20)
 
 | Yeni tez | İçerik | Üretim |
 |---|---|---|
