@@ -33,18 +33,18 @@ Her satır şu öğeleri içerir:
 |---|---|---|---|---|
 | D-01 | `inverter_scenario1_parametric5_etiquetli.slx` · Gate Drive1–4 | Kapı/denetim | S2 devresinin kapı sürücüleri `g12…g42` etiketlerini okuyor, bu etiketleri üreten Goto yok; S2 IGBT'leri hiç anahtarlanmıyor | doğrulandı — S2 anahtarlıyor, η 94,07 % (hedef 94,2 %) |
 | D-02 | `inverter_senaryo4.slx` | Paket | Dosya S3 modelinin kopyası; S4'ün L1 akım geri beslemeli denetleyicisi yok | doğrulandı — S4 kuruldu; 25 A'da PI −%2,1, PIR −%1,0 izleme hatası, doyum yok (İP-5) |
-| D-03 | Dört modelin tümü · model geri çağrıları | Paket | Parametre dosyası yalnız InitFcn'de çalışıyor, PreLoadFcn yok; temiz oturumda Simscape diyotları "Qrr/didt … type string" hatasıyla derlenmiyor | düzeltildi (koşu betiğinde) |
-| D-04 | S1+S2 ve S3 · sinyal kayıt adları | Ölçüm | Farklı hatlar aynı kayıt adını taşıyor (ör. `Idc_s1`); ada göre okunan değer yanlış hatta ait olabiliyor | düzeltildi (çıkarım betiğinde) |
+| D-03 | Dört modelin tümü · model geri çağrıları | Paket | Parametre dosyası yalnız InitFcn'de çalışıyor, PreLoadFcn yok; temiz oturumda Simscape diyotları "Qrr/didt … type string" hatasıyla derlenmiyor | doğrulandı (29.10.2026) — kalibre kopya modellerde PreLoadFcn parametre dosyasını yüklüyor; beş modelde temiz oturumda derleme başarılı (`runs/2026-10-28_kalibrasyon/inspection/hazirlik.txt`); koşu betikleri ayrıca yükleme öncesi çalıştırıyor. Ham paket modelleri değiştirilmedi |
+| D-04 | S1+S2 ve S3 · sinyal kayıt adları | Ölçüm | Farklı hatlar aynı kayıt adını taşıyor (ör. `Idc_s1`); ada göre okunan değer yanlış hatta ait olabiliyor | doğrulandı (29.10.2026) — İP-4 kalibrasyonu ve İP-11 yeniden koşusu aynı eşlemeyle, son değerler 6 basamak aynı (`review/2026-10-29_TEZ_SEKILLERI.md`) |
 | D-05 | `inverter_common_parameters.m` | Parametre | `Kp`, `K12`, `phase_deg2`, `L1_core_Rp4` tanımlı ama hiçbir blokta kullanılmıyor | kapandı — hepsi S2/S4 modellerinde bağlı |
 | D-06 | S1, S3 · Power blokları | Ölçüm | Benzetimde Q pozitif (+33…+35 var), deney tablosunda Q negatif ya da sıfır; yön kuralı belgelenmemiş | kapandı — C noktasında üretici kuralı doğrulandı; deney Qo hesaplanmış, karşılaştırma \|Q\| ile (İP-3) |
 | D-07 | Tüm modeller · IGBT eşlemesi | Topoloji | Ağustos incelemesindeki "bağlantısız IGBT" sorunu 12.10 modellerinde yok: 12/12 IGBT doğru tabloya bağlı, sarkık blok yok | denetlendi — uygun (diyotlar → D-08) |
 | D-08 | Tüm modeller · Diode3/5/6/7 (S2 devresinde Diode4/8/10/11) | **Topoloji / cihaz** | Harici D1–D2 (faz–DA rayı) diyotlarıyla nötr IGBT ters paralel diyotlarının (DS3–DS4) parametre kümeleri **yer değiştirmiş**: D1–D2'de IXYN iç diyotu, DS3–DS4'te DSEI var | doğrulandı — etki S3'te −%0,15, S1'de −%0,9 P_ac; İP-4 tabanı `*_d08` |
 | D-09 | Tüm modeller · Capacitor6/7 (EMC X kapasitörü) | Parametre | X kapasitörü `C_emc_aux` = 1 µF ile modellenmiş; m-dosyasının kendi tek faz eşdeğeri `EMC_Cx_eq` = 0,5 µF / `EMC_Rx_eq` = 0,2 Ω hiç kullanılmıyor | doğrulandı — S3'te ölçülen ΔQ₁ −2,5 var, ΔP_ac +%0,3 (İP-4) |
-| D-10 | Tüm modeller · IGBT/diyot ısıl ve eşik parametreleri | Parametre (izlenebilirlik) | `Vth = 6`, ısıl ağ dizileri ve diyot `Tdevice = 25` değişken yerine sayı olarak yazılmış; m-dosyasındaki karşılıkları kullanılmıyor. Değerler aynı, sonuca etkisi yok | açık — düşük öncelik |
+| D-10 | Tüm modeller · IGBT/diyot ısıl ve eşik parametreleri | Parametre (izlenebilirlik) | `Vth = 6`, ısıl ağ dizileri ve diyot `Tdevice = 25` değişken yerine sayı olarak yazılmış; m-dosyasındaki karşılıkları kullanılmıyor. Değerler aynı, sonuca etkisi yok | doğrulandı (29.10.2026) — değerler m-dosyasıyla aynı, sayısal etki yok; değişkene bağlama yapılmadı, tezde Kesim 3.8 izlenebilirlik notunda |
 | D-12 | `inverter_s1s2_s2onarim_d08.slx` · iki bağımsız devre | Paket (koşu yöntemi) | İki fiziksel ağ aynı ode15s çözücüsünü paylaşıyor; 0,1 s koşu ~4 saat. Diğer devre `Commented = 'on'` yapılarak ayrık kopyalar koşturuldu | doğrulandı — fark P_ac ≤ %0,017, Q₁ ≤ 0,02 var; süre 22–69 dk. Tezde yer almaz |
 | D-11 | `inverter_common_parameters.m` · `Cdc_pos/Cdc_neg` (S4) | **Parametre / topoloji boyutu** | 2 × 470 µF DC bara, 25 A'da orta noktayı ±120 V salındırıyor; S4 akımı hedefin %32 altında, modülasyon doyumda. Ümit'in "20 A civarı" tavanı bu | doğrulandı — 2 × 5,6 mF ile PI 25 A: −%31,9 → −%2,1, doyum %20,6 → %0, THD %57 → %9 |
-| D-13 | 12.10 paketindeki üç model ve kopyaları · model CloseFcn | Paket | MathWorks Solar Power Inverter örneğinden kalma geri çağrı, model kapanınca taban çalışma alanından `C` (Cf) ve `L`'yi siliyor | düzeltildi (betikte; model kapandıktan sonra parametre dosyası yeniden çalıştırılır). Koşu sonuçlarına etkisi yok, tezde yer almaz |
-| D-14 | 12.10 modelleri ve kopyaları · ölçüm blokları, PWM Generator, nötr kapı sürücüleri, çözücü ayarları | Parametre (izlenebilirlik) | `Freq = 50`, `Ts = 1/fsw/100`, `uHigh = 4`/`uLow = 3`, `LocalSolverSampleTime = 1e-7`, powergui `SampleTime = 50e-6`, `MinStep = auto` değişken yerine sayı olarak yazılmış; değerler m-dosyasıyla aynı ya da etkisiz | açık — düşük öncelik (D-10 ile birlikte), etki yok, tezde yer almaz |
+| D-13 | 12.10 paketindeki üç model ve kopyaları · model CloseFcn | Paket | MathWorks Solar Power Inverter örneğinden kalma geri çağrı, model kapanınca taban çalışma alanından `C` (Cf) ve `L`'yi siliyor | doğrulandı — betik düzeltmesi bütün İP-5/İP-6 koşularında kullanıldı; koşu sonuçlarına etkisi yok, tezde yer almaz |
+| D-14 | 12.10 modelleri ve kopyaları · ölçüm blokları, PWM Generator, nötr kapı sürücüleri, çözücü ayarları | Parametre (izlenebilirlik) | `Freq = 50`, `Ts = 1/fsw/100`, `uHigh = 4`/`uLow = 3`, `LocalSolverSampleTime = 1e-7`, powergui `SampleTime = 50e-6`, `MinStep = auto` değişken yerine sayı olarak yazılmış; değerler m-dosyasıyla aynı ya da etkisiz | doğrulandı (29.10.2026) — değerler m-dosyasıyla aynı ya da etkisiz, sayısal etki yok; değişkene bağlama yapılmadı, tezde Kesim 3.8 izlenebilirlik notunda |
 
 ## Ayrıntılı kayıtlar
 
@@ -172,7 +172,7 @@ Her satır şu öğeleri içerir:
   D-01/D-02 betiklerinde yapılacak.
   - Betik: `scripts/run_umit_dort_senaryo_20261027.m`
 - **Etki:** Devre sonucuna etkisi yok; yalnız tekrar üretilebilirlik.
-- **Durum:** düzeltildi (koşu betiği), kopya modellerde açık
+- **Durum:** doğrulandı (29.10.2026) — kalibre kopya modellerde PreLoadFcn var, temiz oturumda derleme başarılı (`runs/2026-10-28_kalibrasyon/inspection/hazirlik.txt`)
 
 ### D-04 — Çakışan sinyal kayıt adları
 
@@ -181,7 +181,7 @@ Her satır şu öğeleri içerir:
 - **Düzeltme:** Display ↔ kayıt eşlemesi ada göre değil, kaynak blok yolu ve port
   numarasına göre yapılıyor.
   - Betik: `scripts/extract_umit_display_values_20261027.m`
-- **Durum:** düzeltildi
+- **Durum:** doğrulandı (29.10.2026) — aynı eşlemeyle yinelenen koşu, kalibrasyon değerlerini 6 basamak aynı verdi
 
 ### D-05 — Kullanılmayan parametreler
 
@@ -323,7 +323,7 @@ Her satır şu öğeleri içerir:
     kontağı), DA kaynak direnciyle aynı `Rdc` değişkenini paylaşıyor.
 - **Düzeltme:** İP-7 parametre tablosunun tek kaynaklı olması için değişkenlere
   bağlanır. Değerler aynı olduğundan sonuç değişmez.
-- **Durum:** açık — düşük öncelik
+- **Durum:** doğrulandı (29.10.2026) — değer eşitliği; sayısal etki yok, değişkene bağlama yapılmadı
 
 ### D-11 — DC bara kapasitörleri anma akımında orta noktayı tutamıyor
 
@@ -417,7 +417,7 @@ Her satır şu öğeleri içerir:
 - **Etki:** Koşu sonuçlarına etkisi yok; koşu betikleri modeli en sonda kapatır.
   Kaynak: `review/2026-10-28_KARARLILIK_BODE.md`, "Önerilen kayıtlar".
 - **Tezde:** yer almaz.
-- **Durum:** düzeltildi (betikte)
+- **Durum:** doğrulandı — betik düzeltmesi bütün koşularda kullanıldı, sonuca etkisi yok
 
 ### D-14 — Model düzeyinde sabit yazılmış ölçüm ve çözücü ayarları (D-10'un genişletilmesi)
 
@@ -437,7 +437,7 @@ Her satır şu öğeleri içerir:
 - **Etki:** yok. Kaynak: `review/2026-10-28_PARAMETRE_TABLOSU.md`,
   `runs/2026-10-28_parametre_tablosu/sabit_sayi_parametreleri.csv`.
 - **Tezde:** yer almaz.
-- **Durum:** açık — düşük öncelik (D-10 ile birlikte)
+- **Durum:** doğrulandı (29.10.2026) — değer eşitliği ya da etkisizlik; sayısal etki yok, değişkene bağlama yapılmadı
 
 ### D-07 — Cihaz eşlemesi denetimi
 

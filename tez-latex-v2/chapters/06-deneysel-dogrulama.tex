@@ -200,7 +200,7 @@ Prototipte şönt direnci DA baranın negatif terminaline bağlanarak alçak-tar
   \label{fig:deney-sont-baglanti}
 \end{figure}
 
-AA tarafta Entes EMK-01 analizörü ve 50/5 oranlı, \SI{5}{\volt\ampere}, Class~0.1 akım transformatörleri kullanılmıştır. Üç faz ve nötr hattı için dört akım transformatörü bağlanmış; faz--nötr gerilimleri, faz/nötr akımları, aktif ve reaktif güç ile toplam THD değerleri Modbus RTU üzerinden okunmuştur. Şekil~\ref{fig:deney-emk01}(a) analizörü, Şekil~\ref{fig:deney-emk01}(b) üreticinin bağlantı düzenini vermektedir.
+AA tarafta Entes EMK-01 analizörü ve 50/5 oranlı, \SI{5}{\volt\ampere}, Class~0.1 akım transformatörleri kullanılmıştır. Akım transformatörünün IEC~61869-2'ye göre yapılan kalibrasyon ölçümü EK-A'da verilmiştir; deney akımının bulunduğu anma akımının \%5'i bölgesinde oran hatası $-$\%0,046, faz hatası 2,8~dakikadır ve AA güç ölçümünün belirsizliğinde ihmal edilebilir düzeydedir. Üç faz ve nötr hattı için dört akım transformatörü bağlanmış; faz--nötr gerilimleri, faz/nötr akımları, aktif ve reaktif güç ile toplam THD değerleri Modbus RTU üzerinden okunmuştur. Şekil~\ref{fig:deney-emk01}(a) analizörü, Şekil~\ref{fig:deney-emk01}(b) üreticinin bağlantı düzenini vermektedir.
 
 \begin{figure}[htbp]
   \centering
@@ -385,13 +385,13 @@ Tablo~\ref{tab:olcum-cihazlari}, kullanılan cihaz ve sensörleri doğrulama sı
     \toprule
     Büyüklük & Cihaz / sensör & Bildirilen özellik & Doğrulama notu \\
     \midrule
-    AA güç ve THD & Entes EMK-01 ve 50/5 oranlı, \SI{5}{\volt\ampere} akım transformatörleri & Class 0.1 & Kalibrasyon belgesi bağımsız olarak mevcut değildir. \\
-    DA güç & Accuenergy AcuDC240 ve \SI{20}{\ampere}/\SI{60}{\milli\volt} şönt & Akım/gerilim yüzde 0,2; güç/enerji yüzde 0,5 & ``Class 0,1'' ifadesiyle uyuşmazlık üretici belgesiyle kesinleştirilecektir. \\
-    Hızlı akım & Tektronix TCP0150 & \SI{150}{\ampere}, \SI{20}{\mega\hertz} & Prob oranı ham osiloskop dosyasıyla doğrulanacaktır. \\
-    Hızlı gerilim & Tektronix THDP0200 & \SI{1500}{\volt}, \SI{200}{\mega\hertz} & Kanal zayıflatması ve ortak-mod sınırı ham kayıtla doğrulanacaktır. \\
-    Osiloskop & Tektronix DPO3034 & Kayıtta ``300 Hz, 2,5 GS/s'' & ``300 Hz'' ifadesi model veri sayfasıyla uyuşmadığından bant genişliği doğrulanmalıdır. \\
-    Faz/LCL akımı & HLSR 20-P/SP33 & \SI{23}{\milli\volt\per\ampere}; \SI{39.9}{\ampere} RMS hesap sınırı & Kazanç ve ADC ölçekleme katsayıları kontrol koduyla doğrulanacaktır. \\
-    Gerilim ölçümü & AMC1200 tabanlı izole kart & Kazanç 8; \SI{2.6}{\volt} ADC aralığı & Direnç oranı ve kanal kalibrasyonu şemadan doğrulanacaktır. \\
+    AA güç ve THD & Entes EMK-01 ve 50/5 oranlı, \SI{5}{\volt\ampere} akım transformatörleri & Class 0.1 & Akım transformatörünün kalibrasyon ölçümü EK-A'dadır (15.01.2025): anma akımının \%5'inde oran hatası $-$\%0,046, faz hatası 2,8~dk. Analizörün kalibrasyon belgesi yoktur. \\
+    DA güç & Accuenergy AcuDC240 ve \SI{20}{\ampere}/\SI{60}{\milli\volt} şönt & Akım/gerilim yüzde 0,2; güç/enerji yüzde 0,5 & Doğruluk değerleri veri sayfasıyla (EK-A) doğrulanmıştır; kayıttaki ``Class 0,1'' ifadesi veri sayfasıyla uyuşmaz ve kullanılmamıştır. \\
+    Hızlı akım & Tektronix TCP0150 & \SI{150}{\ampere}, \SI{20}{\mega\hertz} & Ham osiloskop dosyası olmadığından prob oranı doğrulanmamıştır. \\
+    Hızlı gerilim & Tektronix THDP0200 & \SI{1500}{\volt}, \SI{200}{\mega\hertz} & Ham kayıt olmadığından kanal zayıflatması ve ortak mod sınırı doğrulanmamıştır. \\
+    Osiloskop & Tektronix DPO3034 & Kayıtta ``300 Hz, 2,5 GS/s'' & ``300 Hz'' ifadesi model veri sayfasıyla uyuşmaz; bant genişliği kayıttan doğrulanamamıştır. \\
+    Faz/LCL akımı & HLSR 20-P/SP33 & \SI{23}{\milli\volt\per\ampere}; \SI{39.9}{\ampere} RMS hesap sınırı & Duyarlılık veri sayfasındandır (EK-A); denetim kodu olmadığından ADC ölçekleme katsayıları doğrulanmamıştır. \\
+    Gerilim ölçümü & AMC1200 tabanlı izole kart & Kazanç 8; \SI{2.6}{\volt} ADC aralığı & Kazanç veri sayfasındandır (EK-A); direnç oranı ve kanal kalibrasyonu belgelenmemiştir. \\
     \bottomrule
   \end{tabularx}
 \end{table}

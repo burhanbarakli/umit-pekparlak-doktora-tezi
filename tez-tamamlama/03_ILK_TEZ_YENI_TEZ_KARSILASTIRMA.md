@@ -303,3 +303,22 @@ Derleme 207 sayfa, kaynak 50 → 60. Karar K-26.
 - **Sin³ konumu daha kesin.** Eski metin "doğrudan bir karşılık belirlenememiştir" diyordu. Yeni metin en yakın literatürü (süreksiz iletim kompanzasyonu) adlandırıyor ve farkı iki noktada veriyor: bozulmanın kaynağı ve düzeltmenin biçimi.
 
 **Sayım (İP-12 sonrası):** 9 madde karşılandı (1, 2, 3, 4, 6, 7, 8, 9, 11), 2 madde kısmen (5: yeniden üretilemeyen 42 görsel; 10: yeni deney yapılamadı), 0 açık.
+
+---
+
+## 11. İP-13: son derleme ve teslim durumu (29.10.2026)
+
+Sürüm: `tez-latex-v2/tez_guncel_2026-10-29.pdf` (228 sayfa; `build_2026-10-29/`). Karar K-27.
+
+| Bitti tanımı | Durum |
+|---|---|
+| 1. Jüri maddeleri | 9 karşılandı; 5 (42 yeniden üretilemeyen görsel, K-25) ve 10 (yeni deney yok) sınırlılık olarak yazılı |
+| 2. `\eksikistek` sayısı | 0 |
+| 3. Derleme | Hatasız; Undefined ve Overfull yok; tarihli sürüm kaydedildi |
+| 4. Kanıt döngüsü | Bütün benzetim sayıları tarihli review notlarına dayanıyor |
+| 5. D-xx kayıtları | Hepsi doğrulandı, kapandı ya da denetlendi |
+| 6. Üst-anlatı | Basılı metinde yok |
+
+- **EKLER.** İlk tezdeki EK-A/B/C geri kondu (21 belge). Belgelerden iki kazanım çıktı: patent tablosu bülten ve WIPO bilgileriyle doldu ("resmî durum doğrulanacak" notları kalktı); Bölüm 6'daki "kalibrasyon belgesi yok" ifadesi akım transformatörü kalibrasyon ölçümüyle düzeltildi.
+- **TEŞEKKÜR ve ÖZGEÇMİŞ** ilk tezden alındı; yayın künyeleri düzeltildi, patentler eklendi.
+- **Teslim öncesi doldurulacak üç alan:** öğrenci numarası, savunma tarihi, onay sayfası jüri adları ve imzaları. Arşivde bilgi olmadığından boş bırakıldı.
