@@ -198,7 +198,8 @@ Pozitif yarım periyotta modülasyon, $P$ ve $O$ durumları arasında; negatif y
   Şekil~\ref{fig:t-tipi-akim-yollari}(a), faz kolunun işlevsel güç topolojisidir; kart üretim veya bağlantı şeması niteliği taşımamaktadır. Sensör, koruma ve giriş filtresi elemanlarının yeri Şekil~\ref{fig:gelen-tam-topoloji} üzerinde, yarı iletken parça kodları ve pasif eleman değerleri ise Tablo~\ref{tab:sistem-parametreleri} içinde verilmiştir.
 \end{samepage}
 
-\section{Düşük Güç Eşdeğeri ve Ters Akım Mekanizması}
+\section{Düşük Güç Eşdeğer Modeli}
+\label{sec:dusuk-guc-esdeger}
 
 Faz gerilimi referansının genliği azaldığında aktif $P$ veya $N$ durumunun görev oranı küçülür, sıfır durumunun süresi uzar. Pozitif ve negatif yarım periyotlar ayrı ayrı ele alındığında faz kolu, anahtarlanan gerilim kaynağı ile filtre endüktansı bakımından senkron alçaltıcı dönüştürücüye eşdeğer bir davranış gösterir \citep{Mohan2003,Erickson2001}. İki yarım periyodun eşdeğerleri Şekil~\ref{fig:senkron-buck-esdeger} altında bir araya getirilmiştir.
 
@@ -237,9 +238,22 @@ ile bulunur \citep{Erickson2001,Chen2010}. Eşitlik~\eqref{eq:buck-akim-dalgalan
   \bar{i}_L < \frac{\Delta i_L}{2}.
   \label{eq:ters-akim-esigi}
 \end{equation}
-Senkron anahtar sıfır geçişinden sonra iletimde tutulursa $i_L<0$ aralığı oluşur ve filtredeki enerji DA tarafa geri taşınır. Yararlı çıkış gücüne katkı sağlamayan ters dolaşım, RMS akımı ile iletim kayıplarını artırabilir. Diyot benzetimi yaklaşımı, akım sıfıra yaklaştığında senkron yolu keserek negatif akımı engeller; sıfır akım algılamadaki gecikme ve anahtarlama geçişleri ise gerçek kayıp sınırını belirler \citep{Chen2010,Erickson2001}. Diyot benzetimi ile sürekli iletim arasındaki temel fark, Bölüm~\ref{chap:literatur} içindeki Şekil~\ref{fig:de-ccm-akim} üzerinde birincil kaynakla gösterilmiştir; mevcut bölüm aynı genel davranışı Eşitlik~\eqref{eq:ters-akim-esigi} ile T-tipi faz koluna uyarlamaktadır.
+Diyotlu alçaltıcı dönüştürücüde akım sıfıra ulaştığında serbest dolaşım diyodu doğal olarak kesime gider. Senkron yapıda diyoda paralel anahtar iletimde tutulduğu için aynı doğal kesim gerçekleşmez; $i_L<0$ aralığı oluşur ve filtredeki enerji DA tarafa geri taşınır. Diyot benzetimi, akım sıfıra yaklaştığında senkron yolu keserek negatif akımı engeller; sıfır akım algılamadaki gecikme ve anahtarlama geçişleri gerçek kayıp sınırını belirler \citep{Chen2010,Erickson2001}. İki kipin farkı Şekil~\ref{fig:de-ccm-akim} üzerinde gösterilmiştir.
 
-T-tipi faz kolunda nötr anahtarların susturulması benzer bir amaç taşımaktadır: düşük güçte, referans akım yönüne ters enerji dolaşımı oluşturan komütasyonların azaltılması hedeflenir. Susturma, klasik PWM'nin bütün çalışma aralığında değiştirilmesi yerine belirlenen düşük güç veya küçük modülasyon bölgesinde etkinleştirilmelidir. Eşik seçimi yalnızca akım genliğine bağlanamaz; akım dalgalanması, ölçüm gürültüsü, ölü zaman, şebeke gerilimi ve hesaplama gecikmesi de karar mantığına dâhil edilmelidir. Benzetim modellerinde susturma senaryo boyunca sürekli etkindir; donanımdaki etkinleşme eşiği belgelenmemiştir ve tezde sınırlılık olarak yer alır (Tablo~\ref{tab:sistem-parametreleri}).
+Ortalama akım ile akım dalgalanması arasındaki ilişki üç çalışma bölgesi tanımlar \citep{Mohan2003,Erickson2001,Holmes2003}:
+
+\begin{enumerate}
+  \item \textbf{Sürekli iletim bölgesi:} $|\bar i_L|>\Delta i_L/2$ koşulunda akım bir anahtarlama periyodu içinde sıfıra ulaşmaz. Senkron nötr anahtarın iletim gerilim düşümünü azaltması verim açısından yararlıdır.
+  \item \textbf{Sınır iletim bölgesi:} $|\bar i_L|\simeq\Delta i_L/2$ noktasında akım periyot sonunda sıfıra yaklaşır. Parametre belirsizlikleri ve gecikmeler nedeniyle yöntem geçişi için histerezis gereklidir.
+  \item \textbf{Zorlanmış sürekli iletim bölgesi:} $|\bar i_L|<\Delta i_L/2$ olmasına rağmen senkron anahtarlama sürdürülürse akım sıfırın ötesine geçer. Ters akım kaybı belirginleşirken akımın sürekliliği harmonik performansı destekleyebilir.
+\end{enumerate}
+
+Bölgeler arasındaki sınır akımı
+\begin{equation}
+  I_{\mathrm{B}}(t)=\frac{\Delta i_L(t)}{2}
+  \label{eq:sinir-akimi}
+\end{equation}
+ile tanımlanır. $I_{\mathrm{B}}$; DA bara gerilimi, anlık şebeke gerilimi, görev oranı, anahtarlama frekansı ve eşdeğer endüktansa bağlıdır. Sabit bir yüzde güç eşiği yerine fiziksel değişkenlerden türetilen sınır akımı, şebeke gerilimi veya DA bara seviyesi değiştiğinde daha tutarlı bir kip geçişi sağlar. Eşdeğer modelin T-tipi nötr koldaki karşılığı, ters akım yükü ve kayıp etkisi Kesim~\ref{sec:ters-akim-mekanizmasi} altında incelenmektedir.
 
 \section{LCL Filtre ve Şebeke Modeli}
 
@@ -521,7 +535,7 @@ Osiloskop akım ölçekleme kazancı & \num{20} & -- & Parametre dosyası (\text
 \end{longtable}
 \endgroup
 
-Tablo~\ref{tab:sistem-parametreleri} içindeki sınırlılıklar üç kümede toplanır. Birinci küme donanım tanımına ilişkindir: anma gücü ifadeleri tasarım hedefi olarak kalmakta, laboratuvar şebeke gerilimi sınırı nedeniyle deneyler yaklaşık \SI{120}{\volt} ve \SI{2.3}{\ampere} düzeyinde yürütülmüştür. İkinci küme sayısal denetim yazılımına ilişkindir: denetim yazılımı, ADC örnekleme anı ve susturma ile Sin\textsuperscript{3} teriminin donanımdaki etkinleşme eşiği belgelenmemiştir; benzetimde denetim işlevleri analog eşdeğer ve senaryo boyunca sürekli etkin kip olarak temsil edilmiştir. Üçüncü küme pasif elemanlara ilişkindir: $L_2$, şebeke ve varyak kaçak endüktansının eşdeğeri olarak tanımlanmış, doğrudan empedans ölçümüyle doğrulanmamıştır; S4 anma akımı koşularının DA bara kapasitörleri deney donanımındaki değerden büyüktür. Üç kümenin sonuçlara etkisi Bölüm~\ref{chap:sonuc} içinde değerlendirilir.
+Tablo~\ref{tab:sistem-parametreleri} içindeki sınırlılıklar üç kümede toplanır. Birinci küme donanım tanımına ilişkindir: anma gücü ifadeleri tasarım hedefi olarak kalmakta, laboratuvar şebeke gerilimi sınırı nedeniyle deneyler yaklaşık \SI{120}{\volt} ve \SI{2.3}{\ampere} düzeyinde yürütülmüştür. İkinci küme sayısal denetim yazılımına ilişkindir: denetim yazılımı, ADC örnekleme anı ve susturma ile Sin\textsuperscript{3} teriminin donanımdaki etkinleşme eşiği belgelenmemiştir; benzetimde denetim işlevleri analog eşdeğer ve senaryo boyunca sürekli etkin kip olarak temsil edilmiştir. Üçüncü küme pasif elemanlara ilişkindir: $L_2$ doğrudan ölçülmemiş bir eşdeğerdir (Kesim~\ref{sec:l2-tanimi}); S4 anma akımı koşularının DA bara kapasitörleri deney donanımındaki değerden büyüktür. Üç kümenin sonuçlara etkisi Bölüm~\ref{chap:sonuc} içinde değerlendirilir.
 
 \subsection{Şebeke tarafı endüktansı $L_2$}
 \label{sec:l2-tanimi}
@@ -701,7 +715,7 @@ Tablo~\ref{tab:kopru-ic-empedansi} içindeki iç empedans, LCL filtrenin \SI{50}
 
 Duyarlılıkların üç sonucu vardır. İlk olarak, deney toleransı ($P_{\mathrm{ac}}$ için \%1, $|Q|$ için okuma belirsizliği) duyarlılıklara bölündüğünde kalibre genliğin belirsizliği S1'de \%0,025, S2'de \%0,4, S3'te \%0,2; fazın belirsizliği ise S1'de \SI{0.05}{\degree}, S2'de \SI{0.4}{\degree}, S3'te \num{0.5}--\SI{1}{\degree} olur. İkinci olarak, susturmalı senaryolarda kalibre genlik parametre dosyasındaki değerden S2'de \%3,3, S3'te \%1,5 düşüktür. Ortalama iletim süresi yaklaşık \SI{50}{\micro\second} olduğundan genlik farkı darbe başına \num{0.7}--\SI{1.6}{\micro\second} kısalmaya eşdeğerdir; değer, modelde bulunmayan IGBT açılma gecikmesi ve sürücü yayılım süresinin darbe genişliğinden yediği süre düzeyindedir. Yorum bir varsayımdır ve donanım kaydıyla doğrulanmamıştır. Üçüncü olarak, S2 ve S3'ün kalibre fazları faz belirsizliği içindedir ve fiziksel bir gecikme olarak yorumlanmamalıdır.
 
-Düşük akımda modelin temsil etmediği etkiler sınırlılık olarak kaydedilmiştir: IGBT çıkış kapasitesi ve sürücü yayılım gecikmeleri, en küçük darbe sınırı, parazitik endüktanslar, sıcaklığa bağlı kayıp artışı ve yüksek akımda $L_1$ doyumu. S2 benzetiminin deneye göre \%3,7 fazla şebeke akımı ve 9,7 puan fazla THD vermesi, sıfır geçişi çevresindeki süreksiz iletim ayrıntısının modelde bulunmayan gecikme ve kapasite etkilerinden etkilendiğini düşündürür; fark kalibrasyonla kapanmaz ve Bölüm~\ref{chap:anahtarlama} içinde sınırlılık olarak raporlanmıştır.
+Düşük akımda modelin temsil etmediği etkiler sınırlılık olarak kaydedilmiştir: IGBT çıkış kapasitesi ve sürücü yayılım gecikmeleri, en küçük darbe sınırı, parazitik endüktanslar, sıcaklığa bağlı kayıp artışı ve yüksek akımda $L_1$ doyumu. Kalibre S2 modelinin şebeke akımı ve THD farkı (Kesim~\ref{sec:kalibrasyon}) aynı etkilerle ilişkilendirilebilir.
 
 \section{Bölüm Sonucu}
 
