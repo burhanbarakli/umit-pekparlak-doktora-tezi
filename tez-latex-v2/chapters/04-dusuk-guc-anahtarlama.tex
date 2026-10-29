@@ -340,6 +340,29 @@ Kalibre benzetim ve deney özet tablosu mekanizma sırasını birlikte desteklem
 
 \textbf{Olası jüri sorusu:} ``Model klasik anahtarlamada \%40 veriyor, deney \%15; model yanlış değil mi?'' Cevap: aynı analizörün PF $=0{,}921$ okuması yaklaşık \%42 THD gerektirir; model PF'yi deneyle \%0,8 içinde verir; THDi okuması \SI{2.26}{\ampere}'de \%5--22 arasında dalgalanır; \SI{9}{\ampere} tepe--tepe dalgalanma akımı her periyotta ters yöne geçirir.
 
+\textbf{S1 (klasik anahtarlama): iddia neydi, ne oldu?} Yaklaşık \SI{2.3}{\ampere} faz akımı; ``ilk tez'' sütunu ilk tezin benzetim ve deney değerleri, ``yeni tez'' sütunu kalibre benzetim ve deney kaydının denetimidir.
+
+\smallskip
+{\footnotesize
+\renewcommand{\arraystretch}{1.15}
+\noindent\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{0.17\linewidth}>{\raggedright\arraybackslash}p{0.33\linewidth}>{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{Konu} & \textbf{İddia (ilk tez)} & \textbf{Ne oldu (yeni tez)} \\
+\midrule
+Şebeke akımı THD'si & Benzetim \%2,1; klasik anahtarlama akım kalitesi bakımından referans & Kalibre model \%39,5 (31. harmoniğe kadar \%39,2). 12.10 modeli hiç değiştirilmeden \%37,4. \%2,1 desteklenmedi \\
+$L_1$ akımı THD'si & Benzetim \%8,3 & Kalibre model \%38,5 (50. harmoniğe kadar) \\
+Deneydeki THD & \%15; Tablo~5.4'te ``THDi (L1)'' sütununda, benzetimin \%8,3'üyle karşılaştırılmış & Analizörün şebeke akımı okumasıdır, $L_1$ değil. Aynı satırın PF'si (0,921) yaklaşık \%42 gerektirir; ekran THDi'si \%5--22 arası dalgalanır. Bulgu olarak kullanılmadı \\
+Güç faktörü & Deney ekranında PF $-0{,}921$ görünür; THD ile ilişkisi kurulmamış & Deney 0,922, model 0,929 (\%0,8 içinde) \\
+Verim & Benzetim \%90,45, deney \%92,5 & Model \%91,15; deneyden 1,35 puan düşük (kayıp \SI{24.0}{\watt}'a karşı \SI{19.7}{\watt}), açıklanamadı; sınırlılık \\
+Ters akım & Nitel: ``neredeyse periyot boyunca alternansa ters polarize geçen akım'' & Pozitif yarım periyodun \%25,2'sinde ters akım, her periyotta yaklaşık $-\SI{2.6}{\ampere}$ (Şekil~\ref{fig:s1-s2-kalibre-l1}); mekanizma doğrulandı \\
+Kapı mantığı & Ekran görüntüsü & Modelden ölçüldü (Şekil~\ref{fig:s1-kapi-isaretleri}): pozitif yarıda $Q_1$/$Q_4$ tamamlayıcı, $Q_2$ kesim, $Q_3$ iletim; Tablo~\ref{tab:model-kapi-mantigi} ile aynı \\
+Susturmanın bedeli & THD \%2,1$\rightarrow$\%46,3 (44 puan) & Kalibre modelde \%39,5$\rightarrow$\%56,7 (17 puan); deneyde S1 değerine göre 5--32 puan \\
+\bottomrule
+\end{tabularx}}
+
+\smallskip
+\textbf{Özet:} S1'de mekanizma (ters akım) ve verim yönü doğrulandı; ``klasik anahtarlamanın akım kalitesi iyi, susturma bozuyor'' anlatısı doğrulanmadı. Klasik anahtarlama da düşük güçte yüksek THD'lidir; susturmanın THD bedeli ilk tezin gösterdiğinden küçüktür.
+
 \textbf{Karar sizde: deneydeki \%15'i başlangıç alan iki cümle.}
 \begin{enumerate}\setlength{\itemsep}{1pt}
   \item Kesim~\ref{sec:s1-s2-kalibre}, ``İkinci bulgu harmonik cezadır'' paragrafı. \textit{Şimdiki:} ``Susturma, şebeke akımı THD'sini benzetimde \%39,5'ten \%56,7'ye, deneyde \%15'ten \%47'ye yükseltir; iki kaynakta da S2 en yüksek THD'li senaryodur.'' \textit{Önerilen:} ``Susturma, şebeke akımı THD'sini kalibre benzetimde \%39,5'ten \%56,7'ye yükseltir; deneyde S2'nin THD'si \%47'dir ve iki kaynakta da S2 en yüksek THD'li senaryodur. Deneyin S1 THD değeri aynı satırın güç faktörüyle tutarsız olduğundan deneydeki artışın büyüklüğü belirlenememiştir.''

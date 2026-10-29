@@ -92,16 +92,20 @@
 % ---------------------------------------------------------------------------
 \newif\ifumitnotlari
 \umitnotlaritrue
+% Kutu sayfa sonunda bölünebilir (tcolorbox, breakable); paket yalnız notlar
+% açıkken yüklenir, notsuz çıktı etkilenmez.
+\ifumitnotlari
+  \RequirePackage[breakable,skins]{tcolorbox}
+  \newtcolorbox{umitnotkutusu}[1]{breakable, enhanced jigsaw, colback=blue!6, colframe=blue!60!black,
+    boxrule=0.6pt, arc=1pt, left=4pt, right=4pt, top=3pt, bottom=3pt, fontupper=\small,
+    title={\textbf{ÜMİT ABİ İÇİN NOT --- TESLİMDE ÇIKARILACAK}\quad #1}, fonttitle=\small}
+\fi
 \newcommand{\umitnot}[2]{%
   \ifumitnotlari
   \par\medskip
-  \noindent\fcolorbox{blue!60!black}{blue!6}{%
-    \begin{minipage}{0.94\linewidth}
-      \small
-      \colorbox{blue!60!black}{\strut\textcolor{white}{\textbf{ÜMİT ABİ İÇİN NOT --- TESLİMDE ÇIKARILACAK}}}\ \textbf{#1}\par\smallskip
-      #2
-    \end{minipage}%
-  }%
+  \begin{umitnotkutusu}{#1}
+    #2
+  \end{umitnotkutusu}
   \par\medskip
   \fi
 }
