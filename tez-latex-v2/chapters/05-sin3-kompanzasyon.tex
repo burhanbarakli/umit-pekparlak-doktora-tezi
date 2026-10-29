@@ -46,8 +46,9 @@ Tezde temel--üçüncü harmonik bağlaşımı, anma akımı çalışma noktası
 Kompanzasyonun hedefi, akımın üçüncü harmonik fazına ters yönde bir modülasyon bileşeni üretirken temel akım genliğini korumaktır. Uygulama kazancı yalnız THD eniyilemesiyle seçilmemeli; modülasyon doygunluğu, DA bara kullanımı, akım RMS değeri, denetim eforu ve düşük güçten orta güce geçişte süreklilik koşulları birlikte değerlendirilmelidir. Üçüncü harmonik enjeksiyonunun modülasyon kullanımını değiştirebildiği bilinmektedir; tezdeki amaç ise klasik üçüncü harmonik PWM ile DA bara kullanımını artırmak değil, nötr susturmanın oluşturduğu akım zarfı bozulmasını azaltmaktır \citep{Holmes2003}.
 
 \section{Düşük Güçte Harmonik Oluşum Mekanizması}
+\label{sec:harmonik-mekanizma}
 
-Şekil~\ref{fig:senkron-buck-esdeger} altında verilen iki-buck eşdeğeri, pozitif ve negatif alternansların aynı fiziksel mekanizmayla incelenmesini sağlar. Pozitif alternansta etkin yarım bara gerilimi $V_h$, anlık şebeke gerilimi $v_g(\theta)>0$, anahtarlama periyodu $T_s$, boyutsuz görev oranı $d(\theta)\in[0,1]$ ve eşdeğer endüktans $L$ olarak tanımlansın. İdeal anahtarlama periyodu modeli ve periyot boyunca yaklaşık sabit gerilim kabulü altında anahtar iletim süresindeki akım tepe değeri $I_{\mathrm{pk}}(\theta)$
+Şekil~\ref{fig:susturma-esdeger} altında verilen senkron olmayan iki alçaltıcı eşdeğeri, pozitif ve negatif alternansların aynı fiziksel mekanizmayla incelenmesini sağlar. Pozitif alternansta etkin yarım bara gerilimi $V_h$, anlık şebeke gerilimi $v_g(\theta)>0$, anahtarlama periyodu $T_s$, boyutsuz görev oranı $d(\theta)\in[0,1]$ ve eşdeğer endüktans $L$ olarak tanımlansın. İdeal anahtarlama periyodu modeli ve periyot boyunca yaklaşık sabit gerilim kabulü altında anahtar iletim süresindeki akım tepe değeri $I_{\mathrm{pk}}(\theta)$
 \begin{equation}
   I_{\mathrm{pk}}(\theta)=\frac{V_h-v_g(\theta)}{L}\,d(\theta)T_s
   \label{eq:dcm-tepe-akimi}
@@ -70,6 +71,15 @@ ifadesini verir \citep{Erickson2001,Chen2010}. Eşitlik~\eqref{eq:dcm-ortalama-a
   \label{eq:dcm-sinus-zarfi}
 \end{equation}
 biçimine dönüşür. Eşitlik~\eqref{eq:dcm-sinus-zarfi}, görev oranı sinüzoidal olsa bile ortalama akımın saf sinüs kalmadığını doğrudan göstermektedir: zarf, $\sin\theta$ ile $[V_h-V_m\sin\theta]$ çarpımından oluştuğu için sıfır geçişlerinde sinüsten hızlı yükselir ve alternans ortasında çöker. Düşük güçte çalışma noktasına bağlı akım harmoniklerinin büyüyebildiği, saha ölçümü ile zamanla değişen modeller üzerinden de raporlanmıştır \citep{Chicco2009,Du2013}.
+
+Mekanizma, kalibre S2 çalışma noktasında Şekil~\ref{fig:harmonik-mekanizma} üzerinde adım adım gösterilmiştir. Şekilde $V_{\mathrm{dc}}=\SI{395}{\volt}$, $V_m=\SI{171.1}{\volt}$, $L=L_1=\SI{600}{\micro\henry}$ ve $f_s=\SI{10}{\kilo\hertz}$ kullanılmıştır (Tablo~\ref{tab:sistem-parametreleri}). $d_m$, Eşitlik~\eqref{eq:dcm-ccm-parcali-model} ile kurulan parçalı modelin $L_1$ temel bileşeni kalibre S2 benzetimindeki $L_1$ temel bileşenine (\SI{2.10}{\ampere} RMS) eşitlenerek $0{,}768$ bulunmuştur; değer, kalibre S2 modelinin modülasyon genlik ölçeğiyle ($K_{12}=0{,}768$, Kesim~\ref{sec:kalibrasyon}) aynıdır. Görev oranı alternans boyunca kritik görev oranının altında kaldığından faz kolu yarım periyodun tamamında süreksiz iletimdedir (Şekil~\ref{fig:harmonik-mekanizma}a). Akımı yükselten $V_h-v_g$ gerilim payı alternans ortasında en küçük değerine iner (b); görev oranı en büyük olduğu halde tepe akım alternans ortasında çöker ve en büyük değerlerine yaklaşık \SI{2}{\milli\second} ve \SI{8}{\milli\second} çevresinde ulaşır (c). Ortalama akım zarfı iki tepeli bir biçim alır; üçüncü harmoniğin temel bileşene oranı parçalı modelde \%55,6, kalibre benzetimde \%55,9'dur (d). Oran Tablo~\ref{tab:dcm-saf-sinus-harmonikleri} içindeki \%39,96'dan büyüktür: zarfın biçimi $d_m$'den bağımsız olsa da $V_m/V_h$ oranına bağlıdır ve oran S1 noktasında $0{,}785$, S2 noktasında $0{,}866$'dır. Benzetim zarfındaki iki tepe arasındaki asimetri, analitik modelde bulunmayan $C_f$--$L_2$ dinamiği ve akımın şebeke gerilimine göre fazı ile ilişkilendirilebilir. Anlık akımda üçgen darbeler her anahtarlama periyodunda sıfıra iner ve ters yöne geçmez (e); susturmanın verim kazancı ile harmonik cezası aynı darbe biçiminden doğmaktadır.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.94\textwidth]{sin3/harmonik_olusum_mekanizmasi.pdf}
+  \caption[Susturmalı faz kolunda üçüncü harmonik oluşum mekanizması]{Susturmalı faz kolunda üçüncü harmonik oluşum mekanizması, kalibre S2 çalışma noktası, pozitif alternans: (a) sinüzoidal görev oranı ve süreksiz iletim sınırı, (b) iletimde endüktör gerilimi, (c) anahtarlama periyodu tepe akımı, (d) anahtarlama periyodu ortalama akımı, (e) anlık endüktör akımı. Analitik eğriler Eşitlik~\eqref{eq:dcm-tepe-akimi}--\eqref{eq:dcm-ccm-parcali-model} ile, gri eğriler kalibre S2 benzetim kaydından (son tam şebeke periyodu) elde edilmiştir.}
+  \label{fig:harmonik-mekanizma}
+\end{figure}
 
 DCM koşulu darbenin aynı anahtarlama periyodunda sona ermesini gerektirir:
 \begin{equation}

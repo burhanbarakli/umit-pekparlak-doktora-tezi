@@ -175,3 +175,72 @@
   \draw[blue!70!black,line width=1.8pt] (qh.south) -- (1.8,1.6) -- (l1a);
 \end{tikzpicture}%
 }
+
+% Susturmalı yarım periyot eşdeğeri: bir aktif anahtar ve tek yönlü serbest dolaşım yolu.
+% Argümanlar: üst ray, alt ray, aktif anahtar, diyot etiketi, anahtar konumu (1: üst, 0: alt).
+% Diyot her iki yarım periyotta yukarı yönlüdür: pozitifte N'den kutba, negatifte kutuptan N'ye.
+\newcommand{\susturmabuckvector}[5]{%
+\begin{tikzpicture}[
+  x=0.82cm,y=0.65cm,
+  sw/.style={draw,rounded corners=1pt,minimum width=8mm,minimum height=8mm,fill=white,font=\scriptsize},
+  coilpath/.style={decorate,decoration={coil,aspect=0.48,segment length=2.7mm,amplitude=1.8mm}},
+  current/.style={-{Latex[length=2mm]},red!80!black,line width=1.4pt},
+  freewheel/.style={orange!85!black,line width=1.6pt,dash pattern=on 3pt off 1.6pt}
+]
+  \draw[line width=0.8pt] (0,3.2) -- (1.8,3.2);
+  \draw[line width=0.8pt] (0,0) -- (1.8,0);
+  \node[font=\scriptsize,left] at (0,3.2) {#1};
+  \node[font=\scriptsize,left] at (0,0) {#2};
+  \fill (1.8,1.6) circle (1.5pt);
+  \ifnum#5=1
+    \node[sw,draw=green!55!black,line width=1.2pt] (q) at (1.8,2.45) {#3};
+    \draw[line width=0.8pt] (1.8,3.2) -- (q.north);
+    \draw[line width=0.8pt] (q.south) -- (1.8,1.6);
+    \coordinate (da) at (1.8,0.52); \coordinate (dk) at (1.8,1.08);
+    \draw[line width=0.8pt] (1.8,0) -- (da); \draw[line width=0.8pt] (dk) -- (1.8,1.6);
+  \else
+    \node[sw,draw=green!55!black,line width=1.2pt] (q) at (1.8,0.75) {#3};
+    \draw[line width=0.8pt] (1.8,1.6) -- (q.north);
+    \draw[line width=0.8pt] (q.south) -- (1.8,0);
+    \coordinate (da) at (1.8,2.12); \coordinate (dk) at (1.8,2.68);
+    \draw[line width=0.8pt] (1.8,1.6) -- (da); \draw[line width=0.8pt] (dk) -- (1.8,3.2);
+  \fi
+  % diyot: anot (da) altta, katot (dk) üstte
+  \filldraw[fill=white,draw=orange!85!black,line width=1.1pt] ($(da)+(-0.24,0)$) -- ($(da)+(0.24,0)$) -- (dk) -- cycle;
+  \draw[orange!85!black,line width=1.3pt] ($(dk)+(-0.24,0)$) -- ($(dk)+(0.24,0)$);
+  \node[font=\scriptsize,left=1.2mm,align=right] at ($(da)!0.5!(dk)+(-0.24,0)$) {#4};
+  \coordinate (l1a) at (2.45,1.6);
+  \coordinate (l1b) at (3.35,1.6);
+  \coordinate (cnode) at (3.88,1.6);
+  \coordinate (l2a) at (4.30,1.6);
+  \coordinate (l2b) at (5.20,1.6);
+  \draw[line width=0.8pt] (1.8,1.6) -- (l1a);
+  \draw[coilpath,line width=0.9pt] (l1a) -- (l1b);
+  \draw[line width=0.8pt] (l1b) -- (cnode) -- (l2a);
+  \draw[coilpath,line width=0.9pt] (l2a) -- (l2b);
+  \node[font=\scriptsize,above=2mm] at ($(l1a)!0.5!(l1b)$) {$L_1$};
+  \node[font=\scriptsize,above=2mm] at ($(l2a)!0.5!(l2b)$) {$L_2$};
+  \fill (cnode) circle (1.3pt);
+  \draw[line width=0.8pt] (cnode) -- (3.88,1.0);
+  \draw[line width=0.8pt] (3.55,1.0) -- (4.21,1.0);
+  \draw[line width=0.8pt] (3.55,0.75) -- (4.21,0.75);
+  \draw[line width=0.8pt] (3.88,0.75) -- (3.88,0.2);
+  \draw[line width=0.8pt] (3.58,0.2) -- (4.18,0.2);
+  \draw[line width=0.8pt] (3.68,0.05) -- (4.08,0.05);
+  \node[font=\scriptsize,right] at (4.18,0.88) {$C_f$};
+  \ifnum#5=1
+    \draw[current] (l2b) -- (6.0,1.6);
+    \draw[blue!70!black,line width=1.8pt] (0.5,3.2) -- (q.north);
+    \draw[blue!70!black,line width=1.8pt] (q.south) -- (1.8,1.6) -- (l1a);
+    \draw[freewheel] (0.5,0) -- (1.8,0) -- (da);
+    \draw[freewheel] (dk) -- (1.8,1.6);
+  \else
+    \draw[current] (6.0,1.6) -- (l2b);
+    \draw[blue!70!black,line width=1.8pt] (l1a) -- (1.8,1.6) -- (q.north);
+    \draw[blue!70!black,line width=1.8pt] (q.south) -- (1.8,0) -- (0.5,0);
+    \draw[freewheel] (1.8,1.6) -- (da);
+    \draw[freewheel] (dk) -- (1.8,3.2) -- (0.5,3.2);
+  \fi
+  \node[font=\scriptsize,right] at (6.0,1.6) {$v_g,\ i_L$};
+\end{tikzpicture}%
+}

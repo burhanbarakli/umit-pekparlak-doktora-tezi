@@ -2,6 +2,10 @@
 
 - **İlk tez:** `dosyalar/01_TAM_TEZ/tez_tumu_8.docx`. 107 şekil ve 16 tablo içerir.
 - **Yeni tez:** `tez-latex-v2/`, `e2fd45e` sürümü. 87 şekil ve 43 tablo içerir.
+  - **29.10.2026 güncellemesi:** Ş 4.24 ve Ş 3.13 geri eklendi; yeni tezde şekil sayısı 89 oldu.
+  - Bölüm 4 ve 5'te şekil numaraları birer kaydı: eski 4.1 → 4.2, eski 5.1 → 5.2 vb.
+  - Aşağıdaki B ve C numaraları `e2fd45e` sürümüne göredir.
+  - İlk tezden içeriğiyle birlikte çıkan şekil sayısı 14'ten 12'ye indi.
 - **Kapsam dışı:** ekler. İlk tezde de EK-A, EK-B ve EK-C vardır; yeni tezde aynı belgeler 21 sayfa olarak yer alır.
 
 **Eşleme yöntemi**
@@ -22,7 +26,7 @@ Betik (geçici oturum klasörü): `C:\Users\burha\AppData\Local\Temp\claude\C--C
 |---|---|---|
 | Ş 1.4 | EDS bileşenlerinin maliyet payları | Aynı veri Tablo 2.1'de; şekil ayrıca verilmedi |
 | Ş 1.10 | Hücre dengesizliğinin batarya ömrüne etkisi (senaryo analizi) | Tez katkısıyla ilgisiz; literatür kısaltması (İP-12) |
-| Ş 3.13 | Düşük anahtarlama oranında harmonik bileşenlerin akım dalga şekline etkisi | Mekanizma Kesim 5.3'te denklemle anlatılıyor |
+| Ş 3.13 | Düşük anahtarlama oranında harmonik bileşenlerin akım dalga şekline etkisi | **29.10.2026: geri eklendi** → yeni Şekil 5.1 (`fig:harmonik-mekanizma`), kalibre S2 parametreleriyle MATLAB'da yeniden üretildi |
 | Ş 3.14 | 3. harmonikli akımda referans, oluşan akım ve kontrolör çıkışı | Yerini Bölüm 5 mekanizma ve S4 izleme şekilleri aldı |
 | Ş 3.15 | Anahtarlama düzeninin teorik işleyişi | Tablo 3.2 ve Tablo 4.1 ile verildi |
 | Ş 3.16 | Düşük akımda kontrolör cevabına göre anahtarlama durumları | Tablo 4.2 (modelden okunan kapı mantığı) ile verildi |
@@ -30,8 +34,8 @@ Betik (geçici oturum klasörü): `C:\Users\burha\AppData\Local\Temp\claude\C--C
 | Ş 4.20 | Tam güçte feedforward ve kontrolör etkileri | Yerini S4 kapalı çevrim şekilleri (Şekil 5.7–5.9) aldı |
 | Ş 4.21 | 2,7 A'da feedforward ve kontrolör etkileri | Aynı neden |
 | Ş 4.22 | Düşük güçlerde doğrusal olmayan sistem | Metinle verildi (Kesim 5.2–5.3) |
-| Ş 4.24 | Susturma sonrası T-tipinin iki buck eviriciye dönüşmesi | Yakın içerik Şekil 3.5'te (yarım periyot senkron-buck eşdeğerleri) |
-| Ş 4.25 | dmax = 0,1…0,8 için L1 pozitif yarım periyot akımları | Sayısal sonuç Tablo 5.1'de |
+| Ş 4.24 | Susturma sonrası T-tipinin iki buck eviriciye dönüşmesi | **29.10.2026: geri eklendi** → yeni Şekil 4.1 (`fig:susturma-esdeger`), TikZ |
+| Ş 4.25 | dmax'a göre L1 akımları | Ayrı şekil gerekmedi: dalga biçiminin $d_m$'den bağımsızlığı Tablo 5.1'de, mekanizma Şekil 5.1'de |
 | Ş 4.26 | sin ve sin+sin³ görev oranlarında L1 akımı | Kaynak katsayı yanlış özdeşlikle türetilmişti; yerini Şekil 5.1 aldı |
 | Ş 4.27 | d = Vm·sin için farklı dmax değerlerinde harmonik içeriği | Tablo 5.1 ile birleşti |
 

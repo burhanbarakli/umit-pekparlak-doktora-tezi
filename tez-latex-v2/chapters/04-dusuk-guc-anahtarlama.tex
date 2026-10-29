@@ -105,6 +105,24 @@ Senaryo tanımları ile benzetim modellerinin kapı üretim yapısı blok blok k
 
 Tablo~\ref{tab:model-kapi-mantigi} içindeki kalın hücreler iki yöntem arasındaki tek farkı gösterir. Klasik anahtarlamada $O$ durumunda karşı nötr anahtar da iletimdedir ve ters akım yolu açıktır. Susturmalı anahtarlamada $O$ durumunda yalnız yük akımı yönündeki yol açıktır: pozitif yarım periyotta akım orta noktadan $Q_3$ ve $DS_4$ üzerinden faza akar, ters yöndeki akım nötr koldan dönemez ve $D_1$--$D_2$ ile dış anahtar diyotları üzerinden DA rayına yönelir. S1 kapı mantığı Tablo~\ref{tab:t-tipi-durumlar} ile birebir aynıdır.
 
+Susturmanın devre düzeyindeki sonucu Şekil~\ref{fig:susturma-esdeger} üzerinde gösterilmiştir. Klasik anahtarlamada her yarım periyot, iki yönlü iletebilen alt ve üst anahtardan oluşan senkron alçaltıcıya karşılık gelir (Şekil~\ref{fig:senkron-buck-esdeger}). Susturmalı çalışmada iletimde kalan nötr anahtar ile karşı nötr anahtarın antiparalel diyodu seri bir tek yönlü eleman oluşturur; faz kolu her yarım periyotta bir aktif anahtar ile bir diyottan oluşan senkron olmayan alçaltıcıya dönüşür. Serbest dolaşım akımı diyot üzerinden yalnız yük yönünde akar ve sıfıra indiğinde kendiliğinden kesilir. Ters akımın kesilmesi ile süreksiz iletimin başlaması aynı devre özelliğinin iki sonucudur; ikinci sonucun harmonik etkisi Kesim~\ref{sec:harmonik-mekanizma} içinde incelenmiştir.
+
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}[t]{0.48\textwidth}
+    \centering
+    \resizebox{\linewidth}{!}{\susturmabuckvector{$+V_{\mathrm{dc}}/2$}{$N$}{$Q_1$}{$Q_3$ iletimde\\$+\,DS_4$}{1}}
+    \caption{Pozitif yarım periyot: $Q_1$ anahtarlanır, $Q_4$ susturulur}
+  \end{subfigure}\hfill
+  \begin{subfigure}[t]{0.48\textwidth}
+    \centering
+    \resizebox{\linewidth}{!}{\susturmabuckvector{$N$}{$-V_{\mathrm{dc}}/2$}{$Q_2$}{$Q_4$ iletimde\\$+\,DS_3$}{0}}
+    \caption{Negatif yarım periyot: $Q_2$ anahtarlanır, $Q_3$ susturulur}
+  \end{subfigure}
+  \caption{Nötr anahtar susturmada faz kolunun yarım periyot eşdeğerleri: senkron olmayan iki alçaltıcı dönüştürücü. Mavi yol aktif enerji aktarımını, turuncu kesikli yol diyot üzerinden tek yönlü serbest dolaşımı göstermektedir; ters yöndeki akım için nötr koldan yol yoktur.}
+  \label{fig:susturma-esdeger}
+\end{figure}
+
 S2 devresinin kapı yolu, ortak model dosyasında eksik olduğu için tezdeki tanıma göre onarılmıştır (D-01, Tablo~\ref{tab:model-duzeltme-ozeti}). Onarılmış kapı yolunun dört komutu Şekil~\ref{fig:s2-kapi-isaretleri} üzerinde bir şebeke periyodu ve dört anahtarlama periyodu boyunca gösterilmiştir. $Q_1$ pozitif yarım periyotta \SI{10}{\kilo\hertz} PWM ile anahtarlanırken $Q_2$ kesimde, $Q_3$ iletimde ve $Q_4$ kesimdedir; negatif yarım periyotta roller simetrik olarak yer değiştirir. Nötr anahtarlar yarım periyot içinde hiç anahtarlanmaz; anahtarlama kaybı yalnız dış anahtarlarda oluşur.
 
 \begin{figure}[htbp]
