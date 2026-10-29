@@ -172,9 +172,9 @@ aynı klasördeki yorum dosyasından yalnız teknik nokta alındı: u = C(s)e + 
 
 | No | Jüri isteği (kısa) | İlk tezdeki durum | Yeni tezde karşılandığı yer | Durum | Kalan iş |
 |---|---|---|---|---|---|
-| 1 | Başlık anlaşılır olmalı ve içeriği yansıtmalı | Başlık "… ve İleri Beslemeli Kontrol Stratejisi" | Kapak, iç kapak, onay, Özet ve Summary başlığı (K-11). Bölüm 1 kapsam paragrafı, s. 5 | kısmen | İP-10: danışman onayı; Bölüm 1'de başlığın üç bileşeninin (T-tipi mimari, anahtarlama, Sin³ kompanzasyonu) katkılarla açık eşlenmesi |
-| 2 | Bölüm ve akış sırası genelden özele olmalı | Batarya → FV → T-tipi → yöntem+benzetim → deney → GT-tipi; analiz ile benzetim iç içe | Bölüm sırası 1–8 (İçindekiler s. ix–xii). Açılış köprüleri: Bölüm 2 s. 7, 3 s. 25, 5 s. 77, 6 s. 103, 7 s. 131, 8 s. 153. Kesim 3.7 (s. 46), Tablo 3.5 (s. 47), Tablo 3.1 (s. 27) | kısmen | İP-10: Bölüm 4 açılışında Bölüm 3'e açık köprü yok. Bölüm 7 deneyden sonra yeni benzetim kayıtları (Kesim 7.3) getiriyor |
-| 3 | T-tipi topoloji katkısı Sin³ gölgesinde kalmamalı | Üç katkı ancak sonuçta sıralanıyor | Bölüm 1, s. 4 (üç katkı listesi, AS1–AS4); Kesim 4.4 (s. 61), Tablo 4.1 (s. 61); Kesim 4.4.1, Tablo 4.2 (s. 62); Kesim 8.2 (s. 155), Tablo 8.1 (s. 153) | kısmen | İP-10: Bölüm 1'e katkı–yöntem–kanıt tablosu |
+| 1 | Başlık anlaşılır olmalı ve içeriği yansıtmalı | Başlık "… ve İleri Beslemeli Kontrol Stratejisi" | Kapak, iç kapak, onay, Özet ve Summary başlığı (K-11). Bölüm 1 kapsam paragrafı, s. 5 | karşılandı (İP-10) | Kesim 1.3'te başlığın üç bileşeni katkılarla eşlendi, Tablo 1.1 (s. 6). Danışman onayı tezin dışında bir adım (K-11) |
+| 2 | Bölüm ve akış sırası genelden özele olmalı | Batarya → FV → T-tipi → yöntem+benzetim → deney → GT-tipi; analiz ile benzetim iç içe | Bölüm sırası 1–8 (İçindekiler s. ix–xii). Açılış köprüleri: Bölüm 2 s. 7, 3 s. 25, 5 s. 77, 6 s. 103, 7 s. 131, 8 s. 153. Kesim 3.7 (s. 46), Tablo 3.5 (s. 47), Tablo 3.1 (s. 27) | karşılandı (İP-10) | Bölüm 4 ve 5 açılışı önceki bölüme köprüyle başlıyor; Bölüm 6 sonu Bölüm 7'ye geçiyor. Kesim 1.5 (s. 7) faz kolu → sistem sırasını ve Kesim 7.3 kayıtlarının GT-tipi katmanına ait olduğunu açıklıyor; Kesim 7.3 açılışı da aynı ayrımı yapıyor |
+| 3 | T-tipi topoloji katkısı Sin³ gölgesinde kalmamalı | Üç katkı ancak sonuçta sıralanıyor | Bölüm 1, s. 4 (üç katkı listesi, AS1–AS4); Kesim 4.4 (s. 61), Tablo 4.1 (s. 61); Kesim 4.4.1, Tablo 4.2 (s. 62); Kesim 8.2 (s. 155), Tablo 8.1 (s. 153) | karşılandı (İP-10) | Tablo 1.1 katkı–yöntem–bulgu–kanıt (s. 6); Kesim 8.2 aynı sırayla kanıt düzeyini değerlendiriyor |
 | 4 | Genel blok diyagram, gerekirse bölüm diyagramları | Ş. 4.17 ve 4.23 raster kontrol blok diyagramları | Şekil 3.1 genel sistem mimarisi (TikZ, s. 26); Şekil 3.6 LCL modeli (s. 33); Şekil 3.7 denetim–modülasyon blok diyagramı (s. 35); Kesim 3.5.1 (s. 36); Şekil 6.25 ölçüm zinciri (s. 123); Şekil 7.9 GT-tipi sentez mimarisi (s. 139); Şekil 7.19 durum makinesi (s. 147) | kısmen | İP-11: Bölüm 1'deki problem–yöntem–katkı akış şekli (`\eksikistek`, s. 6) |
 | 5 | Düşük çözünürlüklü şekiller yenilenmeli | 129 gömülü görsel; Bölüm 4'te beş TIFF 560 × 396 piksel | 24/95 vektör şekil: Şekil 2.6, 2.7, 2.9, 3.1, 3.3–3.7, 4.1, 4.6, 5.1, 5.8–5.16, 6.25, 7.9, 7.19. Kararlılık ve S4 şekillerinin tamamı vektör PDF | kısmen | İP-11: 71 raster şekil (ilk tez kökenli Şekil 4.2–4.5, 4.7–4.8, 4.12–4.15 ve 5.2–5.4; Bölüm 6 ve 7 fotoğraf ve ekranları). Senaryo ekranları (Şekil 4.9–4.11, 4.16–4.18, 5.5–5.7) yeniden üretilemez; senaryo ekranları için kaynak ve sınır notu gerekir |
 | 6 | T-tipi çalışma modları anlaşılır olmalı (dağınık, renksiz şekiller) | Ş. 3.2–3.8: yedi ayrı, renksiz mod şekli | Şekil 3.3 üç gerilim durumu (renkli, vektör, s. 29); Tablo 3.2 kapı durumları (s. 29); Şekil 3.4 aynı devre tabanında dört akım yolu ve renk lejandı (s. 31); Şekil 3.5 senkron buck eşdeğerleri (s. 31); Tablo 4.2 modelden okunan kapı mantığı (s. 62); Şekil 4.1 S2 kapı komutları (vektör, s. 63) | karşılandı | İP-11 (isteğe bağlı): Bölüm 4'teki raster kapı darbesi şekilleri aynı renk diline çekilebilir |
@@ -185,6 +185,7 @@ aynı klasördeki yorum dosyasından yalnız teknik nokta alındı: u = C(s)e + 
 | 11 | Akademik temel; doktora tezi örnekleri incelenmeli | Literatür özet düzeyinde; araştırma boşluğu yok | Bölüm 2 (s. 7–24); Kesim 2.5 ve Tablo 2.7 (9 çalışmalı karşılaştırma, s. 21–23); Kesim 2.6 Araştırma boşluğu (s. 23); 50 kaynak; Tablo 8.1 araştırma sorusu–kanıt matrisi (s. 153) | kısmen | İP-12: literatür sentezinin derinleştirilmesi, ulusal tez merkezi doktora tezi örnekleri, Tablo 2.7'nin genişletilmesi |
 
 **Sayım:** 4 madde karşılandı (6, 7, 8, 9), 7 madde kısmen (1, 2, 3, 4, 5, 10, 11), 0 madde açık.
+**İP-10 sonrası (29.10.2026):** 7 madde karşılandı (1, 2, 3, 6, 7, 8, 9), 4 madde kısmen (4, 5, 10, 11).
 
 ### Ek: jüri tablosundaki numaraların etiket karşılıkları
 
@@ -240,3 +241,31 @@ Düzeltme yapılmadı; yalnız raporlanıyor.
    tablosu için alt kesim gerekebilir.
 9. **Aux ile PDF eşleşmesi.** Bölüm açılış sayfaları dışında 216 etiketin tamamı PDF'te
    doğru sayfada bulundu. Eksik ya da yanlış yerde etiket yok. Brifingteki bütün etiketler mevcut.
+
+---
+
+## 8. İP-10 güncellemesi (29.10.2026)
+
+Bu belgedeki sayfa numaraları 197 sayfalık 29.10 derlemesine aittir. İP-10 sonrasında derleme
+205 sayfadır: Özet 2, Summary 4 sayfaya çıktı ve Bölüm 1 üç sayfa uzadı. Kesin sayfa
+numaraları İP-13'teki son derlemede yeniden alınacak.
+
+- **Bölüm 1** beş kesime ayrıldı: 1.1 problem ve motivasyon, 1.2 sav, amaç ve AS1–AS4,
+  1.3 özgün katkılar, 1.4 kapsam ve sınırlar, 1.5 tezin düzeni.
+- **Tablo 1.1** (s. 6) üç katkıyı başlıktaki karşılığı, yöntemi, başlıca bulgusu, koşulu,
+  kanıt yeri ve kanıt düzeyiyle eşliyor. Kesim 1.3'te başlığın üç bileşeni katkı 3, 1 ve 2'ye
+  bağlanıyor. Bölüm sırasının başlık sırasını değil fiziksel zinciri izlediği de yazıyor.
+  Katkı 2'ye K-21 kararlılık bulgusu eklendi.
+- **Köprüler.** Bölüm 4 açılışı Bölüm 3'ten devirle başlıyor. Bölüm 5 açılışındaki kalibre
+  edilmemiş ekran değerleri (%2,14 → %46,35 → %7,79) yerine deney ve kalibre benzetim değerleri
+  kondu. Bölüm 6 sonu Bölüm 7'ye geçiyor. Bölüm 7 açılışı ve Kesim 7.3 açılışı, GT-tipi
+  benzetim kayıtlarının S1–S4 zincirinin parçası olmadığını belirtiyor (K-24).
+- **Bölüm 8.** AS2 ve AS3 yanıtları ile Tablo 8.1 kalibre değerlerle yeniden yazıldı. Tablo 8.1
+  `tab:onceki-benzetim-ozeti` yerine Tablo 4.3 ve 6.10'a atıf yapıyor. Kesim 8.2 Tablo 1.1'e
+  bağlandı. Katkı 1'in sınırı (10 A'da süreksiz iletim) ve katkı 2'nin kararlılık ayağı eklendi.
+  Jüriye dönük üst-anlatı cümlesi çıkarıldı.
+- **Özet ve Summary** deney ve kalibre benzetim değerleriyle yeniden yazıldı. Summary,
+  genişletilmiş özet kuralına göre 4 sayfa oldu. Kalibre edilmemiş ekran değerleri ve
+  "yeniden üretilemedi" cümlesi çıktı.
+- **Yazım kuralı.** Özet ve Bölüm 1–8'de "bu" ailesi ve "dolayısıyla" yok. Tek istisna
+  Kesim 1.5'teki `\eksikistek` barı (İP-11).
