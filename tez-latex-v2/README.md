@@ -12,6 +12,7 @@ Kuruluş: 1 Eylül 2026. `tez-latex/` çalışma kopyası referans alınarak kur
   "EKSİK ÇALIŞMA — BUNU İSTİYORUZ" kutusu. Eksik MATLAB koşusu/veri, sonucun
   geleceği yerde işaretlenir. Nihai teslimden önce bütün barlar kapatılmalı
   veya Bölüm 8 sınırlılıklarına dönüştürülmelidir.
+- **Tez sahibine bilgi notu:** `\umitnot{Başlık}{Metin}` — mavi "ÜMİT ABİ İÇİN NOT" kutusu; tez metninin parçası değildir. Teslimden önce `config/tez-preamble.tex` içindeki `\umitnotlaritrue` satırı `\umitnotlarifalse` yapılır, bütün notlar kalkar (K-28).
 - **Hatalı eski türetim zinciri (4.2–4.26) ana metinden çıkarıldı**; yerine
   geçerlilik sınırı gerekçesi + HTF çerçevesi + 01.09.2026 tarihli doğru
   özdeşlikli katsayı taraması girdi

@@ -18,6 +18,7 @@ uzmanı alt ajan `.claude/agents/tez-beyin.md` dosyasında tanımlıdır.
 5. Model düzeltme kaydındaki bütün D-xx kayıtları "doğrulandı" ya da Bölüm 8'de
    sınırlılık olarak yazılmış olmalı.
 6. Metinde "önceki tez", "eski Şekil" ve benzeri üst-anlatı kalmamalı.
+7. Teslim sürümünde `\umitnotlarifalse` olmalı: tez sahibine bilgi notları PDF'te görünmemeli (K-28).
 
 ## İş paketleri
 

@@ -302,6 +302,14 @@ Tablo~\ref{tab:s4-tarama}, büyütülmüş DA bara ve kalibre ileri beslemeyle y
   \end{tabular}
 \end{table}
 
+\umitnot{İstenen THD sınırına ulaşıldı mı?}{Tezde şebeke standardıyla sayısal karşılaştırma yoktur; aşağıdaki hesap bilgi içindir. IEEE~1547 ve IEC~61727, toplam harmonik bozulmayı anma akımına göre (TDD) \%5, tek mertebeli 3--9. harmoniklerin her birini \%4 ile sınırlar. Anma akımı \SI{25}{\ampere} alınmıştır.
+\begin{itemize}\setlength{\itemsep}{1pt}
+  \item \textbf{\SI{2.3}{\ampere} (deney noktası): sınır içinde.} Harmonik akım anma akımının küçük bir kesridir. TDD: S1 yaklaşık \%1,3 (deneyin \%15'iyle; kalibre modelin \%39,5'iyle yaklaşık \%3,4), S2 yaklaşık \%4,0 (kalibre model \%4,8, sınıra yakın), S3 yaklaşık \%1,3. THD kendi temel bileşenine göre okunursa hiçbir senaryo \%5'e inmez; en iyisi S3, \%14.
+  \item \textbf{\SI{10}{\ampere}: sınır dışı.} THD yaklaşık \%20, TDD yaklaşık \%7--8. Nedeni nötr susturmanın orta akımda çevrimin büyük kısmında süreksiz iletim yaratmasıdır.
+  \item \textbf{\SI{25}{\ampere} (anma): sınır dışı.} THD PI ile \%9,2, PIR ile \%8,5; üçüncü harmonik \%8,7 ile tekil \%4 sınırını da aşar. Sin\textsuperscript{3} kazancı \SI{2.3}{\ampere}'e kalibre edildiğinden anma akımında üçüncü harmoniği artırır; terim kapatıldığında THD \%5,6'ya iner, yine sınırın biraz üstündedir.
+  \item \textbf{Tezdeki yeri.} Orta akımda süreksiz iletim ve anma akımında ileri besleme genliği Bölüm~\ref{chap:sonuc} sınırlılıklarında (madde 5 ve 6) yazılıdır. Anma akımında sınırın altına inmek için akıma göre ayarlanan Sin\textsuperscript{3} genliği ya da susturmadan tamamlayıcı anahtarlamaya geçiş gerekir; ikisi de gelecek çalışma olarak önerilmiştir.
+\end{itemize}}
+
 Anma akımında PI ve PIR denetleyicileri referansı doyumsuz izlemektedir. PIR, \SI{50}{\hertz} rezonans terimiyle temel bileşen hatasını $-$\%1,0 ve $+0{,}2^{\circ}$'ye indirir; THD \%8,5, temel bileşen yer değiştirme faktörü 0,997'dir. Oransal denetleyici aynı noktada $-$\%11,4 genlik hatası bırakır; \SI{50}{\hertz}'teki sonlu çevrim kazancı kalıcı hatayı sıfırlamaz. Şekil~\ref{fig:s4-akim-izleme-25a}, \SI{25}{\ampere} noktasında üç denetleyicinin son iki şebeke periyodundaki $L_1$ akımını, referansı, çıkış akımını ve şebeke gerilimini birlikte göstermektedir. Şekil~\ref{fig:s4-tarama-ozet} ise verim, THD ve genlik hatasının akıma göre değişimini özetlemektedir.
 
 \begin{figure}[htbp]

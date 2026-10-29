@@ -84,6 +84,28 @@
   \par\medskip
 }
 
+% ---------------------------------------------------------------------------
+% ÜMİT ABİ İÇİN NOT kutusu (K-28): tez sahibine bilgi notu; tez metninin
+% parçası değildir. Teslimden önce aşağıdaki satır \umitnotlarifalse yapılır;
+% bütün notlar tek noktadan PDF'ten kalkar (metin akışı değişmez).
+% Kullanım: \umitnot{Kısa başlık}{Not metni.}
+% ---------------------------------------------------------------------------
+\newif\ifumitnotlari
+\umitnotlaritrue
+\newcommand{\umitnot}[2]{%
+  \ifumitnotlari
+  \par\medskip
+  \noindent\fcolorbox{blue!60!black}{blue!6}{%
+    \begin{minipage}{0.94\linewidth}
+      \small
+      \colorbox{blue!60!black}{\strut\textcolor{white}{\textbf{ÜMİT ABİ İÇİN NOT --- TESLİMDE ÇIKARILACAK}}}\ \textbf{#1}\par\smallskip
+      #2
+    \end{minipage}%
+  }%
+  \par\medskip
+  \fi
+}
+
 \usepackage{booktabs}
 \usepackage{longtable}
 \usepackage{tabularx}
