@@ -1,0 +1,23 @@
+alan,sinyal,blok,kanal,ornek,tepe
+ps_PS_Simulink_Converter,ps_PS_Simulink_Converter,inverter_s1_kal/AC Current Sensor1/PS-Simulink Converter,1,1064661,4.1707746260575
+ps_PS_Simulink_Converter_2,ps_PS_Simulink_Converter,inverter_s1_kal/AC Voltage Sensor1/PS-Simulink Converter,1,1064661,175.144985266133
+ps_PS_Simulink_Converter_3,ps_PS_Simulink_Converter,inverter_s1_kal/AC Voltage Sensor2/PS-Simulink Converter,1,1064661,224.089572147369
+cos_s1,cos_s1,inverter_s1_kal/Divide1,1,1064661,0.999946152947091
+eff_s1,eff_s1,inverter_s1_kal/Divide3,1,1064661,0.911547422996523
+cos_s1_6,cos_s1,inverter_s1_kal/Divide5,1,1064661,0.999969885309319
+ps_PS_Simulink_Converter8,ps_PS_Simulink_Converter8,inverter_s1_kal/Gate Drive5/PS-Simulink Converter8,1,1064661,15.0000000275306
+ps_PS_Simulink_Converter8_8,ps_PS_Simulink_Converter8,inverter_s1_kal/Gate Drive6/PS-Simulink Converter8,1,1064661,15
+ps_PS_Simulink_Converter8_9,ps_PS_Simulink_Converter8,inverter_s1_kal/Gate Drive7/PS-Simulink Converter8,1,1064661,15.0000000007663
+ps_PS_Simulink_Converter8_10,ps_PS_Simulink_Converter8,inverter_s1_kal/Gate Drive8/PS-Simulink Converter8,1,1064661,15
+Idc_s1,Idc_s1,inverter_s1_kal/Mean10,1,1064661,2.59358811016135
+Vdc_s1,Vdc_s1,inverter_s1_kal/Mean2,1,1064661,431.483053703571
+Idc_s1_13,Idc_s1,inverter_s1_kal/Mean3,1,1064661,0.628629013122958
+Idc_s1_14,Idc_s1,inverter_s1_kal/Mean9,1,1064661,247.215649473112
+ps_PS_Simulink_Converter_15,ps_PS_Simulink_Converter,inverter_s1_kal/PS-Simulink Converter,1,1064661,4.24288156606606
+ps_PS_Simulink_Converter1,ps_PS_Simulink_Converter1,inverter_s1_kal/PS-Simulink Converter1,1,1064661,431.901737876911
+ps_PS_Simulink_Converter3,ps_PS_Simulink_Converter3,inverter_s1_kal/PS-Simulink Converter3,1,1064661,8.51262031182674
+P_s1,P_s1,inverter_s1_kal/Power3,1,1064661,247.212455232006
+Q_s1,Q_s1,inverter_s1_kal/Power3,1,1064661,1.93333160924978
+Iac_s1,Iac_s1,inverter_s1_kal/RMS1,1,1064661,2.21845082604149
+THD_s1,THD_s1,inverter_s1_kal/THD,1,1064661,0.395185856365901
+THD_s1_22,THD_s1,inverter_s1_kal/THD2,1,1064661,0.0364154764828567

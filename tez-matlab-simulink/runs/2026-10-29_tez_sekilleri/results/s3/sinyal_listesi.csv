@@ -1,0 +1,24 @@
+alan,sinyal,blok,kanal,ornek,tepe
+ps_PS_Simulink_Converter,ps_PS_Simulink_Converter,inverter_senaryo3_kal/AC Current Sensor1/PS-Simulink Converter,1,840796,3.16913487783239
+ps_PS_Simulink_Converter_2,ps_PS_Simulink_Converter,inverter_senaryo3_kal/AC Voltage Sensor1/PS-Simulink Converter,1,840796,181.08840643843
+ps_PS_Simulink_Converter_3,ps_PS_Simulink_Converter,inverter_senaryo3_kal/AC Voltage Sensor2/PS-Simulink Converter,1,840796,221.03234769575
+cos_s1,cos_s1,inverter_senaryo3_kal/Divide1,1,840796,0.997076247821064
+eff_s1,eff_s1,inverter_senaryo3_kal/Divide3,1,840796,0.943836979318755
+cos_s1_6,cos_s1,inverter_senaryo3_kal/Divide5,1,840796,0.997163444262272
+ps_PS_Simulink_Converter8,ps_PS_Simulink_Converter8,inverter_senaryo3_kal/Gate Drive5/PS-Simulink Converter8,1,840796,15.0000000140091
+ps_PS_Simulink_Converter8_8,ps_PS_Simulink_Converter8,inverter_senaryo3_kal/Gate Drive6/PS-Simulink Converter8,1,840796,15
+ps_PS_Simulink_Converter8_9,ps_PS_Simulink_Converter8,inverter_senaryo3_kal/Gate Drive7/PS-Simulink Converter8,1,840796,15.000000000527
+ps_PS_Simulink_Converter8_10,ps_PS_Simulink_Converter8,inverter_senaryo3_kal/Gate Drive8/PS-Simulink Converter8,1,840796,15
+Idc_s1,Idc_s1,inverter_senaryo3_kal/Mean10,1,840796,21.5274092817172
+Idc_s1_12,Idc_s1,inverter_senaryo3_kal/Mean11,1,840796,280.365617500818
+Vdc_s1,Vdc_s1,inverter_senaryo3_kal/Mean2,1,840796,427.448611279844
+Idc_s1_14,Idc_s1,inverter_senaryo3_kal/Mean3,1,840796,0.696415858704813
+Idc_s1_15,Idc_s1,inverter_senaryo3_kal/Mean9,1,840796,280.156551344804
+ps_PS_Simulink_Converter_16,ps_PS_Simulink_Converter,inverter_senaryo3_kal/PS-Simulink Converter,1,840796,3.86543033339358
+ps_PS_Simulink_Converter1,ps_PS_Simulink_Converter1,inverter_senaryo3_kal/PS-Simulink Converter1,1,840796,427.449993773129
+ps_PS_Simulink_Converter3,ps_PS_Simulink_Converter3,inverter_senaryo3_kal/PS-Simulink Converter3,1,840796,7.76156619423543
+P_s1,P_s1,inverter_senaryo3_kal/Power3,1,840796,280.364467888029
+Q_s1,Q_s1,inverter_senaryo3_kal/Power3,1,840796,21.7126746125674
+Iac_s1,Iac_s1,inverter_senaryo3_kal/RMS1,1,840796,2.28498016871878
+THD_s1,THD_s1,inverter_senaryo3_kal/THD,1,840796,0.148711201246875
+THD_s1_23,THD_s1,inverter_senaryo3_kal/THD2,1,840796,0.0269881556273328

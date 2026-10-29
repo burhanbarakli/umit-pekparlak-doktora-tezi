@@ -1,0 +1,27 @@
+alan,sinyal,blok,kanal,ornek,tepe
+ps_PS_Simulink_Converter,ps_PS_Simulink_Converter,inverter_s2_kal/AC Current Sensor2/PS-Simulink Converter,1,854573,3.54455600676957
+ps_PS_Simulink_Converter_2,ps_PS_Simulink_Converter,inverter_s2_kal/AC Voltage Sensor3/PS-Simulink Converter,1,854573,174.738025848205
+ps_PS_Simulink_Converter_3,ps_PS_Simulink_Converter,inverter_s2_kal/AC Voltage Sensor4/PS-Simulink Converter,1,854573,204.994379917594
+cos_s1,cos_s1,inverter_s2_kal/Divide2,1,854573,0.994908489027315
+eff_s1,eff_s1,inverter_s2_kal/Divide4,1,854573,0.940518972255294
+cos_s1_6,cos_s1,inverter_s2_kal/Divide6,1,854573,0.99560698095523
+ps_PS_Simulink_Converter8,ps_PS_Simulink_Converter8,inverter_s2_kal/Gate Drive1/PS-Simulink Converter8,1,854573,15.0000000005064
+ps_PS_Simulink_Converter8_8,ps_PS_Simulink_Converter8,inverter_s2_kal/Gate Drive2/PS-Simulink Converter8,1,854573,15
+ps_PS_Simulink_Converter8_9,ps_PS_Simulink_Converter8,inverter_s2_kal/Gate Drive3/PS-Simulink Converter8,1,854573,15.0000000007046
+ps_PS_Simulink_Converter8_10,ps_PS_Simulink_Converter8,inverter_s2_kal/Gate Drive4/PS-Simulink Converter8,1,854573,15
+Idc_s1,Idc_s1,inverter_s2_kal/Mean5,1,854573,25.8238799021116
+Vdc_s1,Vdc_s1,inverter_s2_kal/Mean6,1,854573,394.948633462733
+Idc_s1_13,Idc_s1,inverter_s2_kal/Mean7,1,854573,0.686621600321899
+Idc_s1_14,Idc_s1,inverter_s2_kal/Mean8,1,854573,253.896792334659
+ps_PS_Simulink_Converter2,ps_PS_Simulink_Converter2,inverter_s2_kal/PS-Simulink Converter2,1,854573,4.13432341155799
+ps_PS_Simulink_Converter4,ps_PS_Simulink_Converter4,inverter_s2_kal/PS-Simulink Converter4,1,854573,394.949994237921
+ps_PS_Simulink_Converter5,ps_PS_Simulink_Converter5,inverter_s2_kal/PS-Simulink Converter5,1,854573,8.30481434673191
+P_s1,P_s1,inverter_s2_kal/Power1,1,854573,254.467662974333
+Q_s1,Q_s1,inverter_s2_kal/Power1,1,854573,25.111721505355
+Iac_s1,Iac_s1,inverter_s2_kal/RMS2,1,854573,2.4253566351192
+g12_S2,g12_S2,inverter_s2_kal/S2 PWM susturma,1,854573,1
+g22_S2,g22_S2,inverter_s2_kal/S2 PWM susturma,1,854573,1
+g32_S2,g32_S2,inverter_s2_kal/S2 PWM susturma,1,854573,1
+g42_S2,g42_S2,inverter_s2_kal/S2 PWM susturma,1,854573,1
+THD_s1,THD_s1,inverter_s2_kal/THD1,1,854573,0.568975700287174
+THD_s1_26,THD_s1,inverter_s2_kal/THD3,1,854573,0.0296086745412971

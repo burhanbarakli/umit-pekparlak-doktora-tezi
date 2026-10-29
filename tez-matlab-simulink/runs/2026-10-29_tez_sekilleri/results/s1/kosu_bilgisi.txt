@@ -1,0 +1,8 @@
+model: inverter_s1_kal
+baslangic: 29-Oct-2026 13:18:22
+bitis: 29-Oct-2026 13:57:32
+mod: accelerator
+durum: tamamlandi
+duvar_suresi_s: 2342.1
+ps_kayit: 10
+
