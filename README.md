@@ -142,7 +142,7 @@ Her koşunun tam komutu ve ön koşulları kendi `runs/<koşu>/README.md` dosyas
   çalıştırılmalıdır; yoksa Simscape diyotları "Qrr/didt … type string" hatası verir (D-03).
 - Makinedeki tek C derleyicisi LCC ise ham S1+S2 Accelerator'da bağlanamaz, Normal modda koşar.
 - Aynı klasörde eşzamanlı derleme yapmayın; paralel koşular ayrı `model_*` klasörlerinde yapılır.
-- `logsout.mat` ve diğer `.mat` dalga kayıtları (0,8–1,8 GB) git'e girmez; betik yeniden koşturularak üretilir.
+- `logsout.mat` ve diğer `.mat` dalga kayıtları (dosya başına 2,6 GB'a kadar) git'e girmez; Drive'dan alınır ya da betik yeniden koşturularak üretilir.
 - Yeniden koşmadan önce ilgili `results/` klasörünü yedekleyin; betikler mevcut kanıtın üzerine yazar.
 - Kanıt döngüsü: koşu → `review/<tarih>_*.md` kaydı → bölüm metni.
 
@@ -191,16 +191,45 @@ artıkları yoktur.
 
 | Ne | Neden git dışında | Drive'daki yeri |
 |---|---|---|
-| İlk tez, Word (`tez_tumu_8.docx`, 62 MB) | Büyük ikili dosya | `dosyalar/01_TAM_TEZ/` (ayrıca [Releases](https://github.com/burhanbarakli/umit-pekparlak-doktora-tezi/releases/tag/tez-2026-10-29)) |
-| İlk tezin bölüm arşivleri (`BOLUM1-4.rar`, `tez_tumu_8.rar`) | Tekil dosyalar 100 MB'ı aşıyor | `dosyalar/00_ORIJINAL_ARSIVLER/` |
-| Bölüm çalışmaları ve ham kaynak PDF'leri (~400 MB) | Telifli kaynaklar | `dosyalar/02_BOLUM_CALISMALARI/BOLUM_1…4/` |
-| SAÜ FBE tez kılavuzu, Word şablonu, teslim kontrol formu | Ham kaynak | `dosyalar/04_tez_şablon/` |
-| Sonradan gelenler: Senaryo arşivleri, EMF ekranlar, ana kaynak PDF | Ham kaynak | `dosyalar/05_sonradan_gelenler/` |
-| Ümit'ten gelen bütün teslimler (e-posta + Drive, tarih sıralı) | Kişisel yazışmalar, 100 MB'ı aşan ZIP | `dosyalar/06_UMIT_ABIDEN_GELENLER/<tarih>_<konu>/` (dizin: `00_INDEX.md`) |
-| Benzetim dalga kayıtları (`logsout.mat`, `sekil_kayit.mat`, `dalga.mat`…; 0,8–1,8 GB) | Boyut | `tez-matlab-simulink/runs/<koşu>/results/…` |
-| Ağustos sonuç yedeği | Yedek | `tez-matlab-simulink/results_yedek_2026-10-27/` |
-| Son tez PDF'leri (notsuz, notlu) ve tarihli derlemeler | Derleme çıktısı | `tez-latex-v2/tez_guncel_2026-10-29*.pdf`, `tez-latex-v2/build_2026-10-29/` (ayrıca [Releases](https://github.com/burhanbarakli/umit-pekparlak-doktora-tezi/releases/tag/tez-2026-10-29)) |
-| Çalışma kopyasının eski sürümleri (`tez_guncel_2026-08-*.pdf`, `historical_main.pdf`) | Derleme çıktısı | `tez-latex/` |
-| Jüri öneri PDF'i | Ham kaynak | `jüri istekleri/` |
-| Arşiv açma ve inceleme klasörü | Geçici | `tmp/` |
+| İlk tez, Word (`tez_tumu_8.docx`, 62 MB) | Büyük ikili dosya | [`dosyalar/01_TAM_TEZ/`](https://drive.google.com/drive/folders/12MNputxjDQo6t1SZZ8SBwulXFHCrh5y3) (ayrıca [Releases](https://github.com/burhanbarakli/umit-pekparlak-doktora-tezi/releases/tag/tez-2026-10-29)) |
+| İlk tezin bölüm arşivleri (`BOLUM1-4.rar`, `tez_tumu_8.rar`) | Tekil dosyalar 100 MB'ı aşıyor | [`dosyalar/00_ORIJINAL_ARSIVLER/`](https://drive.google.com/drive/folders/18SkTbQnYG_Qq2Oaj5gCv58yxQK_ot71x) |
+| Bölüm çalışmaları ve ham kaynak PDF'leri (~400 MB) | Telifli kaynaklar | [`dosyalar/02_BOLUM_CALISMALARI/`](https://drive.google.com/drive/folders/1b4l8rJWwNVQGr7l9typtKut7tRWQjbv3): [`BOLUM_1`](https://drive.google.com/drive/folders/1In1jqmFsgcOgAnMjX_wNomd7FHTbnalI) · [`BOLUM_2`](https://drive.google.com/drive/folders/1uW2lGRdpBvSbDKbTrvyVicC27x64Oy6h) · [`BOLUM_3`](https://drive.google.com/drive/folders/1ZslyCN3SX6By0QY0ksywrRzQFELiTPuC) · [`BOLUM_4`](https://drive.google.com/drive/folders/1yaI4M32Kn-wpqmKOibaadstBa0R2sgsR) |
+| İnceleme ve planlama notları | Ham kaynak | [`dosyalar/03_INCELEME_VE_PLANLAMA/`](https://drive.google.com/drive/folders/1sPeJXmjrW7AnH1TGywOHJTIc5hC5VhXH) |
+| SAÜ FBE tez kılavuzu, Word şablonu, teslim kontrol formu | Ham kaynak | [`dosyalar/04_tez_şablon/`](https://drive.google.com/drive/folders/1aD7TkEh5JigPGHvuMyzGngieamyKrfzd) |
+| Sonradan gelenler: Senaryo arşivleri, EMF ekranlar, ana kaynak PDF | Ham kaynak | [`dosyalar/05_sonradan_gelenler/`](https://drive.google.com/drive/folders/1qupXkzQjuRydDipPSB-wp-lMBxGiHDqI) |
+| Ümit'ten gelen bütün teslimler (e-posta + Drive, tarih sıralı) | Kişisel yazışmalar, 100 MB'ı aşan ZIP | [`dosyalar/06_UMIT_ABIDEN_GELENLER/`](https://drive.google.com/drive/folders/1LySUfrDdWwisdrIGhEB1UYki-TDwPN14) ([`00_INDEX.md`](https://drive.google.com/file/d/1234dRoUnlbF0TUXk0L3jDt-Md9tfy3ba/view); teslimler aşağıda) |
+| Benzetim dalga kayıtları (`logsout.mat`, `sekil_kayit.mat`, `dalga.mat`…; dosya başına 2,6 GB'a kadar, toplam 7,9 GB) | Boyut | [`tez-matlab-simulink/runs/`](https://drive.google.com/drive/folders/1z46pL97-0fRr6NcJhs-d17s5nHGw4jOg) (koşular aşağıda) |
+| Ağustos sonuç yedeği | Yedek | [`tez-matlab-simulink/results_yedek_2026-10-27/`](https://drive.google.com/drive/folders/1aOxALfMWwRmbqBZzuNKh75rKE3Jp4Rj_) |
+| Son tez PDF'leri (notsuz, notlu) ve tarihli derlemeler | Derleme çıktısı | [`tez-latex-v2/`](https://drive.google.com/drive/folders/10OcFy1AUuCpRZmVZNr9Aj1bFcwuapMqN) içinde `tez_guncel_2026-10-29*.pdf`, [`build_2026-10-29/`](https://drive.google.com/drive/folders/1dPudYiM0DRU0kiDjZ49pchHeODVoo3BG) (ayrıca [Releases](https://github.com/burhanbarakli/umit-pekparlak-doktora-tezi/releases/tag/tez-2026-10-29)) |
+| Çalışma kopyasının eski sürümleri (`tez_guncel_2026-08-*.pdf`, `historical_main.pdf`) | Derleme çıktısı | [`tez-latex/`](https://drive.google.com/drive/folders/1uIOvbPi3e3wJsTzGyxUSvwvlz0HoIlKv) |
+| Jüri öneri PDF'i | Ham kaynak | [`jüri istekleri/`](https://drive.google.com/drive/folders/1Z3FNlXOZbUJj1ufY7Rr-827UZMZoUg7V) |
+| Arşiv açma ve inceleme klasörü | Geçici | [`tmp/`](https://drive.google.com/drive/folders/1aBxm5r5m_8R-oO_03PMJtUH2BiUo6Omx) |
 | `slprj/`, `*.slxc`, `*_acc.*`, `*.mexw64` | Simulink derleme artıkları | Hiçbir yerde; ilk koşuda kendiliğinden oluşur |
+
+### Ümit'ten gelen teslimler (Drive)
+
+| Tarih | Teslim |
+|---|---|
+| 13.07.2026 | [`2026-07-13_senaryo_ekranlari`](https://drive.google.com/drive/folders/1P3gscVEbQTvOA5jCnRxAD12xTHL1hY9a) |
+| 18.07.2026 | [`2026-07-18_juri_yorumu_ve_deney_tablosu`](https://drive.google.com/drive/folders/13Nk3YdxKWrkCwVyEUqS_zDnC7Ahl8Jq_) |
+| 14.08.2026 | [`2026-08-14_simulasyon_aciklamalari`](https://drive.google.com/drive/folders/19wd9QwRnBSezNHRZqW5bpTScScPD2vsY) |
+| 17.08.2026 | [`2026-08-17_simulasyon_paketi_ve_tam_topoloji`](https://drive.google.com/drive/folders/1rFqqyLpEDPqG4gFZC3kOWs6VcLvqHmuu) |
+| 02.09.2026 | [`2026-09-02_lc_filtre_kaynagi`](https://drive.google.com/drive/folders/1j3D_EtyMYvbfOIOhAIShT4LfFqWj8QIT) |
+| 18.09.2026 | [`2026-09-18_l1_kayip_literatur_ozeti`](https://drive.google.com/drive/folders/1Dz2R6X7y_MLxoHk0rFh4VxvmYMqpTaMV) |
+| 06.10.2026 | [`2026-10-06_tez_06102026_paketi`](https://drive.google.com/drive/folders/1GI4Z5j0ljJy-MDkC8tyJW-uSlYeZDlv0) |
+| 12.10.2026 | [`2026-10-12_senaryo3_senaryo4_modelleri`](https://drive.google.com/drive/folders/1YfaHZuII7oi6kgTsx3aPdDFcmDBe5ffS) |
+
+### Koşu klasörleri ve sonuçları (Drive)
+
+| Koşu | İş paketi | Koşu klasörü | Sonuçlar |
+|---|---|---|---|
+| `2026-10-27_dort_senaryo_ilk_kosu` | İP-0 | [klasör](https://drive.google.com/drive/folders/173BhsLGAuikMHTaRmpQaGhY4ewXezzWj) | [`results/`](https://drive.google.com/drive/folders/1fw9_O8SlRvcXHZ0-Xkl9ougcCb9E6HeY) |
+| `2026-10-27_s2_kapi_onarimi` | İP-1 | [klasör](https://drive.google.com/drive/folders/1syjrpL3vmZtzhtmoUdfLVG-31IELCllW) | [`results/`](https://drive.google.com/drive/folders/1GzxcWVYuxdW7eYzQ_oeFclDvAqfus2m2) |
+| `2026-10-27_topoloji_denetimi` | İP-2 | [klasör](https://drive.google.com/drive/folders/1WeazrGLL40UqzywI1_QhdRKwPclYjkWv) | Yalnız `model/` |
+| `2026-10-27_diyot_esleme` | İP-2b | [klasör](https://drive.google.com/drive/folders/10UISlb7OwBFtGMqtV_mynSEDhz2IhAvr) | [`results/`](https://drive.google.com/drive/folders/1YiRT9S0ACZUdLyBxPmTQyU6lJNxTfJTn) |
+| `2026-10-27_q_isaret_dalga` | İP-3 | [klasör](https://drive.google.com/drive/folders/1LSm6wLr17T5wRWp2Jz-mZuFI4dbZ55Fk) | [`results/`](https://drive.google.com/drive/folders/16vXsvJoE0voG1cVZwG-GFiIJ0ycmRxV2) |
+| `2026-10-28_kalibrasyon` | İP-4 | [klasör](https://drive.google.com/drive/folders/1e1cbESa9Tf8DnUVCeJ4cifFIdCOCBy8g) | [`results/`](https://drive.google.com/drive/folders/1q_zBd43v_UBNXSz2LO64Z374Kq62r4FB) |
+| `2026-10-28_s4_kapali_cevrim` | İP-5 | [klasör](https://drive.google.com/drive/folders/1Frk_urBpJYRdku4g6eGH-GicWQLnPHQY) | [`results/`](https://drive.google.com/drive/folders/1xbeUiUIrVIPKSbICnAJ1p9v8lZGHUmZL) |
+| `2026-10-28_kararlilik` | İP-6 | [klasör](https://drive.google.com/drive/folders/1zoqPGfq-jWYopPK9Syx3F7jYNFi73rUw) | [`results/`](https://drive.google.com/drive/folders/1ClV5CVrdT9P3UQeVvpO3IsZSlv56cK3W) |
+| `2026-10-28_parametre_tablosu` | İP-7 | [klasör](https://drive.google.com/drive/folders/1jwK8C5FIrjaBs-EgzTvCBPNTAbV-d74r) | Yalnız `model/` |
+| `2026-10-29_tez_sekilleri` | İP-11 | [klasör](https://drive.google.com/drive/folders/1_Y7cH5BADaQ9Vbdjge66ffy92RJjR6Vu) | [`results/`](https://drive.google.com/drive/folders/10C8o9mjth7xDn9FxLurgbH7X-ErS9AZQ) |

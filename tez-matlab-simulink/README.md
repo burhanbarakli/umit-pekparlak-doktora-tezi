@@ -20,8 +20,9 @@ Komutlar proje kökünden (`tez-matlab-simulink/`) çalıştırılır:
 & "C:\Program Files\MATLAB\R2023b\bin\matlab.exe" -sd "<depo yolu>\tez-matlab-simulink" -batch "addpath('scripts'); run_tez_sekilleri_20261029('s2')"
 ```
 
-`runs/**/*.mat` (ör. `logsout.mat`, 0,8–1,8 GB) git'e girmez; ilgili betik yeniden
-koşturularak üretilir. Model kopyaları (`runs/*/model*/*.slx`, `*.m`) git'tedir.
+`runs/**/*.mat` (ör. `logsout.mat`, dosya başına 2,6 GB'a kadar) git'e girmez;
+[Drive'daki kopyadan](../README.md#koşu-klasörleri-ve-sonuçları-drive) alınır ya da ilgili betik
+yeniden koşturularak üretilir. Model kopyaları (`runs/*/model*/*.slx`, `*.m`) git'tedir.
 
 ## Eğitim/demo modelleri (Temmuz–Ağustos 2026, DENEME)
 
