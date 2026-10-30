@@ -14,6 +14,7 @@ tamamlama planını ve karar kayıtlarını bir arada tutar.
 | 📕 | **[Son tez, teslim sürümü (PDF)](https://github.com/burhanbarakli/umit-pekparlak-doktora-tezi/releases/download/tez-2026-10-29/tez_guncel_2026-10-29.pdf)** | 29.10.2026 · 226 sayfa · not kutuları kapalı |
 | 📘 | [Son tez, notlu sürüm (PDF)](https://github.com/burhanbarakli/umit-pekparlak-doktora-tezi/releases/download/tez-2026-10-29/tez_guncel_2026-10-29_notlu.pdf) | 230 sayfa · mavi "ÜMİT ABİ İÇİN NOT" kutuları açık |
 | 📄 | [İlk tez (Word)](https://github.com/burhanbarakli/umit-pekparlak-doktora-tezi/releases/download/tez-2026-10-29/ilk_tez_tez_tumu_8.docx) | Jüriye sunulan önceki sürüm, `tez_tumu_8.docx` |
+| ☁️ | **[Google Drive: projenin tamamı](https://drive.google.com/drive/folders/1uk3j-oKUFFW1R9Td8em1oIregaytZBYv)** | GitHub'a girmeyen ham arşivler, `.mat` dalga kayıtları, PDF'ler dahil (11,9 GB; aşağıdaki tablo) |
 | 🏷️ | [Bütün sürümler (Releases)](https://github.com/burhanbarakli/umit-pekparlak-doktora-tezi/releases) | PDF'ler depo geçmişini şişirmesin diye sürüm eki olarak tutulur |
 | ✍️ | [Tez kaynağı: `tez-latex-v2/`](tez-latex-v2/) | Ana yazım hattı |
 | 🔁 | [İlk tez ↔ son tez karşılaştırması](tez-tamamlama/03_ILK_TEZ_YENI_TEZ_KARSILASTIRMA.md) | Bölüm bölüm ne değişti |
@@ -180,11 +181,26 @@ modelleridir (tek faz, üç faz, kapalı çevrim, sıfır dizi geri beslemesi). 
 - [ ] Benzetim sayıları kalibre koşulara ve review notlarına dayanıyor; `DENEME` değer bulgu gibi sunulmuyor
 - [ ] Kapak, özet, summary ve özgeçmişte kimlik alanları tutarlı
 
-## Git'e girmeyenler
+## Git'e girmeyenler ve Google Drive
 
-| Ne | Neden | Nerede |
+GitHub'a girmeyen dosyalar Google Drive'daki proje kopyasındadır:
+**[Drive › ACADEMIC › 2026 ümit abi](https://drive.google.com/drive/folders/1uk3j-oKUFFW1R9Td8em1oIregaytZBYv)**.
+Drive klasörü depoyla aynı düzendedir; aşağıdaki yollar o klasöre göredir. Kopya 30.10.2026
+tarihlidir (commit `0da5bba` sonrası çalışma klasörü). Drive'da `.git` ve Simulink derleme
+artıkları yoktur.
+
+| Ne | Neden git dışında | Drive'daki yeri |
 |---|---|---|
-| `dosyalar/` ham arşivleri (RAR/ZIP/DOCX/PDF, ~1,3 GB) | Tekil dosyalar 100 MB'ı aşıyor; telifli kaynaklar ve kişisel yazışmalar | Yerel diskte; `.md` dizinleri git'te |
-| `runs/**/*.mat`, `logsout.mat` | 0,8–1,8 GB dalga kayıtları | Betik yeniden koşturularak üretilir |
-| `slprj/`, `*.slxc`, `*_acc.*`, `*.mexw64` | Simulink derleme artıkları | Kendiliğinden oluşur |
-| `build*/`, `main.pdf`, `tez_guncel_*.pdf` | Derleme çıktıları | PDF'ler [Releases](https://github.com/burhanbarakli/umit-pekparlak-doktora-tezi/releases) altında |
+| İlk tez, Word (`tez_tumu_8.docx`, 62 MB) | Büyük ikili dosya | `dosyalar/01_TAM_TEZ/` (ayrıca [Releases](https://github.com/burhanbarakli/umit-pekparlak-doktora-tezi/releases/tag/tez-2026-10-29)) |
+| İlk tezin bölüm arşivleri (`BOLUM1-4.rar`, `tez_tumu_8.rar`) | Tekil dosyalar 100 MB'ı aşıyor | `dosyalar/00_ORIJINAL_ARSIVLER/` |
+| Bölüm çalışmaları ve ham kaynak PDF'leri (~400 MB) | Telifli kaynaklar | `dosyalar/02_BOLUM_CALISMALARI/BOLUM_1…4/` |
+| SAÜ FBE tez kılavuzu, Word şablonu, teslim kontrol formu | Ham kaynak | `dosyalar/04_tez_şablon/` |
+| Sonradan gelenler: Senaryo arşivleri, EMF ekranlar, ana kaynak PDF | Ham kaynak | `dosyalar/05_sonradan_gelenler/` |
+| Ümit'ten gelen bütün teslimler (e-posta + Drive, tarih sıralı) | Kişisel yazışmalar, 100 MB'ı aşan ZIP | `dosyalar/06_UMIT_ABIDEN_GELENLER/<tarih>_<konu>/` (dizin: `00_INDEX.md`) |
+| Benzetim dalga kayıtları (`logsout.mat`, `sekil_kayit.mat`, `dalga.mat`…; 0,8–1,8 GB) | Boyut | `tez-matlab-simulink/runs/<koşu>/results/…` |
+| Ağustos sonuç yedeği | Yedek | `tez-matlab-simulink/results_yedek_2026-10-27/` |
+| Son tez PDF'leri (notsuz, notlu) ve tarihli derlemeler | Derleme çıktısı | `tez-latex-v2/tez_guncel_2026-10-29*.pdf`, `tez-latex-v2/build_2026-10-29/` (ayrıca [Releases](https://github.com/burhanbarakli/umit-pekparlak-doktora-tezi/releases/tag/tez-2026-10-29)) |
+| Çalışma kopyasının eski sürümleri (`tez_guncel_2026-08-*.pdf`, `historical_main.pdf`) | Derleme çıktısı | `tez-latex/` |
+| Jüri öneri PDF'i | Ham kaynak | `jüri istekleri/` |
+| Arşiv açma ve inceleme klasörü | Geçici | `tmp/` |
+| `slprj/`, `*.slxc`, `*_acc.*`, `*.mexw64` | Simulink derleme artıkları | Hiçbir yerde; ilk koşuda kendiliğinden oluşur |
