@@ -1,10 +1,36 @@
-# T-tipi evirici Simulink denemesi
+# Tez benzetim deposu (MATLAB R2023b / Simulink)
 
-Bu klasör, tezde tanımlanan T-tipi evirici, LCL filtre, düşük güç bozucu etkisi ve
-Sin³ kompanzasyon yolunu hızlıca sınamak için hazırlanmış ortalama değerli bir
-Simulink modelidir.
+## Güncel durum (29.10.2026): tezin dayandığı benzetimler
 
-## İçerik
+Tez sonuçları Ümit Pekparlak'ın 12.10.2026 dört senaryo paketine ve onun düzeltilmiş,
+kalibre kopyalarına dayanır. Aşağıdaki "Eğitim/demo modelleri" bölümü ve sonrası
+Temmuz–Ağustos 2026 deneme dönemine aittir.
+
+| Ne | Nerede |
+|---|---|
+| Ham paket (S1+S2, S3, S4) ve senaryo bazında bütün parametreler | [`incoming_real_data/models/2026-10-12_dort_senaryo_paketi/`](incoming_real_data/models/2026-10-12_dort_senaryo_paketi/README.md) |
+| Tezin son model seti (kalibre S1/S2/S3, S4 kapalı çevrim) | [`runs/2026-10-28_parametre_tablosu/model/tez/`](runs/2026-10-28_parametre_tablosu/model/tez/) |
+| Koşular (her klasörde README: amaç, model, parametre, komut, çıktı) | [`runs/`](runs/) |
+| Koşu kayıtları (kanıt döngüsü) | [`review/2026-10-27_*` … `2026-10-29_*`](review/) |
+| Düzeltme ve karar kayıtları | [`../tez-tamamlama/02_MODEL_DUZELTME_KAYDI.md`](../tez-tamamlama/02_MODEL_DUZELTME_KAYDI.md), [`01_KARAR_DEFTERI.md`](../tez-tamamlama/01_KARAR_DEFTERI.md) |
+
+Komutlar proje kökünden (`tez-matlab-simulink/`) çalıştırılır:
+
+```powershell
+& "C:\Program Files\MATLAB\R2023b\bin\matlab.exe" -sd "<depo yolu>\tez-matlab-simulink" -batch "addpath('scripts'); run_tez_sekilleri_20261029('s2')"
+```
+
+`runs/**/*.mat` (ör. `logsout.mat`, 0,8–1,8 GB) git'e girmez; ilgili betik yeniden
+koşturularak üretilir. Model kopyaları (`runs/*/model*/*.slx`, `*.m`) git'tedir.
+
+## Eğitim/demo modelleri (Temmuz–Ağustos 2026, DENEME)
+
+Bu klasördeki `models/` ve `parameters/` dosyaları, tezde tanımlanan T-tipi evirici,
+LCL filtre, düşük güç bozucu etkisi ve Sin³ kompanzasyon yolunu hızlıca sınamak için
+hazırlanmış ortalama değerli ve anahtarlamalı deneme modelleridir. Parametreleri
+`DENEME` işaretlidir ve tez bulgusu olarak kullanılmaz.
+
+### İçerik
 
 - `models/t_type_lcl_sin3_demo.slx`: otomatik üretilen Simulink modeli
 - `models/t_type_q1q4_switching_demo.slx`: Q1-Q4 IGBT'li Simscape Electrical faz kolu

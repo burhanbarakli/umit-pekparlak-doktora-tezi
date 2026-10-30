@@ -1,0 +1,5 @@
+% Teslim sürümü: "ÜMİT ABİ İÇİN NOT" kutuları (\umitnot) kapalı derlenir.
+% main.tex'e dokunmaz; \begin{document} anında \umitnotlarifalse uygular (K-28).
+% Derleme: build_notsuz.cmd -> build_notsuz/main_notsuz.pdf
+\AddToHook{begindocument/before}{\umitnotlarifalse}
+\input{main}
