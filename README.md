@@ -203,8 +203,9 @@ artıkları yoktur.
 | Son tez PDF'leri (notsuz, notlu) ve tarihli derlemeler | Derleme çıktısı | [`tez-latex-v2/`](https://drive.google.com/drive/folders/10OcFy1AUuCpRZmVZNr9Aj1bFcwuapMqN) içinde `tez_guncel_2026-10-29*.pdf`, [`build_2026-10-29/`](https://drive.google.com/drive/folders/1dPudYiM0DRU0kiDjZ49pchHeODVoo3BG) (ayrıca [Releases](https://github.com/burhanbarakli/umit-pekparlak-doktora-tezi/releases/tag/tez-2026-10-29)) |
 | Çalışma kopyasının eski sürümleri (`tez_guncel_2026-08-*.pdf`, `historical_main.pdf`) | Derleme çıktısı | [`tez-latex/`](https://drive.google.com/drive/folders/1uIOvbPi3e3wJsTzGyxUSvwvlz0HoIlKv) |
 | Jüri öneri PDF'i | Ham kaynak | [`jüri istekleri/`](https://drive.google.com/drive/folders/1Z3FNlXOZbUJj1ufY7Rr-827UZMZoUg7V) |
-| Arşiv açma ve inceleme klasörü | Geçici | [`tmp/`](https://drive.google.com/drive/folders/1aBxm5r5m_8R-oO_03PMJtUH2BiUo6Omx) |
-| `slprj/`, `*.slxc`, `*_acc.*`, `*.mexw64` | Simulink derleme artıkları | Hiçbir yerde; ilk koşuda kendiliğinden oluşur |
+| Arşiv açma ve inceleme klasörü | Geçici | [`tmp/`](https://drive.google.com/drive/folders/1aBxm5r5m_8R-oO_03PMJtUH2BiUo6Omx), [`tez-matlab-simulink/tmp/`](https://drive.google.com/drive/folders/1BDf21mjokB8IChiWYoIMN9SnWWLHmzQd) |
+| Model dönüştürme çıktısı (`*.slx.r2023b`) | Geçici | [`matlab_ascii_work/`](https://drive.google.com/drive/folders/18XPp3XccXfU8htNV1JiecK3o6djZpiIB) |
+| `slprj/`, `*.slxc`, `*_acc.*`, `*.mexw64`, `*.mexa64` | Simulink derleme artıkları (1.538 dosya, 94 MB) | Hiçbir yerde; ilk koşuda kendiliğinden oluşur |
 
 ### Ümit'ten gelen teslimler (Drive)
 
