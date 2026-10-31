@@ -7,6 +7,9 @@ güç performansını iyileştiren anahtarlama ve Sin³ tabanlı kompanzasyon y�
 Depo; tezin LaTeX kaynağını, MATLAB/Simulink benzetim modellerini ve koşu kayıtlarını,
 tamamlama planını ve karar kayıtlarını bir arada tutar.
 
+> **Ümit Abi, buradan başlayın: [Ümit Abi için rehber](UMIT_ABI_ICIN_REHBER.md).** Depoda neyin
+> nerede olduğunu, modellerin nasıl açıldığını, çelişkileri ve kararı size ait noktaları anlatır.
+
 ## Hızlı bağlantılar
 
 | | Belge | Not |
