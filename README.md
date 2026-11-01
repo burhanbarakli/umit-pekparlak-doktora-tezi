@@ -14,8 +14,8 @@ tamamlama planını ve karar kayıtlarını bir arada tutar.
 
 | | Belge | Not |
 |---|---|---|
-| 📕 | **[Son tez, teslim sürümü (PDF)](https://github.com/burhanbarakli/umit-pekparlak-doktora-tezi/releases/download/tez-2026-10-29/tez_guncel_2026-10-29.pdf)** | 29.10.2026 · 226 sayfa · not kutuları kapalı |
-| 📘 | [Son tez, notlu sürüm (PDF)](https://github.com/burhanbarakli/umit-pekparlak-doktora-tezi/releases/download/tez-2026-10-29/tez_guncel_2026-10-29_notlu.pdf) | 230 sayfa · mavi "ÜMİT ABİ İÇİN NOT" kutuları açık |
+| 📕 | **[Son tez, teslim sürümü (PDF)](https://github.com/burhanbarakli/umit-pekparlak-doktora-tezi/releases/download/tez-2026-11-01/tez_guncel_2026-11-01.pdf)** | 01.11.2026 · 222 sayfa · not kutuları kapalı |
+| 📘 | [Son tez, notlu sürüm (PDF)](https://github.com/burhanbarakli/umit-pekparlak-doktora-tezi/releases/download/tez-2026-11-01/tez_guncel_2026-11-01_notlu.pdf) | 224 sayfa · mavi "ÜMİT ABİ İÇİN NOT" kutuları açık |
 | 📄 | [İlk tez (Word)](https://github.com/burhanbarakli/umit-pekparlak-doktora-tezi/releases/download/tez-2026-10-29/ilk_tez_tez_tumu_8.docx) | Jüriye sunulan önceki sürüm, `tez_tumu_8.docx` |
 | ☁️ | **[Google Drive: projenin tamamı](https://drive.google.com/drive/folders/1uk3j-oKUFFW1R9Td8em1oIregaytZBYv)** | GitHub'a girmeyen ham arşivler, `.mat` dalga kayıtları, PDF'ler dahil (11,9 GB; aşağıdaki tablo) |
 | 🏷️ | [Bütün sürümler (Releases)](https://github.com/burhanbarakli/umit-pekparlak-doktora-tezi/releases) | PDF'ler depo geçmişini şişirmesin diye sürüm eki olarak tutulur |
@@ -161,7 +161,7 @@ modelleridir (tek faz, üç faz, kapalı çevrim, sıfır dizi geri beslemesi). 
 
 - İP-0 … İP-13 tamamlandı: dört senaryo düzeltildi ve kalibre edildi, S4 kapalı çevrim ve
   kararlılık analizi yapıldı, tek parametre tablosu kuruldu, bütün `\eksikistek` barları kapandı.
-- Son derleme: notlu 230, notsuz 226 sayfa; tanımsız atıf ve taşma yok.
+- Son derleme: notlu 224, notsuz 222 sayfa; tanımsız atıf ve taşma yok.
 - İP-14 (yapı hakem önerileri) tez sahibinin kararını bekliyor.
 
 ## Yapılacaklar (teslim öncesi)

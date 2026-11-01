@@ -29,8 +29,7 @@ cd tez-latex-v2
 ```
 
 Çıktı `build/main.pdf`. Şekiller çoğaltılmadı: `\graphicspath` önce yerel
-`figures/`, sonra `../tez-latex/figures/` deposunu okur; Senaryo ekranları
-`../dosyalar/05_sonradan_gelenler/` ve MATLAB sonuçları
+`figures/`, sonra `../tez-latex/figures/` deposunu okur; MATLAB sonuçları
 `../tez-matlab-simulink/results/` altından göreli yolla gelir. Bu yüzden
 klasör tek başına taşınamaz; proje köküyle birlikte taşınmalıdır.
 

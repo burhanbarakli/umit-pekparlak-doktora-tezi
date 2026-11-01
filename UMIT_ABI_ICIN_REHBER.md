@@ -6,9 +6,9 @@ Yazılımcı olmanız gerekmiyor. Tezi okumak için hiçbir şey kurmanız da ge
 ## 1. Önce bunları yapın
 
 1. **Notlu PDF'i açın:**
-   [Son tez, notlu sürüm](https://github.com/burhanbarakli/umit-pekparlak-doktora-tezi/releases/download/tez-2026-10-29/tez_guncel_2026-10-29_notlu.pdf)
-   (230 sayfa, 75 MB). Depoya `upekparlak` hesabıyla giriş yapmış olmanız gerekir.
-2. **Mavi kutuları okuyun.** "ÜMİT ABİ İÇİN NOT" yazan 5 kutu var; yerleri aşağıda
+   [Son tez, notlu sürüm](https://github.com/burhanbarakli/umit-pekparlak-doktora-tezi/releases/download/tez-2026-11-01/tez_guncel_2026-11-01_notlu.pdf)
+   (224 sayfa, 18 MB). Depoya `upekparlak` hesabıyla giriş yapmış olmanız gerekir.
+2. **Mavi kutuları okuyun.** "ÜMİT ABİ İÇİN NOT" yazan 3 kutu var; yerleri aşağıda
    [Bölüm 4](#4-mavi-notlar-çelişkiler)'te. Teslim sürümünde görünmezler.
 3. **[Bölüm 5](#5-kararı-size-ait-olanlar)'teki kararlara bakın.** Teslimden önce sizden
    gelmesi gereken bilgiler orada.
@@ -19,8 +19,8 @@ Yazılımcı olmanız gerekmiyor. Tezi okumak için hiçbir şey kurmanız da ge
 
 | Belge | Ne için |
 |---|---|
-| [Notlu PDF](https://github.com/burhanbarakli/umit-pekparlak-doktora-tezi/releases/download/tez-2026-10-29/tez_guncel_2026-10-29_notlu.pdf) | Sizin için hazırlanan sürüm; mavi kutular açık |
-| [Teslim PDF'i](https://github.com/burhanbarakli/umit-pekparlak-doktora-tezi/releases/download/tez-2026-10-29/tez_guncel_2026-10-29.pdf) | Mavi kutular kapalı, 226 sayfa |
+| [Notlu PDF](https://github.com/burhanbarakli/umit-pekparlak-doktora-tezi/releases/download/tez-2026-11-01/tez_guncel_2026-11-01_notlu.pdf) | Sizin için hazırlanan sürüm; mavi kutular açık |
+| [Teslim PDF'i](https://github.com/burhanbarakli/umit-pekparlak-doktora-tezi/releases/download/tez-2026-11-01/tez_guncel_2026-11-01.pdf) | Mavi kutular kapalı, 222 sayfa |
 | [İlk tez (Word)](https://github.com/burhanbarakli/umit-pekparlak-doktora-tezi/releases/download/tez-2026-10-29/ilk_tez_tez_tumu_8.docx) | Jüriye sunulan önceki sürüm |
 
 ## 2. Depoda ne var
@@ -97,30 +97,30 @@ Sayfa numaraları notlu PDF'in görüntüleyicide gösterdiği sayfadır.
 
 | PDF sayfası | Not | Kısaca |
 |---|---|---|
-| 102 | S1 THD: deney %15, ilk tez %2,1, yeni tez %39,5 | Üç farklı değerin nereden geldiği |
-| 103 | Tablodaki değerler ilk tezin benzetim değerleridir | Ekran tablosu kalibre değil; karşılaştırma kalibre modelden yapıldı |
-| 111 | Karar: S1 karışıklığı tez iddiasını etkiler mi? | Ana iddialar etkilenmiyor; iki cümle için A/B seçimi burada |
-| 127 | İstenen THD sınırına ulaşıldı mı? | Standart sınırlarıyla karşılaştırma; tezin metninde yok, yalnız bilgi için |
-| 166 | S1 deney satırı: analizör ekranındaki çelişki | %15 THD ile aynı ekrandaki PF = 0,921 birbirini tutmuyor |
+| 102 | S1 THD: mailinizdeki değerlendirme işlendi | Maile göre tezde neyin değiştiği |
+| 118 | İstenen THD sınırına ulaşıldı mı? | Standart sınırlarıyla karşılaştırma; tezin metninde yok, yalnız bilgi için |
+| 160 | Jüri sorusuna hazırlık: S1 THD | "Model %40, deney %15" ve "PF 0,921" sorularının cevabı |
 
-**En önemli çelişki S1 THD'sidir.** Deney tablosunda %15 yazıyor. Aynı analizör aynı anda
-PF = 0,921 ve cosφ = 1,000 gösteriyor; bu ikisi ancak yaklaşık %42 THD ile mümkün. Model
-%39,5 veriyor ve PF'yi deneye %0,8 yakın buluyor. Bu nedenle %15 tezde bulgu olarak kullanılmadı.
-İlk tezdeki %2,1 ise desteklenmedi.
+**Mailiniz tezde şöyle işlendi:**
 
-**Anlatı değişti:** "Klasik anahtarlamanın akım kalitesi iyi, susturma bozuyor" anlatısı
-doğrulanmadı. Klasik anahtarlama da düşük güçte yüksek THD'lidir. Ters akım mekanizması ve
-verim artışının yönü doğrulandı.
+- Deneysel THDi %15 kabul edildi, PF değerlendirmeye alınmadı.
+- Osilogram hesabınız doğrulandı. Faz akımı izleri sayısallaştırıldı: S1 yaklaşık %21, S2 yaklaşık %47,
+  S3 yaklaşık %12 (Tablo 6.10). Üçüncü harmonik S2'de yaklaşık %47, S3'te yaklaşık %9.
+- Tablo 5.4'ün yeni karşılığı Tablo 6.4'tür: yalnız faz akımı THD'si, L1 sütunları yok.
+- Temmuz benzetiminin ekranları, FFT şekilleri ve değerleri tezden çıkarıldı.
+- Benzetim yaklaşık değerlerle kaldı, model yeniden ayarlanmadı. S1 dalga biçimi farkı ve şebeke THDv
+  etkisi Kesim 6.10'da yazılıdır. Yeni olumlu sonuç: verim ve THD sıralaması modelde ve deneyde aynıdır.
 
-**Jüri sorusuna hazırlık:** "Model %40 veriyor, deney %15; model yanlış değil mi?" sorusunun
-yanıtı sayfa 111'de yazılı.
+**İki noktaya dikkat:**
+
+- Mailinizin 4. maddesi Temmuz benzetimine uyar. Kalibre modelde THD üç senaryoda da deneyden
+  yüksektir, düşük değildir. THDv etkisi tezde yön belirtilmeden yazıldı.
+- PF tezden çıktı ama jüri özet tablodan `P/(VI) = 0,922` hesabını yapabilir. Cevabı sayfa 160'tadır.
 
 ## 5. Kararı size ait olanlar
 
 - [ ] **Öğrenci numarası, savunma tarihi, onay sayfası jürisi.** Arşivde olmadığı için boş
       bırakıldı, uydurulmadı. Şu an yer tutucu olarak duruyor (PDF sayfa 3, 5, 7).
-- [ ] **"%15'ten %47'ye" geçen iki cümle.** Seçenek A olduğu gibi kalır, seçenek B açıklamalı
-      biçime çevrilir. Önerilen B. Metinler PDF sayfa 111'de.
 - [ ] **Yapı önerileri.** Bağımsız bir okuma, ana metnin yaklaşık 166 sayfadan 145–150 sayfaya
       inebileceğini gösterdi (kalibrasyonu öne almak, uzun tabloları eke taşımak). Henüz uygulanmadı:
       [hakem raporu](tez-tamamlama/04_YAPI_HAKEM_RAPORU.md).
@@ -146,11 +146,12 @@ Bunların hepsi tezde sınırlılık olarak yazılıdır; gizlenmedi.
 
 | Konu | Durum | Bakılacak yer |
 |---|---|---|
+| S1 THD ve dalga biçimi | Model %39,5, deney %15; modelde sivri tepe, osilogramda kambur. Yaklaşık değer olarak yazıldı | Kesim 6.10, Bölüm 8 |
 | S2 uyumu | Model deneyden %3,7 fazla akım, 9,7 puan fazla THD veriyor; kalibrasyonla kapanmıyor | Kesim 6.10 |
 | S1 verimi | Model %91,15, deney %92,5; 24,0 W ile 19,7 W kayıp farkı açıklanamadı | Kesim 6.10 |
 | Anma akımı DA barası | 25 A sonuçları 2 × 5,6 mF ile; deney donanımının 470 µF barası 25 A için yetersiz | D-11, Bölüm 8 |
 | L2 değeri | Tezde 1000 µH (12.10 dosyası); 22.08 parametreleri ve senaryo ekranlarında 200 µH | Bölüm 3, Bölüm 8 |
-| Sin³ anma akımında | 2,3 A'ya kalibre edildiği için 25 A'da 3. harmoniği artırıyor | PDF sayfa 127 |
+| Sin³ anma akımında | 2,3 A'ya kalibre edildiği için 25 A'da 3. harmoniği artırıyor | PDF sayfa 118 |
 | Sayısal gerçekleme | S4 analog eşdeğer olarak modellendi; bir periyot gecikmeli sayısal uygulamada L1 geri beslemesi kararsız, etkin sönümleme gerekir | K-19, Bölüm 8 |
 | Anma gücünde deney | Deneyler yalnız yaklaşık 2,3 A'da; 25 A benzetimdir | K-08, Bölüm 8 |
 | Ham kayıt | Deneyin ham kayıtları ve protokolü yok; özet tablo ve ekranlar kullanıldı | K-10, Bölüm 6 |

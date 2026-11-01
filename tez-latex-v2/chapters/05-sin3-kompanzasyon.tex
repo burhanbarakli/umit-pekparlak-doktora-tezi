@@ -1,7 +1,7 @@
 \chapter{SİN\texorpdfstring{\textsuperscript{3}}{3} TABANLI İLERİ BESLEME KOMPANZASYONU VE KAPALI ÇEVRİM ANALİZİ}
 \label{chap:sin3}
 
-Bölüm~\ref{chap:anahtarlama}, nötr anahtar susturma yönteminin ters akım dolaşımını keserek düşük güç verimini artırdığını, karşılığında akımı süreksiz iletime zorlayıp özellikle üçüncü harmoniği büyüttüğünü göstermiştir: yaklaşık \SI{2.3}{\ampere} faz akımında şebeke akımı THD'si deneyde \%47'ye, kalibre benzetimde \%56,7'ye çıkmaktadır (Tablo~\ref{tab:kalibrasyon-karsilastirma}). Bölüm~\ref{chap:sin3}, harmonik cezayı azaltmak için tezin ikinci katkısı olan Sin\textsuperscript{3} tabanlı ileri besleme kompanzasyonunu ele almaktadır; susturma ile birlikte kullanılan terim, deneyde THD'yi \%14'e indirmektedir (Kesim~\ref{sec:kalibrasyon}). Bölümün amacı, THD iyileşmesinin arkasındaki matematiksel yapıyı kurmak; Sin\textsuperscript{3} teriminin benzetim modelindeki biçimini ve kompanzasyon katsayılarını doğru trigonometrik özdeşlikle vermek; ardından akım geri beslemeli Senaryo~4 (S4) modelinde düşük, orta ve anma akımında kapalı çevrim başarımını ve kararlılığı göstermektir. Sin\textsuperscript{3} teriminin bir denetleyici değil, modülasyon toplamına çevrim dışından eklenen bir ileri besleme girişi olduğu ve kararlılık marjlarını değiştirmediği Kesim~\ref{sec:kararlilik-bode} altında analitik, frekans alanı ve zaman alanı kanıtlarıyla gösterilmektedir.
+Bölüm~\ref{chap:anahtarlama}, nötr anahtar susturma yönteminin ters akım dolaşımını keserek düşük güç verimini artırdığını, karşılığında akımı süreksiz iletime zorlayıp özellikle üçüncü harmoniği büyüttüğünü göstermiştir: yaklaşık \SI{2.3}{\ampere} faz akımında şebeke akımı THD'si deneyde \%15'ten \%47'ye, kalibre benzetimde \%39,5'ten \%56,7'ye çıkmaktadır (Tablo~\ref{tab:kalibrasyon-karsilastirma}). Bölüm~\ref{chap:sin3}, harmonik cezayı azaltmak için tezin ikinci katkısı olan Sin\textsuperscript{3} tabanlı ileri besleme kompanzasyonunu ele almaktadır; susturma ile birlikte kullanılan terim, deneyde THD'yi \%14'e, yani klasik anahtarlama düzeyine indirmektedir (Kesim~\ref{sec:kalibrasyon}). Bölümün amacı, THD iyileşmesinin arkasındaki matematiksel yapıyı kurmak; Sin\textsuperscript{3} teriminin benzetim modelindeki biçimini ve kompanzasyon katsayılarını doğru trigonometrik özdeşlikle vermek; ardından akım geri beslemeli Senaryo~4 (S4) modelinde düşük, orta ve anma akımında kapalı çevrim başarımını ve kararlılığı göstermektir. Sin\textsuperscript{3} teriminin bir denetleyici değil, modülasyon toplamına çevrim dışından eklenen bir ileri besleme girişi olduğu ve kararlılık marjlarını değiştirmediği Kesim~\ref{sec:kararlilik-bode} altında analitik, frekans alanı ve zaman alanı kanıtlarıyla gösterilmektedir.
 
 \section{Sin\texorpdfstring{\textsuperscript{3}}{3} Bileşeninin Matematiksel Tanımı}
 
@@ -229,32 +229,7 @@ Denetleyicinin devre dışı bırakılıp yalnız ileri besleme katsayısının 
   \label{fig:s3-kalibre-l1}
 \end{figure}
 
-Senaryo~3 benzetim ekranları, kalibre edilmemiş modülasyon değerleriyle üretilmiş bir nitel kanıt kümesidir. Şekil~\ref{fig:sin3-dort-kanal} gerilim ve akım kanallarını ortak zaman ekseninde; Şekil~\ref{fig:sin3-l1-fft} ile Şekil~\ref{fig:sin3-iout-fft} iki akım ölçüm noktasındaki harmonik sonuçları göstermektedir.
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.98\textwidth]{../dosyalar/05_sonradan_gelenler/Senaryo_3/dalga_sekilleri_s3.jpg}
-  \caption{Sin\textsuperscript{3} kompanzasyonlu yöntemde filtre girişi gerilimi, filtrelenmiş gerilim, $L_1$ akımı ve çıkış akımı (Senaryo~3).}
-  \label{fig:sin3-dort-kanal}
-\end{figure}
-
-Şekil~\ref{fig:sin3-dort-kanal} üzerinde, susturma yönteminin Şekil~\ref{fig:susturma-dort-kanal} üzerindeki belirgin zarf bozulması kompanzasyon sonrasında azalmıştır; çıkış akımı ise klasik yöntemdeki kadar sinüzoidal hâle gelmemiştir. Görsel karşılaştırma, aynı analiz penceresindeki FFT değerleriyle birlikte okunmalıdır.
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.98\textwidth]{../dosyalar/05_sonradan_gelenler/Senaryo_3/THD_IL1.jpg}
-  \caption{Sin\textsuperscript{3} kompanzasyonlu yöntemde $L_1$ akımı FFT sonucu: temel bileşen \SI{3.752}{\ampere}, $\mathrm{THD}_{L1}=\%9{,}46$ (Senaryo~3).}
-  \label{fig:sin3-l1-fft}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.98\textwidth]{../dosyalar/05_sonradan_gelenler/Senaryo_3/THD_Iout.jpg}
-  \caption{Sin\textsuperscript{3} kompanzasyonlu yöntemde çıkış akımı FFT sonucu: temel bileşen \SI{3.766}{\ampere}, $\mathrm{THD}_{\mathrm{out}}=\%7{,}79$ (Senaryo~3).}
-  \label{fig:sin3-iout-fft}
-\end{figure}
-
-Senaryo~3 ekranlarında $L_1$ THD değeri susturma durumundaki \%46,86'dan \%9,46'ya, çıkış THD değeri ise \%46,35'ten \%7,79'a düşmüştür. Sonuç, Sin\textsuperscript{3} yolunun üçüncü harmonik cezasını önemli ölçüde azalttığını destekler. Klasik çıkış THD değerinin \%2,14 olması, kompanzasyonlu yöntemin harmonik bakımından klasik yöntemi geçmediğini de açıkça gösterir. Ekranlardaki \%93,70 verim değeri, ekranın ait olduğu modelin kayıp ayrıştırması mevcut olmadığından yeniden üretilmiş bir sonuç değildir. Deney özetinin S1--S3 noktalarına kalibre edilmiş benzetim modelinin verim ve THD karşılaştırması Kesim~\ref{sec:kalibrasyon} altında verilmektedir; kalibre S3 modeli deneydeki \%14 akım THD'sini \%14,8 ile yeniden üretmektedir.
+Kalibre S3 modeli deneydeki \%14 akım THD'sini \%14,8 ile yeniden üretmektedir (Kesim~\ref{sec:kalibrasyon}). Deneyde susturma THD'yi \%15'ten \%47'ye çıkarmış, Sin\textsuperscript{3} terimi \%14'e indirmiştir; S3, klasik anahtarlamanın harmonik düzeyine dönerken verimi klasik anahtarlamadan 2,0 puan yüksek tutmaktadır. Sonuç, Sin\textsuperscript{3} yolunun üçüncü harmonik cezasını önemli ölçüde azalttığını destekler. Deneylerin DA bara ve faz gerilimleri aynı olmadığından karşılaştırma tek değişkenli değildir (Tablo~\ref{tab:deney-kosullari}).
 
 \section{Senaryo~4: Akım Geri Beslemeli Kapalı Çevrim}
 \label{sec:s4-kapali-cevrim}

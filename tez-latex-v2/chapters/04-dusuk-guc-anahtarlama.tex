@@ -1,7 +1,7 @@
 \chapter{DÜŞÜK GÜÇ ANALİZİ VE YENİ ANAHTARLAMA YÖNTEMİ}
 \label{chap:anahtarlama}
 
-Bölüm~\ref{chap:sistem}, T-tipi faz kolunun gerilim durumlarını, akım yollarını, düşük güçteki senkron-buck eşdeğerini, LCL filtre modelini ve düzeltilmiş benzetim modelini ortak taban olarak kurmuştur. Bölüm~\ref{chap:anahtarlama}, aynı taban üzerinde tezin ilk katkısını, nötr anahtar susturma yöntemini ele almaktadır: ters akımın oluşumu incelenmekte, klasik anahtarlama (S1) ile önerilen yöntem (S2) karşılaştırılmaktadır. Karşılaştırma üç kanıt türüne dayanır: laboratuvar deney özet tablosu, deneyin etkin ve reaktif gücüne kalibre edilmiş benzetim modeli ve senaryo ekran kayıtları. Üç kanıt türü ayrı raporlanmıştır.
+Bölüm~\ref{chap:sistem}, T-tipi faz kolunun gerilim durumlarını, akım yollarını, düşük güçteki senkron-buck eşdeğerini, LCL filtre modelini ve düzeltilmiş benzetim modelini ortak taban olarak kurmuştur. Bölüm~\ref{chap:anahtarlama}, aynı taban üzerinde tezin ilk katkısını, nötr anahtar susturma yöntemini ele almaktadır: ters akımın oluşumu incelenmekte, klasik anahtarlama (S1) ile önerilen yöntem (S2) karşılaştırılmaktadır. Karşılaştırma iki kanıt türüne dayanır: laboratuvar deney özet tablosu ve deneyin etkin ve reaktif gücüne kalibre edilmiş benzetim modeli. İki kanıt türü ayrı raporlanmıştır.
 
 T-tipi dönüştürücünün düşük güç bölgesindeki davranışı, yalnızca aktarılan aktif gücün azalmasıyla açıklanamaz. Modülasyon indeksinin küçülmesi aktif gerilim durumlarının süresini azaltırken sıfır durumunun ve nötr kol üzerinden gerçekleşen serbest dolaşımın payını artırır. Endüktör akımı bir anahtarlama periyodu içinde sıfıra ulaştığında klasik senkron anahtarlama ters yönde akıma izin verebilir. Yararlı çıkış gücüne katkı sağlamayan ters akım, yarı iletkenlerin ve filtre elemanlarının RMS akımını artırarak hafif yük verimini düşürür. Ters akım yolunun kesilmesi ise süreksiz iletime ve akım dalga biçiminde özellikle üçüncü harmonik bileşenin büyümesine neden olabilir. Düşük güçteki temel tasarım problemi, verim kazancı ile harmonik bozulma arasındaki ödünleşimin yönetilmesidir.
 
@@ -165,15 +165,15 @@ Kesim, S1 ile S2'yi deneyin etkin ve reaktif gücüne kalibre edilmiş benzetim 
 
 Tablo~\ref{tab:kalibrasyon-karsilastirma} içindeki S1 ve S2 sütunları üç bulguyu destekler. Birinci bulgu verimdir. Susturma, kalibre benzetimde verimi \%91,15'ten \%93,93'e, yani 2,78 puan artırır; deneyde artış \%92,5'ten \%94,2'ye, 1,7 puandır. Verim sıralaması benzetim ile deneyde aynıdır. Modelin artışı fazla göstermesinin kaynağı S1 verimindeki $-1{,}35$ puanlık sapmadır: S1 kaybı benzetimde \SI{24.0}{\watt}, deneyde \SI{19.7}{\watt}'tır. S2'de ise model DA gücünü \%0,004, verimi $-0{,}27$ puan hatayla yeniden üretir. S1 kayıp farkı açıklanamamıştır; klasik anahtarlama için blok bazında kayıp ayrıştırması yapılmamıştır ve fark diyot toparlanma parametrelerine duyarlıdır (Kesim~\ref{sec:dusuk-akim-modelleme}). Verim farkının belirsizliği, 0,1 saniyedeki oturma farkı nedeniyle S2 için yaklaşık 0,1 puandır.
 
-İkinci bulgu harmonik cezadır. Susturma, şebeke akımı THD'sini benzetimde \%39,5'ten \%56,7'ye, deneyde \%15'ten \%47'ye yükseltir; iki kaynakta da S2 en yüksek THD'li senaryodur. Mutlak THD değerleri ise iki kaynak arasında uyuşmaz. S1 deney satırı kendi içinde tutarsızdır: deneyin $\mathrm{PF}=0{,}922$ değeri cos$\varphi_1=1$ ile ancak yaklaşık \%42 THD varsa tutarlıdır. Modelin PF değeri deneyle \%0,8 içinde, THD'si \%39,5'tir; model deney satırının etkin gücü, gerilimi ve akımıyla tutarlıdır, \%15 THD girdisiyle değildir. S2'de model deneyden \%3,7 fazla şebeke akımı ve 9,7 puan fazla THD verir; PF'deki $-\%3{,}4$ fark aynı farkın sonucudur. Fark iki serbest değişkenli kalibrasyonla kapanmaz ve sınırlılık olarak raporlanmıştır: sıfır geçişi çevresindeki süreksiz iletim ayrıntısı, modelde bulunmayan IGBT çıkış kapasitesi ve sürücü gecikmeleriyle etkilenebilir.
+İkinci bulgu harmonik cezadır. Susturma, şebeke (faz) akımı THD'sini deneyde \%15'ten \%47'ye, kalibre benzetimde \%39,5'ten \%56,7'ye yükseltir; artış iki kaynakta aynı yöndedir ve iki kaynakta da S2 en yüksek THD'li senaryodur. Deney değerleri AA analizörünün kayıt süresi boyunca izlenen THDi değerleridir ve osiloskop kayıtlarından hesaplanan değerlerle uyumludur (Tablo~\ref{tab:thd-kaynaklar}). Benzetimin mutlak THD değerleri yaklaşık değerlerdir: model S3'te deneye çok yakındır, S2'de 9,7 puan, S1'de 24,5 puan yüksek değer verir. S2'de model deneyden \%3,7 fazla şebeke akımı da vermektedir. Farklar iki serbest değişkenli kalibrasyonla kapanmaz; dalga biçimi karşılaştırması ve olası kaynaklar Kesim~\ref{sec:kalibrasyon} altında ele alınmaktadır.
 
-\umitnot{S1 THD: deney \%15, ilk tez \%2,1, yeni tez \%39,5}{%
+\umitnot{S1 THD: mailinizdeki değerlendirme işlendi}{%
 \begin{itemize}\setlength{\itemsep}{1pt}
-  \item \textbf{Deneydeki \%15 tutarlı değil.} Değer, EMK-01 analizörünün şebeke tarafındaki THDi okumasıdır. Aynı analizör aynı anda PF $=0{,}921$ ve cos$\varphi=1{,}000$ gösteriyor; iki okuma birlikte ancak yaklaşık \%42 THD ile mümkündür. THD gerçekten \%15 olsaydı PF 0,989 ve etkin güç yaklaşık \SI{268}{\watt} olurdu, kayıtta \SI{249.6}{\watt} var. Aynı denetim S2'de tutarlı (\%47 kayıt, PF'den yaklaşık \%48), S3'te yakın (\%14 kayıt, PF'den yaklaşık \%19); tutarsızlık yalnız S1 satırında. Analizör ekranındaki ayrıntı Kesim~\ref{sec:kalibrasyon} notunda.
-  \item \textbf{İlk tezde yanlış sütun karşılaştırılmış.} İlk tezin Tablo~5.4'ü deneyin \%15'ini ``THDi (L1)'' sütununa koyup benzetimin $L_1$ akımı değeriyle (\%8,3) yan yana veriyor. EMK-01, $L_1$ akımını değil şebeke akımını ölçer; doğru karşılık benzetimin faz akımı değeri \%2,1'dir. İlk tezde deney ile benzetim arasında 13 puan fark vardır.
-  \item \textbf{\%2,1 ile \%39,5 arasındaki fark model sürümünden geliyor.} \%2,1, Temmuz 2026 senaryo ekranlarının modeline aittir. 12.10 paketindeki model hiç değiştirilmeden koşturulunca S1 THD'si \%37,4 çıkıyor; düzeltmeler (D-08, D-09) ve kalibrasyon sonrasında \%39,5 oluyor. Düzeltme ve kalibrasyonun payı yaklaşık 2 puandır. Temmuz modeli elde olmadığından iki sürüm arasındaki parametre farkı ayrıştırılamadı.
-  \item \textbf{Benzetimdeki bozulma düşük mertebeli.} Kalibre S1'de şebeke akımı THD'si 31. harmoniğe kadar \%39,2, bütün bantta \%39,5; anahtarlama dalgalanması belirleyici değil. Fiziksel neden: \SI{2.3}{\ampere}'de yaklaşık \SI{9}{\ampere} tepe--tepe $L_1$ dalgalanması akımı her periyotta ters yöne geçirir (Şekil~\ref{fig:s1-s2-kalibre-l1}) ve ölü zaman hatası her periyotta devreye girer.
-  \item \textbf{Tezdeki yeri.} S1 deney satırının tutarsızlığı Kesim~\ref{sec:kalibrasyon} ve Bölüm~\ref{chap:sonuc} sınırlılıklarında yazılıdır; \%15 bulgu olarak kullanılmamıştır. S1 klasik modda ham analizör kaydı ya da harmonik spektrumu bulunursa tutarsızlık doğrudan çözülebilir. Tez iddialarına etkisi ve iki cümle için karar notu bölüm sonundadır.
+  \item \textbf{Deney değeri.} Deneysel THDi \%15 kabul edildi, PF değerlendirmeye alınmadı. Metindeki ``tutarsızlık'' ve ``\%42'' ifadeleri kaldırıldı. Önceki A/B kararı da kapandı: cümleler ``\%15'ten \%47'ye'' biçiminde kaldı.
+  \item \textbf{Osilogram hesabınız doğrulandı.} İlk tezin Şekil~5.18'indeki faz akımı izi sayısallaştırıldı: S1 yaklaşık \%21. Aynı yöntem S2'de yaklaşık \%47, S3'te yaklaşık \%12 verdi (Tablo~\ref{tab:thd-kaynaklar}).
+  \item \textbf{Tablo~5.4.} Yeni tezdeki karşılığı Tablo~\ref{tab:deney-dusuk-guc-ozeti}: yalnız faz akımı THD'si var, $L_1$ sütunları yok, benzetim sütununda S1 için \%39,5 yazıyor.
+  \item \textbf{Temmuz benzetimi.} Senaryo ekranları, FFT şekilleri ve değerleri (\%2,1; \%8,3; \%46,3; \%7,8) Bölüm~\ref{chap:anahtarlama} ve Bölüm~\ref{chap:sin3}'ten çıkarıldı.
+  \item \textbf{Benzetim.} Model yeniden ayarlanmadı. S1'in \%39,5 değeri yaklaşık değer olarak yazıldı; dalga biçimi farkı ve şebeke THDv etkisi Kesim~\ref{sec:kalibrasyon} içinde.
 \end{itemize}}
 
 Üçüncü bulgu, susturmanın köprü davranışını değiştirmesidir. Kutup geriliminin ara seviyede kaldığı zaman oranı S1'de \%0,5, S2'de \%12,4'tür; susturmalı köprü düşük akımda akım kaynağına yaklaşır ve etkin güç modülasyon genliğine daha duyarlı hâle gelir (Tablo~\ref{tab:kopru-ic-empedansi}). Kalibre S2 genliğinin parametre dosyasındaki ilk değerden \%3,3 düşük olması da aynı davranışın sonucudur.
@@ -194,101 +194,6 @@ Tablo~\ref{tab:kalibrasyon-karsilastirma} içindeki S1 ve S2 sütunları üç bu
   \label{fig:s1-s2-kalibre-dalga}
 \end{figure}
 
-\subsection{Senaryo ekran kayıtları}
-
-Laboratuvar senaryolarının benzetim ekran kayıtları, kalibrasyondan bağımsız bir nitel kanıt kümesidir. Ekranlar yaklaşık \SI{2.6}{\ampere} RMS faz akımında, kalibre edilmemiş modülasyon değerleriyle üretilmiştir; FFT ekranlarında analiz başlangıcı \SI{0.06}{\second}, pencere uzunluğu iki temel çevrim ve temel frekans \SI{50}{\hertz}'tir. Tablo~\ref{tab:senaryo-thd}, ekranlardan doğrudan okunan değerleri aynı ölçüm tanımı altında toplamaktadır.
-
-\begin{table}[htbp]
-  \centering
-  \caption{Senaryo ekran kayıtlarından okunan temel bileşen tepe değerleri ve THD değerleri (benzetim, kalibre edilmemiş).}
-  \label{tab:senaryo-thd}
-  \small
-  \begin{tabular}{c l S[table-format=1.3] S[table-format=2.2] S[table-format=1.3] S[table-format=2.2]}
-    \toprule
-    {Senaryo} & {Yöntem eşlemesi} & {$I_{L1,1}$ (A)} & {$\mathrm{THD}_{L1}$ (\%)} & {$I_{\mathrm{out},1}$ (A)} & {$\mathrm{THD}_{\mathrm{out}}$ (\%)} \\
-    \midrule
-    1 & Klasik anahtarlama & 3.698 & 8.29 & 3.734 & 2.14 \\
-    2 & Nötr anahtar susturma & 3.396 & 46.86 & 3.412 & 46.35 \\
-    3 & Susturma + Sin\textsuperscript{3} & 3.752 & 9.46 & 3.766 & 7.79 \\
-    \bottomrule
-  \end{tabular}
-\end{table}
-
-\umitnot{Tablodaki değerler ilk tezin benzetim değerleridir}{Tablo~\ref{tab:senaryo-thd}, ilk tezdeki Temmuz 2026 senaryo ekranlarının değerlerini verir; model kalibre edilmemiştir ve çalışma noktası yaklaşık \SI{2.6}{\ampere}'dir. S1'deki \%2,14 ne deneyin güç faktörüyle ne de 12.10 paketindeki modelle (\%37,4) tutarlıdır; ayrıntı Kesim~\ref{sec:s1-s2-kalibre} notunda. Tezdeki sayısal karşılaştırma kalibre modelden yapılmıştır (Tablo~\ref{tab:kalibrasyon-karsilastirma}).}
-
-Ekran kayıtlarıyla birlikte raporlanmış bir verim ve THD özeti de vardır; Tablo~\ref{tab:onceki-benzetim-ozeti} özeti aktarmaktadır. THD değerleri FFT ekranlarıyla uyuşur. Verim değerlerinin DA ve AA güç tanımı, ölçüm noktası ve analiz penceresi belgelenmemiştir; verim sütunu tez bulgusu olarak kullanılmamış, tezdeki verim karşılaştırması Tablo~\ref{tab:kalibrasyon-karsilastirma} ile Eşitlik~\eqref{eq:guc-ortalama-tanimlari} tanımlarına dayandırılmıştır.
-
-\begin{table}[htbp]
-  \centering
-  \caption{Senaryo ekran kayıtlarıyla birlikte raporlanan verim ve akım THD değerleri; verim tanımı belgelenmediğinden bulgu olarak kullanılmamıştır.}
-  \label{tab:onceki-benzetim-ozeti}
-  \begin{tabular}{>{\raggedright\arraybackslash}p{0.43\textwidth}ccc}
-    \toprule
-    \textbf{Yöntem} & \textbf{Verim (\%)} & \textbf{$\mathrm{THD}_{L1}$ (\%)} & \textbf{$\mathrm{THD}_{faz}$ (\%)} \\
-    \midrule
-    Klasik tamamlayıcı anahtarlama & 90,45 & 8,30 & 2,10 \\
-    Nötr anahtar susturma & 93,00 & 46,90 & 46,30 \\
-    Susturma + Sin\textsuperscript{3} & 93,70 & 9,50 & 7,80 \\
-    \bottomrule
-  \end{tabular}
-\end{table}
-
-Ekran kayıtlarında S2'nin $I_{L1}$ ve $I_{\mathrm{out}}$ THD değerlerinin sırasıyla \%46,86 ve \%46,35'e çıkması, nötr anahtar susturmanın tek başına oluşturduğu harmonik cezayı göstermektedir. S3'te aynı değerlerin \%9,46 ve \%7,79'a gerilemesi, S2'ye göre yaklaşık \%79,8 ve \%83,2 bağıl azalma anlamına gelir. Kompanzasyon sonrasında temel akım genliklerinin S1 ile yakın seviyeye dönmesi, yöntemin düşük güç akımını bütünüyle bastırmadığını da gösterir. S3 çıkış THD değeri ise S1'in \%2,14 seviyesine ulaşmamıştır; kompanzasyonun iyileştirici fakat ideal olmayan sonucu açıkça korunmalıdır. Ekranlardaki S1 THD değerinin deney ve kalibre benzetimden düşük olması, ekranların farklı ve kalibre edilmemiş bir çalışma noktasına ait olmasıyla tutarlıdır; mutlak THD karşılaştırması Tablo~\ref{tab:kalibrasyon-karsilastirma} üzerinden yapılmıştır.
-
-Senaryo~1'in dört kanallı kaynak ekranı Şekil~\ref{fig:klasik-dort-kanal} altında verilmiştir. Yukarıdan aşağıya kanallar; anahtarlama devresi çıkışındaki filtre giriş gerilimini, filtrelenmiş gerilimi, $L_1$ endüktör akımını ve LC filtre çıkış akımını göstermektedir. İlk iki kanal anahtarlama geriliminin filtrelenmesini, son iki kanal ise $L_1$ dalgalanmasının çıkış akımında ne ölçüde bastırıldığını aynı zaman ekseninde izlemeyi sağlamaktadır.
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.98\textwidth]{../dosyalar/05_sonradan_gelenler/Senaryo_1/dalga_sekli_s1.jpg}
-  \caption{Klasik anahtarlamada filtre giriş gerilimi, filtrelenmiş gerilim, $L_1$ endüktör akımı ve LC filtre çıkış akımının birlikte gösterimi (Senaryo~1, ekran kaydı).}
-  \label{fig:klasik-dort-kanal}
-\end{figure}
-
-FFT sonuçları, aynı klasik anahtarlama koşulunda filtrenin akım harmonikleri üzerindeki etkisini iki ölçüm noktasında göstermektedir. Şekil~\ref{fig:klasik-l1-fft} altında $L_1$ akımının temel bileşeni \SI{3.698}{\ampere} ve THD değeri \%8,29; Şekil~\ref{fig:klasik-iout-fft} altında çıkış akımının temel bileşeni \SI{3.734}{\ampere} ve THD değeri \%2,14 olarak okunmaktadır. Çıkış akımındaki THD'nin $L_1$ akımına göre yaklaşık \%74,2 azalması, LC filtrenin anahtarlama kaynaklı harmonikleri bastırdığını nicel olarak gösterir.
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.98\textwidth]{../dosyalar/05_sonradan_gelenler/Senaryo_1/THD_IL1.jpg}
-  \caption{Klasik anahtarlamada $L_1$ endüktör akımının FFT analizi: temel bileşen \SI{3.698}{\ampere}, $\mathrm{THD}_{L1}=\%8{,}29$ (Senaryo~1, ekran kaydı).}
-  \label{fig:klasik-l1-fft}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.98\textwidth]{../dosyalar/05_sonradan_gelenler/Senaryo_1/THD_Iout.jpg}
-  \caption{Klasik anahtarlamada LC filtre çıkış akımının FFT analizi: temel bileşen \SI{3.734}{\ampere}, $\mathrm{THD}_{\mathrm{out}}=\%2{,}14$ (Senaryo~1, ekran kaydı).}
-  \label{fig:klasik-iout-fft}
-\end{figure}
-
-Nötr anahtar susturma yöntemine ait ekran kayıtları üç görselden oluşmaktadır: Şekil~\ref{fig:susturma-dort-kanal} dört ölçüm kanalını, Şekil~\ref{fig:susturma-l1-fft} ile Şekil~\ref{fig:susturma-iout-fft} iki akım ölçüm noktasının FFT sonuçlarını göstermektedir. Kapı komutları ve $L_1$ akımının anahtarlama ölçeğindeki yapısı kalibre benzetimden Şekil~\ref{fig:s2-kapi-isaretleri} ve Şekil~\ref{fig:s1-s2-kalibre-l1} üzerinde verilmiştir.
-
-Senaryo~2'nin dört kanallı ekranı Şekil~\ref{fig:susturma-dort-kanal} altında verilmiştir; kanal sırası Senaryo~1 ile aynıdır. $L_1$ ve çıkış akımında görülen düşük frekanslı zarf bozulması, susturmanın tek başına oluşturduğu üçüncü harmonik artışıyla uyumludur.
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.98\textwidth]{../dosyalar/05_sonradan_gelenler/Senaryo_2/dalga_sekilleri_s2.jpg}
-  \caption{Nötr anahtar susturma yönteminde filtre giriş gerilimi, filtrelenmiş gerilim, $L_1$ endüktör akımı ve LC filtre çıkış akımının birlikte gösterimi (Senaryo~2, ekran kaydı).}
-  \label{fig:susturma-dort-kanal}
-\end{figure}
-
-Senaryo~2 FFT ekranlarında analiz tanımı Senaryo~1 ile aynıdır. Şekil~\ref{fig:susturma-l1-fft} altında $L_1$ akımının temel bileşeni \SI{3.396}{\ampere} ve THD değeri \%46,86; Şekil~\ref{fig:susturma-iout-fft} altında çıkış akımının temel bileşeni \SI{3.412}{\ampere} ve THD değeri \%46,35 olarak okunmaktadır. Filtre çıkışında THD'nin yüksek kalması, bozulmanın yalnız yüksek frekanslı anahtarlama dalgalanmasından değil, filtrenin geçiş bandına daha yakın düşük mertebeli harmoniklerden kaynaklandığını göstermektedir.
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.98\textwidth]{../dosyalar/05_sonradan_gelenler/Senaryo_2/THD_IL1.jpg}
-  \caption{Nötr anahtar susturma yönteminde $L_1$ endüktör akımının FFT analizi: temel bileşen \SI{3.396}{\ampere}, $\mathrm{THD}_{L1}=\%46{,}86$ (Senaryo~2, ekran kaydı).}
-  \label{fig:susturma-l1-fft}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.98\textwidth]{../dosyalar/05_sonradan_gelenler/Senaryo_2/THD_Iout.jpg}
-  \caption{Nötr anahtar susturma yönteminde LC filtre çıkış akımının FFT analizi: temel bileşen \SI{3.412}{\ampere}, $\mathrm{THD}_{\mathrm{out}}=\%46{,}35$ (Senaryo~2, ekran kaydı).}
-  \label{fig:susturma-iout-fft}
-\end{figure}
-
-Senaryo~3'ün ekranları Sin\textsuperscript{3} kompanzasyonunun sonuç setine ait olduğundan Bölüm~\ref{chap:sin3} altında ele alınmaktadır.
-
 \subsection{Güç tanımları, işaret kuralı ve anma ifadeleri}
 \label{sec:guc-tanimlari}
 
@@ -300,47 +205,4 @@ Anma güç ifadeleri tasarım hedefi olarak kullanılmıştır. Prototipin anma 
 
 T-tipi faz kolunun düşük güçte senkron buck benzeri davranışı, nötr kol üzerinden ters enerji dolaşımının fiziksel kaynağını açıklamaktadır. Laboratuvar çalışma noktasının tepe akımı yaklaşık \SI{9}{\ampere} tepe--tepe $L_1$ dalgalanmasının yarısından küçük olduğundan klasik anahtarlama temel periyodun büyük bölümünde ters akıma izin verir. Önerilen anahtarlama, ters akımı sürdüren nötr komutunu düşük güç bölgesinde bastırarak kayıp yolunu azaltmakta; karşılığında süreksiz iletim ve üçüncü harmonik cezası oluşturmaktadır. Modelden okunan kapı mantığı, susturmanın iki yöntem arasındaki tek farkın $O$ durumundaki karşı nötr anahtar komutu olduğunu doğrulamıştır.
 
-Kalibre benzetim ve deney özet tablosu mekanizma sırasını birlikte desteklemektedir. Susturma verimi deneyde \%92,5'ten \%94,2'ye, kalibre benzetimde \%91,15'ten \%93,93'e yükseltmiş; akım THD'sini deneyde \%15'ten \%47'ye, benzetimde \%39,5'ten \%56,7'ye çıkarmıştır. Model S2'nin DA gücünü \%0,004, verimini 0,27 puan hatayla yeniden üretmekte; S1 verimini 1,35 puan düşük, S2 THD'sini 9,7 puan yüksek vermektedir. Mutlak THD farkları ve S1 kayıp farkı sınırlılık olarak raporlanmıştır. Sonraki bölümde harmonik cezayı azaltan Sin\textsuperscript{3} kompanzasyonunun matematiksel tanımı, kapalı çevrim içindeki konumu, Bode analizi ve çalışma noktasına bağlı sonuçları ele alınmaktadır.
-
-\umitnot{Karar: S1 karışıklığı tez iddiasını etkiler mi, iki cümle değişsin mi?}{%
-\textbf{Ana iddialar etkilenmiyor.}
-\begin{itemize}\setlength{\itemsep}{1pt}
-  \item \textit{Susturma düşük güçte verimi artırır:} verim THD'ye değil, etkin ve DA güce bağlıdır. S1 satırının güç, gerilim ve akım değerleri modelle tutarlıdır (AA akım $-$\%1,8, PF $+$\%0,8). Artış deneyde 1,7, modelde 2,78 puan; yön iki kaynakta aynı.
-  \item \textit{Sin\textsuperscript{3} harmonik bedeli azaltır:} dayanağı S2 ve S3 satırlarıdır; ikisi de güç faktörüyle tutarlı ya da yakın. Model S3'ün \%14'ünü kalibre edilmeden \%14,8 ile yeniden üretir.
-  \item \textit{Sin\textsuperscript{3} kararlılığı değiştirmez}, S4 anma akımı sonuçları ve GT-tipi mimari: deney THD'siyle bağı yoktur.
-\end{itemize}
-\textbf{Etkilenen tek nokta, susturmanın harmonik bedelinin büyüklüğü.} Deneyde S1 için \%15 alınırsa bedel 32 puan (\%15$\rightarrow$\%47), güç faktörünün gösterdiği yaklaşık \%42 alınırsa yalnız 5 puandır; kalibre modelde 17 puandır (\%39,5$\rightarrow$\%56,7).
-
-\textbf{Lehte okuma (iddia olarak yazılmadı).} S1'in gerçek THD'si yaklaşık \%40 ise S3, klasik anahtarlamaya göre hem verimde (deneyde $+$2,0 puan) hem THD'de (yaklaşık \%40$\rightarrow$\%14) üstündür. Dayanağı tutarsız bir satırdan çıkarım olduğu için tezde iddia edilmemiştir; jüri sorusunda savunmayı güçlendirir.
-
-\textbf{Olası jüri sorusu:} ``Model klasik anahtarlamada \%40 veriyor, deney \%15; model yanlış değil mi?'' Cevap: aynı analizörün PF $=0{,}921$ okuması yaklaşık \%42 THD gerektirir; model PF'yi deneyle \%0,8 içinde verir; THDi okuması \SI{2.26}{\ampere}'de \%5--22 arasında dalgalanır; \SI{9}{\ampere} tepe--tepe dalgalanma akımı her periyotta ters yöne geçirir.
-
-\textbf{S1 (klasik anahtarlama): iddia neydi, ne oldu?} Yaklaşık \SI{2.3}{\ampere} faz akımı; ``ilk tez'' sütunu ilk tezin benzetim ve deney değerleri, ``yeni tez'' sütunu kalibre benzetim ve deney kaydının denetimidir.
-
-\smallskip
-{\footnotesize
-\renewcommand{\arraystretch}{1.15}
-\noindent\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{0.17\linewidth}>{\raggedright\arraybackslash}p{0.33\linewidth}>{\raggedright\arraybackslash}X@{}}
-\toprule
-\textbf{Konu} & \textbf{İddia (ilk tez)} & \textbf{Ne oldu (yeni tez)} \\
-\midrule
-Şebeke akımı THD'si & Benzetim \%2,1; klasik anahtarlama akım kalitesi bakımından referans & Kalibre model \%39,5 (31. harmoniğe kadar \%39,2). 12.10 modeli hiç değiştirilmeden \%37,4. \%2,1 desteklenmedi \\
-$L_1$ akımı THD'si & Benzetim \%8,3 & Kalibre model \%38,5 (50. harmoniğe kadar) \\
-Deneydeki THD & \%15; Tablo~5.4'te ``THDi (L1)'' sütununda, benzetimin \%8,3'üyle karşılaştırılmış & Analizörün şebeke akımı okumasıdır, $L_1$ değil. Aynı satırın PF'si (0,921) yaklaşık \%42 gerektirir; ekran THDi'si \%5--22 arası dalgalanır. Bulgu olarak kullanılmadı \\
-Güç faktörü & Deney ekranında PF $-0{,}921$ görünür; THD ile ilişkisi kurulmamış & Deney 0,922, model 0,929 (\%0,8 içinde) \\
-Verim & Benzetim \%90,45, deney \%92,5 & Model \%91,15; deneyden 1,35 puan düşük (kayıp \SI{24.0}{\watt}'a karşı \SI{19.7}{\watt}), açıklanamadı; sınırlılık \\
-Ters akım & Nitel: ``neredeyse periyot boyunca alternansa ters polarize geçen akım'' & Pozitif yarım periyodun \%25,2'sinde ters akım, her periyotta yaklaşık $-\SI{2.6}{\ampere}$ (Şekil~\ref{fig:s1-s2-kalibre-l1}); mekanizma doğrulandı \\
-Kapı mantığı & Ekran görüntüsü & Modelden ölçüldü (Şekil~\ref{fig:s1-kapi-isaretleri}): pozitif yarıda $Q_1$/$Q_4$ tamamlayıcı, $Q_2$ kesim, $Q_3$ iletim; Tablo~\ref{tab:model-kapi-mantigi} ile aynı \\
-Susturmanın bedeli & THD \%2,1$\rightarrow$\%46,3 (44 puan) & Kalibre modelde \%39,5$\rightarrow$\%56,7 (17 puan); deneyde S1 değerine göre 5--32 puan \\
-\bottomrule
-\end{tabularx}}
-
-\smallskip
-\textbf{Özet:} S1'de mekanizma (ters akım) ve verim yönü doğrulandı; ``klasik anahtarlamanın akım kalitesi iyi, susturma bozuyor'' anlatısı doğrulanmadı. Klasik anahtarlama da düşük güçte yüksek THD'lidir; susturmanın THD bedeli ilk tezin gösterdiğinden küçüktür.
-
-\textbf{Karar sizde: deneydeki \%15'i başlangıç alan iki cümle.}
-\begin{enumerate}\setlength{\itemsep}{1pt}
-  \item Kesim~\ref{sec:s1-s2-kalibre}, ``İkinci bulgu harmonik cezadır'' paragrafı. \textit{Şimdiki:} ``Susturma, şebeke akımı THD'sini benzetimde \%39,5'ten \%56,7'ye, deneyde \%15'ten \%47'ye yükseltir; iki kaynakta da S2 en yüksek THD'li senaryodur.'' \textit{Önerilen:} ``Susturma, şebeke akımı THD'sini kalibre benzetimde \%39,5'ten \%56,7'ye yükseltir; deneyde S2'nin THD'si \%47'dir ve iki kaynakta da S2 en yüksek THD'li senaryodur. Deneyin S1 THD değeri aynı satırın güç faktörüyle tutarsız olduğundan deneydeki artışın büyüklüğü belirlenememiştir.''
-  \item Bölüm sonucu, yukarıdaki ikinci paragraf. \textit{Şimdiki:} ``\dots akım THD'sini deneyde \%15'ten \%47'ye, benzetimde \%39,5'ten \%56,7'ye çıkarmıştır.'' \textit{Önerilen:} ``\dots akım THD'sini kalibre benzetimde \%39,5'ten \%56,7'ye çıkarmış, deneyde \%47'ye ulaşmıştır; deneyin S1 THD değeri güç faktörüyle tutarsız olduğundan deneydeki artışın büyüklüğü belirsizdir.''
-\end{enumerate}
-\textit{Seçenek A:} cümleler olduğu gibi kalır (paragraf 1'de açıklama hemen ardından geliyor, bölüm sonucunda yok). \textit{Seçenek B:} iki cümle önerilen biçime çevrilir; jüri sorusu metinde baştan karşılanır. Öneri B'dir.}
+Kalibre benzetim ve deney özet tablosu mekanizma sırasını birlikte desteklemektedir. Susturma verimi deneyde \%92,5'ten \%94,2'ye, kalibre benzetimde \%91,15'ten \%93,93'e yükseltmiş; akım THD'sini deneyde \%15'ten \%47'ye, benzetimde \%39,5'ten \%56,7'ye çıkarmıştır. Model S2'nin DA gücünü \%0,004, verimini 0,27 puan hatayla yeniden üretmekte, verim ve THD sıralamasını deneyle aynı vermektedir. Mutlak değerlerde model yaklaşıktır: S1 verimini 1,35 puan düşük, S1 ve S2 THD'sini 24,5 ve 9,7 puan yüksek vermektedir; farklar sınırlılık olarak raporlanmıştır. Sonraki bölümde harmonik cezayı azaltan Sin\textsuperscript{3} kompanzasyonunun matematiksel tanımı, kapalı çevrim içindeki konumu, Bode analizi ve çalışma noktasına bağlı sonuçları ele alınmaktadır.

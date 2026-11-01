@@ -157,3 +157,7 @@ Kararlılık ve S4 kanıtının tamamı (Ş 5.7–5.15) ilk tezde yoktur. İlk t
 | T 5.1–5.3 | T 6.1–6.3 | Taşındı |
 | T 5.4 | T 6.4 + T 6.10 | Deney özeti ayrı; benzetim yerine kalibre benzetim karşılaştırması |
 | T 7.1 | T 8.2 | Patent bülteni verileriyle yeniden kuruldu |
+
+## 01.11.2026 güncellemesi (K-29)
+
+Temmuz benzetimine ait senaryo ekranları tezden çıkarıldı: S1–S3 dört kanal şekilleri, S1–S3 FFT şekilleri (`THD_IL1`, `THD_Iout`), `tab:senaryo-thd`, `tab:onceki-benzetim-ozeti`. İlk tezin Tablo 5.4'ünün karşılığı `tab:deney-dusuk-guc-ozeti`'dir: yalnız faz akımı THD'si, deney ve kalibre benzetim. Yeni tablo: `tab:thd-kaynaklar`. Bu dosyanın yukarıdaki satırları 29.10.2026 durumunu gösterir.
