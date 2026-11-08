@@ -24,6 +24,7 @@ Kısaltma: `IRD` = `tez-matlab-simulink/incoming_real_data`
 | `2026-10-06_tez_06102026_paketi/` | S1+S2 parametrik modeli, ortak parametre dosyası (ilk sürüm), `tezdeki_düzeltmeler.docx`, SKM100 düşük akım uygunlaştırma notu, L1 kayıp özeti, `tam_topoloji.jpg`, 13 literatür PDF'i, `tez_tumu_8.docx` | Model/parametre/notlar `IRD/` altına alındı (aşağıda); `tez_tumu_8.docx` = `dosyalar/01_TAM_TEZ/` ile aynı |
 | `2026-10-12_senaryo3_senaryo4_modelleri/` | Senaryo 3 ve 4 modelleri + güncel ortak parametre dosyası | `IRD/models/2026-10-12_dort_senaryo_paketi/` |
 | `2026-11-01_s1_thd_degerlendirmesi/` | S1 THD değerlendirmesi: deneysel %15 kabulü, PF, Tablo 5.4, Temmuz benzetimi, THDv ve dalga biçimi (sohbetle iletilen mail metni) | Karar K-29; `tez-matlab-simulink/review/2026-11-01_S1_THD_TEZ_SAHIBI_DEGERLENDIRMESI.md` |
+| `2026-11-07_tez_okuma_notlari_bolum7/` | Tez okuma notları (Bölüm 7'ye kadar, teslim PDF'i 01.11.2026 sayfalarıyla), Codex denetim çıktısı ve Bölüm 7'deki 100 kW/proje itirazı (mail metni + `son_tez_sorular_.docx`) | Değerlendirme: `tez-tamamlama/06_UMIT_OKUMA_NOTLARI_2026-11-07.md`; tez henüz değiştirilmedi |
 
 ## Çalışma kopyasına alınanlar (27.10.2026)
 

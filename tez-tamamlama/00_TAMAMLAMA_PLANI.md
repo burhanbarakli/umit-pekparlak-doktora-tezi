@@ -43,6 +43,7 @@ Durum değerleri: ☐ başlamadı · ◐ sürüyor · ☑ bitti
 | İP-13 | Son derleme, denetim ve sürüm kaydı | Son derleme 29.10.2026: 228 sayfa, Undefined/Overfull yok; `build_2026-10-29/`, `tez_guncel_2026-10-29.pdf`, kök `main.pdf` (K-27). EKLER (21 belge), TEŞEKKÜR, ÖZGEÇMİŞ yazıldı; anabilim/bilim dalı ve teslim ayı dolduruldu; patent tablosu ve Bölüm 6 ölçüm tablosu ek belgelerle güncellendi; D-03/04/10/13/14 doğrulandı. Teslim öncesi kalan alanlar: öğrenci no, savunma tarihi, onay sayfası jürisi | hepsi | hepsi | ☑ |
 | İP-14 | Yapı hakem önerileri: akış, sıra, hacim (kalibrasyonun Bölüm 3'e alınması, Bölüm 3/6/7 ayrıntılarının EK-D/EK-E'ye taşınması, sıra ve başlık düzeltmeleri) | `04_YAPI_HAKEM_RAPORU.md` (29.10.2026, `tez-hakem` ajanı + doğrulama) → uygulanırsa ana metin ~166 → ~145–150 s. | 1, 2, 3 | İP-13 | ☐ (tez sahibi bakacak; uygulanmadı) |
 | İP-15 | Tez sahibinin 01.11.2026 S1 THD değerlendirmesinin işlenmesi | K-29: deneysel %15, PF dışarıda, faz akımı THD tablosu, Temmuz ekranları çıkarıldı, osilogram THD denetimi eklendi. Bitti. | — | — | — |
+| İP-16 | Tez sahibinin 07.11.2026 okuma notları ve Bölüm 7 proje katmanının çıkarılması | K-30: Bölüm 7 deney düzeneğine bağlanarak yeniden yazıldı; Bölüm 1–8, özet ve Summary'de notlar işlendi; Bölüm 5 şekilleri Arial ile yeniden üretildi. Açık: Şekil 2.5 notu, Şekil 3.2 nötr bağlantısı. | — | — | — |
 
 Paralel yürütülebilecekler: İP-2, İP-3 ve İP-12 birbirinden bağımsızdır. İP-1
 uzun bir MATLAB koşusudur (Normal modda ~2 saat, tek Accelerator koşusunda ~30 dk).
