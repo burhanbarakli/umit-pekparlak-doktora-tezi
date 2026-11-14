@@ -77,7 +77,7 @@ ile gösterilebilir. Eşitlik~\eqref{eq:susturma-etkinlestirme} içindeki $t^-$ 
   g_{n,\mathrm{yeni}}(t)=g_{n,\mathrm{kl}}(t)\left[1-\sigma(t)\chi_{\mathrm{rev}}(t)\right]
   \label{eq:notr-susturma-kurali}
 \end{equation}
-biçiminde özetlenebilir. Eşitlik~\eqref{eq:notr-susturma-kurali} yöntemin hangi komutu hangi amaçla değiştirdiğini belirleyen işlevsel tanımdır. Benzetimde ve deneylerde $\sigma=1$ alınmıştır ve ters iletim göstergesi yarım periyot işaretiyle belirlenir: pozitif yarım periyotta faz tarafı nötr anahtar $Q_4$, negatif yarım periyotta orta nokta tarafı nötr anahtar $Q_3$ susturulur. Uygulanan kapı mantığı aşağıda modelden okunmuştur.
+biçiminde özetlenebilir. Eşitlik~\eqref{eq:notr-susturma-kurali} yöntemin hangi komutu hangi amaçla değiştirdiğini belirleyen işlevsel tanımdır. Benzetimde ve deneylerde $\sigma=1$ alınmıştır ve ters iletim göstergesi yarım periyot işaretiyle belirlenir: pozitif yarım periyotta faz tarafı nötr anahtar $Q_3$, negatif yarım periyotta orta nokta tarafı nötr anahtar $Q_4$ susturulur. Uygulanan kapı mantığı aşağıda modelden okunmuştur.
 
 \subsection{Modelden okunan kapı mantığı ve senaryo eşlemesi}
 \label{sec:model-kapi-mantigi}
@@ -95,15 +95,15 @@ Senaryo tanımları ile benzetim modellerinin kapı üretim yapısı blok blok k
     \cmidrule(lr){3-6}\cmidrule(lr){7-10}
     Yarım periyot & Durum & $Q_1$ & $Q_2$ & $Q_3$ & $Q_4$ & $Q_1$ & $Q_2$ & $Q_3$ & $Q_4$ \\
     \midrule
-    $u\geq0$ & $P$ & 1 & 0 & 1 & 0 & 1 & 0 & 1 & 0 \\
-    $u\geq0$ & $O$ & 0 & 0 & 1 & \textbf{1} & 0 & 0 & 1 & \textbf{0} \\
-    $u<0$ & $N$ & 0 & 1 & 0 & 1 & 0 & 1 & 0 & 1 \\
-    $u<0$ & $O$ & 0 & 0 & \textbf{1} & 1 & 0 & 0 & \textbf{0} & 1 \\
+    $u\geq0$ & $P$ & 1 & 0 & 0 & 1 & 1 & 0 & 0 & 1 \\
+    $u\geq0$ & $O$ & 0 & 0 & \textbf{1} & 1 & 0 & 0 & \textbf{0} & 1 \\
+    $u<0$ & $N$ & 0 & 1 & 1 & 0 & 0 & 1 & 1 & 0 \\
+    $u<0$ & $O$ & 0 & 0 & 1 & \textbf{1} & 0 & 0 & 1 & \textbf{0} \\
     \bottomrule
   \end{tabular}
 \end{table}
 
-Tablo~\ref{tab:model-kapi-mantigi} içindeki kalın hücreler iki yöntem arasındaki tek farkı gösterir. Klasik anahtarlamada $O$ durumunda karşı nötr anahtar da iletimdedir ve ters akım yolu açıktır. Susturmalı anahtarlamada $O$ durumunda yalnız yük akımı yönündeki yol açıktır: pozitif yarım periyotta akım orta noktadan $Q_3$ ve $DS_4$ üzerinden faza akar, ters yöndeki akım nötr koldan dönemez ve $D_1$--$D_2$ ile dış anahtar diyotları üzerinden DA rayına yönelir. S1 kapı mantığı Tablo~\ref{tab:t-tipi-durumlar} ile birebir aynıdır.
+Tablo~\ref{tab:model-kapi-mantigi} içindeki kalın hücreler iki yöntem arasındaki tek farkı gösterir. Klasik anahtarlamada $O$ durumunda karşı nötr anahtar da iletimdedir ve ters akım yolu açıktır. Susturmalı anahtarlamada $O$ durumunda yalnız yük akımı yönündeki yol açıktır: pozitif yarım periyotta akım orta noktadan $Q_4$ ve $DS_3$ üzerinden faza akar, ters yöndeki akım nötr koldan dönemez ve $D_1$--$D_2$ ile dış anahtar diyotları üzerinden DA rayına yönelir. S1 kapı mantığı Tablo~\ref{tab:t-tipi-durumlar} ile birebir aynıdır.
 
 Susturmanın devre düzeyindeki sonucu Şekil~\ref{fig:susturma-esdeger} üzerinde gösterilmiştir. Klasik anahtarlamada her yarım periyot, iki yönlü iletebilen alt ve üst anahtardan oluşan senkron alçaltıcıya karşılık gelir (Şekil~\ref{fig:senkron-buck-esdeger}). Susturmalı çalışmada iletimde kalan nötr anahtar ile karşı nötr anahtarın antiparalel diyodu seri bir tek yönlü eleman oluşturur; faz kolu her yarım periyotta bir aktif anahtar ile bir diyottan oluşan senkron olmayan alçaltıcıya dönüşür. Serbest dolaşım akımı diyot üzerinden yalnız yük yönünde akar ve sıfıra indiğinde kendiliğinden kesilir. Ters akımın kesilmesi ile süreksiz iletimin başlaması aynı devre özelliğinin iki sonucudur; ikinci sonucun harmonik etkisi Alt Bölüm~\ref{sec:harmonik-mekanizma} içinde incelenmiştir.
 
@@ -111,19 +111,19 @@ Susturmanın devre düzeyindeki sonucu Şekil~\ref{fig:susturma-esdeger} üzerin
   \centering
   \begin{subfigure}[t]{0.48\textwidth}
     \centering
-    \resizebox{\linewidth}{!}{\susturmabuckvector{$+V_{\mathrm{dc}}/2$}{$N$}{$Q_1$}{$Q_3$ iletimde\\$+\,DS_4$}{1}}
-    \caption{Pozitif yarım periyot: $Q_1$ anahtarlanır, $Q_4$ susturulur}
+    \resizebox{\linewidth}{!}{\susturmabuckvector{$+V_{\mathrm{dc}}/2$}{$N$}{$Q_1$}{$Q_4$ iletimde\\$+\,DS_3$}{1}}
+    \caption{Pozitif yarım periyot: $Q_1$ anahtarlanır, $Q_3$ susturulur}
   \end{subfigure}\hfill
   \begin{subfigure}[t]{0.48\textwidth}
     \centering
-    \resizebox{\linewidth}{!}{\susturmabuckvector{$N$}{$-V_{\mathrm{dc}}/2$}{$Q_2$}{$Q_4$ iletimde\\$+\,DS_3$}{0}}
-    \caption{Negatif yarım periyot: $Q_2$ anahtarlanır, $Q_3$ susturulur}
+    \resizebox{\linewidth}{!}{\susturmabuckvector{$N$}{$-V_{\mathrm{dc}}/2$}{$Q_2$}{$Q_3$ iletimde\\$+\,DS_4$}{0}}
+    \caption{Negatif yarım periyot: $Q_2$ anahtarlanır, $Q_4$ susturulur}
   \end{subfigure}
   \caption{Nötr anahtar susturmada faz kolunun yarım periyot eşdeğerleri: senkron olmayan iki alçaltıcı dönüştürücü. Mavi yol aktif enerji aktarımını, turuncu kesikli yol diyot üzerinden tek yönlü serbest dolaşımı göstermektedir; ters yöndeki akım için nötr koldan yol yoktur.}
   \label{fig:susturma-esdeger}
 \end{figure}
 
-Benzetim modelinde S2 kapı yolu, tezdeki nötr anahtar susturma tanımına göre kurulmuştur (Alt Bölüm~\ref{sec:model-dogrulama-duzeltme}). Kapı yolunun dört komutu Şekil~\ref{fig:s2-kapi-isaretleri} üzerinde bir şebeke periyodu ve dört anahtarlama periyodu boyunca gösterilmiştir. $Q_1$ pozitif yarım periyotta \SI{10}{\kilo\hertz} PWM ile anahtarlanırken $Q_2$ kesimde, $Q_3$ iletimde ve $Q_4$ kesimdedir; negatif yarım periyotta roller simetrik olarak yer değiştirir. Nötr anahtarlar yarım periyot içinde hiç anahtarlanmaz; anahtarlama kaybı yalnız dış anahtarlarda oluşur.
+Benzetim modelinde S2 kapı yolu, tezdeki nötr anahtar susturma tanımına göre kurulmuştur (Alt Bölüm~\ref{sec:model-dogrulama-duzeltme}). Kapı yolunun dört komutu Şekil~\ref{fig:s2-kapi-isaretleri} üzerinde bir şebeke periyodu ve dört anahtarlama periyodu boyunca gösterilmiştir. $Q_1$ pozitif yarım periyotta \SI{10}{\kilo\hertz} PWM ile anahtarlanırken $Q_2$ kesimde, $Q_4$ iletimde ve $Q_3$ kesimdedir; negatif yarım periyotta roller simetrik olarak yer değiştirir. Nötr anahtarlar yarım periyot içinde hiç anahtarlanmaz; anahtarlama kaybı yalnız dış anahtarlarda oluşur.
 
 \begin{figure}[htbp]
   \centering
@@ -132,7 +132,7 @@ Benzetim modelinde S2 kapı yolu, tezdeki nötr anahtar susturma tanımına gör
   \label{fig:s2-kapi-isaretleri}
 \end{figure}
 
-Klasik anahtarlamanın aynı pencerelerdeki kapı komutları Şekil~\ref{fig:s1-kapi-isaretleri} üzerinde verilmiştir. Pozitif yarım periyotta $Q_1$ ile $Q_4$ tamamlayıcı darbelerle anahtarlanırken $Q_2$ kesimde, $Q_3$ iletimde tutulur; negatif yarım periyotta $Q_2$ ile $Q_3$ tamamlayıcı çalışır. İki şekil karşılaştırıldığında tek fark, S2'de sıfır durumundaki karşı nötr anahtar komutunun ($Q_4$ pozitif, $Q_3$ negatif yarım periyotta) bastırılmasıdır. Kapı dizileri Tablo~\ref{tab:model-kapi-mantigi} ile örtüşür; ölü zaman ve kapı polaritesi model bloklarından okunmuştur.
+Klasik anahtarlamanın aynı pencerelerdeki kapı komutları Şekil~\ref{fig:s1-kapi-isaretleri} üzerinde verilmiştir. Pozitif yarım periyotta $Q_1$ ile $Q_3$ tamamlayıcı darbelerle anahtarlanırken $Q_2$ kesimde, $Q_4$ iletimde tutulur; negatif yarım periyotta $Q_2$ ile $Q_4$ tamamlayıcı çalışır. İki şekil karşılaştırıldığında tek fark, S2'de sıfır durumundaki karşı nötr anahtar komutunun ($Q_3$ pozitif, $Q_4$ negatif yarım periyotta) bastırılmasıdır. Kapı dizileri Tablo~\ref{tab:model-kapi-mantigi} ile örtüşür; ölü zaman ve kapı polaritesi model bloklarından okunmuştur.
 
 \begin{figure}[htbp]
   \centering
@@ -141,12 +141,12 @@ Klasik anahtarlamanın aynı pencerelerdeki kapı komutları Şekil~\ref{fig:s1-
   \label{fig:s1-kapi-isaretleri}
 \end{figure}
 
-Faz kolunun devre yapısı Şekil~\ref{fig:t-tipi-akim-yollari}, elemanların değerleri Tablo~\ref{tab:sistem-parametreleri} içinde verilmiştir. Şekil~\ref{fig:s3-simulink-modeli}, ölçüm, filtre, şebeke eşdeğeri ve güç hesabı bloklarını içeren benzetim modelinin üst düzey çizimidir. S1 ve S2 modelleri aynı güç katı ve ölçüm yapısına sahiptir; yalnız modülasyon ve kapı mantığı farklıdır. Bölümdeki sayısal sonuçlar Alt Bölüm~\ref{sec:model-dogrulama-duzeltme} içindeki düzeltmeler uygulanmış ve kalibre edilmiş modellerden alınmıştır.
+Faz kolunun devre yapısı Şekil~\ref{fig:t-tipi-akim-yollari}, elemanların değerleri Tablo~\ref{tab:sistem-parametreleri} içinde verilmiştir. Şekil~\ref{fig:s3-simulink-modeli}, ölçüm, filtre, şebeke eşdeğeri ve güç hesabı bloklarını içeren benzetim modelinin üst düzey çizimidir. S1 ve S2 modelleri aynı güç katı ve ölçüm yapısına sahiptir; yalnız modülasyon ve kapı mantığı farklıdır. S4 modeli de aynı güç katını kullanır ve anahtarlama girişine eklenen akım geri beslemesiyle ayrılır (Şekil~\ref{fig:s4-anahtarlama-girisi}). Bölümdeki sayısal sonuçlar Alt Bölüm~\ref{sec:model-dogrulama-duzeltme} içindeki düzeltmeler uygulanmış ve kalibre edilmiş modellerden alınmıştır.
 
-\begin{figure}[htbp]
+\begin{figure}[p]
   \centering
-  \includegraphics[angle=90,height=0.80\textheight]{model_dogrulama/s3_model_ust_duzey.pdf}
-  \caption[Kalibre S3 benzetim modelinin üst düzey çizimi]{Kalibre S3 benzetim modelinin üst düzey çizimi: DA kaynak ve bölünmüş bara, T-tipi güç katı, $L_1$ ve çekirdek kaybı, iki kademeli EMC süzgeci, şebeke eşdeğeri ($L_2$), modülasyon (\textsc{anahtarlama}) ve ölçüm ile güç hesabı blokları. Çizim model dosyasından vektör olarak alınmıştır.}
+  \includegraphics[width=0.80\textheight,angle=90]{umit_2026-11-09/s3_model_sematik.pdf}
+  \caption[S3 benzetim modelinin üst düzey çizimi]{S3 benzetim modelinin üst düzey çizimi: DA kaynak ve bölünmüş bara, T-tipi güç katı ($S_1$--$S_4$ anahtarları tezdeki $Q_1$--$Q_4$ ile aynı sıradadır), $L_1$ ve çekirdek kaybı, iki kademeli EMC süzgeci, şebeke eşdeğeri ($L_2$), Sin\textsuperscript{3} ileri beslemeli modülasyon (\textsc{anahtarlama}) ve ölçüm ile güç hesabı blokları. Güç katı ve ölçüm blokları S1--S4 modellerinde ortaktır; senaryolar yalnız anahtarlama girişinde ayrılır. Çizim model dosyasından vektör olarak alınmıştır.}
   \label{fig:s3-simulink-modeli}
 \end{figure}
 

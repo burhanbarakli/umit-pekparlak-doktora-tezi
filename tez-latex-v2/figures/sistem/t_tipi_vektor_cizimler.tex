@@ -1,5 +1,6 @@
 % T-tipi faz kolu için ortak vektör çizim tabanı.
-% Argümanlar: Q1, Q2, Q3, Q4 çizgi renkleri ve ek TikZ yolu.
+% Argümanlar: Q1, Q2, orta nokta tarafı nötr anahtar (Q4, düğüm q3), faz tarafı nötr anahtar (Q3, düğüm q4) çizgi renkleri ve ek TikZ yolu.
+% Adlandırma (09.11.2026, K-31): tümleyen çiftler Q1--Q3 ve Q2--Q4; düğüm adları konumu gösterir.
 \newcommand{\ttypevector}[5]{%
 \begin{tikzpicture}[
   x=0.76cm,y=0.56cm,
@@ -29,8 +30,8 @@
   % Ana anahtarlar ve çift yönlü nötr kol
   \node[sw,draw=#1,line width=1.25pt] (q1) at (4,3.65) {$Q_1$};
   \node[sw,draw=#2,line width=1.25pt] (q2) at (4,0.35) {$Q_2$};
-  \node[sw,draw=#3,line width=1.25pt] (q3) at (1.55,2) {$Q_3$};
-  \node[sw,draw=#4,line width=1.25pt] (q4) at (2.75,2) {$Q_4$};
+  \node[sw,draw=#3,line width=1.25pt] (q3) at (1.55,2) {$Q_4$};
+  \node[sw,draw=#4,line width=1.25pt] (q4) at (2.75,2) {$Q_3$};
   \draw[bus] (4,5) -- (q1.north);
   \draw[bus] (q1.south) -- (4,2);
   \draw[bus] (4,2) -- (q2.north);
@@ -96,11 +97,11 @@
   \node[igbt] (q3) at (2.05,2) {};
   \draw[wire] ($(q3.center)+(-0.30,0)$) -- ($(q3.center)+(0.30,0)$);
   \draw[wire] ($(q3.center)+(-0.18,-0.30)$) -- ($(q3.center)+(-0.18,-0.12)$);
-  \node[label,above=1.2mm] at (q3.north) {$Q_3$ (IGBT+$D_3$)};
+  \node[label,above=1.2mm] at (q3.north) {$Q_4$ (IGBT+$D_4$)};
   \node[igbt] (q4) at (3.55,2) {};
   \draw[wire] ($(q4.center)+(-0.30,0)$) -- ($(q4.center)+(0.30,0)$);
   \draw[wire] ($(q4.center)+(0.18,-0.30)$) -- ($(q4.center)+(0.18,-0.12)$);
-  \node[label,below=1.2mm] at (q4.south) {$Q_4$ (IGBT+$D_4$)};
+  \node[label,below=1.2mm] at (q4.south) {$Q_3$ (IGBT+$D_3$)};
   \draw[wire] (0,2) -- (q3.west);
   \draw[wire] (q3.east) -- (q4.west);
   \draw[wire] (q4.east) -- (pole);

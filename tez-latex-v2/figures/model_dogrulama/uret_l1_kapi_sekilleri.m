@@ -85,10 +85,11 @@ close(f);
 
 % (3) S1 kapı komutları (s2_kapi_isaretleri.pdf ile aynı düzen)
 % S1 modelinde mantık düzeyinde kapı kaydı yoktur; kapı sürücüsü çıkışları (0/15 V) kayıtlıdır.
-% Sürücü -> Q eşlemesi S2'de mantık işaretleriyle (g12, g22, g42, g32 -> Q1..Q4) karşılaştırılarak
+% Sürücü -> Q eşlemesi S2'de mantık işaretleriyle (g12, g22, g32, g42 -> Q1..Q4) karşılaştırılarak
 % bulunur; S1'de sürücüler aynı sırayla (Gate Drive5..8 <-> Gate Drive1..4) yer alır.
+% 15.11.2026 (K-31): Q3 faz tarafı (g32), Q4 orta nokta tarafı (g42); tümleyen çiftler Q1-Q3, Q2-Q4.
 etk = {'q_1', 'q_2', 'q_3', 'q_4'};
-g2 = {'g12_S2', 'g22_S2', 'g42_S2', 'g32_S2'};
+g2 = {'g12_S2', 'g22_S2', 'g32_S2', 'g42_S2'};
 sur = @(Ek, n) Ek.(bulad(Ek, sprintf('Gate Drive%d/PS-Simulink Converter8$', n)));
 es = zeros(1, 4);
 for i = 1:4

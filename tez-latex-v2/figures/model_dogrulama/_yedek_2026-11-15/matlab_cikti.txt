@@ -1,0 +1,29 @@
+﻿tamam
+             senaryo                                 iL1_blok                                                     ig_blok                                  IL1_1_rms    Ig_1_rms    iL1_max    iL1_min    poz_yari_ters_orani    poz_yari_sifir_orani
+    _________________________    ________________________________________________    __________________________________________________________________    _________    ________    _______    _______    ___________________    ____________________
+
+    {'S1 (klasik)'          }    {'inverter_s1_kal/PS-Simulink Converter3'      }    {'inverter_s1_kal/AC Current Sensor1/PS-Simulink Converter'      }     2.0854       2.0632     8.5123     -8.5126          0.25197                  0.015       
+    {'S2 (susturma)'        }    {'inverter_s2_kal/PS-Simulink Converter5'      }    {'inverter_s2_kal/AC Current Sensor2/PS-Simulink Converter'      }     2.0953       2.1015     8.1966     -8.3048                0                0.16987       
+    {'S3 (susturma + Sin^3)'}    {'inverter_senaryo3_kal/PS-Simulink Converter3'}    {'inverter_senaryo3_kal/AC Current Sensor1/PS-Simulink Converter'}     2.2532       2.2541     7.7127     -7.7616                0                0.27638       
+
+S2 q_1 <- Gate Drive3 (uyum 0.9794)
+S2 q_2 <- Gate Drive2 (uyum 0.9690)
+S2 q_3 <- Gate Drive1 (uyum 0.9997)
+S2 q_4 <- Gate Drive4 (uyum 0.9997)
+S1 q_1 yar� 1: ge�i� 198, ortalama 0.289
+S1 q_1 yar� 2: ge�i� 0, ortalama 0.000
+S2 q_1 yar� 1: ge�i� 198, ortalama 0.350
+S2 q_1 yar� 2: ge�i� 0, ortalama 0.000
+S1 q_2 yar� 1: ge�i� 0, ortalama 0.000
+S1 q_2 yar� 2: ge�i� 198, ortalama 0.294
+S2 q_2 yar� 1: ge�i� 0, ortalama 0.000
+S2 q_2 yar� 2: ge�i� 198, ortalama 0.361
+S1 q_3 yar� 1: ge�i� 198, ortalama 0.304
+S1 q_3 yar� 2: ge�i� 2, ortalama 0.999
+S2 q_3 yar� 1: ge�i� 1, ortalama 0.002
+S2 q_3 yar� 2: ge�i� 1, ortalama 0.997
+S1 q_4 yar� 1: ge�i� 2, ortalama 0.999
+S1 q_4 yar� 2: ge�i� 198, ortalama 0.308
+S2 q_4 yar� 1: ge�i� 1, ortalama 0.997
+S2 q_4 yar� 2: ge�i� 1, ortalama 0.001
+tamam

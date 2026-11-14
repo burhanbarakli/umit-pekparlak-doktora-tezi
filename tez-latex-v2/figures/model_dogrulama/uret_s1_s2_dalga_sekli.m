@@ -51,7 +51,7 @@ close(f);
 
 % S2 kapi isaretleri (D-01 + D-08 kosusu)
 L = load(fullfile(kok,'2026-10-27_diyot_esleme','results','inverter_s1s2_s2onarim_d08','logsout.mat'));
-ads = {'g12_S2','g22_S2','g42_S2','g32_S2'}; etk = {'q_1','q_2','q_3','q_4'};  % g42 -> Q3 (orta nokta), g32 -> Q4 (faz)
+ads = {'g12_S2','g22_S2','g32_S2','g42_S2'}; etk = {'q_1','q_2','q_3','q_4'};  % 15.11.2026 (K-31): g32 -> Q3 (faz), g42 -> Q4 (orta nokta); tümleyen çiftler Q1-Q3, Q2-Q4
 f = figure('Units','centimeters','Position',[2 2 16 11],'Color','w','Visible','off');
 tl = tiledlayout(f,4,2,'TileSpacing','compact','Padding','compact','TileIndexing','columnmajor');
 G = cell(1,4);
