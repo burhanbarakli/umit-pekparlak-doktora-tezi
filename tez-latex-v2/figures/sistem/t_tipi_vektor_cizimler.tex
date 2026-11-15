@@ -48,7 +48,7 @@
 }
 
 % Faz başına tam T-tipi güç devresi: bölünmüş DA bara, dört IGBT ve LCL filtre.
-% Eski tezde C olarak gösterilen filtre kapasitörü, modelle tutarlılık için C_f olarak adlandırılmıştır.
+% Filtre kapasitörü modelle tutarlı olarak C_f adıyla gösterilir.
 \newcommand{\ttypefulltopology}{%
 \begin{tikzpicture}[
   x=0.88cm,y=0.68cm,
@@ -76,17 +76,17 @@
   \node[label,left=1mm] at (-0.38,0.50) {$C_B$};
   \node[terminal] at (0,2) {};
 
-  % Ana faz kolu IGBT'leri. D_1 ve D_2 antiparalel diyotları belirtir.
+  % Ana faz kolu IGBT'leri. DS_1--DS_4 ters paralel diyotlardır (Tablo tab:yariiletken-esleme; K-32).
   \node[igbt] (q1) at (5.3,3.65) {};
   \draw[wire] ($(q1.center)+(0,-0.30)$) -- ($(q1.center)+(0,0.30)$);
   \draw[wire] ($(q1.center)+(-0.30,-0.18)$) -- ($(q1.center)+(-0.12,-0.18)$);
   \draw[wire] ($(q1.center)+(-0.30,-0.18)$) -- ($(q1.center)+(-0.30,0.18)$);
-  \node[label,right=1.5mm] at (q1.east) {$Q_1$\\IGBT+$D_1$};
+  \node[label,right=1.5mm] at (q1.east) {$Q_1$\\IGBT+$DS_1$};
   \node[igbt] (q2) at (5.3,0.35) {};
   \draw[wire] ($(q2.center)+(0,-0.30)$) -- ($(q2.center)+(0,0.30)$);
   \draw[wire] ($(q2.center)+(-0.30,-0.18)$) -- ($(q2.center)+(-0.12,-0.18)$);
   \draw[wire] ($(q2.center)+(-0.30,-0.18)$) -- ($(q2.center)+(-0.30,0.18)$);
-  \node[label,right=1.5mm] at (q2.east) {$Q_2$\\IGBT+$D_2$};
+  \node[label,right=1.5mm] at (q2.east) {$Q_2$\\IGBT+$DS_2$};
   \draw[wire] (5.3,5) -- (q1.north);
   \draw[wire] (q1.south) -- (5.3,2);
   \draw[wire] (5.3,2) -- (q2.north);
@@ -97,11 +97,11 @@
   \node[igbt] (q3) at (2.05,2) {};
   \draw[wire] ($(q3.center)+(-0.30,0)$) -- ($(q3.center)+(0.30,0)$);
   \draw[wire] ($(q3.center)+(-0.18,-0.30)$) -- ($(q3.center)+(-0.18,-0.12)$);
-  \node[label,above=1.2mm] at (q3.north) {$Q_4$ (IGBT+$D_4$)};
+  \node[label,above=1.2mm] at (q3.north) {$Q_4$ (IGBT+$DS_4$)};
   \node[igbt] (q4) at (3.55,2) {};
   \draw[wire] ($(q4.center)+(-0.30,0)$) -- ($(q4.center)+(0.30,0)$);
   \draw[wire] ($(q4.center)+(0.18,-0.30)$) -- ($(q4.center)+(0.18,-0.12)$);
-  \node[label,below=1.2mm] at (q4.south) {$Q_3$ (IGBT+$D_3$)};
+  \node[label,below=1.2mm] at (q4.south) {$Q_3$ (IGBT+$DS_3$)};
   \draw[wire] (0,2) -- (q3.west);
   \draw[wire] (q3.east) -- (q4.west);
   \draw[wire] (q4.east) -- (pole);
@@ -126,14 +126,15 @@
   \draw[wire] (7.78,0.95) -- (8.52,0.95);
   \draw[wire] (8.15,0.95) -- (8.15,-1.45) -- (-0.85,-1.45);
   \draw[wire] (-0.85,-1.45) -- (-0.85,2) -- (0,2);
-  \node[label,right=1mm] at (8.52,1.10) {$C_f$ (eski $C$)};
+  \node[label,right=1mm] at (8.52,1.10) {$C_f$};
   \draw[-{Latex[length=1.8mm]},red!80!black,line width=1.1pt] (6.0,2.30) -- (7.0,2.30);
   \node[label,above] at (6.5,2.30) {$i_1$};
 \end{tikzpicture}%
 }
 
-% Senkron-buck eşdeğeri: üst ray, alt ray, üst ve alt anahtar etiketleri.
-\newcommand{\syncbuckvector}[4]{%
+% Senkron-buck eşdeğeri: üst ray, alt ray, üst ve alt anahtar etiketleri,
+% enerji aktaran anahtarın konumu (1: üst, 0: alt). Yeşil anahtar ve mavi yol aktif enerji aktarımıdır (K-32).
+\newcommand{\syncbuckvector}[5]{%
 \begin{tikzpicture}[
   x=0.82cm,y=0.65cm,
   sw/.style={draw,rounded corners=1pt,minimum width=8mm,minimum height=8mm,fill=white,font=\scriptsize},
@@ -144,8 +145,13 @@
   \draw[line width=0.8pt] (0,0) -- (1.8,0);
   \node[font=\scriptsize,left] at (0,3.2) {#1};
   \node[font=\scriptsize,left] at (0,0) {#2};
-  \node[sw,draw=green!55!black,line width=1.2pt] (qh) at (1.8,2.45) {#3};
-  \node[sw,draw=gray!65,line width=1.2pt] (ql) at (1.8,0.75) {#4};
+  \ifnum#5=1
+    \node[sw,draw=green!55!black,line width=1.2pt] (qh) at (1.8,2.45) {#3};
+    \node[sw,draw=gray!65,line width=1.2pt] (ql) at (1.8,0.75) {#4};
+  \else
+    \node[sw,draw=gray!65,line width=1.2pt] (qh) at (1.8,2.45) {#3};
+    \node[sw,draw=green!55!black,line width=1.2pt] (ql) at (1.8,0.75) {#4};
+  \fi
   \draw[line width=0.8pt] (1.8,3.2) -- (qh.north);
   \draw[line width=0.8pt] (qh.south) -- (1.8,1.6);
   \draw[line width=0.8pt] (1.8,1.6) -- (ql.north);
@@ -160,7 +166,11 @@
   \draw[coilpath,line width=0.9pt] (l1a) -- (l1b);
   \draw[line width=0.8pt] (l1b) -- (cnode) -- (l2a);
   \draw[coilpath,line width=0.9pt] (l2a) -- (l2b);
-  \draw[current] (l2b) -- (6.0,1.6);
+  \ifnum#5=1
+    \draw[current] (l2b) -- (6.0,1.6);
+  \else
+    \draw[current] (6.0,1.6) -- (l2b);
+  \fi
   \node[font=\scriptsize,above=2mm] at ($(l1a)!0.5!(l1b)$) {$L_1$};
   \node[font=\scriptsize,above=2mm] at ($(l2a)!0.5!(l2b)$) {$L_2$};
   \node[font=\scriptsize,right] at (6.0,1.6) {$v_g,\ i_L$};
@@ -172,8 +182,13 @@
   \draw[line width=0.8pt] (3.58,0.2) -- (4.18,0.2);
   \draw[line width=0.8pt] (3.68,0.05) -- (4.08,0.05);
   \node[font=\scriptsize,right] at (4.18,0.88) {$C_f$};
-  \draw[blue!70!black,line width=1.8pt] (0.5,3.2) -- (qh.north);
-  \draw[blue!70!black,line width=1.8pt] (qh.south) -- (1.8,1.6) -- (l1a);
+  \ifnum#5=1
+    \draw[blue!70!black,line width=1.8pt] (0.5,3.2) -- (qh.north);
+    \draw[blue!70!black,line width=1.8pt] (qh.south) -- (1.8,1.6) -- (l1a);
+  \else
+    \draw[blue!70!black,line width=1.8pt] (l1a) -- (1.8,1.6) -- (ql.north);
+    \draw[blue!70!black,line width=1.8pt] (ql.south) -- (1.8,0) -- (0.5,0);
+  \fi
 \end{tikzpicture}%
 }
 

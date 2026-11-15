@@ -44,7 +44,7 @@ Durum değerleri: ☐ başlamadı · ◐ sürüyor · ☑ bitti
 | İP-14 | Yapı hakem önerileri: akış, sıra, hacim (kalibrasyonun Bölüm 3'e alınması, Bölüm 3/6/7 ayrıntılarının EK-D/EK-E'ye taşınması, sıra ve başlık düzeltmeleri) | `04_YAPI_HAKEM_RAPORU.md` (29.10.2026, `tez-hakem` ajanı + doğrulama) → uygulanırsa ana metin ~166 → ~145–150 s. | 1, 2, 3 | İP-13 | ☐ (tez sahibi bakacak; uygulanmadı) |
 | İP-15 | Tez sahibinin 01.11.2026 S1 THD değerlendirmesinin işlenmesi | K-29: deneysel %15, PF dışarıda, faz akımı THD tablosu, Temmuz ekranları çıkarıldı, osilogram THD denetimi eklendi. Bitti. | — | — | — |
 | İP-16 | Tez sahibinin 07.11.2026 okuma notları ve Bölüm 7 proje katmanının çıkarılması | K-30: Bölüm 7 deney düzeneğine bağlanarak yeniden yazıldı; Bölüm 1–8, özet ve Summary'de notlar işlendi; Bölüm 5 şekilleri Arial ile yeniden üretildi. Şekil 2.5 notu ve Şekil 3.2 nötr bağlantısı 09.11.2026 teslimiyle kapandı (K-31). | — | — | — |
-| İP-17 | Q3/Q4 adlandırması (Q1–Q3, Q2–Q4 tümleyen), düzeltilmiş Şekil 2.5/3.2/4.4/7.3/7.4, S4 anahtarlama girişi şekli, öğrenci no | K-31: uygulandı. Açık: jüri başkanı, üniversiteler, savunma tarihi. | — | — | — |
+| İP-17 | Q3/Q4 adlandırması (Q1–Q3, Q2–Q4 tümleyen), düzeltilmiş Şekil 2.5/3.2/4.4/7.3/7.4, S4 anahtarlama girişi şekli, öğrenci no | K-31: uygulandı; K-32: bağımsız denetimin kritik/önemli bulguları kapatıldı (Şekil 7.6, 3.2 detay, 3.4, 3.5, 4.4; Bölüm 4 ters akım cümlesi; D-01/D-08 notu). Açık: denetimin küçük bulguları, jüri başkanı, üniversiteler, savunma tarihi. | — | — | — |
 
 Paralel yürütülebilecekler: İP-2, İP-3 ve İP-12 birbirinden bağımsızdır. İP-1
 uzun bir MATLAB koşusudur (Normal modda ~2 saat, tek Accelerator koşusunda ~30 dk).

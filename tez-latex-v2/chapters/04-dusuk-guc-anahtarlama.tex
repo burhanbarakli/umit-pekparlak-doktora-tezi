@@ -103,7 +103,7 @@ Senaryo tanımları ile benzetim modellerinin kapı üretim yapısı blok blok k
   \end{tabular}
 \end{table}
 
-Tablo~\ref{tab:model-kapi-mantigi} içindeki kalın hücreler iki yöntem arasındaki tek farkı gösterir. Klasik anahtarlamada $O$ durumunda karşı nötr anahtar da iletimdedir ve ters akım yolu açıktır. Susturmalı anahtarlamada $O$ durumunda yalnız yük akımı yönündeki yol açıktır: pozitif yarım periyotta akım orta noktadan $Q_4$ ve $DS_3$ üzerinden faza akar, ters yöndeki akım nötr koldan dönemez ve $D_1$--$D_2$ ile dış anahtar diyotları üzerinden DA rayına yönelir. S1 kapı mantığı Tablo~\ref{tab:t-tipi-durumlar} ile birebir aynıdır.
+Tablo~\ref{tab:model-kapi-mantigi} içindeki kalın hücreler iki yöntem arasındaki tek farkı gösterir. Klasik anahtarlamada $O$ durumunda karşı nötr anahtar da iletimdedir ve ters akım yolu açıktır. Susturmalı anahtarlamada $O$ durumunda yalnız yük akımı yönündeki yol açıktır: pozitif yarım periyotta akım orta noktadan $Q_4$ ve $DS_3$ üzerinden faza akar, ters yönde ise akım yolu yoktur: $L_1$ akımı sıfıra indiğinde kesilir ve kutup gerilimi filtre tarafının gerilimini izler (Alt Bölüm~\ref{sec:dusuk-akim-modelleme}). $D_1$--$D_2$ yalnız kutup gerilimi DA rayını aşarsa iletime girer. S1 kapı mantığı Tablo~\ref{tab:t-tipi-durumlar} ile birebir aynıdır.
 
 Susturmanın devre düzeyindeki sonucu Şekil~\ref{fig:susturma-esdeger} üzerinde gösterilmiştir. Klasik anahtarlamada her yarım periyot, iki yönlü iletebilen alt ve üst anahtardan oluşan senkron alçaltıcıya karşılık gelir (Şekil~\ref{fig:senkron-buck-esdeger}). Susturmalı çalışmada iletimde kalan nötr anahtar ile karşı nötr anahtarın antiparalel diyodu seri bir tek yönlü eleman oluşturur; faz kolu her yarım periyotta bir aktif anahtar ile bir diyottan oluşan senkron olmayan alçaltıcıya dönüşür. Serbest dolaşım akımı diyot üzerinden yalnız yük yönünde akar ve sıfıra indiğinde kendiliğinden kesilir. Ters akımın kesilmesi ile süreksiz iletimin başlaması aynı devre özelliğinin iki sonucudur; ikinci sonucun harmonik etkisi Alt Bölüm~\ref{sec:harmonik-mekanizma} içinde incelenmiştir.
 
@@ -146,7 +146,7 @@ Faz kolunun devre yapısı Şekil~\ref{fig:t-tipi-akim-yollari}, elemanların de
 \begin{figure}[p]
   \centering
   \includegraphics[width=0.80\textheight,angle=90]{umit_2026-11-09/s3_model_sematik.pdf}
-  \caption[S3 benzetim modelinin üst düzey çizimi]{S3 benzetim modelinin üst düzey çizimi: DA kaynak ve bölünmüş bara, T-tipi güç katı ($S_1$--$S_4$ anahtarları tezdeki $Q_1$--$Q_4$ ile aynı sıradadır), $L_1$ ve çekirdek kaybı, iki kademeli EMC süzgeci, şebeke eşdeğeri ($L_2$), Sin\textsuperscript{3} ileri beslemeli modülasyon (\textsc{anahtarlama}) ve ölçüm ile güç hesabı blokları. Güç katı ve ölçüm blokları S1--S4 modellerinde ortaktır; senaryolar yalnız anahtarlama girişinde ayrılır. Çizim model dosyasından vektör olarak alınmıştır.}
+  \caption[S3 benzetim modelinin üst düzey çizimi]{S3 benzetim modelinin üst düzey çizimi: DA kaynak ve bölünmüş bara, T-tipi güç katı (şekildeki S1--S4 etiketli anahtarlar sırasıyla $Q_1$--$Q_4$'tür), $L_1$ ve çekirdek kaybı, iki kademeli EMC süzgeci, şebeke eşdeğeri ($L_2$), Sin\textsuperscript{3} ileri beslemeli modülasyon (\textsc{anahtarlama}) ve ölçüm ile güç hesabı blokları. Güç katı ve ölçüm blokları Senaryo~1--4 modellerinde aynıdır; senaryolar anahtarlama girişi ve çalışma noktası parametreleriyle (DA bara gerilimi, ileri besleme katsayıları) ayrılır. Çizim model dosyasından vektör olarak alınmıştır.}
   \label{fig:s3-simulink-modeli}
 \end{figure}
 

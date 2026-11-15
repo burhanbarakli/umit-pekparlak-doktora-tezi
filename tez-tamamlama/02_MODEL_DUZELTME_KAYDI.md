@@ -94,6 +94,11 @@ Her satır şu öğeleri içerir:
   - Her etiket için tek Goto ve tek From var.
   - g12 → IGBT4 (S1, `S12`), g22 → IGBT5 (S2, `S12`), g32 → IGBT7 (S4, `S34`),
     g42 → IGBT6 (S3, `S34`). Eşleme A devresiyle aynı.
+  - **K-32 notu (15.11.2026):** Parantez içindeki S3/S4 etiketleri ters okunmuştu.
+    Model annotation'ları ve port bağlantılarına göre g32 → IGBT7 (C: faz düğümü)
+    model S3 = tezde $Q_3$; g42 → IGBT6 (C: orta nokta) model S4 = tezde $Q_4$.
+    A devresinde aynı düzen IGBT3 (S3) ve IGBT2 (S4) ile geçerlidir. Kapı bağlantıları
+    ve test sonucu değişmez; yalnız etiketin adı düzeltilmiştir.
   - Derleme başarılı.
   - Kapı mantığı testi (0–40 ms):
 
@@ -240,6 +245,10 @@ Her satır şu öğeleri içerir:
 - **Dosya / blok:** 12.10 paketinin üç modeli.
   - S1+S2 A devresi, S3 ve S4: `Diode5` (faz → DA+), `Diode3` (DA− → faz),
     `Diode6`/`Diode7` (S3/S4 nötr IGBT ters paralel).
+  - **K-32 notu (15.11.2026):** Sıra ters yazılmıştı. `Diode7` (A: ortak emetör,
+    K: faz) model S3 = $Q_3$'ün ters paralel diyotu ($DS_3$); `Diode6` (A: ortak
+    emetör, K: orta nokta) model S4 = $Q_4$'ün ters paralel diyotu ($DS_4$). B devresinde
+    `Diode11` = $DS_3$, `Diode10` = $DS_4$. Parametre takası ve etkisi değişmez.
   - S1+S2 B (S2) devresi: `Diode8`/`Diode4` ve `Diode10`/`Diode11`.
 - **Sınıf:** Topoloji / cihaz eşlemesi
 - **Sorun ve kanıt:**

@@ -72,13 +72,20 @@ Tek bir modelin bütün iddiaları aynı doğrulukla desteklediği varsayılmam�
 
 Üç seviyeli T-tipi faz kolunda üst ana anahtar $Q_1$, alt ana anahtar $Q_2$ ve DA bara orta noktasını faz çıkışına bağlayan çift yönlü nötr kol anahtarları $Q_3$ ile $Q_4$ olarak adlandırılmıştır. Tek faz kolunun temel devre yapısı Şekil~\ref{fig:t-tipi-faz-kolu} ile Bölüm~\ref{chap:literatur} içinde verilmiştir; aynı devre burada gereksiz tekrar oluşturmaması için yeniden basılmamıştır. $Q_1$--$Q_4$ adlandırması, Tablo~\ref{tab:sistem-parametreleri} içindeki $S_1$--$S_4$ anahtarlarıyla birebir aynıdır: $Q_3$ faz düğümü tarafındaki, $Q_4$ DA bara orta noktası tarafındaki nötr IGBT'dir; tümleyen anahtar çiftleri $Q_1$--$Q_3$ ve $Q_2$--$Q_4$'tür. Bölünmüş bara geriliminin toplamı $V_{\mathrm{dc}}$ kabul edildiğinde ideal faz-kutup gerilimi $+V_{\mathrm{dc}}/2$, $0$ ve $-V_{\mathrm{dc}}/2$ seviyelerinden birini alır. Nötr kolun eklediği sıfır seviyesi, iki seviyeli yapıya göre daha küçük gerilim basamakları oluşturur; karşılığında komütasyon düzeni ile nötr nokta akımının ayrıca yönetilmesi gerekir \citep{Schweizer2013,Wang2020}.
 
-Sistem sınırını, üç fazlı tam güç topolojisini gösteren Proteus şeması (`guc\_yapi\_01`) kesinleştirmiştir; şema Şekil~\ref{fig:gelen-tam-topoloji} üzerinde verilmiştir. Solda dört iletkenli giriş, ortak-mod endüktansları ve şönt kapasitörlerden oluşan giriş/EMI ağı; ortada ortak DA bağlantısına bağlanan üç tekrarlı T-tipi faz hücresi; her hücrede dış kol anahtar modülü, çift yönlü nötr kol, doğrultucu diyotlar, yerel kapasitörler, akım algılama elemanı ve röle; hücrelerin altında üç fazın DA bara orta noktalarını birbirine ve giriş nötrüne bağlayan nötr hattı; şemanın en alt kısmında ise GT-tipi mimarinin şarj yönünde kullanılan batarya yönetim sistemi (BYS) transformatörleri görülmektedir. Deney düzeneği GT-tipi mimariye göre kurulmuştur (Bölüm~\ref{chap:gttipi}); her hücredeki röle ($RL1$) ile doğrultucu ve yükseltici diyotlar, şarj ve deşarj kipleri arasındaki geçişe hizmet eder. Şemadaki $L1$, $L2$ ve $L3$ etiketleri LCL filtrenin ardışık $L_1$--$L_2$ elemanlarını değil, sırasıyla A, B ve C fazlarına ait üç eş \SI{600}{\micro\henry} bobini göstermektedir; $L2=\SI{600}{\micro\henry}$ etiketi filtrenin şebeke tarafı endüktansı değildir. Tezde bütün topoloji üç amaçla kullanılmaktadır: sistem ve ölçüm sınırını belirlemek, üç fazın aynı faz-başına modelin tekrarı olduğunu göstermek ve yarı iletken/parazit parametrelerini gerçek devre elemanlarıyla eşlemek. Anahtarlama denklemleri ve akım yolu çizimleri okunabilirlik için Şekil~\ref{fig:t-tipi-akim-yollari} altındaki tek faz eşdeğerine indirgenmiştir; tek faz indirgemesi giriş filtresinin, diğer iki fazın veya ölçüm/koruma elemanlarının fiziksel sistemde bulunmadığı anlamına gelmez.
+Sistem sınırını, üç fazlı tam güç topolojisini gösteren Proteus şeması (`guc\_yapi\_01`) kesinleştirmiştir; şema Şekil~\ref{fig:gelen-tam-topoloji} üzerinde, birinci faz hücresi ise okunabilir ölçekte Şekil~\ref{fig:gelen-faz1-hucresi} üzerinde verilmiştir. Solda dört iletkenli giriş, ortak-mod endüktansları ve şönt kapasitörlerden oluşan giriş/EMI ağı; ortada ortak DA bağlantısına bağlanan üç tekrarlı T-tipi faz hücresi; her hücrede dış kol anahtar modülü, çift yönlü nötr kol, doğrultucu diyotlar, yerel kapasitörler, akım algılama elemanı ve röle; hücrelerin altında üç fazın DA bara orta noktalarını birbirine ve giriş nötrüne bağlayan nötr hattı; şemanın en alt kısmında ise GT-tipi mimarinin şarj yönünde kullanılan batarya yönetim sistemi (BYS) transformatörleri görülmektedir. Deney düzeneği GT-tipi mimariye göre kurulmuştur (Bölüm~\ref{chap:gttipi}); her hücredeki röle ($RL1$) ile doğrultucu ve yükseltici diyotlar, şarj ve deşarj kipleri arasındaki geçişe hizmet eder. Şemadaki $L1$, $L2$ ve $L3$ etiketleri LCL filtrenin ardışık $L_1$--$L_2$ elemanlarını değil, sırasıyla A, B ve C fazlarına ait üç eş \SI{600}{\micro\henry} bobini göstermektedir; $L2=\SI{600}{\micro\henry}$ etiketi filtrenin şebeke tarafı endüktansı değildir. Tezde bütün topoloji üç amaçla kullanılmaktadır: sistem ve ölçüm sınırını belirlemek, üç fazın aynı faz-başına modelin tekrarı olduğunu göstermek ve yarı iletken/parazit parametrelerini gerçek devre elemanlarıyla eşlemek. Anahtarlama denklemleri ve akım yolu çizimleri okunabilirlik için Şekil~\ref{fig:t-tipi-akim-yollari} altındaki tek faz eşdeğerine indirgenmiştir; tek faz indirgemesi giriş filtresinin, diğer iki fazın veya ölçüm/koruma elemanlarının fiziksel sistemde bulunmadığı anlamına gelmez.
 
 \begin{figure}[p]
   \centering
   \includegraphics[width=0.82\textheight,angle=90]{umit_2026-11-09/tam_topoloji_notr_q1q3_q2q4.pdf}
   \caption{GT-tipi olarak kurulan deney düzeneğinin üç fazlı tam güç topolojisi: ortak giriş/EMI ağı, üç tekrarlı T-tipi faz hücresi, DA bara orta noktalarını giriş nötrüne bağlayan nötr hattı, akım algılama ve kip değişim rölesi yolları ile şarj yönündeki BYS transformatörleri. Her hücrede nötr kolun faz tarafındaki anahtarı dış kolun üst anahtarıyla, orta nokta tarafındaki anahtarı alt anahtarıyla tümleyen çift oluşturur (birinci fazda $Q_1$--$Q_3$ ve $Q_2$--$Q_4$). Şema, yöntem bölümünde sistem sınırı ve faz-başına indirgeme kaynağı olarak kullanılmıştır.}
   \label{fig:gelen-tam-topoloji}
+\end{figure}
+
+\begin{figure}[p]
+  \centering
+  \includegraphics[width=0.86\textheight,angle=90]{umit_2026-11-09/tam_topoloji_faz1_hucresi.pdf}
+  \caption{Şekil~\ref{fig:gelen-tam-topoloji} içindeki birinci faz hücresinin büyütülmüş görünümü: $D_1$--$D_2$ harici diyotları, $C_{10}$--$C_{11}$ bölünmüş DA bara kapasitörleri, dış kol modülü $Q_1$--$Q_2$ (SKM100GB12T4) ve $C_{12}$ snubber kapasitörü, orta nokta tarafında $Q_4$ ve faz tarafında $Q_3$ nötr IGBT'leri, $RL1$--$RL2$ kip değişim röleleri. Alttaki yatay hat, faz hücrelerinin DA bara orta noktalarını birbirine bağlayan nötr hattıdır.}
+  \label{fig:gelen-faz1-hucresi}
 \end{figure}
 
 Faz indisi $x\in\{a,b,c\}$, DA bara orta noktası $N$, faz kutup gerilimi $v_{xN}$ ve gerilim durumunu seçen boyutsuz anahtarlama değişkeni $s_x\in\{-1,0,1\}$ ile gösterilsin. Üç gerilim durumu
@@ -207,12 +214,12 @@ Faz gerilimi referansının genliği azaldığında aktif $P$ veya $N$ durumunun
   \centering
   \begin{subfigure}[t]{0.46\textwidth}
     \centering
-    \resizebox{\linewidth}{!}{\syncbuckvector{$+V_{\mathrm{dc}}/2$}{$N$}{$Q_1$}{$Q_3$}}
+    \resizebox{\linewidth}{!}{\syncbuckvector{$+V_{\mathrm{dc}}/2$}{$N$}{$Q_1$}{$Q_3$}{1}}
     \caption{Pozitif yarım periyot eşdeğeri}
   \end{subfigure}\hfill
   \begin{subfigure}[t]{0.46\textwidth}
     \centering
-    \resizebox{\linewidth}{!}{\syncbuckvector{$N$}{$-V_{\mathrm{dc}}/2$}{$Q_4$}{$Q_2$}}
+    \resizebox{\linewidth}{!}{\syncbuckvector{$N$}{$-V_{\mathrm{dc}}/2$}{$Q_4$}{$Q_2$}{0}}
     \caption{Negatif yarım periyot eşdeğeri}
   \end{subfigure}
   \caption{T-tipi faz kolunun yarım periyotlara göre senkron-buck eşdeğerleri. Yeşil anahtar ve mavi yol aktif enerji aktarımını göstermektedir.}
