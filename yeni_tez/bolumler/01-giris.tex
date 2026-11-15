@@ -1,0 +1,158 @@
+\chapter{GİRİŞ}
+\label{chap:giris}
+
+\section{Araştırma Problemi ve Motivasyon}
+\label{sec:giris-problem}
+
+Elektrik enerjisi sistemleri; artan talep, fosil kaynakların çevresel etkileri ve enerji arzının karbonsuzlaştırılması gereksinimi nedeniyle önemli bir dönüşüm geçirmektedir. Güneş ve rüzgâr gibi yenilenebilir kaynakların kurulu güç içindeki payı büyürken elektrik üretimi, merkezi ve öngörülebilir bir yapıdan dağıtık ve zamana bağlı bir yapıya doğru ilerlemektedir. Üretim yapısındaki dönüşüm temiz enerji üretimini artırsa da üretim ile tüketimin her an dengelenmesi zorunluluğunu ortadan kaldırmamaktadır. Işınım ve rüzgâr koşullarına bağlı üretim değişimleri; güç dengesinin korunması, gerilim ve frekansın desteklenmesi ve yenilenebilir enerjinin etkin biçimde kullanılabilmesi için esnek kaynaklara duyulan gereksinimi artırmaktadır \citep{Chen2009,Aneke2016,IEAPVPS2024}.
+
+Enerji depolama sistemleri (EDS), enerjiyi üretildiği anda tüketme zorunluluğunu azaltarak yenilenebilir kaynakların şebekeye entegrasyonunda gereken esnekliği sağlayan başlıca yapılardan biridir. Bir EDS yalnızca batarya grubundan ibaret değildir; batarya, güç dönüşüm sistemi, batarya ve enerji yönetim birimleri, koruma, haberleşme ve ısıl yönetim alt sistemlerinin birlikte çalıştığı bütünleşik bir sistemdir \citep{Hannan2017,Plett2015}. Sistem başarısı yalnızca hücrenin enerji yoğunluğuyla değil, batarya ile DA bara, yük ve şebeke arasındaki enerji akışını yöneten güç elektroniği arayüzünün verimi, güvenilirliği, hacmi ve maliyetiyle de belirlenir. Güncel maliyet çalışmalarında batarya paketi en büyük kalem olarak öne çıksa da çift yönlü güç dönüştürücüleri ile yardımcı donanımları da sistem düzeyindeki maliyet ve kayıpların önemli bir parçasıdır \citep{Ramasamy2023,Lazard2024}. Maliyet ve kayıp dağılımı, hem bataryanın güvenli çalışma bölgesini koruyan hem de aynı yarı iletken donanımı farklı enerji akış yönlerinde daha etkin kullanan dönüştürücü mimarilerini önemli kılmaktadır.
+
+Depolama arayüzünün performansı, bağlı olduğu yenilenebilir üretim sisteminin gerçek çalışma profiliyle birlikte değerlendirilmelidir. Fotovoltaik (FV) üretim, ışınım ve sıcaklık nedeniyle gün boyunca sürekli değişir; evirici yalnızca sınırlı sürelerle anma gücüne yakın çalışır ve çalışma ömrünün kayda değer bir bölümünü kısmi yük bölgelerinde geçirir. Yalnızca anma noktasında verilen tepe verim değeri, yıllık enerji dönüşüm başarısını tek başına açıklamaz. Avrupa ve CEC ağırlıklı verim tanımları ile bölgesel ışınım dağılımlarına dayalı ölçütler, farklı güç seviyelerindeki verimlerin gerçek işletme açısından birlikte ele alınması gerektiğini göstermektedir \citep{Meinhardt2000,Sera2008,Sandia2015,Ongun2013}. Kısmi yükte sabit sürme, anahtarlama ve manyetik eleman kayıplarının aktarılan güce oranı büyürken akım dalga biçimi de anahtar doğrusal olmayanlıklarına, ölü zamana ve şebeke gerilimindeki bozulmalara daha duyarlı hâle gelir. Sonuçta düşük güç bölgesi, verim ile akım toplam harmonik bozulması (Total Harmonic Distortion, THD) arasındaki ödünleşimin belirginleştiği bir çalışma alanına dönüşür \citep{Kjaer2005,Chicco2009}.
+
+Şebekeye bağlı dönüştürücülerde verim--THD ödünleşimi; topoloji, modülasyon, filtre ve kontrol yapısının ortak sonucudur. İki seviyeli eviricilere alternatif olan çok seviyeli topolojiler, çıkış gerilimini daha fazla seviyede oluşturarak yarı iletken gerilim zorlanmasını ve anahtarlama dalgalanmasını azaltabilmektedir. Üç seviyeli T-tipi evirici, nötr noktaya bağlanan çift yönlü anahtar kolu sayesinde $+V_{\mathrm{dc}}/2$, $0$ ve $-V_{\mathrm{dc}}/2$ gerilim seviyelerini üretir. T-tipi yapı; uygun eleman seçimi ve modülasyonla yüksek güç yoğunluğu ve yüksek verim potansiyeli sunmakta, aynı zamanda ticari yarı iletken modüllerle gerçekleştirilebilmektedir \citep{Wang2020}. T-tipi topolojinin şebekeye bağlı gerçek bir donanım üzerindeki uygulanabilirliği ve elektromanyetik uyumluluk gereksinimleri de deneysel çalışmalarla gösterilmiştir \citep{Hizarci2021}.
+
+T-tipi topolojinin anma gücündeki üstünlüğü ise düşük güçte aynı ölçüde korunmayabilir. Çıkış akımının küçük olduğu bölgelerde T-tipi faz kolunun sıfır gerilim durumunu oluşturan nötr anahtarları, akımın işaret değiştirmesine izin veren senkron bir alçaltıcı dönüştürücü (synchronous buck) davranışı gösterebilir. Endüktör akımı bir anahtarlama periyodu içinde sıfıra ulaştıktan sonra nötr anahtar iletimde tutulduğunda akım ters yönde büyüyebilir; şebekeye yararlı güç taşımayan dolaşım akımı, yarı iletken ve pasif elemanların RMS akımını ve iletim kayıplarını artırabilir. Süreksiz iletim ve diyot benzetimi (diode emulation) yaklaşımlarının hafif yükte ters akımı engelleyerek kayıpları azaltabilmesi, senkron alçaltıcı dönüştürücüler için bilinen bir ilkedir \citep{Erickson2001,Mohan2003,Chen2010}. Ancak ters akımı engelleme ilkesinin şebekeye bağlı üç seviyeli T-tipi eviricinin sıfır durumuna uygulanması, yalnızca bir anahtarın kapatılması değildir; akım yolunu, çıkış gerilimini, modülasyon bütünlüğünü ve harmonik içeriği birlikte değiştiren topolojiye özgü bir problemdir.
+
+Tezde, T-tipi sıfır durumuna özgü ters akım problemi için düşük güç bölgesinde dolaşımı sınırlandırmak amacıyla nötr anahtarın belirli koşullarda susturulmasına dayanan yeni bir anahtarlama yöntemi ele alınmaktadır. Yöntem, dolaşım akımını ve dolaşım akımından kaynaklanan kayıpları azaltmayı hedeflerken T-tipi eviricinin ürettiği gerilim darbelerini de değiştirmektedir. Verimdeki olası iyileşmenin karşılığında, özellikle üçüncü harmonik bileşeninde artış ortaya çıkabilmektedir. Ölü zaman, anahtar geçişleri ve parazitik kapasiteler gibi gerçek devre etkileri akım harmoniklerini çalışma noktasına bağlı biçimde değiştirebildiğinden \citep{Zhang2014Deadtime}, önerilen anahtarlama yönteminin başarısı yalnızca verim kazancıyla değil, aynı çalışma noktalarında THD ve şebeke akımı kalitesi korunarak değerlendirilmelidir.
+
+Anahtarlama değişikliğinin oluşturduğu üçüncü harmonik bileşenini azaltmak için tez kapsamında Sin\textsuperscript{3} tabanlı bir ileri besleme kompanzasyonu (feedforward compensation) kullanılmaktadır. $\sin^3(\theta)=[3\sin(\theta)-\sin(3\theta)]/4$ özdeşliği, ölçülen şebeke geriliminin faz bilgisinden temel ve üçüncü harmonikle ilişkili anlık bir şekillendirme terimi üretilebilmesini sağlar. Üretilen terim, akım hatasından türetilen bağımsız bir geri besleme kontrolcüsü değil, mevcut akım kontrol döngüsünün modülasyon girişine eklenen bir kompanzasyon bileşenidir. İleri besleme ile geri besleme arasındaki terminolojik ayrım önemlidir: şebeke gerilimi ileri besleme yolları akım bozulmasını azaltabilse de dijital gecikme, LCL filtresi ve şebeke empedansı nedeniyle sistem dinamiğiyle etkileşebilir \citep{Lu2016,Wang2024}. Sin\textsuperscript{3} terimi ideal doğrusal modelde karakteristik paydayı değiştirmese de gecikme ve filtre etkileşimi gerçek dönüştürücüde kararlılık incelemesini gerekli kılar; kapalı çevrim modelinin, duyarlılık fonksiyonlarının ve düşük güç ile nominal akım çalışma noktalarının birlikte incelenmesi gerekir.
+
+Tezin ikinci odak noktası, aynı T-tipi donanımın yalnızca evirici olarak değil, EDS'nin farklı enerji akış kiplerinde yeniden kullanılabilmesidir. Geleneksel bir depolama sisteminde şebeke eviricisi, şarj doğrultucusu veya güç faktörü düzeltme (Power Factor Correction, PFC) katı ve hücre dengeleme dönüştürücüleri ayrı yarı iletken gruplarıyla gerçekleştirilebilir. Her ilave kat güç yoğunluğu, sürücü, soğutma, koruma ve maliyet üzerinde yeni yük oluşturur. Tezde önerilen GT-tipi mimari, T-tipi dönüştürücünün anahtarlarını çalışma kipine göre yeniden görevlendirerek evirici, Vienna PFC ve aktif batarya yönetimi işlevlerini ortak bir donanımsal yapı üzerinde birleştirmeyi amaçlamaktadır; tezin deney düzeneği de GT-tipi olarak kurulmuştur. Düşük güçteki anahtarlama ve harmonik problemi ile şarj--deşarj mimarisinin yeniden yapılandırılması, birbirinden kopuk iki çalışma olarak değil, T-tipi dönüştürücünün yapısal olanaklarını iki ölçekte kullanan tek bir araştırma ekseni olarak ele alınmaktadır: faz kolu ölçeğinde nötr kolun düşük güçteki görevi değiştirilmekte, sistem ölçeğinde dönüştürücü anahtarları şarj--deşarj mimarisi içinde yeniden görevlendirilmektedir.
+
+\section{Tezin Savı, Amacı ve Araştırma Soruları}
+\label{sec:giris-amac}
+
+Tezin ana savı şudur: \emph{T-tipi dönüştürücünün yapısal ve anahtarlama özellikleri, enerji depolama sistemlerinde şarj--deşarj işlevlerini yeniden yapılandırmak ve düşük güçte verim--harmonik ödünleşimini iyileştirmek için birlikte kullanılabilir; Sin\textsuperscript{3} terimi ise düşük güç verim--harmonik hedefini destekleyen ve akım çevriminin kararlılığını değiştirmeyen bir ileri besleme kompanzasyonudur.} Literatürde T-tipi eviricinin yüksek güç yoğunluğu, şebeke kontrolü, hafif yük dönüştürücü kipleri ve ileri besleme yolları ayrı ayrı incelenmiştir \citep{Blaabjerg2006,Wang2020,Chen2010,Lu2016}. Tezin odaklandığı araştırma boşluğu; T-tipi faz kolundaki düşük güç ters akım mekanizmasını, mekanizmanın verim--THD sonucunu, Sin\textsuperscript{3} tabanlı kompanzasyonu ve aynı donanımın EDS işlevleri için yeniden yapılandırılmasını ortak bir mimari ve doğrulama zinciri içinde ele almaktır.
+
+Tezin temel amacı, enerji depolama sistemleri için T-tipi dönüştürücü tabanlı yeniden yapılandırılabilir bir şarj--deşarj mimarisi geliştirmek ve aynı topolojinin şebekeye bağlı düşük güç çalışmasında görülen verim ile harmonik bozulma sorunlarını birlikte iyileştirecek yöntemleri ortaya koymaktır. Genel amaç doğrultusunda;
+
+\begin{enumerate}
+  \item T-tipi eviricinin düşük güçteki akım yollarını ve ters akım dolaşım mekanizmasını açıklamak,
+  \item ters akımı azaltmaya yönelik nötr anahtar susturma yöntemini geliştirmek ve klasik anahtarlamayla karşılaştırmak,
+  \item anahtarlama değişikliğinin üçüncü harmonik üzerindeki etkisini belirlemek ve Sin\textsuperscript{3} tabanlı ileri besleme kompanzasyonunu tanımlamak,
+  \item kompanzasyon yolunu mevcut kapalı çevrim akım kontrolünden ayırarak sistem dinamiği ve kararlılık üzerindeki etkisini incelemek,
+  \item T-tipi yarı iletkenleri farklı şarj, deşarj ve dengeleme kiplerinde yeniden kullanan GT-tipi mimariyi tanımlamak ve uygulanabilirliğini mevcut kanıtlarla değerlendirmek
+\end{enumerate}
+amaçlanmıştır.
+
+Tez aşağıdaki araştırma sorularına yanıt aramaktadır:
+
+\begin{enumerate}[label=AS\arabic*.]
+  \item T-tipi eviricinin düşük güç çalışma bölgesinde ters akım dolaşımı hangi anahtarlama durumları ve akım yolları üzerinden oluşmakta; dolaşım akımı kayıpları ve akım harmoniklerini nasıl etkilemektedir?
+  \item Nötr anahtarın koşula bağlı olarak susturulması, klasik anahtarlamaya göre düşük güç verimini hangi çalışma aralığında ve hangi harmonik maliyetle değiştirmektedir?
+  \item Sin\textsuperscript{3} tabanlı ileri besleme kompanzasyonu, önerilen anahtarlamanın oluşturduğu üçüncü harmonik bileşenini ne ölçüde azaltmakta ve mevcut kapalı çevrim akım kontrolünün kararlılık marjlarıyla nasıl etkileşmektedir?
+  \item T-tipi dönüştürücünün yarı iletkenleri, EDS'nin şarj--deşarj ve hücre dengeleme kiplerinde güvenli biçimde yeniden görevlendirilerek ayrı güç dönüşüm katlarının işlevleri ortak bir yapıda birleştirilebilir mi?
+\end{enumerate}
+
+\section{Özgün Katkılar}
+\label{sec:giris-katkilar}
+
+Tezin özgün katkıları, birbirini tamamlayan üç düzeyde tanımlanmıştır. İlk iki katkı T-tipi faz kolu ölçeğinde, üçüncü katkı sistem ölçeğindedir; üç katkının ortak tabanı T-tipi topolojinin kendisidir.
+
+\begin{enumerate}
+  \item \textbf{Düşük güç anahtarlama yöntemi:} T-tipi eviricinin sıfır gerilim durumunda ortaya çıkan ters akım dolaşımını hedefleyen nötr anahtar susturma yöntemi geliştirilmiştir. Katkı; çalışma kiplerinin analizi, klasik ve önerilen akım yollarının karşılaştırılması, deney özetine kalibre edilmiş benzetim ve prototip deney kayıtlarıyla değerlendirilmektedir. Yaklaşık \SI{2.3}{\ampere} faz akımında susturma, deneyde verimi \%92,5'ten \%94,2'ye yükseltmiş, akım THD'sini \%15'ten \%47'ye çıkarmıştır.
+  \item \textbf{Sin\textsuperscript{3} tabanlı ileri besleme kompanzasyonu:} Yeni anahtarlama yönteminin üçüncü harmonik üzerindeki etkisini azaltmak üzere şebeke işaretinden anlık olarak üretilen bir kompanzasyon terimi önerilmiştir. Katkı, bağımsız bir kontrolcü olarak değil mevcut kapalı çevrime eklenen ileri besleme bileşeni olarak modellenmektedir. Aynı akımda susturma ile birlikte kullanılan terim, deneyde akım THD'sini \%14'e, yani klasik anahtarlama düzeyine indirmiş, verimi \%94,5'e taşımıştır. Kararlılık analizi, terimin karakteristik denklemde yer almadığını ve akım çevriminin kazancını ve duyarlılık fonksiyonlarını değiştirmediğini göstermiştir.
+  \item \textbf{GT-tipi yeniden yapılandırılabilir mimari:} Evirici, Vienna PFC ve aktif batarya yönetimi işlevlerinde aynı yarı iletkenlerin farklı görevlerle kullanılmasını sağlayan T-tipi tabanlı bir EDS mimarisi önerilmiştir. Katkı; çalışma kipleri, anahtarlama durumları, enerji akış yolları ve güvenlik kısıtları üzerinden klasik ayrık mimariyle nitel olarak karşılaştırılmaktadır. Donanımın evirici kipi düşük güç deneyleriyle, şarj yönünün işlevsel bütünlüğü benzetim kayıtlarıyla gösterilmiştir; şarj yönü donanım deneyi ve kip geçişinin sınanması yapılmadığından katkı, mimari öneri düzeyindedir.
+\end{enumerate}
+
+Tez başlığının üç bileşeni üç katkıya karşılık gelir. ``Enerji depolama sistemleri için geliştirilmiş T-tipi dönüştürücü mimarisi'' bileşeni GT-tipi mimariyi (katkı~3), ``düşük güç performansını iyileştiren anahtarlama'' bileşeni nötr anahtar susturma yöntemini (katkı~1), ``Sin\textsuperscript{3} tabanlı kompanzasyon'' bileşeni ise ileri besleme kompanzasyonunu (katkı~2) adlandırmaktadır. Bölümlerin sırası başlığın sırasını değil, fiziksel zinciri izler: önce faz kolu ölçeğindeki mekanizma ve iki yöntem, ardından aynı donanımın sistem ölçeğinde yeniden görevlendirilmesi ele alınır. Tablo~\ref{tab:katki-yontem-kanit}, her katkıyı başlıktaki karşılığı, kullanılan yöntem, başlıca bulgu, bulgunun geçerli olduğu koşul ve kanıtın tezdeki yeri ile eşleştirmektedir.
+
+\begin{table}[H]
+  \centering
+  \caption{Özgün katkılar: başlıktaki karşılık, yöntem, başlıca bulgu ve kanıt. Deney değerleri yaklaşık \SI{2.3}{\ampere} faz akımı, \num{250}--\SI{280}{\watt} AA güç ve yaklaşık \SI{120}{\volt} şebeke gerilimindeki tek faz kolu içindir.}
+  \label{tab:katki-yontem-kanit}
+  \footnotesize
+  \setlength{\tabcolsep}{3pt}
+  \begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.17\textwidth}>{\raggedright\arraybackslash}p{0.22\textwidth}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}p{0.19\textwidth}@{}}
+    \toprule
+    \textbf{Katkı ve başlıktaki karşılığı} & \textbf{Yöntem} & \textbf{Başlıca bulgu ve koşulu} & \textbf{Kanıt ve düzeyi} \\
+    \midrule
+    1. Nötr anahtar susturma (``düşük güç performansını iyileştiren anahtarlama'') &
+    Kip ve akım yolu analizi, senkron-buck eşdeğeri; deneyin aktif ve reaktif gücüne kalibre edilmiş anahtarlamalı benzetim; deney özet kayıtları &
+    Klasik anahtarlamaya (S1) göre susturma (S2) verimi deneyde \%92,5'ten \%94,2'ye, kalibre benzetimde \%91,15'ten \%93,93'e yükseltir. Bedeli süreksiz iletim ve üçüncü harmoniktir: akım THD'si deneyde \%15'ten \%47'ye, benzetimde \%39,5'ten \%56,7'ye çıkar. \SI{10}{\ampere}'de süreksiz iletim çevrimin büyük kısmını kaplar ve THD \%20 düzeyindedir; yöntem düşük güç yöntemidir. &
+    Alt Bölüm~\ref{sec:s1-s2-kalibre}, Tablo~\ref{tab:kalibrasyon-karsilastirma}; Bölüm~\ref{chap:deney}; Tablo~\ref{tab:s4-tarama}. Mekanizma doğrulanmış; verim kazancı deney ve kalibre benzetimde aynı yönde \\
+    \addlinespace
+    2. Sin\textsuperscript{3} ileri besleme kompanzasyonu (``Sin\textsuperscript{3} tabanlı kompanzasyon'') &
+    Doğru özdeşlikle parçalı DCM--CCM katsayı taraması; kalibre S3 benzetimi; akım geri beslemeli S4 benzetimi; analitik, frekans alanı ve zaman alanı kararlılık analizi &
+    Susturma ile birlikte (S3) deneyde THD \%14, verim \%94,5; kalibre model THD'yi kalibre edilmeden \%14,8, verimi 0,25 puan içinde verir. Analitik modelde üçüncü harmonik oranı \%39,96'dan \%0,15'e iner. S4'te PI denetimi \SI{25}{\ampere}'i $-$\%2,1 genlik hatasıyla, doyumsuz izler. Sin\textsuperscript{3} terimi akım çevriminin dışında kaldığı için çevrimin kararlılığını değiştirmez; analog eşdeğer çevrimin kararlılık marjları yeterlidir (faz marjı $54^{\circ}$, kazanç marjı \SI{35}{\decibel}). &
+    Alt Bölüm~\ref{sec:sin3-yeniden-tarama}, \ref{sec:kalibrasyon}, \ref{sec:s4-kapali-cevrim}, \ref{sec:kararlilik-bode}; Tablo~\ref{tab:kalibrasyon-karsilastirma}, \ref{tab:kararlilik-marjlar}. Düşük güçte deney ve benzetim; anma akımı ve kararlılık yalnız benzetim \\
+    \addlinespace
+    3. GT-tipi mimari (``enerji depolama sistemleri için geliştirilmiş T-tipi dönüştürücü mimarisi'') &
+    İşlev paylaşım topolojisi, çalışma kipleri ve geçiş kısıtlarının tanımı; şarj zinciri benzetim kayıtları; evirici kipinde düşük güç deneyleri; klasik ayrık mimariyle nitel karşılaştırma &
+    Aynı T-tipi yarı iletken tabanı evirici, Vienna PFC ve aktif batarya yönetimi işlevlerinde kullanılabilir; güvenli kip geçişi PWM'in durdurulması, sıfıra yakın faz akımı, DA bara dengesi ve röle geri bildirimi koşuluna bağlıdır. Kayıp, maliyet ve hacim üstünlüğü sayısal olarak gösterilmemiştir. &
+    Bölüm~\ref{chap:gttipi}. Mimari öneri; evirici kipinde deney, şarj yönünde nitel benzetim kaydı \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+Üç katkıyı destekleyen doğrulama altyapısı da tezde ayrıca raporlanmaktadır: benzetim modelleri tez tanımına göre denetlenmiş ve düzeltilmiş (Alt Bölüm~\ref{sec:model-dogrulama-duzeltme}), bütün parametreler kaynak ve tür bilgisiyle tek tabloda toplanmış (Tablo~\ref{tab:sistem-parametreleri}) ve modeller deney özetine kalibre edilmiştir (Alt Bölüm~\ref{sec:kalibrasyon}). Tez çalışmasıyla ilişkili üç ulusal patent ve üç PCT başvurusu (Tablo~\ref{tab:fikri-mulkiyet}) teknolojik yenilik bakımından tamamlayıcı çıktı niteliğindedir; bilimsel doğrulamanın yerine kullanılmamaktadır.
+
+\section{Kapsam ve Sınırlar}
+\label{sec:giris-kapsam}
+
+Çalışma, şebekeye bağlı üç seviyeli T-tipi dönüştürücünün düşük güç davranışı ile T-tipi topolojiden türetilen GT-tipi enerji depolama mimarisiyle sınırlandırılmıştır. Prototip üç faz, dört telli yapıdadır ve nötr hattı DA bara orta noktasına bağlıdır; benzetim modelleri ve deney değerlendirmesi ise nötr dönüşü DA bara orta noktasına bağlanan tek faz kolu üzerinde yürütülmüştür. Düşük güç incelemesinde anahtarlama durumları, ters akım, dönüştürücü verimi, şebeke akımı THD'si ve üçüncü harmonik temel performans ölçütleridir. Sin\textsuperscript{3} terimi, şebeke geriliminden üretilen ileri besleme kompanzasyonu olarak ele alınmakta; bağımsız bir kapalı çevrim kontrol yasası veya genel amaçlı aktif harmonik filtre yöntemi olduğu iddia edilmemektedir.
+
+Doğrulama, dört senaryonun benzetim modelleri ve düşük güç noktasında yapılan deneylerle gerçekleştirilmiştir; anma gücünde geri beslemeli deney ve GT-tipi şarj yönü deneyi yapılmamıştır. Sonuçlar; kullanılan DA bara gerilimi, şebeke koşulları, LCL filtre, anahtarlama frekansı, denetleyici ayarları, ölçüm düzeni ve incelenen güç seviyeleri için geçerlidir. Deneyle doğrulanmamış çalışma bölgelerine ilişkin ifadeler genellenmemekte; benzetim ve deney sonuçları ayrı biçimde raporlanmaktadır. Donanımın anma gücü değerleri tasarım hedefi olarak verilmektedir; şebeke gerilimi güvenlik amacıyla varyak üzerinden yaklaşık \SI{120}{\volt} RMS ile sınırlandırıldığından tam anma gücünde deney yapılmamış, nominal akım koşulu \SI{25}{\ampere} hedefli kapalı çevrim benzetimiyle incelenmiştir. GT-tipi mimarinin maliyet, hacim ve eleman sayısı bakımından sağladığı yararlar, ayrıntılı yaşam döngüsü maliyeti veya seri üretim güvenilirlik çalışması yapılmadığı durumlarda ``potansiyel'' olarak ifade edilmektedir.
+
+\section{Tezin Düzeni}
+\label{sec:giris-duzen}
+
+Tez sekiz bölümden oluşmaktadır ve genelden özele, faz kolundan sisteme doğru ilerler. Şekil~\ref{fig:tez-akisi}, problemden katkılara uzanan zinciri, her katkının bölümünü ve kanıtını tek bakışta göstermektedir.
+
+\begin{figure}[H]
+  \centering
+  \resizebox{\textwidth}{!}{%
+  \begin{tikzpicture}[
+    node distance=6mm and 7mm,
+    kutu/.style={draw, rounded corners=1.5pt, align=center, font=\small, minimum height=12mm, text width=32mm, fill=blue!5, execute at begin node=\nohyph},
+    sorun/.style={kutu, fill=red!8},
+    katki/.style={kutu, fill=orange!15, very thick},
+    bedel/.style={kutu, fill=gray!10},
+    kanit/.style={kutu, fill=green!8},
+    akis/.style={-{Latex[length=2mm]}, thick},
+    ince/.style={-{Latex[length=1.6mm]}, dashed},
+    grup/.style={draw, dashed, rounded corners=3pt, inner sep=3.5mm}
+  ]
+    \def\nohyph{\hyphenpenalty=10000\relax}
+    \node[kutu] (eds) {Enerji depolama sistemi:\\güç dönüşüm arayüzü};
+    \node[kutu, right=of eds] (tt) {Üç seviyeli T-tipi\\dönüştürücü\\(Bölüm~\ref{chap:literatur}--\ref{chap:sistem})};
+    \node[sorun, right=of tt] (ters) {Düşük güçte nötr kol\\üzerinden ters akım\\dolaşımı};
+    \node[kutu, right=of ters] (odun) {Verim--THD\\ödünleşimi};
+    \draw[akis] (eds) -- (tt);
+    \draw[akis] (tt) -- (ters);
+    \draw[akis] (ters) -- (odun);
+
+    \node[katki, below=14mm of ters] (k1) {\textbf{Katkı 1}\\Nötr anahtar susturma\\(Bölüm~\ref{chap:anahtarlama})};
+    \node[bedel, right=of k1] (dcm) {Bedel: süreksiz iletim,\\üçüncü harmonik};
+    \node[katki, below=of dcm] (k2) {\textbf{Katkı 2}\\Sin\textsuperscript{3} ileri besleme\\kompanzasyonu (Bölüm~\ref{chap:sin3})};
+    \node[kanit, left=of k2] (kc) {Kapalı çevrim S4\\ve kararlılık analizi\\(Alt Bölüm~\ref{sec:s4-kapali-cevrim}--\ref{sec:kararlilik-bode})};
+    \node[kanit, below=of kc] (dny) {Deney kayıtları ve\\kalibre benzetim\\(Bölüm~\ref{chap:deney})};
+    \draw[akis] (ters) -- (k1);
+    \draw[akis] (k1) -- (dcm);
+    \draw[akis] (dcm) -- (k2);
+    \draw[ince] (k2) -- (kc);
+    \draw[ince] (k1.west) -- ++(-5mm,0) |- (dny.west);
+    \draw[ince] (k2.south) |- (dny.east);
+    \node[grup, fit=(k1)(dcm)(k2)(kc)(dny), label={[font=\small\itshape]above right:Faz kolu ölçeği}] (faz) {};
+
+    \node[katki, below=14mm of tt, xshift=-20mm] (k3) {\textbf{Katkı 3}\\GT-tipi yeniden\\yapılandırılabilir mimari\\(Bölüm~\ref{chap:gttipi})};
+    \node[bedel, below=of k3] (isl) {Evirici, Vienna PFC ve\\aktif batarya yönetimi\\aynı yarı iletkenlerle};
+    \draw[akis] (tt.south) -- ++(0,-5mm) -| (k3.north);
+    \draw[ince] (k3) -- (isl);
+    \node[grup, fit=(k3)(isl), label={[font=\small\itshape]above left:Sistem ölçeği}] (sis) {};
+
+    \node[kutu, anchor=north west, text width=96mm] (taban) at ([yshift=-8mm]sis.south west |- faz.south) {Ortak taban: sistem modeli, tek parametre tablosu ve benzetim modelinin doğrulanması (Bölüm~\ref{chap:sistem})};
+    \node[kutu, right=of taban, text width=44mm] (son) {Araştırma sorularının yanıtları,\\sınırlılıklar (Bölüm~\ref{chap:sonuc})};
+    \draw[ince] (taban.north -| sis.south) -- (sis.south);
+    \draw[ince] (taban.north -| dny.south) -- (faz.south -| dny.south);
+    \draw[akis] (son.north |- faz.south) -- (son.north);
+  \end{tikzpicture}%
+  }
+  \caption[Tezin problem--yöntem--katkı akışı]{Tezin problem--yöntem--katkı akışı. Faz kolu ölçeğindeki iki katkı düşük güç ters akım problemine, sistem ölçeğindeki GT-tipi mimari aynı T-tipi donanımın yeniden görevlendirilmesine dayanır; yeşil kutular kanıt katmanlarını gösterir.}
+  \label{fig:tez-akisi}
+\end{figure} Birinci bölümde araştırma problemi kurulmuş; amaç, araştırma soruları, katkılar ve sınırlar tanımlanmıştır. İkinci bölümde EDS güç dönüşüm mimarileri, T-tipi eviriciler, düşük güç verimi ve harmonik bozulma, akım kontrolü ve ileri besleme yaklaşımları incelenerek araştırma boşluğu belirlenmektedir. Üçüncü bölüm, sonraki bütün bölümlerin ortak tabanı olan sistem mimarisini, T-tipi çalışma kiplerini, LCL filtre ve şebeke modelini, kontrol yapısını, elektriksel parametreleri, doğrulama yöntemini ve benzetim modelinin doğrulanmasını sunmaktadır.
+
+Dördüncü, beşinci ve altıncı bölümler faz kolu ölçeğindeki zinciri oluşturur. Dördüncü bölümde düşük güç ters akım mekanizması çözümlenmekte ve nötr anahtar susturma yöntemi klasik anahtarlamayla karşılaştırılmaktadır (katkı~1). Beşinci bölüm Sin\textsuperscript{3} tabanlı ileri besleme kompanzasyonunu matematiksel olarak tanımlamakta; akım geri beslemeli kapalı çevrim modelini, düşük, orta ve anma akımı başarımını ve kararlılık incelemesini vermektedir (katkı~2). Altıncı bölüm, iki yöntemi prototipin deney kayıtlarıyla karşılaştırmakta ve benzetim modelini deney özetine kalibre etmektedir; tam anma gücünde deney bulunmadığını sınırlılık olarak belirtmektedir.
+
+Yedinci bölüm sistem ölçeğine geçer ve GT-tipi yeniden yapılandırılabilir EDS mimarisini, çalışma kiplerini ve klasik mimariyle farklarını sunmaktadır (katkı~3). Deney düzeneği GT-tipi olarak kurulmuştur; Bölüm~\ref{chap:deney}'daki deneyler donanımın evirici kipine, Yedinci bölümdeki şarj zinciri benzetim kayıtları ise şarj yönüne aittir. Sekizinci ve son bölümde araştırma soruları kanıt sınırları içinde yanıtlanmakta, özgün katkılar topluca değerlendirilmekte ve gelecek çalışmalar önerilmektedir.

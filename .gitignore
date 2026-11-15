@@ -59,3 +59,20 @@ slprj/
 /tez-matlab-simulink/runs/**/model*/**/*.bak
 *_acc.exp
 *_acc.lib
+
+# yeni_tez (SAU FBE sablonu, LuaLaTeX) derleme ciktilari
+/yeni_tez/*.aux
+/yeni_tez/*.bbl
+/yeni_tez/*.blg
+/yeni_tez/*.log
+/yeni_tez/*.out
+/yeni_tez/*.toc
+/yeni_tez/*.lof
+/yeni_tez/*.lot
+/yeni_tez/*.fls
+/yeni_tez/*.fdb_latexmk
+/yeni_tez/bolumler/*.aux
+/yeni_tez/onkisim/*.aux
+/yeni_tez/tez.pdf
+/yeni_tez/tez_notlu.pdf
+/yeni_tez/tez_guncel_*.pdf

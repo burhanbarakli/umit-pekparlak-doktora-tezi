@@ -1,0 +1,734 @@
+\chapter{SİSTEM MİMARİSİ, MODEL VE METODOLOJİ}
+\label{chap:sistem}
+\input{sekiller/t_tipi_vektor_cizimler}
+
+Literatür incelemesi, T-tipi dönüştürücünün yüksek verim ve güç yoğunluğu bakımından güçlü bir seçenek olduğunu; hafif yükteki ters akım, nötr kol kullanımı ve şebeke akımı harmoniklerinin ise aynı sistem sınırı içinde ele alınması gerektiğini göstermiştir. Tezde incelenen yapı, bölünmüş doğru akım (DA) bara, T-tipi güç katı, LCL çıkış filtresi, şebeke bağlantısı, ölçüm zinciri ve sayısal denetim biriminden oluşmaktadır. Kapsam iki düzeyde ayrılır. Laboratuvar prototipi üç fazlı, dört telli bir güç katıdır ve nötr hattı DA bara orta noktasına bağlıdır. Benzetim modelleri ile laboratuvar deneyleri ise prototipin tek faz kolunu kapsar; şebeke dönüş akımı DA bara orta noktasına girer ve bütün güç, akım ve verim değerleri faz başına verilir. Deneylerde şebeke gerilimi, güvenlik amacıyla varyak üzerinden yaklaşık \SI{120}{\volt} ile sınırlandırılmıştır; anma gücünde deney de aynı güvenlik gerekçesiyle yapılmamıştır. Bölümün amacı önerilen yöntemlerin uygulanacağı fiziksel sistemi tanımlamak, anahtarlama durumlarını ortak bir gösterim altında toplamak, sonraki analizlerin dayanacağı matematiksel modeli kurmak ve benzetim modelinin tez tanımına göre nasıl doğrulandığını belgelemektir.
+
+Model, ideal anahtarlama durumlarını açıklayan devre düzeyi ile LCL filtre ve denetim çevrimini açıklayan ortalama değer düzeyini birbirinden ayırmaktadır; topolojiye ilişkin iddialar çok seviyeli dönüştürücü ve hafif yük literatürüyle sınanmıştır \citep{Mohan2003,Holmes2003,Schweizer2013,Wang2020,Chen2010}. Yarı iletken gerilim düşümleri, ters toparlanma, ölü zaman ve modülasyon doygunluğu anahtarlamalı benzetim katmanında; örnekleme gecikmesi ise kararlılık analizinde ayrıca ele alınır.
+
+\section{Sistemin Genel Mimarisi ve İnceleme Sınırı}
+
+Şekil~\ref{fig:genel-sistem-mimarisi}, enerji, ölçüm ve denetim yollarını aynı çerçevede göstermektedir. Deşarj yönünde batarya veya ayarlanabilir DA kaynak tarafından sağlanan enerji, bölünmüş DA bara üzerinden T-tipi güç katına aktarılmakta; anahtarlanan faz gerilimleri LCL filtre aracılığıyla şebeke akımına dönüştürülmektedir. Akım ve gerilim ölçümleri sayısal denetim birimine taşınmakta, üretilen modülasyon komutları kapı sürücüleri üzerinden güç katına uygulanmaktadır. Sin\textsuperscript{3} tabanlı şekillendirme yolu, akım denetleyicisinin yerine geçen bağımsız bir kontrolcü olarak değil, nötr anahtar susturma yönteminin düşük güçte oluşturduğu üçüncü harmonik bileşene karşı modülasyon girişine eklenen ikincil bir kompanzasyon terimi olarak konumlandırılmıştır.
+
+\begin{figure}[H]
+  \centering
+  \resizebox{0.98\textwidth}{!}{%
+  \begin{tikzpicture}[
+    node distance=8mm and 8mm,
+    block/.style={draw, rounded corners=1.5pt, align=center, minimum height=11mm, minimum width=24mm, fill=blue!5},
+    ctrl/.style={draw, rounded corners=1.5pt, align=center, minimum height=10mm, minimum width=25mm, fill=orange!10},
+    meas/.style={draw, rounded corners=1.5pt, align=center, minimum height=9mm, minimum width=24mm, fill=gray!10},
+    flow/.style={-{Latex[length=2mm]}, thick},
+    sig/.style={-{Latex[length=2mm]}, thick, dashed}
+  ]
+    \node[block] (bat) {Batarya /\\DA kaynak};
+    \node[block, right=of bat] (dc) {Bölünmüş\\DA bara};
+    \node[block, right=of dc] (inv) {T-tipi\\güç katı};
+    \node[block, right=of inv] (lcl) {LCL\\filtre};
+    \node[block, right=of lcl] (grid) {Şebeke /\\ortak bağlantı};
+    \draw[flow] (bat) -- node[above, font=\scriptsize]{enerji} (dc);
+    \draw[flow] (dc) -- (inv);
+    \draw[flow] (inv) -- (lcl);
+    \draw[flow] (lcl) -- (grid);
+
+    \node[meas, below=15mm of lcl] (meas) {Gerilim ve akım\\ölçümleri};
+    \node[ctrl, left=of meas] (pwm) {PWM ve kapı\\sinyalleri};
+    \node[ctrl, left=of pwm] (control) {Akım denetimi ve\\sınırlandırıcılar};
+    \node[ctrl, below=of control] (sin3) {Sin\textsuperscript{3}\\kompanzasyonu};
+    \draw[sig] (grid.south) |- (meas.east);
+    \draw[sig] (lcl.south) -- (meas.north);
+    \draw[sig] (meas) -- (control);
+    \draw[sig] (control) -- (pwm);
+    \draw[sig] (sin3) -- (control);
+    \draw[sig] (pwm.north) |- (inv.south);
+  \end{tikzpicture}%
+  }
+  \caption{Genel sistem mimarisi: güç yolu, geri besleme yolu ve Sin\textsuperscript{3} kompanzasyonunun ikincil konumu.}
+  \label{fig:genel-sistem-mimarisi}
+\end{figure}
+
+İnceleme sınırı üç katman üzerinden kurulmuştur. Fiziksel katman yarı iletkenleri, bölünmüş DA barayı, filtreyi ve şebeke bağlantısını; denetim katmanı ölçüm, akım regülasyonu, modülasyon ve kapı sinyali üretimini; doğrulama katmanı ise benzetim ile deneyde ortak kullanılan çalışma noktalarını ve performans ölçütlerini kapsamaktadır. GT-tipi yeniden yapılandırma, aynı yarı iletkenlerin şarj ve deşarj kiplerinde farklı görevlerde kullanılmasına dayandığından ayrıntılı işlev paylaşımı Bölüm~\ref{chap:gttipi} altında ele alınmıştır. Bölüm, deşarj yönündeki T-tipi evirici davranışını ve önerilen düşük güç yöntemlerinin dayandığı modeli sabitlemektedir.
+
+Tek bir modelin bütün iddiaları aynı doğrulukla desteklediği varsayılmamıştır. Tablo~\ref{tab:model-katmanlari}, bölümde kullanılan model katmanlarını, her katmanın kapsadığı etkileri ve hangi iddiayı sınayacağını ayırmaktadır. Katman ayrımı, ortalama değerli denetim modelinden elde edilen kararlılık sonucunun anahtarlama kaybı veya deneysel verim kanıtı gibi sunulmasını önlemektedir.
+
+\begin{table}[H]
+  \centering
+  \caption{Model ve doğrulama katmanlarının amaç ve kanıt sınırları.}
+  \label{tab:model-katmanlari}
+  \small
+  \begin{tabularx}{\textwidth}{p{0.21\textwidth} p{0.27\textwidth} X X}
+    \toprule
+    Katman & Temel içerik & Sınanacak konu & Tek başına kanıtlamadığı konu \\
+    \midrule
+    İdeal anahtarlama durumu & $P$--$O$--$N$ seviyeleri ve akım yönü & Geçerli kapı durumu, gerilim seviyesi ve iletim yolu & Ölü zaman, kayıp ve THD \\
+    Ortalama LCL/denetim modeli & $L_1$--$C_f$--$L_2$, gecikme ve $C_i(s)$ & Akım izleme, kutuplar ve kararlılık marjı & Yarı iletken geçiş kaybı \\
+    Anahtarlamalı benzetim & Gerçek PWM, kapı mantığı ve ideal olmayan elemanlar & Ters akım, harmonikler, anahtarlama sayısı ve geçici rejim & Donanım sıcaklığı ve ölçüm belirsizliği \\
+    Deneysel sistem & Güç katı, sensör, sürücü, ADC ve gerçek zamanlı kod & Verim, THD, koruma ve uygulanabilirlik & Test edilmeyen çalışma bölgesine genelleme \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+\section{T-Tipi Faz Kolu ve Anahtarlama Durumları}
+
+Üç seviyeli T-tipi faz kolunda üst ana anahtar $Q_1$, alt ana anahtar $Q_2$ ve DA bara orta noktasını faz çıkışına bağlayan çift yönlü nötr kol anahtarları $Q_3$ ile $Q_4$ olarak adlandırılmıştır. Tek faz kolunun temel devre yapısı Şekil~\ref{fig:t-tipi-faz-kolu} ile Bölüm~\ref{chap:literatur} içinde verilmiştir; aynı devre burada gereksiz tekrar oluşturmaması için yeniden basılmamıştır. $Q_1$--$Q_4$ adlandırması, Tablo~\ref{tab:sistem-parametreleri} içindeki $S_1$--$S_4$ anahtarlarıyla birebir aynıdır: $Q_3$ faz düğümü tarafındaki, $Q_4$ DA bara orta noktası tarafındaki nötr IGBT'dir; tümleyen anahtar çiftleri $Q_1$--$Q_3$ ve $Q_2$--$Q_4$'tür. Bölünmüş bara geriliminin toplamı $V_{\mathrm{dc}}$ kabul edildiğinde ideal faz-kutup gerilimi $+V_{\mathrm{dc}}/2$, $0$ ve $-V_{\mathrm{dc}}/2$ seviyelerinden birini alır. Nötr kolun eklediği sıfır seviyesi, iki seviyeli yapıya göre daha küçük gerilim basamakları oluşturur; karşılığında komütasyon düzeni ile nötr nokta akımının ayrıca yönetilmesi gerekir \citep{Schweizer2013,Wang2020}.
+
+Sistem sınırını, üç fazlı tam güç topolojisini gösteren Proteus şeması (`guc\_yapi\_01`) kesinleştirmiştir; şema Şekil~\ref{fig:gelen-tam-topoloji} üzerinde, birinci faz hücresi ise okunabilir ölçekte Şekil~\ref{fig:gelen-faz1-hucresi} üzerinde verilmiştir. Solda dört iletkenli giriş, ortak-mod endüktansları ve şönt kapasitörlerden oluşan giriş/EMI ağı; ortada ortak DA bağlantısına bağlanan üç tekrarlı T-tipi faz hücresi; her hücrede dış kol anahtar modülü, çift yönlü nötr kol, doğrultucu diyotlar, yerel kapasitörler, akım algılama elemanı ve röle; hücrelerin altında üç fazın DA bara orta noktalarını birbirine ve giriş nötrüne bağlayan nötr hattı; şemanın en alt kısmında ise GT-tipi mimarinin şarj yönünde kullanılan batarya yönetim sistemi (BYS) transformatörleri görülmektedir. Deney düzeneği GT-tipi mimariye göre kurulmuştur (Bölüm~\ref{chap:gttipi}); her hücredeki röle ($RL1$) ile doğrultucu ve yükseltici diyotlar, şarj ve deşarj kipleri arasındaki geçişe hizmet eder. Şemadaki $L1$, $L2$ ve $L3$ etiketleri LCL filtrenin ardışık $L_1$--$L_2$ elemanlarını değil, sırasıyla A, B ve C fazlarına ait üç eş \SI{600}{\micro\henry} bobini göstermektedir; $L2=\SI{600}{\micro\henry}$ etiketi filtrenin şebeke tarafı endüktansı değildir. Tezde bütün topoloji üç amaçla kullanılmaktadır: sistem ve ölçüm sınırını belirlemek, üç fazın aynı faz-başına modelin tekrarı olduğunu göstermek ve yarı iletken/parazit parametrelerini gerçek devre elemanlarıyla eşlemek. Anahtarlama denklemleri ve akım yolu çizimleri okunabilirlik için Şekil~\ref{fig:t-tipi-akim-yollari} altındaki tek faz eşdeğerine indirgenmiştir; tek faz indirgemesi giriş filtresinin, diğer iki fazın veya ölçüm/koruma elemanlarının fiziksel sistemde bulunmadığı anlamına gelmez.
+
+\begin{landscape}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth,height=0.78\textheight,keepaspectratio]{umit_2026-11-09/tam_topoloji_notr_q1q3_q2q4.pdf}
+  \caption{GT-tipi olarak kurulan deney düzeneğinin üç fazlı tam güç topolojisi: ortak giriş/EMI ağı, üç tekrarlı T-tipi faz hücresi, DA bara orta noktalarını giriş nötrüne bağlayan nötr hattı, akım algılama ve kip değişim rölesi yolları ile şarj yönündeki BYS transformatörleri. Her hücrede nötr kolun faz tarafındaki anahtarı dış kolun üst anahtarıyla, orta nokta tarafındaki anahtarı alt anahtarıyla tümleyen çift oluşturur (birinci fazda $Q_1$--$Q_3$ ve $Q_2$--$Q_4$). Şema, yöntem bölümünde sistem sınırı ve faz-başına indirgeme kaynağı olarak kullanılmıştır.}
+  \label{fig:gelen-tam-topoloji}
+\end{figure}
+\end{landscape}
+
+\begin{landscape}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth,height=0.78\textheight,keepaspectratio]{umit_2026-11-09/tam_topoloji_faz1_hucresi.pdf}
+  \caption{Şekil~\ref{fig:gelen-tam-topoloji} içindeki birinci faz hücresinin büyütülmüş görünümü: $D_1$--$D_2$ harici diyotları, $C_{10}$--$C_{11}$ bölünmüş DA bara kapasitörleri, dış kol modülü $Q_1$--$Q_2$ (SKM100GB12T4) ve $C_{12}$ snubber kapasitörü, orta nokta tarafında $Q_4$ ve faz tarafında $Q_3$ nötr IGBT'leri, $RL1$--$RL2$ kip değişim röleleri. Alttaki yatay hat, faz hücrelerinin DA bara orta noktalarını birbirine bağlayan nötr hattıdır.}
+  \label{fig:gelen-faz1-hucresi}
+\end{figure}
+\end{landscape}
+
+Faz indisi $x\in\{a,b,c\}$, DA bara orta noktası $N$, faz kutup gerilimi $v_{xN}$ ve gerilim durumunu seçen boyutsuz anahtarlama değişkeni $s_x\in\{-1,0,1\}$ ile gösterilsin. Üç gerilim durumu
+\begin{equation}
+  v_{xN}=s_x\frac{V_{\mathrm{dc}}}{2}
+  \label{eq:t-tipi-anahtarlama-fonksiyonu}
+\end{equation}
+biçiminde ortak bir gösterime indirgenebilir. Eşitlik~\eqref{eq:t-tipi-anahtarlama-fonksiyonu}, $s_x=1$, $0$ ve $-1$ için sırasıyla pozitif, sıfır ve negatif kutup gerilimini verir. Doğrusal modülasyon bölgesinde normalize faz komutu $m_x=2v_x^{\ast}/V_{\mathrm{dc}}$ olmak üzere pozitif, negatif ve sıfır durumlarının boyutsuz ideal görev oranları $d_P$, $d_N$ ve $d_O$
+\begin{equation}
+  d_P=\max(m_x,0),\qquad
+  d_N=\max(-m_x,0),\qquad
+  d_O=1-|m_x|,\qquad |m_x|\leq 1
+  \label{eq:t-tipi-gorev-oranlari}
+\end{equation}
+olarak yazılabilir \citep{Holmes2003,Wang2020}. Eşitlik~\eqref{eq:t-tipi-gorev-oranlari}, modülasyon komutunun genliği azaldığında sıfır durumunun payının neden arttığını doğrudan göstermektedir. Gerçek taşıyıcı tabanlı PWM'de örnekleme, minimum darbe, ölü zaman ve nötr nokta dengeleme müdahaleleri ideal görev oranlarını değiştirebilir. Benzetim modelinde ölü zaman $t_d$, her kapı komutunun yükselen kenarına uygulanan gecikmeyle temsil edilir (Tablo~\ref{tab:sistem-parametreleri}); minimum darbe sınırı ve nötr nokta dengeleme müdahalesi modelde yoktur. Ölü zamanın düşük akımdaki etkisi Alt Bölüm~\ref{sec:dusuk-akim-modelleme} içinde ölçülmüştür.
+
+Üç gerilim seviyesinin devre karşılığı Şekil~\ref{fig:t-tipi-uc-seviye} üzerinde tek karşılaştırmalı görünüm altında verilmiştir. Aynı devre tabanının korunması, hangi anahtarlama durumunun yalnızca bağlantı noktasını değiştirdiğini görmeyi kolaylaştırmaktadır.
+
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[t]{0.32\textwidth}
+    \centering
+    \resizebox{\linewidth}{!}{\ttypevector{green!55!black}{gray!65}{gray!65}{gray!65}{%
+      \draw[activepath] (4,5) -- (q1.north);
+      \draw[activepath] (q1.south) -- (out) -- (5.0,2);}}
+    \caption{$P$: $+V_{\mathrm{dc}}/2$}
+  \end{subfigure}\hfill
+  \begin{subfigure}[t]{0.32\textwidth}
+    \centering
+    \resizebox{\linewidth}{!}{\ttypevector{gray!65}{gray!65}{green!55!black}{green!55!black}{%
+      \draw[activepath] (0,2) -- (q3.west);
+      \draw[activepath] (q3.east) -- (q4.west);
+      \draw[activepath] (q4.east) -- (out) -- (5.0,2);}}
+    \caption{$O$: $0$}
+  \end{subfigure}\hfill
+  \begin{subfigure}[t]{0.32\textwidth}
+    \centering
+    \resizebox{\linewidth}{!}{\ttypevector{gray!65}{green!55!black}{gray!65}{gray!65}{%
+      \draw[activepath] (4,-1) -- (q2.south);
+      \draw[activepath] (q2.north) -- (out) -- (5.0,2);}}
+    \caption{$N$: $-V_{\mathrm{dc}}/2$}
+  \end{subfigure}
+  \caption{T-tipi faz kolunun üç gerilim durumu. Yeşil anahtarlar ve mavi bağlantılar ilgili durumun etkin elemanlarını göstermektedir.}
+  \label{fig:t-tipi-uc-seviye}
+\end{figure}
+
+Tablo~\ref{tab:t-tipi-durumlar}, kapı durumlarını literatürdeki üç seviyeli gösterimle birlikte özetlemektedir \citep{Holmes2003,Wang2020}. ``1'' iletim komutunu, ``0'' kesim komutunu ifade etmektedir. Tablo yalnızca ideal kararlı durumları göstermektedir. Ölü zaman aralığındaki diyot iletimi ve akım yönüne bağlı geçici komütasyon yolları tabloda yer almaz; anahtarlamalı benzetimde ise yarı iletken modelleri üzerinden kendiliğinden oluşur.
+
+\begin{table}[H]
+  \centering
+  \caption{T-tipi faz kolunun ideal anahtarlama durumları ve kapı komutları.}
+  \label{tab:t-tipi-durumlar}
+  \small
+  \begin{tabularx}{\textwidth}{c c c c c c X}
+    \toprule
+    Durum & $Q_1$ & $Q_2$ & $Q_3$ & $Q_4$ & $v_{xN}$ & İşlevsel açıklama \\
+    \midrule
+    $P$ & 1 & 0 & 0 & 1 & $+V_{\mathrm{dc}}/2$ & Pozitif yarım periyotta enerji üst DA bara kolundan faz çıkışına aktarılır. \\
+    $O$ & 0 & 0 & 1 & 1 & $0$ & Faz çıkışı nötr kola bağlanır; filtre akımının yönüne göre serbest dolaşım yolu oluşur. \\
+    $N$ & 0 & 1 & 1 & 0 & $-V_{\mathrm{dc}}/2$ & Negatif yarım periyotta enerji alt DA bara kolu üzerinden aktarılır. \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+$P$ durumunda $Q_4$ ve $N$ durumunda $Q_3$ için verilen iletim komutu, yarım periyot etkinleştirme kuralını yansıtmaktadır; ilgili nötr anahtar aktif enerji yolunda akım taşımamaktadır. Yalnızca gerilim seviyesini üreten asgari durum gösterilecekse $P$ için $Q_1$, $O$ için $Q_3$--$Q_4$ ve $N$ için $Q_2$ iletimde kabul edilebilir. Benzetim modelinin PWM alt sistemi yarım periyot etkinleştirme gösterimini kullanır: klasik anahtarlamada $Q_3$, pozitif yarım periyotta $Q_1$ komutunun tümleyenidir ve $Q_4$ sürekli iletimdedir; negatif yarım periyotta roller simetrik olarak $Q_3$ ile $Q_4$ arasında yer değiştirir. Modelden okunan kapı mantığı Tablo~\ref{tab:t-tipi-durumlar} ile birebir örtüşür; susturmalı anahtarlamanın kapı mantığı Alt Bölüm~\ref{sec:model-kapi-mantigi} içinde verilmiştir.
+
+Pozitif yarım periyotta modülasyon, $P$ ve $O$ durumları arasında; negatif yarım periyotta ise $N$ ve $O$ durumları arasında yapılır. Endüktif çıkış filtresi nedeniyle faz akımı anahtarlama anında sürekliliğini korur. Gerilim komutu değişse bile akımın mevcut yönü, aktif anahtarın kanalı veya antiparalel diyot üzerinden uygun serbest dolaşım yolunu belirler. Kapı komutlarına bakmak, gerçek iletimde bulunan yarı iletkeni tanımlamak için yeterli değildir.
+
+Şekil~\ref{fig:t-tipi-akim-yollari}(a), $C_A$--$C_B$ bölünmüş DA barayı, antiparalel diyotlu $Q_1$--$Q_4$ IGBT'lerini ve faz başına $L_1$--$C_f$--$L_2$ filtresini tek topolojide birleştirmektedir. Şekil~\ref{fig:t-tipi-akim-yollari}(b)--(e), aynı güç katının dört temel iletim yolunu karşılaştırmaktadır; akım yolu okunabilirliğini korumak için filtre elemanları alt çizimlerde tekrarlanmamıştır. Pozitif alternansın aktif durumunda $Q_1$ üzerinden, sıfır durumunda nötr kol üzerinden akış gerçekleşir. Negatif alternansta aynı işleyiş alt kol için simetrik biçimde oluşur. Nötr seviyesinde geçirilen sürenin modülasyon indeksi azaldıkça artması, düşük güçte nötr anahtarların iletim payını ve ters akım riskini büyütmektedir.
+
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[t]{0.96\textwidth}
+    \centering
+    \resizebox{0.98\linewidth}{!}{\ttypefulltopology}
+    \caption{Faz başına tam güç topolojisi ve LCL filtre}
+  \end{subfigure}
+
+  \vspace{4mm}
+  \begin{subfigure}[t]{0.48\textwidth}
+    \centering
+    \ttypevector{green!55!black}{gray!65}{gray!65}{gray!65}{%
+      \draw[current] (0.7,5) -- (q1.north);
+      \draw[current] (q1.south) -- (out) -- (5.0,2);}
+    \caption{Pozitif alternans, aktif $P$ durumu}
+  \end{subfigure}\hfill
+  \begin{subfigure}[t]{0.48\textwidth}
+    \centering
+    \ttypevector{gray!65}{gray!65}{green!55!black}{green!55!black}{%
+      \draw[current] (0.5,2) -- (q3.west);
+      \draw[current] (q3.east) -- (q4.west);
+      \draw[current] (q4.east) -- (5.0,2);}
+    \caption{Pozitif alternans, sıfır $O$ durumu}
+  \end{subfigure}
+
+  \vspace{4mm}
+  \begin{subfigure}[t]{0.48\textwidth}
+    \centering
+    \ttypevector{gray!65}{green!55!black}{gray!65}{gray!65}{%
+      \draw[current] (5.0,2) -- (out) -- (q2.north);
+      \draw[current] (q2.south) -- (0.7,-1);}
+    \caption{Negatif alternans, aktif $N$ durumu}
+  \end{subfigure}\hfill
+  \begin{subfigure}[t]{0.48\textwidth}
+    \centering
+    \ttypevector{gray!65}{gray!65}{green!55!black}{green!55!black}{%
+      \draw[current] (5.0,2) -- (q4.east);
+      \draw[current] (q4.west) -- (q3.east);
+      \draw[current] (q3.west) -- (0.5,2);}
+    \caption{Negatif alternans, sıfır $O$ durumu}
+  \end{subfigure}
+  \caption{T-tipi faz kolunun devre yapısı ve dört temel akım yolunun ortak devre dili ve renk lejandıyla vektörel gösterimi. Tam topoloji $C_A$, $C_B$, antiparalel diyotlu IGBT'ler, $L_1$, $C_f$ ve $L_2$ elemanlarını; kırmızı oklar ise tanımlanan pozitif akım yönüne göre iletim yollarını göstermektedir.}
+  \label{fig:t-tipi-akim-yollari}
+\end{figure}
+
+\begin{samepage}
+  Şekil~\ref{fig:t-tipi-akim-yollari}(a), faz kolunun işlevsel güç topolojisidir; kart üretim veya bağlantı şeması niteliği taşımamaktadır. Sensör, koruma ve giriş filtresi elemanlarının yeri Şekil~\ref{fig:gelen-tam-topoloji} üzerinde, yarı iletken parça kodları ve pasif eleman değerleri ise Tablo~\ref{tab:sistem-parametreleri} içinde verilmiştir.
+\end{samepage}
+
+\section{Düşük Güç Eşdeğer Modeli}
+\label{sec:dusuk-guc-esdeger}
+
+Faz gerilimi referansının genliği azaldığında aktif $P$ veya $N$ durumunun görev oranı küçülür, sıfır durumunun süresi uzar. Pozitif ve negatif yarım periyotlar ayrı ayrı ele alındığında faz kolu, anahtarlanan gerilim kaynağı ile filtre endüktansı bakımından senkron alçaltıcı dönüştürücüye eşdeğer bir davranış gösterir \citep{Mohan2003,Erickson2001}. İki yarım periyodun eşdeğerleri Şekil~\ref{fig:senkron-buck-esdeger} altında bir araya getirilmiştir.
+
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[t]{0.46\textwidth}
+    \centering
+    \resizebox{\linewidth}{!}{\syncbuckvector{$+V_{\mathrm{dc}}/2$}{$N$}{$Q_1$}{$Q_3$}{1}}
+    \caption{Pozitif yarım periyot eşdeğeri}
+  \end{subfigure}\hfill
+  \begin{subfigure}[t]{0.46\textwidth}
+    \centering
+    \resizebox{\linewidth}{!}{\syncbuckvector{$N$}{$-V_{\mathrm{dc}}/2$}{$Q_4$}{$Q_2$}{0}}
+    \caption{Negatif yarım periyot eşdeğeri}
+  \end{subfigure}
+  \caption{T-tipi faz kolunun yarım periyotlara göre senkron-buck eşdeğerleri. Yeşil anahtar ve mavi yol aktif enerji aktarımını göstermektedir.}
+  \label{fig:senkron-buck-esdeger}
+\end{figure}
+
+Anahtarlama periyodu $T_{\mathrm{s}}$, boyutsuz görev oranı $d\in[0,1]$, faz koluna uygulanan etkin DA gerilimi $V_{\mathrm{h}}$, anık şebeke gerilimi $v_{\mathrm{g}}$, eşdeğer filtre endüktansı $L$ ve anahtarın iletim/kesim aralıklarındaki endüktör gerilimleri $v_{L,\mathrm{on}}$ ile $v_{L,\mathrm{off}}$ olarak tanımlansın. Pozitif yarım periyotta ideal gerilimler
+\begin{equation}
+  \begin{aligned}
+    v_{L,\mathrm{on}} &= V_{\mathrm{h}}-v_{\mathrm{g}}, \\
+    v_{L,\mathrm{off}} &= -v_{\mathrm{g}}
+  \end{aligned}
+  \label{eq:buck-enduktor-gerilimleri}
+\end{equation}
+biçimindedir. Eşitlik~\eqref{eq:buck-enduktor-gerilimleri} altında anahtarlama periyodu boyunca gerilimlerin yaklaşık sabit kaldığı ve yerel kararlı durumda volt--saniye dengesinin sağlandığı kabul edilirse tepe--tepe akım dalgalanması $\Delta i_L$
+\begin{equation}
+  \Delta i_L \simeq \frac{(V_{\mathrm{h}}-v_{\mathrm{g}})dT_{\mathrm{s}}}{L}
+  =\frac{v_{\mathrm{g}}(1-d)T_{\mathrm{s}}}{L}
+  \label{eq:buck-akim-dalgalanmasi}
+\end{equation}
+ile bulunur \citep{Erickson2001,Chen2010}. Eşitlik~\eqref{eq:buck-akim-dalgalanmasi} içindeki iki ifade yalnızca aynı yerel volt--saniye dengesi altında eşdeğerdir. Ortalama akım $\bar{i}_L$ değerinin dalgalanmanın yarısından küçük olduğu bölgede akım sıfırı geçebilir:
+\begin{equation}
+  \bar{i}_L < \frac{\Delta i_L}{2}.
+  \label{eq:ters-akim-esigi}
+\end{equation}
+Diyotlu alçaltıcı dönüştürücüde akım sıfıra ulaştığında serbest dolaşım diyodu doğal olarak kesime gider. Senkron yapıda diyoda paralel anahtar iletimde tutulduğu için aynı doğal kesim gerçekleşmez; $i_L<0$ aralığı oluşur ve filtredeki enerji DA tarafa geri taşınır. Diyot benzetimi, akım sıfıra yaklaştığında senkron yolu keserek negatif akımı engeller; sıfır akım algılamadaki gecikme ve anahtarlama geçişleri gerçek kayıp sınırını belirler \citep{Chen2010,Erickson2001}. İki kipin farkı Şekil~\ref{fig:de-ccm-akim} üzerinde gösterilmiştir.
+
+Ortalama akım ile akım dalgalanması arasındaki ilişki üç çalışma bölgesi tanımlar \citep{Mohan2003,Erickson2001,Holmes2003}:
+
+\begin{enumerate}
+  \item \textbf{Sürekli iletim bölgesi:} $|\bar i_L|>\Delta i_L/2$ koşulunda akım bir anahtarlama periyodu içinde sıfıra ulaşmaz. Senkron nötr anahtarın iletim gerilim düşümünü azaltması verim açısından yararlıdır.
+  \item \textbf{Sınır iletim bölgesi:} $|\bar i_L|\simeq\Delta i_L/2$ noktasında akım periyot sonunda sıfıra yaklaşır. Parametre belirsizlikleri ve gecikmeler nedeniyle yöntem geçişi için histerezis gereklidir.
+  \item \textbf{Zorlanmış sürekli iletim bölgesi:} $|\bar i_L|<\Delta i_L/2$ olmasına rağmen senkron anahtarlama sürdürülürse akım sıfırın ötesine geçer. Ters akım kaybı belirginleşirken akımın sürekliliği harmonik performansı destekleyebilir.
+\end{enumerate}
+
+Bölgeler arasındaki sınır akımı
+\begin{equation}
+  I_{\mathrm{B}}(t)=\frac{\Delta i_L(t)}{2}
+  \label{eq:sinir-akimi}
+\end{equation}
+ile tanımlanır. $I_{\mathrm{B}}$; DA bara gerilimi, anlık şebeke gerilimi, görev oranı, anahtarlama frekansı ve eşdeğer endüktansa bağlıdır. Sabit bir yüzde güç eşiği yerine fiziksel değişkenlerden türetilen sınır akımı, şebeke gerilimi veya DA bara seviyesi değiştiğinde daha tutarlı bir kip geçişi sağlar. Eşdeğer modelin T-tipi nötr koldaki karşılığı, ters akım yükü ve kayıp etkisi Alt Bölüm~\ref{sec:ters-akim-mekanizmasi} altında incelenmektedir.
+
+\section{LCL Filtre ve Şebeke Modeli}
+
+Şebeke bağlantılı eviricide LCL filtre, anahtarlama frekansı çevresindeki gerilim bileşenlerini daha küçük toplam endüktansla bastırabilmektedir. Rezonans tepesi ve şebeke empedansına duyarlılık, filtreyi yalnızca pasif bir zayıflatıcı olmaktan çıkarıp kapalı çevrim tasarımının parçası hâline getirir \citep{Zhang2014PR,Lu2016}. Faz başına ortalama modelde evirici tarafı endüktansı $L_1$, filtre kapasitörü $C_f$, şebeke tarafı endüktansı $L_2$, seri kayıplar $R_1$ ve $R_2$ ile gösterilmiştir. Şebeke eşdeğer endüktansı gerektiğinde $L_2$ içine eklenmektedir.
+
+Şekil~\ref{fig:faz-basina-lcl-modeli}, durum denklemlerinde kullanılan işaretleri fiziksel ölçüm noktalarıyla eşleştirmektedir. $i_1$ evirici tarafı endüktör akımını, $i_2$ ortak bağlantı noktasına aktarılan şebeke akımını ve $v_c$ filtre kapasitörü gerilimini göstermektedir. Ölçülen akımın $i_1$ veya $i_2$ olması denetlenen sistemin modelini ve aktif sönümleme yolunu değiştirir. Benzetim modelinde güç, RMS ve THD ölçümleri EMC süzgecinden sonra, $L_2$'den önce, evirici çıkış uçlarında (C noktası) alınır; ölçülen akım filtre kapasitörü ile X kapasitörünün akımını içeren şebeke akımıdır. S4 akım denetimi ise $i_1=i_{L1}$ akımını geri besler (Tablo~\ref{tab:sistem-parametreleri}).
+
+\begin{figure}[H]
+  \centering
+  \resizebox{0.96\textwidth}{!}{%
+  \begin{tikzpicture}[
+    block/.style={draw,rounded corners=1pt,minimum width=13mm,minimum height=8mm,fill=blue!4},
+    resistor/.style={draw,minimum width=8mm,minimum height=5mm,fill=white},
+    coilpath/.style={decorate,decoration={coil,aspect=0.48,segment length=2.9mm,amplitude=1.9mm}},
+    sensor/.style={circle,draw,fill=orange!10,minimum size=7mm,font=\scriptsize},
+    flow/.style={-{Latex[length=2mm]},line width=1.0pt},
+    current/.style={-{Latex[length=2mm]},red!80!black,line width=1.0pt},
+    wire/.style={line width=0.9pt},
+    signal/.style={-{Latex[length=1.8mm]},dashed,gray!80}
+  ]
+    \node[block,align=center] (inv) at (0,0) {T-tipi\\faz kolu};
+    \node[resistor] (r1) at (1.65,0) {$R_1$};
+    \coordinate (l1a) at (2.35,0);
+    \coordinate (l1b) at (3.45,0);
+    \coordinate (vc) at (4.10,0);
+    \node[resistor] (r2) at (5.30,0) {$R_2$};
+    \coordinate (l2a) at (5.95,0);
+    \coordinate (l2b) at (7.05,0);
+    \node[block,align=center] (grid) at (8.55,0) {Şebeke\\$v_g$};
+    \draw[wire] (inv.east) -- node[above,font=\scriptsize] {$v_{\mathrm{inv}}$} (r1.west);
+    \draw[wire] (r1.east) -- (l1a);
+    \draw[coilpath,line width=0.9pt] (l1a) -- (l1b);
+    \draw[wire] (l1b) -- (vc) -- (r2.west);
+    \draw[wire] (r2.east) -- (l2a);
+    \draw[coilpath,line width=0.9pt] (l2a) -- (l2b);
+    \draw[wire] (l2b) -- (grid.west);
+    \node[above=2mm,font=\scriptsize] at ($(l1a)!0.5!(l1b)$) {$L_1$};
+    \node[above=2mm,font=\scriptsize] at ($(l2a)!0.5!(l2b)$) {$L_2$};
+    \draw[current] (2.30,0.55) -- node[above,font=\scriptsize] {$i_1$} (3.45,0.55);
+    \draw[current] (5.90,0.55) -- node[above,font=\scriptsize] {$i_2$} (7.05,0.55);
+    \fill (vc) circle (1.6pt);
+    \draw[line width=0.8pt] (vc) -- (4.10,-0.8);
+    \draw[line width=0.8pt] (3.73,-0.8) -- (4.47,-0.8);
+    \draw[line width=0.8pt] (3.73,-1.08) -- (4.47,-1.08);
+    \draw[line width=0.8pt] (4.10,-1.08) -- (4.10,-1.50);
+    \draw[line width=0.8pt] (3.73,-1.50) -- (4.47,-1.50);
+    \draw[line width=0.8pt] (3.83,-1.65) -- (4.37,-1.65);
+    \draw[line width=0.8pt] (3.95,-1.80) -- (4.25,-1.80);
+    \node[right,font=\scriptsize] at (4.40,-0.94) {$C_f$};
+    \node[above,font=\scriptsize] at (vc) {$v_c$};
+    \node[sensor] (si1) at (2.90,-2.25) {$i_1$};
+    \node[sensor] (svc) at (4.10,-2.25) {$v_c$};
+    \node[sensor] (si2) at (6.50,-2.25) {$i_2$};
+    \node[block,fill=gray!8,align=center] (adc) at (4.85,-3.55) {Ölçüm ve\\ADC zinciri};
+    \draw[signal] ($(l1a)!0.5!(l1b)$) -- (si1.north);
+    \draw[signal] (vc) -- (svc.north);
+    \draw[signal] ($(l2a)!0.5!(l2b)$) -- (si2.north);
+    \draw[signal] (si1) -- (adc);
+    \draw[signal] (svc) -- (adc);
+    \draw[signal] (si2) -- (adc);
+  \end{tikzpicture}%
+  }
+  \caption{Faz başına LCL filtre, durum değişkenleri ve denetimde kullanılabilecek ölçüm noktaları.}
+  \label{fig:faz-basina-lcl-modeli}
+\end{figure}
+
+Evirici kutup gerilimi $v_{\mathrm{inv}}$, kapasitör gerilimi $v_c$, şebeke gerilimi $v_g$, evirici tarafı akımı $i_1$ ve şebeke akımı $i_2$ için durum denklemleri
+\begin{equation}
+  \begin{aligned}
+    L_1\frac{\mathrm{d}i_1}{\mathrm{d}t} &= v_{\mathrm{inv}}-v_c-R_1i_1, \\
+    C_f\frac{\mathrm{d}v_c}{\mathrm{d}t} &= i_1-i_2, \\
+    L_2\frac{\mathrm{d}i_2}{\mathrm{d}t} &= v_c-v_g-R_2i_2
+  \end{aligned}
+  \label{eq:lcl-durum-denklemleri}
+\end{equation}
+olarak elde edilir. Eşitlik~\eqref{eq:lcl-durum-denklemleri} içindeki $L_1$, $L_2$ ve $C_f$ enerji depolayan filtre elemanlarını; $R_1$ ile $R_2$ seri eşdeğer kayıpları temsil eder. Laplace değişkeni $s$, $i_2(t)$ ve $v_{\mathrm{inv}}(t)$ işaretlerinin Laplace dönüşümleri sırasıyla $I_2(s)$ ve $V_{\mathrm{inv}}(s)$ olarak tanımlansın. Kayıpların ihmal edildiği modelde $v_g=0$ alınarak modülasyon geriliminden şebeke akımına aktarım
+\begin{equation}
+  G_{vi}(s)=\frac{I_2(s)}{V_{\mathrm{inv}}(s)}
+  =\frac{1}{L_1L_2C_fs^3+(L_1+L_2)s}
+  \label{eq:lcl-aktarim}
+\end{equation}
+şeklindedir. Eşitlik~\eqref{eq:lcl-aktarim} kayıpsız ve şebeke gerilimi bozucusu sıfırlanmış ideal denetlenen sistemi tanımlar. Rezonans açısal frekansı $\omega_r$ ve hertz cinsinden rezonans frekansı $f_r$
+\begin{equation}
+  \omega_r=\sqrt{\frac{L_1+L_2}{L_1L_2C_f}},
+  \qquad f_r=\frac{\omega_r}{2\pi}
+  \label{eq:lcl-rezonans}
+\end{equation}
+ile hesaplanır. Eşitlik~\eqref{eq:lcl-rezonans}, seri kayıpları ve ek sönümleme kolunu içermeyen ideal LCL sonucudur. Gerçek modelde seri dirençler, kapasitör sönümleme kolu, sayısal gecikme ve şebeke empedansı aktarım fonksiyonuna eklenmelidir. Kararlılık incelemesinde kullanılan $L(s)$, $S(s)$ ve $T(s)$ fonksiyonları, EMC süzgecini, ölçüm süzgecini ve denetim gecikmesini içeren fiziksel model üzerinden Alt Bölüm~\ref{sec:kararlilik-bode} içinde üretilmiştir; yalnızca ideal LCL ifadesinden çizilen Bode grafiği nihai kanıt sayılmamıştır.
+
+\section{Denetim, Modülasyon ve Sin\texorpdfstring{\textsuperscript{3}}{3} Kompanzasyonu}
+
+Akım döngüsü, referans akım $i^{\ast}$ ile ölçülen şebeke veya evirici tarafı akımı arasındaki hatadan modülasyon komutu üretir. PR denetleyicisinin aktarımı $C_i(s)$, oransal kazanç $K_p$, rezonans kazanç $K_r$, şebeke temel açısal frekansı $\omega_0$ ve pratik rezonans bandını belirleyen pozitif bant katsayısı $\omega_c$ ile gösterilsin. Sinüzoidal referansın kalıcı durum hatasını azaltmak için kullanılabilecek genel yapı
+\begin{equation}
+  C_i(s)=K_p+\frac{2K_r\omega_c s}{s^2+2\omega_c s+\omega_0^2}
+  \label{eq:pr-denetleyici}
+\end{equation}
+biçiminde gösterilebilir \citep{Teodorescu2006PR,Zhang2014PR}. Eşitlik~\eqref{eq:pr-denetleyici} içindeki $\omega_c$, ideal sonsuz kazançlı rezonatör yerine sonlu bantlı uygulama modelini verir. Laboratuvar deneylerinde (S1--S3) akım denetleyicisi kullanılmamış, modülasyon referansı açık çevrimde uygulanmıştır. S4 benzetiminde aynı yapı, $L_1$ akımını geri besleyen oransal (P), oransal--integral (PI) ve oransal--integral--rezonans (PIR) denetleyicilerle kapatılmıştır; katsayılar Tablo~\ref{tab:sistem-parametreleri} içinde, tasarım ve sonuçlar Alt Bölüm~\ref{sec:s4-kapali-cevrim} içinde verilmiştir. PI sıfırı, akım çevriminin yaklaşık \SI{586}{\hertz} olan kazanç geçiş frekansının onda biri düzeyinde, \SI{60}{\hertz}'e yerleştirilmiştir; seçimin şebeke frekansıyla ilgisi yoktur.
+
+Referans ve ölçülen akımların Laplace dönüşümleri $I^{\ast}(s)$ ile $I(s)$; normalize toplam modülasyon komutu, klasik ileri besleme ve Sin\textsuperscript{3} yolu sırasıyla $U_{\mathrm{mod}}^{\ast}(s)$, $U_{\mathrm{ff}}(s)$ ve $U_{\sin^3}(s)$ olarak tanımlansın. Modülasyon komutu kavramsal olarak
+\begin{equation}
+  U_{\mathrm{mod}}^{\ast}(s)=C_i(s)\left[I^{\ast}(s)-I(s)\right]+U_{\mathrm{ff}}(s)+U_{\sin^3}(s)
+  \label{eq:modulasyon-toplami}
+\end{equation}
+şeklinde ayrılmıştır. Eşitlik~\eqref{eq:modulasyon-toplami} zaman alanı işaretleriyle aktarım fonksiyonunu aynı ifadede karıştırmamak için tamamen Laplace alanında yazılmıştır. $U_{\mathrm{ff}}$ şebeke gerilimi veya bozucu bastırma amacıyla kullanılan klasik ileri besleme terimini, $U_{\sin^3}$ ise önerilen ikincil şekillendirmeyi temsil eder. PLL faz açısı $\theta$ için trigonometrik özdeşlik
+\begin{equation}
+  \sin^3(\theta)=\frac{3\sin(\theta)-\sin(3\theta)}{4}
+  \label{eq:sin3-ozdeslik}
+\end{equation}
+kompanzasyonun temel ve üçüncü harmonik bileşenlerini açıkça göstermektedir. Eşitlik~\eqref{eq:sin3-ozdeslik} içindeki $\theta$ boyutsuz elektriksel açıdır. Benzetim modelinde terim $K_{3x}\sin^3\theta$ biçimindedir ($K_{1x}$ ve $K_{3x}$, Bölüm~\ref{chap:sin3} içindeki $D_1$ ve $D_3$ katsayılarının $x$ numaralı senaryodaki değerleridir): birim genlikli referans sinüsünün küpü pozitif işaretle ve ayrı bir normalizasyon olmadan görev oranı toplamına eklenir. Eşitlik~\eqref{eq:sin3-ozdeslik} uygulandığında modülasyon referansı $(K_1+3K_3/4)\sin\theta-(K_3/4)\sin3\theta$ olur; üçüncü harmonik bileşen temel bileşene ters işaretlidir ve tepe değer $K_{1x}+K_{3x}$'tür. Katsayıların seçimi Bölüm~\ref{chap:sin3} içinde ele alınmıştır.
+
+Ölçümden kapı işaretine uzanan işlevsel zincir Şekil~\ref{fig:denetim-modulasyon-blok} üzerinde izlenebilir bir blok yapısına dönüştürülmüştür. Yapı, Sin\textsuperscript{3} yolunun akım denetleyicisiyle seri değil modülasyon toplamında paralel bir ileri besleme bileşeni olduğunu ve nötr anahtar susturma kararının PWM üretiminden sonra kapı mantığında uygulandığını açıkça ayırmaktadır.
+
+\begin{figure}[H]
+  \centering
+  \resizebox{0.99\textwidth}{!}{%
+  \begin{tikzpicture}[
+    node distance=5mm and 5mm,
+    block/.style={draw,rounded corners=1.3pt,align=center,minimum height=9mm,minimum width=14mm,fill=blue!5},
+    special/.style={draw,rounded corners=1.3pt,align=center,minimum height=9mm,minimum width=18mm,fill=orange!12},
+    sum/.style={circle,draw,minimum size=7mm,inner sep=0pt},
+    flow/.style={-{Latex[length=1.8mm]},line width=0.9pt},
+    feedback/.style={-{Latex[length=1.8mm]},line width=0.9pt,dashed}
+  ]
+    \node[block] (iref) {$i^{\ast}$\\üretimi};
+    \node[sum,right=of iref] (sumi) {$\Sigma$};
+    \node[block,right=of sumi] (ci) {$C_i(s)$\\akım denetimi};
+    \node[sum,right=of ci] (sumv) {$\Sigma$};
+    \node[block,right=of sumv,minimum width=24mm] (pwm) {Sınırlandırma, ölçekleme\\ve PWM üretimi};
+    \node[special,right=of pwm,minimum width=25mm] (gate) {$Q_1$--$Q_4$ kapı mantığı\\ve nötr susturma};
+    \node[block,right=of gate,minimum width=20mm] (plant) {T-tipi güç katı\\ve LCL filtre};
+    \draw[flow] (iref) -- (sumi);
+    \draw[flow] (sumi) -- node[above,font=\scriptsize] {$e_i$} (ci);
+    \draw[flow] (ci) -- (sumv);
+    \draw[flow] (sumv) -- node[above,font=\scriptsize] {$v_{\mathrm{mod}}^{\ast}$} (pwm);
+    \draw[flow] (pwm) -- (gate);
+    \draw[flow] (gate) -- node[above,font=\scriptsize] {$q_1$--$q_4$} (plant);
+
+    \node[special,below=13mm of ci,xshift=-7mm,text width=23mm] (vff) {Şebeke gerilimi\\ileri besleme $v_{\mathrm{ff}}$};
+    \node[special,below=13mm of sumv,xshift=11mm,minimum width=20mm] (sin3) {Sin\textsuperscript{3}\\$K_{\sin^3}\sin^3\theta$};
+    \node[block,below=11mm of iref] (pll) {Faz bilgisi\\$\theta$};
+    \node[block,below=11mm of plant] (meas) {Ölçüm, ADC\\ve ölçekleme};
+    \draw[flow] (pll) -- (iref);
+    \coordinate (phasebus) at ($(pll.south)+(0,-0.65)$);
+    \draw[flow] (pll.south) -- (phasebus) -| (sin3.south);
+    \draw[flow] (vff) -| (sumv.south);
+    \draw[flow] (sin3) -- (sumv.south);
+    \draw[feedback] (plant.south) -- (meas.north);
+    \coordinate (feedbackbus) at ($(vff.south)+(0,-1.0)$);
+    \draw[feedback] (meas.south) |- (feedbackbus) -| node[pos=0.72,below,font=\scriptsize] {$i_{\mathrm{ölç}}$} (sumi.south);
+    \node[font=\scriptsize] at ($(sumi)+(-0.24,0.34)$) {$+$};
+    \node[font=\scriptsize] at ($(sumi)+(-0.24,-0.34)$) {$-$};
+    \node[font=\scriptsize] at ($(sumv)+(-0.24,0.34)$) {$+$};
+    \pgfresetboundingbox
+    \coordinate (bboxse) at (meas.east |- feedbackbus);
+    \path[use as bounding box] ($(iref.north west)+(-0.3,0.35)$) rectangle ($(bboxse)+(0.3,-0.3)$);
+  \end{tikzpicture}%
+  }
+  \caption{İşlevsel akım denetimi, ileri besleme, Sin\textsuperscript{3}, PWM ve nötr anahtar susturma blokları.}
+  \label{fig:denetim-modulasyon-blok}
+\end{figure}
+
+Dışsal ileri besleme terimi hatadan üretilmediği ve geri besleme yolunda bulunmadığı için doğrusal modelde $1+C_i(s)G(s)=0$ karakteristik denklemini değiştirmez; Sin\textsuperscript{3} teriminin kapalı çevrim kutuplarına ve kararlılık marjlarına etkisizliği Alt Bölüm~\ref{sec:kararlilik-bode} içinde analitik, frekans alanı ve zaman alanı katmanlarıyla gösterilmiştir. Sayısal uygulamada örnekleme, sıfırıncı derece tutucu, PWM, hesaplama ve ölçüm filtreleri toplam bir gecikme $G_d(s)$ oluşturur. Şekil~\ref{fig:denetim-modulasyon-blok} içindeki küçük harfli $v_{\mathrm{ff}}(t)$, $v_{\sin^3}(t)$ ve $v_{\mathrm{mod}}^{\ast}(t)$ zaman alanındaki fiziksel/normalize komutları; Eşitlik~\eqref{eq:modulasyon-toplami} içindeki büyük harfler aynı işaretlerin Laplace dönüşümlerini gösterir. Şebeke gerilimi ileri beslemesinin LCL rezonansında pozitif veya negatif sönümleme üretmesi mümkün olduğundan iki ileri besleme yolu kapalı çevrim analizinde ayrı girişler olarak tutulmuştur \citep{Lu2016,Wang2024}. Sin\textsuperscript{3} teriminin başarısı yalnızca düşük güç THD değeriyle değil; akım izleme hatası, kararlılık marjı, kontrol eforu, doyum süresi ve anma akımındaki etkisi ile birlikte değerlendirilir.
+
+\subsection{Denetim ve kapı mantığının benzetim modelinden okunması}
+\label{sec:denetim-modelden}
+
+Denetim ve kapı mantığının tezdeki tanımı, deney senaryolarını yeniden üretmek için hazırlanan Simulink modellerine dayanır; Şekil~\ref{fig:denetim-modulasyon-blok} içindeki her blok, modelin blok yapısı ve sinyal bağlantıları okunarak doğrulanmıştır. Donanımın PWM ve denetim kaynak kodu tezde kullanılmamıştır. Modelden okunan zincir şöyledir. Birim genlikli referans sinüsü $\sin(\theta+\varphi)$, \SI{1}{\micro\second} adımla örneklenir ve senaryoya göre $K_{1x}$ ile, S3'te ayrıca $K_{33}\sin^3$ dalıyla ölçeklenerek görev oranı komutu $u$ oluşturulur. İki karşılaştırma anahtarı $u\geq0$ koşuluna göre yarım periyotları ayırır; pozitif yarıda $d=u$, negatif yarıda $d=-u$ alınır. $d$, \SI{10}{\kilo\hertz} ve 0--1 aralıklı testere dişi taşıyıcıyla karşılaştırılır; $V_{\mathrm{dc}}$ normalizasyonu yoktur. Dört kapı komutunun her biri, yalnız yükselen kenarı $t_d=\SI{1}{\micro\second}$ geciktiren bir gecikme bloğundan geçer. Klasik anahtarlamada nötr anahtar komutları dış anahtar PWM çıkışlarının mantıksal tümleyenidir; susturmalı anahtarlamada nötr anahtarlar yarım periyot boyunca sabit 1 veya 0 değerini alır. Kapı mantığının senaryo başına doğruluk tablosu Alt Bölüm~\ref{sec:model-kapi-mantigi} içinde, S4 akım denetleyicisinin yapısı Alt Bölüm~\ref{sec:s4-kapali-cevrim} içinde verilmiştir.
+
+Donanımın PWM zamanlayıcı yazmaçlarından periyot ve ölü zaman değerleri okunmuş ve modele aktarılmıştır (Tablo~\ref{tab:sistem-parametreleri}). Model tabanlı tanımın iki sınırı vardır. İlk olarak, donanımın ADC örnekleme anı, görev oranı güncelleme anı ve hesaplama gecikmesi benzetim modelinde temsil edilmemiştir. İkinci olarak, susturma ve Sin\textsuperscript{3} teriminin donanımdaki etkinleşme eşiği ile histerezisi bilinmediğinden modellerde iki işlev senaryo boyunca sürekli etkindir. İki sınır Bölüm~\ref{chap:sonuc} içinde sınırlılık olarak değerlendirilir.
+
+\section{Elektriksel ve Denetim Parametreleri}
+
+Benzetim modellerinin ve deney düzeneğinin elektriksel, yarı iletken, modülasyon, denetim ve sayısal çözüm parametreleri Tablo~\ref{tab:sistem-parametreleri} altında tek yerde toplanmıştır; tezin diğer bölümleri parametre değerini yinelemez, Tablo~\ref{tab:sistem-parametreleri}'ye başvurur. Tablonun omurgası, dört senaryo modelinin ortak okuduğu parametre dosyasıdır (\texttt{inverter\_common\_parameters.m}). Bir değerin parametre dosyasında tanımlı olması yeterli sayılmamış; değerin hangi model bloğunda gerçekten kullanıldığı, sonuçların dayandığı dört taban modelin blok parametreleri ve model yapılandırması taranarak ayrıca denetlenmiştir. Parametre dosyasında tanımlı olup hiçbir taban modelde kullanılmayan deney hedefleri, yedek ısıl ağ değişkenleri ve ara değişkenler tabloya alınmamıştır. Tür sütunu her değerin dayanağını altı sınıftan birine bağlar. \emph{Ölçülmüş} değer, deney düzeneğinin güç analizörü ya da ölçüm ekranından okunan çalışma noktasıdır. \emph{Veri sayfası} değeri, üretici veri sayfasından okunan ya da veri sayfası eğrisine oturtulan cihaz büyüklüğüdür. \emph{Tasarım} değeri, parametre dosyasında ya da donanım tasarım belgelerinde tanımlanan ve ayrıca ölçülmemiş büyüklüktür. \emph{Kalibre} değer, benzetim modelini deney özetinin aktif ve reaktif gücüne oturtmak için ayarlanmıştır; parametre dosyasındaki ilk değer parantez içinde verilmiştir. \emph{Benzetim seçimi} yalnız benzetime ait modelleme, denetim ya da sayısal çözüm kararını gösterir. \emph{Düzeltilmiş} değer, benzetim modelinin doğrulanması sırasında tez tanımına uyacak biçimde değiştirilmiştir (Tablo~\ref{tab:model-duzeltme-ozeti}). Donanımdaki karşılığı bilinmeyen büyüklükler tahminle doldurulmamış, ilgili satırda ``sınırlılık'' olarak işaretlenmiştir.
+
+\begingroup
+\setlength{\tabcolsep}{4pt}
+\begin{longtable}{>{\footnotesize\raggedright\arraybackslash}p{0.21\textwidth} >{\footnotesize\raggedright\arraybackslash}p{0.225\textwidth} >{\footnotesize\raggedright\arraybackslash}p{0.08\textwidth} >{\footnotesize\raggedright\arraybackslash}p{0.25\textwidth} >{\footnotesize\raggedright\arraybackslash}p{0.135\textwidth}}
+\caption{Elektriksel, yarı iletken, modülasyon, denetim ve sayısal çözüm parametrelerinin birleşik tablosu.}\label{tab:sistem-parametreleri}\\
+\toprule
+Parametre & Değer & Birim & Kaynak & Tür \\
+\midrule
+\endfirsthead
+\caption[]{Elektriksel, yarı iletken, modülasyon, denetim ve sayısal çözüm parametrelerinin birleşik tablosu (devamı).}\\
+\toprule
+Parametre & Değer & Birim & Kaynak & Tür \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+%
+\multicolumn{5}{@{}l}{\small\textbf{Sistem tanımı ve çalışma noktaları}} \\
+Prototip faz yapısı & Üç faz, dört telli; nötr hattı DA bara orta noktasına bağlı & -- & Tam topoloji şeması & Tasarım \\
+Benzetim ve deney kapsamı & Tek faz kolu; nötr dönüşü DA bara orta noktasına & -- & Benzetim modelleri; deney özet tablosunun tek faz büyüklükleri & Benzetim seçimi \\
+Tasarım güç aralığı & 20--25 & \si{\kilo\watt} & Donanım tasarım belgesi & Tasarım; sınırlılık: anma gücünde deney güvenlik gerekçesiyle yapılmamıştır \\
+Prototip anma görünür gücü & 20 & \si{\kilo\volt\ampere} & Akım sensörü boyutlandırma hesabı & Tasarım \\
+Faz akımı tasarım değeri; üst sınırı & Yaklaşık 30; yaklaşık 36 & \si{\ampere} & \SI{20}{\kilo\volt\ampere} için faz başına güç hesabı; \%20 tasarım payı & Tasarım \\
+Şebeke anma gerilimi & 230 faz--nötr; 400 faz--faz & \si{\volt} & Donanım tasarım belgesi & Tasarım \\
+Şebeke frekansı $f_g$ & \num{50} & \si{\hertz} & Parametre dosyası (\texttt{f\_grid}) & Tasarım \\
+Deney şebeke gerilimi $V_g$ (RMS, güvenlik amacıyla varyakla sınırlandırılmış) & S1 \num{119.80}; S2 \num{121.00}; S3 \num{124.30} & \si{\volt} & Deney özet tablosu; parametre dosyası (\texttt{Vac\_rms\_target}) & Ölçülmüş \\
+S4 şebeke gerilimi $V_g$ (RMS) & \num{120.0} & \si{\volt} & Parametre dosyası & Benzetim seçimi \\
+DA bara gerilimi $V_{\mathrm{dc}}$ & S1 \num{431.5}; S2 \num{395.0}; S3 \num{427.5} & \si{\volt} & Deney özet tablosu; parametre dosyası (\texttt{Vdc\_target}) & Ölçülmüş \\
+S4 DA bara gerilimi $V_{\mathrm{dc}}$ & \num{427.5} & \si{\volt} & Parametre dosyası (S3 noktası) & Benzetim seçimi \\
+DA bara tanımı & $V_{\mathrm{dc}}$: DA$+$ ile DA$-$ arasındaki toplam gerilim; yarım bara $V_{\mathrm{dc}}/2$ & -- & Benzetim modeli: tek DA kaynağı, iki seri bara kapasitörü, orta nokta nötre bağlı & Benzetim seçimi \\
+Deney faz akımı $I_g$ (RMS) & S1 \num{2.26}; S2 \num{2.33}; S3 \num{2.31} & \si{\ampere} & Deney özet tablosu; parametre dosyası (\texttt{Ifaz\_rms\_target}) & Ölçülmüş \\
+S4 akım referansı $I_{\mathrm{ref}}$ (RMS) & \num{2.3}; \num{10}; \num{25} & \si{\ampere} & Parametre dosyası (\SI{25}{\ampere}); düşük, orta ve anma akımı taraması & Benzetim seçimi \\
+\midrule
+\multicolumn{5}{@{}l}{\small\textbf{Ölçüm ve sayısal denetim donanımı}} \\
+DA bara ölçüm aralığı & \num{470} & \si{\volt} & AMC1200 giriş bölücüsü tasarımı & Tasarım \\
+Gerilim ölçümü & AMC1200, 12 bit ADC; ofset \SI{1.3}{\volt}, ADC referansı \SI{2.6}{\volt} & -- & Ölçüm kartı tasarımı & Tasarım \\
+Akım sensörü & HLSR 20-P/SP33; \SI{23}{\milli\volt\per\ampere}; ölçülebilir tepe \SI{56.5}{\ampere} & -- & Sensör veri sayfası; ölçüm kartı tasarımı & Veri sayfası \\
+Aşırı akım eşiği & Yaklaşık 30,4 & \si{\ampere} & Pencere karşılaştırıcı eşikleri ve sensör kazancından hesap & Tasarım \\
+Sayısal denetleyici & PIC32MK ailesi, 32 bit & -- & Kontrol kartı açıklaması & Tasarım; sınırlılık: tam parça kodu bilinmemektedir, denetim yazılımı tezde kullanılmamıştır \\
+PWM zamanlayıcı yapılandırması & PTPER $=12000$ (\SI{10}{\kilo\hertz}); DTR $=$ ALTDTR $=120$ & sayım & Parametre dosyası açıklaması (zamanlayıcı yazmaçları) & Tasarım \\
+\midrule
+\multicolumn{5}{@{}l}{\small\textbf{LCL filtre, EMC süzgeci ve DA bara}} \\
+Evirici tarafı endüktansı $L_1$ & \num{600} & \si{\micro\henry} & Parametre dosyası (\texttt{L1}); tam topoloji şeması & Tasarım \\
+$L_1$ seri direnci & \num{0.03} & \si{\ohm} & Parametre dosyası (\texttt{L1r}) & Tasarım \\
+$L_1$ çekirdek kaybı paralel direnci $R_p$ & S1--S3 \num{600}; S4 \num{1500} & \si{\ohm} & Parametre dosyası (\texttt{L1\_core\_Rp}, \texttt{L1\_core\_Rp4}) & Tasarım; S4 verimi S1--S3 verimiyle doğrudan karşılaştırılmaz \\
+Filtre kapasitörü $C_f$ & \num{8} & \si{\micro\farad} & Parametre dosyası (\texttt{C}); tam topoloji şeması & Tasarım \\
+$C_f$ seri direnci & \num{0.01} & \si{\ohm} & Parametre dosyası (\texttt{Cr}) & Tasarım \\
+Şebeke tarafı endüktansı $L_2$ (şebeke ve varyak eşdeğeri) & \num{1000} & \si{\micro\henry} & Parametre dosyası (\texttt{L2}) & Tasarım; sınırlılık: doğrudan empedans ölçümü yoktur \\
+$L_2$ seri direnci & \num{0.01} & \si{\ohm} & Parametre dosyası (\texttt{L2r}) & Tasarım \\
+Ortak kip bobinleri (iki kademe) & Sargı \SI{400}{\micro\henry}; karşılıklı \SI{398}{\micro\henry} ($k=\num{0.995}$); sargı direnci \SI{5}{\milli\ohm}; çekirdek kaybı \SI{100}{\kilo\ohm}; diferansiyel eşdeğer kademe başına \SI{4}{\micro\henry} & -- & Parametre dosyası (\texttt{EMC\_*}); şemadaki ilk kademe \SI{460}{\micro\henry} & Tasarım \\
+X kapasitörü ağı (tek faz eşdeğeri) & \SI{0.5}{\micro\farad}, \SI{0.2}{\ohm} (iki seri \SI{1}{\micro\farad}/\SI{0.1}{\ohm} kol) & -- & Parametre dosyası (\texttt{EMC\_Cx\_eq}, \texttt{EMC\_Rx\_eq}) & Düzeltilmiş \\
+DA bara kapasitörleri $C_{\mathrm{dc}+}=C_{\mathrm{dc}-}$ & \num{470} & \si{\micro\farad} & Parametre dosyası (\texttt{Cdc\_pos}, \texttt{Cdc\_neg}); şemada \SI{470}{\micro\farad}/\SI{450}{\volt} & Tasarım (S1--S3, deney donanımı) \\
+DA bara kapasitörleri, S4 orta ve anma akımı benzetimleri & \num{5600} & \si{\micro\farad} & Orta nokta salınımını \SI{25}{\ampere} akımda $V_{\mathrm{dc}}/2$ değerinin \%5'i altında tutan boyut & Düzeltilmiş \\
+DA bara kapasitörü eşdeğer seri direnci & \num{0.10} & \si{\ohm} & Parametre dosyası (\texttt{Cdc\_esr}) & Tasarım \\
+Bara dengeleme dirençleri & \num{220} & \si{\kilo\ohm} & Parametre dosyası (\texttt{R\_bleed\_1}, \texttt{R\_bleed\_2}) & Tasarım \\
+DA kaynak bağlantısı ve çıkış rölesi kontak direnci & \num{1} & \si{\milli\ohm} & Parametre dosyası (\texttt{Rdc}) & Tasarım \\
+DA kaynağı ters akım diyotu & $V_f=\SI{0.05}{\volt}$, $R_{\mathrm{on}}=\SI{1}{\ohm}$ & -- & Parametre dosyası (\texttt{DCB\_*}); laboratuvar kaynağının akım çekememesinin temsili, donanımda eleman yoktur & Benzetim seçimi \\
+Modele katılmayan donanım öğeleri & SKM modülündeki \SI{4}{\micro\farad} bastırma kapasitörü; \SI{26}{\nano\farad} Y kapasitörü (koruma iletkeni yolu) & -- & Tam topoloji şeması & Benzetim seçimi \\
+\midrule
+\multicolumn{5}{@{}l}{\small\textbf{Yarı iletkenler ve kapı sürücüsü}} \\
+Dış anahtarlar $S_1$--$S_2$ & SKM100GB12T4 & -- & Tam topoloji şeması; veri sayfası & Veri sayfası \\
+$S_1$--$S_2$ iletim karakteristiği & $V_{CE}=\SI{0.9}{\volt}+\SI{11.5}{\milli\ohm}\cdot I_C$ (\SI{25}{\celsius}, $V_{GE}=\SI{15}{\volt}$) & -- & Veri sayfası ($V_{CE0}$ ve $r_{CE}$ en büyük değerleri) & Veri sayfası \\
+$S_1$--$S_2$ anahtarlama enerjisi (1--\SI{50}{\ampere}) & $E_{\mathrm{on}}$ 0,02--1,00; $E_{\mathrm{off}}$ 0,03--1,50 & \si{\milli\joule} & Parametre dosyası; veri sayfası eğilimine dayalı düşük akım ara değerlemesi (veri sayfası noktası \SI{600}{\volt}, \SI{100}{\ampere}, \SI{150}{\celsius}) & Tasarım \\
+$S_1$--$S_2$ gecikme ve geçiş süreleri $t_{d(\mathrm{on})}$/$t_{d(\mathrm{off})}$/$t_r$/$t_f$ & 200/600/60/110 & \si{\nano\second} & Parametre dosyası (2--\SI{3}{\ampere} bölgesi için başlangıç değeri) & Tasarım \\
+Nötr anahtarlar $S_3$--$S_4$ & IXYN100N65C3H1 & -- & Tam topoloji şeması; veri sayfası & Veri sayfası \\
+$S_3$--$S_4$ iletim karakteristiği & $V_{CE}$: \SI{0.80}{\volt} (\SI{1}{\ampere}) ile \SI{1.68}{\volt} (\SI{50}{\ampere}) arası tablo & -- & Veri sayfası çıkış eğrisi (\SI{25}{\celsius}, $V_{GE}=\SI{15}{\volt}$) & Veri sayfası \\
+$S_3$--$S_4$ anahtarlama enerjisi (1--\SI{50}{\ampere}) & $E_{\mathrm{on}}$ 0,05--1,30; $E_{\mathrm{off}}$ 0,07--0,83 & \si{\milli\joule} & Parametre dosyası; \SI{50}{\ampere} noktası veri sayfasından, düşük akım bölgesi ara değerleme & Tasarım \\
+$S_3$--$S_4$ gecikme ve geçiş süreleri $t_{d(\mathrm{on})}$/$t_{d(\mathrm{off})}$/$t_r$/$t_f$ & 200/50/100/1000 & \si{\nano\second} & Parametre dosyası & Tasarım \\
+Dış anahtar ters paralel diyotları $DS_1$--$DS_2$ & $V_f=\SI{1.50}{\volt}$; $r_F=\SI{10.2}{\milli\ohm}$; $Q_{rr}=\SI{15.7}{\micro\coulomb}$; $I_{RM}=\SI{54}{\ampere}$ & -- & SKM100GB12T4 veri sayfası (en büyük değerler; \SI{100}{\ampere} toparlanma testi) & Veri sayfası \\
+Nötr anahtar ters paralel diyotları $DS_3$--$DS_4$ & $V_f=\SI{1.70}{\volt}$; $r_F=\SI{6}{\milli\ohm}$; $Q_{rr}=\SI{9.5}{\micro\coulomb}$; $t_{rr}=\SI{100}{\nano\second}$ & -- & IXYN100N65C3H1 iç diyot veri sayfası (\SI{100}{\ampere}; $Q_{rr}$ eğriden) & Veri sayfası; eşleme düzeltilmiş \\
+Harici diyotlar $D_1$--$D_2$ & DSEI2x61-12B; $V_f=\SI{1.58}{\volt}$; $r_F=\SI{8.5}{\milli\ohm}$; $t_{rr}=\SI{190}{\nano\second}$; $Q_{rr}=\SI{3.0}{\micro\coulomb}$; $C_j=\SI{31}{\pico\farad}$ & -- & DSEI2x61-12B veri sayfası ($t_{rr}$ için \SI{25}{\celsius} değeri; $Q_{rr}$ eğriden) & Veri sayfası; eşleme düzeltilmiş \\
+Kapı sürücüsü & $+15/-5$~\si{\volt}; toplam kapı direnci \SI{15}{\ohm}; çıkış yükselme ve düşme süresi \SI{20}{\nano\second}; ek açma ve kapama gecikmesi 0; IGBT kapı eşiği $V_{GE(th)}=\SI{6}{\volt}$ & -- & Parametre dosyası (\texttt{Vgate\_*}, \texttt{RG\_total}, \texttt{gate\_driver\_*}) & Tasarım \\
+Jonksiyon sıcaklığı & \num{25}, sabit; ısıl model etkisiz & \si{\celsius} & Parametre dosyası (\texttt{Tj\_operating}) & Benzetim seçimi \\
+\midrule
+\multicolumn{5}{@{}l}{\small\textbf{Modülasyon ve PWM}} \\
+Anahtarlama frekansı $f_s$ & \num{10} & \si{\kilo\hertz} & Parametre dosyası (\texttt{fsw}); PWM zamanlayıcı periyodu & Tasarım \\
+Ölü zaman $t_d$ & \num{1} & \si{\micro\second} & Parametre dosyası (\texttt{deadtime}; DTR $=120$); modelde her kapı komutunun yükselen kenarında gecikme & Tasarım \\
+Taşıyıcı ve görev oranı & Testere dişi 0--1; yarım periyot ayrımlı tek kutuplu görev oranı $d=|u|$; $V_{\mathrm{dc}}$ normalizasyonu yok & -- & Benzetim modeli PWM alt sistemi & Benzetim seçimi \\
+Modülasyon referansı örnekleme adımı & \num{1} & \si{\micro\second} & Parametre dosyası (\texttt{pwm\_ref\_Ts}) & Benzetim seçimi; sınırlılık: donanımın ADC örnekleme ve görev oranı güncelleme anı modelde temsil edilmemiştir \\
+Temel modülasyon genliği $K_1$ & S1 \num{0.7865} (\num{0.7865}); S2 \num{0.76796} (\num{0.794}); S3 \num{0.44343} (\num{0.45}) & -- & Kalibrasyon (Bölüm~\ref{chap:deney}) & Kalibre \\
+Sin\textsuperscript{3} kazancı $K_3$ & S3 \num{0.38431} (\num{0.39}); S1--S2 \num{0} & -- & Kalibrasyon (Bölüm~\ref{chap:deney}); $K_3/K_1$ oranı sabit & Kalibre \\
+Referans fazı $\varphi$ & S1 \num{-0.3661} (\num{-0.44}); S2 \num{0.1121} (\num{0}); S3 \num{0.6575} (\num{0}) & \si{\degree} & Kalibrasyon (Bölüm~\ref{chap:deney}) & Kalibre \\
+S4 ileri besleme $K_1$, $K_3$, $\varphi$ & S3 kalibre değerleri & -- & Kalibrasyon (Bölüm~\ref{chap:deney}) & Kalibre \\
+Sin\textsuperscript{3} teriminin biçimi & $K_{3x}\sin^3\theta$; birim genlikli referansın küpü, pozitif işaretli; görev oranı toplamına çevrim dışından eklenir & -- & Benzetim modeli modülasyon toplamı & Tasarım \\
+Susturma ve Sin\textsuperscript{3} etkinleşme ölçütü & Senaryo boyunca sürekli etkin; akım eşiği ve histerezis tanımlı değil & -- & Benzetim modelleri & Benzetim seçimi; sınırlılık: donanımdaki etkinleşme eşiği modelde temsil edilmemiştir \\
+\midrule
+\multicolumn{5}{@{}l}{\small\textbf{S4 akım denetimi}} \\
+Geri besleme büyüklüğü ve ölçüm süzgeci & $i_{L1}$; tek kutuplu alçak geçiren süzgeç, köşe \SI{5}{\kilo\hertz} ($f_s/2$) & -- & Denetleyici tasarımı (Bölüm~\ref{chap:sin3}) & Benzetim seçimi \\
+Akım referansı & $\sqrt{2}\,I_{\mathrm{ref}}\sin\theta_g$; şebeke fazına kilitli, ideal faz bilgisi & -- & Denetleyici tasarımı & Benzetim seçimi \\
+Oransal kazanç $K_p$ & \num{0.03} & \si{\per\ampere} & Parametre dosyası (\texttt{Kp}) & Tasarım \\
+İntegral kazancı $K_i$ & \num{11.31} ($2\pi\cdot\SI{60}{\hertz}\cdot K_p$) & \si{\per\ampere\per\second} & Denetleyici tasarımı; PI sıfırı \SI{60}{\hertz}, akım çevrimi kazanç geçiş frekansının (yaklaşık \SI{586}{\hertz}) onda biri & Benzetim seçimi \\
+Geri hesaplamalı doyum önleme kazancı $K_{aw}$ & \num{377} ($2\pi\cdot60$) & \si{\per\second} & Denetleyici tasarımı & Benzetim seçimi \\
+PIR rezonans terimi & $K_r=\SI{0.3}{\per\ampere}$ ($10K_p$); $\omega_b=2\pi\cdot2$~\si{\radian\per\second}; $\omega_0=2\pi\cdot50$~\si{\radian\per\second} & -- & Denetleyici tasarımı & Benzetim seçimi \\
+Modülasyon ve integratör sınırı & $|u|\le1$ & -- & Denetleyici tasarımı & Benzetim seçimi \\
+Denetim adımı ve hesaplama gecikmesi & \SI{1}{\micro\second}; gecikme yok (analog eşdeğer) & -- & Denetleyici tasarımı (Bölüm~\ref{chap:sin3}) & Benzetim seçimi; sınırlılık: periyot başında tek örnekli sayısal gerçekleme aktif sönümleme gerektirir \\
+\midrule
+\multicolumn{5}{@{}l}{\small\textbf{Sayısal çözüm ve değerlendirme}} \\
+Çözücü & ode15s (değişken adımlı, katı sistemler için) & -- & Model yapılandırması & Benzetim seçimi \\
+En büyük çözücü adımı & \num{1} & \si{\micro\second} & Parametre dosyası (\texttt{sim\_max\_step}) & Benzetim seçimi \\
+Bağıl, mutlak ve Simscape artık toleransı & \num{1e-6}; \num{1e-6}; \num{1e-6} & -- & Parametre dosyası (\texttt{sim\_rel\_tol}, \texttt{sim\_abs\_tol}, \texttt{simscape\_residual\_\allowbreak tolerance}) & Benzetim seçimi \\
+Simscape yerel çözücüsü ve powergui & Yerel çözücü kapalı (kayıtlı \SI{0.1}{\micro\second} adımı etkisiz); powergui sürekli kip & -- & Model yapılandırması & Benzetim seçimi \\
+Benzetim süresi & S1--S3 \num{0.1}; S4 P ve PI \num{0.06}; S4 PIR \num{0.2} & \si{\second} & Benzetim yapılandırması & Benzetim seçimi \\
+Değerlendirme penceresi ve THD tanımı & Son tam şebeke periyodu (\SI{20}{\milli\second}); THD, temel bileşene göre bir periyotluk kayan pencereyle & -- & Modelin ortalama, RMS ve THD blokları (\SI{50}{\hertz}) & Benzetim seçimi \\
+Güç ölçüm noktası ve işaret kuralı & Evirici çıkış uçları (EMC süzgeci sonrası, $L_2$ öncesi); evirici$\to$şebeke yönü pozitif & -- & Benzetim modeli ölçüm zinciri & Benzetim seçimi \\
+Osiloskop akım ölçekleme kazancı & \num{20} & -- & Parametre dosyası (\texttt{measurement\_gain}); yalnız görüntülemede, hesaplara girmez & Benzetim seçimi \\
+\end{longtable}
+\endgroup
+
+Tablo~\ref{tab:sistem-parametreleri} içindeki sınırlılıklar üç kümede toplanır. Birinci küme donanım tanımına ilişkindir: anma gücü ifadeleri tasarım hedefi olarak kalmakta, deneyler güvenlik amacıyla sınırlandırılan şebeke geriliminde yaklaşık \SI{120}{\volt} ve \SI{2.3}{\ampere} düzeyinde yürütülmüştür. İkinci küme sayısal denetim yazılımına ilişkindir: benzetimde denetim işlevleri analog eşdeğer ve senaryo boyunca sürekli etkin kip olarak temsil edilmiştir; donanımın denetim yazılımı, ADC örnekleme anı ve susturma ile Sin\textsuperscript{3} teriminin etkinleşme eşiği modele aktarılmamıştır. Üçüncü küme pasif elemanlara ilişkindir: $L_2$ doğrudan ölçülmemiş bir eşdeğerdir (Alt Bölüm~\ref{sec:l2-tanimi}); S4 orta ve anma akımı benzetimlerinin DA bara kapasitörleri deney donanımındaki değerden büyüktür. Üç kümenin sonuçlara etkisi Bölüm~\ref{chap:sonuc} içinde değerlendirilir.
+
+\subsection{Şebeke tarafı endüktansı $L_2$}
+\label{sec:l2-tanimi}
+
+LCL filtrenin şebeke tarafı endüktansı ayrı bir filtre bobini değildir. Deney düzeneğinde evirici çıkışı şebekeye, gerilimi güvenlik amacıyla sınırlandıran varyak üzerinden bağlanmıştır; $L_2=\SI{1000}{\micro\henry}$, şebeke empedansı ile varyak kaçak endüktansının toplam eşdeğeri olarak parametre dosyasında tanımlanmıştır ve tasarım türünde bir değerdir (Tablo~\ref{tab:sistem-parametreleri}). Değer doğrudan empedans ölçümüyle doğrulanmamıştır. Kaynak belgelerde görülen \SI{200}{\micro\henry} ve \SI{400}{\micro\henry} değerleri daha erken tarihli parametre notlarına ve model yapılandırmalarına aittir; çelişen kaynaklar arasında en yeni makine okunur parametre dosyası esas alındığından tezde kullanılmamıştır. Tam topoloji şemasındaki \SI{600}{\micro\henry} etiketleri ise üç fazın $L_1$ bobinleridir. Donanımdaki fiziksel süzgeç, EMC süzgeciyle birlikte $L_1$--$C_f$ yapısındadır.
+
+$L_2$ değerindeki belirsizliğin iki sonucu vardır. İdeal LCL rezonansı Eşitlik~\eqref{eq:lcl-rezonans} ile $L_1=\SI{600}{\micro\henry}$, $C_f=\SI{8}{\micro\farad}$ ve $L_2=\SI{1000}{\micro\henry}$ için yaklaşık \SI{2.9}{\kilo\hertz}'dir; EMC süzgecini ve kayıpları içeren fiziksel modelde rezonans \SI{2.8}{\kilo\hertz} çevresindedir (Alt Bölüm~\ref{sec:kararlilik-bode}). Rezonans frekansı anahtarlama frekansının altıda birinden büyük olduğundan sayısal akım denetiminin kararlılığı $L_2$'ye duyarlıdır; şebeke endüktansının \num{0}--\SI{5}{\milli\henry} aralığındaki etkisi Alt Bölüm~\ref{sec:kararlilik-bode} içinde taranmıştır. Açık çevrim deney senaryolarında ise $L_2$, C noktasındaki gerilim ile şebeke iç gerilimi arasındaki küçük temel frekans farkını belirler ve kalibre edilen aktif ile reaktif güç değerlerini yalnızca ikinci mertebede etkiler.
+
+\subsection{Yarı iletken eşlemesi}
+\label{sec:yariiletken-esleme}
+
+Faz kolundaki her yarı iletken bloğun rolü, benzetim modelinin bağlantı grafiğinden otomatik olarak çıkarılmış ve kullandığı parametre kümesiyle karşılaştırılmıştır. Rol, bloğun bağlandığı düğüm çiftinden belirlenir: DA$+$, DA$-$, dış kol orta düğümü, DA bara orta noktası, nötr IGBT'lerin ortak emetörü ve faz düğümü. Tablo~\ref{tab:yariiletken-esleme} sonuçların dayandığı taban modellerdeki eşlemeyi verir; parça kodları ve cihaz değerleri Tablo~\ref{tab:sistem-parametreleri} içindedir. On iki IGBT'nin tamamı doğru parametre kümesine bağlıdır ve devreye bağlı olmayan yarı iletken bloğu yoktur. Harici diyotlar ile nötr IGBT ters paralel diyotlarının parametre kümeleri ise yer değiştirmiş bulunmuş ve tabloda gösterilen eşlemeye getirilmiştir (Alt Bölüm~\ref{sec:model-dogrulama-duzeltme}).
+
+\begin{table}[H]
+  \centering
+  \caption{Faz kolu yarı iletkenlerinin devre rolü, bağlantısı, model bloğu ve parametre kümesi (S1, S3 ve S4 modelleri).}
+  \label{tab:yariiletken-esleme}
+  \footnotesize
+  \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.25\textwidth} >{\raggedright\arraybackslash}p{0.24\textwidth} >{\raggedright\arraybackslash}p{0.19\textwidth} >{\raggedright\arraybackslash}X}
+    \toprule
+    Devre rolü & Bağlantı & Model bloğu & Parametre kümesi \\
+    \midrule
+    $Q_1$ dış üst IGBT & C: DA$+$; E: dış orta düğüm & \texttt{N-Channel IGBT} & Dış anahtar ($S_1$--$S_2$) \\
+    $Q_2$ dış alt IGBT & C: dış orta düğüm; E: DA$-$ & \texttt{N-Channel IGBT1} & Dış anahtar ($S_1$--$S_2$) \\
+    $Q_3$ nötr IGBT, faz tarafı & C: faz düğümü; E: ortak emetör & \texttt{N-Channel IGBT3} & Nötr anahtar ($S_3$--$S_4$) \\
+    $Q_4$ nötr IGBT, orta nokta tarafı & C: orta nokta; E: ortak emetör & \texttt{N-Channel IGBT2} & Nötr anahtar ($S_3$--$S_4$) \\
+    $DS_1$, $DS_2$ ters paralel diyot & A--K: dış orta--DA$+$; DA$-$--dış orta & \texttt{Diode9}, \texttt{Diode2} & Dış anahtar iç diyotu \\
+    $DS_3$, $DS_4$ ters paralel diyot & A--K: ortak emetör--faz; ortak emetör--orta nokta & \texttt{Diode7}, \texttt{Diode6} & Nötr anahtar iç diyotu (eşleme düzeltildi) \\
+    $D_1$, $D_2$ harici diyot & A--K: faz--DA$+$; DA$-$--faz & \texttt{Diode5}, \texttt{Diode3} & Harici hızlı diyot (eşleme düzeltildi) \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+Eşlemenin doğruluğu üç bağımsız ölçütle denetlenmiştir: parametre dosyasının kendi bölüm başlıkları, tam topoloji şeması ve gerilim sınıfı. Faz--DA rayı konumundaki $D_1$--$D_2$ diyotları kesim durumunda toplam $V_{\mathrm{dc}}$ gerilimini taşır ve \SI{1200}{\volt} sınıfında harici diyot gerektirir; nötr kol diyotları en çok $V_{\mathrm{dc}}/2$ gerilimini keser ve \SI{650}{\volt} sınıfındaki nötr IGBT'nin iç diyotu yeterlidir. Ortak S1+S2 modelinin ikinci (S2) devresinde aynı roller \texttt{N-Channel IGBT4}--\texttt{IGBT7} ile \texttt{Diode12}, \texttt{Diode1}, \texttt{Diode11}, \texttt{Diode10}, \texttt{Diode8} ve \texttt{Diode4} bloklarına karşılık gelir. Kararlı çalışmada $D_1$--$D_2$ iletime girmez, çünkü faz gerilimi DA raylarını aşmaz; bloklardan yalnız bağlantı kapasitesinin anahtarlama kenarlarındaki yer değiştirme akımı geçer. Sıfır durumunun serbest dolaşım akımını $DS_3$--$DS_4$ taşır.
+
+Bütün anahtarlamalı benzetimler, iletim karakteristiğini ve anahtarlama enerjisini akıma bağlı tablolarla veren veri sayfası tabanlı cihaz modelleriyle yapılmıştır. Isıl model etkisizdir ve jonksiyon sıcaklığı \SI{25}{\celsius} sabit alınmıştır; sıcaklığa bağlı kayıp artışı sonuçlara dâhil değildir.
+
+\section{Benzetim ve Deneysel Doğrulama Metodolojisi}
+\label{sec:dogrulama-metodolojisi}
+
+Önerilen anahtarlama ve kompanzasyon yöntemleri aynı model, çalışma noktası ve ölçüm tanımları altında karşılaştırılmıştır. Temel karşılaştırma kolları klasik tamamlayıcı anahtarlama (S1), nötr anahtar susturma yöntemi (S2) ve Sin\textsuperscript{3} kompanzasyonlu nötr anahtar susturma yöntemidir (S3). Deneylerde her kol için ayrı bir DA bara ve şebeke gerilimi ölçülmüştür; her senaryonun benzetimi ölçülen çalışma noktasında yapılır. Dördüncü kol (S4), S3'e $L_1$ akım geri beslemesi eklenmiş kapalı çevrim benzetimidir ve yalnız benzetimde yer alır.
+
+Tablo~\ref{tab:dogrulama-matrisi}; düşük, orta ve anma akımı bölgelerinde karşılaştırılan yöntemleri, her bölgenin kanıt türünü ve sonucun raporlandığı bölümü birleştirmektedir. Deneyler güvenlik gerekçesiyle yalnız düşük güç noktasında yürütülmüştür; orta ve anma akımı bölgesi ile geçici rejim, kalibre benzetim modelinden türetilen S4 benzetimiyle incelenmiştir. Benzetim ve deney sonuçları ayrı raporlanır; kalibre benzetim, deneyin kalibre edilmeyen büyüklüklerini hangi hatayla yeniden ürettiği üzerinden değerlendirilir.
+
+\begin{table}[H]
+  \centering
+  \caption{Karşılaştırmalı doğrulama matrisi: çalışma bölgesi, yöntem, kanıt türü ve raporlandığı bölüm.}
+  \label{tab:dogrulama-matrisi}
+  \small
+  \begin{tabularx}{\textwidth}{p{0.19\textwidth} p{0.22\textwidth} X p{0.17\textwidth}}
+    \toprule
+    Çalışma bölgesi & Yöntemler & Kanıt türü ve ölçütler & Bölüm \\
+    \midrule
+    Düşük güç (\SI{2.3}{\ampere}) & S1, S2, S3 & Deney özet tablosu ve ekranları; kalibre benzetim. Verim, THD, $P_{\mathrm{dc}}$, $P_{\mathrm{ac}}$, $|Q_1|$, cos$\varphi_1$ & Bölüm~\ref{chap:anahtarlama}, Bölüm~\ref{chap:deney} \\
+    Düşük güç, kapalı çevrim & S4: P, PI & Benzetim. Akım izleme, THD, doyum & Alt Bölüm~\ref{sec:s4-kapali-cevrim} \\
+    Orta akım (\SI{10}{\ampere}) & S4: P, PI, PIR & Benzetim. Akım izleme, üçüncü harmonik, THD & Alt Bölüm~\ref{sec:s4-kapali-cevrim} \\
+    Anma akımı (\SI{25}{\ampere}) & S4: P, PI, PIR & Benzetim. Akım izleme, THD, doyum, verim & Alt Bölüm~\ref{sec:s4-kapali-cevrim} \\
+    Geçici rejim & S4: PI, \num{10}--\SI{25}{\ampere} basamağı & Benzetim. Aşım, yerleşme, geçişte doyum & Alt Bölüm~\ref{sec:s4-kapali-cevrim} \\
+    Kararlılık & S4: P, PI, PIR; $K_3$ açık ve kapalı & Ortalama model ve anahtarlamalı model doğrusallaştırması. $L$, $S$, $T$, marjlar, kutuplar & Alt Bölüm~\ref{sec:kararlilik-bode} \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+Karşılaştırmaların aynı tanımlarla tekrarlanabilmesi için pencere başlangıcı $t_0$ ve kararlı durum analiz süresi $T_w$ olarak tanımlansın. DA bara gerilimi ile DA kaynak akımı $v_{\mathrm{dc}}$ ve $i_{\mathrm{dc}}$; evirici çıkış uçlarındaki (C noktası) gerilim ile şebeke akımı $v_g$ ve $i_g$ ile gösterildiğinde tek faz kolu için ortalama DA ve AA güçleri
+\begin{equation}
+  \begin{aligned}
+    P_{\mathrm{dc}} &= \frac{1}{T_w}\int_{t_0}^{t_0+T_w}v_{\mathrm{dc}}(t)\,i_{\mathrm{dc}}(t)\,\mathrm{d}t, \\
+    P_{\mathrm{ac}} &= \frac{1}{T_w}\int_{t_0}^{t_0+T_w}v_g(t)\,i_g(t)\,\mathrm{d}t
+  \end{aligned}
+  \label{eq:guc-ortalama-tanimlari}
+\end{equation}
+olarak hesaplanır. Eşitlik~\eqref{eq:guc-ortalama-tanimlari} içinde $i_{\mathrm{dc}}$, DA kaynağından bara pozitif ucuna akan akımdır; $i_g$ ise üretici kuralıyla, evirici fazından şebekeye doğru pozitif alınır. Deşarj yönünde $P_{\mathrm{dc}}>0$ ve şebekeye aktarılan güç için $P_{\mathrm{ac}}>0$ olur. Benzetimde $T_w$ bir şebeke periyodudur (\SI{20}{\milli\second}) ve S1--S3 için değerler \SI{0.1}{\second} anındaki, yani 0,08--\SI{0.10}{\second} penceresinin ortalamasıdır; S4 için son tam şebeke periyodu kullanılır. Deşarj yönündeki yüzde verim
+\begin{equation}
+  \eta=100\frac{P_{\mathrm{ac}}}{P_{\mathrm{dc}}}
+  \label{eq:verim-tanimi}
+\end{equation}
+biçiminde raporlanır. Eşitlik~\eqref{eq:verim-tanimi}, yalnızca aynı zaman penceresinden elde edilen giriş ve çıkış güçlerine uygulanır. Reaktif güç, C noktasındaki gerilim ve akımın temel bileşen fazörlerinden $Q_1=\operatorname{Im}\{V_{g,1}I_{g,1}^{\ast}\}$ olarak hesaplanır; $Q_1>0$, akımın gerilimin gerisinde kaldığı ve evirici ile filtrenin şebekeye reaktif güç verdiği durumdur. Temel bileşen güç faktörü ($\cos\varphi_1$) ile toplam güç faktörü $\mathrm{PF}=P_{\mathrm{ac}}/(V_gI_g)$ ayrı büyüklüklerdir; ikisi arasındaki fark akım bozulmasından gelir.
+
+Akımın $h$'inci harmonik RMS bileşeni $I_h$, temel bileşen RMS değeri $I_1$, hesaba katılan en büyük harmonik mertebesi $H$, örnek sayısı $N_s$ ve örnek indisi $k$ ile gösterilsin. Ayrık referans ve ölçülen akım örnekleri $i^{\ast}[k]$ ile $i[k]$ olduğunda akım toplam harmonik bozunumu ve akım izleme hatası
+\begin{equation}
+  \begin{aligned}
+    \mathrm{THD}_i &=100\frac{\sqrt{\sum_{h=2}^{H}I_h^2}}{I_1}, \\
+    \mathrm{RMSE}_i&=\sqrt{\frac{1}{N_s}\sum_{k=1}^{N_s}\left(i^{\ast}[k]-i[k]\right)^2}
+  \end{aligned}
+  \label{eq:thd-rmse-tanimlari}
+\end{equation}
+ile belirlenir \citep{Teodorescu2011,IEC61000}. S1--S3 benzetiminde THD, modelin \SI{50}{\hertz} temel frekanslı ve bir periyot uzunluklu THD bloğundan; S4 benzetiminde aynı pencerenin $H=50$ mertebesine kadar Fourier analizinden alınır. Deney tarafında THD değeri güç analizörü özetinden okunmuştur; analizörün pencere uzunluğu ve harmonik üst sınırı özet kayıtta yer almaz.
+
+Önerilen yöntemin fiziksel hedefini yalnızca THD üzerinden değerlendirmemek için referans akıma ters endüktör akımının büyüklük--zaman etkisini veren ters akım alanı $A_{\mathrm{rev}}$ ve $j$ numaralı anahtarın ikili kapı durumu $q_j[k]\in\{0,1\}$ üzerinden geçiş sayısı $N_{\mathrm{sw},j}$ tanımlansın. İşaret fonksiyonu $\operatorname{sgn}(\cdot)$ kullanılarak
+\begin{equation}
+  \begin{aligned}
+    A_{\mathrm{rev}} &= \int_{t_0}^{t_0+T_w}\max\!\left[-i_L(t)\operatorname{sgn}\!\left(i^{\ast}(t)\right),0\right]\,\mathrm{d}t, \\
+    N_{\mathrm{sw},j} &= \sum_{k=2}^{N_s}\left|q_j[k]-q_j[k-1]\right|,
+    \qquad q_j[k]\in\{0,1\}
+  \end{aligned}
+  \label{eq:ters-akim-anahtarlama-olcutleri}
+\end{equation}
+tanımları kullanılır. Eşitlik~\eqref{eq:ters-akim-anahtarlama-olcutleri} içindeki $N_{\mathrm{sw},j}$ açma ve kapama kenarlarını ayrı geçişler olarak sayar; anahtarlama çevrimi istenirse değer uygun kenar eşleştirmesiyle ayrıca hesaplanmalıdır. İki ölçüt, verim değişiminin gerçekten ters enerji dolaşımı ve azalan anahtarlama etkinliğiyle ilişkili olup olmadığını sınamak için tanımlanmıştır.
+
+Verim hesabında DA giriş gücü ile AA çıkış gücü eşzamanlı veya zaman farkı açıkça sınırlandırılmış kayıtlar üzerinden karşılaştırılmalıdır. Deney altyapısında DA ve AA analizörleri arasındaki en yüksek kayıt gecikmesi yaklaşık \SI{50}{\milli\second}, haberleşme çevrimi ise \SI{1}{\second} düzeyindedir. Haberleşme kayıtları kararlı durum verimi için yeterli, geçici rejim değerlendirmesi için yetersizdir; tezde geçici rejim yalnız benzetimle incelenmiştir.
+
+Benzetim tarafındaki kanıt zinciri izlenebilirdir: her sonuç, onu üreten betiğe ve benzetim çıktılarına bağlıdır; aynı betik aynı sonuçları yeniden üretir. Deney tarafındaki kanıt, özet tablo ve ölçüm ekranlarından oluşur; ham analizör kaydı, deney protokolü ve tekrar sayısı deney kanıtında yer almaz. Deney kanıtının kapsamı ve sınırlılığı Bölüm~\ref{chap:deney} içinde ayrıca değerlendirilir.
+
+\section{Benzetim Modelinin Doğrulanması ve Düzeltilmesi}
+\label{sec:model-dogrulama-duzeltme}
+
+Benzetim modelleri, deney senaryolarını yeniden üretmek amacıyla senaryo başına hazırlanmıştır: S1 ile S2 ortak bir model dosyasında iki bağımsız devre olarak, S3 ayrı bir dosyada yer alır ve dört senaryo ortak bir parametre dosyasını okur. Modeller tezde kullanılmadan önce üç denetimden geçirilmiştir. Birinci denetimde modellerin değişikliksiz benzetim sonuçları deney özet tablosuyla karşılaştırılmıştır. İkinci denetimde güç devresinin bağlantı grafiği bloklar arası çizgilerden yeniden kurulmuş; her IGBT ve diyot bloğunun devre rolü, parametre kümesi ve kapı etiketi tam topoloji şemasıyla ve senaryo tanımlarıyla karşılaştırılmıştır. Üçüncü denetimde ölçüm zinciri ve güç işaret kuralı ham dalga biçiminden doğrulanmıştır.
+
+Bulunan her uyumsuzluk, tezdeki senaryo tanımına ve tam topoloji şemasına uyan en küçük değişiklikle düzeltilmiştir. Düzeltmeler programatik ve yeniden üretilebilir betiklerle yapılmış, her düzeltmenin etkisi aynı çalışma noktasında öncesi ve sonrası benzetimlerle ölçülmüştür. Ölçüm hedefine yaklaşmak amacıyla topoloji değişikliği yapılmamıştır; deney değerlerine uyum yalnız Alt Bölüm~\ref{sec:kalibrasyon} içinde anlatılan iki serbest değişkenli kalibrasyonla sağlanmıştır. Tablo~\ref{tab:model-duzeltme-ozeti}, benzetim modelinde yapılan düzenlemeleri özetler; düzeltilen parametreler Tablo~\ref{tab:sistem-parametreleri} içinde ``Düzeltilmiş'' türüyle işaretlidir.
+
+\begingroup
+\setlength{\tabcolsep}{3.5pt}
+\begin{longtable}{>{\footnotesize\raggedright\arraybackslash}p{0.235\textwidth} >{\footnotesize\raggedright\arraybackslash}p{0.21\textwidth} >{\footnotesize\raggedright\arraybackslash}p{0.235\textwidth} >{\footnotesize\raggedright\arraybackslash}p{0.235\textwidth}}
+\caption{Benzetim modelinde yapılan düzenlemeler: tez tanımına göre doğru durum, uygulanan değişiklik ve ölçülen etki.}\label{tab:model-duzeltme-ozeti}\\
+\toprule
+Konu ve tespit & Doğru durum & Uygulanan değişiklik & Ölçülen etki \\
+\midrule
+\endfirsthead
+\caption[]{Benzetim modelinde yapılan düzenlemeler: tez tanımına göre doğru durum, uygulanan değişiklik ve ölçülen etki (devamı).}\\
+\toprule
+Konu ve tespit & Doğru durum & Uygulanan değişiklik & Ölçülen etki \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+\textbf{S2 kapı yolu.} S2 devresinin dört kapı işaretini üreten PWM bağlantısı tanımlı değil; kapı yolu olmadan $P_{\mathrm{ac}}=\SI{-0.4}{\watt}$, $I_g=\SI{0.35}{\ampere}$ (yalnız filtre kapasitörü akımı) & Nötr IGBT'ler yarım periyot boyunca 1/0; genlik ve faz S2 parametrelerinden & S3'ün susturmalı PWM alt sistemi $K_{33}=0$ ile S2 devresinin dört kapı girişine bağlandı & $P_{\mathrm{ac}}$ \num{-0.4} $\to$ \SI{269.6}{\watt}; $\eta=\%94{,}07$ (deney \%94,2); kayıp \SI{16.99}{\watt} (deney \SI{16.98}{\watt}) \\
+\textbf{S4 kapalı çevrim modeli.} Akım geri beslemeli S4 yapısının kurulması & S4 $=$ S3 $+$ $L_1$ akım geri beslemesi; önce P ($K_p=\num{0.03}$), sonra PI & S3 modeline $L_1$ akım ölçümü, \SI{5}{\kilo\hertz} ölçüm süzgeci ve akım denetleyicisi eklendi; Sin\textsuperscript{3} terimi modülasyon toplamına çevrim dışından bağlandı & \SI{25}{\ampere}'de modülasyon doyumu olmadan izleme: PI $-\%2{,}1$, PIR $-\%1{,}0$ genlik hatası \\
+\textbf{Reaktif güç işaret kuralı.} Benzetimde $Q=+33\ldots+35$~var, deney özetinde 0 ya da negatif & C noktasında üretici kuralı; karşılaştırma $|Q_1|$ ve $|\cos\varphi_1|$ ile & Model değişmedi; işaret ham dalga biçiminden doğrulandı: $\langle v_gi_g\rangle=+\SI{298.9}{\watt}$, $\operatorname{Im}\{V I^{\ast}\}=+\num{32.90}~var$, blok \num{32.89}~var & Kalibre $|Q_1|$: S1 \num{1.93}, S2 \num{24.43}, S3 \num{21.41}~var; üçü de okuma bandında \\
+\textbf{Diyot parametre eşlemesi.} On iki IGBT doğru eşli; harici $D_1$--$D_2$ ile $DS_3$--$DS_4$ diyotlarının parametre kümeleri yer değiştirmiş & $D_1$--$D_2$: \SI{1200}{\volt} harici diyot; $DS_3$--$DS_4$: nötr IGBT iç diyotu & Bağlantı değişmeden sekiz diyot bloğunda parametre kümeleri takas edildi & S3: $P_{\mathrm{ac}}$ $-\%0{,}15$, $\eta$ $-0{,}04$ puan; S1: $P_{\mathrm{ac}}$ $-\%0{,}9$, $\eta$ $+0{,}07$ puan \\
+\textbf{X kapasitörü eşdeğeri.} X kapasitörü \SI{1}{\micro\farad}/\SI{0.01}{\ohm} ile modellenmiş & İki seri \SI{1}{\micro\farad} kolun eşdeğeri \SI{0.5}{\micro\farad}/\SI{0.2}{\ohm} & Eşdeğer değerler iki X kapasitörü bloğuna bağlandı & S3: $Q_1$ $-\num{2.50}~var$, $P_{\mathrm{ac}}$ $+\%0{,}31$, $\eta$ $+0{,}006$ puan \\
+\textbf{S4 DA bara kapasitansı.} 2$\times$\SI{470}{\micro\farad} DA bara \SI{25}{\ampere}'de orta noktayı yaklaşık $\pm$\SI{120}{\volt} ($V_{\mathrm{dc}}/2$'nin \%56'sı) salındırıyor; S4 akımı hedefin \%32 altında, modülasyon doyumda & Anma akımında orta nokta salınımı $V_{\mathrm{dc}}/2$'nin \%5'i düzeyinde & Yalnız S4 orta ve anma akımı benzetimlerinde 2$\times$\SI{5.6}{\milli\farad} & PI \SI{25}{\ampere}: genlik hatası $-\%31{,}9\to-\%2{,}1$; doyum $\%20{,}6\to\%0$; THD $\%57{,}4\to\%9{,}2$ \\
+\end{longtable}
+\endgroup
+
+S2 kapı yolu, S2 senaryosunun benzetimde temsil edilmesini sağlayan düzenlemedir. S2 devresinin güç katı, ölçüm zinciri ve kapı sürücüleri S1 devresiyle aynı yapıdadır. Kapı işaretleri, S3 modelindeki susturmalı PWM alt sisteminin Sin\textsuperscript{3} dalı sıfırlanarak kullanılmasıyla üretilir; genlik ve faz S2 parametrelerinden okunur. Kapı etiketlerinin eşlemesi S1 devresindekiyle aynıdır ve hiçbir kapı çiftinde örtüşme yoktur. S2 devresinin kalibrasyon öncesi verimi deneyin \num{0.13} puan, kaybı ise \SI{0.01}{\watt} içindedir; aktif güç ve akımdaki \%6--10 fazlalık S1 ile S3'teki sistematik fazlalıkla aynı yöndedir ve kalibrasyonla giderilmiştir.
+
+S4 modeli, S3'ün düzeltilmiş güç katını ve kalibre ileri besleme değerlerini aynen kullanır; eklenen tek yapı $L_1$ akım ölçümü, \SI{5}{\kilo\hertz} ölçüm süzgeci ve akım denetleyicisidir. Sin\textsuperscript{3} terimi denetleyici çıkışıyla aynı toplama, hatadan bağımsız bir giriş olarak bağlanmıştır; terimin kapalı çevrim kutuplarını değiştirmediği Alt Bölüm~\ref{sec:kararlilik-bode} içinde gösterilmiştir. Büyütülmüş DA bara kapasitansı yalnız S4'ün orta ve anma akımı benzetimlerinde kullanılmıştır. Tek faz T-tipi kolda şebeke dönüş akımı DA bara orta noktasına girdiğinden temel frekanslı faz akımının tamamı iki bara kapasitörünün paralel eşdeğerinden geçer ve orta nokta salınımı yaklaşık $\hat I/[\omega(C_{\mathrm{dc}+}+C_{\mathrm{dc}-})]$ olur. Deney donanımının bara kapasitörü \SI{2.3}{\ampere}'de yaklaşık \SI{11}{\volt}, yani $V_{\mathrm{dc}}/2$'nin \%5'i düzeyinde salınım verir ve düşük güç deneyleri için yeterlidir; \SI{25}{\ampere}'de ise faz başına modelde evirici gereken gerilimi üretemez. Anma akımı sonuçlarının deney donanımından daha büyük bir DA bara ile elde edildiği Bölüm~\ref{chap:sonuc} içinde sınırlılık olarak yer alır.
+
+Diyot parametre eşlemesindeki hata, harici diyotlarla nötr kol ters paralel diyotlarının parametre kümelerinin yer değiştirmesidir; bağlantı doğrudur ve düzeltme yalnız parametre adlarını takas eder. Etki S1'de S3'tekinin yaklaşık on katıdır. S1'de nötr kol tamamlayıcı anahtarlandığından $DS_3$--$DS_4$ her anahtarlama periyodunda ters toparlanmaya girer; S3'te ise nötr IGBT'ler yarım periyot boyunca iletimde kaldığından toparlanma olayı seyrektir. X kapasitörü eşdeğeri, ölçüm noktasının önündeki X kapasitörünün reaktif akımını değiştirir; etkisi açık çevrim ağ hesabının öngördüğü \num{-0.9}~var değerinden büyük, evirici akımı sabit kabul edilen üst sınıra (\num{-2.4}~var) yakındır. Fark, susturmalı köprünün sert bir gerilim kaynağı gibi davranmamasından gelir (Alt Bölüm~\ref{sec:dusuk-akim-modelleme}). Reaktif güç işaret kuralı bir model düzeltmesi değil, ölçüm kuralının kesinleştirilmesidir: modelin güç blokları C noktasında üretici kuralını kullanır ve benzetimdeki pozitif reaktif güç, filtre kapasitörü ile X kapasitörünün ürettiği reaktif güçtür. Deney özetindeki reaktif güç doğrudan ölçülmemiş, aktif güç ve $\cos\varphi$ değerinden hesaplanmıştır; analizörün işaret kuralı özet kayıtta yer almadığından karşılaştırma büyüklükler üzerinden yapılmıştır.
+
+S1--S3 sonuçlarının dayandığı taban modeller diyot parametre eşlemesi ile X kapasitörü düzeltmelerini, ortak S1+S2 modeli ayrıca S2 kapı yolunu içerir. S4 modeli, S3 tabanına ek olarak akım geri beslemesini ve büyütülmüş DA bara kapasitansını içerir.
+
+\section{Düşük Akımda Benzetim Modelleme}
+\label{sec:dusuk-akim-modelleme}
+
+Laboratuvar çalışma noktası yaklaşık \SI{2.3}{\ampere} RMS, yani yaklaşık \SI{3.3}{\ampere} tepe faz akımıdır ve faz akımı tasarım değerinin \%8'i düzeyindedir (Tablo~\ref{tab:sistem-parametreleri}). Cihaz modellerinin veri sayfası noktaları ise \num{50}--\SI{100}{\ampere} bölgesindedir. Düşük akım bölgesinde modelin doğruluğunu dört etki belirler: anahtarlama enerjisinin düşük akıma ara değerlemesi, diyot ters toparlanması, akım dalgalanmasının akım genliğine oranı ve susturmayla oluşan süreksiz iletim. Aşağıdaki paragraflar dört etkiyi sırasıyla ele alır; ardından köprünün düşük akımdaki iç empedansı kalibrasyon benzetimlerinden ölçülür.
+
+\paragraph{Anahtarlama enerjisinin ara değerlemesi.} Dış ve nötr IGBT'lerin açma ve kapama enerjileri \num{1}--\SI{50}{\ampere} aralığında tablolarla tanımlanmıştır; \SI{50}{\ampere} noktası veri sayfasından, düşük akım bölgesi veri sayfası eğilimine dayalı ara değerlemeden gelir (Tablo~\ref{tab:sistem-parametreleri}). Ara değerlemenin sonuca etkisi, kayıp dağılımı üzerinden sınırlanabilir. S3 modelinin kalibrasyon öncesi çalışma noktasında ($P_{\mathrm{ac}}\approx\SI{298}{\watt}$) blok bazında ayrıştırılan toplam kayıp \SI{18.94}{\watt}'tır. Kaybın \SI{11.56}{\watt}'ı $L_1$ çekirdek kaybı direncindedir; dış anahtarların iletim kaybı anahtar başına yaklaşık \SI{1.37}{\watt}, anahtarlama kaybı \num{0.65}--\SI{0.66}{\watt}, nötr IGBT'lerin iletim kaybı anahtar başına \SI{0.41}{\watt} ve $DS_3$--$DS_4$ diyotlarının kaybı diyot başına \SI{0.63}{\watt}'tır. Anahtarlama kaybı toplam kaybın yaklaşık \%7'sidir; ara değerlemedeki bir belirsizlik verimi ancak aynı oranda etkiler. Düşük akım veriminde belirleyici parametre $L_1$ çekirdek kaybı direncidir; S4'ün farklı çekirdek kaybı direnci kullanması nedeniyle S4 verimi S1--S3 verimiyle doğrudan karşılaştırılmaz.
+
+\paragraph{Diyot ters toparlanması.} Sıfır durumunun serbest dolaşım akımı $DS_3$--$DS_4$ üzerinden akar. S3'te diyot başına ortalama akım \SI{0.36}{\ampere}, RMS akım \SI{1.17}{\ampere}'dir; nötr IGBT'nin iç diyotunun ters toparlanma tepe akımı \SI{-3.4}{\ampere} düzeyindedir ve düşük akımda toparlanma enerjisine katkısı küçüktür. Klasik anahtarlamada (S1) ise nötr kol her periyotta tamamlayıcı anahtarlandığından diyot toparlanması her anahtarlama periyodunda tekrarlanır; diyot parametre eşlemesi düzeltmesinin S1'deki etkisinin S3'tekinin on katı olması (Tablo~\ref{tab:model-duzeltme-ozeti}) toparlanma parametrelerinin klasik anahtarlamada belirleyici olduğunu gösterir. Simscape diyot modelinin anahtarlama kenarlarında ürettiği ani akım tepeleri parazitik endüktanslar modellenmediğinden fiziksel genlik taşımaz ve cihaz zorlanması değerlendirmesinde kullanılmamıştır.
+
+\paragraph{Akım dalgalanması ve akım genliği.} Eşitlik~\eqref{eq:buck-akim-dalgalanmasi}'na göre pozitif yarım periyotta $L_1$ akımının tepe--tepe dalgalanması $v_g=V_{\mathrm{h}}/2$ anında en büyük değerini alır ve $\Delta i_{L,\max}=V_{\mathrm{h}}T_{\mathrm{s}}/(4L_1)$ olur. $V_{\mathrm{h}}=V_{\mathrm{dc}}/2\approx\SI{214}{\volt}$, $T_{\mathrm{s}}=\SI{100}{\micro\second}$ ve $L_1=\SI{600}{\micro\henry}$ için yaklaşık \SI{9}{\ampere} tepe--tepe dalgalanma elde edilir. Eşitlik~\eqref{eq:ters-akim-esigi} gereği $|\bar i_L|\lesssim\SI{4.5}{\ampere}$ olan her bölgede akım bir anahtarlama periyodu içinde sıfıra ulaşır. Laboratuvar çalışma noktasının tepe akımı yaklaşık \SI{3.3}{\ampere} olduğundan klasik anahtarlamada akım temel periyodun büyük bölümünde her anahtarlama periyodunda işaret değiştirir; nötr kol ters akımı (Alt Bölüm~\ref{sec:model-kapi-mantigi}) düşük güç çalışmasının genel durumudur, sıfır geçişleri çevresine özgü bir olay değildir. Aynı ölçüt S4'te orta akım davranışını da açıklar: \SI{25}{\ampere}'de süreksiz iletim yalnız sıfır geçişleri çevresinde oluşurken \SI{10}{\ampere}'de temel periyodun büyük bölümünü kapsar (Alt Bölüm~\ref{sec:s4-kapali-cevrim}).
+
+\paragraph{Süreksiz iletim ve senkron olmayan alçaltıcı davranışı.} Nötr anahtar susturulduğunda, örneğin pozitif yarım periyotta $Q_3$ kesimde tutulduğunda, sıfır durumunda yalnız yük akımı yönündeki yol açıktır. $L_1$ akımı sıfıra indiğinde ters yönde devam edemez; köprü akımı sıfır kalır ve kutup gerilimi üç seviyeden hiçbirinde bulunmaz, filtre tarafının gerilimini izler. Faz kolu böylece senkron alçaltıcı dönüştürücüden senkron olmayan, diyotlu alçaltıcı dönüştürücüye geçer. Kutup geriliminin ara seviyede kaldığı zaman oranı kalibrasyon öncesi benzetimlerde S1 için \%0,5 (yalnız ölü zaman geçişleri), S2 için \%12,4, S3 için \%22,6'dır. Şekil~\ref{fig:s1-s2-kalibre-dalga}(c), S1 ve S2'nin kutup gerilimini aynı anahtarlama periyotlarında karşılaştırır: S1'de kutup gerilimi $+V_{\mathrm{dc}}/2$ ile 0 arasında anahtarlanırken S2'de sıfır durumunun ardından akım söndüğünde kutup gerilimi ara bir seviyeye sıçrar.
+
+\paragraph{Köprünün iç empedansı.} Süreksiz iletimin ölçülebilir bir sonucu, köprünün modülasyon komutuyla belirlenen sert bir gerilim kaynağı gibi davranmamasıdır. Köprü, iç gerilimi $V_{\mathrm{int}}=sV_0\angle\varphi$ ve iç empedansı $Z_{\mathrm{th}}$ olan bir Thevenin eşdeğeriyle temsil edilsin; $s$ modülasyon genlik ölçeği, $\varphi$ referans fazıdır ve köprü çıkış gerilimi $V_A=V_{\mathrm{int}}-Z_{\mathrm{th}}I_{L1}$ olur. Kalibrasyonun ardışık iki benzetiminden ölçülen eşdeğer empedans Tablo~\ref{tab:kopru-ic-empedansi} içinde verilmiştir. S1'deki iç empedansın kaynağı ölü zamandır: akım dalgalanması her periyotta sıfırı kestiği için \SI{1}{\micro\second} ölü zamanın gerilim hatası akıma bağlıdır ve köprüye seri bir empedans gibi etki eder. Kaba ölü zaman tahmini $V_{\mathrm{dc}}t_df_s/\Delta i_L\approx\SI{431}{\volt}\cdot\SI{1}{\micro\second}\cdot\SI{10}{\kilo\hertz}/\SI{2.6}{\ampere}\approx\SI{1.7}{\ohm}$ ölçülen değerle aynı düzeydedir. S2 ve S3'te iç empedans bir mertebe büyüktür; kaynağı süreksiz iletimdir.
+
+\begin{table}[H]
+  \centering
+  \caption{Köprünün kalibrasyon benzetimlerinden ölçülen Thevenin iç empedansı, ara seviye zaman oranı (kalibrasyon öncesi benzetimler) ve aktif ile reaktif gücün serbest değişkenlere duyarlılığı.}
+  \label{tab:kopru-ic-empedansi}
+  \small
+  \setlength{\tabcolsep}{4pt}
+  \begin{tabular}{l c c c c c}
+    \toprule
+    Senaryo & $Z_{\mathrm{th}}$ (\si{\ohm}) & $|Z_{\mathrm{th}}|$ (\si{\ohm}) & Ara seviye (\%) & $\mathrm{d}P/\mathrm{d}\ln s$ (\si{\watt}) & $\mathrm{d}Q/\mathrm{d}\varphi$ (var/\si{\degree}) \\
+    \midrule
+    S1 & $1{,}18-j1{,}18$ & \num{1.67} & \num{0.5} & $\approx\num{10000}$ & $\approx-260$ \\
+    S2 & $23{,}3+j16{,}7$ & \num{28.7} & \num{12.4} & $\approx\num{660}$ & $\approx-30$ \\
+    S3 & $13{,}5-j2{,}2$ & \num{13.7} & \num{22.6} & $\approx\num{1400}$ & $-12\ldots-25$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Tablo~\ref{tab:kopru-ic-empedansi} içindeki iç empedans, LCL filtrenin \SI{50}{\hertz}'teki yaklaşık \SI{0.5}{\ohm} empedansından büyüktür. Sonuç olarak aktif güç esas olarak modülasyon genliğine, reaktif güç ise esas olarak referans fazına bağlıdır; sert gerilim kaynağı varsayımına dayanan ağ hesabının öngördüğü eşlemenin tersidir. Pasif ağ hesabı her benzetimde doğru kalmıştır: ölçülen C noktası fazörlerinden geri yayılan köprü gerilimi, dalga biçimindeki köprü gerilimiyle \SI{0.2}{\milli\volt} ve \SI{0.0001}{\degree} içinde örtüşür. Yumuşak olan, modülasyon komutundan köprü gerilimine geçiştir. İç empedans çalışma noktasına bağlı olduğundan kalibrasyon, sabit duyarlılıklar yerine benzetimlerden öğrenilen ampirik Jacobian ile yinelenmiştir (Alt Bölüm~\ref{sec:kalibrasyon}).
+
+Duyarlılıkların üç sonucu vardır. İlk olarak, deney toleransı ($P_{\mathrm{ac}}$ için \%1, $|Q|$ için okuma belirsizliği) duyarlılıklara bölündüğünde kalibre genliğin belirsizliği S1'de \%0,025, S2'de \%0,4, S3'te \%0,2; fazın belirsizliği ise S1'de \SI{0.05}{\degree}, S2'de \SI{0.4}{\degree}, S3'te \num{0.5}--\SI{1}{\degree} olur. İkinci olarak, susturmalı senaryolarda kalibre genlik parametre dosyasındaki değerden S2'de \%3,3, S3'te \%1,5 düşüktür. Ortalama iletim süresi yaklaşık \SI{50}{\micro\second} olduğundan genlik farkı darbe başına \num{0.7}--\SI{1.6}{\micro\second} kısalmaya eşdeğerdir; Modelde IGBT bloklarının açılma ve kapanma gecikmeleri ile yükselme ve düşme süreleri tanımlıdır (Tablo~\ref{tab:sistem-parametreleri}); kapı sürücüsünün ek yayılım gecikmesi ise sıfır alınmıştır. Kısalma, modelde sıfır alınan sürücü yayılım süresi ile düşük akımdaki gerçek açılma gecikmesinin model değerini aşan kısmının toplamı düzeyindedir. Yorum bir varsayımdır ve donanım kaydıyla doğrulanmamıştır. Üçüncü olarak, S2 ve S3'ün kalibre fazları faz belirsizliği içindedir ve fiziksel bir gecikme olarak yorumlanmamalıdır.
+
+Düşük akımda modelin temsil etmediği etkiler sınırlılık olarak kaydedilmiştir: IGBT çıkış kapasitesi ve sürücü yayılım gecikmeleri, en küçük darbe sınırı, parazitik endüktanslar, sıcaklığa bağlı kayıp artışı, şebeke gerilimindeki harmonikler ve yüksek akımda $L_1$ doyumu. Kalibre S1 ve S2 modellerinin THD farkı ile S2 şebeke akımı farkı (Alt Bölüm~\ref{sec:kalibrasyon}) aynı etkilerle ilişkilendirilebilir.
+
+\section{Bölüm Sonucu}
+
+Sistem mimarisi güç, ölçüm ve denetim yollarını ayıracak biçimde tanımlanmış; prototipin üç fazlı yapısı ile benzetim ve deneyin tek faz kolu kapsamı ayrılmıştır. T-tipi faz kolunun üç gerilim seviyesi ve dört temel akım yolu ortak gösterim altında toplanmış, benzetim modelinden okunan kapı mantığının Tablo~\ref{tab:t-tipi-durumlar} ile örtüştüğü gösterilmiştir. Düşük modülasyon bölgesinde senkron-buck eşdeğeri üzerinden ters akım eşiği açıklanmış, LCL filtre için durum denklemleri ve ideal aktarım fonksiyonu kurulmuştur. Sin\textsuperscript{3} terimi bağımsız bir denetleyici olarak değil, modülasyon toplamına çevrim dışından eklenen ikincil bir ileri besleme kompanzasyonu olarak konumlandırılmıştır.
+
+Bütün devre, yarı iletken, modülasyon, denetim ve sayısal çözüm parametreleri değer, birim, kaynak ve tür bilgisiyle Tablo~\ref{tab:sistem-parametreleri} içinde toplanmıştır. Verim, güç, reaktif güç, THD, izleme hatası, ters akım alanı ve anahtarlama geçiş sayısı tek faz ölçüm noktasına göre tanımlanmıştır. Benzetim modelinin doğrulanmasında bulunan uyumsuzluklar tez tanımına uyan en küçük değişiklikle düzeltilmiş ve her düzeltmenin etkisi ölçülmüştür. Düşük akımda köprünün iç empedansı ölü zaman ve süreksiz iletim nedeniyle LCL empedansının üzerine çıkmakta ve aktif gücün modülasyon genliğine duyarlılığını belirlemektedir. Kurulan model, sonraki bölümde önerilen anahtarlama yönteminin analizine ve Bölüm~\ref{chap:sin3} içindeki kapalı çevrim ve Bode incelemesine temel oluşturmaktadır.

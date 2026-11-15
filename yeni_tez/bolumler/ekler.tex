@@ -1,0 +1,49 @@
+%% Kaynak: tez-latex-v2/backmatter/ekler.tex. Şablon biçimi: \ekler, her ek için \ek{Ad}
+%% ("EK A. Ad"); şekiller ek harfiyle numaralanır (Şekil A.1). Görseller ilk tezin docx
+%% dosyasından özgün çözünürlükte alınmıştır (tez-latex-v2/figures/ekler/README.md).
+\newcommand{\ekbelge}[2]{%
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.86\textwidth,height=0.70\textheight,keepaspectratio]{ekler/#1}
+    \caption{#2}
+  \end{figure}
+}
+
+\ekler
+\textbf{EK A. }Kalibrasyon Belgesi ve Veri Sayfaları
+
+\textbf{EK B. }Ulusal Patentler
+
+\textbf{EK C. }Uluslararası Patent Başvuruları
+
+Eklerde tez metninde atıf yapılan belgeler yer almaktadır. EK A, deney düzeneğinde kullanılan akım transformatörünün kalibrasyon ölçümünü ve Tablo~\ref{tab:sistem-parametreleri} ile Bölüm~\ref{chap:deney} içinde değerleri kullanılan elemanların veri sayfalarından ilgili sayfaları; EK B ve EK C, Tablo~\ref{tab:fikri-mulkiyet} içindeki ulusal patentlerin ve uluslararası başvuruların resmî bülten ve yayın sayfalarını içermektedir. Belgeler arşivdeki özgün görüntü dosyalarından alınmıştır.
+
+\clearpage
+\ek{Kalibrasyon Belgesi ve Veri Sayfaları}
+\ekbelge{ek_a_sertifika_1_akim_transformatoru.png}{Akım transformatörü kalibrasyon ölçümü, sayfa 1: oran, uyartım eğrisi ve sargı direnci (OMICRON CT-Analyzer, IEC~61869-2, 15.01.2025).}
+\ekbelge{ek_a_sertifika_2_akim_transformatoru.png}{Akım transformatörü kalibrasyon ölçümü, sayfa 2: anma akımının yüzdesine göre oran ve faz hatası.}
+\ekbelge{ek_a_vs01_adum4135.png}{ADuM4135 yalıtımlı IGBT kapı sürücüsü veri sayfası.}
+\ekbelge{ek_a_vs02_amc1200.png}{AMC1200 tam diferansiyel yalıtımlı yükselteç veri sayfası.}
+\ekbelge{ek_a_vs03_hlsr_p_sp33.jpg}{HLSR-P/SP33 açık çevrim Hall etkili akım algılayıcısı veri sayfası.}
+\ekbelge{ek_a_vs04_rfm0505s.jpg}{RFM-0505S yalıtımlı DA/DA dönüştürücü veri sayfası.}
+\ekbelge{ek_a_vs05_tcr2ef.jpg}{TCR2EF düşük gerilim düşümlü regülatör veri sayfası.}
+\ekbelge{ek_a_vs06_acudc240_1.png}{AcuDC240 DA güç analizörü veri sayfası, doğruluk tablosu.}
+\ekbelge{ek_a_vs07_acudc240_2.png}{AcuDC240 DA güç analizörü veri sayfası, akım girişi ve ortam koşulları.}
+\ekbelge{ek_a_vs08_emk01_1.png}{EMK-01 AA güç analizörü veri sayfası, sayfa 1.}
+\ekbelge{ek_a_vs09_emk01_2.png}{EMK-01 AA güç analizörü veri sayfası, sayfa 2.}
+\ekbelge{ek_a_vs10_role.jpg}{Fonksiyon değiştirme rölesi veri sayfası.}
+\ekbelge{ek_a_vs11_pic32.png}{Denetim kartındaki PIC32 mikrodenetleyici veri sayfası.}
+\ekbelge{ek_a_vs12_ixyn100n65c3h1.png}{Nötr anahtar IGBT'si IXYN100N65C3H1 veri sayfası.}
+\ekbelge{ek_a_vs13_skm100gb12t4.png}{Dış anahtar IGBT modülü SKM100GB12T4 veri sayfası.}
+
+\clearpage
+\ek{Ulusal Patentler}
+\ekbelge{ek_b_tr2023013377.jpg}{TR 2023 013377 B patent belgesi, Resmî Patent Bülteni 2025/2 (veriliş tarihi 21.02.2025).}
+\ekbelge{ek_b_tr2023013378.jpg}{TR 2023 013378 B patent belgesi, Resmî Patent Bülteni 2025/6 (veriliş tarihi 23.06.2025).}
+\ekbelge{ek_b_tr2023013379.jpg}{TR 2023 013379 B patent belgesi, Resmî Patent Bülteni 2025/2 (veriliş tarihi 21.02.2025).}
+
+\clearpage
+\ek{Uluslararası Patent Başvuruları}
+\ekbelge{ek_c_wo2025085037.jpg}{WO 2025/085037 A1 uluslararası başvuru yayını (PCT/\allowbreak TR2024/\allowbreak 051205, 24.04.2025).}
+\ekbelge{ek_c_wo2025085038.jpg}{WO 2025/085038 A3 uluslararası başvuru yayını (PCT/\allowbreak TR2024/\allowbreak 051206, 24.04.2025; uluslararası arama raporu 03.07.2025).}
+\ekbelge{ek_c_wo2025085039.jpg}{WO 2025/085039 A1 uluslararası başvuru yayını (PCT/\allowbreak TR2024/\allowbreak 051207, 24.04.2025).}

@@ -1,0 +1,62 @@
+%% Ümit PEKPARLAK - SAÜ FBE doktora tezi
+%% Biçim: SAÜ FBE LaTeX şablonu (github.com/burhanbarakli/sau-fbe-doktora-latex-sablonu,
+%% sürüm SABLON_SURUMU.txt). sauthesis.cls ve sauwordline.lua şablondan aynen alınmıştır.
+%% Metin kaynağı: tez-latex-v2 (15.11.2026, 586ae82).
+%% Derleme: .\derle.cmd   (LuaLaTeX + BibTeX; çıktı tez.pdf)
+%% Notlu sürüm (ÜMİT ABİ İÇİN NOT kutuları açık): .\derle.cmd notlu  -> tez_notlu.pdf
+\documentclass[doktora,notsuz]{sauthesis}
+\usepackage{tezpaketleri}
+
+%----------------------------------------------------------------- tez bilgileri
+\tezbasligi{ENERJİ DEPOLAMA SİSTEMLERİ İÇİN GELİŞTİRİLMİŞ \mbox{T-TİPİ} DÖNÜŞTÜRÜCÜ MİMARİSİ VE DÜŞÜK GÜÇ PERFORMANSINI İYİLEŞTİREN ANAHTARLAMA VE Sin\textsuperscript{3} TABANLI KOMPANZASYON YÖNTEMLERİ}
+\tezbasligitr{ENERJİ DEPOLAMA SİSTEMLERİ İÇİN GELİŞTİRİLMİŞ \mbox{T-TİPİ} DÖNÜŞTÜRÜCÜ MİMARİSİ VE DÜŞÜK GÜÇ PERFORMANSINI İYİLEŞTİREN ANAHTARLAMA VE Sin\textsuperscript{3} TABANLI KOMPANZASYON YÖNTEMLERİ}
+\tezbasligien{IMPROVED T-TYPE CONVERTER ARCHITECTURE FOR ENERGY STORAGE SYSTEMS WITH SWITCHING AND SIN\textsuperscript{3}-BASED COMPENSATION METHODS IMPROVING LOW-POWER PERFORMANCE}
+\tezbasligibeyan{Enerji Depolama Sistemleri İçin Geliştirilmiş T-Tipi Dönüştürücü Mimarisi ve Düşük Güç Performansını İyileştiren Anahtarlama ve Sin\textsuperscript{3} Tabanlı Kompanzasyon Yöntemleri}
+\onaybaslik{Enerji Depolama Sistemleri İçin Geliştirilmiş T-Tipi Dönüştürücü Mimarisi ve Düşük Güç Performansını İyileştiren Anahtarlama ve Sin\textsuperscript{3} Tabanlı Kompanzasyon Yöntemleri}
+\teztipi{DOKTORA TEZİ}
+\onayteztipi{Doktora Tezi}
+\yazar{Ümit PEKPARLAK}
+\onayyazar{Ümit PEKPARLAK}
+\yazarbeyan{Ümit PEKPARLAK}
+\ogrencino{1050D08208}
+\anabilimdali{Elektrik Elektronik Mühendisliği}
+\bilimdali{Elektronik Mühendisliği}
+\danisman{Prof. Dr. Uğur ARİFOĞLU}
+\ortakdanisman{}
+\kapaktarihi{EKİM 2026}
+\savunmatarihi{[SAVUNMA TARİHİ]}
+\tesekkurimza{Ümit PEKPARLAK}
+% Jüri: başkan, üyelerin sırası ve üniversiteleri öğrenilene kadar yuvalar gri yer tutucudur (K-31).
+% Örnek: \juribaskani{Prof. Dr. Ad SOYAD}{Sakarya Üniversitesi}
+\juridanisman{Prof. Dr. Uğur ARİFOĞLU}{Sakarya Üniversitesi}
+
+\begin{document}
+%----------------------------------------------------------------- ön kısım
+\diskapak          % dış kapak + arkası (numarasız)
+\ickapak           % iç kapak (i) + arkası (ii) (numara yazılmaz)
+\onaysayfasi       % iii
+\clearpage\null\thispagestyle{plain}\clearpage  % iv (boş)
+\beyanname         % v
+\input{onkisim/tesekkur}
+\tableofcontents
+\input{onkisim/kisaltmalar}
+\input{onkisim/simgeler}
+\listoftables
+\listoffigures
+\input{onkisim/ozet}
+\input{onkisim/summary}
+
+%----------------------------------------------------------------- ana metin
+\anametin
+\input{bolumler/01-giris}
+\input{bolumler/02-literatur}
+\input{bolumler/03-sistem-model-metodoloji}
+\input{bolumler/04-dusuk-guc-anahtarlama}
+\input{bolumler/05-sin3-kompanzasyon}
+\input{bolumler/06-deneysel-dogrulama}
+\input{bolumler/07-gt-tipi-mimari}
+\input{bolumler/08-sonuc}
+\input{bolumler/kaynaklar}
+\input{bolumler/ekler}
+\input{bolumler/ozgecmis}
+\end{document}

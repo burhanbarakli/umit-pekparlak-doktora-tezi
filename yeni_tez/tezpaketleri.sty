@@ -1,0 +1,174 @@
+%% tezpaketleri.sty
+%% sauthesis.cls (SAU FBE LaTeX sablonu) uzerine bu tezin ihtiyac duydugu paketler,
+%% makrolar ve sablonun notsuz ciktidaki kucuk aksakliklarinin duzeltmeleri.
+%% sauthesis.cls ve sauwordline.lua sablondan oldugu gibi alinmistir; degistirilmez.
+%% Sablonun yeni surumu gelirse yalniz o iki dosya degistirilir, bu dosya kalir.
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{tezpaketleri}[2026/11/15 Umit Pekparlak doktora tezi ekleri]
+
+%------------------------------------------------------------------ paketler
+\RequirePackage[table]{xcolor}
+\RequirePackage{booktabs}
+\RequirePackage{tabularx}
+\RequirePackage{siunitx}
+\sisetup{output-decimal-marker={,}}
+\RequirePackage{subcaption}
+\RequirePackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,fit,calc,decorations.pathmorphing}
+\RequirePackage[sort&compress,numbers]{natbib}
+
+% Sekiller cogaltilmaz: tez-latex-v2/figures ve tez-latex/figures depolari okunur.
+% MATLAB sonuclari bolum metninde ../tez-matlab-simulink/... goreli yoluyla gelir.
+\graphicspath{{../tez-latex-v2/figures/}{../tez-latex/figures/}}
+
+%------------------------------------------------------------------ satir araligi uyumu
+% tez-latex-v2 metni setspace komutlarini kullanir; sablonun Word satir modeline baglanir.
+\providecommand\singlespacing{\teksatir}
+\providecommand\onehalfspacing{\birbucuksatir}
+% Sablon \small ve \footnotesize'i Word modeline gore tanimlar; \scriptsize da ayni bicimde.
+\makeatletter
+\renewcommand\scriptsize{\fontsize{8bp}{5.73bp}\selectfont\sau@asc{7.48bp}\sau@setline{9.2bp}}
+\makeatother
+
+%------------------------------------------------------------------ ÜMİT ABİ İÇİN NOT kutusu
+% Tez sahibine bilgi notu; tez metninin parcasi degildir (K-28).
+% tez.tex notsuz derlenir; tez_notlu.tex \UMITNOTLARI tanimlayip tez.tex'i okur.
+\newif\ifumitnotlari
+\ifdefined\UMITNOTLARI\umitnotlaritrue\else\umitnotlarifalse\fi
+\ifumitnotlari
+  \RequirePackage[breakable,skins]{tcolorbox}
+  \newtcolorbox{umitnotkutusu}[1]{breakable, enhanced jigsaw, colback=blue!6, colframe=blue!60!black,
+    boxrule=0.6pt, arc=1pt, left=4pt, right=4pt, top=3pt, bottom=3pt, fontupper=\small,
+    title={\textbf{ÜMİT ABİ İÇİN NOT --- TESLİMDE ÇIKARILACAK}\quad #1}, fonttitle=\small}
+\fi
+\newcommand{\umitnot}[2]{%
+  \ifumitnotlari
+  \par\medskip
+  \begin{umitnotkutusu}{#1}
+    #2
+  \end{umitnotkutusu}
+  \par\medskip
+  \fi
+}
+
+% EKSİK ÇALIŞMA bari (tez-latex-v2 kurali; su an metinde kullanilmiyor).
+\newcommand{\eksikistek}[2]{%
+  \par\medskip
+  \noindent\fcolorbox{orange!85!black}{orange!12}{%
+    \begin{minipage}{0.94\linewidth}
+      \small
+      \colorbox{orange!85!black}{\strut\textcolor{white}{\textbf{EKSİK ÇALIŞMA --- BUNU İSTİYORUZ}}}\ \textbf{#1}\par\smallskip
+      #2
+    \end{minipage}%
+  }%
+  \par\medskip
+}
+
+%------------------------------------------------------------------ sablon duzeltmeleri
+\makeatletter
+
+% Kapaklar: sablondaki kirmizi "(Varsa)" notlari notsuz ciktida siyah basiliyordu.
+% Bilim dali ve ortak danisman satirlari yalniz deger verildiyse basilir.
+\newcommand\sau@bilimdalisatiri{}
+\newcommand\sau@ortakdanismansatiri{}
+\renewcommand\diskapak{%
+  \begingroup
+  \thispagestyle{sauempty}%
+  \sau@kapakortak{1}%
+  \sau@put{297.64}{438.6}{c}{\bfseries \sau@teztipi}%
+  \ifx\sau@bilimdali\@empty\else
+    \sau@put{297.64}{612.7}{c}{\sau@bilimdali\ \textbf{Bilim Dalı}}\fi
+  \sau@put{297.64}{754.4}{c}{\bfseries \sau@kapaktarihi}%
+  \null\clearpage
+  \thispagestyle{sauempty}\null\clearpage
+  \endgroup}
+\renewcommand\ickapak{%
+  \begingroup
+  \thispagestyle{sauempty}%
+  \sau@kapakortak{0}%
+  \sau@put{318.9}{442.5}{c}{\bfseries \sau@teztipi}%
+  \sau@put{318.9}{484.6}{c}{\bfseries \sau@ogrencino}%
+  \ifx\sau@bilimdali\@empty\else
+    \sau@put{318.9}{612.8}{c}{\sau@bilimdali\ \textbf{Bilim Dalı}}\fi
+  \sau@put{318.9}{672.0}{c}{\bfseries Tez Danışmanı: \sau@danisman}%
+  \ifx\sau@ortakdanisman\@empty\else
+    \sau@put{318.9}{699.0}{c}{\bfseries Ortak Danışman: \sau@ortakdanisman}\fi
+  \null\clearpage
+  \thispagestyle{sauempty}\null\clearpage
+  \endgroup}
+
+% Onay sayfasi: jüri yuvalari tez.tex'teki \juri... komutlarindan doldurulur.
+% Kilavuz yuvalari: 12 (baskan) / 14 (danisman) / 16 (ortak danisman) / 18 / 20 / 22 cm.
+% Ortak danisman yoksa 16 cm yuvasi bos kalir. Verilmeyen ad ve kurum gri yer tutucuyla basilir.
+\newcommand\sau@jyt[1]{\sau@gri{#1}}
+\def\sau@jbad{\sau@jyt{Unvan Adı SOYADI}}\def\sau@jbkurum{\sau@jyt{Üniversite}}
+\def\sau@jdad{\sau@danisman}\def\sau@jdkurum{Sakarya Üniversitesi}
+\def\sau@juad{\sau@jyt{Unvan Adı SOYADI}}\def\sau@jukurum{\sau@jyt{Üniversite}}
+\def\sau@jvad{\sau@jyt{Unvan Adı SOYADI}}\def\sau@jvkurum{\sau@jyt{Üniversite}}
+\def\sau@jzad{\sau@jyt{Unvan Adı SOYADI}}\def\sau@jzkurum{\sau@jyt{Üniversite}}
+\newcommand\juribaskani[2]{\def\sau@jbad{#1}\def\sau@jbkurum{#2}}
+\newcommand\juridanisman[2]{\def\sau@jdad{#1}\def\sau@jdkurum{#2}}
+\newcommand\juriuyesiA[2]{\def\sau@juad{#1}\def\sau@jukurum{#2}}
+\newcommand\juriuyesiB[2]{\def\sau@jvad{#1}\def\sau@jvkurum{#2}}
+\newcommand\juriuyesiC[2]{\def\sau@jzad{#1}\def\sau@jzkurum{#2}}
+\renewcommand\onaysayfasi{%
+  \cleardoublepage\sau@onkisimgeometri
+  \pagenumbering{roman}\setcounter{page}{3}%
+  \thispagestyle{plain}%
+  \begingroup\teksatir
+  \vspace*{\dimexpr 70.8bp-\topskip\relax}%
+  \yazar@onaymetni\par
+  \endgroup
+  \sau@put{318.9}{295.0}{c}{\textbf{Tez Jürisi}}%
+  \sau@juri{351.8}{\textbf{\sau@jbad}}{}{\sau@jbkurum}{Jüri Başkanı :}%
+  \sau@juri{409.3}{\textbf{\sau@jdad} (Danışman)}{}{\sau@jdkurum}{Jüri Üyesi :}%
+  \ifx\sau@ortakdanisman\@empty\else
+    \sau@juri{465.2}{\textbf{\sau@ortakdanisman} (Ortak Danışman)}{}{Sakarya Üniversitesi}{Jüri Üyesi :}\fi
+  \sau@juri{521.8}{\textbf{\sau@juad}}{}{\sau@jukurum}{Jüri Üyesi :}%
+  \sau@juri{578.6}{\textbf{\sau@jvad}}{}{\sau@jvkurum}{Jüri Üyesi :}%
+  \sau@juri{635.3}{\textbf{\sau@jzad}}{}{\sau@jzkurum}{Jüri Üyesi :}%
+  \clearpage}
+% Onay metni: sablondaki kirmizi "(varsa)" ve bos bilim dali notlari olmadan.
+\renewcommand\yazar@onaymetni{%
+  \sau@onayyazar\ tarafından hazırlanan “\sau@onaybaslik” adlı tez çalışması \sau@savunmatarihi\
+  tarihinde aşağıdaki jüri tarafından oy birliği/oy çokluğu ile Sakarya Üniversitesi Fen
+  Bilimleri Enstitüsü \sau@anabilimdali\ Anabilim Dalı
+  \ifx\sau@bilimdali\@empty\else\sau@bilimdali\ Bilim Dalı’nda\fi\
+  \sau@onayteztipi\ olarak kabul edilmiştir.}
+
+% Beyanname: etik kurul onayi gerekmeyen calisma; sablonun yonergesine gore
+% "etik kurul onay belgesi aldigimi" cumlesi cikarilmistir (K-33).
+\renewcommand\beyanname{%
+  \cleardoublepage\pagenumbering{roman}\setcounter{page}{5}%
+  \chapter*{ETİK İLKE VE KURALLARA UYGUNLUK BEYANNAMESİ}%
+  Sakarya Üniversitesi Fen Bilimleri Enstitüsü Lisansüstü Eğitim-Öğretim Yönetmeliğine ve
+  Yükseköğretim Kurumları Bilimsel Araştırma ve Yayın Etiği Yönergesine uygun olarak hazırlamış
+  olduğum “\sau@tezbasligibeyan” başlıklı tezin bana ait, özgün bir
+  çalışma olduğunu; çalışmamın tüm aşamalarında yukarıda belirtilen yönetmelik ve yönergeye uygun
+  davrandığımı, tezin içerdiği yenilik ve sonuçları başka bir yerden almadığımı, tezde
+  kullandığım eserleri usulüne göre kaynak olarak gösterdiğimi, bu tezi başka bir bilim kuruluna
+  akademik amaç ve unvan almak amacıyla vermediğimi ve 20.04.2016 tarihli Resmi Gazete’de
+  yayımlanan Lisansüstü Eğitim ve Öğretim Yönetmeliğinin 9/2 ve 22/2 maddeleri gereğince Sakarya
+  Üniversitesi’nin abonesi olduğu intihal yazılım programı kullanılarak Enstitü tarafından
+  belirlenmiş ölçütlere uygun rapor alındığını,
+  çalışmamla ilgili yaptığım bu beyana aykırı bir durumun ortaya çıkması halinde doğabilecek her
+  türlü hukuki sorumluluğu kabul ettiğimi beyan ederim.\par
+  {\raggedleft (……/……/20…..).\par}
+  {\raggedleft (imza)\hspace*{35.35bp}\par}
+  {\raggedleft \sau@yazarbeyan\par}%
+  \clearpage}
+
+% Kaynakca (natbib + BibTeX, unsrtnat): sablonun KAYNAKLAR basligi ve tek satir aralikli,
+% girisler arasi 6 nk numarali liste bicimi.
+\renewcommand\bibsection{\bolumsuz{KAYNAKLAR}}
+\renewcommand\bibfont{\teksatir}
+\setlength\bibsep{6bp}
+
+\makeatother
+
+%------------------------------------------------------------------ eski hattin kimlik makrolari
+% Bolum metinlerinde gecen \TezYazari vb. (tez.tex'teki sablon bilgileriyle ayni degerler).
+\makeatletter
+\newcommand\TezYazari{\sau@yazar}
+\makeatother
+\endinput

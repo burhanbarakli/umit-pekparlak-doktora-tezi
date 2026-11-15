@@ -5,8 +5,12 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 # Proje
 
 Ümit Pekparlak'ın SAÜ FBE doktora tezi (T-tipi dönüştürücü, düşük güç anahtarlama,
-Sin³ kompanzasyon). Üretim hatları: **`tez-latex-v2/` temiz yeni yazım hattıdır
-(01.09.2026'dan beri ana metin burada ilerler)**; `tez-latex/` etiketli çalışma
+Sin³ kompanzasyon). Üretim hatları: **`yeni_tez/` SAÜ FBE LaTeX şablonuyla
+(burhanbarakli/sau-fbe-doktora-latex-sablonu) yazılan ana hattır (15.11.2026'dan
+beri ana metin burada ilerler; LuaLaTeX, `.\derle.cmd`, ayrıntı `yeni_tez/README.md`,
+karar K-33)**. `sauthesis.cls`/`sauwordline.lua` şablondan aynen alınmıştır,
+değiştirilmez; tezin ekleri ve şablon düzeltmeleri `tezpaketleri.sty` içindedir.
+`tez-latex-v2/` 15.11.2026 (586ae82) hâlinde kalan önceki temiz hattır; `tez-latex/` etiketli çalışma
 kopyasıdır (kanıt köken iskelesi burada korunur); `tez-matlab-simulink/` sayısal
 kanıtı üretir. `dosyalar/` ve `tez-word/` salt kaynak/kanıt deposudur; yeni içerik
 oraya yazılmaz. Genel giriş noktası: `ANA_SAYFA_TEZ_CALISMA_MERKEZI.html`.
@@ -42,8 +46,10 @@ tablosu güncellenir.
 
 # LaTeX derleme
 
-Sistemde MiKTeX/TeX Live **yok**. Derleyici Tectonic 0.17.0:
-`%USERPROFILE%\.local\bin\tectonic.exe`.
+`yeni_tez/` LuaLaTeX ister: MiKTeX 25.12 `%LOCALAPPDATA%\Programs\MiKTeX\miktex\bin\x64`
+altında kurulu (PATH'te değil; `yeni_tez\derle.cmd` yolu kendisi ekler, ~1 dk, ~231 sayfa;
+`.\derle.cmd notlu` → `tez_notlu.pdf`). Eski hatlar (`tez-latex`, `tez-latex-v2`)
+Tectonic 0.17.0 ile derlenir: `%USERPROFILE%\.local\bin\tectonic.exe`.
 
 ```bat
 cd tez-latex
