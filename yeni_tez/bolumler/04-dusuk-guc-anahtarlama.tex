@@ -128,7 +128,7 @@ Benzetim modelinde S2 kapı yolu, tezdeki nötr anahtar susturma tanımına gör
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.96\textwidth]{model_dogrulama/s2_kapi_isaretleri.pdf}
-  \caption[Nötr anahtar susturmada (S2) $Q_1$--$Q_4$ kapı komutları]{Nötr anahtar susturmada (S2) $Q_1$--$Q_4$ kapı komutları: solda son tam şebeke periyodu (\num{80}--\SI{100}{\milli\second}), sağda pozitif yarım periyottan \SI{400}{\micro\second} kesit. Kayıt, Alt Bölüm~\ref{sec:model-dogrulama-duzeltme} içindeki düzeltmeler uygulanmış benzetim modelinden alınmıştır; nötr anahtarlar yarım periyot boyunca sabit 1 veya 0 değerindedir.}
+  \caption[Nötr anahtar susturmada (S2) $Q_1$--$Q_4$ kapı komutları]{Nötr anahtar susturmada (S2) $Q_1$--$Q_4$ kapı komutları: solda son tam şebeke periyodu (\num{80}--\SI{100}{\milli\second}), sağda pozitif yarım periyottan \SI{400}{\micro\second} kesit. Kayıt, Alt Bölüm~\ref{sec:model-dogrulama-duzeltme} içinde doğrulanan benzetim modelinden alınmıştır; nötr anahtarlar yarım periyot boyunca sabit 1 veya 0 değerindedir.}
   \label{fig:s2-kapi-isaretleri}
 \end{figure}
 
@@ -141,7 +141,7 @@ Klasik anahtarlamanın aynı pencerelerdeki kapı komutları Şekil~\ref{fig:s1-
   \label{fig:s1-kapi-isaretleri}
 \end{figure}
 
-Faz kolunun devre yapısı Şekil~\ref{fig:t-tipi-akim-yollari}, elemanların değerleri Tablo~\ref{tab:sistem-parametreleri} içinde verilmiştir. Şekil~\ref{fig:s3-simulink-modeli}, ölçüm, filtre, şebeke eşdeğeri ve güç hesabı bloklarını içeren benzetim modelinin üst düzey çizimidir. S1 ve S2 modelleri aynı güç katı ve ölçüm yapısına sahiptir; yalnız modülasyon ve kapı mantığı farklıdır. S4 modeli de aynı güç katını kullanır ve anahtarlama girişine eklenen akım geri beslemesiyle ayrılır (Şekil~\ref{fig:s4-anahtarlama-girisi}). Bölümdeki sayısal sonuçlar Alt Bölüm~\ref{sec:model-dogrulama-duzeltme} içindeki düzeltmeler uygulanmış ve kalibre edilmiş modellerden alınmıştır.
+Faz kolunun devre yapısı Şekil~\ref{fig:t-tipi-akim-yollari}, elemanların değerleri Tablo~\ref{tab:sistem-parametreleri} içinde verilmiştir. Şekil~\ref{fig:s3-simulink-modeli}, ölçüm, filtre, şebeke eşdeğeri ve güç hesabı bloklarını içeren benzetim modelinin üst düzey çizimidir. S1 ve S2 modelleri aynı güç katı ve ölçüm yapısına sahiptir; yalnız modülasyon ve kapı mantığı farklıdır. S4 modeli de aynı güç katını kullanır ve anahtarlama girişine eklenen akım geri beslemesiyle ayrılır (Şekil~\ref{fig:s4-anahtarlama-girisi}). Bölümdeki sayısal sonuçlar Alt Bölüm~\ref{sec:model-dogrulama-duzeltme} içinde doğrulanan ve kalibre edilen modellerden alınmıştır.
 
 \begin{landscape}
 \begin{figure}[H]
