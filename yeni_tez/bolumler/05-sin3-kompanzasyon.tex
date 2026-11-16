@@ -10,26 +10,26 @@ Zaman $t$, şebeke temel açısal frekansı $\omega_0$, PLL faz başlangıcı $\
   \sin^3\theta=\frac{3}{4}\sin\theta-\frac{1}{4}\sin(3\theta)
   \label{eq:sin3-acilimi}
 \end{equation}
-biçimindedir. Eşitlik~\eqref{eq:sin3-acilimi} uyarınca $\sin^3\theta$ terimi yalnız üçüncü harmonikten oluşmaz; temel bileşen ile ters işaretli üçüncü harmonik bileşenini sabit bir oranla birlikte taşır. Boyutsuz Sin\textsuperscript{3} ileri besleme komutu $u_{\mathrm{ff},\sin^3}(\theta)$, temel bileşen katsayısı $D_1$ ve küp teriminin katsayısı $D_3$ ile
+biçimindedir. Eşitlik~\eqref{eq:sin3-acilimi} uyarınca $\sin^3\theta$ terimi yalnız üçüncü harmonikten oluşmaz; temel bileşen ile ters işaretli üçüncü harmonik bileşenini sabit bir oranla birlikte taşır. Boyutsuz Sin\textsuperscript{3} ileri besleme komutu $u_{\mathrm{ff},\sin^3}(\theta)$, temel bileşen katsayısı $k_1$ ve küp teriminin katsayısı $k_3$ ile
 \begin{equation}
-  u_{\mathrm{ff},\sin^3}(\theta)=D_1\sin\theta+D_3\sin^3\theta
+  u_{\mathrm{ff},\sin^3}(\theta)=k_1\sin\theta+k_3\sin^3\theta
   \label{eq:sin3-genel-komut}
 \end{equation}
 olarak tanımlandığında Eşitlik~\eqref{eq:sin3-acilimi} kullanılarak
 \begin{equation}
   u_{\mathrm{ff},\sin^3}(\theta)
-  =\left(D_1+\frac{3D_3}{4}\right)\sin\theta-\frac{D_3}{4}\sin(3\theta)
+  =\left(k_1+\frac{3k_3}{4}\right)\sin\theta-\frac{k_3}{4}\sin(3\theta)
   \label{eq:sin3-esdeger-katsayilar}
 \end{equation}
-elde edilir. Eşitlik~\eqref{eq:sin3-esdeger-katsayilar} içinde $D_1+3D_3/4$ temel sinüs katsayısını, $-D_3/4$ ise doğrudan üçüncü harmonik katsayısını gösterir; tezde iki ifade, katsayı çiftinin harmonik eşdeğeri olarak anılır ve ayrı bir simgeyle gösterilmez. Doğrudan $\sin(3\theta)$ enjeksiyonu ile $\sin^3\theta$ terimi aynı işlem değildir: aynı sayısal $D_3$ değeri iki gösterimde farklı temel ve üçüncü harmonik genliği üretir.
+elde edilir. Eşitlik~\eqref{eq:sin3-esdeger-katsayilar} içinde $k_1+3k_3/4$ temel sinüs katsayısını, $-k_3/4$ ise doğrudan üçüncü harmonik katsayısını gösterir; tezde iki ifade, katsayı çiftinin harmonik eşdeğeri olarak anılır ve ayrı bir simgeyle gösterilmez. Doğrudan $\sin(3\theta)$ enjeksiyonu ile $\sin^3\theta$ terimi aynı işlem değildir: aynı sayısal $k_3$ değeri iki gösterimde farklı temel ve üçüncü harmonik genliği üretir.
 
-Uygulamanın yürütülebilir tanımı Simulink benzetim modelleridir; gösterim, modelin blok yapısından okunmuştur. Senaryo~3 (S3) modelinde birim genlikli sinüs işaretinin küpü alınmakta ve küp terimi katsayısıyla çarpılarak temel bileşen terimine eklenmektedir; terim pozitif işaretlidir, ek bir normalizasyon içermez ve modelde $\sin(3\theta)$ üreten blok bulunmamaktadır. Toplam, görev oranı komutuna açık çevrim ileri besleme olarak girer. Parametre dosyasındaki ilk değerlerle ($D_1=0{,}45$, $D_3=0{,}39$) Eşitlik~\eqref{eq:sin3-esdeger-katsayilar} $u_{\mathrm{ff},\sin^3}(\theta)=0{,}7425\sin\theta-0{,}0975\sin3\theta$ verir ve komutun tepe değeri $D_1+D_3=0{,}84$'tür. Alt Bölüm~\ref{sec:kalibrasyon} içinde deney özetine kalibre edilen S3 katsayılarıyla (Tablo~\ref{tab:sistem-parametreleri}) harmonik eşdeğer $D_1+3D_3/4=0{,}7317$ ve $-D_3/4=-0{,}0961$ olur.
+Uygulamanın yürütülebilir tanımı Simulink benzetim modelleridir; gösterim, modelin blok yapısından okunmuştur. Senaryo~3 (S3) modelinde birim genlikli sinüs işaretinin küpü alınmakta ve küp terimi katsayısıyla çarpılarak temel bileşen terimine eklenmektedir; terim pozitif işaretlidir, ek bir normalizasyon içermez ve modelde $\sin(3\theta)$ üreten blok bulunmamaktadır. Toplam, görev oranı komutuna açık çevrim ileri besleme olarak girer. Parametre dosyasındaki ilk değerlerle ($k_1=0{,}45$, $k_3=0{,}39$) Eşitlik~\eqref{eq:sin3-esdeger-katsayilar} $u_{\mathrm{ff},\sin^3}(\theta)=0{,}7425\sin\theta-0{,}0975\sin3\theta$ verir ve komutun tepe değeri $k_1+k_3=0{,}84$'tür. Alt Bölüm~\ref{sec:kalibrasyon} içinde deney özetine kalibre edilen S3 katsayılarıyla (Tablo~\ref{tab:sistem-parametreleri}) harmonik eşdeğer $k_1+3k_3/4=0{,}7317$ ve $-k_3/4=-0{,}0961$ olur.
 
-Tezde görev oranı komutunun sinüs ve küp terimi katsayıları tek adla, $(D_1,D_3)$ çiftiyle gösterilmektedir. $D_3=0$ özel durumunda $D_1$, sinüzoidal görev oranının tepe katsayısı $d_m$'ye eşittir. Anahtarlamalı benzetim modelinde aynı katsayıların $x$ numaralı senaryodaki değerleri $K_{1x}$ ve $K_{3x}$ parametreleriyle taşınır (örneğin S4 için $K_{14}$ ve $K_{34}$); S3 ve S4 değerleri kalibre değerlerdir. Alt Bölüm~\ref{sec:sin3-yeniden-tarama} içindeki tek endüktanslı analitik modelden çıkan $(D_1,D_3)$ değerleri ise aday niteliğindedir; analitik aday ile kalibre model değeri farklı model katmanlarına aittir ve birbirinin yerine kullanılmamaktadır.
+Tezde görev oranı komutunun sinüs ve küp terimi katsayıları tek adla, $(k_1,k_3)$ çiftiyle gösterilmektedir. $k_3=0$ özel durumunda $k_1$, sinüzoidal görev oranının tepe katsayısı $d_m$'ye eşittir. Anahtarlamalı benzetim modelinde aynı katsayıların $x$ numaralı senaryodaki değerleri $K_{1x}$ ve $K_{3x}$ parametreleriyle taşınır (örneğin S4 için $K_{14}$ ve $K_{34}$); S3 ve S4 değerleri kalibre değerlerdir. Alt Bölüm~\ref{sec:sin3-yeniden-tarama} içindeki tek endüktanslı analitik modelden çıkan $(k_1,k_3)$ değerleri ise aday niteliğindedir; analitik aday ile kalibre model değeri farklı model katmanlarına aittir ve birbirinin yerine kullanılmamaktadır.
 
 \section{Basitleştirilmiş Türetimlerin Geçerlilik Sınırı}
 
-Kompanzasyon katsayılarının tek bir cebirsel iptal koşulundan, örneğin sabit bir $D_1/D_3$ oranından türetilmesi anahtarlamalı dönüştürücüde geçerli değildir. Birinci gerekçe, belirli bir çalışma noktasında gözlenen temel ve üçüncü harmonik genliklerinin oranının girişten bağımsız bir sistem aktarım fonksiyonu olmamasıdır; oran yalnız o dalga biçimini ve o çalışma noktasını tarif eder. İkinci gerekçe, anahtarlamalı, doğrusal olmayan ya da periyodik zamanla değişen bir sistemde süperpozisyonun kanıtlanmadan uygulanamamasıdır; giriş dalga biçimi değiştiğinde aynı skaler oranın yeniden kullanılması örtük bir doğrusallık varsayımıdır. Üçüncü gerekçe, komutun frekans içeriği ile dönüştürücünün çıkış akımının aynı büyüklük olmamasıdır; çıkıştaki harmonik iptal koşulu, denetlenen sistemin dinamiği ve harmonikler arası bağlaşım bilinmeden yalnız trigonometrik özdeşlikten çıkarılamaz.
+Kompanzasyon katsayılarının tek bir cebirsel iptal koşulundan, örneğin sabit bir $k_1/k_3$ oranından türetilmesi anahtarlamalı dönüştürücüde geçerli değildir. Birinci gerekçe, belirli bir çalışma noktasında gözlenen temel ve üçüncü harmonik genliklerinin oranının girişten bağımsız bir sistem aktarım fonksiyonu olmamasıdır; oran yalnız o dalga biçimini ve o çalışma noktasını tarif eder. İkinci gerekçe, anahtarlamalı, doğrusal olmayan ya da periyodik zamanla değişen bir sistemde süperpozisyonun kanıtlanmadan uygulanamamasıdır; giriş dalga biçimi değiştiğinde aynı skaler oranın yeniden kullanılması örtük bir doğrusallık varsayımıdır. Üçüncü gerekçe, komutun frekans içeriği ile dönüştürücünün çıkış akımının aynı büyüklük olmamasıdır; çıkıştaki harmonik iptal koşulu, denetlenen sistemin dinamiği ve harmonikler arası bağlaşım bilinmeden yalnız trigonometrik özdeşlikten çıkarılamaz.
 
 Periyodik zamanla değişen sistemin genel çerçevesi harmonik aktarım fonksiyonudur (harmonic transfer function, HTF). Kesilmiş harmonik giriş ve çıkış vektörleri $\mathbf{U}(s)$ ile $\mathbf{I}(s)$, harmonik aktarım matrisi $\mathbf{G}_{\mathrm{H}}(s)$, matrisin $(k,n)$ elemanı $G_{k,n}(s)$ ve kesme mertebesi $N_h$ ile gösterildiğinde
 \begin{equation}
@@ -89,12 +89,12 @@ DCM koşulu darbenin aynı anahtarlama periyodunda sona ermesini gerektirir:
 \end{equation}
 Eşitlik~\eqref{eq:dcm-kritik-gorev} içindeki kritik görev oranı faz açısına ve gerilim oranına bağlıdır; tek bir evrensel sayı değildir. Senaryo~1 (S1) çalışma noktasının DA bara ve şebeke gerilimleriyle (Tablo~\ref{tab:sistem-parametreleri}) kritik görev oranının tepe değeri $V_m/V_h\simeq0{,}785$'tir ve Alt Bölüm~\ref{sec:sin3-yeniden-tarama} içindeki sayısal tarama, $d_m$ sınırı aştığında alternans ortasında sürekli iletime (continuous conduction mode, CCM) geçildiğini doğrulamaktadır. Sıfır geçişte $v_g\rightarrow0$ olduğundan ideal ifadenin tek başına kullanılması uygun değildir; ölü zaman, en küçük darbe süresi ve sonlu akım eşiği ayrıca uygulanmalıdır.
 
-DCM zarfı ile sürekli iletim modeli ortak bir görev oranı üzerinden birleştirilebilir. Analitik modelde görev oranı, Eşitlik~\eqref{eq:sin3-genel-komut} ile aynı $(D_1,D_3)$ katsayılarıyla
+DCM zarfı ile sürekli iletim modeli ortak bir görev oranı üzerinden birleştirilebilir. Analitik modelde görev oranı, Eşitlik~\eqref{eq:sin3-genel-komut} ile aynı $(k_1,k_3)$ katsayılarıyla
 \begin{equation}
-  d(\theta)=D_1\sin\theta+D_3\sin^3\theta
+  d(\theta)=k_1\sin\theta+k_3\sin^3\theta
   \label{eq:ccm-gorev-harmonik}
 \end{equation}
-yazılsın. Analitik modelden bulunan $(D_1,D_3)$ değerleri tek endüktanslı kayıpsız modele aittir ve benzetim modelindeki $K_{1x}$, $K_{3x}$ değerlerine bire bir eşit değildir. Pozitif alternansta kayıpsız CCM ortalama diferansiyel denklemi
+yazılsın. Analitik modelden bulunan $(k_1,k_3)$ değerleri tek endüktanslı kayıpsız modele aittir ve benzetim modelindeki $K_{1x}$, $K_{3x}$ değerlerine bire bir eşit değildir. Pozitif alternansta kayıpsız CCM ortalama diferansiyel denklemi
 \begin{equation}
   L\frac{\mathrm{d}\bar i_{L,\mathrm{CCM}}}{\mathrm{d}t}
   =V_h d(\theta)-V_m\sin\theta
@@ -129,7 +129,7 @@ olarak hesaplanır \citep{Oppenheim1997}. Eşitlik~\eqref{eq:akim-fourier-katsay
 
 Eşitlik~\eqref{eq:dcm-tepe-akimi}--\eqref{eq:dcm-ccm-parcali-model} ile kurulan parçalı model, kompanzasyon katsayılarının sayısal olarak taranmasına olanak tanır. Tarama 01.09.2026 tarihli MATLAB hesabıyla, S1 çalışma noktasının DA bara gerilimi, şebeke gerilimi, şebeke frekansı, anahtarlama frekansı ve $L=L_1$ değerleriyle (Tablo~\ref{tab:sistem-parametreleri}) yapılmıştır. Model, nötr anahtarı susturulmuş faz kolunu anahtarlama periyodu bazında parçalı doğrusal çözmekte; susturma nedeniyle akım tabanı sıfırda kesilmekte ve DCM--CCM geçişleri periyotlar arası başlangıç akımıyla doğal olarak oluşmaktadır. Kanıt sınırı açıktır: tarama, Tablo~\ref{tab:model-katmanlari} içindeki analitik/ortalama katmandır; ölü zaman, denetleyici, $C_f$--$L_2$ dinamiği ve kayıplar içermez, verim sonucu üretmez.
 
-Taramadan üç bulgu çıkmaktadır. Birincisi, saf sinüzoidal görev oranıyla ($D_3=0$, $D_1=d_m$) süreksiz iletimdeki üçüncü harmonik oranı $d_m=0{,}1$--$0{,}7$ aralığında sabit \%39,96 çıkmaktadır; Tablo~\ref{tab:dcm-saf-sinus-harmonikleri} taramayı vermektedir. Oranın $d_m$'den bağımsızlığı, Eşitlik~\eqref{eq:dcm-sinus-zarfi} zarfının şeklinin $d_m^2$ ölçeklemesinden bağımsız olmasının doğrudan sonucudur. $d_m=0{,}8$ satırında oran değişmekte ve akım hızla büyümektedir; $d_{\mathrm{krit}}$ tepe değerinin ($\simeq0{,}785$) aşılıp alternans ortasında CCM'ye geçilmesi ideal tam-DCM modelinin geçerlilik sınırını işaretler.
+Taramadan üç bulgu çıkmaktadır. Birincisi, saf sinüzoidal görev oranıyla ($k_3=0$, $k_1=d_m$) süreksiz iletimdeki üçüncü harmonik oranı $d_m=0{,}1$--$0{,}7$ aralığında sabit \%39,96 çıkmaktadır; Tablo~\ref{tab:dcm-saf-sinus-harmonikleri} taramayı vermektedir. Oranın $d_m$'den bağımsızlığı, Eşitlik~\eqref{eq:dcm-sinus-zarfi} zarfının şeklinin $d_m^2$ ölçeklemesinden bağımsız olmasının doğrudan sonucudur. $d_m=0{,}8$ satırında oran değişmekte ve akım hızla büyümektedir; $d_{\mathrm{krit}}$ tepe değerinin ($\simeq0{,}785$) aşılıp alternans ortasında CCM'ye geçilmesi ideal tam-DCM modelinin geçerlilik sınırını işaretler.
 
 \begin{table}[H]
   \centering
@@ -151,24 +151,24 @@ Taramadan üç bulgu çıkmaktadır. Birincisi, saf sinüzoidal görev oranıyla
   \end{tabular}
 \end{table}
 
-İkincisi, farklı bir çalışma noktası için elle seçilmiş $(D_1,D_3)$ çiftleri, $(0{,}45,\ 0{,}37)$, $(0{,}44,\ 0{,}38)$ ve $(0{,}41,\ 0{,}41)$, S1 çalışma noktasına taşınamamaktadır. Üç çift S1 noktasında $I_1\simeq8{,}5$--\SI{9.2}{\ampere} temel akım (düşük güç çalışma noktasının yaklaşık dört katı), $I_3/I_1\simeq\%50$ ve $\mathrm{THD}\simeq\%68$ üretmektedir. Aynı çiftlerin kendi çalışma noktalarında \%1--2 düzeyinde üçüncü harmonik oranı vermesi çelişki değildir; katsayılar gerilim oranına, endüktansa ve akım düzeyine bağlıdır ve tek bir $(D_1,D_3)$ çifti bütün çalışma noktalarına genellenemez.
+İkincisi, farklı bir çalışma noktası için elle seçilmiş $(k_1,k_3)$ çiftleri, $(0{,}45,\ 0{,}37)$, $(0{,}44,\ 0{,}38)$ ve $(0{,}41,\ 0{,}41)$, S1 çalışma noktasına taşınamamaktadır. Üç çift S1 noktasında $I_1\simeq8{,}5$--\SI{9.2}{\ampere} temel akım (düşük güç çalışma noktasının yaklaşık dört katı), $I_3/I_1\simeq\%50$ ve $\mathrm{THD}\simeq\%68$ üretmektedir. Aynı çiftlerin kendi çalışma noktalarında \%1--2 düzeyinde üçüncü harmonik oranı vermesi çelişki değildir; katsayılar gerilim oranına, endüktansa ve akım düzeyine bağlıdır ve tek bir $(k_1,k_3)$ çifti bütün çalışma noktalarına genellenemez.
 
 Üçüncüsü, tarama düşük güç çalışma noktası için düzeltilmiş bir aday vermektedir. $I_{\mathrm{rms}}$ değeri deney özetindeki \SI{2.26}{\ampere} düzeyiyle uyumlu bir bantta ($2{,}0$--\SI{2.6}{\ampere}) tutulup görev oranı kırpılması dışlandığında en iyi nokta
 \begin{equation}
   \begin{gathered}
-    (D_1, D_3)=(0{,}34,\ 0{,}40)
+    (k_1, k_3)=(0{,}34,\ 0{,}40)
     \;\Longrightarrow\;
     \frac{I_3}{I_1}=\%0{,}15,\quad \mathrm{THD}=\%4{,}72,\\
     I_{\mathrm{rms}}=\SI{2.02}{\ampere},\quad d_{\max}=0{,}74
   \end{gathered}
   \label{eq:sin3-duzeltilmis-optimum}
 \end{equation}
-olarak bulunmuştur; Eşitlik~\eqref{eq:sin3-esdeger-katsayilar} ile harmonik eşdeğeri $(D_1+3D_3/4,\ -D_3/4)=(0{,}64,\ -0{,}10)$'dur. Şekil~\ref{fig:sin3-yeniden-tarama}, katsayı düzlemindeki üçüncü harmonik oranını, uygun akım bölgesini ve en iyi noktadaki akım zarfının saf sinüs görev oranına göre düzelmesini birlikte göstermektedir. Kompanzasyonlu zarfta kalan \%4,7'lik THD ağırlıkla beşinci ve yedinci harmoniklerden gelmektedir; Sin\textsuperscript{3} terimi yapısı gereği yalnız temel ve üçüncü harmoniği şekillendirdiğinden kalıntı, yöntemin yapısal sınırıdır.
+olarak bulunmuştur; Eşitlik~\eqref{eq:sin3-esdeger-katsayilar} ile harmonik eşdeğeri $(k_1+3k_3/4,\ -k_3/4)=(0{,}64,\ -0{,}10)$'dur. Şekil~\ref{fig:sin3-yeniden-tarama}, katsayı düzlemindeki üçüncü harmonik oranını, uygun akım bölgesini ve en iyi noktadaki akım zarfının saf sinüs görev oranına göre düzelmesini birlikte göstermektedir. Kompanzasyonlu zarfta kalan \%4,7'lik THD ağırlıkla beşinci ve yedinci harmoniklerden gelmektedir; Sin\textsuperscript{3} terimi yapısı gereği yalnız temel ve üçüncü harmoniği şekillendirdiğinden kalıntı, yöntemin yapısal sınırıdır.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth]{../tez-matlab-simulink/results/sin3_rescan_20260901/sin3_katsayi_taramasi_20260901.pdf}
-  \caption{$(D_1,D_3)$ katsayı düzleminde üçüncü harmonik oranı (sol; beyaz noktalar \SI{2.0}{}--\SI{2.6}{\ampere} RMS bölgesini, yıldız en iyi noktayı gösterir) ve en iyi nokta ile saf sinüs görev oranının ortalama akım zarfı karşılaştırması (sağ). Parçalı DCM/CCM analitik modeli, 01.09.2026 hesabı.}
+  \includegraphics[width=\textwidth]{../tez-matlab-simulink/results/sin3_rescan_20260901/sin3_katsayi_taramasi_20260901_k.pdf}
+  \caption{$(k_1,k_3)$ katsayı düzleminde üçüncü harmonik oranı (sol; beyaz noktalar \SI{2.0}{}--\SI{2.6}{\ampere} RMS bölgesini, yıldız en iyi noktayı gösterir) ve en iyi nokta ile saf sinüs görev oranının ortalama akım zarfı karşılaştırması (sağ). Parçalı DCM/CCM analitik modeli, 01.09.2026 hesabı.}
   \label{fig:sin3-yeniden-tarama}
 \end{figure}
 
@@ -535,7 +535,7 @@ Ortalama model, anma akımında sürekli iletim bölgesinde kritik frekans aral�
 
 \section{Bölüm Sonucu}
 
-Sin\textsuperscript{3} özdeşliği temel ve üçüncü harmonik bileşenini tek bir anlık terimde birleştirmekte, doğrudan $\sin(3\theta)$ enjeksiyonuyla aynı katsayı anlamını taşımamaktadır. Benzetim modelinde terim birim sinüsün küpü olarak, pozitif işaretle ve normalizasyonsuz biçimde modülasyon toplamına eklenmektedir. DCM/CCM parçalı modeli, nötr susturma sonrasında sinüzoidal görev oranının neden sinüzoidal akım üretmediğini göstermiş; doğru özdeşlikle yapılan analitik tarama, saf sinüs görev oranındaki \%39,96'lık üçüncü harmonik oranını $(D_1,D_3)=(0{,}34,\ 0{,}40)$ adayında \%0,15'e indirmiştir. Analitik adayın üçüncü harmonik katsayısı ($-0{,}10$), anahtarlamalı modelin kalibre katsayısına ($-0{,}096$) yakındır; katsayı seçimi çalışma noktasına bağlıdır.
+Sin\textsuperscript{3} özdeşliği temel ve üçüncü harmonik bileşenini tek bir anlık terimde birleştirmekte, doğrudan $\sin(3\theta)$ enjeksiyonuyla aynı katsayı anlamını taşımamaktadır. Benzetim modelinde terim birim sinüsün küpü olarak, pozitif işaretle ve normalizasyonsuz biçimde modülasyon toplamına eklenmektedir. DCM/CCM parçalı modeli, nötr susturma sonrasında sinüzoidal görev oranının neden sinüzoidal akım üretmediğini göstermiş; doğru özdeşlikle yapılan analitik tarama, saf sinüs görev oranındaki \%39,96'lık üçüncü harmonik oranını $(k_1,k_3)=(0{,}34,\ 0{,}40)$ adayında \%0,15'e indirmiştir. Analitik adayın üçüncü harmonik katsayısı ($-0{,}10$), anahtarlamalı modelin kalibre katsayısına ($-0{,}096$) yakındır; katsayı seçimi çalışma noktasına bağlıdır.
 
 S4 benzetiminde PI ve PIR akım denetimi \SI{25}{\ampere} anma akımında referansı sırasıyla $-$\%2,1 ve $-$\%1,0 genlik hatasıyla, doyumsuz ve \%8,5--9,2 THD ile izlemektedir; \SI{10}{\ampere}$\rightarrow$\SI{25}{\ampere} basamağında son kararlı zarfa göre aşım \%0,2, yerleşme \SI{0.44}{\milli\second}'dir. Anma akımı sonuçlarının önkoşulu, faz başına modelde DA bara orta noktasını tutabilen bir bara kapasitansıdır. Orta akımda (\SI{10}{\ampere}) nötr susturmanın yarattığı süreksiz iletim THD'yi \%20 düzeyine çıkarmakta ve yöntemin düşük güç kapsamını sınırlamaktadır.
 

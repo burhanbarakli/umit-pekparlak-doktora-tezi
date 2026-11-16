@@ -360,10 +360,10 @@ Deney düzeneğindeki güç, ölçüm ve veri toplama akışı Şekil~\ref{fig:d
     \node[block] (dc) {DA bara\\AcuDC240 + şönt};
     \node[block,right=of dc] (inv) {T-tipi evirici\\LCL filtre};
     \node[block,right=of inv] (grid) {Varyak ve\\AA şebeke};
-    \draw[arr] (dc) -- node[above,font=\scriptsize] {$P_{dc}$} (inv);
+    \draw[arr] (dc) -- node[above,font=\scriptsize] {$P_{\mathrm{dc}}$} (inv);
     \draw[arr] (inv) -- node[above,font=\scriptsize] {$v_g,i_g$} (grid);
     \node[meas,below=of inv] (scope) {Osiloskop\\$i_{L1}$, $i_g$, $v_g$, DAC};
-    \node[meas,below=of grid] (ac) {EMK-01 + CT\\$P_{ac}$, THD, PF};
+    \node[meas,below=of grid] (ac) {EMK-01 + CT\\$P_{\mathrm{ac}}$, THD, PF};
     \node[meas,below=of dc] (ctrl) {Kontrol/ölçüm kartı\\ADC, PWM, FAULT};
     \draw[arr] (inv) -- (scope);
     \draw[arr] (grid) -- (ac);
@@ -386,7 +386,7 @@ Deney özet değerleri ile PC ekranlarında görünen anlık değerler arasında
 
 Deneyler yaklaşık \SI{2.3}{\ampere} faz akımındaki düşük güç noktasında yapılmıştır. Orta ve anma akımında aynı denetim yapısının davranışı S4 benzetim taramasıyla (Alt Bölüm~\ref{sec:s4-kapali-cevrim}) incelenmiştir; Tablo~\ref{tab:deney-juri-durum}, güç bölgelerine göre deneysel ve benzetim kanıtını ayırmaktadır.
 
-Orta ve anma gücünde deney, şebeke geriliminin sınırlandırılmasıyla aynı güvenlik gerekçesiyle yapılmamıştır; anma gücü ifadeleri donanımın tasarım hedefi olarak kalmakta, orta ve anma akımı sonuçları benzetim bulgusu olarak raporlanmaktadır. S4 benzetiminde \SI{25}{\ampere} için büyütülen DA bara kapasitansı faz başına modelden kaynaklanır; üç fazlı donanımda toplam bara kapasitansı faz payının üç katıdır (Alt Bölüm~\ref{sec:s4-kapali-cevrim}). Deneysel verimin belirsizliği için yalnız bir alt sınır verilebilir: DA analizörünün bildirilen yüzde 0,5 güç toleransı, birleşik belirsizliğin $u_{\eta}=\eta\sqrt{(u_{P_{ac}}/P_{ac})^2+(u_{P_{dc}}/P_{dc})^2}$ ilk yaklaşımında AA tarafı katkısı olmadan da \%94 verimde yaklaşık $\pm0{,}5$ puan verir. S2 ile S3 arasındaki 0,3 puanlık deneysel verim farkı belirsizlik alt sınırının içindedir.
+Orta ve anma gücünde deney, şebeke geriliminin sınırlandırılmasıyla aynı güvenlik gerekçesiyle yapılmamıştır; anma gücü ifadeleri donanımın tasarım hedefi olarak kalmakta, orta ve anma akımı sonuçları benzetim bulgusu olarak raporlanmaktadır. S4 benzetiminde \SI{25}{\ampere} için büyütülen DA bara kapasitansı faz başına modelden kaynaklanır; üç fazlı donanımda toplam bara kapasitansı faz payının üç katıdır (Alt Bölüm~\ref{sec:s4-kapali-cevrim}). Deneysel verimin belirsizliği için yalnız bir alt sınır verilebilir: DA analizörünün bildirilen yüzde 0,5 güç toleransı, birleşik belirsizliğin $u_{\eta}=\eta\sqrt{(u_{P_{\mathrm{ac}}}/P_{\mathrm{ac}})^2+(u_{P_{\mathrm{dc}}}/P_{\mathrm{dc}})^2}$ ilk yaklaşımında AA tarafı katkısı olmadan da \%94 verimde yaklaşık $\pm0{,}5$ puan verir. S2 ile S3 arasındaki 0,3 puanlık deneysel verim farkı belirsizlik alt sınırının içindedir.
 
 \begin{table}[H]
   \centering
@@ -437,15 +437,15 @@ Orta ve anma gücünde deney, şebeke geriliminin sınırlandırılmasıyla ayn�
     \midrule
     Klasik & Verim & \%92,5 & \%92,9 & Ekran değeri anlık okumadır. \\
     Klasik & THD$_i$ & \%15 & \%11,1 & Anlık okuma; eğri \%5--22 arasında dalgalanır. \\
-    Klasik & $V_{dc}$ & \SI{430}{\volt} & \SI{431.5}{\volt} & Yakın değerler. \\
+    Klasik & $V_{\mathrm{dc}}$ & \SI{430}{\volt} & \SI{431.5}{\volt} & Yakın değerler. \\
     \midrule
     Nötr susturma & Verim & \%94,2 & \%93,8 & Ekran değeri anlık okumadır. \\
     Nötr susturma & THD$_i$ & \%47 & \%48,6 & Anlık okuma; eğri \%45--50 arasındadır. \\
-    Nötr susturma & $V_{dc}$ & \SI{395}{\volt} & \SI{394.7}{\volt} & Yakın değerler. \\
+    Nötr susturma & $V_{\mathrm{dc}}$ & \SI{395}{\volt} & \SI{394.7}{\volt} & Yakın değerler. \\
     \midrule
     Susturma+Sin\textsuperscript{3} & Verim & \%94,5 & \%93,9 & Ekran değeri anlık okumadır. \\
     Susturma+Sin\textsuperscript{3} & THD$_i$ & \%14 & \%15,7 & Anlık okuma; eğri kaydın büyük bölümünde \%14--18 arasındadır. \\
-    Susturma+Sin\textsuperscript{3} & $V_{dc}$ & \SI{427}{\volt} & \SI{427.5}{\volt} & Yakın değerler. \\
+    Susturma+Sin\textsuperscript{3} & $V_{\mathrm{dc}}$ & \SI{427}{\volt} & \SI{427.5}{\volt} & Yakın değerler. \\
     \bottomrule
   \end{tabularx}
 \end{table}
@@ -478,7 +478,7 @@ Deney özet tablosunun kaynağı olan çalışma kitabı, Senaryo~1--3 için bir
   \footnotesize
   \begin{tabularx}{\textwidth}{c r r r r r r r}
     \toprule
-    Senaryo & $V_{dc}$ (V) & $I_{dc}$ (A) & $V_{ac}$ (V RMS) & $I_{faz}$ (A) & $P_o$ (W) & THD (\%) & $\eta_{VI}$ (\%) \\
+    Senaryo & $V_{\mathrm{dc}}$ (V) & $I_{\mathrm{dc}}$ (A) & $V_{\mathrm{ac}}$ (V RMS) & $I_{faz}$ (A) & $P_o$ (W) & THD (\%) & $\eta_{VI}$ (\%) \\
     \midrule
     1 & 431,5 & 0,624 & 119,8 & 2,26 & 249,6 & 15 & 92,700 \\
     2 & 395,0 & 0,684 & 121,0 & 2,33 & 253,2 & 47 & 93,715 \\
@@ -519,15 +519,15 @@ Deney özeti ile benzetim modelinin karşılaştırılabilmesi için S1--S3 benz
 
 \subsection{Yöntem}
 
-Devre, yarı iletken ve filtre parametreleri kalibrasyonda değiştirilmemiştir. Her senaryoda yalnız iki serbest değişken vardır: modülasyon genlik ölçeği ($K_{1x}$; S3'te $K_{33}/K_{13}$ oranı sabit tutularak $K_{13}$ ile $K_{33}$ birlikte) ve şebekeye göre referans fazı $\varphi_x$. İki serbest değişken iki hedefe ayarlanmıştır: aktif güç $P_{\mathrm{ac}}$ deney değerinin $\pm$\%1'i içinde, temel bileşen reaktif gücünün büyüklüğü $|Q_1|$ ise deneydeki $\cos\varphi$ okumasının yuvarlama bandı içinde tutulmuştur. AA çıkış akımı $I_{\mathrm{ac}}$, verim, DA güç ve akımı, $|\cos\varphi_1|$ ve faz akımı THD'si kalibre edilmemiştir ve bağımsız doğrulama ölçütüdür. THD hedefi olarak deney özetinin \%15, \%47 ve \%14 değerleri alınmış, THD birincil ölçütler olan $P_{\mathrm{ac}}$, $I_{\mathrm{ac}}$ ve verimin ardından ikincil ölçüt olarak değerlendirilmiştir.
+Devre, yarı iletken ve filtre parametreleri kalibrasyonda değiştirilmemiştir. Her senaryoda yalnız iki serbest değişken vardır: modülasyon genlik ölçeği ($K_{1x}$; S3'te $K_{33}/K_{13}$ oranı sabit tutularak $K_{13}$ ile $K_{33}$ birlikte) ve şebekeye göre referans fazı $\varphi_x$. İki serbest değişken iki hedefe ayarlanmıştır: aktif güç $P_{\mathrm{ac}}$ deney değerinin $\pm$\%1'i içinde, temel bileşen reaktif gücünün büyüklüğü $|Q_{g,1}|$ ise deneydeki $\cos\varphi$ okumasının yuvarlama bandı içinde tutulmuştur. AA çıkış akımı $I_{\mathrm{ac}}$, verim, DA güç ve akımı, $|\cos\varphi_1|$ ve faz akımı THD'si kalibre edilmemiştir ve bağımsız doğrulama ölçütüdür. THD hedefi olarak deney özetinin \%15, \%47 ve \%14 değerleri alınmış, THD birincil ölçütler olan $P_{\mathrm{ac}}$, $I_{\mathrm{ac}}$ ve verimin ardından ikincil ölçüt olarak değerlendirilmiştir.
 
-\textbf{Reaktif güç işareti ve ölçüm noktası.} Benzetimde güç büyüklükleri evirici çıkış uçlarında, yani EMC süzgecinden sonra ve $L_2$ ile temsil edilen şebeke ve varyak eşdeğerinden önce ölçülmektedir; nokta, deneyde AA analizörünün bağlı olduğu yaklaşık \SI{120}{\volt} tarafına karşılık gelir. İşaret kuralı üreticidir: evirici$\rightarrow$şebeke yönü pozitiftir, $Q_1>0$ akımın gerilimin gerisinde olduğu ve eviricinin şebekeye reaktif güç verdiği durumdur. Benzetimdeki pozitif $Q_1$'in kaynağı filtre kapasitörüdür. Deney özetindeki reaktif güç ölçülmemiş, $Q_o=P_o\tan(\arccos\cos\varphi)$ ile hesaplanmıştır ve eksi işareti analizörün $\cos\varphi$ göstergesinden gelir. Analizörün yön ve öncü/artçı kuralı kayıtlarda yer almadığından işaret yorumlanmamış, karşılaştırma büyüklükler ($|Q_1|$, $|\cos\varphi_1|$) üzerinden yapılmıştır. Deneydeki $\cos\varphi$ okuması, temel bileşen güç faktörüdür ($\cos\varphi_1$). Üç basamaklı $\cos\varphi$ okuması $|Q_1|$ için S1'de 0--7,9~var, S2'de 24,1--26,7~var, S3'te 19,9--23,6~var bandı verir; şebeke gerilimi okumasının \SI{0.1}{\volt} çözünürlüğü $|Q_1|$'de yaklaşık $\pm12$~var belirsizlik doğurduğundan $|Q_1|$ uyumsuzluğu tek başına modeli reddettirmez. Deney iki işaret dalını ayırt edemediğinden her senaryoda kalibrasyonsuz modelin dalı ($Q_1>0$) korunmuştur.
+\textbf{Reaktif güç işareti ve ölçüm noktası.} Benzetimde güç büyüklükleri evirici çıkış uçlarında, yani EMC süzgecinden sonra ve $L_2$ ile temsil edilen şebeke ve varyak eşdeğerinden önce ölçülmektedir; nokta, deneyde AA analizörünün bağlı olduğu yaklaşık \SI{120}{\volt} tarafına karşılık gelir. İşaret kuralı üreticidir: evirici$\rightarrow$şebeke yönü pozitiftir, $Q_{g,1}>0$ akımın gerilimin gerisinde olduğu ve eviricinin şebekeye reaktif güç verdiği durumdur. Benzetimdeki pozitif $Q_{g,1}$'in kaynağı filtre kapasitörüdür. Deney özetindeki reaktif güç ölçülmemiş, $Q_o=P_o\tan(\arccos\cos\varphi)$ ile hesaplanmıştır ve eksi işareti analizörün $\cos\varphi$ göstergesinden gelir. Analizörün yön ve öncü/artçı kuralı kayıtlarda yer almadığından işaret yorumlanmamış, karşılaştırma büyüklükler ($|Q_{g,1}|$, $|\cos\varphi_1|$) üzerinden yapılmıştır. Deneydeki $\cos\varphi$ okuması, temel bileşen güç faktörüdür ($\cos\varphi_1$). Üç basamaklı $\cos\varphi$ okuması $|Q_{g,1}|$ için S1'de 0--7,9~var, S2'de 24,1--26,7~var, S3'te 19,9--23,6~var bandı verir; şebeke gerilimi okumasının \SI{0.1}{\volt} çözünürlüğü $|Q_{g,1}|$'de yaklaşık $\pm12$~var belirsizlik doğurduğundan $|Q_{g,1}|$ uyumsuzluğu tek başına modeli reddettirmez. Deney iki işaret dalını ayırt edemediğinden her senaryoda kalibrasyonsuz modelin dalı ($Q_{g,1}>0$) korunmuştur.
 
 \textbf{Köprünün yumuşak kaynak davranışı.} İlk kalibrasyon adımları, evirici köprüsünün temel bileşen geriliminin modülasyonla bire bir kaymadığını göstermiştir. Köprü, benzetimlerden ölçülen bir Thevenin eşdeğeriyle temsil edildiğinde iç empedansın büyüklüğü S1'de \SI{1.67}{\ohm}, S2'de \SI{28.7}{\ohm}, S3'te \SI{13.7}{\ohm} çıkmıştır. S1'deki değer, tamamlayıcı anahtarlamada akım dalgalanmasının her periyotta sıfırı kesmesiyle \SI{1}{\micro\second} ölü zamanın akıma bağlı gerilim hatası üretmesinden kaynaklanır; kaba ölü zaman kestirimi de yaklaşık \SI{1.7}{\ohm} verir. S2 ve S3'te köprü, son \SI{20}{\milli\second}'lik pencerenin \%12,4 ve \%22,6'sında süreksiz iletimdedir; susturmalı köprü düşük akımda akım kaynağına yaklaşır ve senkron olmayan buck eşdeğeriyle aynı davranışı gösterir (Alt Bölüm~\ref{sec:dusuk-akim-modelleme}). Thevenin empedansı LCL ağının \SI{50}{\hertz} empedansından büyük olduğundan aktif güç esas olarak genlikle, reaktif güç esas olarak fazla değişmektedir. İki değişken birbirini etkilediği için hedefler, benzetimlerden öğrenilen ampirik Jacobian ile iki boyutlu Newton yinelemesiyle birlikte çözülmüştür; S1 ve S2'de dört, S3'te altı kalibrasyon benzetimi gerekmiştir.
 
 \subsection{Kalibrasyon sonucu ve bağımsız karşılaştırma}
 
-Kalibrasyon S1'de genliği değiştirmemiş (\%0,0003), fazı $+0{,}074^{\circ}$ kaydırmıştır; parametre dosyasındaki genlik deneyin aktif gücünü \%0,96 içinde zaten vermektedir ve faz düzeltmesi yalnız $|Q_1|$'i bant içine taşır. S2'de genlik \%3,3, S3'te \%1,5 azalmış, fazlar $+0{,}11^{\circ}$ ve $+0{,}66^{\circ}$ kaymıştır. Genlik belirsizliği deney toleransının ölçülen duyarlılıklara bölünmesiyle S1'de $\pm$\%0,025, S2'de $\pm$\%0,4, S3'te $\pm$\%0,2; faz belirsizliği sırasıyla $\pm0{,}05^{\circ}$, $\pm0{,}4^{\circ}$ ve $\pm0{,}5$--$1^{\circ}$ bulunmuştur. S2 ve S3 fazları faz belirsizliğinin içindedir ve fiziksel bir gecikme olarak yorumlanmamıştır. S2 ve S3'teki genlik azalması, yaklaşık \SI{50}{\micro\second}'lik ortalama iletim süresinde darbe başına 0,7--\SI{1.6}{\micro\second} kısalmaya eşdeğerdir; değer, modelde bulunmayan sürücü ve anahtar gecikmelerinin darbe genişliğinden yediği süre düzeyindedir. Yorum bir varsayımdır ve donanım kaydıyla doğrulanmamıştır.
+Kalibrasyon S1'de genliği değiştirmemiş (\%0,0003), fazı $+0{,}074^{\circ}$ kaydırmıştır; parametre dosyasındaki genlik deneyin aktif gücünü \%0,96 içinde zaten vermektedir ve faz düzeltmesi yalnız $|Q_{g,1}|$'i bant içine taşır. S2'de genlik \%3,3, S3'te \%1,5 azalmış, fazlar $+0{,}11^{\circ}$ ve $+0{,}66^{\circ}$ kaymıştır. Genlik belirsizliği deney toleransının ölçülen duyarlılıklara bölünmesiyle S1'de $\pm$\%0,025, S2'de $\pm$\%0,4, S3'te $\pm$\%0,2; faz belirsizliği sırasıyla $\pm0{,}05^{\circ}$, $\pm0{,}4^{\circ}$ ve $\pm0{,}5$--$1^{\circ}$ bulunmuştur. S2 ve S3 fazları faz belirsizliğinin içindedir ve fiziksel bir gecikme olarak yorumlanmamıştır. S2 ve S3'teki genlik azalması, yaklaşık \SI{50}{\micro\second}'lik ortalama iletim süresinde darbe başına 0,7--\SI{1.6}{\micro\second} kısalmaya eşdeğerdir; değer, modelde bulunmayan sürücü ve anahtar gecikmelerinin darbe genişliğinden yediği süre düzeyindedir. Yorum bir varsayımdır ve donanım kaydıyla doğrulanmamıştır.
 
 \begin{table}[H]
   \centering
@@ -542,7 +542,7 @@ Kalibrasyon S1'de genliği değiştirmemiş (\%0,0003), fazı $+0{,}074^{\circ}$
     Büyüklük & Deney & Benzetim & Fark & Deney & Benzetim & Fark & Deney & Benzetim & Fark \\
     \midrule
     $P_{\mathrm{ac}}$ (W) & 249,6 & 247,21 & $-$\%0,96 & 253,2 & 253,80 & $+$\%0,24 & 281,2 & 279,90 & $-$\%0,46 \\
-    $|Q_1|$ (var) & 0--7,9 & 1,93 & bantta & 24,1--26,7 & 24,43 & bantta & 19,9--23,6 & 21,41 & bantta \\
+    $|Q_{g,1}|$ (var) & 0--7,9 & 1,93 & bantta & 24,1--26,7 & 24,43 & bantta & 19,9--23,6 & 21,41 & bantta \\
     \midrule
     $I_{\mathrm{ac}}$ (A) & 2,26 & 2,218 & $-$\%1,8 & 2,33 & 2,416 & $+$\%3,7 & 2,31 & 2,279 & $-$\%1,4 \\
     $\eta$ (\%) & 92,5 & 91,15 & $-$1,35 p & 94,2 & 93,93 & $-$0,27 p & 94,5 & 94,25 & $-$0,25 p \\
