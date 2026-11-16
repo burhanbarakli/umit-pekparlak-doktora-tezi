@@ -231,7 +231,7 @@ Haberleşme hızı cihazların izin verdiği en yüksek değer olan 38400 baud s
   \label{fig:deney-pc-arayuzu}
 \end{figure}
 
-Ortak hedef çalışma koşulu; DA bara gerilimi yaklaşık \SI{400}{\volt}, faz--nötr gerilimi yaklaşık \SI{130}{\volt}, faz akımı yaklaşık \SI{2.3}{\ampere} ve birim güç faktörüne yakın işletim olarak tanımlanmıştır. Üç deneyde gerçekleşen DA bara gerilimleri (\num{431.5}, \num{395.0} ve \SI{427.5}{\volt}) ve şebeke gerilimleri (\num{119.8}, \num{121.0} ve \SI{124.3}{\volt}) birbirinden farklıdır (Tablo~\ref{tab:gelen-excel-senaryolar}); her benzetim kendi deneyinin DA bara ve şebeke gerilimiyle yapılmıştır. Verim, THD ve ters akım ölçütleri Eşitlik~\eqref{eq:verim-tanimi}, Eşitlik~\eqref{eq:thd-rmse-tanimlari} ve Eşitlik~\eqref{eq:ters-akim-anahtarlama-olcutleri} ile ilişkilendirilmiştir.
+Ortak hedef çalışma koşulu; DA bara gerilimi yaklaşık \SI{400}{\volt}, faz--nötr gerilimi yaklaşık \SI{130}{\volt}, faz akımı yaklaşık \SI{2.3}{\ampere} ve birim güç faktörüne yakın işletim olarak tanımlanmıştır. Üç deneyde gerçekleşen DA bara gerilimleri (\num{431.5}, \num{395.0} ve \SI{427.5}{\volt}) ve şebeke gerilimleri (\num{119.8}, \num{121.0} ve \SI{124.3}{\volt}) birbirinden farklıdır (Tablo~\ref{tab:gelen-excel-senaryolar}); her benzetim kendi deneyinin DA bara ve şebeke gerilimiyle yapılmıştır. Verim ve THD, Eşitlik~\eqref{eq:verim-tanimi} ve Eşitlik~\eqref{eq:thd-rmse-tanimlari} ile hesaplanmıştır.
 
 \section{Klasik Anahtarlama Modu Deney Kayıtları}
 
@@ -515,7 +515,7 @@ Analizör ve osiloskop kayıtları üç yöntemde aynı büyüklük düzeyini ve
 \section{Benzetim Modelinin Deney Özetine Kalibrasyonu}
 \label{sec:kalibrasyon}
 
-Deney özeti ile benzetim modelinin karşılaştırılabilmesi için S1--S3 benzetim modelleri deney özetinin çalışma noktalarına kalibre edilmiştir. Kalibrasyonun amacı, modelin deneyin hangi büyüklüklerini hangi hatayla yeniden ürettiğini göstermek ve kalibre benzetimi deney bulgusundan ayrı tutmaktır. Taban modeller, Alt Bölüm~\ref{sec:model-dogrulama-duzeltme} altında doğrulanan S1, S2 ve S3 modelleridir. Kalibre değerler Tablo~\ref{tab:sistem-parametreleri} içinde ``Kalibre'' türüyle, parametre dosyasındaki ilk değerleri parantez içinde olmak üzere verilmiştir; S4 ileri beslemesi kalibre S3 değerlerini kullanır.
+Deney özeti ile benzetim modelinin karşılaştırılabilmesi için S1--S3 benzetim modelleri deney özetinin çalışma noktalarına kalibre edilmiştir. Kalibrasyonun amacı, modelin deneyin hangi büyüklüklerini hangi hatayla yeniden ürettiğini göstermek ve kalibre benzetimi deney bulgusundan ayrı tutmaktır. Taban modeller, Alt Bölüm~\ref{sec:model-dogrulama-duzeltme} altında doğrulanan S1, S2 ve S3 modelleridir. Kalibre değerler Tablo~\ref{tab:sistem-parametreleri} içinde ``Kalibre'' türüyle verilmiştir. S4 ileri beslemesi kalibre S3 değerlerini kullanmaktadır.
 
 \subsection{Yöntem}
 
@@ -523,7 +523,26 @@ Devre, yarı iletken ve filtre parametreleri kalibrasyonda değiştirilmemiştir
 
 \textbf{Reaktif güç işareti ve ölçüm noktası.} Benzetimde güç büyüklükleri evirici çıkış uçlarında, yani EMC süzgecinden sonra ve $L_2$ ile temsil edilen şebeke ve varyak eşdeğerinden önce ölçülmektedir; nokta, deneyde AA analizörünün bağlı olduğu yaklaşık \SI{120}{\volt} tarafına karşılık gelir. İşaret kuralı üreticidir: evirici$\rightarrow$şebeke yönü pozitiftir, $Q_{g,1}>0$ akımın gerilimin gerisinde olduğu ve eviricinin şebekeye reaktif güç verdiği durumdur. Benzetimdeki pozitif $Q_{g,1}$'in kaynağı filtre kapasitörüdür. Deney özetindeki reaktif güç $Q_o=P_o\tan(\arccos\cos\varphi)$ ile hesaplanmıştır ve eksi işareti analizörün $\cos\varphi$ göstergesinden gelir. Karşılaştırma, işaretten bağımsız büyüklükler ($|Q_{g,1}|$, $|\cos\varphi_1|$) üzerinden yapılmıştır. Deneydeki $\cos\varphi$ okuması, temel bileşen güç faktörüdür ($\cos\varphi_1$). Üç basamaklı $\cos\varphi$ okuması $|Q_{g,1}|$ için S1'de 0--7,9~var, S2'de 24,1--26,7~var, S3'te 19,9--23,6~var bandı verir. Şebeke gerilimi okumasının \SI{0.1}{\volt} çözünürlüğü $|Q_{g,1}|$'de ayrıca yaklaşık $\pm12$~var belirsizlik doğurur. Her senaryoda kalibrasyon öncesi modelin işaret dalı ($Q_{g,1}>0$) korunmuştur.
 
-\textbf{Köprünün yumuşak kaynak davranışı.} İlk kalibrasyon adımları, evirici köprüsünün temel bileşen geriliminin modülasyonla bire bir kaymadığını göstermiştir. Köprü, benzetimlerden ölçülen bir Thevenin eşdeğeriyle temsil edildiğinde iç empedansın büyüklüğü S1'de \SI{1.67}{\ohm}, S2'de \SI{28.7}{\ohm}, S3'te \SI{13.7}{\ohm} çıkmıştır. S1'deki değer, tamamlayıcı anahtarlamada akım dalgalanmasının her periyotta sıfırı kesmesiyle \SI{1}{\micro\second} ölü zamanın akıma bağlı gerilim hatası üretmesinden kaynaklanır; kaba ölü zaman kestirimi de yaklaşık \SI{1.7}{\ohm} verir. S2 ve S3'te köprü, son \SI{20}{\milli\second}'lik pencerenin \%12,4 ve \%22,6'sında süreksiz iletimdedir; susturmalı köprü düşük akımda akım kaynağına yaklaşır ve senkron olmayan buck eşdeğeriyle aynı davranışı gösterir (Alt Bölüm~\ref{sec:dusuk-akim-modelleme}). Thevenin empedansı LCL ağının \SI{50}{\hertz} empedansından büyük olduğundan aktif güç esas olarak genlikle, reaktif güç esas olarak fazla değişmektedir. İki değişken birbirini etkilediği için hedefler, benzetimlerden öğrenilen ampirik Jacobian ile iki boyutlu Newton yinelemesiyle birlikte çözülmüştür; S1 ve S2'de dört, S3'te altı kalibrasyon benzetimi gerekmiştir.
+\textbf{Köprünün yumuşak kaynak davranışı.} İlk kalibrasyon adımları, evirici köprüsünün temel bileşen geriliminin modülasyonla bire bir kaymadığını göstermiştir. Köprü, iç gerilimi $V_{\mathrm{int}}=sV_0\angle\varphi$ ve iç empedansı $Z_{\mathrm{th}}$ olan bir Thevenin eşdeğeriyle temsil edilmiştir. Burada $s$ modülasyon genlik ölçeği, $\varphi$ referans fazıdır ve köprü çıkış gerilimi $V_A=V_{\mathrm{int}}-Z_{\mathrm{th}}I_{L1}$ olmaktadır. Kalibrasyonun ardışık iki benzetiminden ölçülen iç empedans, ara seviye zaman oranı ve güç duyarlılıkları Tablo~\ref{tab:kopru-ic-empedansi} içinde verilmiştir.
+
+\begin{table}[H]
+  \centering
+  \caption{Köprünün kalibrasyon benzetimlerinden ölçülen Thevenin iç empedansı, ara seviye zaman oranı (kalibrasyon öncesi benzetimler) ve aktif ile reaktif gücün serbest değişkenlere duyarlılığı.}
+  \label{tab:kopru-ic-empedansi}
+  \small
+  \setlength{\tabcolsep}{4pt}
+  \begin{tabular}{l c c c c c}
+    \toprule
+    Senaryo & $Z_{\mathrm{th}}$ (\si{\ohm}) & $|Z_{\mathrm{th}}|$ (\si{\ohm}) & Ara seviye (\%) & $\mathrm{d}P/\mathrm{d}\ln s$ (\si{\watt}) & $\mathrm{d}Q/\mathrm{d}\varphi$ (var/\si{\degree}) \\
+    \midrule
+    S1 & $1{,}18-j1{,}18$ & \num{1.67} & \num{0.5} & $\approx\num{10000}$ & $\approx-260$ \\
+    S2 & $23{,}3+j16{,}7$ & \num{28.7} & \num{12.4} & $\approx\num{660}$ & $\approx-30$ \\
+    S3 & $13{,}5-j2{,}2$ & \num{13.7} & \num{22.6} & $\approx\num{1400}$ & $-12\ldots-25$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+S1'deki iç empedans, tamamlayıcı anahtarlamada akım dalgalanmasının her periyotta sıfırı kesmesiyle \SI{1}{\micro\second} ölü zamanın akıma bağlı gerilim hatası üretmesinden kaynaklanmaktadır. Kaba ölü zaman kestirimi $V_{\mathrm{dc}}t_df_s/\Delta i_L\approx\SI{431}{\volt}\cdot\SI{1}{\micro\second}\cdot\SI{10}{\kilo\hertz}/\SI{2.6}{\ampere}\approx\SI{1.7}{\ohm}$ ölçülen değerle aynı düzeydedir. S2 ve S3'te iç empedans bir mertebe büyüktür ve kaynağı süreksiz iletimdir. Susturmalı köprü düşük akımda akım kaynağına yaklaşmakta ve senkron olmayan buck eşdeğeriyle aynı davranışı göstermektedir (Alt Bölüm~\ref{sec:dusuk-akim-modelleme}). Thevenin empedansı LCL ağının \SI{50}{\hertz}'teki yaklaşık \SI{0.5}{\ohm} empedansından büyük olduğundan aktif güç esas olarak genlikle, reaktif güç esas olarak fazla değişmektedir. Eşleme, sert gerilim kaynağı varsayımına dayanan ağ hesabının öngördüğü eşlemenin tersidir. İki değişken birbirini etkilediği için hedefler, benzetimlerden öğrenilen ampirik Jacobian ile iki boyutlu Newton yinelemesiyle birlikte çözülmüştür. S1 ve S2'de dört, S3'te altı kalibrasyon benzetimi gerekmiştir.
 
 \subsection{Kalibrasyon sonucu ve bağımsız karşılaştırma}
 

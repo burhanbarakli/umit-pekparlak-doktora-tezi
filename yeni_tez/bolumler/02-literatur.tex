@@ -73,25 +73,7 @@ Ortak eleman kullanımının en olgun örneği elektrikli araçlardaki tümleşi
 
 Tablo~\ref{tab:eds-maliyet-dagilimi} içindeki her satır, farklı proje, güç ve tedarik koşullarından türetilen tipik bir aralıktır. Aralıklar tek bir tasarımı temsil etmediği için yüzde sütunu doğrudan toplanmamalıdır. Tablo, tezin GT-tipi mimarisindeki eleman paylaşımının neden ekonomik olarak anlamlı bir araştırma sorusu olduğunu göstermektedir.
 
-Batarya paketinin kullanılabilir ömrünü deşarj derinliği, hücre gerilimi, sıcaklık, akım oranı ve hücreler arası dengesizlik etkilemektedir \citep{Vetter2005,Smith2017,Chen2021,Feng2018}. Şekil~\ref{fig:batarya-omur-guvenlik} altındaki deşarj derinliği--çevrim ömrü eğrisi ile güvenli çalışma bölgesi, literatürden uyarlanmış temsilî ilişkileri göstermektedir. Eğriler, belirli bir hücre kimyasının veri sayfası yerine nitel başvuru olarak kullanılmaktadır.
-
-\begin{figure}[H]
-  \centering
-  \begin{subfigure}[t]{0.49\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{literatur/batarya_dod_cevrim.pdf}
-    \caption{Deşarj derinliği--çevrim ömrü ilişkisi.}
-  \end{subfigure}\hfill
-  \begin{subfigure}[t]{0.49\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{literatur/batarya_guvenli_calisma.pdf}
-    \caption{Temsilî gerilim ve doluluk sınırları.}
-  \end{subfigure}
-  \caption{Batarya ömrü ve güvenli işletim için kullanılan temsilî eğriler. Eğriler \citet{Smith2017}, \citet{Chen2021} ve \citet{Feng2018} temel alınarak uyarlanmıştır.}
-  \label{fig:batarya-omur-guvenlik}
-\end{figure}
-
-Hücre gerilimi, akım ve sıcaklık ölçümleri BYS denetleyicisine taşınmaktadır. Koruma, kontaktör ve dengeleme komutları da aynı karar katmanında üretilmektedir. Tipik bir BYS'nin işlevsel mimarisi Şekil~\ref{fig:bys-mimarisi} üzerinde verilmiştir. Mimari, GT-tipi yapının hangi işlevleri ortak güç elemanlarına taşımayı hedeflediğini tanımlayan başvuru noktasıdır.
+Batarya paketinin kullanılabilir ömrünü deşarj derinliği, hücre gerilimi, sıcaklık, akım oranı ve hücreler arası dengesizlik etkilemektedir \citep{Vetter2005,Smith2017,Chen2021,Feng2018}. Hücre gerilimi, akım ve sıcaklık ölçümleri BYS denetleyicisine taşınmaktadır. Koruma, kontaktör ve dengeleme komutları da aynı karar katmanında üretilmektedir. Tipik bir BYS'nin işlevsel mimarisi Şekil~\ref{fig:bys-mimarisi} üzerinde verilmiştir. Mimari, GT-tipi yapının hangi işlevleri ortak güç elemanlarına taşımayı hedeflediğini tanımlayan başvuru noktasıdır.
 
 \begin{figure}[H]
   \centering
@@ -128,43 +110,9 @@ Hücre gerilimi, akım ve sıcaklık ölçümleri BYS denetleyicisine taşınmak
   \label{fig:bys-mimarisi}
 \end{figure}
 
-\begin{table}[H]
-  \centering
-  \caption{Geleneksel BYS ile hücre bazlı enerji yönetiminin işlevsel karşılaştırması.}
-  \label{tab:bys-islev-karsilastirma}
-  \setlength{\tabcolsep}{4pt}
-  \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X >{\centering\arraybackslash}p{0.22\textwidth} >{\centering\arraybackslash}p{0.25\textwidth}}
-    \toprule
-    \textbf{İşlev} & \textbf{Geleneksel BYS} & \textbf{Hücre bazlı yönetim} \\
-    \midrule
-    Hücre izleme, koruma ve dengeleme & Var & Var \\
-    Hücre bazlı şarj kontrolü & Sınırlı & Var \\
-    Hücre bazlı deşarj kontrolü & Sınırlı & Var \\
-    Ömür optimizasyonu & Dolaylı & Doğrudan \\
-    \bottomrule
-  \end{tabularx}
-\end{table}
-
-Tablo~\ref{tab:bys-islev-karsilastirma}'daki ``doğrudan'' ifadesi, hücrenin güç yoluna ayrı ayrı müdahale edilebilmesini tanımlamaktadır. Sayısal ömür artışı ise hücre kimyası, görev profili, sıcaklık ve yaşlanma testi birlikte verildiğinde ileri sürülebilir.
-
 Seri bağlı hücre veya modüllerde kapasite, iç direnç, sıcaklık ve yaşlanma farklılıkları paket performansını en zayıf birimle sınırlandırabilir. Pasif dengeleme fazla enerjiyi dirençlerde harcarken aktif dengeleme kapasitör, endüktör, transformatör veya çift yönlü dönüştürücü üzerinden enerji aktarmaktadır \citep{Daowd2011,Khan2024}. Aktif yöntemler enerji kaybını azaltabilse de ilave anahtar ve manyetik eleman gereksinimi doğurmaktadır. Literatürdeki yeniden yapılandırılabilir batarya sistemleri, hücre veya modül bağlantılarını güç anahtarlarıyla değiştirerek dengeleme, arıza yalıtımı ve farklı terminal gerilimlerini aynı donanım üzerinden sağlamayı hedeflemektedir. Momayyezan ve arkadaşları, yüksek gerilimli batarya sistemi için yarı iletkenleri ve bir endüktörü paylaşan bütünleşik bir dönüştürücü önermiştir. Yük besleme, geri kazanım, şarj ve modüller arası dengeleme kipleri beş modüllü ölçekli prototiple gösterilmiştir \citep{Momayyezan2016}. Farakhor ve arkadaşları ise yeniden yapılandırılabilir anahtar dizisini hücre düzeyindeki DA/DA dönüştürücülerle birleştirmiştir. Yapı arızalı hücre yalıtımı, güç paylaşımı, şarj durumu ve sıcaklık dengelemesi sağlamıştır. Yaklaşım benzetim ve laboratuvar prototipiyle doğrulanmıştır \citep{Farakhor2023}.
 
-Pasif ve başlıca aktif dengeleme ailelerinin enerji aktarım elemanları Şekil~\ref{fig:dengeleme-yontemleri} üzerinde karşılaştırılmıştır. Şekil, yöntemlerin ayrıntılı devre tasarımından çok enerji yolundaki temel farkı göstermek amacıyla verilmiştir.
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.94\textwidth]{literatur/gecici_dengeleme_yontemleri_bilesik.png}
-  \caption{Pasif, kapasitif, endüktif ve transformatörlü hücre dengeleme yapılarının kavramsal karşılaştırması \citep{Daowd2011,Khan2024}.}
-  \label{fig:dengeleme-yontemleri}
-\end{figure}
-
-Pasif dengeleme yönteminde, diğer hücrelere göre daha yüksek gerilim veya şarj durumuna sahip hücreye paralel bağlanan direnç üzerinden enerji harcanmaktadır. Anahtarın görev oranı hücreden çekilen dengeleme akımını belirlemektedir. Az sayıda eleman, basit denetim ve düşük maliyet başlıca avantajlardır. Fazla enerjinin ısıya dönüştürülmesi, soğutma gereksinimi ve düşük şarj durumundaki hücrelere enerji aktarılamaması ise yöntemin temel sınırlılıklarıdır \citep{Daowd2011,Khan2024}.
-
-Kapasitif dengelemede, anahtarlanan bir kapasitör farklı hücrelere sırasıyla bağlanarak gerilimi yüksek hücreden enerji almakta ve gerilimi düşük hücreye aktarmaktadır. Manyetik eleman gerektirmeyen yapı, paketleme ve maliyet bakımından avantaj sağlayabilir. Dengeleme akımının hücreler arasındaki gerilim farkına bağlı olması, uzak hücreler arasında enerjinin birden fazla aktarım adımından geçmesi ve anahtar sayısının hücre sayısıyla artması dengeleme süresini uzatabilir \citep{Daowd2011,Khan2024}.
-
-Endüktif dengeleme yönteminde enerji, anahtarlama sırasında bir endüktörde depolanmakta ve seçilen hücreye veya paket hattına kontrollü akım olarak aktarılmaktadır. Anahtarlama görev oranı üzerinden enerji akışının düzenlenebilmesi, kapasitif yönteme göre daha yüksek ve öngörülebilir dengeleme akımlarına olanak tanımaktadır. Öte yandan endüktör, akım algılama, sürücü ve çift yönlü anahtarlama gereksinimleri devre ile denetim karmaşıklığını artırmaktadır \citep{Daowd2011,Khan2024}.
-
-Transformatörlü yapılarda hücre sargıları ile ortak sargı arasındaki manyetik bağ, hücreden pakete, paketten hücreye veya seçilen hücreler arasında yalıtımlı enerji aktarımı sağlayabilir. Çoklu sargı yapısı farklı enerji yollarını desteklediği için hücre bazlı şarj ve deşarj işlevlerine geçiş bakımından önemlidir. Sargı sayısı, kaçak endüktans, sürme düzeni, hacim ve üretim maliyeti uygulama büyüdükçe belirleyici sınırlılıklara dönüşmektedir \citep{Daowd2011,Khan2024}.
+Başlıca dengeleme aileleri Tablo~\ref{tab:dengeleme-karsilastirma} üzerinde nitel olarak karşılaştırılmıştır. Pasif yöntem az eleman ve basit denetim gerektirmekte, ancak fazla enerjiyi ısıya dönüştürmekte ve düşük şarjlı hücreye enerji aktaramamaktadır. Kapasitif dengelemede aktarım akımı hücreler arasındaki gerilim farkına bağlı kalmaktadır. Endüktif dengeleme görev oranıyla düzenlenen daha yüksek akım sağlamakta, öte yandan devre ve denetim karmaşıklığını artırmaktadır. Transformatörlü yapılarda hücre sargıları ile ortak sargı arasındaki manyetik bağ, hücreden pakete, paketten hücreye veya seçilen hücreler arasında yalıtımlı enerji aktarımı sağlayabilir. Çoklu sargı yapısı, hücre bazlı şarj ve deşarj işlevlerine geçişi desteklemektedir. Sargı sayısı, kaçak endüktans, hacim ve üretim maliyeti ise uygulama büyüdükçe belirleyici sınırlılıklara dönüşmektedir \citep{Daowd2011,Khan2024}.
 
 \begin{table}[H]
   \centering
@@ -183,7 +131,7 @@ Transformatörlü yapılarda hücre sargıları ile ortak sargı arasındaki man
   \end{tabularx}
 \end{table}
 
-Nitel sınıflar topoloji, hücre sayısı ve dengeleme akımıyla değişebildiğinden Tablo~\ref{tab:dengeleme-karsilastirma} kesin bir sıralama değil, tasarım alanını özetleyen bir karşılaştırmadır. Dört yöntem birlikte değerlendirildiğinde tek bir dengeleme yapısının verim, hız, maliyet ve devre karmaşıklığı açısından her uygulamada üstün olmadığı görülmektedir. Tezin GT-tipi mimari katkısı, dört dengeleme yönteminden birini genel olarak en iyi ilan etmek yerine, şarj--deşarj ve hücre yönetimi işlevlerinde mevcut yarı iletkenlerin yeniden görevlendirilmesine odaklanmaktadır. Şekil~\ref{fig:dengeleme-yontemleri}, ilerleyen bölümlerde sunulan işlev paylaşımının neden ayrı dengeleme donanımına alternatif oluşturabileceğini açıklayan kuramsal geçiş niteliğindedir.
+Nitel sınıflar topoloji, hücre sayısı ve dengeleme akımıyla değişebildiğinden Tablo~\ref{tab:dengeleme-karsilastirma} kesin bir sıralama değil, tasarım alanını özetleyen bir karşılaştırmadır. Dört yöntem birlikte değerlendirildiğinde tek bir dengeleme yapısının verim, hız, maliyet ve devre karmaşıklığı açısından her uygulamada üstün olmadığı görülmektedir. Tezin GT-tipi mimari katkısı, dört dengeleme yönteminden birini genel olarak en iyi ilan etmek yerine, şarj--deşarj ve hücre yönetimi işlevlerinde mevcut yarı iletkenlerin yeniden görevlendirilmesine odaklanmaktadır. Ortak elemanlarla yürütülen işlev paylaşımı, ayrı dengeleme donanımına alternatif oluşturabilir.
 
 Yeniden yapılandırılabilir sistemlerin esneklik kazancı yeni tasarım ödünleşimleri oluşturmaktadır. Anahtar sayısı yükseldikçe iletim kaybı, sürücü karmaşıklığı, yanlış anahtarlama riski ve güvenli kip geçişi gereksinimi büyümektedir. Huang ve arkadaşlarının modüler yeniden yapılandırılabilir EDS çalışması, üç anahtarlı modül yapısıyla farklı bağlantıları ve arıza yalıtımını desteklerken işlev sayısı ile devre karmaşıklığı arasındaki ödünleşimi açıkça göstermiştir \citep{Huang2024}. Bütünleştirme, eleman sayısının yanında her çalışma kipindeki akım yolu, eleman zorlanması, geçiş sırası, kayıp ve doğrulama düzeyiyle birlikte değerlendirilmektedir.
 
@@ -257,20 +205,6 @@ ve CEC ağırlıklı verimi
 \label{eq:eta-cec}
 \end{equation}
 olarak tanımlanmaktadır \citep{Sera2008,Sandia2015}. Eşitlik~\eqref{eq:eta-eu} ve Eşitlik~\eqref{eq:eta-cec} içindeki katsayıların toplamı birdir. İki ifade de boyutsuz birer ağırlıklı ortalamadır. Deneysel test düzenekleri ve standartlaştırılmış protokoller, verimin güç seviyesi, giriş gerilimi ve MPPT koşullarıyla birlikte ölçülmesini öngörmektedir \citep{Sera2008,Sandia2015}. İzmir ışınım verilerine dayalı çalışma da bölgesel güç dağılımının ağırlık katsayılarını değiştirebildiğini göstermiştir \citep{Ongun2013}.
-
-\begin{table}[H]
-  \centering
-  \caption{Avrupa ve CEC ağırlıklı verim katsayıları \citep{Sera2008,Sandia2015}.}
-  \label{tab:agirlikli-verim-katsayilari}
-  \begin{tabular}{c*{6}{c}}
-    \toprule
-    \textbf{Yöntem} & \multicolumn{6}{c}{\textbf{Güç seviyesi ve ağırlık katsayısı}} \\
-    \midrule
-    Avrupa & $5:0{,}03$ & $10:0{,}06$ & $20:0{,}13$ & $30:0{,}10$ & $50:0{,}48$ & $100:0{,}20$ \\
-    CEC & $10:0{,}04$ & $20:0{,}05$ & $30:0{,}12$ & $50:0{,}21$ & $75:0{,}53$ & $100:0{,}05$ \\
-    \bottomrule
-  \end{tabular}
-\end{table}
 
 Kısmi yük davranışının verim ve harmonik boyutları Şekil~\ref{fig:fv-verim-thd-profilleri} üzerinde birlikte verilmiştir. Paneller (a) ve (c), genel eğilimi gösteren tipik dizilerdir. Paneller (b) ve (d), aynı dizilerin 144 çalışma noktasına uygulanmasından elde edilen ikincil hesaplardır. İki panel, kısmi yük bölgesinin önemini nitel olarak göstermektedir.
 
@@ -380,11 +314,11 @@ Anahtar ölü zamanı, snubber ve parazitik kapasiteler de komut edilen gerilim 
 
 Tezin Sin\textsuperscript{3} katkısına en yakın literatür, kısmi yükte süreksiz iletime giren dönüştürücülerde akım bozulmasının görev oranı kompanzasyonuyla giderilmesidir. Sürekli iletim için tasarlanan boost PFC dönüştürücüleri düşük yükte şebeke periyodunun bir bölümünde süreksiz iletime girmekte ve klasik akım denetimi giriş akımını bozmaktadır. \citet{DeGusseme2005}, örnek düzeltmesi ile görev oranı ileri beslemesini birleştiren sayısal bir denetimle iki iletim kipinde de düşük harmonikli giriş akımı elde etmiş ve yöntemi \SI{1}{\kilo\watt} prototipte doğrulamıştır. \citet{VanDeSype2005}, görev oranı ileri beslemesinin giriş empedansını dirençsel yaptığını analitik olarak göstermiş ve sıfır geçişi bozulmasını büyük ölçüde gidermiştir. Şebeke eviricisi tarafında \citet{Le2019}, sürekli ve süreksiz akım kipinde çalışan tek fazlı bir eviricide süreksiz iletimin doğrusal olmayanlığını kompanze etmiştir. Kompanzasyon, bir önceki hesaplama periyodunun görev oranını kullanmakta ve endüktans değerinden bağımsızdır. \SI{4}{\kilo\watt} prototipte daha küçük endüktörle endüktör hacmi yüzde 51 azalmış, 0,1 birim yükteki kayıp yüzde 35 düşmüştür. \citet{Wu2013} ise histerezis akım denetimli şebeke eviricisinde sıfır geçişi bozulmasının kaynağını gerçek akım eğiminin referans eğiminden küçük kalmasına bağlamış, kritik faz açısını türetmiş ve çevrimiçi faz öteleme kompanzasyonu önermiştir.
 
-Dört çalışmanın ortak ilkesi, süreksiz iletimin bozduğu akımın görev oranına ya da referansa eklenen bir düzeltmeyle düzeltilmesidir. Tezdeki Sin\textsuperscript{3} terimi aynı ilkeyi iki noktada farklı uygulamaktadır. Bozulmanın kaynağı diyot doğrultmalı ya da tek anahtarlı bir kat değil, T-tipi nötr kolun bilinçli olarak susturulmasıdır. Düzeltme ise çevrimiçi ölçüm ya da önceki görev oranından değil, şebeke fazından üretilen ve çalışma noktasına kalibre edilen sabit katsayılı bir terimden gelmektedir. Sabit katsayı, terimi akım çevriminin dışında tutmakta ve kararlılık analizini kolaylaştırmaktadır. Katsayı değeri çalışma noktasına bağlıdır.
+Dört çalışmanın ortak ilkesi, süreksiz iletimin bozduğu akımın görev oranına ya da referansa eklenen bir düzeltmeyle düzeltilmesidir. Tezdeki Sin\textsuperscript{3} terimi aynı ilkeyi iki noktada farklı uygulamaktadır. Bozulmanın kaynağı diyot doğrultmalı ya da tek anahtarlı bir kat değil, T-tipi nötr kolun bilinçli olarak susturulmasıdır. Düzeltme ise çevrimiçi ölçüm ya da önceki görev oranından değil, şebeke fazından üretilen ve çalışma noktasına kalibre edilen sabit katsayılı bir terimden gelmektedir.
 
 Sin\textsuperscript{3} tabanlı yaklaşımın literatürdeki yerini doğru kurabilmek için üçüncü harmonik enjeksiyonu ile bozucu bastırma amaçlı ileri besleme ayrılmalıdır. Klasik üçüncü harmonik enjeksiyonu, faz referanslarına ortak mod bileşeni ekleyerek DA bara kullanım oranını artırmayı veya belirli anahtarlama harmoniklerini düzenlemeyi hedeflemektedir \citep{Holmes2003,Aghdam2013}. Tezde ele alınan Sin\textsuperscript{3} terimi ise nötr anahtar susturma yönteminin oluşturduğu üçüncü harmonik etkisine karşı, ölçülen şebeke işaretinden $\sin^3(\theta)=[3\sin(\theta)-\sin(3\theta)]/4$ özdeşliğiyle üretilen bir şekillendirme bileşenidir. Fourier gösterimi terimin matematiksel temelini sağlamaktadır. Modülasyon girişine eklenen terim, hata sinyalinden türetilen bağımsız bir geri besleme denetleyicisi değil, bir kompanzasyon bileşenidir \citep{Oppenheim1997}.
 
-İdeal doğrusal ve doyumsuz modelde dışsal ileri besleme terimi kapalı çevrimin karakteristik paydasını değiştirmeyebilir. Gerçek dönüştürücüde örnekleme, PWM gecikmesi, LCL rezonansı, sınırlayıcılar ve çalışma noktasına bağlı anahtarlama doğrusal olmayanlıkları ideal ayrımı sınırlamaktadır. Periyodik çalışma noktaları çevresindeki frekans bağlaşımının incelenmesi gerektiğinde doğrusal zamanla periyodik modeller ve harmonik transfer fonksiyonları (Harmonic Transfer Function, HTF) kullanılabilir \citep{Wereley1991,Liao2022}. Tez açısından temel gereksinim, Sin\textsuperscript{3} terimine denetleyici adı vermek değil, terimin mevcut akım çevrimindeki konumunu, kapalı çevrim aktarımını ve düşük ile anma gücü koşullarındaki etkisini açıkça doğrulamaktır.
+İdeal doğrusal ve doyumsuz modelde dışsal ileri besleme terimi kapalı çevrimin karakteristik paydasını değiştirmeyebilir. Gerçek dönüştürücüde örnekleme, PWM gecikmesi, LCL rezonansı, sınırlayıcılar ve çalışma noktasına bağlı anahtarlama doğrusal olmayanlıkları ideal ayrımı sınırlamaktadır. Periyodik çalışma noktaları çevresindeki frekans bağlaşımının incelenmesi gerektiğinde doğrusal zamanla periyodik modeller ve harmonik transfer fonksiyonları (Harmonic Transfer Function, HTF) kullanılabilir \citep{Wereley1991,Liao2022}. Tez açısından temel gereksinim, Sin\textsuperscript{3} teriminin kapalı çevrim aktarımını ve düşük ile anma gücü koşullarındaki etkisini doğrulamaktır.
 
 \section{Literatürün Karşılaştırmalı Değerlendirilmesi}
 
