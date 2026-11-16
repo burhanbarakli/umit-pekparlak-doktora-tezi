@@ -13,7 +13,7 @@
 \nextgroupplot[title={(a) Günlük üretim profili}, xlabel={Saat}, ylabel={Normalize çıkış gücü (\%)},
   xmin=5, xmax=19, ymin=0, ymax=105, xtick={6,8,...,18}]
   \addplot[blue!70!black, thick, domain=5:19, samples=113] {100*sin(deg(pi*(x-5)/14))};
-\nextgroupplot[title={(b) Aylık ışınım dizisi}, xlabel={Ay}, ylabel={Aylık ışınım (kWh/m\textsuperscript{2})},
+\nextgroupplot[title={(b) Aylık ışınım dizisi}, xlabel={Ay}, ylabel={Aylık ışınım (kWh/m$^2$)},
   xmin=0.5, xmax=12.5, ymin=20, ymax=220, xtick={1,...,12},
   xticklabels={Oca,Şub,Mar,Nis,May,Haz,Tem,Ağu,Eyl,Eki,Kas,Ara}, x tick label style={rotate=90, anchor=east}]
   \addplot[blue!70!black, thick, mark=*, mark size=1.6pt] coordinates {
