@@ -34,7 +34,7 @@ Model, ideal anahtarlama durumlarını açıklayan devre düzeyi ile LCL filtre 
     \node[meas, below=15mm of lcl] (meas) {Gerilim ve akım\\ölçümleri};
     \node[ctrl, left=of meas] (pwm) {PWM ve kapı\\sinyalleri};
     \node[ctrl, left=of pwm] (control) {Akım denetimi ve\\sınırlandırıcılar};
-    \node[ctrl, below=of control] (sin3) {Sin\textsuperscript{3}\\kompanzasyonu};
+    \node[ctrl, below=of control] (sin3) {{Sin\textsuperscript{3}}\\kompanzasyonu};
     \draw[sig] (grid.south) |- (meas.east);
     \draw[sig] (lcl.south) -- (meas.north);
     \draw[sig] (meas) -- (control);
@@ -403,7 +403,7 @@ kompanzasyonun temel ve üçüncü harmonik bileşenlerini açıkça göstermekt
     \draw[flow] (gate) -- node[above,font=\scriptsize] {$q_1$--$q_4$} (plant);
 
     \node[special,below=13mm of ci,xshift=-7mm,text width=23mm] (vff) {Şebeke gerilimi\\ileri besleme $v_{\mathrm{ff}}$};
-    \node[special,below=13mm of sumv,xshift=11mm,minimum width=20mm] (sin3) {Sin\textsuperscript{3}\\$K_{\sin^3}\sin^3\theta$};
+    \node[special,below=13mm of sumv,xshift=11mm,minimum width=20mm] (sin3) {{Sin\textsuperscript{3}}\\$K_{\sin^3}\sin^3\theta$};
     \node[block,below=11mm of iref] (pll) {Faz bilgisi\\$\theta$};
     \node[block,below=11mm of plant] (meas) {Ölçüm, ADC\\ve ölçekleme};
     \draw[flow] (pll) -- (iref);
