@@ -70,17 +70,17 @@ Tez başlığının üç bileşeni üç katkıya karşılık gelir. ``Enerji dep
     \midrule
     1. Nötr anahtar susturma (``düşük güç performansını iyileştiren anahtarlama'') &
     Kip ve akım yolu analizi ile senkron-buck eşdeğeri, deneyin aktif ve reaktif gücüne kalibre edilmiş anahtarlamalı benzetim, deney özet kayıtları &
-    Klasik anahtarlamaya (S1) göre susturma (S2) verimi deneyde \%92,5'ten \%94,2'ye, kalibre benzetimde \%91,15'ten \%93,93'e yükseltir. Bedeli süreksiz iletim ve üçüncü harmoniktir: akım THD'si deneyde \%15'ten \%47'ye, benzetimde \%39,5'ten \%56,7'ye çıkar. Susturma, düşük güç bölgesi için tasarlanmış bir yöntemdir. &
+    Klasik anahtarlamaya (S1) göre susturma (S2) verimi deneyde \%92,5'ten \%94,2'ye, kalibre benzetimde \%91,15'ten \%93,93'e yükseltmektedir. Bedeli süreksiz iletim ve üçüncü harmoniktir: akım THD'si deneyde \%15'ten \%47'ye, benzetimde \%39,5'ten \%56,7'ye çıkmaktadır. Susturma, düşük güç bölgesi için tasarlanmış bir yöntemdir. &
     Alt Bölüm~\ref{sec:s1-s2-kalibre} ve Tablo~\ref{tab:kalibrasyon-karsilastirma}, Bölüm~\ref{chap:deney}, Tablo~\ref{tab:s4-tarama}. Mekanizma doğrulanmış, verim kazancı deney ve kalibre benzetimde aynı yönde \\
     \addlinespace
     2. Sin\textsuperscript{3} ileri besleme kompanzasyonu (``Sin\textsuperscript{3} tabanlı kompanzasyon'') &
     Doğru özdeşlikle parçalı DCM--CCM katsayı taraması, kalibre S3 benzetimi, akım geri beslemeli S4 benzetimi, kararlılık analizi (analitik, frekans alanı, zaman alanı) &
-    Susturma ile birlikte (S3) deneyde THD \%14, verim \%94,5'tir. Kalibre model THD'yi kalibre edilmeden \%14,8, verimi 0,25 puan içinde verir. Analitik modelde üçüncü harmonik oranı \%39,96'dan \%0,15'e iner. S4'te PI denetimi \SI{25}{\ampere}'i $-$\%2,1 genlik hatasıyla, doyumsuz izler. Sin\textsuperscript{3} terimi akım çevriminin dışında kaldığı için çevrimin kararlılığını değiştirmez. Analog eşdeğer çevrimin kararlılık marjları yeterlidir (faz marjı $54^{\circ}$, kazanç marjı \SI{35}{\decibel}). &
+    Susturma ile birlikte (S3) deneyde THD \%14, verim \%94,5'tir. Kalibre model THD'yi kalibre edilmeden \%14,8, verimi 0,25 puan içinde vermektedir. Analitik modelde üçüncü harmonik oranı \%39,96'dan \%0,15'e inmektedir. S4'te PI denetimi \SI{25}{\ampere}'i $-$\%2,1 genlik hatasıyla, doyumsuz izlemektedir. Sin\textsuperscript{3} terimi akım çevriminin dışında kaldığı için çevrimin kararlılığını değiştirmemektedir. Analog eşdeğer çevrimin kararlılık marjları yeterlidir (faz marjı $54^{\circ}$, kazanç marjı \SI{35}{\decibel}). &
     Alt Bölüm~\ref{sec:sin3-yeniden-tarama}, \ref{sec:kalibrasyon}, \ref{sec:s4-kapali-cevrim}, \ref{sec:kararlilik-bode}; Tablo~\ref{tab:kalibrasyon-karsilastirma}, \ref{tab:kararlilik-marjlar}. Düşük güçte deney ve kalibre benzetim, anma akımında S4 benzetimi, kararlılıkta analitik, frekans alanı ve zaman alanı incelemesi \\
     \addlinespace
     3. GT-tipi mimari (``enerji depolama sistemleri için geliştirilmiş T-tipi dönüştürücü mimarisi'') &
     Tanımlar (işlev paylaşım topolojisi, çalışma kipleri, geçiş kısıtları), şarj zinciri benzetim kayıtları, evirici kipinde düşük güç deneyleri, klasik ayrık mimariyle nitel karşılaştırma &
-    Aynı T-tipi yarı iletken tabanı evirici, Vienna PFC ve aktif batarya yönetimi işlevlerinde kullanılabilir. Güvenli kip geçişi PWM'nin durdurulması, sıfıra yakın faz akımı, DA bara dengesi ve röle geri bildirimi koşuluna bağlıdır. Ortak donanım, ayrı güç katlarına göre eleman sayısını azaltma olanağı sunar. &
+    Aynı T-tipi yarı iletken tabanı evirici, Vienna PFC ve aktif batarya yönetimi işlevlerinde kullanılabilir. Güvenli kip geçişi PWM'nin durdurulması, sıfıra yakın faz akımı, DA bara dengesi ve röle geri bildirimi koşuluna bağlıdır. Ortak donanım, ayrı güç katlarına göre eleman sayısını azaltma olanağı sunmaktadır. &
     Bölüm~\ref{chap:gttipi}. GT-tipi deney düzeneği, evirici kipinde düşük güç deneyi, şarj yönünde benzetim kaydı \\
     \bottomrule
   \end{tabularx}
