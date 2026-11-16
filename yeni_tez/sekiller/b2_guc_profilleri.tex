@@ -1,0 +1,35 @@
+% Şekil: günlük ve aylık FV profilleri ile 144 çalışma noktasının güç dağılımı.
+% Veri: tez-matlab-simulink/results/chapter2_profiles/ (aylık dizi, 5 puanlık sayımlar).
+% (c) çubukları = sayım/144*100; (d) altı sınıf (c)'nin yeniden gruplanmasıdır (34, 28, 30, 24, 14, 14).
+\begin{tikzpicture}
+\begin{groupplot}[
+  group style={group size=2 by 2, horizontal sep=16mm, vertical sep=30mm},
+  width=0.47\textwidth, height=50mm,
+  tick label style={font=\footnotesize}, label style={font=\footnotesize},
+  title style={font=\footnotesize, yshift=-1mm},
+  grid=major, grid style={gray!25},
+  /pgf/number format/use comma,
+]
+\nextgroupplot[title={(a) Günlük üretim profili}, xlabel={Saat}, ylabel={Normalize çıkış gücü (\%)},
+  xmin=5, xmax=19, ymin=0, ymax=105, xtick={6,8,...,18}]
+  \addplot[blue!70!black, thick, domain=5:19, samples=113] {100*sin(deg(pi*(x-5)/14))};
+\nextgroupplot[title={(b) Aylık ışınım dizisi}, xlabel={Ay}, ylabel={Aylık ışınım (kWh/m\textsuperscript{2})},
+  xmin=0.5, xmax=12.5, ymin=20, ymax=220, xtick={1,...,12},
+  xticklabels={Oca,Şub,Mar,Nis,May,Haz,Tem,Ağu,Eyl,Eki,Kas,Ara}, x tick label style={rotate=90, anchor=east}]
+  \addplot[blue!70!black, thick, mark=*, mark size=1.6pt] coordinates {
+    (1,35) (2,50) (3,80) (4,120) (5,160) (6,190) (7,205) (8,190) (9,145) (10,95) (11,55) (12,35)};
+\nextgroupplot[title={(c) 144 noktanın 5 puanlık dağılımı}, xlabel={Normalize güç aralığı (\%)}, ylabel={Zaman oranı (\%)},
+  ybar, bar width=4.2pt, xmin=0.3, xmax=20.7, ymin=0, ymax=16, xtick={1,...,20},
+  xticklabels={0--5,5--10,10--15,15--20,20--25,25--30,30--35,35--40,40--45,45--50,50--55,55--60,60--65,65--70,70--75,75--80,80--85,85--90,90--95,95--100},
+  x tick label style={rotate=90, anchor=east, font=\scriptsize}]
+  \addplot[fill=blue!55!black!70, draw=black!70] coordinates {
+    (1,8.3333) (2,15.2778) (3,11.1111) (4,8.3333) (5,6.9444) (6,2.7778) (7,6.9444) (8,4.1667) (9,6.2500) (10,3.4722)
+    (11,1.3889) (12,5.5556) (13,1.3889) (14,3.4722) (15,3.4722) (16,1.3889) (17,2.7778) (18,2.0833) (19,3.4722) (20,1.3889)};
+\nextgroupplot[title={(d) Güç sınıflarına göre dağılım}, xlabel={Normalize güç aralığı (\%)}, ylabel={Çalışma süresi (\%)},
+  ybar, bar width=11pt, xmin=0.4, xmax=6.6, ymin=0, ymax=27, xtick={1,...,6},
+  xticklabels={0--10,10--20,20--40,40--60,60--80,80--100},
+  x tick label style={rotate=45, anchor=north east, font=\scriptsize},
+  nodes near coords, nodes near coords style={font=\scriptsize, /pgf/number format/.cd, fixed, precision=1, use comma}]
+  \addplot[fill=green!55!black!70, draw=black!70] coordinates {(1,23.6) (2,19.4) (3,20.8) (4,16.7) (5,9.7) (6,9.7)};
+\end{groupplot}
+\end{tikzpicture}

@@ -82,6 +82,25 @@ Sen iki uzmanlığı birleştiren bir tez editörüsün:
      "verilmektedir". Ancak "-mektedir" bir paragrafta art arda üçten fazla tekrarlanıp ağırlaşıyorsa
      cümleyi geçmiş zaman ya da ad cümlesiyle anlamı bozmadan yeniden kurmayı öner.
 
+10. **Eski tez yok (16.11.2026, tez sahibinin kararı).** Bu yeni bir tezdir. "eski tez",
+    "önceki tez", "eski tezde kullanılan", "eski Şekil/Tablo X", "önceki sürüm" gibi önceki
+    bir tez sürümüne yapılan hiçbir gönderme metinde, tablo hücresinde, `\caption`'da ya da
+    şekil içi yazılarda (panel başlığı, eksen etiketi, gösterge) yer almaz. Bir şekil dosyasının
+    içinde böyle bir yazı görürsen raporla; şekil yeniden üretilmelidir (şeklin kendisini
+    ana oturum yeniler). Verinin kaynağı gerekiyorsa literatür atfıyla ya da "tezde kullanılan
+    dizi" gibi nötr biçimde verilir.
+
+11. **Bölümler arası göndermeyi az kullan (16.11.2026, tez sahibinin kararı).** Her bölüm
+    kendi içinde okunabilir olmalıdır.
+    - Bölüm 2 (literatür) sonraki bölümlerin bölüm, alt bölüm, şekil ya da tablolarına gönderme
+      yapmaz. Literatür değerlendirmesi tezin katkısına bağlanacaksa gönderme yerine kısa bir
+      ifadeyle bağlanır ("tezde önerilen yöntem ...").
+    - Öteki bölümlerde gönderme yalnız okurun bir sonucu ya da tanımı orada bulması gerektiğinde
+      kalır. Bir paragrafta birden fazla bölümler arası gönderme kurma. "Bölüm X'te ayrıntılı
+      verilecektir" türü ileriye dönük duyuru cümlelerini çıkar.
+    - Aynı bölüm içindeki şekil, tablo ve denklem göndermeleri bu kuralın dışındadır.
+    - Bir göndermeyi silerken başka bir yerde tek kalan bir `\label`'a dokunma; etiketler silinmez.
+
 ## Görev biçimleri
 
 ### "incele" (yalnız rapor)
