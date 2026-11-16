@@ -19,7 +19,22 @@
 
 % Sekiller cogaltilmaz: tez-latex-v2/figures ve tez-latex/figures depolari okunur.
 % MATLAB sonuclari bolum metninde ../tez-matlab-simulink/... goreli yoluyla gelir.
-\graphicspath{{../tez-latex-v2/figures/}{../tez-latex/figures/}}
+\graphicspath{{../tez-latex-v2/figures/}{../tez-latex/figures/}%
+  % Ayakaleaf (yerel Overleaf) projesinde ust klasor yoktur; komsu klasorler depo/
+  % altinda aynalanir (bkz. ayakaleaf_esitle.sh). depo/yeni_tez/ girdisi, metindeki
+  % ../tez-matlab-simulink/... yollarini depo/tez-matlab-simulink/... olarak cozer.
+  % Bu klasorler depoda yoktur; yerel derlemede bu girdiler etkisizdir.
+  {depo/tez-latex-v2/figures/}{depo/tez-latex/figures/}{depo/yeni_tez/}}
+
+% Ayakaleaf derleme kabinda Times New Roman / Cambria Math yuklu degildir; sinif bu
+% durumda TeX Gyre Termes'e duser. Proje icinde fonts/ klasoru varsa (yalniz Ayakaleaf
+% projesinde bulunur, git'e girmez) ayni yazi tipleri oradan yuklenir. Windows'ta
+% fonts/ olmadigi icin sinifin sistem yazi tipi secimi aynen kalir.
+\IfFileExists{fonts/times.ttf}{%
+  \setmainfont{times.ttf}[Path=fonts/,BoldFont=timesbd.ttf,ItalicFont=timesi.ttf,
+    BoldItalicFont=timesbi.ttf,Ligatures=NoCommon,Kerning=Off]%
+}{}
+\IfFileExists{fonts/Cambria.ttc}{\setmathfont{Cambria.ttc}[Path=fonts/,FontIndex=1]}{}
 
 %------------------------------------------------------------------ satir araligi uyumu
 % tez-latex-v2 metni setspace komutlarini kullanir; sablonun Word satir modeline baglanir.

@@ -76,3 +76,8 @@ slprj/
 /yeni_tez/tez.pdf
 /yeni_tez/tez_notlu.pdf
 /yeni_tez/tez_guncel_*.pdf
+
+# Ayakaleaf (yerel Overleaf) eslitleme ayari; makineye ozel
+/.ayakaleaf.local
+/yeni_tez/fonts/
+/yeni_tez/depo/
