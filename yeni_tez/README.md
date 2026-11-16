@@ -55,8 +55,9 @@ derleme ~3 dk; kullanıcının derleme zaman sınırı 600 sn'ye çıkarıldı).
   klasörler yoktur, Windows derlemesi etkilenmez). Ayakaleaf'te yeni şekil eklenirse `yeni_tez/`
   içine (ör. `sekiller/`) koyun; `al` onu depoya taşır.
 - Times New Roman ve Cambria Math proje içindeki `fonts/` klasöründen yüklenir (yalnız Ayakaleaf'te,
-  git'e girmez). `luaotfload.conf`, eksik yazı tipi adı yüzünden her geçişte 57 bin dosyalık
-  veritabanı taramasını kapatır.
+  git'e girmez). Derleme kabı salt okunurdur; `latexmkrc` imajdaki hazır yazı tipi veritabanını
+  `/tmp`'ye kopyalar, `luaotfload.conf` da eksik yazı tipi adı yüzünden 57 bin dosyalık yeniden
+  taramayı kapatır. İkisi de Windows'taki `derle.cmd` derlemesini etkilemez.
 - Proje kimliği depo kökündeki `.ayakaleaf.local` dosyasındadır (git'e girmez); klon depo yanında
   `../ayakaleaf-tez/`. Betik iki tarafın da değiştiğini görürse durur; o zaman elle birleştirin.
 - Windows'ta çalışmaya geçmeden önce `github` ile gönderin; dönüşte önce `gonder` çalıştırın.

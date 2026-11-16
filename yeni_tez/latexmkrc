@@ -1,0 +1,14 @@
+# Ayakaleaf (yerel Overleaf) derlemesi icin. Windows'taki derle.cmd latexmk kullanmaz; bu dosya orada etkisizdir.
+# Derleme kabinda kok salt okunurdur ve luaotfload yazi tipi ad veritabanini yalniz /tmp altinda
+# (TEXMFVAR) arar; bulamazsa her derlemede 57 bin dosyayi yeniden tarar. Imajdaki hazir veritabani
+# derleme basinda oraya kopyalanir.
+{
+  my $kaynak = `kpsewhich -var-value=TEXMFSYSVAR`; chomp $kaynak;
+  my $hedef  = $ENV{'TEXMFVAR'} || `kpsewhich -var-value=TEXMFVAR`; chomp $hedef;
+  $kaynak .= '/luatex-cache/generic/names';
+  $hedef  .= '/luatex-cache/generic/names';
+  if (-d $kaynak && ! -e "$hedef/luaotfload-names.luc.gz") {
+    system('mkdir', '-p', $hedef);
+    system("cp $kaynak/luaotfload-names.* $kaynak/luaotfload-lookup-cache.* '$hedef/' 2>/dev/null");
+  }
+}
