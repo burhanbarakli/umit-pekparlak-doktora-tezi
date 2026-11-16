@@ -106,11 +106,13 @@
 \def\sau@juad{\sau@jyt{Unvan Adı SOYADI}}\def\sau@jukurum{\sau@jyt{Üniversite}}
 \def\sau@jvad{\sau@jyt{Unvan Adı SOYADI}}\def\sau@jvkurum{\sau@jyt{Üniversite}}
 \def\sau@jzad{\sau@jyt{Unvan Adı SOYADI}}\def\sau@jzkurum{\sau@jyt{Üniversite}}
-\newcommand\juribaskani[2]{\def\sau@jbad{#1}\def\sau@jbkurum{#2}}
-\newcommand\juridanisman[2]{\def\sau@jdad{#1}\def\sau@jdkurum{#2}}
-\newcommand\juriuyesiA[2]{\def\sau@juad{#1}\def\sau@jukurum{#2}}
-\newcommand\juriuyesiB[2]{\def\sau@jvad{#1}\def\sau@jvkurum{#2}}
-\newcommand\juriuyesiC[2]{\def\sau@jzad{#1}\def\sau@jzkurum{#2}}
+% Kurum (ikinci argüman) boş verilirse gri "Üniversite" yer tutucusu kalır.
+\newcommand\sau@jkur[2]{\if\relax\detokenize{#2}\relax\else\def#1{#2}\fi}
+\newcommand\juribaskani[2]{\def\sau@jbad{#1}\sau@jkur\sau@jbkurum{#2}}
+\newcommand\juridanisman[2]{\def\sau@jdad{#1}\sau@jkur\sau@jdkurum{#2}}
+\newcommand\juriuyesiA[2]{\def\sau@juad{#1}\sau@jkur\sau@jukurum{#2}}
+\newcommand\juriuyesiB[2]{\def\sau@jvad{#1}\sau@jkur\sau@jvkurum{#2}}
+\newcommand\juriuyesiC[2]{\def\sau@jzad{#1}\sau@jkur\sau@jzkurum{#2}}
 \renewcommand\onaysayfasi{%
   \cleardoublepage\sau@onkisimgeometri
   \pagenumbering{roman}\setcounter{page}{3}%

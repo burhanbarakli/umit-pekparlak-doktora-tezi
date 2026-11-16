@@ -26,6 +26,7 @@ Kısaltma: `IRD` = `tez-matlab-simulink/incoming_real_data`
 | `2026-11-01_s1_thd_degerlendirmesi/` | S1 THD değerlendirmesi: deneysel %15 kabulü, PF, Tablo 5.4, Temmuz benzetimi, THDv ve dalga biçimi (sohbetle iletilen mail metni) | Karar K-29; `tez-matlab-simulink/review/2026-11-01_S1_THD_TEZ_SAHIBI_DEGERLENDIRMESI.md` |
 | `2026-11-07_tez_okuma_notlari_bolum7/` | Tez okuma notları (Bölüm 7'ye kadar, teslim PDF'i 01.11.2026 sayfalarıyla), Codex denetim çıktısı ve Bölüm 7'deki 100 kW/proje itirazı (mail metni + `son_tez_sorular_.docx`) | Değerlendirme: `tez-tamamlama/06_UMIT_OKUMA_NOTLARI_2026-11-07.md`; tez henüz değiştirilmedi |
 | `2026-11-09_q3q4_sekiller_kimlik/` | Nötr bağlantılı tam topoloji (vektör PDF), S3/S4 Simulink şeması (SVG), düzeltilmiş Şekil 2.5/7.3/7.4 (JPG), Q1–Q3 / Q2–Q4 tümleyen adlandırma isteği, öğrenci no ve jüri listesi (mail metni) | K-31 ile teze işlendi (15.11.2026); çalışma kopyaları `tez-latex-v2/figures/umit_2026-11-09/`. `tam_topoloji.pdf` 1. faz Q3/Q4 etiketleri eski sıradaydı, tez kopyasında düzeltildi |
+| `2026-11-16_degisiklik_cevaplari/` | 15.11 değişiklik işaretli PDF'e yanıt notları (74 not, "Lenovo" yazarlı) ve mail metni: jüri listesinin işlenmediği hatırlatması, ayrıntı/uzunluk endişesi | K-36 ile teze işlendi (16.11.2026) |
 
 ## Çalışma kopyasına alınanlar (27.10.2026)
 
