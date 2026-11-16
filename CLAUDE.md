@@ -48,7 +48,9 @@ tablosu güncellenir.
 
 `yeni_tez/` LuaLaTeX ister: MiKTeX 25.12 `%LOCALAPPDATA%\Programs\MiKTeX\miktex\bin\x64`
 altında kurulu (PATH'te değil; `yeni_tez\derle.cmd` yolu kendisi ekler, ~1 dk, ~231 sayfa;
-`.\derle.cmd notlu` → `tez_notlu.pdf`). Eski hatlar (`tez-latex`, `tez-latex-v2`)
+`.\derle.cmd notlu` → `tez_notlu.pdf`). Mac'te tez yerel Overleaf sunucusu Ayakaleaf'te
+(http://localhost:8080) yazılır ve orada derlenir; depo ↔ proje eşitlemesi `./ayakaleaf_esitle.sh
+gonder|al|github|durum` (ayrıntı `yeni_tez/README.md`, "Mac'te Ayakaleaf"). Eski hatlar (`tez-latex`, `tez-latex-v2`)
 Tectonic 0.17.0 ile derlenir: `%USERPROFILE%\.local\bin\tectonic.exe`.
 
 ```bat

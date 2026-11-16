@@ -36,6 +36,31 @@ Süre yaklaşık 1 dakika, yaklaşık 231 sayfa. Betik sonunda `Output written` 
 `../tez-latex/figures/` deposunu okur; MATLAB sonuçları `../tez-matlab-simulink/...`
 göreli yoluyla gelir. Klasör proje köküyle birlikte taşınmalıdır.
 
+## Mac'te Ayakaleaf (yerel Overleaf) ile yazım
+
+Mac'te tez, yerel Overleaf sunucusu Ayakaleaf'te (http://localhost:8080, OrbStack) "Ümit Pekparlak
+Doktora Tezi" projesinde yazılır; derleme orada yapılır (LuaLaTeX, ana belge `tez.tex`, ilk tam
+derleme ~3 dk; kullanıcının derleme zaman sınırı 600 sn'ye çıkarıldı). Depo ile proje arasında
+`ayakaleaf_esitle.sh` (depo kökünde) taşır:
+
+```bash
+./ayakaleaf_esitle.sh gonder          # GitHub'dan pull + depo -> Ayakaleaf
+./ayakaleaf_esitle.sh al "mesaj"      # Ayakaleaf -> yeni_tez/ (yerel commit)
+./ayakaleaf_esitle.sh github "mesaj"  # al + GitHub'a push
+./ayakaleaf_esitle.sh durum
+```
+
+- Projede `.tex` dosyaları depoyla birebir aynıdır. Komşu klasörlerdeki şekiller proje içinde
+  `depo/` altına aynalanır; `tezpaketleri.sty` `\graphicspath`'i bunları da okur (depoda bu
+  klasörler yoktur, Windows derlemesi etkilenmez). Ayakaleaf'te yeni şekil eklenirse `yeni_tez/`
+  içine (ör. `sekiller/`) koyun; `al` onu depoya taşır.
+- Times New Roman ve Cambria Math proje içindeki `fonts/` klasöründen yüklenir (yalnız Ayakaleaf'te,
+  git'e girmez). `luaotfload.conf`, eksik yazı tipi adı yüzünden her geçişte 57 bin dosyalık
+  veritabanı taramasını kapatır.
+- Proje kimliği depo kökündeki `.ayakaleaf.local` dosyasındadır (git'e girmez); klon depo yanında
+  `../ayakaleaf-tez/`. Betik iki tarafın da değiştiğini görürse durur; o zaman elle birleştirin.
+- Windows'ta çalışmaya geçmeden önce `github` ile gönderin; dönüşte önce `gonder` çalıştırın.
+
 ## tez-latex-v2'den farklar (K-33)
 
 - Biçim şablondan gelir: Word satır modeli (heceleme yok), başlık aralıkları, sayfa
