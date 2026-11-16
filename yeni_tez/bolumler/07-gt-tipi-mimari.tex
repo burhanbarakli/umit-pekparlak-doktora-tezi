@@ -113,7 +113,7 @@ Her bataryanın ayrı izole buck kolundan şarj edilmesi, deşarj yolundan farkl
   \label{fig:gt-sentez-mimarisi}
 \end{figure}
 
-Şekil~\ref{fig:gt-sentez-mimarisi}, farklı şekillere dağılan güç ve denetim katmanlarını tek bir işlevsel akışta birleştirmektedir. Şarj yönünde PFC katı şebeke akımı ile DA bara gerilimini, yarım köprü ve transformatör katı yalıtılmış enerji aktarımını, batarya başına buck kolları şarj akım ve gerilimlerini belirler. Deşarj yönünde T-tipi evirici, Bölüm~\ref{chap:sin3} altındaki akım denetimiyle şebekeye güç verir. Aynı anda bütün katların hızlı anahtarlanması gerekmez; RL1 kip geçişleri, güç dönüştürücü PWM'inden daha yavaş bir üst seviye durum makinesiyle yönetilmelidir.
+Şekil~\ref{fig:gt-sentez-mimarisi}, farklı şekillere dağılan güç ve denetim katmanlarını tek bir işlevsel akışta birleştirmektedir. Şarj yönünde PFC katı şebeke akımı ile DA bara gerilimini, yarım köprü ve transformatör katı yalıtılmış enerji aktarımını, batarya başına buck kolları şarj akım ve gerilimlerini belirler. Deşarj yönünde T-tipi evirici, Bölüm~\ref{chap:sin3} altındaki akım denetimiyle şebekeye güç verir. Aynı anda bütün katların hızlı anahtarlanması gerekmez; RL1 kip geçişleri, güç dönüştürücü PWM'ninden daha yavaş bir üst seviye durum makinesiyle yönetilmelidir.
 
 \section{Şarj Yönündeki Benzetim Kayıtları}
 \label{sec:gt-benzetim}
@@ -239,7 +239,7 @@ olarak yazılmıştır \citep{Plett2015}. Eşitlik~\eqref{eq:gt-soc-guncelleme} 
 \section{Mod Geçişleri ve Güvenlik Kısıtları}
 \label{sec:gt-gecis-guvenlik}
 
-RL1 konum değiştirirken akım taşıyan bir bağlantının açılması röle kontaklarında ark ve LCL filtre endüktanslarında aşırı gerilim oluşturabilir; farklı gerilimdeki düğümlerin birleştirilmesi ise sınırlanmamış dengeleme akımına yol açar. Kip geçişi için PWM'in durdurulması, faz akımlarının sıfıra yaklaşması ve DA bara yarılarının dengede olması birlikte aranmalıdır. Önerilen izin koşulu
+RL1 konum değiştirirken akım taşıyan bir bağlantının açılması röle kontaklarında ark ve LCL filtre endüktanslarında aşırı gerilim oluşturabilir; farklı gerilimdeki düğümlerin birleştirilmesi ise sınırlanmamış dengeleme akımına yol açar. Kip geçişi için PWM'nin durdurulması, faz akımlarının sıfıra yaklaşması ve DA bara yarılarının dengede olması birlikte aranmalıdır. Önerilen izin koşulu
 \begin{equation}
   \gamma_{k\rightarrow j}=1
   \iff
@@ -382,6 +382,6 @@ olarak tanımlanabilir. Eşitlik~\eqref{eq:gt-roundtrip-verim} içinde $\eta_{\m
 
 GT-tipi mimari, \SI{20}{\kilo\volt\ampere}--\SI{25}{\kilo\watt} tasarım hedefli T-tipi deney düzeneğinin RL1 rölesi ve doğrultucu/boost diyotlarıyla şebekeye deşarj, şebekeden şarj ve batarya bazlı şarj denetimi işlevlerine yeniden görevlendirilmesi olarak tanımlanmıştır. Vienna PFC, çok sekonderli BYS, RL1 tabanlı ana topoloji ve üç çalışma yolu devre düzeyinde açıklanmış; şarj zinciri benzetim kayıtlarıyla nitel olarak gösterilmiştir. Evirici kipi, tezin düşük güç deneyleri ve S1--S4 benzetimleriyle incelenen kiptir.
 
-Çalışma modları; güvenli kapalı, ön şarj, PFC/CC--CV şarj, şebekeye deşarj ve RL1 kip geçişi olarak ayrılmıştır. CC--CV referansı, SoC güncellemesi, güvenli kip geçişi ve gidiş--dönüş verimi için kullanılacak denklemler tanımlanmış; bütün parametreler ilk geçtikleri yerde açıklanmıştır. Güvenli geçiş için PWM'in durdurulması, sıfıra yakın faz akımı, DA bara dengesi ve röle geri bildirimi birlikte şart koşulmuştur.
+Çalışma modları; güvenli kapalı, ön şarj, PFC/CC--CV şarj, şebekeye deşarj ve RL1 kip geçişi olarak ayrılmıştır. CC--CV referansı, SoC güncellemesi, güvenli kip geçişi ve gidiş--dönüş verimi için kullanılacak denklemler tanımlanmış; bütün parametreler ilk geçtikleri yerde açıklanmıştır. Güvenli geçiş için PWM'nin durdurulması, sıfıra yakın faz akımı, DA bara dengesi ve röle geri bildirimi birlikte şart koşulmuştur.
 
 GT-tipi mimari, T-tipi deney düzeneğinin yarı iletken tabanını şarj ve deşarj işlevlerinde ortak kullanan, tanımlı çalışma kipleri ve güvenli geçiş kurallarıyla donatılmış bir enerji depolama mimarisi sunmaktadır. Evirici kipindeki deneyler ve şarj zinciri benzetim kayıtları, aynı donanımın iki enerji yönünde de işlevini yerine getirdiğini göstermiştir. Tanımlanan gidiş--dönüş verimi ve mimari karşılaştırma ölçütleri, GT-tipi yapının ayrı dönüştürücülü eşdeğerlerle aynı güç tabanında değerlendirilmesine yöntemsel bir temel oluşturmaktadır.
