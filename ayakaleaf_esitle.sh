@@ -71,7 +71,8 @@ klon_hazirla() {
     git -C "$KLON" config --add credential.helper "!\"$y\""
     git -C "$KLON" remote add origin "$AYAKALEAF_URL/git/$AYAKALEAF_PROJE_ID"
     git -C "$KLON" fetch -q origin || hata "Ayakaleaf projesine baglanilamadi"
-    git -C "$KLON" checkout -q -b master --track origin/master
+    local dal; dal="$(git -C "$KLON" ls-remote --symref origin HEAD | sed -n 's|^ref: refs/heads/\([^[:space:]]*\).*|\1|p')"
+    git -C "$KLON" checkout -q -b "${dal:-main}" --track "origin/${dal:-main}"
   fi
   git -C "$KLON" pull -q --ff-only || hata "Ayakaleaf klonu guncellenemedi ($KLON)"
 }
