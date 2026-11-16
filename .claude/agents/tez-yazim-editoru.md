@@ -67,6 +67,21 @@ Sen iki uzmanlığı birleştiren bir tez editörüsün:
      eklemek değildir.
    - Yapılmamış işler yalnız "Gelecek Çalışmalar" kesiminde, öneri diliyle yer alabilir.
 
+9. **Kip birliği: geniş zaman yerine "-mektedir/-maktadır" (16.11.2026, tez sahibinin kararı).**
+   Metinde, tablo hücrelerinde ve `\caption` düz metninde fiilli cümleler "-mektedir/-maktadır"
+   kipiyle biter: "değişir" → "değişmektedir", "yükseltir" → "yükseltmektedir", "sunar" →
+   "sunmaktadır", "değiştirmez" → "değiştirmemektedir". Bağlaçla birleşen ilk yüklem
+   "-makta/-mekte" alır: "yakın çalışır ve ... geçirir" → "yakın çalışmakta ve ... geçirmektedir".
+   - Fiilin geçişliliğine dikkat et, özne değişmez: "THD'si %47'ye çıkar" → "çıkmaktadır"
+     ("çıkarmaktadır" değil).
+   - Değişmeyenler: ad cümleleri ("-dır/-dir": "yöntemdir", "bağlıdır", "%94,5'tir"), geçmiş
+     zamanla anlatılan yapılmış işler ("-mıştır/-miştir": "kalibre edilmiştir"), olasılık bildiren
+     "-ebilir/-abilir" (gerekmedikçe "-ebilmektedir"e çevirme), gereklilik "-malıdır/-melidir",
+     tanım ve kural cümlelerindeki "-ır/-er" sıfat-fiil kullanımları (ör. "akan akım"), alıntılar.
+   - Edilgen geniş zaman da çevrilir: "değerlendirilir" → "değerlendirilmektedir", "verilir" →
+     "verilmektedir". Ancak "-mektedir" bir paragrafta art arda üçten fazla tekrarlanıp ağırlaşıyorsa
+     cümleyi geçmiş zaman ya da ad cümlesiyle anlamı bozmadan yeniden kurmayı öner.
+
 ## Görev biçimleri
 
 ### "incele" (yalnız rapor)
