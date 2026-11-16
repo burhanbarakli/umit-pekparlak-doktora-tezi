@@ -4,8 +4,8 @@
 \begin{groupplot}[
   group style={group size=2 by 2, horizontal sep=16mm, vertical sep=30mm},
   width=0.47\textwidth, height=50mm,
-  tick label style={font=\footnotesize}, label style={font=\footnotesize},
-  title style={font=\footnotesize, yshift=-1mm},
+  tick label style={font=\fontsize{9}{10.5}\selectfont}, label style={font=\fontsize{9}{10.5}\selectfont},
+  title style={font=\fontsize{9}{10.5}\selectfont, yshift=-1mm},
   grid=major, grid style={gray!25},
   /pgf/number format/use comma,
 ]
@@ -16,7 +16,7 @@
 \nextgroupplot[title={(b) Verim düzeylerine göre zaman dağılımı}, xlabel={Verim aralığı (\%)}, ylabel={Çalışma süresi (\%)},
   ybar, bar width=8pt, xmin=0.4, xmax=10.6, ymin=0, ymax=30, xtick={1,...,10},
   xticklabels={90--91,91--92,92--93,93--94,94--95,95--96,96--97,97--98,98--99,99--100},
-  x tick label style={rotate=45, anchor=north east, font=\scriptsize}]
+  x tick label style={rotate=45, anchor=north east, font=\fontsize{7}{8.5}\selectfont}]
   \addplot[fill=blue!55!black!70, draw=black!70] coordinates {
     (1,0) (2,8.3) (3,4.2) (4,5.6) (5,9.7) (6,6.9) (7,15.3) (8,22.2) (9,27.8) (10,0)};
 \nextgroupplot[title={(c) Güç--THD eğrisi}, xlabel={Çıkış gücü (\%$P_n$)}, ylabel={Akım THD'si (\%)},
@@ -26,7 +26,7 @@
 \nextgroupplot[title={(d) THD düzeylerine göre zaman dağılımı}, xlabel={THD aralığı (\%)}, ylabel={Çalışma süresi (\%)},
   ybar, bar width=9pt, xmin=0.4, xmax=8.6, ymin=0, ymax=27, xtick={1,...,8},
   xticklabels={2--3,3--4,4--5,5--6,6--7,7--8,8--9,9--10},
-  x tick label style={rotate=45, anchor=north east, font=\scriptsize}]
+  x tick label style={rotate=45, anchor=north east, font=\fontsize{7}{8.5}\selectfont}]
   \addplot[fill=red!65!black!80, draw=black!70] coordinates {
     (1,13.9) (2,25.0) (3,18.1) (4,12.5) (5,5.6) (6,11.1) (7,5.6) (8,8.3)};
 \end{groupplot}
