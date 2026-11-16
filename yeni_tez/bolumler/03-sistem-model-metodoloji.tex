@@ -340,9 +340,9 @@ Evirici kutup gerilimi $v_{\mathrm{inv}}$, kapasitör gerilimi $v_c$, şebeke ge
   \end{aligned}
   \label{eq:lcl-durum-denklemleri}
 \end{equation}
-olarak elde edilmektedir. Eşitlik~\eqref{eq:lcl-durum-denklemleri} içindeki $L_1$, $L_2$ ve $C_f$ enerji depolayan filtre elemanlarıdır. $R_1$ ile $R_2$ ise seri eşdeğer kayıpları temsil etmektedir. Laplace değişkeni $s$ olmak üzere $i_1(t)$ ve $v_{\mathrm{inv}}(t)$ işaretlerinin Laplace dönüşümleri sırasıyla $I_1(s)$ ve $V_{\mathrm{inv}}(s)$ olarak tanımlansın. Kayıpların ihmal edildiği modelde $v_g=0$ alınarak evirici kutup geriliminden evirici tarafı akımına aktarım
+olarak elde edilmektedir. Eşitlik~\eqref{eq:lcl-durum-denklemleri} içindeki $L_1$, $L_2$ ve $C_f$ enerji depolayan filtre elemanlarıdır. $R_1$ ile $R_2$ ise seri eşdeğer kayıpları temsil etmektedir. Laplace değişkeni $s$ olmak üzere $i_1(t)=i_{L1}(t)$ ve $v_{\mathrm{inv}}(t)$ işaretlerinin Laplace dönüşümleri sırasıyla $I_{L1}(s)$ ve $V_{\mathrm{inv}}(s)$ olarak tanımlansın. Kayıpların ihmal edildiği modelde $v_g=0$ alınarak evirici kutup geriliminden evirici tarafı akımına aktarım
 \begin{equation}
-  G_{vi}(s)=\frac{I_1(s)}{V_{\mathrm{inv}}(s)}
+  G_{vi}(s)=\frac{I_{L1}(s)}{V_{\mathrm{inv}}(s)}
   =\frac{L_2C_fs^2+1}{L_1L_2C_fs^3+(L_1+L_2)s}
   \label{eq:lcl-aktarim}
 \end{equation}

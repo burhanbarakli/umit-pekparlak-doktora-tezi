@@ -523,7 +523,7 @@ Devre, yarı iletken ve filtre parametreleri kalibrasyonda değiştirilmemiştir
 
 \textbf{Reaktif güç işareti ve ölçüm noktası.} Benzetimde güç büyüklükleri evirici çıkış uçlarında, yani EMC süzgecinden sonra ve $L_2$ ile temsil edilen şebeke ve varyak eşdeğerinden önce ölçülmektedir. Ölçüm noktası, deneyde AA analizörünün bağlı olduğu yaklaşık \SI{120}{\volt} tarafına karşılık gelmektedir. İşaret kuralı üreticidir: evirici$\rightarrow$şebeke yönü pozitiftir, $Q_{g,1}>0$ akımın gerilimin gerisinde olduğu ve eviricinin şebekeye reaktif güç verdiği durumdur. Benzetimdeki pozitif $Q_{g,1}$'in kaynağı filtre kapasitörüdür. Deney özetindeki reaktif güç $Q_o=P_o\tan(\arccos\cos\varphi)$ ile hesaplanmıştır ve eksi işareti analizörün $\cos\varphi$ göstergesinden gelir. Karşılaştırma, işaretten bağımsız büyüklükler ($|Q_{g,1}|$, $|\cos\varphi_1|$) üzerinden yapılmıştır. Deneydeki $\cos\varphi$ okuması, temel bileşen güç faktörüdür ($\cos\varphi_1$). Üç basamaklı $\cos\varphi$ okuması $|Q_{g,1}|$ için S1'de 0--7,9~var, S2'de 24,1--26,7~var, S3'te 19,9--23,6~var bandı verir. Şebeke gerilimi okumasının \SI{0.1}{\volt} çözünürlüğü $|Q_{g,1}|$'de ayrıca yaklaşık $\pm12$~var belirsizlik doğurur. Her senaryoda kalibrasyon öncesi modelin işaret dalı ($Q_{g,1}>0$) korunmuştur.
 
-\textbf{Köprünün yumuşak kaynak davranışı.} İlk kalibrasyon adımları, evirici köprüsünün temel bileşen geriliminin modülasyonla bire bir kaymadığını göstermiştir. Köprü, iç gerilimi $V_{\mathrm{int}}=sV_0\angle\varphi$ ve iç empedansı $Z_{\mathrm{th}}$ olan bir Thevenin eşdeğeriyle temsil edilmiştir. Burada $s$ modülasyon genlik ölçeği, $\varphi$ referans fazıdır ve köprü çıkış gerilimi $V_A=V_{\mathrm{int}}-Z_{\mathrm{th}}I_{L1}$ olmaktadır. Kalibrasyonun ardışık iki benzetiminden ölçülen iç empedans ve güç duyarlılıkları, kalibrasyon öncesi benzetimlerdeki ara seviye zaman oranıyla birlikte Tablo~\ref{tab:kopru-ic-empedansi} içinde verilmiştir.
+\textbf{Köprünün yumuşak kaynak davranışı.} İlk kalibrasyon adımları, evirici köprüsünün temel bileşen geriliminin modülasyonla bire bir kaymadığını göstermiştir. Köprü, iç gerilimi $V_{\mathrm{int}}=aV_0\angle\varphi$ ve iç empedansı $Z_{\mathrm{th}}$ olan bir Thevenin eşdeğeriyle temsil edilmiştir. Burada $a$ modülasyon genlik ölçeği, $V_0$ ölçek bire eşitken iç gerilimin genliği, $\varphi$ referans fazıdır ve köprü çıkış gerilimi $V_A=V_{\mathrm{int}}-Z_{\mathrm{th}}I_{L1}$ olmaktadır. Kalibrasyonun ardışık iki benzetiminden ölçülen iç empedans ve güç duyarlılıkları, kalibrasyon öncesi benzetimlerdeki ara seviye zaman oranıyla birlikte Tablo~\ref{tab:kopru-ic-empedansi} içinde verilmiştir.
 
 \begin{table}[H]
   \centering
@@ -533,7 +533,7 @@ Devre, yarı iletken ve filtre parametreleri kalibrasyonda değiştirilmemiştir
   \setlength{\tabcolsep}{4pt}
   \begin{tabular}{l c c c c c}
     \toprule
-    Senaryo & $Z_{\mathrm{th}}$ (\si{\ohm}) & $|Z_{\mathrm{th}}|$ (\si{\ohm}) & Ara seviye (\%) & $\mathrm{d}P/\mathrm{d}\ln s$ (\si{\watt}) & $\mathrm{d}Q/\mathrm{d}\varphi$ (var/\si{\degree}) \\
+    Senaryo & $Z_{\mathrm{th}}$ (\si{\ohm}) & $|Z_{\mathrm{th}}|$ (\si{\ohm}) & Ara seviye (\%) & $\mathrm{d}P/\mathrm{d}\ln a$ (\si{\watt}) & $\mathrm{d}Q/\mathrm{d}\varphi$ (var/\si{\degree}) \\
     \midrule
     S1 & $1{,}18-j1{,}18$ & \num{1.67} & \num{0.5} & $\approx\num{10000}$ & $\approx-260$ \\
     S2 & $23{,}3+j16{,}7$ & \num{28.7} & \num{12.4} & $\approx\num{660}$ & $\approx-30$ \\
