@@ -220,7 +220,7 @@ AA tarafta Entes EMK-01 analizörü ve 50/5 oranlı, \SI{5}{\volt\ampere}, Class
 
 \section{PC Ana Kumanda Yazılımı ve Veri Toplama}
 
-PC ana kumanda yazılımı; EMK-01, AcuDC240 ve kontrol kartından RS485/Modbus RTU üzerinden veri almak, anlık değerleri grafikleştirmek ve verim hesabına temel oluşturmak amacıyla geliştirilmiştir. Şekil~\ref{fig:deney-pc-arayuzu} yazılımın arayüzünü göstermektedir. Bir veri çevrimi yaklaşık \SI{1}{\second} sürmekte; önce DA analizörü, en fazla yaklaşık \SI{50}{\milli\second} sonra AA analizörü okunmaktadır. Yapı kararlı durum eğilimleri için kullanılabilir; hızlı geçici rejimlerin tam eşzamanlı karşılaştırılması için yeterli değildir.
+PC ana kumanda yazılımı; EMK-01, AcuDC240 ve kontrol kartından RS485/Modbus RTU üzerinden veri almak, anlık değerleri grafikleştirmek ve verim hesabına temel oluşturmak amacıyla geliştirilmiştir. Şekil~\ref{fig:deney-pc-arayuzu} yazılımın arayüzünü göstermektedir. Bir veri çevrimi yaklaşık \SI{1}{\second} sürmektedir. Her çevrimde önce DA analizörü, en fazla yaklaşık \SI{50}{\milli\second} sonra AA analizörü okunmaktadır. Kayıt yapısı kararlı durum eğilimlerini izlemek ve verimi hesaplamak için kullanılmıştır.
 
 Haberleşme hızı cihazların izin verdiği en yüksek değer olan 38400 baud seçilmiş; veri sırası DA analizörü, AA analizörü ve kontrol kartı biçiminde kurulmuştur. Yazılımın karşılaştırma seti verim, THD, güç faktörü, faz akımı, faz--nötr gerilimi ve DA bara geriliminden oluşmaktadır. Osiloskop kanal adlarında ``kontrolör çıkışı'' ifadesi geçmektedir. Senaryo tanımlarında S1--S3 açık çevrim modülasyonla çalışır ve akım geri beslemesi yalnız S4'te bulunur (Alt Bölüm~\ref{sec:s4-kapali-cevrim}); kanal adındaki ifade, benzetim modelinin yapısına göre modülasyon komutu olarak okunmuştur.
 
@@ -421,7 +421,7 @@ Anma gücü, donanımın tasarım hedefidir. S4 benzetiminde \SI{25}{\ampere} i�
     Faz--nötr gerilimi & \SI{120}{\volt} & \SI{120}{\volt} & \SI{124}{\volt} & Deneyler arasında gerilim farkı vardır. \\
     DA bara gerilimi & \SI{430}{\volt} & \SI{395}{\volt} & \SI{427}{\volt} & Deneyler arasında bara gerilimi farkı vardır. \\
     Analizörün $\cos\varphi$ göstergesi & $-0{,}990$--$1{,}000$ & $-0{,}995$ & $-0{,}997$ & Temel bileşen güç faktörüdür ($\cos\varphi_1$); işaret yorumu Alt Bölüm~\ref{sec:kalibrasyon} içindedir. \\
-    Analizörün THD$_v$ göstergesi & \%3,7 & \%5,4 & \%4,8 & Ölçüm varyak ile evirici arasındadır; şebekenin kendi değeri değildir. \\
+    Analizörün THD$_v$ göstergesi & \%3,7 & \%5,4 & \%4,8 & Ölçüm varyak ile evirici arasında alınmıştır. \\
     \bottomrule
   \end{tabularx}
 \end{table}
@@ -510,7 +510,7 @@ Faz akımı THD'si için üç kaynak bulunmaktadır: AA analizörünün kaydı, 
   \end{tabularx}
 \end{table}
 
-Analizör ve osiloskop kayıtları üç yöntemde aynı büyüklük düzeyini vermektedir: S2 \%47 düzeyinde, S1 \%11--21, S3 \%12--16 aralığındadır. Osiloskop izinde üçüncü harmonik oranı S2'de yaklaşık \%47 iken S3'te yaklaşık \%9'dur; Sin\textsuperscript{3} teriminin hedeflediği bileşenin azalması deney kaydında doğrudan görülmektedir. Deneysel THD değeri olarak analizör özetindeki \%15, \%47 ve \%14 kullanılmıştır. Analizörün güç faktörü göstergesi tek bir anlık okumadır; S1'de faz akımı kayıt boyunca yaklaşık \SI{2.0}{\ampere} ile \SI{2.3}{\ampere} arasında değiştiğinden anlık okumadan türetilen değerler THD değerlendirmesine alınmamıştır.
+Analizör ve osiloskop kayıtları üç yöntemde aynı büyüklük düzeyini vermektedir: S2 \%47 düzeyinde, S1 \%11--21, S3 \%12--16 aralığındadır. Osiloskop izinde üçüncü harmonik oranı S2'de yaklaşık \%47 iken S3'te yaklaşık \%9'dur; Sin\textsuperscript{3} teriminin hedeflediği bileşenin azalması deney kaydında doğrudan görülmektedir. Deneysel THD değeri olarak analizör özetindeki \%15, \%47 ve \%14 kullanılmıştır. Analizörün güç faktörü göstergesi tek bir anlık okumadır ve S1'de faz akımı kayıt boyunca yaklaşık \SI{2.0}{\ampere} ile \SI{2.3}{\ampere} arasında değişmektedir. Dolayısıyla THD değerlendirmesi analizör özetindeki THD değerlerine dayanmaktadır.
 
 \section{Benzetim Modelinin Deney Özetine Kalibrasyonu}
 \label{sec:kalibrasyon}
