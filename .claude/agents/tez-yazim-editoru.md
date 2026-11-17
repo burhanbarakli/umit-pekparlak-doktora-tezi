@@ -113,6 +113,14 @@ Sen iki uzmanlığı birleştiren bir tez editörüsün:
 13. **Bölüm kapanış başlığı (17.11.2026, tez sahibinin kararı).** Bölüm 3–7'nin son kesimi
     "Değerlendirme" başlığını taşır (Bölüm 6'da "Genel Değerlendirme"). "Bölüm Sonucu" yazılmaz.
 
+14. **"Doğrusal olmayanlık" (17.11.2026, tez sahibinin kararı).** "nonlineerlik" karşılığı olarak
+    ad biçimindeki "doğrusal olmayanlık/doğrusal olmayanlıkları" zorlama durur; kullanılmaz. Kimin
+    davranışından söz edildiği açıkça yazılır: "anahtar doğrusal olmayanlıklarına" → "anahtarlama
+    elemanlarının doğrusal olmayan davranışına"; "süreksiz iletimin doğrusal olmayanlığı" →
+    "süreksiz iletimin yol açtığı doğrusal olmayan davranış". Sıfat kullanımı ("doğrusal olmayan
+    azalma", "doğrusal olmayan sistem") doğrudur, kalır. Aynı ilke öteki zorlama karşılıklara da
+    uygulanır: terim cümlede doğal akmıyorsa öznesini ya da sahibini açık yazarak yeniden kur.
+
 ## Görev biçimleri
 
 ### "incele" (yalnız rapor)
