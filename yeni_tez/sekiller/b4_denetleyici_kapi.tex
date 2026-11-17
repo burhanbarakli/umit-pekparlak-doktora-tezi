@@ -1,0 +1,63 @@
+% Şekil: anahtar gruplarının yarım periyot göstergesi kappa ile seçilmesi (temsilî).
+% (a) klasik düzen: kappa = sgn(i*), (b) komut denetleyici çıkışı: kappa = sgn(u), u = 0,2 sin - 0,4 sin3.
+% İlk tezin Şekil 3.15 ve 3.16'sının yeniden çizimi; adlandırma Q1-Q3 / Q2-Q4 tümleyen (K-31, K-37).
+% Kapı kuralı: kappa = 1 iken Q1 PWM, Q3 tümleyeni, Q4 sürekli iletim, Q2 kesim; kappa = 0 iken simetrik.
+\newcommand{\bdkKapiPaneli}[3]{% #1: 0 = referans, 1 = denetleyici çıkışı; #2: sinyal etiketi; #3: panel adı
+  \begin{tikzpicture}[x=0.0345cm, y=1cm, font=\fontsize{9}{10.5}\selectfont]
+    % ters grup araliklari (yalniz b)
+    \ifnum#1=1
+      \foreach \a/\b in {0/52.24, 127.76/232.24, 307.76/360}
+        \fill[red!10] (\a,-3.85) rectangle (\b,0.75);
+    \fi
+    % sinyal
+    \draw[gray!50] (0,0) -- (360,0);
+    \draw[gray!50] (0,-3.85) -- (0,0.75);
+    \ifnum#1=0
+      \draw[blue!70!black, thick, domain=0:360, samples=121] plot (\x, {0.6*sin(\x)});
+    \else
+      \draw[red!75!black, thick, domain=0:360, samples=181] plot (\x, {0.2*sin(\x)-0.4*sin(3*\x)});
+    \fi
+    \node[anchor=west] at (362,0.35) {#2};
+    % kapi satirlari
+    \foreach \ad/\yy in {Q_1/-1.0, Q_3/-1.7, Q_4/-2.4, Q_2/-3.1} {
+      \draw[gray!60] (0,\yy) -- (360,\yy);
+      \node[anchor=east] at (-2,\yy+0.17) {$\ad$};
+    }
+    \foreach \k in {0,...,35} {
+      \pgfmathsetmacro{\ta}{10*\k}
+      \pgfmathsetmacro{\tm}{10*\k+5}
+      \pgfmathsetmacro{\tb}{10*\k+10}
+      \ifnum#1=0
+        \pgfmathsetmacro{\s}{sin(\tm)}
+        \pgfmathsetmacro{\d}{0.9*abs(\s)}
+      \else
+        \pgfmathsetmacro{\s}{0.2*sin(\tm)-0.4*sin(3*\tm)}
+        \pgfmathsetmacro{\d}{min(0.9,1.5*abs(\s))}
+      \fi
+      \pgfmathsetmacro{\pa}{\tm-5*\d}
+      \pgfmathsetmacro{\pb}{\tm+5*\d}
+      \pgfmathparse{\s>=0 ? 1 : 0}
+      \ifnum\pgfmathresult=1
+        \fill[blue!60!black] (\pa,-1.0) rectangle (\pb,-0.65);            % Q1 PWM
+        \fill[blue!35] (\ta,-1.7) rectangle (\pa,-1.35);                  % Q3 tumleyen
+        \fill[blue!35] (\pb,-1.7) rectangle (\tb,-1.35);
+        \fill[gray!55] (\ta,-2.4) rectangle (\tb,-2.05);                  % Q4 surekli
+      \else
+        \fill[orange!80!black] (\pa,-3.1) rectangle (\pb,-2.75);         % Q2 PWM
+        \fill[orange!45] (\ta,-2.4) rectangle (\pa,-2.05);                % Q4 tumleyen
+        \fill[orange!45] (\pb,-2.4) rectangle (\tb,-2.05);
+        \fill[gray!55] (\ta,-1.7) rectangle (\tb,-1.35);                  % Q3 surekli
+      \fi
+    }
+    % eksen
+    \draw[gray!60] (0,-3.85) -- (360,-3.85);
+    \foreach \t in {0,90,180,270,360} {
+      \draw[gray!60] (\t,-3.85) -- (\t,-3.95);
+      \node[below] at (\t,-3.95) {\t};
+    }
+    \node[below] at (180,-4.35) {$\theta$ (\si{\degree})};
+    \node[anchor=north west] at (0,-4.35) {#3};
+  \end{tikzpicture}%
+}
+\bdkKapiPaneli{0}{$i^{\ast}$}{(a)}\par\medskip
+\bdkKapiPaneli{1}{$u$}{(b)}

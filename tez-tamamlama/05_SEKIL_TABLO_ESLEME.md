@@ -27,9 +27,9 @@ Betik (geçici oturum klasörü): `C:\Users\burha\AppData\Local\Temp\claude\C--C
 | Ş 1.4 | EDS bileşenlerinin maliyet payları | Aynı veri Tablo 2.1'de; şekil ayrıca verilmedi |
 | Ş 1.10 | Hücre dengesizliğinin batarya ömrüne etkisi (senaryo analizi) | Tez katkısıyla ilgisiz; literatür kısaltması (İP-12) |
 | Ş 3.13 | Düşük anahtarlama oranında harmonik bileşenlerin akım dalga şekline etkisi | **29.10.2026: geri eklendi** → yeni Şekil 5.1 (`fig:harmonik-mekanizma`), kalibre S2 parametreleriyle MATLAB'da yeniden üretildi |
-| Ş 3.14 | 3. harmonikli akımda referans, oluşan akım ve kontrolör çıkışı | Yerini Bölüm 5 mekanizma ve S4 izleme şekilleri aldı |
-| Ş 3.15 | Anahtarlama düzeninin teorik işleyişi | Tablo 3.2 ve Tablo 4.1 ile verildi |
-| Ş 3.16 | Düşük akımda kontrolör cevabına göre anahtarlama durumları | Tablo 4.2 (modelden okunan kapı mantığı) ile verildi |
+| Ş 3.14 | 3. harmonikli akımda referans, oluşan akım ve kontrolör çıkışı | **17.11.2026 (K-37): geri eklendi** → Bölüm 4 `fig:denetleyici-duzeltme-akim`, pgfplots ile yeniden çizildi (temsilî) |
+| Ş 3.15 | Anahtarlama düzeninin teorik işleyişi | **17.11.2026 (K-37):** `fig:denetleyici-kapi` (a) paneli olarak yeniden çizildi |
+| Ş 3.16 | Düşük akımda kontrolör cevabına göre anahtarlama durumları | **17.11.2026 (K-37):** `fig:denetleyici-kapi` (b) paneli olarak yeniden çizildi; S4 sayımı review notunda |
 | Ş 4.18 | Feedforward bileşeninin etkisi | Şematikti; yerini Şekil 3.7 blok yapısı aldı |
 | Ş 4.20 | Tam güçte feedforward ve kontrolör etkileri | Yerini S4 kapalı çevrim şekilleri (Şekil 5.7–5.9) aldı |
 | Ş 4.21 | 2,7 A'da feedforward ve kontrolör etkileri | Aynı neden |
