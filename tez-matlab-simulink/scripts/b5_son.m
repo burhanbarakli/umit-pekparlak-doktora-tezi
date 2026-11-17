@@ -63,6 +63,11 @@ switch ad
             if ~isempty(ust), dusey_kopyala(ust, alt, 55); end   % basamak ani alt panelde de
         end
 
+    case 's4_akim_izleme_25A'                          % Sekil 5.6: sag alt kosede "40" ile "−200" degiyor
+        for ax = eksenler
+            if numel(ax.YAxis) == 2, ax.YAxis(2).TickValues = -100:100:100; end
+        end
+
     case 'kararlilik_S_T'                              % Sekil 5.10: gosterge |T| centigini kesiyor
         for lg = findall(fg, 'Type', 'legend')', disari(lg, 3, ''); end
 

@@ -286,7 +286,7 @@ Anma akımında PI ve PIR denetleyicileri referansı doyumsuz izlemektedir. PIR,
 \begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth]{sekiller/b5/s4_tarama_ozet.pdf}
-  \caption{S4 benzetiminde verim, şebeke akımı THD'si ($h\leq50$) ve temel bileşen genlik hatasının akım referansına göre değişimi (P, PI ve PIR denetleyicileri).}
+  \caption{S4 benzetiminde verim, şebeke akımı THD'si ($h\leq50$) ve temel bileşen genlik hatasının akım referansına göre değişimi (P, PI ve PIR denetleyicileri). PIR benzetimleri \SI{10}{\ampere} ve \SI{25}{\ampere} noktalarında yürütülmüştür.}
   \label{fig:s4-tarama-ozet}
 \end{figure}
 
@@ -301,7 +301,7 @@ PI denetleyiciyle akım referansı $t=\SI{55}{\milli\second}$ anında \SI{10}{\a
   \caption{S4 benzetiminde PI denetleyiciyle \SI{10}{\ampere}$\rightarrow$\SI{25}{\ampere} referans basamağı.}
   \label{tab:s4-basamak}
   \small
-  \begin{tabularx}{0.9\textwidth}{@{}X r@{}}
+  \begin{tabularx}{0.9\textwidth}{@{}>{\raggedright\arraybackslash}X r@{}}
     \toprule
     Büyüklük & Değer \\
     \midrule
@@ -310,7 +310,8 @@ PI denetleyiciyle akım referansı $t=\SI{55}{\milli\second}$ anında \SI{10}{\a
     Aşım (son kararlı zarfa göre) & \%0,17 \\
     $L_1$ akım tepesinin referans tepesine oranı (kararlı durum, üçüncü harmonik dahil) & \%7,3 üstünde \\
     Yerleşme süresi (hata bandı) & \SI{0.43}{\milli\second} \\
-    Geçişte doyum & zamanın \%0,8'i, doyum öncesi $|u_{\mathrm{ff}}+u_{\mathrm{fb}}|_{\max}=1{,}49$ \\
+    Geçişte doyumda geçen süre (zaman oranı) & \%0,8 \\
+    Doyum öncesi $|u_{\mathrm{ff}}+u_{\mathrm{fb}}|_{\max}$ & 1,49 \\
     Basamak sonrası şebeke akımı THD'si & \%9,1 \\
     \bottomrule
   \end{tabularx}
@@ -427,7 +428,7 @@ Gerçekleme (A)'da anma noktasındaki PI çevriminin kritik faz marjı, \SI{3.4}
 \begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth,height=0.45\textheight,keepaspectratio]{sekiller/b5/kararlilik_S_T.pdf}
-  \caption{S4 akım çevriminin duyarlılık $|S(j\omega)|$ ve tamamlayıcı duyarlılık $|T(j\omega)|$ eğrileri (\SI{50}{\hertz} ve \SI{150}{\hertz} noktaları işaretli). $K_{34}$ açık ve kapalı eğriler aynıdır.}
+  \caption{S4 akım çevriminin duyarlılık $|S(j\omega)|$ ve tamamlayıcı duyarlılık $|T(j\omega)|$ eğrileri (\SI{50}{\hertz} ve \SI{150}{\hertz} noktaları işaretli). $K_{34}=0$ durumu işaretçiyle gösterilmiştir ve $K_{34}$ açık eğrilerle örtüşmektedir.}
   \label{fig:kararlilik-s-t}
 \end{figure}
 
