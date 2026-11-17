@@ -7,7 +7,7 @@ Bölüm~\ref{chap:anahtarlama} ve Bölüm~\ref{chap:sin3} içinde benzetim düze
 
 \section{Deney Düzeneği ve Güç Donanımı}
 
-Deney düzeneği, yaklaşık 20--25~kW güç dönüştürme kapasitesi hedeflenerek düşey bir pano üzerine bakır baralarla modüler biçimde kurulmuştur. Akım sensörü boyutlandırma hesabında prototip gücü \SI{20}{\kilo\volt\ampere} olarak verilmiştir; tezde \SI{20}{\kilo\volt\ampere} anma görünür gücü, \num{20}--\SI{25}{\kilo\watt} ise tasarım güç aralığı olarak kullanılmaktadır (Alt Bölüm~\ref{sec:guc-tanimlari}). Şebeke gerilimi güvenlik amacıyla varyak üzerinden yaklaşık \SI{120}{\volt} ile sınırlandırılmış, deneyler yaklaşık \SI{2.3}{\ampere} faz akımında, düşük güç noktasında yapılmıştır.
+Deney düzeneği, yaklaşık 20--25~kW güç dönüştürme kapasitesi hedeflenerek düşey bir pano üzerine bakır baralarla modüler biçimde kurulmuştur. Akım sensörü boyutlandırma hesabında prototip gücü \SI{20}{\kilo\volt\ampere} olarak verilmiştir; tezde \SI{20}{\kilo\volt\ampere} anma görünür gücü, \num{20}--\SI{25}{\kilo\watt} ise tasarım güç aralığı olarak kullanılmaktadır (Tablo~\ref{tab:sistem-parametreleri}). Şebeke gerilimi güvenlik amacıyla varyak üzerinden yaklaşık \SI{120}{\volt} ile sınırlandırılmış, deneyler yaklaşık \SI{2.3}{\ampere} faz akımında, düşük güç noktasında yapılmıştır.
 
 Şekil~\ref{fig:deney-duzenegi-genel}; varyak modülü, evirici panosu, bilgisayar ve osiloskopları aynı görünümde vermektedir. Varyak modülünde enerji bağlantıları, şalt ve koruma ekipmanları, akım transformatörleri ve AA enerji analizörü bulunmakta; üç faz bağımsız varyaklarla ayarlanabilmektedir. Düzenekte aşırı akım, kaçak akım, topraklama ve acil durdurma korumaları bulunmaktadır.
 
@@ -588,9 +588,7 @@ Tablo~\ref{tab:kalibrasyon-karsilastirma}, kalibre benzetimin deney özetiyle ka
 \umitnot{Jüri sorusuna hazırlık: S1 THD}{%
 \textbf{``Model klasik anahtarlamada \%40 veriyor, deney \%15; model yanlış değil mi?''} Model yaklaşık değer verir: verim ve THD sıralaması deneyle aynıdır, S3 THD'si \%14,8'e karşı \%14'tür, S2 dalga biçimi osilogramla aynı karakterdedir. S1 farkı açıkça yazılmıştır; model ideal şebeke kullanır ve $L$--$R$ eşdeğeri ölçülmemiştir.
 
-\textbf{``Aynı ekranda PF 0,921 var, \%15 ile tutmuyor.''} Tezde PF tartışılmıyor ama jüri ekranda görebilir. Ayrıca özet tablodaki $P$, $V$, $I$ aynı ekrandan geldiği için $P/(VI)=0{,}922$ hesabını kendisi yapabilir; \%15 THD ile değer yaklaşık 0,989 olurdu. Cevap: ekran tek anlık okumadır, akım eğrisi kayıt boyunca 2,0--\SI{2.3}{\ampere} arasında değişir, THDi ise süreli kayıttır ve osilogram yaklaşık \%21 verir.
-
-\textbf{Mailinizin 4. maddesi.} ``Benzetim THD'si deneyden düşük'' durumu Temmuz benzetimine aittir. Kalibre modelde THD üç senaryoda da deneyden yüksektir. THDv etkisi metinde yön belirtilmeden, toplanabilir ya da söndürebilir diye yazıldı.}
+\textbf{``Aynı ekranda PF 0,921 var, \%15 ile tutmuyor.''} Tezde PF tartışılmıyor ama jüri ekranda görebilir. Ayrıca özet tablodaki $P$, $V$, $I$ aynı ekrandan geldiği için $P/(VI)=0{,}922$ hesabını kendisi yapabilir; \%15 THD ile değer yaklaşık 0,989 olurdu. Cevap: ekran tek anlık okumadır, akım eğrisi kayıt boyunca 2,0--\SI{2.3}{\ampere} arasında değişir, THDi ise süreli kayıttır ve osilogram yaklaşık \%21 verir.}
 
 \textbf{Senaryo sıralaması.} Verim sıralaması S1 $<$ S2 $<$ S3 ve THD sıralaması S3 $<$ S1 $<$ S2, modelde ve deneyde aynıdır. S1$\rightarrow$S3 verim artışı modelde $+3{,}10$, deneyde $+2{,}0$ puan; S1$\rightarrow$S2 artışı modelde $+2{,}78$, deneyde $+1{,}7$ puandır. Fark esas olarak S1 verimindeki $-1{,}35$ puanlık sapmadan gelmektedir.
 
