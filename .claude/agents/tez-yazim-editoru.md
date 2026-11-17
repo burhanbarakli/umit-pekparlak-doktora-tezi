@@ -101,6 +101,18 @@ Sen iki uzmanlığı birleştiren bir tez editörüsün:
     - Aynı bölüm içindeki şekil, tablo ve denklem göndermeleri bu kuralın dışındadır.
     - Bir göndermeyi silerken başka bir yerde tek kalan bir `\label`'a dokunma; etiketler silinmez.
 
+12. **"Kalibre" sözcüğü (17.11.2026, tez sahibinin kararı).** "kalibre benzetim", "kalibre model",
+    "kalibre S3" gibi çekimsiz sıfat kullanımı yazılmaz. Kavram, deney özetine göre kalibre edilmiş
+    benzetim modelidir ve Bölüm 3 ile Bölüm 6'da bir kez bu açıklıkla tanımlanır.
+    - Başlıklarda ve `\caption` metninde "kalibre" sözcüğü kullanılmaz ("Kalibre benzetimde $L_1$
+      akımı" → "S1 ve S2 benzetiminde $L_1$ akımı").
+    - Metinde bağlam açıksa yalnız "benzetim/model" denir. Kalibrasyon öncesi ile sonrası ayrımı
+      önemliyse "kalibre edilmiş benzetim/model/değer" yazılır.
+    - "kalibrasyon", "kalibre edilmiştir" gibi fiil ve ad kullanımları doğrudur, kalır.
+
+13. **Bölüm kapanış başlığı (17.11.2026, tez sahibinin kararı).** Bölüm 3–7'nin son kesimi
+    "Değerlendirme" başlığını taşır (Bölüm 6'da "Genel Değerlendirme"). "Bölüm Sonucu" yazılmaz.
+
 ## Görev biçimleri
 
 ### "incele" (yalnız rapor)

@@ -386,7 +386,7 @@ GT-tipi mimarinin kanıtı iki gruptadır. Deşarj yönü, yani evirici kipi, B�
     Doğrulama katmanı & Gösterilen işlev/çıktı & Kanıt türü \\
     \midrule
     Bağlantı ve durum denetimi & Her mod için iletim yolu, yasak durumlar, kapı/röle/kontaktör sırası & Tasarım tanımı: topoloji şemaları ve durum makinesi. \\
-    Evirici kipi (deşarj) & Düşük güçte verim, akım THD'si, güç faktörü & Deney (S1--S3) ve kalibre benzetim (Bölüm~\ref{chap:deney}). \\
+    Evirici kipi (deşarj) & Düşük güçte verim, akım THD'si, güç faktörü & Deney (S1--S3) ve kalibre edilmiş benzetim (Bölüm~\ref{chap:deney}). \\
     Evirici kipi, anma akımı & Kapalı çevrim akım izleme ve kararlılık & Benzetim ve analitik model: S4 kapalı çevrim modeli ve kararlılık analizi (Bölüm~\ref{chap:sin3}). \\
     Şarj zinciri & PFC akımı, DA bara, primer/sekonder dalga biçimleri, SoC & Benzetim kaydı (Alt Bölüm~\ref{sec:gt-benzetim}). \\
     Batarya/BYS denetimi & SoC güncellemesi, sıcaklık sınırları, CC--CV algoritması & Tasarım tanımı: genel yöntem ve denklemler. \\
@@ -404,7 +404,7 @@ GT-tipi mimarinin kanıtı iki gruptadır. Deşarj yönü, yani evirici kipi, B�
 \end{equation}
 olarak tanımlanabilir. Eşitlik~\eqref{eq:gt-roundtrip-verim} içinde $\eta_{\mathrm{ch}}$ şebekeden bataryaya şarj verimini, $\eta_{\mathrm{dis}}$ bataryadan şebekeye deşarj verimini, $E_{g,\mathrm{in}}$ şebekeden çekilen enerjiyi, $E_{b,\mathrm{in}}$ bataryada depolanan enerjiyi, $E_{b,\mathrm{out}}$ bataryadan çekilen enerjiyi ve $E_{g,\mathrm{out}}$ şebekeye verilen enerjiyi göstermektedir. Yardımcı tüketimlerin sistem sınırına dahil edilip edilmediği her sonuçla birlikte belirtilmelidir.
 
-\section{Bölüm Sonucu}
+\section{Değerlendirme}
 
 GT-tipi mimari, \num{20}--\SI{25}{\kilo\watt} tasarım hedefli T-tipi deney düzeneğinin RL1 rölesi ve doğrultucu/boost diyotlarıyla şebekeye deşarj, şebekeden şarj ve batarya bazlı şarj denetimi işlevlerine yeniden görevlendirilmesi olarak tanımlanmıştır. Vienna PFC, çok sekonderli BYS, RL1 tabanlı ana topoloji ve üç çalışma yolu devre düzeyinde açıklanmış; şarj zinciri benzetim kayıtlarıyla nitel olarak gösterilmiştir. Evirici kipi, tezin düşük güç deneyleri ve S1--S4 benzetimleriyle incelenen kiptir.
 

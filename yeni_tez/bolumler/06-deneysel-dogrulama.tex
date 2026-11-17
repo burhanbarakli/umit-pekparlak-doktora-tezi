@@ -1,7 +1,7 @@
 \chapter{DENEYSEL DOĞRULAMA}
 \label{chap:deney}
 
-Bölüm~\ref{chap:anahtarlama} ve Bölüm~\ref{chap:sin3} içinde benzetim düzeyinde incelenen klasik anahtarlama, nötr anahtar susturma ve susturma+Sin\textsuperscript{3} yöntemleri, geliştirilen üç fazlı T-tipi prototipin tek faz kolunda, düşük güç koşulunda karşılaştırılmıştır. Bölümde deney düzeneği, güç donanımı, denetim ve ölçüm zinciri testleri yeniden üretecek ayrıntıda tanıtılmakta, deney kayıtları değerlendirilmekte ve benzetim modelinin deney özetine kalibrasyonu (Alt Bölüm~\ref{sec:kalibrasyon}) verilmektedir. Deneyler güvenli laboratuvar koşulunda, yaklaşık \SI{2.3}{\ampere} faz akımındaki düşük güç noktasında yürütülmüştür. Anma gücündeki geri beslemeli (S4) çalışma kalibre benzetim modeliyle, GT-tipi şarj yönü ise Bölüm~\ref{chap:gttipi} içinde benzetim kayıtlarıyla incelenmiştir. Deney kayıtlarındaki metin, tablo ve ekran değerleri birbiriyle tutarlılık bakımından denetlenmiştir.
+Bölüm~\ref{chap:anahtarlama} ve Bölüm~\ref{chap:sin3} içinde benzetim düzeyinde incelenen klasik anahtarlama, nötr anahtar susturma ve susturma+Sin\textsuperscript{3} yöntemleri, geliştirilen üç fazlı T-tipi prototipin tek faz kolunda, düşük güç koşulunda karşılaştırılmıştır. Bölümde deney düzeneği, güç donanımı, denetim ve ölçüm zinciri testleri yeniden üretecek ayrıntıda tanıtılmakta, deney kayıtları değerlendirilmekte ve benzetim modelinin deney özetine kalibrasyonu (Alt Bölüm~\ref{sec:kalibrasyon}) verilmektedir. Deneyler güvenli laboratuvar koşulunda, yaklaşık \SI{2.3}{\ampere} faz akımındaki düşük güç noktasında yürütülmüştür. Anma gücündeki geri beslemeli (S4) çalışma kalibre edilmiş benzetim modeliyle, GT-tipi şarj yönü ise Bölüm~\ref{chap:gttipi} içinde benzetim kayıtlarıyla incelenmiştir. Deney kayıtlarındaki metin, tablo ve ekran değerleri birbiriyle tutarlılık bakımından denetlenmiştir.
 
 \textbf{Deneysel veri kümesi.} Deneysel veri kümesi, üç yönteme ait PC yazılımı ekranları, osiloskop ekranları ve her yöntem için bir satırlık deney özet tablosundan oluşmaktadır (Tablo~\ref{tab:gelen-excel-senaryolar}). Ölçüm belirsizliği üretici toleransları ve okuma çözünürlüğünden kestirilmiştir. Benzetim modeli deney özetinin aktif ve reaktif gücüne kalibre edilmiş, diğer büyüklükler bağımsız karşılaştırma olarak raporlanmıştır (Alt Bölüm~\ref{sec:kalibrasyon}). Donanım fotoğrafları, devre kartı çizimleri, osiloskop ve PC yazılımı ekranları deney kayıtlarındaki özgün görüntü dosyalarından alınmış ve özgün çözünürlükleriyle verilmiştir. Bölümdeki sayısal değerler deney özet tablosundan ve ekranlarda yazılı değerlerden okunmuştur; ekran üzerinden yapılan tek ölçüm, Alt Bölüm~\ref{sec:thd-kaynaklar} içindeki faz akımı izlerinin sayısallaştırılmasıdır.
 
@@ -275,7 +275,7 @@ Nötr anahtar susturma yönteminde ilgili yarım periyotta ters akım yolu kesil
   \label{fig:deney-susturma-pc}
 \end{figure}
 
-Şekil~\ref{fig:deney-susturma-l1}, anahtarlamalı endüktör akımının sıfır çevresinde kesildiği aralıkları göstermektedir. Gözlenen zarf, Bölüm~\ref{chap:anahtarlama} içindeki kalibre S2 benzetimi ve üçüncü harmonik mekanizmasıyla nitel olarak uyumludur.
+Şekil~\ref{fig:deney-susturma-l1}, anahtarlamalı endüktör akımının sıfır çevresinde kesildiği aralıkları göstermektedir. Gözlenen zarf, Bölüm~\ref{chap:anahtarlama} içindeki S2 benzetimi ve üçüncü harmonik mekanizmasıyla nitel olarak uyumludur.
 
 \begin{figure}[H]
   \centering
@@ -324,16 +324,16 @@ Nötr anahtar susturma yönteminde ilgili yarım periyotta ters akım yolu kesil
 
 \section{Deney Sonuçlarının Değerlendirilmesi}
 
-Üç yöntemin deneysel ve kalibre benzetim verim ve faz akımı THD değerleri Tablo~\ref{tab:deney-dusuk-guc-ozeti} üzerindedir. AA analizörü şebeke tarafındaki faz akımını ölçtüğünden tabloda yalnız faz akımı THD'si yer almaktadır. Kalibrasyon yöntemi ve bağımsız doğrulama ölçütleri Alt Bölüm~\ref{sec:kalibrasyon} altında ayrıca verilmektedir.
+Üç yöntemin deneyde ve kalibre edilmiş benzetimde elde edilen verim ve faz akımı THD değerleri Tablo~\ref{tab:deney-dusuk-guc-ozeti} üzerindedir. AA analizörü şebeke tarafındaki faz akımını ölçtüğünden tabloda yalnız faz akımı THD'si yer almaktadır. Kalibrasyon yöntemi ve bağımsız doğrulama ölçütleri Alt Bölüm~\ref{sec:kalibrasyon} altında ayrıca verilmektedir.
 
 \begin{table}[H]
   \centering
-  \caption{Üç yöntemin deney özeti ve kalibre benzetimdeki verim ve faz akımı THD değerleri.}
+  \caption{Üç yöntemin deney özeti ve benzetimdeki verim ve faz akımı THD değerleri.}
   \label{tab:deney-dusuk-guc-ozeti}
   \footnotesize
   \begin{tabularx}{\textwidth}{X *{4}{>{\centering\arraybackslash}p{0.13\textwidth}}}
     \toprule
-    & \multicolumn{2}{c}{Deney} & \multicolumn{2}{c}{Kalibre benzetim} \\
+    & \multicolumn{2}{c}{Deney} & \multicolumn{2}{c}{Benzetim} \\
     \cmidrule(lr){2-3}\cmidrule(lr){4-5}
     Yöntem & Verim & THD$_{i,\mathrm{faz}}$ & Verim & THD$_{i,\mathrm{faz}}$ \\
     \midrule
@@ -344,7 +344,7 @@ Nötr anahtar susturma yönteminde ilgili yarım periyotta ters akım yolu kesil
   \end{tabularx}
 \end{table}
 
-Deneyde susturma verimi 1,7 puan artırırken THD'yi \%47'ye çıkarmıştır. Sin\textsuperscript{3} terimi ise verimi \%94,5 düzeyinde korurken THD'yi \%47'den \%14'e, klasik anahtarlama düzeyine indirmiştir. Kalibre benzetim, verim ve THD sıralamasını deneyle aynı vermektedir.
+Deneyde susturma verimi 1,7 puan artırırken THD'yi \%47'ye çıkarmıştır. Sin\textsuperscript{3} terimi ise verimi \%94,5 düzeyinde korurken THD'yi \%47'den \%14'e, klasik anahtarlama düzeyine indirmiştir. Benzetim, verim ve THD sıralamasını deneyle aynı vermektedir.
 
 Deney düzeneğindeki güç, ölçüm ve veri toplama akışı Şekil~\ref{fig:deney-olcum-zinciri} üzerinde özetlenmiştir.
 
@@ -459,7 +459,7 @@ Anma gücü, donanımın tasarım hedefidir. S4 benzetiminde \SI{25}{\ampere} i�
     \toprule
     Çalışma bölgesi & İnceleme yöntemi & Kullanılan kayıt ve model & Elde edilen sonuç \\
     \midrule
-    Düşük güç (\SI{2.3}{\ampere}) & Deney ve kalibre benzetim & Üç yönteme ait PC ve osiloskop ekranları ve deney özeti, S1--S3 kalibre benzetimi (Tablo~\ref{tab:kalibrasyon-karsilastirma}), S4 \SI{2.3}{\ampere} benzetimleri & Verim ve THD sıralaması deneyle aynıdır. S3 THD'si deneyde \%14, benzetimde \%14,8'dir. \\
+    Düşük güç (\SI{2.3}{\ampere}) & Deney ve kalibre edilmiş benzetim & Üç yönteme ait PC ve osiloskop ekranları ve deney özeti, S1--S3 benzetimi (Tablo~\ref{tab:kalibrasyon-karsilastirma}), S4 \SI{2.3}{\ampere} benzetimleri & Verim ve THD sıralaması deneyle aynıdır. S3 THD'si deneyde \%14, benzetimde \%14,8'dir. \\
     Orta güç (\SI{10}{\ampere}) & S4 benzetimi & S4 P, PI, PIR benzetimleri (Tablo~\ref{tab:s4-tarama}) & PIR ile temel akım genlik hatası $-$\%2,2, verim \%97,28. \\
     Anma (\SI{25}{\ampere}) & S4 benzetimi & S4 P, PI, PIR benzetimleri, büyütülmüş DA bara (Tablo~\ref{tab:s4-tarama}) & PIR ile temel akım genlik hatası $-$\%1,0, verim \%96,03. \\
     Geçici rejim & S4 benzetimi & S4 \SI{10}{\ampere}$\rightarrow$\SI{25}{\ampere} basamağı (Tablo~\ref{tab:s4-basamak}) & Aşım \%0,2, yerleşme süresi \SI{0.44}{\milli\second}. \\
@@ -492,7 +492,7 @@ Bildirilen verimler sırasıyla \%92,5, \%94,2 ve \%94,5'tir; yeniden hesaplanan
 \subsection{Faz Akımı THD Değerlerinin Karşılaştırılması}
 \label{sec:thd-kaynaklar}
 
-Faz akımı THD'si için üç kaynak bulunmaktadır: AA analizörünün kaydı, osiloskop kayıtları ve kalibre benzetim. Osiloskop kayıtlarında (Şekil~\ref{fig:deney-klasik-faz}, Şekil~\ref{fig:deney-susturma-faz} ve Şekil~\ref{fig:deney-sin3-faz}) dördüncü kanaldaki faz akımı izi sayısallaştırılmış, iki ila dört tam şebeke periyodu üzerinde 25. harmoniğe kadar Fourier analizi yapılmıştır. Tablo~\ref{tab:thd-kaynaklar} sonuçları özetlemektedir. Ekran görüntüsünden yapılan hesabın düşey çözünürlüğü yaklaşık \SI{0.1}{\ampere}'dir. Osiloskop kayıtlarının çevrim RMS akımı S1'de \SI{2.87}{\ampere}, S2'de \SI{2.42}{\ampere}, S3'te \SI{2.29}{\ampere}'dir ve kayıtlar analizör özetinden ayrı anlarda alınmıştır.
+Faz akımı THD'si için üç kaynak bulunmaktadır: AA analizörünün kaydı, osiloskop kayıtları ve kalibre edilmiş benzetim. Osiloskop kayıtlarında (Şekil~\ref{fig:deney-klasik-faz}, Şekil~\ref{fig:deney-susturma-faz} ve Şekil~\ref{fig:deney-sin3-faz}) dördüncü kanaldaki faz akımı izi sayısallaştırılmış, iki ila dört tam şebeke periyodu üzerinde 25. harmoniğe kadar Fourier analizi yapılmıştır. Tablo~\ref{tab:thd-kaynaklar} sonuçları özetlemektedir. Ekran görüntüsünden yapılan hesabın düşey çözünürlüğü yaklaşık \SI{0.1}{\ampere}'dir. Osiloskop kayıtlarının çevrim RMS akımı S1'de \SI{2.87}{\ampere}, S2'de \SI{2.42}{\ampere}, S3'te \SI{2.29}{\ampere}'dir ve kayıtlar analizör özetinden ayrı anlarda alınmıştır.
 
 \begin{table}[H]
   \centering
@@ -501,7 +501,7 @@ Faz akımı THD'si için üç kaynak bulunmaktadır: AA analizörünün kaydı, 
   \footnotesize
   \begin{tabularx}{\textwidth}{X *{4}{>{\centering\arraybackslash}p{0.15\textwidth}}}
     \toprule
-    Yöntem & Analizör özeti & Analizör anlık okuması & Osiloskop izi & Kalibre benzetim \\
+    Yöntem & Analizör özeti & Analizör anlık okuması & Osiloskop izi & Benzetim \\
     \midrule
     Klasik & \%15 & \%11,1 & yaklaşık \%21 & \%39,5 \\
     Nötr susturma & \%47 & \%48,6 & yaklaşık \%47 & \%56,7 \\
@@ -515,7 +515,7 @@ Analizör ve osiloskop kayıtları üç yöntemde aynı büyüklük düzeyini ve
 \section{Benzetim Modelinin Deney Özetine Kalibrasyonu}
 \label{sec:kalibrasyon}
 
-Deney özeti ile benzetim modelinin karşılaştırılabilmesi için S1--S3 benzetim modelleri deney özetinin çalışma noktalarına kalibre edilmiştir. Kalibrasyonun amacı, modelin deneyin hangi büyüklüklerini hangi hatayla yeniden ürettiğini göstermek ve kalibre benzetimi deney bulgusundan ayrı tutmaktır. Taban modeller, Alt Bölüm~\ref{sec:model-dogrulama-duzeltme} altında doğrulanan S1, S2 ve S3 modelleridir. Kalibre değerler Tablo~\ref{tab:sistem-parametreleri} içinde ``Kalibre'' türüyle verilmiştir. S4 ileri beslemesi kalibre S3 değerlerini kullanmaktadır.
+Deney özeti ile benzetim modelinin karşılaştırılabilmesi için S1--S3 benzetim modelleri deney özetinin çalışma noktalarına kalibre edilmiştir. Kalibrasyonun amacı, modelin deneyin hangi büyüklüklerini hangi hatayla yeniden ürettiğini göstermek ve deney özetine göre kalibre edilmiş benzetim modelini deney bulgusundan ayrı tutmaktır. Taban modeller, Alt Bölüm~\ref{sec:model-dogrulama-duzeltme} altında doğrulanan S1, S2 ve S3 modelleridir. Kalibre edilmiş değerler Tablo~\ref{tab:sistem-parametreleri} içinde ``Kalibre edilmiş'' türüyle verilmiştir. S4 ileri beslemesi kalibre edilmiş S3 değerlerini kullanmaktadır.
 
 \subsection{Yöntem}
 
@@ -550,7 +550,7 @@ Kalibrasyon S1'de genliği değiştirmemiş (\%0,0003), fazı $+0{,}074^{\circ}$
 
 \begin{table}[H]
   \centering
-  \caption{Deney özeti ile kalibre benzetim modelinin karşılaştırılması. İlk iki satır kalibrasyon hedefidir, öteki satırlar bağımsız karşılaştırmadır. Fark: \% göreli, ``p'' yüzde puan.}
+  \caption{Deney özeti ile benzetim modelinin karşılaştırılması. İlk iki satır kalibrasyon hedefidir, öteki satırlar bağımsız karşılaştırmadır. Fark: \% göreli, ``p'' yüzde puan.}
   \label{tab:kalibrasyon-karsilastirma}
   \scriptsize
   \setlength{\tabcolsep}{2.6pt}
@@ -575,13 +575,13 @@ Kalibrasyon S1'de genliği değiştirmemiş (\%0,0003), fazı $+0{,}074^{\circ}$
   \end{tabular}
 \end{table}
 
-Tablo~\ref{tab:kalibrasyon-karsilastirma}, kalibre benzetimin deney özetiyle karşılaştırmasını vermektedir. İlk iki satır, iki serbest değişkenle ayarlanan aktif güç ve reaktif güç büyüklüğünü içeren kalibrasyon hedefidir. Öteki satırlar bağımsız karşılaştırmadır.
+Tablo~\ref{tab:kalibrasyon-karsilastirma}, kalibre edilmiş benzetimin deney özetiyle karşılaştırmasını vermektedir. İlk iki satır, iki serbest değişkenle ayarlanan aktif güç ve reaktif güç büyüklüğünü içeren kalibrasyon hedefidir. Öteki satırlar bağımsız karşılaştırmadır.
 
-\textbf{S3.} Kalibre model deneyin AA akımını $-$\%1,4, verimini $-0{,}25$ puan, akım THD'sini $+0{,}8$ puan ve DA gücünü $-$\%0,3 hatayla yeniden üretmektedir. THD kalibre edilmemiştir: kalibrasyon öncesinde \%10,9 olan değer kalibrasyon sonrasında \%14,8 olmuştur (deney \%14). Sonuç, susturmalı çalışmanın düşük akımdaki dalga biçimi bozulmasının modelde doğru büyüklükte olduğunu gösteren en güçlü bağımsız kanıttır.
+\textbf{S3.} Kalibre edilmiş model deneyin AA akımını $-$\%1,4, verimini $-0{,}25$ puan, akım THD'sini $+0{,}8$ puan ve DA gücünü $-$\%0,3 hatayla yeniden üretmektedir. THD kalibre edilmemiştir: kalibrasyon öncesinde \%10,9 olan değer kalibrasyon sonrasında \%14,8 olmuştur (deney \%14). Sonuç, susturmalı çalışmanın düşük akımdaki dalga biçimi bozulmasının modelde doğru büyüklükte olduğunu gösteren en güçlü bağımsız kanıttır.
 
-\textbf{S2.} Kalibre model DA gücünü ve DA akımını \%0,02 içinde, verimi $-0{,}27$ puan hatayla yeniden üretmektedir. Dalga biçimi deneyle aynı karakterdedir: alternans ortasında çöken ve sıfır geçişlerinin iki yanında tepe yapan zarf hem osiloskop kaydında (Şekil~\ref{fig:deney-susturma-faz}) hem modelde (Şekil~\ref{fig:s1-s2-kalibre-dalga}) görülmektedir. AA akımı $+$\%3,7, THD $+9{,}7$ puan farkla yeniden üretilmektedir. İki serbest değişken aktif ve reaktif güce ayrıldığından AA akımı ve THD bağımsız karşılaştırma olarak kalmaktadır. Farkın olası kaynakları, sıfır geçişi çevresindeki süreksiz iletim ayrıntısını belirleyen IGBT çıkış kapasitesi ile sürücü gecikmeleri, diyot toparlanma parametreleri ve şebeke gerilimi bozulmasıdır.
+\textbf{S2.} Model DA gücünü ve DA akımını \%0,02 içinde, verimi $-0{,}27$ puan hatayla yeniden üretmektedir. Dalga biçimi deneyle aynı karakterdedir: alternans ortasında çöken ve sıfır geçişlerinin iki yanında tepe yapan zarf hem osiloskop kaydında (Şekil~\ref{fig:deney-susturma-faz}) hem modelde (Şekil~\ref{fig:s1-s2-kalibre-dalga}) görülmektedir. AA akımı $+$\%3,7, THD $+9{,}7$ puan farkla yeniden üretilmektedir. İki serbest değişken aktif ve reaktif güce ayrıldığından AA akımı ve THD bağımsız karşılaştırma olarak kalmaktadır. Farkın olası kaynakları, sıfır geçişi çevresindeki süreksiz iletim ayrıntısını belirleyen IGBT çıkış kapasitesi ile sürücü gecikmeleri, diyot toparlanma parametreleri ve şebeke gerilimi bozulmasıdır.
 
-\textbf{S1.} Kalibre model AA akımını $-$\%1,8, verimi $-1{,}35$ puan, DA gücünü $+$\%0,7 hatayla yeniden üretmektedir. Verim farkı, modelde \SI{24.0}{\watt}, deneyde \SI{19.7}{\watt} kayba karşılık gelmektedir. Akım THD'si modelde \%39,5, deneyde \%15'tir. Fark dalga biçiminde de görülmektedir. Modelde faz akımı sivri bir tepeden sonra hızlı iner, kısa bir çukurdan sonra az yükselir ve sıfırdan geçer (Şekil~\ref{fig:s1-s2-kalibre-dalga}); osiloskop kaydında tepe yuvarlaktır ve tepeyi bir kambur izler (Şekil~\ref{fig:deney-klasik-faz}). Parametre denemelerinde dalga biçimi IGBT parametrelerinden az, şebeke eşdeğerinin $L$ ve $R$ değerleri ile referans fazından daha çok etkilenmiştir. Aynı değişkenler RMS akımı ve $\cos\varphi$ değerini de değiştirdiğinden kalibrasyon, iki serbest değişkeni güç hedeflerine ayırmıştır.
+\textbf{S1.} Model AA akımını $-$\%1,8, verimi $-1{,}35$ puan, DA gücünü $+$\%0,7 hatayla yeniden üretmektedir. Verim farkı, modelde \SI{24.0}{\watt}, deneyde \SI{19.7}{\watt} kayba karşılık gelmektedir. Akım THD'si modelde \%39,5, deneyde \%15'tir. Fark dalga biçiminde de görülmektedir. Modelde faz akımı sivri bir tepeden sonra hızlı iner, kısa bir çukurdan sonra az yükselir ve sıfırdan geçer (Şekil~\ref{fig:s1-s2-kalibre-dalga}); osiloskop kaydında tepe yuvarlaktır ve tepeyi bir kambur izler (Şekil~\ref{fig:deney-klasik-faz}). Parametre denemelerinde dalga biçimi IGBT parametrelerinden az, şebeke eşdeğerinin $L$ ve $R$ değerleri ile referans fazından daha çok etkilenmiştir. Aynı değişkenler RMS akımı ve $\cos\varphi$ değerini de değiştirdiğinden kalibrasyon, iki serbest değişkeni güç hedeflerine ayırmıştır.
 
 \textbf{Şebeke gerilimi bozulması.} Benzetim modelinde şebeke ideal sinüs kaynağıdır. Analizör ise varyak ile evirici arasında S1'de \%3,7, S2'de \%5,4, S3'te \%4,8 gerilim THD'si göstermektedir (Tablo~\ref{tab:deney-kosullari}). Ölçüm noktası şebekenin kendisi olmadığından okuma evirici akımının etkisini de içerir. Büyüklük mertebesi için: \SI{120}{\volt}'ta \%3,7 yaklaşık \SI{4.4}{\volt} harmonik gerilimdir ve $L_1+L_2$ toplamının beşinci harmonikteki yaklaşık \SI{10}{\ohm} empedansı üzerinde yaklaşık \SI{0.44}{\ampere} harmonik akım sürebilir; değer \SI{2.3}{\ampere} noktasında temel akımın yaklaşık \%20'sidir. Etki, faz ilişkisine göre evirici harmonikleriyle toplanır ya da onları kısmen söndürür. Etki, düşük akımdaki mutlak THD karşılaştırmasında belirgin bir paya sahiptir.
 
@@ -592,9 +592,9 @@ Tablo~\ref{tab:kalibrasyon-karsilastirma}, kalibre benzetimin deney özetiyle ka
 
 \textbf{Senaryo sıralaması.} Verim sıralaması S1 $<$ S2 $<$ S3 ve THD sıralaması S3 $<$ S1 $<$ S2, modelde ve deneyde aynıdır. S1$\rightarrow$S3 verim artışı modelde $+3{,}10$, deneyde $+2{,}0$ puan; S1$\rightarrow$S2 artışı modelde $+2{,}78$, deneyde $+1{,}7$ puandır. Fark esas olarak S1 verimindeki $-1{,}35$ puanlık sapmadan gelmektedir.
 
-\textbf{Benzetim tarafı belirsizliği.} Kararlı durum değerleri \SI{0.1}{\second} benzetimin son şebeke periyodundan alınmıştır. S2 ve S3'te son periyot ile 0,08--\SI{0.10}{\second} ortalaması arasındaki fark DA güçte 0,4--\SI{0.5}{\watt}, verimde en çok 0,1 puandır ve verim karşılaştırmasının benzetim tarafı belirsizliğini oluşturur. Kalibre benzetim sonuçları, modelin deneyin büyüklüklerini Tablo~\ref{tab:kalibrasyon-karsilastirma} içinde belirtilen hatayla yeniden ürettiğini göstermektedir.
+\textbf{Benzetim tarafı belirsizliği.} Kararlı durum değerleri \SI{0.1}{\second} benzetimin son şebeke periyodundan alınmıştır. S2 ve S3'te son periyot ile 0,08--\SI{0.10}{\second} ortalaması arasındaki fark DA güçte 0,4--\SI{0.5}{\watt}, verimde en çok 0,1 puandır ve verim karşılaştırmasının benzetim tarafı belirsizliğini oluşturur. Kalibre edilmiş benzetim sonuçları, modelin deneyin büyüklüklerini Tablo~\ref{tab:kalibrasyon-karsilastirma} içinde belirtilen hatayla yeniden ürettiğini göstermektedir.
 
-\section{Bölüm Sonucu}
+\section{Genel Değerlendirme}
 
 Deney düzeneği; T-tipi güç katı, faz modülleri, kontrol, tampon ve sürücü kartları, gerilim ve akım ölçüm devreleri, koruma devresi, AA ve DA analizörleri, şönt bağlantısı, PC yazılımı ve üç yönteme ait ekran kayıtlarıyla belgelenmiştir. Deney sonuçları, PC ve osiloskop ekranları ile deney özet tablosu üzerinden raporlanmıştır.
 

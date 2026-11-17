@@ -169,36 +169,36 @@ Mekanizma, S4 kapalı çevrim benzetiminin kayıtlarında da sayılmıştır. So
 
 Deney senaryoları aynı düşük güç probleminin ardışık karşılaştırma kollarıdır: S1 klasik senkron anahtarlama, S2 nötr anahtar susturma, S3 ise susturma ile Sin\textsuperscript{3} kompanzasyonunun birlikte kullanımıdır. Senaryo eşlemesi benzetim modellerinin kapı mantığından doğrulanmıştır (Alt Bölüm~\ref{sec:model-kapi-mantigi}). S1--S3 senaryolarında modülasyon referansı, akım denetleyicisi olmadan açık çevrimde uygulanmıştır. Her senaryo kendi deneyinin DA bara ve şebeke gerilimiyle benzetilmiştir. Modelde senaryolar arasında nötr kapı mantığı, modülasyon genliği ve referans fazı değişmiştir. Açık çevrim koşulu yöntemin oluşum mekanizmasını ayırmak için yararlıdır. Kapalı çevrim performansı Alt Bölüm~\ref{sec:s4-kapali-cevrim} içinde ayrıca ele alınmıştır.
 
-\subsection{Kalibre benzetimde klasik anahtarlama ile susturmanın karşılaştırılması}
+\subsection{Klasik anahtarlama ile susturmanın benzetimle karşılaştırılması}
 \label{sec:s1-s2-kalibre}
 
-S1 ile S2, deneyin aktif ve reaktif gücüne kalibre edilmiş benzetim modeliyle karşılaştırılmaktadır. Kalibrasyon yöntemi, kalibre noktalar ve S3 dahil bütün deney ve benzetim değerleri Alt Bölüm~\ref{sec:kalibrasyon} içinde verilmiştir. Aktif güç ve reaktif güç kalibrasyon hedefidir. Şebeke akımı, verim, DA güç ve THD ise bağımsız doğrulama büyüklükleridir.
+S1 ile S2, deneyin aktif ve reaktif gücüne kalibre edilmiş benzetim modeliyle karşılaştırılmaktadır. Kalibrasyon yöntemi, kalibrasyon noktaları ve S3 dahil bütün deney ve benzetim değerleri Alt Bölüm~\ref{sec:kalibrasyon} içinde verilmiştir. Aktif güç ve reaktif güç kalibrasyon hedefidir. Şebeke akımı, verim, DA güç ve THD ise bağımsız doğrulama büyüklükleridir.
 
-S1 ile S2 karşılaştırması üç bulgu vermektedir. İlk iki bulgu Tablo~\ref{tab:kalibrasyon-karsilastirma} içindeki S1 ve S2 sütunlarından okunmaktadır. Birinci bulgu verimdir. Susturma, kalibre benzetimde verimi \%91,15'ten \%93,93'e, yani 2,78 puan artırmaktadır. Deneyde artış \%92,5'ten \%94,2'ye, 1,7 puandır. Verim sıralaması benzetim ile deneyde aynıdır.
+S1 ile S2 karşılaştırması üç bulgu vermektedir. İlk iki bulgu Tablo~\ref{tab:kalibrasyon-karsilastirma} içindeki S1 ve S2 sütunlarından okunmaktadır. Birinci bulgu verimdir. Susturma, benzetimde verimi \%91,15'ten \%93,93'e, yani 2,78 puan artırmaktadır. Deneyde artış \%92,5'ten \%94,2'ye, 1,7 puandır. Verim sıralaması benzetim ile deneyde aynıdır.
 
-İkinci bulgu harmonik cezadır. Susturma, şebeke (faz) akımı THD'sini deneyde \%15'ten \%47'ye, kalibre benzetimde \%39,5'ten \%56,7'ye yükseltmektedir. Artış iki kaynakta aynı yöndedir ve iki kaynakta da S2 en yüksek THD'li senaryodur.
+İkinci bulgu harmonik cezadır. Susturma, şebeke (faz) akımı THD'sini deneyde \%15'ten \%47'ye, benzetimde \%39,5'ten \%56,7'ye yükseltmektedir. Artış iki kaynakta aynı yöndedir ve iki kaynakta da S2 en yüksek THD'li senaryodur.
 
 Üçüncü bulgu, susturmanın köprü davranışını değiştirmesidir. Kalibrasyon öncesi benzetimlerde kutup geriliminin ara seviyede kaldığı zaman oranı S1'de \%0,5, S2'de \%12,4'tür. Susturmalı köprü düşük akımda akım kaynağına yaklaşmakta ve aktif güç modülasyon genliğine daha duyarlı hâle gelmektedir (Tablo~\ref{tab:kopru-ic-empedansi}).
 
-Şekil~\ref{fig:s1-s2-kalibre-dalga}, iki kalibre noktanın son şebeke periyodundaki dalga biçimlerini karşılaştırmaktadır. S1'de şebeke akımı sinüs zarfının üzerinde anahtarlama kaynaklı bozulma taşımaktadır. S2'de ise akım zarfı alternans ortasında çökmekte ve sıfır geçişlerinin iki yanında tepe yapmaktadır. Akım zarfının biçimi, Şekil~\ref{fig:susturma-esdeger} ile açıklanan süreksiz iletimle ve üçüncü harmonik artışıyla uyumludur. Şekil~\ref{fig:s1-s2-kalibre-dalga}(c), pozitif yarım periyottan \SI{400}{\micro\second} kesitte iki senaryonun kutup gerilimini göstermektedir. S2'de sıfır durumundan sonra $L_1$ akımı söndüğünde kutup gerilimi ara bir seviyeye sıçramakta ve bir sonraki darbeye kadar ara seviyede kalmaktadır.
+Şekil~\ref{fig:s1-s2-kalibre-dalga}, iki çalışma noktasının son şebeke periyodundaki dalga biçimlerini karşılaştırmaktadır. S1'de şebeke akımı sinüs zarfının üzerinde anahtarlama kaynaklı bozulma taşımaktadır. S2'de ise akım zarfı alternans ortasında çökmekte ve sıfır geçişlerinin iki yanında tepe yapmaktadır. Akım zarfının biçimi, Şekil~\ref{fig:susturma-esdeger} ile açıklanan süreksiz iletimle ve üçüncü harmonik artışıyla uyumludur. Şekil~\ref{fig:s1-s2-kalibre-dalga}(c), pozitif yarım periyottan \SI{400}{\micro\second} kesitte iki senaryonun kutup gerilimini göstermektedir. S2'de sıfır durumundan sonra $L_1$ akımı söndüğünde kutup gerilimi ara bir seviyeye sıçramakta ve bir sonraki darbeye kadar ara seviyede kalmaktadır.
 
-Şekil~\ref{fig:s1-s2-kalibre-l1}, aynı kalibre noktalarda $L_1$ akımını göstermektedir. Kayıt, kalibrasyon değerleri değiştirilmeden $L_1$ akımı ve kapı işaretleri de kaydedilerek yinelenen benzetimlerden alınmıştır. S1'de $L_1$ akımı, temel periyodun büyük bölümünde her anahtarlama periyodunda sıfırı kesmekte ve işaret değiştirmektedir. Ters akımın zaman payı, sıfırı kesen periyotların payından ayrı bir ölçüdür. Pozitif yarım periyodun toplam süresinin \%25,2'sinde akım $-\SI{0.05}{\ampere}$'in altındadır, yani ters yöndedir. 400~\si{\micro\second} kesitte akım her periyotta yaklaşık $-\SI{2.6}{\ampere}$'e inmektedir. S2'de ters akım aralığı yoktur. Akım sıfıra indiğinde bir sonraki darbeye kadar sıfırda kalmaktadır. Pozitif yarım periyodun \%17'sinde akım sıfırdır. Akım kaydı, süreksiz iletim açıklamasının ve susturmanın ters akım yolunu kestiğinin doğrudan görsel kanıtıdır.
+Şekil~\ref{fig:s1-s2-kalibre-l1}, aynı çalışma noktalarında $L_1$ akımını göstermektedir. Kayıt, kalibrasyon değerleri değiştirilmeden $L_1$ akımı ve kapı işaretleri de kaydedilerek yinelenen benzetimlerden alınmıştır. S1'de $L_1$ akımı, temel periyodun büyük bölümünde her anahtarlama periyodunda sıfırı kesmekte ve işaret değiştirmektedir. Ters akımın zaman payı, sıfırı kesen periyotların payından ayrı bir ölçüdür. Pozitif yarım periyodun toplam süresinin \%25,2'sinde akım $-\SI{0.05}{\ampere}$'in altındadır, yani ters yöndedir. 400~\si{\micro\second} kesitte akım her periyotta yaklaşık $-\SI{2.6}{\ampere}$'e inmektedir. S2'de ters akım aralığı yoktur. Akım sıfıra indiğinde bir sonraki darbeye kadar sıfırda kalmaktadır. Pozitif yarım periyodun \%17'sinde akım sıfırdır. Akım kaydı, süreksiz iletim açıklamasının ve susturmanın ters akım yolunu kestiğinin doğrudan görsel kanıtıdır.
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.96\textwidth]{model_dogrulama/s1_s2_kalibre_l1.pdf}
-  \caption[Kalibre benzetimde S1 ve S2 $L_1$ akımı]{Kalibre benzetimde $L_1$ akımı: (a) S1 ve (c) S2 için son tam şebeke periyodunda $i_{L1}$ ve şebeke akımı $i_g$, (b) S1 ve (d) S2 için pozitif yarım periyottan \SI{400}{\micro\second} kesit. S1'de akım her anahtarlama periyodunda ters yöne geçmekte, S2'de sıfırda kalmaktadır.}
+  \caption[S1 ve S2 benzetiminde $L_1$ akımı]{S1 ve S2 benzetiminde $L_1$ akımı: (a) S1 ve (c) S2 için son tam şebeke periyodunda $i_{L1}$ ve şebeke akımı $i_g$, (b) S1 ve (d) S2 için pozitif yarım periyottan \SI{400}{\micro\second} kesit. S1'de akım her anahtarlama periyodunda ters yöne geçmekte, S2'de sıfırda kalmaktadır.}
   \label{fig:s1-s2-kalibre-l1}
 \end{figure}
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.96\textwidth]{model_dogrulama/s1_s2_kalibre_dalga.pdf}
-  \caption[Kalibre benzetimde S1 ve S2 kutup gerilimi, şebeke gerilimi ve şebeke akımı]{Kalibre benzetimde son tam şebeke periyodu (\num{80}--\SI{100}{\milli\second}): (a) S1 ve (b) S2 için kutup gerilimi $v_{\mathrm{inv}}$, C noktasındaki gerilim $v_g$ ve şebeke akımı $i_g$. (c) Pozitif yarım periyottan \SI{400}{\micro\second} kesitte iki senaryonun kutup gerilimi. S2'de akım söndüğünde kutup gerilimi ara bir seviyeye geçmektedir.}
+  \caption[S1 ve S2 benzetiminde kutup gerilimi, şebeke gerilimi ve şebeke akımı]{S1 ve S2 benzetiminde son tam şebeke periyodu (\num{80}--\SI{100}{\milli\second}): (a) S1 ve (b) S2 için kutup gerilimi $v_{\mathrm{inv}}$, C noktasındaki gerilim $v_g$ ve şebeke akımı $i_g$. (c) Pozitif yarım periyottan \SI{400}{\micro\second} kesitte iki senaryonun kutup gerilimi. S2'de akım söndüğünde kutup gerilimi ara bir seviyeye geçmektedir.}
   \label{fig:s1-s2-kalibre-dalga}
 \end{figure}
 
-\section{Bölüm Sonucu}
+\section{Değerlendirme}
 
 T-tipi faz kolunun düşük güçte senkron buck benzeri davranışı, nötr kol üzerinden ters enerji dolaşımının fiziksel kaynağını açıklamaktadır. Deney çalışma noktasının tepe akımı sınır akımının altında kaldığından klasik anahtarlamada $L_1$ akımı, temel periyodun büyük bölümünde her anahtarlama periyodunda sıfırı kesmekte ve ters yöne geçmektedir. Önerilen anahtarlama, ters akımı sürdüren nötr komutunu düşük güç bölgesinde bastırarak kayıp yolunu azaltmaktadır. Yöntemin bedeli ise süreksiz iletim ve üçüncü harmonik cezasıdır. Benzetim modelindeki kapı mantığı, iki yöntem arasındaki tek farkın $O$ durumundaki karşı nötr anahtar komutu olduğunu doğrulamıştır.
 

@@ -380,7 +380,7 @@ uygulandığında ileri besleme komutu $u_{\mathrm{ff}}=(K_{1x}+3K_{3x}/4)\sin(\
     \midrule
     S1 & 0 & 0 & Klasik, Eşitlik~\eqref{eq:kapi-mantigi} & Açık \\
     S2 & 0 & 0 & Susturma, Eşitlik~\eqref{eq:notr-susturma-kurali} & Açık \\
-    S3 & 0 & $K_{33}\neq0$ (kalibre) & Susturma & Açık \\
+    S3 & 0 & $K_{33}\neq0$ (kalibre edilmiş) & Susturma & Açık \\
     S4 & P, PI ya da PIR & $K_{34}=K_{33}$ & Susturma & Kapalı ($i_{L1}$) \\
     \bottomrule
   \end{tabular}
@@ -457,7 +457,7 @@ Donanımın PWM zamanlayıcı yazmaçlarından periyot ve ölü zaman değerleri
 
 \section{Elektriksel ve Denetim Parametreleri}
 
-Benzetim modellerinin ve deney düzeneğinin elektriksel, yarı iletken, modülasyon, denetim ve değerlendirme parametreleri Tablo~\ref{tab:sistem-parametreleri} altında tek yerde toplanmıştır. Tezin diğer bölümleri parametre değerini yinelememekte, tabloya başvurmaktadır. Kaynak sütunundaki kısaltmalar tablo notunda açıklanmıştır. Tür sütunu her değerin dayanağını altı sınıftan birine bağlamaktadır. \emph{Ölçülmüş} değer, deney düzeneğinin güç analizörü ya da ölçüm ekranından okunan çalışma noktasıdır. \emph{Veri sayfası} değeri, üretici veri sayfasından okunan ya da veri sayfası eğrisine oturtulan cihaz büyüklüğüdür. \emph{Tasarım} değeri, parametre dosyasında ya da donanım tasarım belgelerinde tanımlanan büyüklüktür. \emph{Kalibre} değer, benzetim modelini deney özetinin aktif ve reaktif gücüne oturtmak için ayarlanmıştır. \emph{Benzetim seçimi} yalnız benzetime ait modelleme ya da denetim kararını göstermektedir. \emph{Tez tanımı} değeri, tez tanımından türetilen ve benzetim modelinin doğrulanmasında belirlenen büyüklüktür (Tablo~\ref{tab:model-duzeltme-ozeti}).
+Benzetim modellerinin ve deney düzeneğinin elektriksel, yarı iletken, modülasyon, denetim ve değerlendirme parametreleri Tablo~\ref{tab:sistem-parametreleri} altında tek yerde toplanmıştır. Tezin diğer bölümleri parametre değerini yinelememekte, tabloya başvurmaktadır. Kaynak sütunundaki kısaltmalar tablo notunda açıklanmıştır. Tür sütunu her değerin dayanağını altı sınıftan birine bağlamaktadır. \emph{Ölçülmüş} değer, deney düzeneğinin güç analizörü ya da ölçüm ekranından okunan çalışma noktasıdır. \emph{Veri sayfası} değeri, üretici veri sayfasından okunan ya da veri sayfası eğrisine oturtulan cihaz büyüklüğüdür. \emph{Tasarım} değeri, parametre dosyasında ya da donanım tasarım belgelerinde tanımlanan büyüklüktür. \emph{Kalibre edilmiş} değer, benzetim modelini deney özetinin aktif ve reaktif gücüne oturtmak için ayarlanmıştır. \emph{Benzetim seçimi} yalnız benzetime ait modelleme ya da denetim kararını göstermektedir. \emph{Tez tanımı} değeri, tez tanımından türetilen ve benzetim modelinin doğrulanmasında belirlenen büyüklüktür (Tablo~\ref{tab:model-duzeltme-ozeti}).
 
 \begingroup
 \setlength{\tabcolsep}{4pt}
@@ -534,10 +534,10 @@ Anahtarlama frekansı $f_s$ & \num{10} & \si{\kilo\hertz} & PD; PWM zamanlayıc�
 Ölü zaman $t_d$ & \num{1} & \si{\micro\second} & PD (DTR $=$ ALTDTR $=120$); modelde her kapı komutunun yükselen kenarında gecikme & Tasarım \\
 Taşıyıcı ve görev oranı & Testere dişi 0--1; yarım periyot ayrımlı tek kutuplu görev oranı $d=|u|$; $V_{\mathrm{dc}}$ normalizasyonu yok & -- & BM, PWM alt sistemi & Benzetim seçimi \\
 Modülasyon referansı örnekleme adımı & \num{1} & \si{\micro\second} & PD & Benzetim seçimi \\
-Temel modülasyon genliği $K_1$ & S1 \num{0.7865}; S2 \num{0.76796}; S3 \num{0.44343} & -- & KL & Kalibre \\
-Sin\textsuperscript{3} kazancı $K_3$ & S3 \num{0.38431}; S1--S2 \num{0} & -- & KL; $K_3/K_1$ oranı sabit & Kalibre \\
-Referans fazı $\varphi$ & S1 \num{-0.3661}; S2 \num{0.1121}; S3 \num{0.6575} & \si{\degree} & KL & Kalibre \\
-S4 ileri besleme $K_1$, $K_3$, $\varphi$ & S3 kalibre değerleri & -- & KL & Kalibre \\
+Temel modülasyon genliği $K_1$ & S1 \num{0.7865}; S2 \num{0.76796}; S3 \num{0.44343} & -- & KL & Kalibre edilmiş \\
+Sin\textsuperscript{3} kazancı $K_3$ & S3 \num{0.38431}; S1--S2 \num{0} & -- & KL; $K_3/K_1$ oranı sabit & Kalibre edilmiş \\
+Referans fazı $\varphi$ & S1 \num{-0.3661}; S2 \num{0.1121}; S3 \num{0.6575} & \si{\degree} & KL & Kalibre edilmiş \\
+S4 ileri besleme $K_1$, $K_3$, $\varphi$ & Kalibre edilmiş S3 değerleri & -- & KL & Kalibre edilmiş \\
 Sin\textsuperscript{3} teriminin biçimi & $K_{3x}\sin^3\theta$ (birim genlikli referansın küpü, pozitif işaretli) & -- & BM, modülasyon toplamı & Tasarım \\
 Susturma ve Sin\textsuperscript{3} etkinleşme ölçütü & Senaryo boyunca sürekli etkin & -- & BM & Benzetim seçimi \\
 \midrule
@@ -573,7 +573,7 @@ $L_2$ değerinin modelde iki etkisi vardır. İdeal LCL rezonansı, Eşitlik~\eq
 
 Önerilen anahtarlama ve kompanzasyon yöntemleri aynı model, çalışma noktası ve ölçüm tanımları altında karşılaştırılmıştır. Temel karşılaştırma kolları klasik tamamlayıcı anahtarlama (S1), nötr anahtar susturma yöntemi (S2) ve Sin\textsuperscript{3} kompanzasyonlu nötr anahtar susturma yöntemidir (S3). Deneylerde her kol için ayrı bir DA bara ve şebeke gerilimi ölçülmüştür. Her senaryonun benzetimi, ölçülen çalışma noktasında yapılmıştır. Dördüncü kol (S4), S3'e $L_1$ akım geri beslemesi eklenerek kurulan kapalı çevrim benzetimidir.
 
-Tablo~\ref{tab:dogrulama-matrisi}, üç akım bölgesinde (düşük, orta ve anma) karşılaştırılan yöntemleri, her bölgenin kanıt türünü ve sonucun raporlandığı bölümü birleştirmektedir. Deneyler düşük güç noktasında yürütülmüştür. Orta ve anma akımı bölgesi ile geçici rejim, kalibre benzetim modelinden türetilen S4 benzetimiyle incelenmiştir. Benzetim ve deney sonuçları ayrı raporlanmaktadır. Kalibre benzetim, deneyin kalibre edilmeyen büyüklüklerini hangi hatayla yeniden ürettiği üzerinden değerlendirilmektedir.
+Tablo~\ref{tab:dogrulama-matrisi}, üç akım bölgesinde (düşük, orta ve anma) karşılaştırılan yöntemleri, her bölgenin kanıt türünü ve sonucun raporlandığı bölümü birleştirmektedir. Deneyler düşük güç noktasında yürütülmüştür. Orta ve anma akımı bölgesi ile geçici rejim, deney özetine göre kalibre edilmiş benzetim modelinden türetilen S4 benzetimiyle incelenmiştir. Benzetim ve deney sonuçları ayrı raporlanmaktadır. Kalibre edilmiş model, deneyin kalibre edilmeyen büyüklüklerini hangi hatayla yeniden ürettiği üzerinden değerlendirilmektedir.
 
 \begin{table}[H]
   \centering
@@ -584,7 +584,7 @@ Tablo~\ref{tab:dogrulama-matrisi}, üç akım bölgesinde (düşük, orta ve anm
     \toprule
     Çalışma bölgesi & Yöntemler & Kanıt türü ve ölçütler & Bölüm \\
     \midrule
-    Düşük güç (\SI{2.3}{\ampere}) & S1, S2, S3 & Deney özet tablosu ve ekranları ile kalibre benzetim. Verim, THD, $P_{\mathrm{dc}}$, $P_{\mathrm{ac}}$, $|Q_{g,1}|$, cos$\varphi_1$ & Bölüm~\ref{chap:anahtarlama}, Bölüm~\ref{chap:deney} \\
+    Düşük güç (\SI{2.3}{\ampere}) & S1, S2, S3 & Deney özet tablosu ve ekranları ile kalibre edilmiş benzetim. Verim, THD, $P_{\mathrm{dc}}$, $P_{\mathrm{ac}}$, $|Q_{g,1}|$, cos$\varphi_1$ & Bölüm~\ref{chap:anahtarlama}, Bölüm~\ref{chap:deney} \\
     Düşük güç, kapalı çevrim & S4: P, PI & Benzetim. Akım izleme, THD, doyum & Alt Bölüm~\ref{sec:s4-kapali-cevrim} \\
     Orta akım (\SI{10}{\ampere}) & S4: P, PI, PIR & Benzetim. Akım izleme, üçüncü harmonik, THD & Alt Bölüm~\ref{sec:s4-kapali-cevrim} \\
     Anma akımı (\SI{25}{\ampere}) & S4: P, PI, PIR & Benzetim. Akım izleme, THD, doyum, verim & Alt Bölüm~\ref{sec:s4-kapali-cevrim} \\
@@ -672,9 +672,9 @@ Laboratuvar çalışma noktası yaklaşık \SI{2.3}{\ampere} RMS, yani yaklaşı
 
 \paragraph{Süreksiz iletim.} Susturmalı çalışmada süreksiz iletim, köprüyü modülasyon komutuyla belirlenen sert bir gerilim kaynağı yerine yumuşak bir kaynak gibi davrandırmaktadır. Etkinin model sonuçlarına yansıması, kalibrasyon benzetimlerinde ölçülen köprü iç empedansıyla gösterilmiştir (Alt Bölüm~\ref{sec:kalibrasyon}).
 
-Benzetimde $L_1$ doğrusal endüktans olarak modellenmiştir. Kalibre S1 ve S2 modellerinin THD farkı ile S2 şebeke akımı farkı (Alt Bölüm~\ref{sec:kalibrasyon}), ikinci mertebe düşük akım etkileriyle ilişkilendirilebilir. İkinci mertebe etkiler arasında IGBT çıkış kapasitesi ve sürücü yayılım gecikmeleri, en küçük darbe sınırı, parazitik endüktanslar ve şebeke gerilimindeki harmonikler yer almaktadır.
+Benzetimde $L_1$ doğrusal endüktans olarak modellenmiştir. Kalibre edilmiş S1 ve S2 modellerinin THD farkı ile S2 şebeke akımı farkı (Alt Bölüm~\ref{sec:kalibrasyon}), ikinci mertebe düşük akım etkileriyle ilişkilendirilebilir. İkinci mertebe etkiler arasında IGBT çıkış kapasitesi ve sürücü yayılım gecikmeleri, en küçük darbe sınırı, parazitik endüktanslar ve şebeke gerilimindeki harmonikler yer almaktadır.
 
-\section{Bölüm Sonucu}
+\section{Değerlendirme}
 
 Sistem mimarisi güç, ölçüm ve denetim yollarını ayıracak biçimde tanımlanmıştır. Prototipin üç fazlı yapısı ile benzetim ve deneyin tek faz kolu kapsamı da ayrılmıştır. T-tipi faz kolunun üç gerilim seviyesi ve dört temel akım yolu ortak gösterim altında toplanmıştır. Düşük güç bölgesinde senkron-buck eşdeğeri üzerinden sınır akımı ve çalışma kipleri açıklanmış, LCL filtre için durum denklemleri ve ideal aktarım fonksiyonu kurulmuştur.
 
