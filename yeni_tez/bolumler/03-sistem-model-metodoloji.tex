@@ -254,7 +254,7 @@ Diyotlu alçaltıcı dönüştürücüde akım sıfıra ulaştığında serbest 
 Ortalama akım ile akım dalgalanması arasındaki ilişki üç çalışma bölgesi tanımlamaktadır \citep{Mohan2003,Erickson2001,Holmes2003}:
 
 \begin{enumerate}
-  \item \textbf{Sürekli iletim bölgesi:} $|\bar i_L|>\Delta i_L/2$ koşulunda akım bir anahtarlama periyodu içinde sıfıra ulaşmamaktadır. Tamamlayıcı sürme, nötr kolu iki yönlü iletken yaparak akımın sürekliliğini korumaktadır.
+  \item \textbf{Sürekli iletim bölgesi:} $|\bar i_L|>\Delta i_L/2$ koşulunda akım bir anahtarlama periyodu içinde sıfıra ulaşmamaktadır. Akım işaret değiştirmediğinden nötr koldaki tamamlayıcı kapı komutu iletim yolunu değiştirmemekte, klasik ve susturmalı anahtarlama aynı davranmaktadır.
   \item \textbf{Sınır iletim bölgesi:} $|\bar i_L|\simeq\Delta i_L/2$ noktasında akım periyot sonunda sıfıra yaklaşmaktadır. Parametre belirsizlikleri ve gecikmeler nedeniyle yöntem geçişi için histerezis gereklidir.
   \item \textbf{Zorlanmış sürekli iletim bölgesi:} $|\bar i_L|<\Delta i_L/2$ olmasına rağmen senkron anahtarlama sürdürülürse akım sıfırın ötesine geçmektedir. Ters akım kaybı belirginleşirken akımın sürekliliği harmonik performansı destekleyebilir.
 \end{enumerate}
@@ -643,7 +643,7 @@ Laboratuvar çalışma noktası yaklaşık \SI{2.3}{\ampere} RMS, yani yaklaşı
 
 \paragraph{Akım dalgalanması ve akım genliği.} Eşitlik~\eqref{eq:buck-akim-dalgalanmasi}'na göre pozitif yarım periyotta $L_1$ akımının tepe--tepe dalgalanması $v_g=V_h/2$ anında en büyük değerine ulaşmaktadır: $\Delta i_{L,\max}=V_hT_s/(4L_1)$. $V_h=V_{\mathrm{dc}}/2\approx\SI{214}{\volt}$, $T_s=\SI{100}{\micro\second}$ ve $L_1=\SI{600}{\micro\henry}$ için yaklaşık \SI{9}{\ampere} tepe--tepe dalgalanma elde edilmektedir. Eşitlik~\eqref{eq:ters-akim-esigi} gereği $|\bar i_L|\lesssim\SI{4.5}{\ampere}$ olan her bölgede akım bir anahtarlama periyodu içinde sıfıra ulaşmaktadır. Laboratuvar çalışma noktasının tepe akımı yaklaşık \SI{3.3}{\ampere}'dir. Dolayısıyla klasik anahtarlamada akım, temel periyodun büyük bölümünde her anahtarlama periyodunda işaret değiştirmektedir. Nötr kol ters akımı, sıfır geçişleri çevresiyle sınırlı kalmayan, düşük güç çalışmasının genel bir durumudur. Aynı ölçüt S4'te orta akım davranışını da açıklamaktadır. \SI{25}{\ampere}'de süreksiz iletim yalnız sıfır geçişleri çevresinde oluşurken \SI{10}{\ampere}'de temel periyodun büyük bölümünü kapsamaktadır (Alt Bölüm~\ref{sec:s4-kapali-cevrim}).
 
-\paragraph{Süreksiz iletim.} Susturmalı çalışmada süreksiz iletim, köprüyü modülasyon komutuyla belirlenen sert bir gerilim kaynağı yerine yumuşak bir kaynak gibi davrandırmaktadır.
+\paragraph{Süreksiz iletim.} Susturmalı çalışmada süreksiz iletim, köprüyü modülasyon komutuyla belirlenen sert bir gerilim kaynağı yerine yumuşak bir kaynak gibi davrandırmaktadır. Etkinin model sonuçlarına yansıması, kalibrasyon benzetimlerinde ölçülen köprü iç empedansıyla gösterilmiştir (Alt Bölüm~\ref{sec:kalibrasyon}).
 
 Benzetimde $L_1$ doğrusal endüktans olarak modellenmiştir. Kalibre S1 ve S2 modellerinin THD farkı ile S2 şebeke akımı farkı (Alt Bölüm~\ref{sec:kalibrasyon}), ikinci mertebe düşük akım etkileriyle ilişkilendirilebilir. İkinci mertebe etkiler arasında IGBT çıkış kapasitesi ve sürücü yayılım gecikmeleri, en küçük darbe sınırı, parazitik endüktanslar ve şebeke gerilimindeki harmonikler yer almaktadır.
 
