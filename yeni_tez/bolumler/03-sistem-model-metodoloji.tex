@@ -430,7 +430,7 @@ Eşitlik~\eqref{eq:s4-denetim-yapisi} içinde $\theta$ şebekeye kilitli boyutsu
   \label{fig:denetim-modulasyon-blok}
 \end{figure}
 
-Sin\textsuperscript{3} ileri besleme terimi $u_{\mathrm{ff}}$ hatadan üretilmemekte ve geri besleme yolunda bulunmamaktadır. Dolayısıyla terim, doğrusal modelde $1+L(s)=0$ karakteristik denklemini (Eşitlik~\eqref{eq:sin3-acik-cevrim}) değiştirmemektedir (Alt Bölüm~\ref{sec:kararlilik-bode}). Sin\textsuperscript{3} teriminin başarısı yalnızca düşük güç THD değeriyle değil, akım izleme hatası, kararlılık marjı, denetim eforu, doyum süresi ve anma akımındaki etkisiyle birlikte değerlendirilmektedir.
+Sin\textsuperscript{3} ileri besleme terimi $u_{\mathrm{ff}}$ hatadan üretilmemekte ve geri besleme yolunda bulunmamaktadır. Dolayısıyla terim, doğrusal modelde $1+L(s)=0$ karakteristik denklemini (Eşitlik~\eqref{eq:sin3-acik-cevrim}) değiştirmemektedir (Alt Bölüm~\ref{sec:kararlilik-bode}). Sin\textsuperscript{3} teriminin etkisi, düşük güç THD değerinin yanında akım izleme hatası, kararlılık marjı, doyum ve anma akımındaki üçüncü harmonik katkısı üzerinden incelenmiştir.
 
 \subsection{Benzetim modelinde denetim ve kapı mantığı}
 \label{sec:denetim-modelden}
@@ -504,7 +504,7 @@ $L_2$ seri direnci & \num{0.01} & \si{\ohm} & PD & Tasarım \\
 Ortak kip bobinleri (iki kademe) & Sargı \SI{400}{\micro\henry}; karşılıklı \SI{398}{\micro\henry} ($k=\num{0.995}$); sargı direnci \SI{5}{\milli\ohm}; çekirdek kaybı \SI{100}{\kilo\ohm}; diferansiyel eşdeğer kademe başına \SI{4}{\micro\henry} & -- & PD; ŞM ilk kademe \SI{460}{\micro\henry} & Tasarım \\
 X kapasitörü ağı (tek faz eşdeğeri) & \SI{0.5}{\micro\farad}, \SI{0.2}{\ohm} (iki seri \SI{1}{\micro\farad}/\SI{0.1}{\ohm} kol) & -- & PD & Tez tanımı \\
 DA bara kapasitörleri $C_{\mathrm{dc}+}=C_{\mathrm{dc}-}$ & \num{470} & \si{\micro\farad} & PD; ŞM \SI{470}{\micro\farad}/\SI{450}{\volt} & Tasarım (S1--S3, deney donanımı) \\
-DA bara kapasitörleri, S4 orta ve anma akımı benzetimleri & \num{5600} & \si{\micro\farad} & Orta nokta salınımını \SI{25}{\ampere} akımda $V_{\mathrm{dc}}/2$ değerinin \%5'i altında tutan boyut & Benzetim seçimi \\
+DA bara kapasitörleri, S4 benzetimleri & \num{5600} & \si{\micro\farad} & Orta nokta salınımını \SI{25}{\ampere} akımda $V_{\mathrm{dc}}/2$ değerinin \%5'i altında tutan boyut & Benzetim seçimi \\
 DA bara kapasitörü eşdeğer seri direnci & \num{0.10} & \si{\ohm} & PD & Tasarım \\
 Bara dengeleme dirençleri & \num{220} & \si{\kilo\ohm} & PD & Tasarım \\
 DA kaynak bağlantısı ve çıkış rölesi kontak direnci & \num{1} & \si{\milli\ohm} & PD & Tasarım \\
@@ -529,10 +529,10 @@ Anahtarlama frekansı $f_s$ & \num{10} & \si{\kilo\hertz} & PD; PWM zamanlayıc�
 Ölü zaman $t_d$ & \num{1} & \si{\micro\second} & PD (DTR $=$ ALTDTR $=120$); modelde her kapı komutunun yükselen kenarında gecikme & Tasarım \\
 Taşıyıcı ve görev oranı & Testere dişi 0--1; yarım periyot ayrımlı tek kutuplu görev oranı $d=|u|$; $V_{\mathrm{dc}}$ normalizasyonu yok & -- & BM, PWM alt sistemi & Benzetim seçimi \\
 Modülasyon referansı örnekleme adımı & \num{1} & \si{\micro\second} & PD & Benzetim seçimi \\
-Temel modülasyon genliği $K_1$ & S1 \num{0.7865}; S2 \num{0.76796}; S3 \num{0.44343} & -- & KL & Kalibre edilmiş \\
-Sin\textsuperscript{3} kazancı $K_3$ & S3 \num{0.38431}; S1--S2 \num{0} & -- & KL; $K_3/K_1$ oranı sabit & Kalibre edilmiş \\
-Referans fazı $\varphi$ & S1 \num{-0.3661}; S2 \num{0.1121}; S3 \num{0.6575} & \si{\degree} & KL & Kalibre edilmiş \\
-S4 ileri besleme $K_1$, $K_3$, $\varphi$ & Kalibre edilmiş S3 değerleri & -- & KL & Kalibre edilmiş \\
+Temel modülasyon genliği $K_{1x}$ & S1 \num{0.7865}; S2 \num{0.76796}; S3 \num{0.44343} & -- & KL & Kalibre edilmiş \\
+Sin\textsuperscript{3} kazancı $K_{3x}$ & S3 \num{0.38431}; S1--S2 \num{0} & -- & KL, $K_{33}/K_{13}$ oranı sabit & Kalibre edilmiş \\
+Referans fazı $\varphi_x$ & S1 \num{-0.3661}; S2 \num{0.1121}; S3 \num{0.6575} & \si{\degree} & KL & Kalibre edilmiş \\
+S4 ileri besleme $K_{14}$, $K_{34}$, $\varphi_4$ & Kalibre edilmiş S3 değerleri & -- & KL & Kalibre edilmiş \\
 Sin\textsuperscript{3} teriminin biçimi & $K_{3x}\sin^3\theta$ (birim genlikli referansın küpü, pozitif işaretli) & -- & BM, modülasyon toplamı & Tasarım \\
 Susturma ve Sin\textsuperscript{3} etkinleşme ölçütü & Senaryo boyunca sürekli etkin & -- & BM & Benzetim seçimi \\
 \midrule
@@ -584,7 +584,7 @@ Tablo~\ref{tab:dogrulama-matrisi}, üç akım bölgesinde (düşük, orta ve anm
     Orta akım (\SI{10}{\ampere}) & S4: P, PI, PIR & Benzetim. Akım izleme, üçüncü harmonik, THD & Alt Bölüm~\ref{sec:s4-kapali-cevrim} \\
     Anma akımı (\SI{25}{\ampere}) & S4: P, PI, PIR & Benzetim. Akım izleme, THD, doyum, verim & Alt Bölüm~\ref{sec:s4-kapali-cevrim} \\
     Geçici rejim & S4: PI, \num{10}--\SI{25}{\ampere} basamağı & Benzetim. Aşım, yerleşme, geçişte doyum & Alt Bölüm~\ref{sec:s4-kapali-cevrim} \\
-    Kararlılık & S4: P, PI, PIR; $K_3$ açık ve kapalı & Ortalama model ve anahtarlamalı model doğrusallaştırması. $L$, $S$, $T$, marjlar, kutuplar & Alt Bölüm~\ref{sec:kararlilik-bode} \\
+    Kararlılık & S4: P, PI ve PIR, $K_{34}$ açık ve kapalı & Ortalama modelin doğrusallaştırılması ve anahtarlamalı modelde enjeksiyon ölçümü. $L$, $S$, $T$, marjlar, kutuplar & Alt Bölüm~\ref{sec:kararlilik-bode} \\
     \bottomrule
   \end{tabularx}
 \end{table}
