@@ -58,7 +58,7 @@ Mekanizma, S2 çalışma noktasında Şekil~\ref{fig:harmonik-mekanizma} üzerin
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.94\textwidth]{sin3/harmonik_olusum_mekanizmasi.pdf}
+  \includegraphics[width=0.94\textwidth]{sekiller/b5/harmonik_olusum_mekanizmasi.pdf}
   \caption[Susturmalı faz kolunda üçüncü harmonik oluşum mekanizması]{Susturmalı faz kolunda üçüncü harmonik oluşum mekanizması, S2 çalışma noktası, pozitif alternans. Paneller: (a) sinüzoidal görev oranı ve süreksiz iletim sınırı, (b) iletimde endüktör gerilimi, (c) anahtarlama periyodu tepe akımı, (d) anahtarlama periyodu ortalama akımı, (e) anlık endüktör akımı. Analitik eğriler Eşitlik~\eqref{eq:dcm-tepe-akimi}--\eqref{eq:dcm-ccm-parcali-model} ile, gri eğriler S2 benzetim kaydından (son tam şebeke periyodu) elde edilmiştir.}
   \label{fig:harmonik-mekanizma}
 \end{figure}
@@ -150,8 +150,8 @@ olarak bulunmuştur. Eşitlik~\eqref{eq:sin3-esdeger-katsayilar} ile harmonik e�
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth]{../tez-matlab-simulink/results/sin3_rescan_20260901/sin3_katsayi_taramasi_20260901_k.pdf}
-  \caption{$(k_1,k_3)$ katsayı düzleminde üçüncü harmonik oranı (sol) ve en iyi nokta ile saf sinüs görev oranının ortalama akım zarfı karşılaştırması (sağ). Sol panelde beyaz noktalar \SI{2.0}{}--\SI{2.6}{\ampere} RMS bölgesini, yıldız en iyi noktayı göstermektedir. Eğriler parçalı DCM/CCM analitik modelinden elde edilmiştir.}
+  \includegraphics[width=\textwidth]{sekiller/b5/sin3_katsayi_taramasi.pdf}
+  \caption{$(k_1,k_3)$ katsayı düzleminde üçüncü harmonik oranı (sol) ve en iyi nokta ile saf sinüs görev oranının ortalama akım zarfı karşılaştırması (sağ). Sol panelde beyaz noktalar \SI{2.0}{}--\SI{2.6}{\ampere} RMS bölgesini, beyaz sürekli çizgi \%5 eş-oran eğrisini, yıldız en iyi noktayı göstermektedir. Eğriler parçalı DCM/CCM analitik modelinden elde edilmiştir.}
   \label{fig:sin3-yeniden-tarama}
 \end{figure}
 
@@ -206,7 +206,7 @@ Denetleyicinin devre dışı bırakılıp yalnız ileri besleme katsayısının 
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.96\textwidth]{model_dogrulama/s3_kalibre_l1.pdf}
+  \includegraphics[width=0.96\textwidth]{sekiller/b5/s3_l1_akimi.pdf}
   \caption[S3 benzetiminde $L_1$ akımı]{S3 benzetiminde (susturma + Sin\textsuperscript{3}): (a) son tam şebeke periyodunda $i_{L1}$, şebeke akımı $i_g$ ve karşılaştırma için S2 şebeke akımı. (b) Pozitif yarım periyottan \SI{400}{\micro\second} kesitte $i_{L1}$.}
   \label{fig:s3-kalibre-l1}
 \end{figure}
@@ -278,14 +278,14 @@ Anma akımında PI ve PIR denetleyicileri referansı doyumsuz izlemektedir. PIR,
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth,height=0.62\textheight,keepaspectratio]{s4/s4_akim_izleme_25A_KC.pdf}
+  \includegraphics[width=\textwidth,height=0.62\textheight,keepaspectratio]{sekiller/b5/s4_akim_izleme_25A.pdf}
   \caption{S4 benzetiminde \SI{25}{\ampere} anma akımında P (üst), PI (orta) ve PIR (alt) denetleyicileriyle son iki şebeke periyodu. Sol eksende $L_1$ akımı (anlık ve anahtarlama periyodu ortalaması), akım referansı ile çıkış akımı, sağ eksende şebeke nötrüne göre C noktası gerilimi $v_{ac}$ yer almaktadır (eksen sıfırları hizalı). Üç denetleyicide de $v_{ac}$'nin periyot ortalaması \SI{0.03}{\volt} altındadır.}
   \label{fig:s4-akim-izleme-25a}
 \end{figure}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth]{s4/s4_tarama_ozet_KC.pdf}
+  \includegraphics[width=\textwidth]{sekiller/b5/s4_tarama_ozet.pdf}
   \caption{S4 benzetiminde verim, şebeke akımı THD'si ($h\leq50$) ve temel bileşen genlik hatasının akım referansına göre değişimi (P, PI ve PIR denetleyicileri).}
   \label{fig:s4-tarama-ozet}
 \end{figure}
@@ -294,7 +294,7 @@ Anma akımında PI ve PIR denetleyicileri referansı doyumsuz izlemektedir. PIR,
 
 \subsection{Basamak yanıtı}
 
-PI denetleyiciyle akım referansı $t=\SI{55}{\milli\second}$ anında \SI{10}{\ampere}'den \SI{25}{\ampere}'e basamak olarak değiştirilmiştir. Tablo~\ref{tab:s4-basamak} sonuçları vermektedir. Aşım, $L_1$ akım zarfının basamak sonrasındaki en büyük tepesinin son kararlı zarfa oranı olarak tanımlanmıştır. Kararlı durumda bile $L_1$ akımının tepesi, Sin\textsuperscript{3} kaynaklı üçüncü harmonik nedeniyle referans tepesinden \%7,3 yüksektir. Zarfa göre tanım, kararlı durumdaki dalga biçiminin aşım olarak sayılmasını önlemektedir. Basamak sonrası kararlı değer, doğrudan \SI{25}{\ampere}'de başlatılan PI benzetimiyle aynıdır (\SI{24.48}{\ampere} ve \SI{24.47}{\ampere}). Dolayısıyla çözüm başlangıç koşulundan bağımsızdır. Basamak süresince geçici bileşenin sönümü Şekil~\ref{fig:s4-basamak} üzerinde, $K_{34}$ açık ve kapalı karşılaştırması ise Alt Bölüm~\ref{sec:kararlilik-bode} içinde verilmektedir.
+PI denetleyiciyle akım referansı $t=\SI{55}{\milli\second}$ anında \SI{10}{\ampere}'den \SI{25}{\ampere}'e basamak olarak değiştirilmiştir. Tablo~\ref{tab:s4-basamak} sonuçları vermektedir. Aşım, $L_1$ akım zarfının basamak sonrasındaki en büyük tepesinin son kararlı zarfa oranı olarak tanımlanmıştır. Kararlı durumda bile $L_1$ akımının tepesi, Sin\textsuperscript{3} kaynaklı üçüncü harmonik nedeniyle referans tepesinden \%7,3 yüksektir. Zarfa göre tanım, kararlı durumdaki dalga biçiminin aşım olarak sayılmasını önlemektedir. Basamak sonrası kararlı değer, doğrudan \SI{25}{\ampere}'de başlatılan PI benzetimiyle aynıdır (\SI{24.48}{\ampere} ve \SI{24.47}{\ampere}). Dolayısıyla çözüm başlangıç koşulundan bağımsızdır. Basamağın tamamı Şekil~\ref{fig:s4-basamak} üzerinde, geçici bileşenin sönümü ile $K_{34}$ açık ve kapalı karşılaştırması ise Şekil~\ref{fig:kararlilik-basamak} üzerinde (Alt Bölüm~\ref{sec:kararlilik-bode}) verilmektedir.
 
 \begin{table}[H]
   \centering
@@ -318,7 +318,7 @@ PI denetleyiciyle akım referansı $t=\SI{55}{\milli\second}$ anında \SI{10}{\a
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth,height=0.5\textheight,keepaspectratio]{s4/s4_basamak_PI_10_25A_KC.pdf}
+  \includegraphics[width=\textwidth,height=0.5\textheight,keepaspectratio]{sekiller/b5/s4_basamak_PI_10_25A.pdf}
   \caption{S4 benzetiminde PI denetleyiciyle \SI{10}{\ampere}$\rightarrow$\SI{25}{\ampere} akım referansı basamağı: $L_1$ akımı, anahtarlama periyodu ortalaması ve modülasyon komutu.}
   \label{fig:s4-basamak}
 \end{figure}
@@ -439,7 +439,7 @@ Kararlılık sonucu, ortalama Simulink/Simscape modelinin Simulink Control Desig
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth,height=0.45\textheight,keepaspectratio]{../tez-matlab-simulink/runs/2026-10-28_kararlilik/frekans/kararlilik_nyquist_A_B.pdf}
+  \includegraphics[width=\textwidth,height=0.45\textheight,keepaspectratio]{sekiller/b5/kararlilik_nyquist_A_B.pdf}
   \caption{S4 akım çevriminin Nyquist eğrileri ve gecikme duyarlılığı: analog eşdeğerde (A) $-1$ noktası eğrinin dışında kalmaktadır. Bir periyot hesaplama gecikmeli durumda (B) ek gecikme, rezonans tepesini negatif gerçel eksende $-1$ noktasının soluna taşımaktadır. Şekil $-1$ noktası çevresini büyüterek göstermektedir. (B) eğrisinin negatif gerçel ekseni kestiği nokta, Tablo~\ref{tab:kararlilik-marjlar} içindeki GM değerine karşılık gelmekte ve çizim aralığının solunda yer almaktadır.}
   \label{fig:kararlilik-nyquist}
 \end{figure}
@@ -466,7 +466,7 @@ Kararlılık sonucu, ortalama Simulink/Simscape modelinin Simulink Control Desig
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth,height=0.42\textheight,keepaspectratio]{../tez-matlab-simulink/runs/2026-10-28_kararlilik/frekans/kararlilik_Lg_taramasi.pdf}
+  \includegraphics[width=\textwidth,height=0.42\textheight,keepaspectratio]{sekiller/b5/kararlilik_Lg_taramasi.pdf}
   \caption{Ek şebeke endüktansı $L_g=0$--\SI{5}{\milli\henry} için S4 PI çevriminin $L(j\omega)$ eğrileri, gerçekleme (A).}
   \label{fig:kararlilik-lg}
 \end{figure}
@@ -531,7 +531,7 @@ Orta ve düşük akımda köprünün etkin kazancı düşmekte ve faz öndeliği
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth,height=0.45\textheight,keepaspectratio]{../tez-matlab-simulink/runs/2026-10-28_kararlilik/karsilastirma/kararlilik_basamak_K34.pdf}
+  \includegraphics[width=\textwidth,height=0.45\textheight,keepaspectratio]{sekiller/b5/kararlilik_basamak_K34.pdf}
   \caption{S4 PI \SI{10}{\ampere}$\rightarrow$\SI{25}{\ampere} basamağının geçici bileşeni (anahtarlamalı ve ortalama model, $K_{34}$ açık ve kapalı).}
   \label{fig:kararlilik-basamak}
 \end{figure}
