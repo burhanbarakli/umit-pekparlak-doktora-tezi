@@ -220,8 +220,8 @@ Senaryo~1--3 açık çevrim modülasyonla, deney donanımının yaklaşık \SI{2
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.82\textwidth]{umit_2026-11-09/s4_anahtarlama_girisi.pdf}
-  \caption[S4 modelinin anahtarlama girişi]{S4 modelinin anahtarlama girişi: Sin\textsuperscript{3} ileri beslemesi ($K_{14}$, $K_{34}$), $L_1$ akımı geri beslemeli oransal denetleyici ($K_p$), doyum ve kapı mantığı alt sistemi (\textsc{anahtarlama}). Güç katı ve ölçüm blokları Şekil~\ref{fig:s3-simulink-modeli} ile aynıdır.}
+  \resizebox{\textwidth}{!}{\input{sekiller/b5_s4_anahtarlama_girisi}}
+  \caption[S4 modelinin anahtarlama girişi]{S4 modelinin anahtarlama girişi: Sin\textsuperscript{3} ileri beslemesi ($K_{14}$, $K_{34}$), $L_1$ akımı geri beslemeli oransal denetleyici ($K_p$), doyum ve kapı mantığı alt sistemi (\textsc{anahtarlama}). Modeldeki kapı çıkışları $Q_1$--$Q_4$ adlandırmasıyla gösterilmiştir. Güç katı ve ölçüm blokları Şekil~\ref{fig:s3-simulink-modeli} ile aynıdır. Tez sahibinin Simulink şemasından yeniden çizilmiştir.}
   \label{fig:s4-anahtarlama-girisi}
 \end{figure}
 
@@ -419,15 +419,15 @@ Gerçekleme (A)'da anma noktasındaki PI çevriminin kritik faz marjı, \SI{3.4}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth,height=0.5\textheight,keepaspectratio]{../tez-matlab-simulink/runs/2026-10-28_kararlilik/frekans/kararlilik_L_bode_K34.pdf}
+  \includegraphics[width=\textwidth,height=0.5\textheight,keepaspectratio]{sekiller/b5/kararlilik_L_bode_K34.pdf}
   \caption{S4 akım çevriminin açık çevrim kazancı $L(j\omega)$, P, PI ve PIR denetleyicileri, gerçekleme (A), \SI{25}{\ampere}. $K_{34}$ açık (çizgi) ve $K_{34}=0$ (işaretçi) eğrileri örtüşmektedir.}
   \label{fig:kararlilik-l-bode}
 \end{figure}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth,height=0.45\textheight,keepaspectratio]{../tez-matlab-simulink/runs/2026-10-28_kararlilik/frekans/kararlilik_S_T.pdf}
-  \caption{S4 akım çevriminin duyarlılık $|S(j\omega)|$ ve tamamlayıcı duyarlılık $|T(j\omega)|$ eğrileri (\SI{50}{\hertz} ve \SI{150}{\hertz} noktaları işaretli).}
+  \includegraphics[width=\textwidth,height=0.45\textheight,keepaspectratio]{sekiller/b5/kararlilik_S_T.pdf}
+  \caption{S4 akım çevriminin duyarlılık $|S(j\omega)|$ ve tamamlayıcı duyarlılık $|T(j\omega)|$ eğrileri (\SI{50}{\hertz} ve \SI{150}{\hertz} noktaları işaretli). $K_{34}$ açık ve kapalı eğriler aynıdır.}
   \label{fig:kararlilik-s-t}
 \end{figure}
 
@@ -501,7 +501,7 @@ Tablo~\ref{tab:kararlilik-olcum} ve Şekil~\ref{fig:kararlilik-olcum}, ölçüle
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth,height=0.45\textheight,keepaspectratio]{../tez-matlab-simulink/runs/2026-10-28_kararlilik/karsilastirma/kararlilik_L_olcum_karsilastirma.pdf}
+  \includegraphics[width=\textwidth,height=0.45\textheight,keepaspectratio]{sekiller/b5/kararlilik_L_olcum_karsilastirma.pdf}
   \caption{S4 PI çevrim kazancı: analitik $L(j\omega)$ eğrisi ile ortalama modelde ve anahtarlamalı modelde enjeksiyonla ölçülen noktalar (\SI{25}{\ampere} $K_{34}$ açık ve kapalı, \SI{10}{\ampere}, \SI{2.3}{\ampere}).}
   \label{fig:kararlilik-olcum}
 \end{figure}

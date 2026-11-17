@@ -132,7 +132,13 @@ b5_src = b5_yama(b5_src, "xlim(ax1, [10 2e4]); xlim(ax2, [10 2e4]);", "xlim(ax1,
 b5_src = b5_yama(b5_src, "function kaydet(fh, d, ad)", ...
     "function kaydet(fh, d, ad)" + newline + "b5_olcek(fh, 450, 8); b5_virgul(fh);");
 b5_src = b5_yama(b5_src, "ylabel(ax1, '|L| [dB]'); ylabel(ax2, '\angle L [°]'); xlabel(ax2, 'f [Hz]');", ...
-    "ylabel(ax1, '|L| (dB)'); ylabel(ax2, '\angle L (°)'); xlabel(ax2, 'f (Hz)');");
+    "ylabel(ax1, '|L| (dB)'); ylabel(ax2, 'Faz (°)'); xlabel(ax2, 'Frekans (Hz)');");
+% Sekil 5.9 (L Bode) ve 5.10 (S, T)
+b5_src = b5_yama(b5_src, "ylabel(ax1, '|L(j\omega)| [dB]'); ylabel(ax2, '\angle L(j\omega) [°]'); xlabel(ax2, 'f [Hz]');", ...
+    "ylabel(ax1, '|L| (dB)'); ylabel(ax2, 'Faz (°)'); xlabel(ax2, 'Frekans (Hz)');");
+b5_src = b5_yama(b5_src, "title(ax1, 'Çevrim kazancı L = C K_{pwm} G H_m e^{-sT_d} (ortalama model, gerçekleme A)');", "");
+b5_src = b5_yama(b5_src, "xlabel(ax, 'f [Hz]'); ylabel(ax, '[dB]');", "xlabel(ax, 'Frekans (Hz)'); ylabel(ax, 'Büyüklük (dB)');");
+b5_src = b5_yama(b5_src, "title(ax, 'Duyarlılık S = 1/(1+L) ve tümleyen T = L/(1+L) (K_{34} açık ve kapalı aynı)');", "");
 b5_src = b5_yama(b5_src, "'DisplayName', sprintf('L_g = %.1f mH', 1e3*Lgv(a))", ...
     "'DisplayName', ['L_g = ' strrep(sprintf('%g', 1e3*Lgv(a)), '.', ',') ' mH']");
 b5_src = b5_yama(b5_src, "title(ax1, 'Şebeke endüktansı duyarlılığı, PI, gerçekleme A (L_2 + L_g)');", "");
@@ -144,6 +150,8 @@ b5_out  = fullfile(fileparts(b5_root), 'yeni_tez', 'sekiller', 'b5');
 b5_kd   = fullfile(b5_root, 'results', 'bolum5_sekiller_20261117', 'kararlilik');
 copyfile(fullfile(b5_kd, 'kararlilik_nyquist_A_B.pdf'), fullfile(b5_out, 'kararlilik_nyquist_A_B.pdf'));
 copyfile(fullfile(b5_kd, 'kararlilik_Lg_taramasi.pdf'), fullfile(b5_out, 'kararlilik_Lg_taramasi.pdf'));
+copyfile(fullfile(b5_kd, 'kararlilik_L_bode_K34.pdf'), fullfile(b5_out, 'kararlilik_L_bode_K34.pdf'));
+copyfile(fullfile(b5_kd, 'kararlilik_S_T.pdf'), fullfile(b5_out, 'kararlilik_S_T.pdf'));
 % sayisal denetim: gecici kopyanin CSV'leri ozgunle ayni olmali
 for b5_c = {'lg_taramasi.csv', 'marjlar_ozet.csv'}
     b5_a = fullfile(b5_root, 'runs', '2026-10-28_kararlilik', 'frekans', b5_c{1});
@@ -168,6 +176,11 @@ b5_src = b5_yama(b5_src, "title(ax, 'PI, 10 \rightarrow 25 A basamağı (t = 55 
 b5_src = b5_yama(b5_src, "xlim(ax, [-10 30]); xlabel(ax, 't - t_{basamak} [ms]'); ylabel(ax, 'geçici bileşen [A]');", ...
     "xlim(ax, [-10 15]); xlabel(ax, 't − t_{basamak} (ms)'); ylabel(ax, 'i_{L1}(t) − i_{L1}(t + 20 ms) (A)');");
 b5_src = b5_yama(b5_src, "title(ax, 'Geçici bileşen i_{L1}(t) - i_{L1}(t + 20 ms)');", "");
+% Sekil 5.13: olculen ve analitik cevrim kazanci
+b5_src = b5_yama(b5_src, "ylabel(ax1, '|L| [dB]'); ylabel(ax2, '\angle L [°]'); xlabel(ax2, 'f [Hz]');", ...
+    "ylabel(ax1, '|L| (dB)'); ylabel(ax2, 'Faz (°)'); xlabel(ax2, 'Frekans (Hz)');");
+b5_src = b5_yama(b5_src, "title(ax1, 'L(j\omega): ortalama model ve anahtarlamalı modelde enjeksiyon ölçümü (PI)');", "");
+b5_src = b5_yama(b5_src, "'analitik (ortalama model), PI'", "'analitik L, gerçekleme (A), PI'");
 b5_src = b5_yama(b5_src, "function kaydet(fh, d, ad)", ...
     "function kaydet(fh, d, ad)" + newline + "b5_olcek(fh, 450, 8); b5_virgul(fh);");
 b5_yaz(fullfile(b5_kk, 'karsilastir_kararlilik_b5.m'), b5_src);
@@ -177,6 +190,7 @@ b5_root = fileparts(fileparts(mfilename('fullpath')));
 b5_out  = fullfile(fileparts(b5_root), 'yeni_tez', 'sekiller', 'b5');
 b5_kk   = fullfile(b5_root, 'results', 'bolum5_sekiller_20261117', 'karsilastirma');
 copyfile(fullfile(b5_kk, 'kararlilik_basamak_K34.pdf'), fullfile(b5_out, 'kararlilik_basamak_K34.pdf'));
+copyfile(fullfile(b5_kk, 'kararlilik_L_olcum_karsilastirma.pdf'), fullfile(b5_out, 'kararlilik_L_olcum_karsilastirma.pdf'));
 
 %% Sekil 5.4: S3 L1 akimi (model dogrulama betiginin gecici kopyasi)
 b5_tmp = fullfile(b5_root, 'results', 'bolum5_sekiller_20261117');
@@ -205,8 +219,6 @@ function b5_bitir(fg, font, yol)
     b5_olcek(fg, 450, 8);
     b5_virgul(fg);
     exportgraphics(fg, yol, 'ContentType', 'vector');
-    [d, n] = fileparts(yol);
-    exportgraphics(fg, fullfile(d, [n '.png']), 'Resolution', 150);
     close(fg);
 end
 function s = b5_yama(s, eski, yeni)

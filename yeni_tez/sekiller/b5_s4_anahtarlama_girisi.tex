@@ -1,0 +1,58 @@
+% Şekil: S4 modelinin anahtarlama girişi (K-39). Tez sahibinin Simulink şemasındaki
+% (dosyalar/06_UMIT_ABIDEN_GELENLER/2026-11-09_q3q4_sekiller_kimlik/sematik4.svg)
+% blok yapısının yeniden çizimidir: küp terimi (modelde iki çarpan), K14 ve K34 kazançları,
+% L1 akımı geri beslemeli oransal kazanç Kp, doyum ve ANAHTARLAMA alt sistemi.
+% Modeldeki kapı çıkışları (g14, g24, g34, g44) tezdeki Q1--Q4 adlandırmasıyla yazılmıştır.
+\begin{tikzpicture}[
+  font=\small,
+  block/.style={draw,rounded corners=1.3pt,align=center,minimum height=8mm,minimum width=12mm,fill=blue!5},
+  gain/.style={draw,align=center,minimum height=8mm,minimum width=11mm,fill=blue!5},
+  special/.style={draw,rounded corners=1.3pt,align=center,minimum height=27mm,minimum width=25mm,fill=orange!12},
+  sum/.style={circle,draw,minimum size=6mm,inner sep=0pt},
+  isaret/.style={font=\scriptsize},
+  flow/.style={-{Latex[length=1.8mm]},line width=0.8pt}
+]
+  % satir 1: ileri besleme
+  \node[block] (src) at (0,0) {$\sin(\theta+\varphi_4)$};
+  \node[gain] (k1) at (4.4,0) {$K_{14}$};
+  \node[sum] (s1) at (6.3,0) {$\Sigma$};
+  \node[sum] (s2) at (8.0,0) {$\Sigma$};
+  \node[block,minimum width=11mm] (sat) at (9.6,0) {};
+  \draw[line width=0.6pt] ($(sat.center)+(-0.38,-0.22)$) -- ($(sat.center)+(-0.15,-0.22)$) -- ($(sat.center)+(0.15,0.22)$) -- ($(sat.center)+(0.38,0.22)$);
+  \node[isaret,above=0.5mm of sat] {doyum $\pm1$};
+  \node[special] (anh) at (12.4,-0.9) {\textsc{anahtarlama}\\[1mm]{\scriptsize kapı mantığı}\\{\scriptsize ve nötr susturma}};
+  % satir 2: kup terimi
+  \node[block] (kup) at (2.5,-1.6) {$(\,\cdot\,)^3$};
+  \node[gain] (k3) at (4.4,-1.6) {$K_{34}$};
+  % satir 3: geri besleme
+  \node[block] (iref) at (0,-3.2) {$i_{\mathrm{ref}}$};
+  \node[sum] (se) at (2.5,-3.2) {$\Sigma$};
+  \node[gain] (kp) at (4.4,-3.2) {$K_p$};
+  \node[block] (olc) at (0,-4.4) {$i_{L1}$ ölçümü};
+
+  \coordinate (dal) at (1.6,0);
+  \draw[flow] (src) -- (k1);
+  \fill (dal) circle (1pt);
+  \draw[flow] (dal) |- (kup);
+  \draw[flow] (kup) -- (k3);
+  \draw[flow] (k1) -- (s1);
+  \draw[flow] (k3) -| (s1.south);
+  \node[isaret] at ($(s1)+(-0.26,0.3)$) {$+$};
+  \node[isaret] at ($(s1)+(0.27,-0.32)$) {$+$};
+  \draw[flow] (s1) -- node[above,font=\scriptsize] {$u_{\mathrm{ff}}$} (s2);
+
+  \draw[flow] (iref) -- (se);
+  \draw[flow] (olc) -| (se.south);
+  \node[isaret] at ($(se)+(-0.26,0.3)$) {$+$};
+  \node[isaret] at ($(se)+(0.27,-0.32)$) {$-$};
+  \draw[flow] (se) -- (kp);
+  \draw[flow] (kp) -| node[pos=0.7,right,font=\scriptsize] {$u_{\mathrm{fb}}$} (s2.south);
+  \node[isaret] at ($(s2)+(-0.26,0.3)$) {$+$};
+  \node[isaret] at ($(s2)+(0.27,-0.32)$) {$+$};
+
+  \draw[flow] (s2) -- (sat);
+  \draw[flow] (sat.east) -- node[above,font=\scriptsize] {$u$} (sat.east -| anh.west);
+  \foreach \i/\y in {1/0.9,2/0.3,3/-0.3,4/-0.9} {
+    \draw[flow] ($(anh.east)+(0,\y)$) -- ++(9mm,0) node[right] {$g_{Q\i}$};
+  }
+\end{tikzpicture}
