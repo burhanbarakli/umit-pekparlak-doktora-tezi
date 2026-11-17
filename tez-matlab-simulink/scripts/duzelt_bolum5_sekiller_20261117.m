@@ -17,6 +17,7 @@
 % K-40 (Mac denetimi, 17.11.2026): disa aktarimdan once b5_son(fg, ad) cagrilir: veriyi orten
 % gostergeler disari, basliklar normal yazi, cerceve, mikro dik, eksen adlari tik boyutunda,
 % eksi isareti U+2212, 5.2 sag baslik kalkar, 5.7 eksen payi, 5.11 tikleri, 5.12 dB araligi.
+% K-40 ucuncu tur: 5.4 da b5_olcek'ten gecer (eksen adlari 8,8 pt kaliyordu).
 % Cagri (proje kokunden): matlab -batch "run('scripts/duzelt_bolum5_sekiller_20261117.m')"
 
 b5_root = fileparts(fileparts(mfilename('fullpath')));
@@ -206,7 +207,7 @@ b5_src = strrep(b5_src, "ylabel(ax, 'i_{L1} [A]');", "ylabel(ax, 'i_{L1} (A)');"
 b5_src = strrep(b5_src, "xlabel(ax, ['t - ' strrep(num2str(za*1e3, '%.1f'), '.', ',') ' ms [\mus]']);", ...
     "xlabel(ax, ['t − ' strrep(num2str(za*1e3, '%.1f'), '.', ',') ' ms (\mus)']);");
 b5_src = b5_yama(b5_src, "exportgraphics(f, fullfile(here, 's3_kalibre_l1.pdf'), 'ContentType', 'vector');", ...
-    sprintf('b5_son(f, ''s3_l1_akimi''); b5_virgul(f); exportgraphics(f, ''%s'', ''ContentType'', ''vector'');', ...
+    sprintf('b5_olcek(f, 450, 8); b5_son(f, ''s3_l1_akimi''); b5_virgul(f); exportgraphics(f, ''%s'', ''ContentType'', ''vector'');', ...
     strrep(fullfile(b5_out, 's3_l1_akimi.pdf'), '\', '/')));
 b5_yaz(fullfile(b5_tmp, 'uret_l1_kapi_sekilleri_b5.m'), b5_src);
 run(fullfile(b5_tmp, 'uret_l1_kapi_sekilleri_b5.m'));

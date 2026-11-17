@@ -5,6 +5,8 @@ function b5_son(fg, ad)
 % Ortak: baslik normal yazi, eksen cercevesi, eksen adlari buyuk harfle, dik mikro (µ),
 % cizgi kalinligi en fazla 1,0 pt. Sekile ozgu: veriyi ortten gostergeler disari alinir.
 % Kaynak: Mac denetimi, 17.11.2026 (bagimsiz denetci ajan raporu).
+% Ucuncu tur (K-40 ek): 5.7 THD ekseni iki satir, 5.8 alt eksen ve 55 ms cizgisi, 5.11 tek
+% ortak gosterge, gosterge/yazi icindeki ' - ' -> ' − '.
 
 eksenler = findall(fg, 'Type', 'axes')';
 
@@ -17,10 +19,10 @@ for ax = eksenler
     end
 end
 for t = findall(fg, 'Type', 'text')'
-    t.String = mikro(t.String);
+    t.String = eksi(mikro(t.String));
 end
 for lg = findall(fg, 'Type', 'legend')'
-    lg.String = mikro(lg.String);
+    lg.String = eksi(mikro(lg.String));
 end
 for ln = findall(fg, 'Type', 'line')'
     if ~strcmp(ln.LineStyle, 'none')
@@ -43,16 +45,34 @@ switch ad
 
     case 's4_tarama_ozet'                              % Sekil 5.7: gosterge ve kesilen isaretciler
         for lg = findall(fg, 'Type', 'legend')', disari(lg, 3, 'north'); end
-        for ax = eksenler, pay_birak(ax); end
+        for ax = eksenler
+            if contains(etiket(ax.YLabel.String), 'THD')   % uzun ad gostergeye biniyordu; h <= 50 altyazida
+                ax.YLabel.String = {'Şebeke akımı', 'THD’si (%)'};
+            end
+            pay_birak(ax);
+        end
 
     case 's4_basamak_PI_10_25A'                        % Sekil 5.8: iki gosterge ilk tepeleri ortuyor
         for lg = findall(fg, 'Type', 'legend')', disari(lg, 2, ''); end
+        alt = []; ust = [];
+        for ax = eksenler
+            if contains(etiket(ax.YLabel.String), 'Modülasyon'), alt = ax; else, ust = ax; end
+        end
+        if ~isempty(alt)                               % +1 doyum cizgisi ust cerceveye dusuyordu
+            alt.YLim = [-1.75 1.25]; alt.YTick = -1.5:0.5:1;
+            if ~isempty(ust), dusey_kopyala(ust, alt, 55); end   % basamak ani alt panelde de
+        end
 
     case 'kararlilik_S_T'                              % Sekil 5.10: gosterge |T| centigini kesiyor
         for lg = findall(fg, 'Type', 'legend')', disari(lg, 3, ''); end
 
     case 'kararlilik_nyquist_A_B'                      % Sekil 5.11: (B) basligi "3" tikine biniyor
         for ax = eksenler, ax.YTick = -2:2; end
+        lgs = findall(fg, 'Type', 'legend');            % panel ici gostergeler egrileri ortuyordu;
+        if ~isempty(lgs)                               % iki panelde ayni P/PI/PIR: tek ortak gosterge
+            delete(lgs(2:end));
+            disari(lgs(1), 3, 'south');
+        end
 
     case 'kararlilik_Lg_taramasi'                      % Sekil 5.12: gosterge, dB araligi 5.9 ile ayni
         for lg = findall(fg, 'Type', 'legend')', disari(lg, 5, 'north'); end
@@ -118,6 +138,33 @@ end
 function s = mikro(s)
 % TeX yorumlayicisinda \mu italik basilir; dik mikro isareti (U+00B5) kullanilir.
 s = strrep(s, '\mu', char(181));
+end
+
+function dusey_kopyala(kaynak, hedef, x0)
+% kaynak eksendeki x = x0 dusey cizgisini (xline ya da iki noktali cizgi) hedef eksene kopyalar.
+try
+    for c = findall(kaynak, 'Type', 'constantline')'
+        if strcmp(c.InterceptAxis, 'x') && abs(c.Value - x0) < 1e-3
+            xline(hedef, x0, c.LineStyle, 'Color', c.Color, 'LineWidth', c.LineWidth, 'HandleVisibility', 'off');
+            return
+        end
+    end
+    for ln = findall(kaynak, 'Type', 'line')'
+        x = ln.XData;
+        if numel(x) >= 2 && all(abs(x - x0) < 1e-3)
+            xline(hedef, x0, ln.LineStyle, 'Color', ln.Color, 'LineWidth', ln.LineWidth, 'HandleVisibility', 'off');
+            return
+        end
+    end
+    warning('b5_son:dusey', 'x = %g cizgisi bulunamadi', x0);
+catch e
+    warning('b5_son:dusey', 'dusey cizgi kopyalanamadi: %s', e.message);
+end
+end
+
+function s = eksi(s)
+% Gosterge ve yazilarda bosluklu tireyi eksi isaretine cevirir ("V_h - v_g" -> "V_h − v_g").
+s = strrep(s, ' - ', [' ' char(8722) ' ']);
 end
 
 function s = etiket(s)
