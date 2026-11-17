@@ -14,6 +14,9 @@
 % Tum eksenlerde ondalik virgul, yazi tipi Arial (Turkce glifler gomulsun). Sekiller
 % basili genislikte (~450 pt) ve 8 pt yaziyla aktarilir (b5_olcek), tezde 1:1 basilir.
 % Denetci ajan bulgulari: i_ac -> i_g, esit eksen olcegi, toplam gecikme notu, L_g ekseni 30 kHz.
+% K-40 (Mac denetimi, 17.11.2026): disa aktarimdan once b5_son(fg, ad) cagrilir: veriyi orten
+% gostergeler disari, basliklar normal yazi, cerceve, mikro dik, eksen adlari tik boyutunda,
+% eksi isareti U+2212, 5.2 sag baslik kalkar, 5.7 eksen payi, 5.11 tikleri, 5.12 dB araligi.
 % Cagri (proje kokunden): matlab -batch "run('scripts/duzelt_bolum5_sekiller_20261117.m')"
 
 b5_root = fileparts(fileparts(mfilename('fullpath')));
@@ -37,7 +40,7 @@ for ax = findall(fg, 'Type', 'axes')'
         ax.XLabel.String = 'k_1 (temel katsayı)';
         ax.YLabel.String = 'k_3 (Sin^3 katsayısı)';
     else
-        ax.Title.String = 'Pozitif alternans ortalama akım zarfı';
+        ax.Title.String = '';                        % K-40: sag panel basligi da kalkar
         ax.YLabel.String = 'Ortalama L_1 akımı (A)';
     end
 end
@@ -107,7 +110,7 @@ b5_src = strrep(b5_src, 't [ms]', 't (ms)');
 b5_src = b5_yama(b5_src, "title(ax, '(b) Endüktör akımını yükselten gerilim payı', 'FontWeight', 'normal');", ...
     "title(ax, '(b) İletimde endüktör gerilimi', 'FontWeight', 'normal');");
 b5_src = b5_yama(b5_src, "exportgraphics(f, fullfile(here, 'harmonik_olusum_mekanizmasi.pdf'), 'ContentType', 'vector');", ...
-    sprintf('b5_olcek(f, 430, 8); b5_virgul(f); exportgraphics(f, ''%s'', ''ContentType'', ''vector'');', ...
+    sprintf('b5_olcek(f, 430, 8); b5_son(f, ''harmonik_olusum_mekanizmasi''); b5_virgul(f); exportgraphics(f, ''%s'', ''ContentType'', ''vector'');', ...
     strrep(fullfile(b5_out, 'harmonik_olusum_mekanizmasi.pdf'), '\', '/')));
 b5_yaz(fullfile(b5_tmp, 'uret_harmonik_mekanizma_b5.m'), b5_src);
 run(fullfile(b5_tmp, 'uret_harmonik_mekanizma_b5.m'));
@@ -130,7 +133,7 @@ b5_src = b5_yama(b5_src, "title(ax, '(B) sayısal, T_s = 100 µs, 1 T_s gecikme'
     "title(ax, {'(B) sayısal, T_s = 100 µs', '1T_s hesaplama gecikmesi (toplam \approx 2T_s)'});");
 b5_src = b5_yama(b5_src, "xlim(ax1, [10 2e4]); xlim(ax2, [10 2e4]);", "xlim(ax1, [10 3e4]); xlim(ax2, [10 3e4]);");
 b5_src = b5_yama(b5_src, "function kaydet(fh, d, ad)", ...
-    "function kaydet(fh, d, ad)" + newline + "b5_olcek(fh, 450, 8); b5_virgul(fh);");
+    "function kaydet(fh, d, ad)" + newline + "b5_olcek(fh, 450, 8); b5_son(fh, ad); b5_virgul(fh);");
 b5_src = b5_yama(b5_src, "ylabel(ax1, '|L| [dB]'); ylabel(ax2, '\angle L [°]'); xlabel(ax2, 'f [Hz]');", ...
     "ylabel(ax1, '|L| (dB)'); ylabel(ax2, 'Faz (°)'); xlabel(ax2, 'Frekans (Hz)');");
 % Sekil 5.9 (L Bode) ve 5.10 (S, T)
@@ -182,7 +185,7 @@ b5_src = b5_yama(b5_src, "ylabel(ax1, '|L| [dB]'); ylabel(ax2, '\angle L [°]');
 b5_src = b5_yama(b5_src, "title(ax1, 'L(j\omega): ortalama model ve anahtarlamalı modelde enjeksiyon ölçümü (PI)');", "");
 b5_src = b5_yama(b5_src, "'analitik (ortalama model), PI'", "'analitik L, gerçekleme (A), PI'");
 b5_src = b5_yama(b5_src, "function kaydet(fh, d, ad)", ...
-    "function kaydet(fh, d, ad)" + newline + "b5_olcek(fh, 450, 8); b5_virgul(fh);");
+    "function kaydet(fh, d, ad)" + newline + "b5_olcek(fh, 450, 8); b5_son(fh, ad); b5_virgul(fh);");
 b5_yaz(fullfile(b5_kk, 'karsilastir_kararlilik_b5.m'), b5_src);
 run(fullfile(b5_kk, 'karsilastir_kararlilik_b5.m'));
 close all force
@@ -203,7 +206,7 @@ b5_src = strrep(b5_src, "ylabel(ax, 'i_{L1} [A]');", "ylabel(ax, 'i_{L1} (A)');"
 b5_src = strrep(b5_src, "xlabel(ax, ['t - ' strrep(num2str(za*1e3, '%.1f'), '.', ',') ' ms [\mus]']);", ...
     "xlabel(ax, ['t − ' strrep(num2str(za*1e3, '%.1f'), '.', ',') ' ms (\mus)']);");
 b5_src = b5_yama(b5_src, "exportgraphics(f, fullfile(here, 's3_kalibre_l1.pdf'), 'ContentType', 'vector');", ...
-    sprintf('b5_virgul(f); exportgraphics(f, ''%s'', ''ContentType'', ''vector'');', ...
+    sprintf('b5_son(f, ''s3_l1_akimi''); b5_virgul(f); exportgraphics(f, ''%s'', ''ContentType'', ''vector'');', ...
     strrep(fullfile(b5_out, 's3_l1_akimi.pdf'), '\', '/')));
 b5_yaz(fullfile(b5_tmp, 'uret_l1_kapi_sekilleri_b5.m'), b5_src);
 run(fullfile(b5_tmp, 'uret_l1_kapi_sekilleri_b5.m'));
@@ -217,6 +220,8 @@ function b5_bitir(fg, font, yol)
         tl.XLabel.FontName = font; tl.YLabel.FontName = font; tl.Title.FontName = font;
     end
     b5_olcek(fg, 450, 8);
+    [~, ad] = fileparts(yol);
+    b5_son(fg, ad);
     b5_virgul(fg);
     exportgraphics(fg, yol, 'ContentType', 'vector');
     close(fg);
