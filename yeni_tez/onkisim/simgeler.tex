@@ -4,17 +4,24 @@
 \begin{simgeler}
 \simge{$C_f$}{LCL filtre kapasitörü}
 \simge{$C_i(s)$}{Akım denetleyicisinin aktarım fonksiyonu}
+\simge{$c_{\mathrm{tr}}$}{0--1 aralıklı testere dişi PWM taşıyıcısı}
 \simge{$D_1$--$D_2$}{Faz hücresindeki PFC yükseltici (boost) diyotları}
 \simge{$DS_1$--$DS_4$}{$Q_1$--$Q_4$ anahtarlarının ters paralel diyotları}
 \simge{$d$}{Boyutsuz görev oranı}
 \simge{$d_m$}{Sinüzoidal görev oranının tepe katsayısı}
 \simge{$d_{\mathrm{krit}}$}{Süreksiz iletim sınırındaki kritik görev oranı}
+\simge{$f_{\mathrm{ar}}$}{LCL filtre antirezonans frekansı}
 \simge{$f_g$}{Şebeke frekansı}
+\simge{$f_m$}{Akım ölçüm süzgecinin köşe frekansı}
 \simge{$f_r$}{LCL filtre rezonans frekansı}
 \simge{$f_s$}{Anahtarlama frekansı}
 \simge{$G(s)$}{Denetlenen sistemin aktarım fonksiyonu}
 \simge{$G_g(s)$}{Şebeke geriliminden akıma aktarım fonksiyonu}
+\simge{$g_{Qj}$}{$Q_j$ anahtarının kapı komutu ($j=1,\ldots,4$)}
+\simge{$\mathrm{H}(\cdot)$}{Heaviside basamak işlevi}
+\simge{$H_m(s)$}{Tek kutuplu akım ölçüm süzgeci}
 \simge{$I_1$, $I_h$}{Akımın temel bileşen ve $h$'inci harmonik RMS değeri}
+\simge{$I_{\mathrm{B}}$}{Sürekli ve süreksiz iletim arasındaki sınır akımı ($\Delta i_L/2$)}
 \simge{$I_g$}{Deney faz akımı (RMS)}
 \simge{$I_{\mathrm{ref}}$}{S4 akım referansı (RMS)}
 \simge{$I_{\mathrm{rms}}$}{Akımın etkin değeri}
@@ -23,14 +30,16 @@
 \simge{$i_{\mathrm{dc}}$}{DA kaynak akımı}
 \simge{$i_g$}{Evirici çıkış uçlarındaki (C noktası) şebeke akımı}
 \simge{$i_L$}{Endüktör akımı}
+\simge{$i_{\mathrm{ref}}$}{Anlık akım referansı}
 \simge{$K_{1x}$, $K_{3x}$}{$x$ numaralı senaryonun benzetim modelinde $k_1$ ve $k_3$ katsayıları (ör. S3 için $K_{13}$, $K_{33}$; S4 için $K_{14}$, $K_{34}$)}
-\simge{$K_p$, $K_r$}{Denetleyicinin oransal ve rezonans kazancı}
+\simge{$K_p$, $K_i$, $K_r$}{Denetleyicinin oransal, integral ve rezonans kazancı}
 \simge{$K_{\mathrm{pwm}}$}{PWM kazancı ($V_{\mathrm{dc}}/2$)}
 \simge{$k_1$, $k_3$}{Sin\textsuperscript{3} ileri beslemesinde temel bileşen ve küp terimi katsayıları}
 \simge{$L(s)$}{Çevrim kazancı}
 \simge{$L_1$}{Evirici tarafı filtre endüktansı}
 \simge{$L_2$}{Şebeke tarafı eşdeğer endüktansı (şebeke ve varyak kaçak endüktansı)}
 \simge{$L_g$}{Zayıf şebeke incelemesindeki ek şebeke endüktansı}
+\simge{$M_s$}{Duyarlılık fonksiyonunun en büyük değeri ($\|S\|_\infty$)}
 \simge{$m_x$}{Normalize faz modülasyon komutu}
 \simge{$N$}{DA bara orta noktası}
 \simge{$P_{\mathrm{ac}}$, $P_{\mathrm{dc}}$}{Ortalama AA ve DA güç}
@@ -44,7 +53,7 @@
 \simge{$s$}{Laplace değişkeni}
 \simge{$s_x$}{Gerilim durumunu seçen anahtarlama değişkeni}
 \simge{$T_d$}{Toplam denetim gecikmesi}
-\simge{$T_s$}{Anahtarlama periyodu}
+\simge{$T_s$}{Anahtarlama periyodu (ayrık kararlılık modelinde denetim periyodu)}
 \simge{$T_w$}{Kararlı durum analiz penceresi süresi}
 \simge{$t_d$}{Ölü zaman}
 \simge{$u$}{Görev oranı (modülasyon) komutu}
@@ -59,6 +68,7 @@
 \simge{$v_{\mathrm{inv}}$}{Evirici kutup gerilimi}
 \simge{$v_{xN}$}{Faz kutup gerilimi}
 \simge{$Z_{\mathrm{th}}$}{Köprünün Thevenin iç empedansı}
+\simge{$\Delta i_L$}{Endüktör akımının tepe--tepe anahtarlama dalgalanması}
 \simge{$\delta$}{Endüktör akımı boşalma süresinin $T_s$'ye oranı}
 \simge{$\zeta$}{Sönüm oranı}
 \simge{$\eta$}{Verim}
@@ -69,6 +79,7 @@
 \simge{$\varphi$}{Referans sinüsünün faz kayması}
 \simge{$\varphi_1$}{Temel bileşen faz açısı ($\cos\varphi_1$: temel bileşen güç faktörü)}
 \simge{$\omega_0$}{Şebeke temel açısal frekansı}
+\simge{$\omega_{\mathrm{ar}}$}{LCL filtre antirezonans açısal frekansı}
 \simge{$\omega_b$}{PIR rezonans teriminin bant genişliği}
 \simge{$\omega_r$}{LCL filtre rezonans açısal frekansı}
 \end{simgeler}

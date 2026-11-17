@@ -77,7 +77,7 @@ Nötr anahtarın bastırılması ters akım yolunu azaltırken endüktör akım�
 \subsection{Modelden okunan kapı mantığı ve senaryo eşlemesi}
 \label{sec:model-kapi-mantigi}
 
-Senaryo tanımları ile benzetim modellerinin kapı üretim yapısı blok blok karşılaştırılmıştır. S1 modelinde dış anahtarlar pozitif ve negatif yarım periyotta PWM ile sürülmektedir. Nötr anahtar komutları ise PWM çıkışlarının mantıksal tümleyenidir ve S1 kapı mantığı Tablo~\ref{tab:t-tipi-durumlar} ile örtüşmektedir. S2 ve S3 modellerinde dış anahtarların PWM üretimi aynıdır. Ancak nötr anahtarlar PWM'den bağımsız olarak yarım periyot boyunca sabit 1 veya 0 değerini almaktadır. S3'ün S2'den tek farkı, modülasyon referansına eklenen Sin\textsuperscript{3} terimidir. Tablo~\ref{tab:model-kapi-mantigi} iki kapı mantığını ideal durumlar üzerinden karşılaştırmaktadır.
+Senaryo tanımları ile benzetim modellerinin kapı üretim yapısı blok blok karşılaştırılmıştır. S1 modelinin kapı mantığı Eşitlik~\eqref{eq:kapi-mantigi} ile, S2 ve S3 modellerinin kapı mantığı ise Eşitlik~\eqref{eq:kapi-mantigi} ve Eşitlik~\eqref{eq:notr-susturma-kurali} ile örtüşmektedir. S3'ün S2'den tek farkı, modülasyon referansına eklenen Sin\textsuperscript{3} terimidir. Tablo~\ref{tab:model-kapi-mantigi} iki kapı mantığını ideal durumlar üzerinden karşılaştırmaktadır.
 
 \begin{table}[H]
   \centering
@@ -118,7 +118,7 @@ Susturmanın devre düzeyindeki sonucu Şekil~\ref{fig:susturma-esdeger} üzerin
   \label{fig:susturma-esdeger}
 \end{figure}
 
-Benzetim modelinde S2 kapı yolu, tezdeki nötr anahtar susturma tanımına göre kurulmuştur (Alt Bölüm~\ref{sec:model-dogrulama-duzeltme}). Şekil~\ref{fig:s2-kapi-isaretleri}, pozitif yarım periyotta $Q_1$'in \SI{10}{\kilo\hertz} PWM ile anahtarlandığını, $Q_4$'ün iletimde, $Q_2$ ile $Q_3$'ün kesimde kaldığını göstermektedir. Negatif yarım periyotta roller simetrik olarak yer değiştirmektedir. Klasik anahtarlamada ise aynı aralıkta $Q_3$, $Q_1$ ile tamamlayıcı darbelerle anahtarlanmaktadır. Susturmada nötr anahtarlar anahtarlama yapmadığından anahtarlama kaybı yalnız dış anahtarlarda oluşmaktadır.
+Benzetim modelinde S2 kapı yolu, tezdeki nötr anahtar susturma tanımına göre kurulmuştur (Alt Bölüm~\ref{sec:model-dogrulama-duzeltme}). Şekil~\ref{fig:s2-kapi-isaretleri}, klasik anahtarlamada $Q_1$ ile tamamlayıcı darbelerle sürülen $Q_3$'ün susturmada pozitif yarım periyot boyunca kesimde kaldığını göstermektedir. Susturmada nötr anahtarlar anahtarlama yapmadığından anahtarlama kaybı yalnız dış anahtarlarda oluşmaktadır.
 
 \begin{figure}[H]
   \centering
@@ -146,7 +146,15 @@ biçimindedir. Son eşitlik $\sin3\theta=3\sin\theta-4\sin^3\theta$ özdeşliği
   \label{fig:denetleyici-duzeltme-akim}
 \end{figure}
 
-Hangi anahtar grubunun çalışacağını modülasyon komutunun işareti belirlemektedir (Eşitlik~\eqref{eq:susturma-etkinlestirme}). Klasik kapı düzeninde komut referansla aynı işarettedir. Pozitif yarım periyotta $Q_1$ PWM ile sürülmekte, $Q_3$ onun tümleyeni olarak anahtarlanmakta ve $Q_4$ iletimde kalmaktadır. Negatif yarım periyotta aynı görevi $Q_2$ ve $Q_4$ üstlenmektedir (Şekil~\ref{fig:denetleyici-kapi}a). Komutu denetleyici çıkışı belirlediğinde yarım periyot göstergesi $\kappa$ sıfır geçişler çevresinde ters dönmektedir (Şekil~\ref{fig:denetleyici-kapi}b). Akım pozitifken $Q_2$ PWM ile sürülmekte ve $Q_3$ iletime alınmaktadır. Anahtar grubu geçişlerinin sayısı periyot başına ikiden altıya çıkmaktadır. Susturmalı çalışmada susturulan nötr anahtar da $\kappa$ ile seçildiğinden (Eşitlik~\eqref{eq:notr-susturma-kurali}), ters $\kappa$ aralığında susturulması gereken anahtar iletime alınmakta ve ters akım yolu yeniden açılmaktadır.
+Hangi anahtar grubunun çalışacağını modülasyon komutunun işareti belirlemektedir (Eşitlik~\eqref{eq:kapi-mantigi} ve Eşitlik~\eqref{eq:susturma-etkinlestirme}). Klasik kapı düzeninde komut referansla aynı işarettedir (Şekil~\ref{fig:denetleyici-kapi}a). Komutu denetleyici çıkışı belirlediğinde yarım periyot göstergesi $\kappa$ sıfır geçişler çevresinde ters dönmektedir (Şekil~\ref{fig:denetleyici-kapi}b). Akım pozitifken $Q_2$ PWM ile sürülmekte ve $Q_3$ iletime alınmaktadır. Toplam komut, ileri besleme komutu $u_{\mathrm{ff}}$ ile geri besleme komutu $u_{\mathrm{fb}}$'nin toplamı olarak yazıldığında ters $\kappa$ koşulu
+\begin{equation}
+  \operatorname{sgn}u\neq\operatorname{sgn}\sin\theta
+  \iff
+  \operatorname{sgn}u_{\mathrm{fb}}\neq\operatorname{sgn}u_{\mathrm{ff}}
+  \ \land\ |u_{\mathrm{fb}}|>|u_{\mathrm{ff}}|
+  \label{eq:ters-kappa-kosulu}
+\end{equation}
+biçimindedir. Eşitlik~\eqref{eq:ters-kappa-kosulu}, ileri besleme katsayıları $K_{1x},K_{3x}\geq0$ olduğunda, yani $\operatorname{sgn}u_{\mathrm{ff}}=\operatorname{sgn}\sin\theta$ iken geçerlidir. Sıfır geçiş çevresinde $|u_{\mathrm{ff}}|$ küçüldüğünden küçük bir geri besleme komutu bile koşulu sağlamaktadır. Anahtar grubu geçişlerinin sayısı periyot başına ikiden altıya çıkmaktadır. Susturmalı çalışmada susturulan nötr anahtar da $\kappa$ ile seçildiğinden (Eşitlik~\eqref{eq:notr-susturma-kurali}), ters $\kappa$ aralığında susturulması gereken anahtar iletime alınmakta ve ters akım yolu yeniden açılmaktadır.
 
 \begin{figure}[H]
   \centering
