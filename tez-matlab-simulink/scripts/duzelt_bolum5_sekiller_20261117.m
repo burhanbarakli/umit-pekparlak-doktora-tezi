@@ -168,7 +168,7 @@ copyfile(fullfile(b5_kd, 'kararlilik_Lg_taramasi.pdf'), fullfile(b5_out, 'kararl
 copyfile(fullfile(b5_kd, 'kararlilik_L_bode_K34.pdf'), fullfile(b5_out, 'kararlilik_L_bode_K34.pdf'));
 copyfile(fullfile(b5_kd, 'kararlilik_S_T.pdf'), fullfile(b5_out, 'kararlilik_S_T.pdf'));
 % sayisal denetim: gecici kopyanin CSV'leri ozgunle ayni olmali
-for b5_c = {'lg_taramasi.csv', 'marjlar_ozet.csv'}
+for b5_c = {'lg_taramasi.csv', 'kararlilik_marjlar.csv'}
     b5_a = fullfile(b5_root, 'runs', '2026-10-28_kararlilik', 'frekans', b5_c{1});
     b5_b = fullfile(b5_kd, b5_c{1});
     if isfile(b5_a) && isfile(b5_b)

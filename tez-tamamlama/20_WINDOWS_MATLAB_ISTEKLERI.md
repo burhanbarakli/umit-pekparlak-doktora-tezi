@@ -4,7 +4,17 @@ Mac'te MATLAB yok. Bu dosya, Mac oturumunun MATLAB gerektiren isteklerini toplar
 Windows'taki oturum her işi bitirince ilgili satırı "yapıldı (tarih, commit)" diye işaretler.
 Karar kaydı: `01_KARAR_DEFTERI.md` K-39, K-40.
 
-## İstek 1: Bölüm 5 şekillerini yeniden üret (K-40 üçüncü ve dördüncü tur) — açık
+## İstek 1: Bölüm 5 şekillerini yeniden üret (K-40 üçüncü ve dördüncü tur) — yapıldı (18.11.2026)
+
+**Windows sonucu (18.11.2026, 62d200b üzerine):** Betik hatasız çalıştı; `yama bulunamadi` ya da
+`b5_son:dusey` uyarısı çıkmadı. Geçici analitik kopyanın dokuz CSV'si (`lg_taramasi`, `kararlilik_marjlar`,
+`kararlilik_gecisler`, `kararlilik_kutuplar`, `gecikme_taramasi`, `kazanc_taramasi`, `k34_degismezlik`,
+`bode_L_S_T_A`, `sin3_bozucu_etkisi`) özgünle bayt düzeyinde aynı. Betikteki `marjlar_ozet.csv` adı
+diskte yoktu (gerçek ad `kararlilik_marjlar.csv`), bu yüzden o satır sessizce atlanıyordu; ad düzeltildi.
+Tez 213 sayfa, tanımsız referans ve taşan satır yok. Aşağıdaki tablodaki sekiz beklenti PDF'lerde
+gözle denetlendi ve karşılanıyor (5.1 "V_h − v_g" eksi işareti, 5.4 dik µ, 5.6 sağ eksen −100/0/100,
+5.7 iki satırlı y adı, 5.8 −1,75…1,25 ve iki panelde 55 ms çizgisi, 5.9 işaretçiler eksen içinde,
+5.10 $K_{34}=0$ işaretçileri ve gösterge girdisi, 5.11 ortak alt gösterge).
 
 **Neden:** 1e2ed42 ile üretilen şekillerde denetçi dört sorun buldu. Mac'te betiğe
 eklendiler, ama PDF'ler henüz eski. Altyazılar yeni şekillere göre yazıldı: 5.10
