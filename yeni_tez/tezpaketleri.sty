@@ -11,7 +11,8 @@
 \RequirePackage{booktabs}
 \RequirePackage{tabularx}
 \RequirePackage{siunitx}
-\sisetup{output-decimal-marker={,},mode=text}% sayılar ve birimler metin yazı tipiyle (Times); matematik yazı tipiyle karışmasın
+\sisetup{output-decimal-marker={,},mode=text}
+\DeclareSIUnit\voltampere{VA}% "kV A" yerine "kVA"% sayılar ve birimler metin yazı tipiyle (Times); matematik yazı tipiyle karışmasın
 \RequirePackage{subcaption}
 % Birden çok satıra taşan alt şekil yazıları dar sütunda iki yana yaslanınca sözcük araları
 % açılıyordu; alt şekil yazıları ortalanır (tek satırlıklar zaten ortalıydı).

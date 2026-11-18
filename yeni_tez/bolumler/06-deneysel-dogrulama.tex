@@ -7,7 +7,7 @@ Bölüm~\ref{chap:anahtarlama} ve Bölüm~\ref{chap:sin3} içinde benzetim düze
 
 \section{Deney Düzeneği ve Güç Donanımı}
 
-Deney düzeneği, yaklaşık 20--25~kW güç dönüştürme kapasitesi hedeflenerek düşey bir pano üzerine bakır baralarla modüler biçimde kurulmuştur. Prototipin \SI{20}{\kilo\volt\ampere} anma görünür gücü akım sensörü boyutlandırma hesabından gelmektedir (Tablo~\ref{tab:sistem-parametreleri}). Şebeke gerilimi güvenlik amacıyla varyak üzerinden yaklaşık \SI{120}{\volt} ile sınırlandırılmıştır.
+Deney düzeneği, yaklaşık 20--25~kW güç dönüştürme kapasitesi hedeflenerek düşey bir pano üzerine bakır baralarla modüler biçimde kurulmuştur. Prototipin \SI{20}{\kilo\voltampere} anma görünür gücü akım sensörü boyutlandırma hesabından gelmektedir (Tablo~\ref{tab:sistem-parametreleri}). Şebeke gerilimi güvenlik amacıyla varyak üzerinden yaklaşık \SI{120}{\volt} ile sınırlandırılmıştır.
 
 
 Şekil~\ref{fig:deney-duzenegi-genel}, varyak modülünü, evirici panosunu, bilgisayarı ve osiloskopları aynı görünümde vermektedir. Enerji bağlantıları, şalt ve koruma ekipmanları, akım transformatörleri ve AA enerji analizörü varyak modülündedir. Üç faz, bağımsız varyaklarla ayarlanabilmektedir. Düzenekte aşırı akım, kaçak akım, topraklama ve acil durdurma korumaları bulunmaktadır.
@@ -199,7 +199,7 @@ Prototipte şönt direnci DA baranın negatif terminaline bağlanarak alçak-tar
   \label{fig:deney-sont-baglanti}
 \end{figure}
 
-AA tarafta Entes EMK-01 analizörü ve 50/5 oranlı, \SI[inter-unit-product={}]{5}{\volt\ampere}, 0,1 doğruluk sınıfında akım transformatörleri kullanılmıştır. Akım transformatörünün IEC~61869-2'ye göre yapılan kalibrasyon ölçümü EK A'da verilmiştir. Deney akımının bulunduğu anma akımının \%5'i bölgesinde oran hatası $-$\%0,046, faz hatası 2,8~dakikadır. İki hata da AA güç ölçümünün belirsizliğinde ihmal edilebilir düzeydedir. Üç faz ve nötr hattı için dört akım transformatörü bağlanmıştır. Faz--nötr gerilimleri, faz/nötr akımları, aktif ve reaktif güç ile toplam THD değerleri Modbus RTU üzerinden okunmuştur. Şekil~\ref{fig:deney-emk01}(a) analizörü, Şekil~\ref{fig:deney-emk01}(b) üreticinin bağlantı düzenini vermektedir. Bağlantı düzeni üreticinin belgesinden alınmıştır. Analizörün veri sayfası EK A'dadır.
+AA tarafta Entes EMK-01 analizörü ve 50/5 oranlı, \SI{5}{\voltampere}, 0,1 doğruluk sınıfında akım transformatörleri kullanılmıştır. Akım transformatörünün IEC~61869-2'ye göre yapılan kalibrasyon ölçümü EK A'da verilmiştir. Deney akımının bulunduğu anma akımının \%5'i bölgesinde oran hatası $-$\%0,046, faz hatası 2,8~dakikadır. İki hata da AA güç ölçümünün belirsizliğinde ihmal edilebilir düzeydedir. Üç faz ve nötr hattı için dört akım transformatörü bağlanmıştır. Faz--nötr gerilimleri, faz/nötr akımları, aktif ve reaktif güç ile toplam THD değerleri Modbus RTU üzerinden okunmuştur. Şekil~\ref{fig:deney-emk01}(a) analizörü, Şekil~\ref{fig:deney-emk01}(b) üreticinin bağlantı düzenini vermektedir. Bağlantı düzeni üreticinin belgesinden alınmıştır. Analizörün veri sayfası EK A'dadır.
 
 \begin{figure}[H]
   \centering
@@ -262,7 +262,7 @@ Tablo~\ref{tab:olcum-cihazlari}, kullanılan cihaz ve sensörleri bildirilen öz
     \toprule
     Büyüklük & Cihaz / sensör & Bildirilen özellik & Doğruluk bilgisinin kaynağı \\
     \midrule
-    AA güç ve THD & Entes EMK-01 ve 50/5 oranlı, \SI[inter-unit-product={}]{5}{\volt\ampere} akım transformatörleri & 0,1 doğruluk sınıfı & Akım transformatörünün kalibrasyon ölçümü EK A'dadır (15.01.2025): anma akımının \%5'inde oran hatası $-$\%0,046, faz hatası 2,8~dk. \\
+    AA güç ve THD & Entes EMK-01 ve 50/5 oranlı, \SI{5}{\voltampere} akım transformatörleri & 0,1 doğruluk sınıfı & Akım transformatörünün kalibrasyon ölçümü EK A'dadır (15.01.2025): anma akımının \%5'inde oran hatası $-$\%0,046, faz hatası 2,8~dk. \\
     DA güç & Accuenergy AcuDC240 ve \SI{20}{\ampere}/\SI{60}{\milli\volt} şönt & Akım/gerilim yüzde 0,2; güç/enerji yüzde 0,5 & Doğruluk değerleri veri sayfasıyla (EK A) doğrulanmıştır. \\
     Hızlı akım & Tektronix TCP0150 & \SI{150}{\ampere}, \SI{20}{\mega\hertz} & Üretici veri sayfası. \\
     Hızlı gerilim & Tektronix THDP0200 & \SI{1500}{\volt}, \SI{200}{\mega\hertz} & Üretici veri sayfası. \\
