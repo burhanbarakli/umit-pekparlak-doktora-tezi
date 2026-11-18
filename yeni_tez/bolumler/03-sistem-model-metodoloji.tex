@@ -250,7 +250,7 @@ Faz başına ortalama modelde evirici tarafı endüktansı $L_1$, filtre kapasit
     wire/.style={line width=0.9pt},
     signal/.style={-{Latex[length=1.8mm]},dashed,gray!80}
   ]
-    \node[block,align=center] (inv) at (0,0) {T-tipi\\faz kolu};
+    \node[block,align=center] (inv) at (0,0) {T-tipi\\[0.8mm]faz kolu};
     \node[resistor] (r1) at (1.65,0) {$R_1$};
     \coordinate (l1a) at (2.35,0);
     \coordinate (l1b) at (3.45,0);
@@ -258,7 +258,7 @@ Faz başına ortalama modelde evirici tarafı endüktansı $L_1$, filtre kapasit
     \node[resistor] (r2) at (5.30,0) {$R_2$};
     \coordinate (l2a) at (5.95,0);
     \coordinate (l2b) at (7.05,0);
-    \node[block,align=center] (grid) at (8.55,0) {Şebeke\\$v_g$};
+    \node[block,align=center] (grid) at (8.55,0) {Şebeke\\[0.8mm]$v_g$};
     \draw[wire] (inv.east) -- node[above,font=\scriptsize] {$v_{\mathrm{inv}}$} (r1.west);
     \draw[wire] (r1.east) -- (l1a);
     \draw[coilpath,line width=0.9pt] (l1a) -- (l1b);
@@ -268,8 +268,8 @@ Faz başına ortalama modelde evirici tarafı endüktansı $L_1$, filtre kapasit
     \draw[wire] (l2b) -- (grid.west);
     \node[above=2mm,font=\scriptsize] at ($(l1a)!0.5!(l1b)$) {$L_1$};
     \node[above=2mm,font=\scriptsize] at ($(l2a)!0.5!(l2b)$) {$L_2$};
-    \draw[current] (2.30,0.55) -- node[above,font=\scriptsize] {$i_1$} (3.45,0.55);
-    \draw[current] (5.90,0.55) -- node[above,font=\scriptsize] {$i_2$} (7.05,0.55);
+    \draw[current] (2.30,0.95) -- node[above,font=\scriptsize] {$i_1$} (3.45,0.95);
+    \draw[current] (5.90,0.95) -- node[above,font=\scriptsize] {$i_2$} (7.05,0.95);
     \fill (vc) circle (1.6pt);
     \draw[line width=0.8pt] (vc) -- (4.10,-0.8);
     \draw[line width=0.8pt] (3.73,-0.8) -- (4.47,-0.8);
@@ -283,7 +283,7 @@ Faz başına ortalama modelde evirici tarafı endüktansı $L_1$, filtre kapasit
     \node[sensor] (si1) at (2.90,-2.25) {$i_1$};
     \node[sensor] (svc) at (4.10,-2.25) {$v_c$};
     \node[sensor] (si2) at (6.50,-2.25) {$i_2$};
-    \node[block,fill=gray!8,align=center] (adc) at (4.85,-3.55) {Ölçüm ve\\ADC zinciri};
+    \node[block,fill=gray!8,align=center] (adc) at (4.85,-3.55) {Ölçüm ve\\[0.8mm]ADC zinciri};
     \draw[signal] ($(l1a)!0.5!(l1b)$) -- (si1.north);
     \draw[signal] (vc) -- (svc.north);
     \draw[signal] ($(l2a)!0.5!(l2b)$) -- (si2.north);
