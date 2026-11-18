@@ -234,19 +234,22 @@ Pozitif ve negatif yarım periyotlar ayrı ayrı ele alındığında faz kolu, a
 
 Anahtarlama periyodu $T_s$, boyutsuz görev oranı $d\in[0,1]$, faz koluna uygulanan etkin DA gerilimi $V_h$, anlık şebeke gerilimi $v_g$ ve eşdeğer filtre endüktansı $L$ olarak tanımlansın. Pozitif yarım periyotta endüktör gerilimi anahtarın iletim aralığında $V_h-v_g$, kesim aralığında $-v_g$'dir. Anahtarlama periyodu boyunca gerilimlerin yaklaşık sabit kaldığı ve yerel volt--saniye dengesinin sağlandığı kabul edilirse tepe--tepe akım dalgalanması $\Delta i_L$
 \begin{equation}
-  \Delta i_L(t)\simeq\frac{V_hT_s}{L}\,d(t)\left[1-d(t)\right],\qquad
-  d(t)\simeq\frac{v_g(t)}{V_h},\qquad
-  \Delta i_{L,\max}=\frac{V_hT_s}{4L}\quad\left(d=\tfrac12\right)
+  \begin{gathered}[b]
+    \Delta i_L(t)\simeq\frac{V_hT_s}{L}\,d(t)\left[1-d(t)\right],\quad
+    d(t)\simeq\frac{v_g(t)}{V_h},\\
+    \Delta i_{L,\max}=\frac{V_hT_s}{4L}
+    \quad\left(d=\tfrac12\right)
+  \end{gathered}
   \label{eq:buck-akim-dalgalanmasi}
 \end{equation}
 ile bulunmaktadır \citep{Erickson2001,Chen2010}. Ortalama akım $\bar i_L$ ile sınır akımı $I_{\mathrm{B}}$ arasındaki ilişki çalışma bölgesini belirlemektedir \citep{Mohan2003,Erickson2001,Holmes2003}:
 \begin{equation}
-  \begin{gathered}
-    I_{\mathrm{B}}(t)=\frac{\Delta i_L(t)}{2},\qquad
+  \begin{gathered}[b]
+    I_{\mathrm{B}}(t)=\frac{\Delta i_L(t)}{2},\quad
     i_{L,\min}=\bar i_L-I_{\mathrm{B}},\\
     \text{kip}=
     \begin{cases}
-      \text{CCM}, & |\bar i_L|>I_{\mathrm{B}},\\
+      \text{CCM}, & |\bar i_L|>I_{\mathrm{B}},\\[5bp]
       \text{zorlanmış CCM (klasik) ya da DCM (susturma)}, & |\bar i_L|<I_{\mathrm{B}}
     \end{cases}
   \end{gathered}
