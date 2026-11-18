@@ -16,6 +16,16 @@
 \RequirePackage{tikz}
 \RequirePackage{circuitikz}
 \usetikzlibrary{arrows.meta,positioning,fit,calc,decorations.pathmorphing}
+% Tek dosyadan gelen çok panelli şekillerin üstüne panel harfi yazar.
+% #1: görsel (\includegraphics...), #2: konum/harf listesi; konum, panel ortasının görsel
+% genişliğine oranıdır (ör. {0.26/a, 0.78/b}).
+\newcommand{\panelharfli}[2]{%
+  \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0pt] (pnlg) at (0,0) {#1};
+    \foreach \px/\pl in {#2}
+      \path (pnlg.north west) -- (pnlg.north east)
+        node[pos=\px,above=1mm,inner sep=0pt,font=\footnotesize] {(\pl)};
+  \end{tikzpicture}}
 \RequirePackage{pgfplots}
 \pgfplotsset{compat=1.18}
 \usepgfplotslibrary{groupplots}

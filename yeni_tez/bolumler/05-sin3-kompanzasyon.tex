@@ -150,8 +150,8 @@ olarak bulunmuştur. Eşitlik~\eqref{eq:sin3-esdeger-katsayilar} ile harmonik e�
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth]{sekiller/b5/sin3_katsayi_taramasi.pdf}
-  \caption{$(k_1,k_3)$ katsayı düzleminde üçüncü harmonik oranı (sol) ve en iyi nokta ile saf sinüs görev oranının ortalama akım zarfı karşılaştırması (sağ). Sol panelde beyaz noktalar \SI{2.0}{}--\SI{2.6}{\ampere} RMS bölgesini, beyaz sürekli çizgi \%5 eş-oran eğrisini, yıldız en iyi noktayı göstermektedir. Eğriler parçalı DCM/CCM analitik modelinden elde edilmiştir.}
+  \panelharfli{\includegraphics[width=\textwidth]{sekiller/b5/sin3_katsayi_taramasi.pdf}}{0.226/a, 0.815/b}
+  \caption{$(k_1,k_3)$ katsayı düzleminde (a) üçüncü harmonik oranı ve (b) en iyi nokta ile saf sinüs görev oranının ortalama akım zarfı karşılaştırması. (a) panelinde beyaz noktalar \SI{2.0}{}--\SI{2.6}{\ampere} RMS bölgesini, beyaz sürekli çizgi \%5 eş-oran eğrisini, yıldız en iyi noktayı göstermektedir. Eğriler parçalı DCM/CCM analitik modelinden elde edilmiştir.}
   \label{fig:sin3-yeniden-tarama}
 \end{figure}
 
@@ -274,12 +274,12 @@ Tablo~\ref{tab:s4-tarama}, büyütülmüş DA bara ve S3 ileri besleme değerler
   \item \textbf{Tezdeki yeri.} Anma akımında sınırın altına inmek için akıma göre ayarlanan Sin\textsuperscript{3} genliği ya da susturmadan tamamlayıcı anahtarlamaya geçiş gerekir; ikisi de gelecek çalışma olarak önerilmiştir.
 \end{itemize}}
 
-Anma akımında PI ve PIR denetleyicileri referansı doyumsuz izlemektedir. PIR, \SI{50}{\hertz} rezonans terimiyle temel bileşen hatasını $-$\%1,0 ve $+0{,}2^{\circ}$'ye indirmektedir. PIR ile THD \%8,5, temel bileşen güç faktörü ($\cos\varphi_1$) 0,997'dir. Oransal denetleyici aynı noktada $-$\%11,4 genlik hatası bırakmaktadır. Kalıcı hatanın nedeni, \SI{50}{\hertz}'teki sonlu çevrim kazancıdır. Şekil~\ref{fig:s4-akim-izleme-25a}, \SI{25}{\ampere} noktasında üç denetleyicinin son iki şebeke periyodundaki $L_1$ akımını, referansı, çıkış akımını ve C noktası gerilimini birlikte göstermektedir. Gerilim sağ eksende, şebeke nötrüne göre çizilmiştir. Üç denetleyicide de $v_{ac}$'nin periyot ortalaması \SI{0.03}{\volt} altındadır. Şekil~\ref{fig:s4-tarama-ozet} ise verim, THD ve genlik hatasının akıma göre değişimini özetlemektedir.
+Anma akımında PI ve PIR denetleyicileri referansı doyumsuz izlemektedir. PIR, \SI{50}{\hertz} rezonans terimiyle temel bileşen hatasını $-$\%1,0 ve $+0{,}2^{\circ}$'ye indirmektedir. PIR ile THD \%8,5, temel bileşen güç faktörü ($\cos\varphi_1$) 0,997'dir. Oransal denetleyici aynı noktada $-$\%11,4 genlik hatası bırakmaktadır. Kalıcı hatanın nedeni, \SI{50}{\hertz}'teki sonlu çevrim kazancıdır. Şekil~\ref{fig:s4-akim-izleme-25a}, \SI{25}{\ampere} noktasında üç denetleyicinin son iki şebeke periyodundaki $L_1$ akımını, referansı, çıkış akımını ve C noktası gerilimini ($v_{ac}$) birlikte göstermektedir. Gerilim sağ eksende, şebeke nötrüne göre çizilmiştir. Üç denetleyicide de $v_{ac}$'nin periyot ortalaması \SI{0.03}{\volt} altındadır. Şekil~\ref{fig:s4-tarama-ozet} ise verim, THD ve genlik hatasının akıma göre değişimini özetlemektedir.
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth,height=0.62\textheight,keepaspectratio]{sekiller/b5/s4_akim_izleme_25A.pdf}
-  \caption{S4 benzetiminde \SI{25}{\ampere} anma akımında P (üst), PI (orta) ve PIR (alt) denetleyicileriyle son iki şebeke periyodu. Sol eksende $L_1$ akımı (anlık ve anahtarlama periyodu ortalaması), akım referansı ile çıkış akımı, sağ eksende şebeke nötrüne göre C noktası gerilimi $v_{ac}$ yer almaktadır.}
+  \caption{S4 benzetiminde \SI{25}{\ampere} anma akımında (a) P, (b) PI ve (c) PIR denetleyicileriyle son iki şebeke periyodu.}
   \label{fig:s4-akim-izleme-25a}
 \end{figure}
 
