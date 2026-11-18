@@ -174,7 +174,7 @@ Modülasyon, pozitif yarım periyotta $P$ ile $O$, negatif yarım periyotta ise 
   \begin{subfigure}[t]{0.48\textwidth}
     \centering
     \ttypevector{green!55!black}{gray!65}{gray!65}{gray!65}{%
-      \draw[current] (0.7,5) -- (q1.north);
+      \draw[current] (0.7,5) -| (q1.north);
       \draw[current] (q1.south) -- (out) -- (5.0,2);}
     \caption{Pozitif alternans, aktif $P$ durumu}
   \end{subfigure}\hfill
@@ -192,7 +192,7 @@ Modülasyon, pozitif yarım periyotta $P$ ile $O$, negatif yarım periyotta ise 
     \centering
     \ttypevector{gray!65}{green!55!black}{gray!65}{gray!65}{%
       \draw[current] (5.0,2) -- (out) -- (q2.north);
-      \draw[current] (q2.south) -- (0.7,-1);}
+      \draw[current] (q2.south) |- (0.7,-1);}
     \caption{Negatif alternans, aktif $N$ durumu}
   \end{subfigure}\hfill
   \begin{subfigure}[t]{0.48\textwidth}
