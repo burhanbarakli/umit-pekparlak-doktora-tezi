@@ -72,13 +72,13 @@ Her iddia, kendisini en doğrudan sınayan model katmanıyla desteklenmiştir. T
 
 Faz kolunun devre yapısı ve $Q_1$--$Q_4$ adlandırması Şekil~\ref{fig:t-tipi-faz-kolu} üzerinde verilmiştir. $Q_1$--$Q_4$, Tablo~\ref{tab:sistem-parametreleri} içindeki $S_1$--$S_4$ anahtarlarıyla birebir aynıdır. Bölünmüş bara geriliminin toplamı $V_{\mathrm{dc}}$ kabul edildiğinde ideal faz-kutup gerilimi $+V_{\mathrm{dc}}/2$, $0$ ve $-V_{\mathrm{dc}}/2$ seviyelerinden birini almaktadır. Nötr kolun eklediği sıfır seviyesi, iki seviyeli yapıya göre daha küçük gerilim basamakları oluşturmaktadır. Karşılığında komütasyon düzeninin ve nötr nokta akımının ayrıca yönetilmesi gerekmektedir \citep{Schweizer2013,Wang2020}.
 
-Sistemin tam açık güç şeması Şekil~\ref{fig:gelen-tam-topoloji} üzerinde, birinci faz hücresi ise okunabilir ölçekte Şekil~\ref{fig:gelen-faz1-hucresi} üzerinde verilmiştir. Sistem sınırı şemaya göre belirlenmiştir. Şemanın solunda dört iletkenli giriş, ortak-mod endüktansları ve şönt kapasitörlerden oluşan giriş/EMI ağı yer almaktadır. Ortada, ortak DA bağlantısına bağlanan üç tekrarlı T-tipi faz hücresi bulunmaktadır. Her hücrede dış kol anahtar modülü, çift yönlü nötr kol, PFC yükseltici (boost) diyotları, yerel kapasitörler, akım algılama elemanı ve röle vardır. Hücrelerin altındaki nötr hattı, üç fazın DA bara orta noktalarını birbirine ve giriş nötrüne bağlamaktadır. Şemanın en alt kısmında ise GT-tipi mimarinin şarj yönünde kullanılan batarya yönetim sistemi (BYS) transformatörleri görülmektedir. Deney düzeneği GT-tipi mimariye göre kurulmuştur. Her hücredeki röle ($RL1$) ile doğrultucu ve yükseltici diyotlar, şarj ve deşarj kipleri arasındaki geçişe hizmet etmektedir. Şemadaki $L1$, $L2$ ve $L3$ etiketleri LCL filtrenin ardışık $L_1$--$L_2$ elemanlarını değil, sırasıyla A, B ve C fazlarına ait üç eş \SI{600}{\micro\henry} bobini göstermektedir. Dolayısıyla $L2=\SI{600}{\micro\henry}$ etiketi filtrenin şebeke tarafı endüktansı değildir. Tezde bütün topoloji üç amaçla kullanılmaktadır: sistem ve ölçüm sınırını belirlemek, üç fazın aynı faz-başına modelin tekrarı olduğunu göstermek ve yarı iletken/parazit parametrelerini gerçek devre elemanlarıyla eşlemek. Anahtarlama denklemleri ve akım yolu çizimleri okunabilirlik için Şekil~\ref{fig:t-tipi-akim-yollari} altındaki tek faz eşdeğerine indirgenmiştir. Tek faz indirgemesi yalnız gösterimi sadeleştirmektedir. Giriş filtresi, diğer iki faz ve ölçüm/koruma elemanları fiziksel sistemde yer almaktadır.
+Sistemin tam açık güç şeması Şekil~\ref{fig:gelen-tam-topoloji} üzerinde, birinci faz hücresi ise okunabilir ölçekte Şekil~\ref{fig:gelen-faz1-hucresi} üzerinde verilmiştir. Sistem sınırı şemaya göre belirlenmiştir. Şemanın solunda dört iletkenli giriş, ortak-mod endüktansları ve şönt kapasitörlerden oluşan giriş/EMI ağı yer almaktadır. Ortada, ortak DA bağlantısına bağlanan üç tekrarlı T-tipi faz hücresi bulunmaktadır. Her hücrede dış kol anahtar modülü, çift yönlü nötr kol, PFC yükseltici (boost) diyotları, yerel kapasitörler, akım algılama elemanı ve röle vardır. Her hücrede nötr kolun faz tarafındaki anahtarı dış kolun üst anahtarıyla, orta nokta tarafındaki anahtarı alt anahtarıyla tümleyen çift oluşturmaktadır (birinci fazda $Q_1$--$Q_3$ ve $Q_2$--$Q_4$). Hücrelerin altındaki nötr hattı, üç fazın DA bara orta noktalarını birbirine ve giriş nötrüne bağlamaktadır. Şemanın en alt kısmında ise GT-tipi mimarinin şarj yönünde kullanılan batarya yönetim sistemi (BYS) transformatörleri görülmektedir. Deney düzeneği GT-tipi mimariye göre kurulmuştur. Her hücredeki röle ($RL1$) ile doğrultucu ve yükseltici diyotlar, şarj ve deşarj kipleri arasındaki geçişe hizmet etmektedir. Şemadaki $L1$, $L2$ ve $L3$ etiketleri LCL filtrenin ardışık $L_1$--$L_2$ elemanlarını değil, sırasıyla A, B ve C fazlarına ait üç eş \SI{600}{\micro\henry} bobini göstermektedir. Dolayısıyla $L2=\SI{600}{\micro\henry}$ etiketi filtrenin şebeke tarafı endüktansı değildir. Tezde bütün topoloji üç amaçla kullanılmaktadır: sistem ve ölçüm sınırını belirlemek, üç fazın aynı faz-başına modelin tekrarı olduğunu göstermek ve yarı iletken/parazit parametrelerini gerçek devre elemanlarıyla eşlemek. Anahtarlama denklemleri ve akım yolu çizimleri okunabilirlik için Şekil~\ref{fig:t-tipi-akim-yollari} altındaki tek faz eşdeğerine indirgenmiştir. Tek faz indirgemesi yalnız gösterimi sadeleştirmektedir. Giriş filtresi, diğer iki faz ve ölçüm/koruma elemanları fiziksel sistemde yer almaktadır.
 
 \begin{landscape}
 \begin{figure}[H]
   \centering
   \includegraphics[width=\linewidth,height=0.78\textheight,keepaspectratio]{umit_2026-11-09/tam_topoloji_notr_q1q3_q2q4.pdf}
-  \caption{GT-tipi olarak kurulan deney düzeneğinin üç fazlı tam güç topolojisi: ortak giriş/EMI ağı, üç tekrarlı T-tipi faz hücresi ve DA bara orta noktalarını giriş nötrüne bağlayan nötr hattı. Şema ayrıca akım algılama ile kip değişim rölesi yollarını ve şarj yönündeki BYS transformatörlerini içermektedir. Her hücrede nötr kolun faz tarafındaki anahtarı dış kolun üst anahtarıyla, orta nokta tarafındaki anahtarı alt anahtarıyla tümleyen çift oluşturmaktadır (birinci fazda $Q_1$--$Q_3$ ve $Q_2$--$Q_4$). Şema, yöntem bölümünde sistem sınırı ve faz-başına indirgeme kaynağı olarak kullanılmıştır.}
+  \caption{GT-tipi olarak kurulan deney düzeneğinin üç fazlı tam güç topolojisi: ortak giriş/EMI ağı, üç tekrarlı T-tipi faz hücresi ve DA bara orta noktalarını giriş nötrüne bağlayan nötr hattı.}
   \label{fig:gelen-tam-topoloji}
 \end{figure}
 \end{landscape}
@@ -132,7 +132,7 @@ olarak yazılabilir \citep{Holmes2003,Wang2020}. Benzetim modelinde ölü zaman 
       \draw[activepath] (q2.north) -- (out) -- (5.0,2);}}
     \caption{$N$: $-V_{\mathrm{dc}}/2$}
   \end{subfigure}
-  \caption{T-tipi faz kolunun üç gerilim durumu. Yeşil anahtarlar ve mavi bağlantılar ilgili durumun etkin elemanlarını göstermektedir.}
+  \caption{T-tipi faz kolunun üç gerilim durumu.}
   \label{fig:t-tipi-uc-seviye}
 \end{figure}
 
@@ -201,7 +201,7 @@ Modülasyon, pozitif yarım periyotta $P$ ile $O$, negatif yarım periyotta ise 
       \draw[current] (q3.west) -- (0.5,2);}
     \caption{Negatif alternans, sıfır $O$ durumu}
   \end{subfigure}
-  \caption{T-tipi faz kolunun devre yapısı ile dört temel akım yolunun ortak devre dili ve renk lejandıyla vektörel gösterimi. Tam topoloji $C_A$, $C_B$, antiparalel diyotlu IGBT'ler, $L_1$, $C_f$ ve $L_2$ elemanlarını içermektedir. Kırmızı oklar, tanımlanan pozitif akım yönüne göre iletim yollarını göstermektedir.}
+  \caption{T-tipi faz kolunun devre yapısı ve dört temel akım yolu.}
   \label{fig:t-tipi-akim-yollari}
 \end{figure}
 
@@ -226,7 +226,7 @@ Pozitif ve negatif yarım periyotlar ayrı ayrı ele alındığında faz kolu, a
     \resizebox{\linewidth}{!}{\syncbuckvector{$N$}{$-V_{\mathrm{dc}}/2$}{$Q_4$}{$Q_2$}{0}}
     \caption{Negatif yarım periyot eşdeğeri}
   \end{subfigure}
-  \caption{T-tipi faz kolunun yarım periyotlara göre senkron-buck eşdeğerleri. Yeşil anahtar ve mavi yol aktif enerji aktarımını göstermektedir.}
+  \caption{T-tipi faz kolunun yarım periyotlara göre senkron-buck eşdeğerleri.}
   \label{fig:senkron-buck-esdeger}
 \end{figure}
 
@@ -624,7 +624,7 @@ Benzetim modelleri, deney senaryolarını yeniden üretmek amacıyla senaryo ba�
 \begin{figure}[H]
   \centering
   \includegraphics[width=\linewidth,height=0.78\textheight,keepaspectratio]{umit_2026-11-09/s3_model_sematik.pdf}
-  \caption[S3 benzetim modelinin üst düzey çizimi]{S3 benzetim modelinin üst düzey çizimi. Çizimde DA kaynak ve bölünmüş bara, T-tipi güç katı, $L_1$ ve çekirdek kaybı, iki kademeli EMC süzgeci ile şebeke eşdeğeri ($L_2$) yer almaktadır. Sin\textsuperscript{3} ileri beslemeli modülasyon (ANAHTARLAMA) ile ölçüm ve güç hesabı blokları da çizimdedir. Şekildeki S1--S4 etiketli anahtarlar sırasıyla $Q_1$--$Q_4$'tür. Güç katı ve ölçüm blokları Senaryo~1--4 modellerinde aynıdır. Senaryolar anahtarlama girişi ve çalışma noktası parametreleriyle (DA bara gerilimi, ileri besleme katsayıları) ayrılmaktadır. Çizim model dosyasından vektör olarak alınmıştır.}
+  \caption[S3 benzetim modelinin üst düzey çizimi]{S3 benzetim modelinin üst düzey çizimi. Çizimde DA kaynak ve bölünmüş bara, T-tipi güç katı, $L_1$ ve çekirdek kaybı, iki kademeli EMC süzgeci ile şebeke eşdeğeri ($L_2$) yer almaktadır. Şekildeki S1--S4 etiketli anahtarlar sırasıyla $Q_1$--$Q_4$'tür.}
   \label{fig:s3-simulink-modeli}
 \end{figure}
 \end{landscape}

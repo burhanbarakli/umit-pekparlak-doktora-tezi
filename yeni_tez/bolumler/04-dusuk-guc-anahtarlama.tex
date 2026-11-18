@@ -114,7 +114,7 @@ Susturmanın devre düzeyindeki sonucu Şekil~\ref{fig:susturma-esdeger} üzerin
     \resizebox{\linewidth}{!}{\susturmabuckvector{$N$}{$-V_{\mathrm{dc}}/2$}{$Q_2$}{$Q_3$ iletimde\\$+\,DS_4$}{0}}
     \caption{Negatif yarım periyot: $Q_2$ anahtarlanmakta, $Q_4$ susturulmaktadır}
   \end{subfigure}
-  \caption{Nötr anahtar susturmada faz kolunun yarım periyot eşdeğerleri: senkron olmayan iki alçaltıcı dönüştürücü. Mavi yol aktif enerji aktarımını, turuncu kesikli yol diyot üzerinden tek yönlü serbest dolaşımı göstermektedir. Ters yöndeki akım için nötr koldan yol yoktur.}
+  \caption{Nötr anahtar susturmada faz kolunun yarım periyot eşdeğerleri: senkron olmayan iki alçaltıcı dönüştürücü.}
   \label{fig:susturma-esdeger}
 \end{figure}
 
@@ -123,7 +123,7 @@ Benzetim modelinde S2 kapı yolu, tezdeki nötr anahtar susturma tanımına gör
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.96\textwidth]{model_dogrulama/s2_kapi_isaretleri.pdf}
-  \caption[Nötr anahtar susturmada (S2) $Q_1$--$Q_4$ kapı komutları]{Nötr anahtar susturmada (S2) $Q_1$--$Q_4$ kapı komutları: solda son tam şebeke periyodu (\num{80}--\SI{100}{\milli\second}), sağda pozitif yarım periyottan \SI{400}{\micro\second} kesit. Kayıt, doğrulanmış benzetim modelinden alınmıştır. Nötr anahtarlar yarım periyot boyunca sabit 1 veya 0 değerindedir. Pozitif yarım periyotta $Q_3$, negatif yarım periyotta $Q_4$ susturulmaktadır.}
+  \caption[Nötr anahtar susturmada (S2) $Q_1$--$Q_4$ kapı komutları]{Nötr anahtar susturmada (S2) $Q_1$--$Q_4$ kapı komutları: solda son tam şebeke periyodu (\num{80}--\SI{100}{\milli\second}), sağda pozitif yarım periyottan \SI{400}{\micro\second} kesit.}
   \label{fig:s2-kapi-isaretleri}
 \end{figure}
 
@@ -142,7 +142,7 @@ biçimindedir. Son eşitlik $\sin3\theta=3\sin\theta-4\sin^3\theta$ özdeşliği
 \begin{figure}[H]
   \centering
   \input{sekiller/b4_denetleyici_duzeltme_akim}
-  \caption{Üçüncü harmonik içeren akımda referans akım, oluşan akım ve oransal denetleyici çıkışı ($K_p=1$). Taralı aralıklarda denetleyici çıkışı referansla ters işaretlidir.}
+  \caption{Üçüncü harmonik içeren akımda referans akım, oluşan akım ve oransal denetleyici çıkışı ($K_p=1$).}
   \label{fig:denetleyici-duzeltme-akim}
 \end{figure}
 
@@ -159,7 +159,7 @@ biçimindedir. Eşitlik~\eqref{eq:ters-kappa-kosulu}, ileri besleme katsayılar�
 \begin{figure}[H]
   \centering
   \input{sekiller/b4_denetleyici_kapi}
-  \caption{Anahtar gruplarının yarım periyot göstergesiyle seçilmesi: (a) komut referansla aynı işarette, klasik kapı düzeni, (b) komut Şekil~\ref{fig:denetleyici-duzeltme-akim}'deki denetleyici çıkışı. Koyu dolgular PWM darbelerini, açık dolgular tümleyen darbeleri, gri dolgular sürekli iletimi gösterir. Taralı aralıklarda karşı anahtar grubu çalışmaktadır.}
+  \caption{Anahtar gruplarının yarım periyot göstergesiyle seçilmesi: (a) komut referansla aynı işarette, klasik kapı düzeni, (b) komut Şekil~\ref{fig:denetleyici-duzeltme-akim}'deki denetleyici çıkışı.}
   \label{fig:denetleyici-kapi}
 \end{figure}
 
@@ -187,14 +187,14 @@ S1 ile S2 karşılaştırması üç bulgu vermektedir. İlk iki bulgu Tablo~\ref
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.96\textwidth]{model_dogrulama/s1_s2_kalibre_l1.pdf}
-  \caption[S1 ve S2 benzetiminde $L_1$ akımı]{S1 ve S2 benzetiminde $L_1$ akımı: (a) S1 ve (c) S2 için son tam şebeke periyodunda $i_{L1}$ ve şebeke akımı $i_g$, (b) S1 ve (d) S2 için pozitif yarım periyottan \SI{400}{\micro\second} kesit. S1'de akım her anahtarlama periyodunda ters yöne geçmekte, S2'de sıfırda kalmaktadır.}
+  \caption[S1 ve S2 benzetiminde $L_1$ akımı]{S1 ve S2 benzetiminde $L_1$ akımı: (a) S1 ve (c) S2 için son tam şebeke periyodunda $i_{L1}$ ve şebeke akımı $i_g$, (b) S1 ve (d) S2 için pozitif yarım periyottan \SI{400}{\micro\second} kesit.}
   \label{fig:s1-s2-kalibre-l1}
 \end{figure}
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.96\textwidth]{model_dogrulama/s1_s2_kalibre_dalga.pdf}
-  \caption[S1 ve S2 benzetiminde kutup gerilimi, şebeke gerilimi ve şebeke akımı]{S1 ve S2 benzetiminde son tam şebeke periyodu (\num{80}--\SI{100}{\milli\second}): (a) S1 ve (b) S2 için kutup gerilimi $v_{\mathrm{inv}}$, C noktasındaki gerilim $v_g$ ve şebeke akımı $i_g$. (c) Pozitif yarım periyottan \SI{400}{\micro\second} kesitte iki senaryonun kutup gerilimi. S2'de akım söndüğünde kutup gerilimi ara bir seviyeye geçmektedir.}
+  \caption[S1 ve S2 benzetiminde kutup gerilimi, şebeke gerilimi ve şebeke akımı]{S1 ve S2 benzetiminde son tam şebeke periyodu (\num{80}--\SI{100}{\milli\second}): (a) S1 ve (b) S2 için kutup gerilimi $v_{\mathrm{inv}}$, C noktasındaki gerilim $v_g$ ve şebeke akımı $i_g$. (c) Pozitif yarım periyottan \SI{400}{\micro\second} kesitte iki senaryonun kutup gerilimi.}
   \label{fig:s1-s2-kalibre-dalga}
 \end{figure}
 
