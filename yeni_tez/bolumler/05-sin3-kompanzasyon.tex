@@ -238,6 +238,45 @@ PI sıfırı \SI{60}{\hertz}'e, yani birinci kazanç geçiş frekansının (yakl
 
 \textbf{DA bara önkoşulu.} Faz başına modelde faz akımının tamamı bara kapasitörlerinden geçtiği için orta nokta salınımı akımla büyümektedir. Faz başına modelin bara kapasitörleri (2$\times$\SI{470}{\micro\farad}) üç fazlı deney donanımının toplam bara kapasitansından bir faza düşen paydır. Üç fazlı dört telli donanımda ise dengeli çalışan fazların temel bileşen orta nokta akımları birbirini götürmektedir. Orta noktada \SI{150}{\hertz} bileşeni ve öteki üçlü harmonikler kalmaktadır. Faz başına modelde ise faz payı kapasitansla salınım \SI{2.3}{\ampere}'de yaklaşık \SI{11}{\volt} ($V_{\mathrm{dc}}/2$'nin \%5'i), \SI{25}{\ampere}'de yaklaşık \SI{120}{\volt} (\%56) olmaktadır. Faz payı kapasitansla yapılan \SI{25}{\ampere} PI benzetiminde evirici darbe yüksekliği pozitif alternans boyunca yaklaşık \SI{270}{\volt}'tan \SI{100}{\volt}'a inmektedir. Aynı benzetimde modülasyon zamanın \%20,6'sında doyumda kalmakta ve son iki periyodun aktif gücü yaklaşık \%31 farklıdır. Salınımı sınırlamak amacıyla bütün S4 benzetimlerinde bara kapasitansı 2$\times$\SI{5.6}{\milli\farad} değerine büyütülmüş ve \SI{25}{\ampere}'deki salınım yaklaşık \SI{10}{\volt}'a (\%4,7) inmiştir (Tablo~\ref{tab:sistem-parametreleri}). Büyütülmüş barayla PI denetleyici referansı $-$\%2,1 genlik hatasıyla doyumsuz izlemekte, THD \%9,2'ye inmektedir. Anma akımında kapalı çevrim çalışmanın önkoşulu, DA bara orta noktasının tutulabilmesidir. Büyütülmüş bara kapasitansı, üç fazlı donanımdaki küçük orta nokta salınımını faz başına modelde temsil etmektedir.
 
+\subsection{Akım denetleyicisinin düşük güçteki düzeltme davranışı}
+\label{sec:denetleyici-duzeltme}
+
+S4'te modülasyon komutu bir akım denetleyicisinden geldiğinden Bölüm~\ref{chap:anahtarlama} içindeki açık çevrim kapı mantığının davranışı değişebilmektedir. Kapalı çevrim akım denetiminde denetleyici, her denetim periyodunda referans akım ile ölçülen akım arasındaki hatadan bir düzeltme komutu üretmektedir. Yüksek güçte evirici çıkışındaki gerilim payı hatayı kısa sürede gidermekte ve düzeltme komutu modülasyon komutunun küçük bir bölümünde kalmaktadır. Düşük güçte ise akım, süreksiz iletim ve üçüncü harmonik nedeniyle referanstan periyot boyunca sistematik olarak sapmaktadır (Alt Bölüm~\ref{sec:harmonik-mekanizma}). Denetleyici sapmayı gidermek için çıkış gerilimini sürekli düzeltmeye çalışmaktadır. Akım genliğinin küçük olduğu sıfır geçiş çevresinde küçük komut değişimleri bile akımı belirgin biçimde etkilemektedir.
+
+Mekanizmayı yalın biçimde göstermek için denetleyici oransal kabul edilmiş ve ileri besleme yok sayılmıştır. Normalize referans $i^{\ast}=\sin\theta$, üçüncü harmonik içeren akım $i=0{,}8\sin\theta+0{,}4\sin3\theta$ ve $K_p=1$ için düzeltme komutu
+\begin{equation}
+  u=K_p\left(i^{\ast}-i\right)=0{,}2\sin\theta-0{,}4\sin3\theta=\sin\theta\left(1{,}6\sin^2\theta-1\right)
+  \label{eq:denetleyici-duzeltme}
+\end{equation}
+biçimindedir. Son eşitlik $\sin3\theta=3\sin\theta-4\sin^3\theta$ özdeşliğinden elde edilmiştir. Eşitlik~\eqref{eq:denetleyici-duzeltme} uyarınca komut, $|\sin\theta|<0{,}79$ aralığında, yani her sıfır geçişin çevresinde referansla ters işaretlidir (Şekil~\ref{fig:denetleyici-duzeltme-akim}). Sıfır geçiş çevresinde oluşan akım referansın üstünde kaldığından denetleyici akımı azaltmak için ters yönde gerilim istemektedir. Şekil, mekanizmanın biçimini göstermektedir.
+
+\begin{figure}[H]
+  \centering
+  \input{sekiller/b4_denetleyici_duzeltme_akim}
+  \caption{Üçüncü harmonik içeren akımda referans akım, oluşan akım ve oransal denetleyici çıkışı ($K_p=1$).}
+  \label{fig:denetleyici-duzeltme-akim}
+\end{figure}
+
+Hangi anahtar grubunun çalışacağını modülasyon komutunun işareti belirlemektedir (Eşitlik~\eqref{eq:kapi-mantigi} ve Eşitlik~\eqref{eq:susturma-etkinlestirme}). Klasik kapı düzeninde komut referansla aynı işarettedir (Şekil~\ref{fig:denetleyici-kapi}a). Komutu denetleyici çıkışı belirlediğinde yarım periyot göstergesi $\kappa$ sıfır geçişler çevresinde ters dönmektedir (Şekil~\ref{fig:denetleyici-kapi}b). Akım pozitifken $Q_2$ PWM ile sürülmekte ve $Q_3$ iletime alınmaktadır. Toplam komut, ileri besleme komutu $u_{\mathrm{ff}}$ ile geri besleme komutu $u_{\mathrm{fb}}$'nin toplamı olarak yazıldığında ters $\kappa$ koşulu
+\begin{equation}
+  \operatorname{sgn}u\neq\operatorname{sgn}\sin\theta
+  \iff
+  \operatorname{sgn}u_{\mathrm{fb}}\neq\operatorname{sgn}u_{\mathrm{ff}}
+  \ \land\ |u_{\mathrm{fb}}|>|u_{\mathrm{ff}}|
+  \label{eq:ters-kappa-kosulu}
+\end{equation}
+biçimindedir. Eşitlik~\eqref{eq:ters-kappa-kosulu}, ileri besleme katsayıları $K_{1x},K_{3x}\geq0$ olduğunda, yani $\operatorname{sgn}u_{\mathrm{ff}}=\operatorname{sgn}\sin\theta$ iken geçerlidir. Sıfır geçiş çevresinde $|u_{\mathrm{ff}}|$ küçüldüğünden küçük bir geri besleme komutu bile koşulu sağlamaktadır. Anahtar grubu geçişlerinin sayısı periyot başına ikiden altıya çıkmaktadır. Susturmalı çalışmada susturulan nötr anahtar da $\kappa$ ile seçildiğinden (Eşitlik~\eqref{eq:notr-susturma-kurali}), ters $\kappa$ aralığında susturulması gereken anahtar iletime alınmakta ve ters akım yolu yeniden açılmaktadır.
+
+\begin{figure}[H]
+  \centering
+  \input{sekiller/b4_denetleyici_kapi}
+  \caption{Anahtar gruplarının yarım periyot göstergesiyle seçilmesi: (a) komut referansla aynı işarette, klasik kapı düzeni, (b) komut Şekil~\ref{fig:denetleyici-duzeltme-akim}'deki denetleyici çıkışı.}
+  \label{fig:denetleyici-kapi}
+\end{figure}
+
+Mekanizma, S4 kapalı çevrim benzetiminin kayıtlarında da sayılmıştır. Son temel periyotta ileri besleme komutunun işareti periyot başına iki kez değişirken PI denetleyiciyle \SI{10}{\ampere} ve \SI{25}{\ampere} çalışmada toplam komutun işareti 24 kez değişmiştir. Ters $\kappa$ aralıklarının her biri bir anahtarlama periyodundan kısadır ve sıfır geçişler çevresinde toplanmaktadır. Aynı koşularda $L_1$ akımının referansa ters yöndeki yükünün ($Q_{\mathrm{rev}}$, Alt Bölüm~\ref{sec:ters-akim-mekanizmasi}) yaklaşık \%88'i ters $\kappa$ aralıklarında oluşmuştur. Oransal denetleyicide ve \SI{2.3}{\ampere} deney akımında ise ters $\kappa$ aralıklarındaki ters akım yükü ihmal edilebilir düzeydedir. Laboratuvar deneyleri (S1--S3) açık çevrim modülasyonla yürütüldüğünden mekanizma deney sonuçlarının açıklaması olarak kullanılmamıştır. Mekanizma, Sin\textsuperscript{3} kompanzasyonunun geri besleme düzeltmesine bırakılmadan modülasyon referansına ileri besleme olarak eklenmesinin (Bölüm~\ref{chap:sin3}) gerekçelerinden biridir. Akım düzeyine bağlı uygulamada $\kappa$'nın komut yerine akım referansının işaretinden ya da histerezisle seçilmesi mekanizmayı ortadan kaldırabilecek bir önlemdir.
+
+
 \subsection{Düşük, orta ve anma akımı taraması}
 
 Tablo~\ref{tab:s4-tarama}, büyütülmüş DA bara ve S3 ileri besleme değerleriyle yapılan kesin taramayı vermektedir. Kararlı durum büyüklükleri son tam şebeke periyodundan alınmıştır. P ve PI benzetimleri \SI{0.06}{\second}, PIR benzetimleri rezonans teriminin dar bandı nedeniyle \SI{0.2}{\second} sürmüştür. Oturma ölçütü olarak son iki periyodun aktif güç farkı kullanılmış, tablodaki bütün benzetimlerde fark \%0,12'nin altında kalmıştır. Verim sütunu modelin DA ve AA güç ölçüm bloklarından alınmıştır. S4, $L_1$ çekirdek kaybı direnci ve DA bara kapasitansı için S1--S3'ten farklı değerler kullanmaktadır (Tablo~\ref{tab:sistem-parametreleri}). Dolayısıyla S4 verimi ve THD'si S4 benzetimleri arasında karşılaştırılmaktadır.

@@ -133,93 +133,6 @@ GT-tipi yapı, deney düzeneğindeki T-tipi faz kollarını RL1 fonksiyon anahta
 
 Şekil~\ref{fig:gt-sentez-mimarisi}, farklı şekillere dağılan güç ve denetim katmanlarını tek bir işlevsel akışta birleştirmektedir. Şarj yönünde PFC katı şebeke akımı ile DA bara gerilimini, yarım köprü ve transformatör katı yalıtılmış enerji aktarımını, batarya başına buck kolları şarj akım ve gerilimlerini belirler. Deşarj yönünde T-tipi evirici, Bölüm~\ref{chap:sin3} altındaki akım denetimiyle şebekeye güç verir. Aynı anda bütün katların hızlı anahtarlanması gerekmez; RL1 kip geçişleri, güç dönüştürücü PWM'ninden daha yavaş bir üst seviye durum makinesiyle yönetilmelidir.
 
-\section{Şarj Yönündeki Benzetim Kayıtları}
-\label{sec:gt-benzetim}
-
-GT-tipi topolojinin şarj yönündeki işlevsel bütünlüğü; Vienna PFC, iki seviyeli transformatör besleme katı ve batarya şarj kolunu aynı Simulink modeli içinde çalıştıran bir benzetimle gösterilmiştir. Benzetim, Bölüm~\ref{chap:anahtarlama}--\ref{chap:deney} içindeki evirici kipine ait S1--S4 zincirinden ayrı tutulmuş ve mimari tanımın hemen ardından verilmiştir. Şekil~\ref{fig:gt-simulink-modeli}--\ref{fig:gt-batarya-soc}, şebekeden bataryaya uzanan PFC $\rightarrow$ DA bara $\rightarrow$ transformatör primeri $\rightarrow$ sekonder $\rightarrow$ buck/batarya zincirinin her aşamasını dalga biçimleriyle belgelemektedir.
-
-Şekil~\ref{fig:gt-simulink-modeli}, PFC denetimi, DA bara, üç fazlı dönüştürücü, çok sekonderli transformatörler ve batarya alt sistemlerinin aynı modelde kurulduğunu göstermektedir.
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.98\textwidth]{gt-tipi/onceki_tez_6_8_simulink_modeli.png}
-  \caption{Şarj yönündeki Vienna PFC, iki seviyeli evirici ve transformatör tabanlı BYS Simulink modeli.}
-  \label{fig:gt-simulink-modeli}
-\end{figure}
-
-Şekil~\ref{fig:gt-pfc-akimlari}, PFC sonrasında üç faz akımının dengeli ve yaklaşık sinüzoidal biçimde oluştuğunu göstermektedir.
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.96\textwidth]{gt-tipi/onceki_tez_6_9_pfc_sebeke_akimlari.jpeg}
-  \caption{Vienna PFC sonrasındaki üç faz şebeke akımları.}
-  \label{fig:gt-pfc-akimlari}
-\end{figure}
-
-Şekil~\ref{fig:gt-da-bara}, DA bara gerilimlerinin başlangıç geçicisinden sonra birbirine yakın bir çalışma bandına yerleştiğini göstermektedir.
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.96\textwidth]{gt-tipi/onceki_tez_6_10_da_bara_gerilimleri.png}
-  \caption{DA bara gerilimlerinin zamanla değişimi.}
-  \label{fig:gt-da-bara}
-\end{figure}
-
-İki seviyeli yüksek frekans katının transformatör primerine uyguladığı gerilim Şekil~\ref{fig:gt-primer-gerilim}, primer akımı Şekil~\ref{fig:gt-primer-akim} üzerindedir. Primer geriliminin pozitif, sıfır ve negatif seviyeler arasında değişmesi, görev oranı üzerinden transformatöre aktarılan gücün ayarlanabildiğini gösterir. Primer akımı aynı anahtarlama dizisine yanıt vermekte; kenarlardaki eğimler eşdeğer endüktans ve manyetik devre dinamiğinin etkisini göstermektedir.
-
-\begin{figure}[H]
-  \centering
-  \begin{subfigure}[t]{0.48\textwidth}
-    \centering
-    \includegraphics[width=\linewidth]{gt-tipi/onceki_tez_6_11_primer_gerilim.png}
-    \caption{Primer sargı gerilimi}
-    \label{fig:gt-primer-gerilim}
-  \end{subfigure}\hfill
-  \begin{subfigure}[t]{0.48\textwidth}
-    \centering
-    \includegraphics[width=\linewidth]{gt-tipi/onceki_tez_6_12_primer_akim.png}
-    \caption{Primer akımı}
-    \label{fig:gt-primer-akim}
-  \end{subfigure}
-
-  \vspace{3mm}
-  \caption{BYS transformatörü primer sargı gerilimi ve akımı.}
-  \label{fig:gt-primer}
-\end{figure}
-
-Şekil~\ref{fig:gt-sekonder}, bir bataryayı besleyen sekonder sargının doğrultma öncesi gerilim ve akımını göstermektedir. Gerilim işaret değiştiren darbeli yapıya sahipken akımın pozitif enerji aktarım aralıklarında belirginleşmesi, sekonder doğrultucu ve buck girişinin primer anahtarlamasıyla eşzamanlı çalıştığını gösterir.
-
-\begin{figure}[H]
-  \centering
-  \begin{subfigure}[t]{0.48\textwidth}
-    \centering
-    \includegraphics[width=\linewidth]{gt-tipi/onceki_tez_6_13_sekonder_gerilim.png}
-    \caption{Sekonder sargı gerilimi}
-    \label{fig:gt-sekonder-gerilim}
-  \end{subfigure}\hfill
-  \begin{subfigure}[t]{0.48\textwidth}
-    \centering
-    \includegraphics[width=\linewidth]{gt-tipi/onceki_tez_6_14_sekonder_akim.png}
-    \caption{Sekonder sargı akımı}
-    \label{fig:gt-sekonder-akim}
-  \end{subfigure}
-
-  \vspace{3mm}
-  \caption{BYS transformatörü sekonder sargı gerilimi ve akımı.}
-  \label{fig:gt-sekonder}
-\end{figure}
-
-Enerji zincirinin batarya tarafındaki son kaydı Şekil~\ref{fig:gt-batarya-soc} üzerindedir. Kayıtta bir bataryanın şarj durumu (State of Charge, SoC), uç gerilimi ve akımı aynı zaman ekseninde verilmiştir.
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.80\textwidth]{gt-tipi/onceki_tez_6_15_batarya_soc.jpeg}
-  \caption{Bir bataryaya ait SoC, uç gerilimi ve akım kayıtları.}
-  \label{fig:gt-batarya-soc}
-\end{figure}
-
-Şekil~\ref{fig:gt-simulink-modeli}--\ref{fig:gt-batarya-soc} kayıtları, şarj yönünün işlevsel bütünlüğünü nitel olarak göstermektedir. Alt Bölüm~\ref{sec:gt-dogrulama} altındaki doğrulama matrisi, iki enerji yönünün kanıtlarını katman katman özetlemektedir.
-
 \section{Şarj ve Deşarj Çalışma Modları}
 \label{sec:gt-modlar}
 
@@ -345,6 +258,94 @@ RL1 konum değiştirirken akım taşıyan bir bağlantının açılması röle k
 \end{table}
 
 IEC standartları tek başına belirli bir devrenin güvenli olduğunu kanıtlamaz. Tablo~\ref{tab:gt-koruma-dogrulama}, ilgili standartların kapsamından türetilen tez düzeyindeki asgari kanıt listesidir; nihai uygunluk değerlendirmesi yetkili test, ayrıntılı risk analizi ve ürüne uygulanabilir bütün standartların seçilmesini gerektirir \citep{IEC62619,IEC62477,IEC62933_5_2}.
+
+\section{Şarj Yönündeki Benzetim Kayıtları}
+\label{sec:gt-benzetim}
+
+GT-tipi topolojinin şarj yönündeki işlevsel bütünlüğü; Vienna PFC, iki seviyeli transformatör besleme katı ve batarya şarj kolunu aynı Simulink modeli içinde çalıştıran bir benzetimle gösterilmiştir. Benzetim, Bölüm~\ref{chap:anahtarlama}--\ref{chap:deney} içindeki evirici kipine ait S1--S4 zincirinden ayrı tutulmuş ve çalışma modları ile geçiş kısıtları tanımlandıktan sonra verilmiştir. Şekil~\ref{fig:gt-simulink-modeli}--\ref{fig:gt-batarya-soc}, şebekeden bataryaya uzanan PFC $\rightarrow$ DA bara $\rightarrow$ transformatör primeri $\rightarrow$ sekonder $\rightarrow$ buck/batarya zincirinin her aşamasını dalga biçimleriyle belgelemektedir.
+
+Şekil~\ref{fig:gt-simulink-modeli}, PFC denetimi, DA bara, üç fazlı dönüştürücü, çok sekonderli transformatörler ve batarya alt sistemlerinin aynı modelde kurulduğunu göstermektedir.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.98\textwidth]{gt-tipi/onceki_tez_6_8_simulink_modeli.png}
+  \caption{Şarj yönündeki Vienna PFC, iki seviyeli evirici ve transformatör tabanlı BYS Simulink modeli.}
+  \label{fig:gt-simulink-modeli}
+\end{figure}
+
+Şekil~\ref{fig:gt-pfc-akimlari}, PFC sonrasında üç faz akımının dengeli ve yaklaşık sinüzoidal biçimde oluştuğunu göstermektedir.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.96\textwidth]{gt-tipi/onceki_tez_6_9_pfc_sebeke_akimlari.jpeg}
+  \caption{Vienna PFC sonrasındaki üç faz şebeke akımları.}
+  \label{fig:gt-pfc-akimlari}
+\end{figure}
+
+Şekil~\ref{fig:gt-da-bara}, DA bara gerilimlerinin başlangıç geçicisinden sonra birbirine yakın bir çalışma bandına yerleştiğini göstermektedir.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.96\textwidth]{gt-tipi/onceki_tez_6_10_da_bara_gerilimleri.png}
+  \caption{DA bara gerilimlerinin zamanla değişimi.}
+  \label{fig:gt-da-bara}
+\end{figure}
+
+İki seviyeli yüksek frekans katının transformatör primerine uyguladığı gerilim Şekil~\ref{fig:gt-primer-gerilim}, primer akımı Şekil~\ref{fig:gt-primer-akim} üzerindedir. Primer geriliminin pozitif, sıfır ve negatif seviyeler arasında değişmesi, görev oranı üzerinden transformatöre aktarılan gücün ayarlanabildiğini gösterir. Primer akımı aynı anahtarlama dizisine yanıt vermekte; kenarlardaki eğimler eşdeğer endüktans ve manyetik devre dinamiğinin etkisini göstermektedir.
+
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{gt-tipi/onceki_tez_6_11_primer_gerilim.png}
+    \caption{Primer sargı gerilimi}
+    \label{fig:gt-primer-gerilim}
+  \end{subfigure}\hfill
+  \begin{subfigure}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{gt-tipi/onceki_tez_6_12_primer_akim.png}
+    \caption{Primer akımı}
+    \label{fig:gt-primer-akim}
+  \end{subfigure}
+
+  \vspace{3mm}
+  \caption{BYS transformatörü primer sargı gerilimi ve akımı.}
+  \label{fig:gt-primer}
+\end{figure}
+
+Şekil~\ref{fig:gt-sekonder}, bir bataryayı besleyen sekonder sargının doğrultma öncesi gerilim ve akımını göstermektedir. Gerilim işaret değiştiren darbeli yapıya sahipken akımın pozitif enerji aktarım aralıklarında belirginleşmesi, sekonder doğrultucu ve buck girişinin primer anahtarlamasıyla eşzamanlı çalıştığını gösterir.
+
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{gt-tipi/onceki_tez_6_13_sekonder_gerilim.png}
+    \caption{Sekonder sargı gerilimi}
+    \label{fig:gt-sekonder-gerilim}
+  \end{subfigure}\hfill
+  \begin{subfigure}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{gt-tipi/onceki_tez_6_14_sekonder_akim.png}
+    \caption{Sekonder sargı akımı}
+    \label{fig:gt-sekonder-akim}
+  \end{subfigure}
+
+  \vspace{3mm}
+  \caption{BYS transformatörü sekonder sargı gerilimi ve akımı.}
+  \label{fig:gt-sekonder}
+\end{figure}
+
+Enerji zincirinin batarya tarafındaki son kaydı Şekil~\ref{fig:gt-batarya-soc} üzerindedir. Kayıtta bir bataryanın şarj durumu (State of Charge, SoC), uç gerilimi ve akımı aynı zaman ekseninde verilmiştir.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.80\textwidth]{gt-tipi/onceki_tez_6_15_batarya_soc.jpeg}
+  \caption{Bir bataryaya ait SoC, uç gerilimi ve akım kayıtları.}
+  \label{fig:gt-batarya-soc}
+\end{figure}
+
+Şekil~\ref{fig:gt-simulink-modeli}--\ref{fig:gt-batarya-soc} kayıtları, şarj yönünün işlevsel bütünlüğünü nitel olarak göstermektedir. Alt Bölüm~\ref{sec:gt-dogrulama} altındaki doğrulama matrisi, iki enerji yönünün kanıtlarını katman katman özetlemektedir.
+
 
 \section{Klasik Mimari ile Karşılaştırma}
 \label{sec:gt-karsilastirma}

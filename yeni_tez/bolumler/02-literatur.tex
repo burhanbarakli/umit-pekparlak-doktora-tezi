@@ -154,6 +154,53 @@ Schweizer ve Kolar, üç seviyeli T-tipi dönüştürücüyü iki seviyeli ve NP
 
 T-tipi topolojiye ilişkin çalışmaların önemli bölümü anma gücü, yüksek güç yoğunluğu, yarı iletken seçimi, nötr nokta dengesi ve modülasyon üzerine yoğunlaşmaktadır. Harmonik eleme amaçlı anahtarlama açıları ve üçüncü harmonik enjeksiyonu da DA bara kullanımını veya belirli gerilim harmoniklerini iyileştirmek amacıyla incelenmiştir \citep{Aghdam2013,Holmes2003}. Topoloji, modülasyon ve harmonik enjeksiyonu çalışmaları topolojinin genel verim ve dalga biçimi potansiyelini ortaya koymaktadır. Ancak çalışmalar, şebekeye bağlı düşük akım koşulunda nötr kolun ters akım oluşturma mekanizmasını ve verim--THD ödünleşimini doğrudan merkezine almamaktadır.
 
+Nötr kolun ters akım oluşturma mekanizması, senkron alçaltıcı dönüştürücünün hafif yük davranışı üzerinden açıklanabilir. Sürekli iletim kipinde (Continuous Conduction Mode, CCM) alt anahtar akım sıfırı geçtikten sonra iletimde tutulursa endüktör akımı negatif yönde büyümektedir. Ters yöndeki akım, kaynak ile yük arasında yararlı güç üretmeyen bir enerji dolaşımı oluşturmaktadır. Diyot benzetimi veya süreksiz iletim kipinde (Discontinuous Conduction Mode, DCM) senkron anahtar akım sıfıra yaklaşırken kapatılarak negatif akım engellenmektedir \citep{Erickson2001,Mohan2003}. Chen ve arkadaşları, hafif yükte diyot benzetimi ile sürekli iletim kipini kayıp bileşenleri bakımından karşılaştırmıştır. Çalışmaya göre ters akımın engellenmesi RMS akımı ve iletim kaybını azaltabilir, ancak anahtarın ideal olmayan sıfır akım algılama anı yeni kayıplar oluşturabilir \citep{Chen2010}.
+
+Diyot benzetimi ile sürekli iletim kipindeki endüktör akımları Şekil~\ref{fig:de-ccm-akim} üzerinde karşılaştırılmıştır. Sürekli iletim kipindeki akımın sıfırın altına geçmesi, tezde nötr anahtar üzerinden oluşan ters akımın açıklanmasında kullanılan temel benzerliği oluşturmaktadır.
+
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}[x=9mm, y=9mm, font=\small,
+    eks/.style={-{Latex[length=1.8mm]}},
+    kes/.style={dashed, thin},
+    akim/.style={very thick, blue!70!black}]
+    % (a) diyot benzetimi
+    \begin{scope}[yshift=0mm]
+      \draw[eks] (0,0) -- (11.2,0) node[right]{$t$};
+      \draw[eks] (0,-0.3) -- (0,3.3) node[above]{$i_L$};
+      \draw[akim] (0.6,0) -- (1.4,2.8) -- (4.2,0) -- (5.6,0) -- (6.4,2.8) -- (9.2,0) -- (10.6,0);
+      \draw[kes] (0,1.0) -- (10.8,1.0) node[right]{$\langle i_L\rangle=I_o$};
+      \draw[kes] (1.4,2.8) -- (5.2,2.8);
+      \draw[{Latex[length=1.5mm]}-{Latex[length=1.5mm]}] (4.9,0) -- node[right]{$I_{\mathrm{pk(DE)}}$} (4.9,2.8);
+      \draw[kes] (0.6,0) -- (0.6,-0.7); \draw[kes] (1.4,2.8) -- (1.4,-0.7); \draw[kes] (4.2,0) -- (4.2,-0.7);
+      \draw[{Latex[length=1.3mm]}-{Latex[length=1.3mm]}] (0.6,-0.55) -- node[below]{$dT_s$} (1.4,-0.55);
+      \draw[{Latex[length=1.3mm]}-{Latex[length=1.3mm]}] (1.4,-0.55) -- node[below]{$\delta T_s$} (4.2,-0.55);
+      \node[above] at (1.4,2.8) {A}; \node[above right] at (4.2,0) {B};
+      \node at (5.6,-1.5) {(a) Diyot benzetimi (DE): akım sıfırda tutulur};
+    \end{scope}
+    % (b) zorlanmış sürekli iletim
+    \begin{scope}[yshift=-58mm]
+      \draw[eks] (0,0) -- (11.2,0) node[right]{$t$};
+      \draw[eks] (0,-1.8) -- (0,3.3) node[above]{$i_L$};
+      \fill[red!20] (4.524,0) -- (5.6,-1.05) -- (5.805,0) -- cycle;
+      \draw[akim] (0.6,-1.05) -- (1.4,3.05) -- (5.6,-1.05) -- (6.4,3.05) -- (10.6,-1.05);
+      \draw[kes] (0,1.0) -- (10.8,1.0) node[right]{$\langle i_L\rangle=I_o$};
+      \draw[kes] (1.4,3.05) -- (3.9,3.05); \draw[kes] (3.4,-1.05) -- (5.6,-1.05);
+      \draw[{Latex[length=1.5mm]}-{Latex[length=1.5mm]}] (3.7,-1.05) -- node[right, pos=0.78]{$2\Delta i_{\mathrm{(CCM)}}$} (3.7,3.05);
+      \node[red!60!black, right] at (6.2,-0.75) {ters akım aralığı ($i_L<0$)};
+      \draw[kes] (0.6,-1.05) -- (0.6,-2.1); \draw[kes] (1.4,3.05) -- (1.4,-2.1);
+      \draw[{Latex[length=1.3mm]}-{Latex[length=1.3mm]}] (0.6,-1.95) -- node[below]{$dT_s$} (1.4,-1.95);
+      \node[above] at (1.4,3.05) {A$'$}; \node[below] at (5.6,-1.05) {B$'$};
+      \node at (5.6,-2.9) {(b) Zorlanmış sürekli iletim (CCM): akım işaret değiştirir};
+    \end{scope}
+  \end{tikzpicture}
+  \caption{Hafif yükteki senkron alçaltıcı dönüştürücüde diyot benzetimi (DE) ve zorlanmış sürekli iletim (CCM) kiplerinde endüktör akımı. \citet{Chen2010}'daki şekil temel alınarak yeniden çizilmiştir.}
+  \label{fig:de-ccm-akim}
+\end{figure}
+
+Şebekeye bağlı T-tipi eviricide sıfır gerilim durumunu oluşturan nötr kol, akımın işaret değiştirmesine izin verdiğinde benzer bir senkron alçaltıcı davranışı gösterebilir. Nötr anahtarın susturulması ters akım yolunu keserken faz düğümünün doğal diyot yolları üzerinden farklı bir gerilim durumuna geçmesine neden olmaktadır. Dolayısıyla kayıp azalması ile anahtarlama darbe dizisinin değişmesi, aynı fiziksel müdahalenin iki sonucudur. Literatürdeki genel süreksiz iletim bilgisi, ters akımı açıklamak için gerekli kuramsal temeli sağlamaktadır. Ancak aynı bilgi, T-tipi faz kolunda oluşan gerilim hatasının üçüncü harmonik etkisini ve şebeke akım kontrolüyle etkileşimini tek başına açıklamamaktadır.
+
+
 \section{Fotovoltaik Çalışma Profili, Kısmi Yükte Verim ve Harmonik Bozulma}
 
 T-tipi eviricinin düşük güç davranışının neden önemli olduğu, eviricinin fiilen hangi güç seviyelerinde çalıştığına bakılarak gerekçelendirilebilir. Fotovoltaik üretimin ışınım ve sıcaklığa bağlı değişimi, şebeke eviricisinin geniş bir güç aralığında çalışmasına neden olmaktadır. Şekil~\ref{fig:fv-calisma-profilleri}, günlük profil ile aylık ışınım dizisini ve iki diziden türetilen 144 çalışma noktasının güç dağılımını göstermektedir. PVGIS, konum, yönelim, eğim, sistem kaybı ve meteorolojik veri kümesi belirtilerek saatlik veya aylık üretim hesabı yapılmasına olanak tanımaktadır \citep{Taylor2025PVGIS}. Tezde kullanılan diziler, düşük güç bölgesinin işletmedeki ağırlığını göstermek amacıyla temsilî profil olarak adlandırılmıştır.
@@ -255,52 +302,6 @@ Düşük güçte THD artışının dış literatür kanıtı, \citet{Chicco2009}
 FV profili (Şekil~\ref{fig:fv-calisma-profilleri}, Tablo~\ref{tab:fv-guc-dagilimi}) ile ticari evirici kaydı (Tablo~\ref{tab:ticari-evirici-thd}), tezde motivasyon amacıyla kullanılmaktadır. İki içerik, düşük güç bölgesinin işletmede sık görüldüğünü ve düşük güçte akım THD'sinin yükseldiğini literatürle birlikte nitel olarak desteklemektedir. Tezin verim ve THD bulguları ise deney kayıtlarına ve kalibre edilmiş benzetimlere dayalıdır.
 
 Düşük güçte sürücü, kontrol, anahtarlama ve manyetik elemanların güce zayıf bağlı kayıplarının toplam çıkışa oranı büyümektedir. Şebeke akımının küçük olması, ölü zamanın ve anahtarlama elemanlarının doğrusal olmayan davranışının temel bileşene göre etkisini de artırmaktadır. Saha ve laboratuvar ölçümleri, FV eviricilerde akım dalga biçimi bozulmasının güç seviyesi ve şebeke gerilim kalitesiyle değiştiğini göstermiştir \citep{Kjaer2005,Chicco2009}. Harmonik sınırları bağlantı gücü ve standart kapsamına göre tanımlansa da yalnızca toplam THD değerine bakılması, hangi harmonik bileşenin hangi fiziksel mekanizmadan kaynaklandığını açıklamamaktadır \citep{IEC61000}.
-
-Ters akım problemi, senkron alçaltıcı dönüştürücünün hafif yük davranışı üzerinden açıklanabilir. Sürekli iletim kipinde (Continuous Conduction Mode, CCM) alt anahtar akım sıfırı geçtikten sonra iletimde tutulursa endüktör akımı negatif yönde büyümektedir. Ters yöndeki akım, kaynak ile yük arasında yararlı güç üretmeyen bir enerji dolaşımı oluşturmaktadır. Diyot benzetimi veya süreksiz iletim kipinde (Discontinuous Conduction Mode, DCM) senkron anahtar akım sıfıra yaklaşırken kapatılarak negatif akım engellenmektedir \citep{Erickson2001,Mohan2003}. Chen ve arkadaşları, hafif yükte diyot benzetimi ile sürekli iletim kipini kayıp bileşenleri bakımından karşılaştırmıştır. Çalışmaya göre ters akımın engellenmesi RMS akımı ve iletim kaybını azaltabilir, ancak anahtarın ideal olmayan sıfır akım algılama anı yeni kayıplar oluşturabilir \citep{Chen2010}.
-
-Diyot benzetimi ile sürekli iletim kipindeki endüktör akımları Şekil~\ref{fig:de-ccm-akim} üzerinde karşılaştırılmıştır. Sürekli iletim kipindeki akımın sıfırın altına geçmesi, tezde nötr anahtar üzerinden oluşan ters akımın açıklanmasında kullanılan temel benzerliği oluşturmaktadır.
-
-\begin{figure}[H]
-  \centering
-  \begin{tikzpicture}[x=9mm, y=9mm, font=\small,
-    eks/.style={-{Latex[length=1.8mm]}},
-    kes/.style={dashed, thin},
-    akim/.style={very thick, blue!70!black}]
-    % (a) diyot benzetimi
-    \begin{scope}[yshift=0mm]
-      \draw[eks] (0,0) -- (11.2,0) node[right]{$t$};
-      \draw[eks] (0,-0.3) -- (0,3.3) node[above]{$i_L$};
-      \draw[akim] (0.6,0) -- (1.4,2.8) -- (4.2,0) -- (5.6,0) -- (6.4,2.8) -- (9.2,0) -- (10.6,0);
-      \draw[kes] (0,1.0) -- (10.8,1.0) node[right]{$\langle i_L\rangle=I_o$};
-      \draw[kes] (1.4,2.8) -- (5.2,2.8);
-      \draw[{Latex[length=1.5mm]}-{Latex[length=1.5mm]}] (4.9,0) -- node[right]{$I_{\mathrm{pk(DE)}}$} (4.9,2.8);
-      \draw[kes] (0.6,0) -- (0.6,-0.7); \draw[kes] (1.4,2.8) -- (1.4,-0.7); \draw[kes] (4.2,0) -- (4.2,-0.7);
-      \draw[{Latex[length=1.3mm]}-{Latex[length=1.3mm]}] (0.6,-0.55) -- node[below]{$dT_s$} (1.4,-0.55);
-      \draw[{Latex[length=1.3mm]}-{Latex[length=1.3mm]}] (1.4,-0.55) -- node[below]{$\delta T_s$} (4.2,-0.55);
-      \node[above] at (1.4,2.8) {A}; \node[above right] at (4.2,0) {B};
-      \node at (5.6,-1.5) {(a) Diyot benzetimi (DE): akım sıfırda tutulur};
-    \end{scope}
-    % (b) zorlanmış sürekli iletim
-    \begin{scope}[yshift=-58mm]
-      \draw[eks] (0,0) -- (11.2,0) node[right]{$t$};
-      \draw[eks] (0,-1.8) -- (0,3.3) node[above]{$i_L$};
-      \fill[red!20] (4.524,0) -- (5.6,-1.05) -- (5.805,0) -- cycle;
-      \draw[akim] (0.6,-1.05) -- (1.4,3.05) -- (5.6,-1.05) -- (6.4,3.05) -- (10.6,-1.05);
-      \draw[kes] (0,1.0) -- (10.8,1.0) node[right]{$\langle i_L\rangle=I_o$};
-      \draw[kes] (1.4,3.05) -- (3.9,3.05); \draw[kes] (3.4,-1.05) -- (5.6,-1.05);
-      \draw[{Latex[length=1.5mm]}-{Latex[length=1.5mm]}] (3.7,-1.05) -- node[right, pos=0.78]{$2\Delta i_{\mathrm{(CCM)}}$} (3.7,3.05);
-      \node[red!60!black, right] at (6.2,-0.75) {ters akım aralığı ($i_L<0$)};
-      \draw[kes] (0.6,-1.05) -- (0.6,-2.1); \draw[kes] (1.4,3.05) -- (1.4,-2.1);
-      \draw[{Latex[length=1.3mm]}-{Latex[length=1.3mm]}] (0.6,-1.95) -- node[below]{$dT_s$} (1.4,-1.95);
-      \node[above] at (1.4,3.05) {A$'$}; \node[below] at (5.6,-1.05) {B$'$};
-      \node at (5.6,-2.9) {(b) Zorlanmış sürekli iletim (CCM): akım işaret değiştirir};
-    \end{scope}
-  \end{tikzpicture}
-  \caption{Hafif yükteki senkron alçaltıcı dönüştürücüde diyot benzetimi (DE) ve zorlanmış sürekli iletim (CCM) kiplerinde endüktör akımı. \citet{Chen2010}'daki şekil temel alınarak yeniden çizilmiştir.}
-  \label{fig:de-ccm-akim}
-\end{figure}
-
-Şebekeye bağlı T-tipi eviricide sıfır gerilim durumunu oluşturan nötr kol, akımın işaret değiştirmesine izin verdiğinde benzer bir senkron alçaltıcı davranışı gösterebilir. Nötr anahtarın susturulması ters akım yolunu keserken faz düğümünün doğal diyot yolları üzerinden farklı bir gerilim durumuna geçmesine neden olmaktadır. Dolayısıyla kayıp azalması ile anahtarlama darbe dizisinin değişmesi, aynı fiziksel müdahalenin iki sonucudur. Literatürdeki genel süreksiz iletim bilgisi, ters akımı açıklamak için gerekli kuramsal temeli sağlamaktadır. Ancak aynı bilgi, T-tipi faz kolunda oluşan gerilim hatasının üçüncü harmonik etkisini ve şebeke akım kontrolüyle etkileşimini tek başına açıklamamaktadır.
 
 \section{Şebeke Akım Kontrolü ve İleri Besleme Yaklaşımları}
 

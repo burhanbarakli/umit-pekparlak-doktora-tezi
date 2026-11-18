@@ -19,6 +19,28 @@ Model, ideal anahtarlama durumlarını açıklayan devre düzeyini, LCL filtre i
 
 İnceleme sınırı üç katman üzerinden kurulmuştur. Fiziksel katman yarı iletkenleri, bölünmüş DA barayı, filtreyi ve şebeke bağlantısını kapsamaktadır. Denetim katmanı ölçüm, akım regülasyonu, modülasyon ve kapı sinyali üretimini içermektedir. Doğrulama katmanının kapsamı ise benzetim ile deneyde ortak kullanılan çalışma noktaları ve performans ölçütleridir. GT-tipi yeniden yapılandırma, aynı yarı iletkenlerin şarj ve deşarj kiplerinde farklı görevlerde kullanılmasına dayanmaktadır. Ayrıntılı işlev paylaşımı Bölüm~\ref{chap:gttipi} altında ele alınmıştır. Bölüm, deşarj yönündeki T-tipi evirici davranışını ve önerilen düşük güç yöntemlerinin dayandığı modeli sabitlemektedir.
 
+Fiziksel katmanın sınırı, deney düzeneğinin Proteus ile çizilen üç fazlı güç devresiyle belirlenmiştir (Şekil~\ref{fig:gelen-tam-topoloji}). Soldaki \texttt{L3} faz hücresinin ayrıntı şeması Şekil~\ref{fig:gelen-faz1-hucresi} üzerinde verilmiştir. Şemanın solunda üç faz ve nötr girişine bağlı ortak-mod bobinleri ile şönt kapasitörlerden oluşan giriş/EMI ağı bulunmaktadır. Bu ağın çıkışındaki giriş nötrü, soldaki \texttt{L3} faz hücresinde $C_{10}$ ile $C_{11}$ arasındaki DA bara orta noktasına bağlanmaktadır. Şemadaki \texttt{L1}, \texttt{L2} ve \texttt{L3} etiketleri sırasıyla A, B ve C fazlarına ait üç eş \SI{600}{\micro\henry} bobini göstermektedir. LCL filtre elemanları Tablo~\ref{tab:sistem-parametreleri} içinde tanımlanmıştır.
+
+Ortak DA baraya bağlı üç T-tipi faz hücresinde dış kol modülleri, çift yönlü nötr kollar, PFC yükseltici diyotları, kapasitörler ve kip değişim röleleri yer almaktadır. Şemada nötr kolun DA bara orta noktası tarafındaki anahtar $Q_4$, faz tarafındaki anahtar $Q_3$ olarak gösterilmiştir. Anahtar etiketlerindeki \texttt{\_L1}, \texttt{\_L2} ve \texttt{\_L3} ekleri ilgili fazı belirtmektedir. Şekil~\ref{fig:t-tipi-faz-kolu} üzerindeki faz kolu gösteriminde de tümleyen çiftler $Q_1$--$Q_3$ ve $Q_2$--$Q_4$'tür. Şemanın altındaki $TR1$--$TR3$, şarj yönünde kullanılan batarya yönetim sistemi (BYS) transformatörleridir. Faz hücrelerindeki röleler ile doğrultucu ve yükseltici diyotlar, şarj ve deşarj kipleri arasındaki geçişe hizmet etmektedir. Bu güç şeması, sistem sınırını belirlemek ve analizlerde kullanılan faz başına modeli fiziksel devreyle eşlemek için kullanılmıştır. Anahtarlama denklemleri ve akım yolları, Şekil~\ref{fig:t-tipi-akim-yollari} üzerindeki tek faz eşdeğeriyle açıklanmıştır.
+
+\begin{landscape}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth,height=0.78\textheight,keepaspectratio,trim=154bp 800bp 434bp 478bp,clip]{sekiller/guc_yapi_10.pdf}
+  \caption{GT-tipi deney düzeneğinin üç fazlı güç devresi.}
+  \label{fig:gelen-tam-topoloji}
+\end{figure}
+\end{landscape}
+
+\begin{landscape}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth,height=0.78\textheight,keepaspectratio,trim=642bp 1166bp 1826bp 646bp,clip]{sekiller/guc_yapi_10.pdf}
+  \caption{Şekil~\ref{fig:gelen-tam-topoloji} üzerindeki \texttt{L3} faz hücresinin ayrıntısı. Bölünmüş DA bara kapasitörleri $C_{10}$--$C_{11}$, PFC diyotları $D_1$--$D_2$, dış kol anahtarları $Q_1$--$Q_2$, nötr kol anahtarları $Q_4$ ve $Q_3$, snubber kapasitörü $C_{12}$ ve kip değişim röleleri $RL1$--$RL2$ gösterilmiştir.}
+  \label{fig:gelen-faz1-hucresi}
+\end{figure}
+\end{landscape}
+
 Her iddia, kendisini en doğrudan sınayan model katmanıyla desteklenmiştir. Tablo~\ref{tab:model-katmanlari}, bölümde kullanılan model katmanlarını, her katmanın kapsadığı etkileri, sınadığı konuyu ve tamamlayıcı katmanını birlikte vermektedir. Katman ayrımı, ortalama değerli denetim modelinden elde edilen kararlılık sonucunu anahtarlama kaybı ve deneysel verim kanıtından ayrı tutmaktadır.
 
 \begin{table}[H]
@@ -41,28 +63,6 @@ Her iddia, kendisini en doğrudan sınayan model katmanıyla desteklenmiştir. T
 \section{T-Tipi Faz Kolu ve Anahtarlama Durumları}
 
 Faz kolunun devre yapısı ve $Q_1$--$Q_4$ adlandırması Şekil~\ref{fig:t-tipi-faz-kolu} üzerinde verilmiştir. $Q_1$--$Q_4$, Tablo~\ref{tab:sistem-parametreleri} içindeki $S_1$--$S_4$ anahtarlarıyla birebir aynıdır. Bölünmüş bara geriliminin toplamı $V_{\mathrm{dc}}$ kabul edildiğinde ideal faz-kutup gerilimi $+V_{\mathrm{dc}}/2$, $0$ ve $-V_{\mathrm{dc}}/2$ seviyelerinden birini almaktadır. Nötr kolun eklediği sıfır seviyesi, iki seviyeli yapıya göre daha küçük gerilim basamakları oluşturmaktadır. Karşılığında komütasyon düzeninin ve nötr nokta akımının ayrıca yönetilmesi gerekmektedir \citep{Schweizer2013,Wang2020}.
-
-Sistemin üç fazlı güç devresi Şekil~\ref{fig:gelen-tam-topoloji} üzerinde, soldaki \texttt{L3} faz hücresinin ayrıntı şeması Şekil~\ref{fig:gelen-faz1-hucresi} üzerinde verilmiştir. Şemanın solunda üç faz ve nötr girişine bağlı ortak-mod bobinleri ile şönt kapasitörlerden oluşan giriş/EMI ağı bulunmaktadır. Bu ağın çıkışındaki giriş nötrü, soldaki \texttt{L3} faz hücresinde $C_{10}$ ile $C_{11}$ arasındaki DA bara orta noktasına bağlanmaktadır. Şemadaki \texttt{L1}, \texttt{L2} ve \texttt{L3} etiketleri sırasıyla A, B ve C fazlarına ait üç eş \SI{600}{\micro\henry} bobini göstermektedir. LCL filtre elemanları Tablo~\ref{tab:sistem-parametreleri} içinde tanımlanmıştır.
-
-Ortak DA baraya bağlı üç T-tipi faz hücresinde dış kol modülleri, çift yönlü nötr kollar, PFC yükseltici diyotları, kapasitörler ve kip değişim röleleri yer almaktadır. Proteus şemasında nötr kolun DA bara orta noktası tarafındaki anahtar $Q_4$, faz tarafındaki anahtar $Q_3$ olarak gösterilmiştir. Anahtar etiketlerindeki \texttt{\_L1}, \texttt{\_L2} ve \texttt{\_L3} ekleri ilgili fazı belirtmektedir. Şekil~\ref{fig:t-tipi-faz-kolu} üzerindeki faz kolu gösteriminde de tümleyen çiftler $Q_1$--$Q_3$ ve $Q_2$--$Q_4$'tür. Şemanın altındaki $TR1$--$TR3$, şarj yönünde kullanılan batarya yönetim sistemi (BYS) transformatörleridir. Faz hücrelerindeki röleler ile doğrultucu ve yükseltici diyotlar, şarj ve deşarj kipleri arasındaki geçişe hizmet etmektedir. Bu güç şeması, sistem sınırını belirlemek ve analizlerde kullanılan faz başına modeli fiziksel devreyle eşlemek için kullanılmıştır. Anahtarlama denklemleri ve akım yolları, Şekil~\ref{fig:t-tipi-akim-yollari} üzerindeki tek faz eşdeğeriyle açıklanmıştır.
-
-\begin{landscape}
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\linewidth,height=0.78\textheight,keepaspectratio,trim=154bp 800bp 434bp 478bp,clip]{sekiller/guc_yapi_10.pdf}
-  \caption{GT-tipi deney düzeneğinin üç fazlı güç devresi.}
-  \label{fig:gelen-tam-topoloji}
-\end{figure}
-\end{landscape}
-
-\begin{landscape}
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\linewidth,height=0.78\textheight,keepaspectratio,trim=642bp 1166bp 1826bp 646bp,clip]{sekiller/guc_yapi_10.pdf}
-  \caption{Şekil~\ref{fig:gelen-tam-topoloji} üzerindeki \texttt{L3} faz hücresinin ayrıntısı. Bölünmüş DA bara kapasitörleri $C_{10}$--$C_{11}$, PFC diyotları $D_1$--$D_2$, dış kol anahtarları $Q_1$--$Q_2$, nötr kol anahtarları $Q_4$ ve $Q_3$, snubber kapasitörü $C_{12}$ ve kip değişim röleleri $RL1$--$RL2$ gösterilmiştir.}
-  \label{fig:gelen-faz1-hucresi}
-\end{figure}
-\end{landscape}
 
 Faz indisi $x\in\{a,b,c\}$, DA bara orta noktası $N$, faz kutup gerilimi $v_{xN}$ ve gerilim durumunu seçen boyutsuz anahtarlama değişkeni $s_x\in\{-1,0,1\}$ ile gösterilsin. Üç gerilim durumu
 \begin{equation}
@@ -331,9 +331,18 @@ ile hesaplanmaktadır. Antirezonansta evirici geriliminden $L_1$ akımına giden
 \end{equation}
 olmaktadır \citep{Zhang2014PR,Lu2016}. Eşitlik~\eqref{eq:lcl-yuksek-frekans} uyarınca LCL filtre, aynı toplam endüktanslı L filtreye göre $(\omega_r/\omega)^2$ katı ek zayıflatma sağlamakta, karşılığında rezonans tepesi kapalı çevrim tasarımının parçası olmaktadır. Tablo~\ref{tab:sistem-parametreleri} tasarım değerleriyle hesaplanan ideal büyüklükler $f_r\approx\SI{2.9}{\kilo\hertz}$ ve $f_{\mathrm{ar}}\approx\SI{1.78}{\kilo\hertz}$'dir. Anahtarlama frekansındaki ek zayıflatma $(f_r/f_s)^2\approx\num{0.084}$, yani yaklaşık \SI{21.5}{\decibel}'dir. Kararlılık analizi kayıpları, EMC süzgecini, ölçüm süzgecini ve denetim gecikmesini içeren fiziksel modelle yapılmıştır (Alt Bölüm~\ref{sec:kararlilik-bode}).
 
-\section{Denetim, Modülasyon ve Sin\texorpdfstring{\textsuperscript{3}}{3} Kompanzasyonu}
+\subsection{Şebeke tarafı endüktansı $L_2$}
+\label{sec:l2-tanimi}
 
-Laboratuvar deneyleri (S1--S3) açık çevrim modülasyon referansıyla yürütülmüştür. S4 benzetiminde akım denetleyicisi $C_i(s)$, $L_1$ akımını geri besleyen oransal (P), oransal--integral (PI) ya da oransal--integral--rezonans (PIR) yapıdadır \citep{Teodorescu2006PR,Zhang2014PR}. Denetleyici tasarımı Alt Bölüm~\ref{sec:s4-kapali-cevrim} içinde, katsayılar Tablo~\ref{tab:sistem-parametreleri} içinde verilmiştir. $x$ senaryo numarası olmak üzere dört senaryonun görev oranı (modülasyon) komutu $u$, ileri besleme ve geri besleme terimlerinin doyumlu toplamıdır:
+LCL filtrenin şebeke tarafı endüktansı ayrı bir filtre bobini değildir. Deney düzeneğinde evirici çıkışı şebekeye, gerilimi güvenlik amacıyla sınırlandıran varyak üzerinden bağlanmıştır. $L_2=\SI{1000}{\micro\henry}$, şebeke empedansı ile varyak kaçak endüktansının toplam eşdeğeri olarak parametre dosyasında tanımlanmıştır ve tasarım türünde bir değerdir (Tablo~\ref{tab:sistem-parametreleri}). Tam topoloji şemasındaki \SI{600}{\micro\henry} etiketleri ise üç fazın $L_1$ bobinleridir. Donanımdaki fiziksel süzgeç, EMC süzgeciyle birlikte $L_1$--$C_f$ yapısındadır.
+
+$L_2$ değerinin modelde iki etkisi vardır. Eşitlik~\eqref{eq:lcl-rezonans} ile hesaplanan ideal rezonans frekansı $L_2$'ye bağlıdır. EMC süzgecini ve kayıpları içeren fiziksel modelde rezonans \SI{2.8}{\kilo\hertz} çevresindedir (Alt Bölüm~\ref{sec:kararlilik-bode}). Rezonans frekansı anahtarlama frekansının altıda birinden büyük olduğundan $L_2$, akım denetiminin gecikme duyarlılığını belirleyen bir tasarım parametresidir. Şebeke endüktansının \num{0}--\SI{5}{\milli\henry} aralığındaki etkisi de kararlılık analizinde taranmıştır. Açık çevrim deney senaryolarında ise $L_2$, C noktasındaki gerilim ile şebeke iç gerilimi arasındaki küçük temel frekans farkını belirlemektedir. Kalibre edilen aktif ve reaktif güç değerleri, şebeke tarafı endüktansından yalnızca ikinci mertebede etkilenmektedir.
+
+
+\section{Denetim, Modülasyon ve Sin\texorpdfstring{\textsuperscript{3}}{3} Kompanzasyonu}
+\label{sec:denetim-modulasyon}
+
+Bu bölüm, karşılaştırılan dört senaryonun ortak denetim ve modülasyon yapısını tanımlamaktadır. Temel karşılaştırma kolları klasik tamamlayıcı anahtarlama (S1), nötr anahtar susturma yöntemi (S2) ve Sin\textsuperscript{3} kompanzasyonlu nötr anahtar susturma yöntemidir (S3). Dördüncü kol (S4), S3'e $L_1$ akım geri beslemesi eklenerek kurulan kapalı çevrim benzetimidir. Laboratuvar deneyleri (S1--S3) açık çevrim modülasyon referansıyla yürütülmüştür. S4 benzetiminde akım denetleyicisi $C_i(s)$, $L_1$ akımını geri besleyen oransal (P), oransal--integral (PI) ya da oransal--integral--rezonans (PIR) yapıdadır \citep{Teodorescu2006PR,Zhang2014PR}. Denetleyici tasarımı Alt Bölüm~\ref{sec:s4-kapali-cevrim} içinde, katsayılar Tablo~\ref{tab:sistem-parametreleri} içinde verilmiştir. $x$ senaryo numarası olmak üzere dört senaryonun görev oranı (modülasyon) komutu $u$, ileri besleme ve geri besleme terimlerinin doyumlu toplamıdır:
 \begin{equation}
   \begin{gathered}
     u=\operatorname{sat}_{\pm1}\!\left(u_{\mathrm{ff}}+u_{\mathrm{fb}}\right),\qquad
@@ -534,17 +543,10 @@ Güç ölçüm noktası ve işaret kuralı & Evirici çıkış uçları (EMC sü
 
 Tablodaki yarı iletkenlerden $D_1$--$D_2$ diyotları faz kolunda faz--DA rayı konumundadır ve GT-tipi mimarinin şarj kipinde Vienna PFC yükseltici diyotu olarak çalışmaktadır. Diyotlar kesim durumunda toplam $V_{\mathrm{dc}}$ gerilimini taşıdığından \SI{1200}{\volt} sınıfında harici diyot gerekmektedir. Nötr kol diyotları ise en çok $V_{\mathrm{dc}}/2$ gerilimini kestiğinden \SI{650}{\volt} sınıfındaki nötr IGBT'nin iç diyotu yeterlidir. Faz gerilimi DA raylarını aşmadığından kararlı çalışmada $D_1$--$D_2$ iletime girmemektedir. Sıfır durumunun serbest dolaşım akımının yolu $DS_3$--$DS_4$ diyotlarıdır. Bütün anahtarlamalı benzetimler, iletim karakteristiğini ve anahtarlama enerjisini akıma bağlı tablolarla veren veri sayfası tabanlı cihaz modelleriyle yapılmıştır. Benzetimler \SI{25}{\celsius} sabit jonksiyon sıcaklığında yürütülmüştür.
 
-\subsection{Şebeke tarafı endüktansı $L_2$}
-\label{sec:l2-tanimi}
-
-LCL filtrenin şebeke tarafı endüktansı ayrı bir filtre bobini değildir. Deney düzeneğinde evirici çıkışı şebekeye, gerilimi güvenlik amacıyla sınırlandıran varyak üzerinden bağlanmıştır. $L_2=\SI{1000}{\micro\henry}$, şebeke empedansı ile varyak kaçak endüktansının toplam eşdeğeri olarak parametre dosyasında tanımlanmıştır ve tasarım türünde bir değerdir (Tablo~\ref{tab:sistem-parametreleri}). Tam topoloji şemasındaki \SI{600}{\micro\henry} etiketleri ise üç fazın $L_1$ bobinleridir. Donanımdaki fiziksel süzgeç, EMC süzgeciyle birlikte $L_1$--$C_f$ yapısındadır.
-
-$L_2$ değerinin modelde iki etkisi vardır. İdeal LCL rezonansı, Eşitlik~\eqref{eq:lcl-rezonans} ile $L_1=\SI{600}{\micro\henry}$, $C_f=\SI{8}{\micro\farad}$ ve $L_2=\SI{1000}{\micro\henry}$ için yaklaşık \SI{2.9}{\kilo\hertz}'dir. EMC süzgecini ve kayıpları içeren fiziksel modelde rezonans \SI{2.8}{\kilo\hertz} çevresindedir (Alt Bölüm~\ref{sec:kararlilik-bode}). Rezonans frekansı anahtarlama frekansının altıda birinden büyük olduğundan $L_2$, akım denetiminin gecikme duyarlılığını belirleyen bir tasarım parametresidir. Şebeke endüktansının \num{0}--\SI{5}{\milli\henry} aralığındaki etkisi de kararlılık analizinde taranmıştır. Açık çevrim deney senaryolarında ise $L_2$, C noktasındaki gerilim ile şebeke iç gerilimi arasındaki küçük temel frekans farkını belirlemektedir. Kalibre edilen aktif ve reaktif güç değerleri, şebeke tarafı endüktansından yalnızca ikinci mertebede etkilenmektedir.
-
 \section{Benzetim ve Deneysel Doğrulama Metodolojisi}
 \label{sec:dogrulama-metodolojisi}
 
-Önerilen anahtarlama ve kompanzasyon yöntemleri aynı model, çalışma noktası ve ölçüm tanımları altında karşılaştırılmıştır. Temel karşılaştırma kolları klasik tamamlayıcı anahtarlama (S1), nötr anahtar susturma yöntemi (S2) ve Sin\textsuperscript{3} kompanzasyonlu nötr anahtar susturma yöntemidir (S3). Deneylerde her kol için ayrı bir DA bara ve şebeke gerilimi ölçülmüştür. Her senaryonun benzetimi, ölçülen çalışma noktasında yapılmıştır. Dördüncü kol (S4), S3'e $L_1$ akım geri beslemesi eklenerek kurulan kapalı çevrim benzetimidir.
+Önerilen anahtarlama ve kompanzasyon yöntemleri aynı model, çalışma noktası ve ölçüm tanımları altında karşılaştırılmıştır. Karşılaştırma kolları S1--S4, Alt Bölüm~\ref{sec:denetim-modulasyon} başında tanımlanmıştır. Deneylerde her kol için ayrı bir DA bara ve şebeke gerilimi ölçülmüştür. Her senaryonun benzetimi, ölçülen çalışma noktasında yapılmıştır.
 
 Tablo~\ref{tab:dogrulama-matrisi}, üç akım bölgesinde (düşük, orta ve anma) karşılaştırılan yöntemleri, her bölgenin kanıt türünü ve sonucun raporlandığı bölümü birleştirmektedir. Deneyler düşük güç noktasında yürütülmüştür. Orta ve anma akımı bölgesi ile geçici rejim, deney özetine göre kalibre edilmiş benzetim modelinden türetilen S4 benzetimiyle incelenmiştir. Benzetim ve deney sonuçları ayrı raporlanmaktadır. Kalibre edilmiş model, deneyin kalibre edilmeyen büyüklüklerini hangi hatayla yeniden ürettiği üzerinden değerlendirilmektedir.
 

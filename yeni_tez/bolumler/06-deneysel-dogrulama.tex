@@ -222,6 +222,62 @@ AA tarafta Entes EMK-01 analizörü ve 50/5 oranlı, \SI{5}{\volt\ampere}, Class
   \label{fig:deney-emk01}
 \end{figure}
 
+Analizörler, ölçme devreleri ve kontrol kartıyla kurulan güç, ölçüm ve veri toplama akışı Şekil~\ref{fig:deney-olcum-zinciri} üzerinde özetlenmiştir.
+
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}[
+    node distance=8mm and 10mm,
+    block/.style={draw=blue!55!black,fill=blue!7,rounded corners,align=center,minimum height=10mm,text width=28mm,font=\small},
+    meas/.style={draw=green!50!black,fill=green!8,rounded corners,align=center,minimum height=10mm,text width=28mm,font=\small},
+    data/.style={draw=orange!70!black,fill=orange!10,rounded corners,align=center,minimum height=10mm,text width=30mm,font=\small},
+    arr/.style={-{Latex[length=2.5mm]},thick}
+  ]
+    \node[block] (dc) {DA bara\\AcuDC240 + şönt};
+    \node[block,right=of dc] (inv) {T-tipi evirici\\LCL filtre};
+    \node[block,right=of inv] (grid) {Varyak ve\\AA şebeke};
+    \draw[arr] (dc) -- node[above,font=\scriptsize] {$P_{\mathrm{dc}}$} (inv);
+    \draw[arr] (inv) -- node[above,font=\scriptsize] {$v_g,i_g$} (grid);
+    \node[meas,below=of inv] (scope) {Osiloskop\\$i_{L1}$, $i_g$, $v_g$, DAC};
+    \node[meas,below=of grid] (ac) {EMK-01 + CT\\$P_{\mathrm{ac}}$, THD, PF};
+    \node[meas,below=of dc] (ctrl) {Kontrol/ölçüm kartı\\ADC, PWM, FAULT};
+    \draw[arr] (inv) -- (scope);
+    \draw[arr] (grid) -- (ac);
+    \draw[arr] (inv) -- (ctrl);
+    \node[data,below=15mm of scope] (pc) {PC ana kumanda yazılımı\\RS485/Modbus RTU};
+    \draw[arr] (ctrl) -- (pc);
+    \draw[arr] (ac) -- (pc);
+    \draw[arr] (dc) |- (pc);
+    \draw[arr,dashed] (scope) -- node[right,font=\scriptsize] {ekran kaydı} (pc);
+  \end{tikzpicture}
+  \caption{Deney düzeneğindeki güç, ölçüm ve veri toplama akışı.}
+  \label{fig:deney-olcum-zinciri}
+\end{figure}
+
+Tablo~\ref{tab:olcum-cihazlari}, kullanılan cihaz ve sensörleri bildirilen özellikleri ve doğruluk bilgisinin kaynağıyla birlikte toplamaktadır. AcuDC240 için hesaplarda veri sayfasındaki yüzde hata değerleri kullanılmıştır.
+
+\begin{table}[H]
+  \centering
+  \caption{Ölçüm cihazları, bildirilen özellikleri ve doğruluk bilgisinin kaynağı.}
+  \label{tab:olcum-cihazlari}
+  \footnotesize
+  \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.16\textwidth} >{\raggedright\arraybackslash}p{0.21\textwidth} >{\raggedright\arraybackslash}p{0.20\textwidth} >{\raggedright\arraybackslash}X}
+    \toprule
+    Büyüklük & Cihaz / sensör & Bildirilen özellik & Doğruluk bilgisinin kaynağı \\
+    \midrule
+    AA güç ve THD & Entes EMK-01 ve 50/5 oranlı, \SI{5}{\volt\ampere} akım transformatörleri & Class 0.1 & Akım transformatörünün kalibrasyon ölçümü EK A'dadır (15.01.2025): anma akımının \%5'inde oran hatası $-$\%0,046, faz hatası 2,8~dk. \\
+    DA güç & Accuenergy AcuDC240 ve \SI{20}{\ampere}/\SI{60}{\milli\volt} şönt & Akım/gerilim yüzde 0,2; güç/enerji yüzde 0,5 & Doğruluk değerleri veri sayfasıyla (EK A) doğrulanmıştır. \\
+    Hızlı akım & Tektronix TCP0150 & \SI{150}{\ampere}, \SI{20}{\mega\hertz} & Bildirilen özellik üretici değeriyle aynıdır. \\
+    Hızlı gerilim & Tektronix THDP0200 & \SI{1500}{\volt}, \SI{200}{\mega\hertz} & Bildirilen özellik üretici değeriyle aynıdır. \\
+    Osiloskop & Tektronix DPO3034 & \SI{300}{\mega\hertz}, 2,5~GS/s & Bant genişliği ve örnekleme hızı üretici değeriyle aynıdır. \\
+    Faz/LCL akımı & HLSR 20-P/SP33 & \SI{23}{\milli\volt\per\ampere}; \SI{39.9}{\ampere} RMS hesap sınırı & Duyarlılık veri sayfasından alınmıştır (EK A). \\
+    Gerilim ölçümü & AMC1200 tabanlı izole kart & Kazanç 8; \SI{2.6}{\volt} ADC aralığı & Kazanç veri sayfasından alınmıştır (EK A). \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+Deneysel verimin belirsizliği, DA analizörünün bildirilen yüzde 0,5 güç toleransından kestirilmiştir. Birleşik belirsizliğin $u_{\eta}=\eta\sqrt{(u_{P_{\mathrm{ac}}}/P_{\mathrm{ac}})^2+(u_{P_{\mathrm{dc}}}/P_{\mathrm{dc}})^2}$ ilk yaklaşımında DA tarafı katkısı \%94 verimde yaklaşık $\pm0{,}5$ puandır.
+
 \section{PC Ana Kumanda Yazılımı ve Veri Toplama}
 
 PC ana kumanda yazılımı; EMK-01, AcuDC240 ve kontrol kartından RS485/Modbus RTU üzerinden veri almak, anlık değerleri grafikleştirmek ve verim hesabına temel oluşturmak amacıyla geliştirilmiştir. Şekil~\ref{fig:deney-pc-arayuzu} yazılımın arayüzünü göstermektedir. Bir veri çevrimi yaklaşık \SI{1}{\second} sürmektedir. Her çevrimde önce DA analizörü, en fazla yaklaşık \SI{50}{\milli\second} sonra AA analizörü okunmaktadır. Kayıt yapısı kararlı durum eğilimlerini izlemek ve verimi hesaplamak için kullanılmıştır.
@@ -328,7 +384,7 @@ Nötr anahtar susturma yönteminde ilgili yarım periyotta ters akım yolu kesil
 
 \section{Deney Sonuçlarının Değerlendirilmesi}
 
-Üç yöntemin deneyde ve kalibre edilmiş benzetimde elde edilen verim ve faz akımı THD değerleri Tablo~\ref{tab:deney-dusuk-guc-ozeti} üzerindedir. AA analizörü şebeke tarafındaki faz akımını ölçtüğünden tabloda yalnız faz akımı THD'si yer almaktadır. Kalibrasyon yöntemi ve bağımsız doğrulama ölçütleri Alt Bölüm~\ref{sec:kalibrasyon} altında ayrıca verilmektedir.
+Üç yöntemin deneyde ve kalibre edilmiş benzetimde elde edilen verim ve faz akımı THD değerleri Tablo~\ref{tab:deney-dusuk-guc-ozeti} üzerindedir. AA analizörü şebeke tarafındaki faz akımını ölçtüğünden tabloda yalnız faz akımı THD'si yer almaktadır. Benzetim sütunu, yalnız deneyin aktif ve reaktif gücüne kalibre edilen modelden alınmıştır. Kalibrasyon yöntemi ve bağımsız doğrulama ölçütleri Alt Bölüm~\ref{sec:kalibrasyon} altında verilmektedir.
 
 \begin{table}[H]
   \centering
@@ -350,67 +406,11 @@ Nötr anahtar susturma yönteminde ilgili yarım periyotta ters akım yolu kesil
 
 Deneyde susturma verimi 1,7 puan artırırken THD'yi \%47'ye çıkarmıştır. Sin\textsuperscript{3} terimi ise verimi \%94,5 düzeyinde korurken THD'yi \%47'den \%14'e, klasik anahtarlama düzeyine indirmiştir. Benzetim, verim ve THD sıralamasını deneyle aynı vermektedir.
 
-Deney düzeneğindeki güç, ölçüm ve veri toplama akışı Şekil~\ref{fig:deney-olcum-zinciri} üzerinde özetlenmiştir.
-
-\begin{figure}[H]
-  \centering
-  \begin{tikzpicture}[
-    node distance=8mm and 10mm,
-    block/.style={draw=blue!55!black,fill=blue!7,rounded corners,align=center,minimum height=10mm,text width=28mm,font=\small},
-    meas/.style={draw=green!50!black,fill=green!8,rounded corners,align=center,minimum height=10mm,text width=28mm,font=\small},
-    data/.style={draw=orange!70!black,fill=orange!10,rounded corners,align=center,minimum height=10mm,text width=30mm,font=\small},
-    arr/.style={-{Latex[length=2.5mm]},thick}
-  ]
-    \node[block] (dc) {DA bara\\AcuDC240 + şönt};
-    \node[block,right=of dc] (inv) {T-tipi evirici\\LCL filtre};
-    \node[block,right=of inv] (grid) {Varyak ve\\AA şebeke};
-    \draw[arr] (dc) -- node[above,font=\scriptsize] {$P_{\mathrm{dc}}$} (inv);
-    \draw[arr] (inv) -- node[above,font=\scriptsize] {$v_g,i_g$} (grid);
-    \node[meas,below=of inv] (scope) {Osiloskop\\$i_{L1}$, $i_g$, $v_g$, DAC};
-    \node[meas,below=of grid] (ac) {EMK-01 + CT\\$P_{\mathrm{ac}}$, THD, PF};
-    \node[meas,below=of dc] (ctrl) {Kontrol/ölçüm kartı\\ADC, PWM, FAULT};
-    \draw[arr] (inv) -- (scope);
-    \draw[arr] (grid) -- (ac);
-    \draw[arr] (inv) -- (ctrl);
-    \node[data,below=15mm of scope] (pc) {PC ana kumanda yazılımı\\RS485/Modbus RTU};
-    \draw[arr] (ctrl) -- (pc);
-    \draw[arr] (ac) -- (pc);
-    \draw[arr] (dc) |- (pc);
-    \draw[arr,dashed] (scope) -- node[right,font=\scriptsize] {ekran kaydı} (pc);
-  \end{tikzpicture}
-  \caption{Deney düzeneğindeki güç, ölçüm ve veri toplama akışı.}
-  \label{fig:deney-olcum-zinciri}
-\end{figure}
-
-Tablo~\ref{tab:olcum-cihazlari}, kullanılan cihaz ve sensörleri bildirilen özellikleri ve doğruluk bilgisinin kaynağıyla birlikte toplamaktadır. AcuDC240 için hesaplarda veri sayfasındaki yüzde hata değerleri kullanılmıştır.
-
-Üç yöntemin çalışma koşulları Tablo~\ref{tab:deney-kosullari} üzerinde karşılaştırılmıştır.
+Sonuçların hangi koşulda ve hangi kayıt türünden geldiği aşağıdaki tablolarla belgelenmiştir. Üç yöntemin çalışma koşulları Tablo~\ref{tab:deney-kosullari} üzerinde karşılaştırılmıştır.
 
 Deney özet değerleri ile PC ekranlarında görünen anlık değerler arasındaki farklar Tablo~\ref{tab:deney-metin-ekran-karsilastirma} üzerinde verilmiştir. Ekran değeri görselde okunabilen tek anlık değer, özet değeri ise deney raporundaki sayıdır. Özet THDi değeri süreli kaydın ortalama düzeyidir. Tablo, kayıtların kendi içindeki tutarlılığını göstermektedir.
 
 Deneyler yaklaşık \SI{2.3}{\ampere} faz akımındaki düşük güç noktasında yapılmıştır. Anma gücü, donanımın tasarım hedefidir. Orta ve anma akımında aynı denetim yapısının davranışı S4 benzetim taramasıyla (Alt Bölüm~\ref{sec:s4-kapali-cevrim}) incelenmiştir. Tablo~\ref{tab:deney-juri-durum}, her güç bölgesinin hangi yöntemle incelendiğini ve elde edilen sonucu özetlemektedir.
-
-Deneysel verimin belirsizliği, DA analizörünün bildirilen yüzde 0,5 güç toleransından kestirilmiştir. Birleşik belirsizliğin $u_{\eta}=\eta\sqrt{(u_{P_{\mathrm{ac}}}/P_{\mathrm{ac}})^2+(u_{P_{\mathrm{dc}}}/P_{\mathrm{dc}})^2}$ ilk yaklaşımında DA tarafı katkısı \%94 verimde yaklaşık $\pm0{,}5$ puandır.
-
-\begin{table}[H]
-  \centering
-  \caption{Ölçüm cihazları, bildirilen özellikleri ve doğruluk bilgisinin kaynağı.}
-  \label{tab:olcum-cihazlari}
-  \footnotesize
-  \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.16\textwidth} >{\raggedright\arraybackslash}p{0.21\textwidth} >{\raggedright\arraybackslash}p{0.20\textwidth} >{\raggedright\arraybackslash}X}
-    \toprule
-    Büyüklük & Cihaz / sensör & Bildirilen özellik & Doğruluk bilgisinin kaynağı \\
-    \midrule
-    AA güç ve THD & Entes EMK-01 ve 50/5 oranlı, \SI{5}{\volt\ampere} akım transformatörleri & Class 0.1 & Akım transformatörünün kalibrasyon ölçümü EK A'dadır (15.01.2025): anma akımının \%5'inde oran hatası $-$\%0,046, faz hatası 2,8~dk. \\
-    DA güç & Accuenergy AcuDC240 ve \SI{20}{\ampere}/\SI{60}{\milli\volt} şönt & Akım/gerilim yüzde 0,2; güç/enerji yüzde 0,5 & Doğruluk değerleri veri sayfasıyla (EK A) doğrulanmıştır. \\
-    Hızlı akım & Tektronix TCP0150 & \SI{150}{\ampere}, \SI{20}{\mega\hertz} & Bildirilen özellik üretici değeriyle aynıdır. \\
-    Hızlı gerilim & Tektronix THDP0200 & \SI{1500}{\volt}, \SI{200}{\mega\hertz} & Bildirilen özellik üretici değeriyle aynıdır. \\
-    Osiloskop & Tektronix DPO3034 & \SI{300}{\mega\hertz}, 2,5~GS/s & Bant genişliği ve örnekleme hızı üretici değeriyle aynıdır. \\
-    Faz/LCL akımı & HLSR 20-P/SP33 & \SI{23}{\milli\volt\per\ampere}; \SI{39.9}{\ampere} RMS hesap sınırı & Duyarlılık veri sayfasından alınmıştır (EK A). \\
-    Gerilim ölçümü & AMC1200 tabanlı izole kart & Kazanç 8; \SI{2.6}{\volt} ADC aralığı & Kazanç veri sayfasından alınmıştır (EK A). \\
-    \bottomrule
-  \end{tabularx}
-\end{table}
 
 \begin{table}[H]
   \centering
