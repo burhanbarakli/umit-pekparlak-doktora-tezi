@@ -44,19 +44,25 @@ Tablo~\ref{tab:arastirma-sorusu-kanit}, Giriş bölümünde tanımlanan dört ar
 
 Tablo~\ref{tab:katki-yontem-kanit}, üç katkıyı tez başlığının üç bileşeniyle, yöntemle, başlıca bulguyla ve kanıtla eşleştirmektedir. Tablodaki deney değerleri, prototipin tek faz kolunda, yaklaşık \SI{2.3}{\ampere} faz akımında, \num{250}--\SI{280}{\watt} AA güçte ve yaklaşık \SI{120}{\volt} şebeke geriliminde elde edilmiştir (Alt Bölüm~\ref{sec:sonuc-kosullar}).
 
-\begin{table}[H]
-  \centering
+\begingroup
+\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}>{\footnotesize\raggedright\arraybackslash}p{0.17\textwidth}%
+                     >{\footnotesize\raggedright\arraybackslash}p{0.20\textwidth}%
+                     >{\footnotesize\raggedright\arraybackslash}p{0.405\textwidth}%
+                     >{\footnotesize\raggedright\arraybackslash}p{0.18\textwidth}@{}}
   \caption{Özgün katkılar: başlıktaki karşılık, yöntem, başlıca bulgu ve kanıt.}
-  \label{tab:katki-yontem-kanit}
-  \footnotesize
-  \setlength{\tabcolsep}{3pt}
-  \begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.17\textwidth}%
-                                  >{\raggedright\arraybackslash}p{0.20\textwidth}%
-                                  >{\raggedright\arraybackslash}X%
-                                  >{\raggedright\arraybackslash}p{0.18\textwidth}@{}}
-    \toprule
-    \textbf{Katkı ve başlıktaki karşılığı} & \textbf{Yöntem} & \textbf{Başlıca bulgu ve koşulu} & \textbf{Kanıtın yeri ve türü} \\
-    \midrule
+  \label{tab:katki-yontem-kanit}\\
+  \toprule
+  \textbf{Katkı ve başlıktaki karşılığı} & \textbf{Yöntem} & \textbf{Başlıca bulgu ve koşulu} & \textbf{Kanıtın yeri ve türü} \\
+  \midrule
+  \endfirsthead
+  \caption[]{Özgün katkılar: başlıktaki karşılık, yöntem, başlıca bulgu ve kanıt (devamı).}\\
+  \toprule
+  \textbf{Katkı ve başlıktaki karşılığı} & \textbf{Yöntem} & \textbf{Başlıca bulgu ve koşulu} & \textbf{Kanıtın yeri ve türü} \\
+  \midrule
+  \endhead
+  \bottomrule
+  \endfoot
     1. Nötr anahtar susturma (``düşük güç performansını iyileştiren anahtarlama'') &
     Kip ve akım yolu analizi ile senkron-buck eşdeğeri, deneyin aktif ve reaktif gücüne kalibre edilmiş anahtarlamalı benzetim, deney özet kayıtları &
     Klasik anahtarlamaya (S1) göre susturma (S2) verimi deneyde \%92,5'ten \%94,2'ye yükseltmektedir. Bedeli süreksiz iletim ve üçüncü harmoniktir: akım THD'si deneyde \%15'ten \%47'ye çıkmaktadır. Susturma, düşük güç bölgesi için tasarlanmış bir yöntemdir. &
@@ -71,9 +77,8 @@ Tablo~\ref{tab:katki-yontem-kanit}, üç katkıyı tez başlığının üç bile
     Tanımlar (işlev paylaşım topolojisi, çalışma kipleri, geçiş kısıtları), şarj zinciri benzetim kayıtları, evirici kipinde düşük güç deneyleri, klasik ayrık mimariyle nitel karşılaştırma &
     Aynı T-tipi yarı iletken tabanı evirici, Vienna PFC ve aktif batarya yönetimi işlevlerinde kullanılabilir. Güvenli kip geçişi PWM'nin durdurulması, sıfıra yakın faz akımı, DA bara dengesi ve röle geri bildirimi koşuluna bağlıdır. Ortak donanım, ayrı güç katlarına göre eleman sayısını azaltma olanağı sunmaktadır. &
     Bölüm~\ref{chap:gttipi}.\newline GT-tipi deney düzeneği, evirici kipinde düşük güç deneyi, şarj yönünde benzetim kaydı. \\
-    \bottomrule
-  \end{tabularx}
-\end{table}
+\end{longtable}
+\endgroup
 
 \subsection{Düşük Güç Anahtarlama Katkısı}
 
