@@ -31,16 +31,16 @@ Model, ideal anahtarlama durumlarını açıklayan devre düzeyini, LCL filtre i
     \draw[flow] (inv) -- (lcl);
     \draw[flow] (lcl) -- (grid);
 
-    \node[meas, below=15mm of lcl] (meas) {Gerilim ve akım\\ölçümleri};
-    \node[ctrl, left=of meas] (pwm) {PWM ve kapı\\sinyalleri};
-    \node[ctrl, left=of pwm] (control) {Akım denetimi ve\\sınırlandırıcılar};
-    \node[ctrl, below=of control] (sin3) {{Sin\textsuperscript{3}}\\kompanzasyonu};
-    \draw[sig] (grid.south) |- (meas.east);
+    \node[ctrl, below=12mm of inv] (pwm) {PWM ve kapı\\sinyalleri};
+    \node[meas, below=12mm of lcl] (meas) {Gerilim ve akım\\ölçümleri};
+    \node[ctrl, below=10mm of pwm] (control) {Akım denetimi ve\\sınırlandırıcılar};
+    \node[ctrl, left=of control] (sin3) {{Sin\textsuperscript{3}}\\kompanzasyonu};
     \draw[sig] (lcl.south) -- (meas.north);
-    \draw[sig] (meas) -- (control);
+    \draw[sig] (grid.south) |- (meas.east);
+    \draw[sig] (meas.south) |- (control.east);
     \draw[sig] (control) -- (pwm);
+    \draw[sig] (pwm) -- (inv);
     \draw[sig] (sin3) -- (control);
-    \draw[sig] (pwm.north) |- (inv.south);
   \end{tikzpicture}%
   }
   \caption{Genel sistem mimarisi: güç yolu, geri besleme yolu ve Sin\textsuperscript{3} kompanzasyonu.}
