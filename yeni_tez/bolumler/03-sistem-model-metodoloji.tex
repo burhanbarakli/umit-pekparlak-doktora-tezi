@@ -12,37 +12,7 @@ Model, ideal anahtarlama durumlarını açıklayan devre düzeyini, LCL filtre i
 
 \begin{figure}[H]
   \centering
-  \resizebox{0.98\textwidth}{!}{%
-  \begin{tikzpicture}[
-    node distance=8mm and 10mm,
-    block/.style={draw, rounded corners=1.5pt, align=center, minimum height=11mm, minimum width=24mm, fill=blue!5},
-    ctrl/.style={draw, rounded corners=1.5pt, align=center, minimum height=10mm, minimum width=25mm, fill=orange!10},
-    meas/.style={draw, rounded corners=1.5pt, align=center, minimum height=9mm, minimum width=24mm, fill=gray!10},
-    flow/.style={-{Latex[length=2mm]}, thick},
-    sig/.style={-{Latex[length=2mm]}, thick, dashed}
-  ]
-    \node[block] (bat) {Batarya /\\[0.8mm]DA kaynak};
-    \node[block, right=of bat] (dc) {Bölünmüş\\[0.8mm]DA bara};
-    \node[block, right=of dc] (inv) {T-tipi\\[0.8mm]güç katı};
-    \node[block, right=of inv] (lcl) {LCL\\[0.8mm]filtre};
-    \node[block, right=of lcl] (grid) {Şebeke /\\[0.8mm]ortak bağlantı};
-    \draw[flow] (bat) -- node[above, font=\scriptsize]{enerji} (dc);
-    \draw[flow] (dc) -- (inv);
-    \draw[flow] (inv) -- (lcl);
-    \draw[flow] (lcl) -- (grid);
-
-    \node[ctrl, below=12mm of inv] (pwm) {PWM ve kapı\\[0.8mm]sinyalleri};
-    \node[meas, below=12mm of lcl] (meas) {Gerilim ve akım\\[0.8mm]ölçümleri};
-    \node[ctrl, below=10mm of pwm] (control) {Akım denetimi ve\\[0.8mm]sınırlandırıcılar};
-    \node[ctrl, left=of control] (sin3) {{Sin\textsuperscript{3}}\\[0.8mm]kompanzasyonu};
-    \draw[sig] (lcl.south) -- (meas.north);
-    \draw[sig] (grid.south) |- (meas.east);
-    \draw[sig] (meas.south) |- (control.east);
-    \draw[sig] (control) -- (pwm);
-    \draw[sig] (pwm) -- (inv);
-    \draw[sig] (sin3) -- (control);
-  \end{tikzpicture}%
-  }
+  \resizebox{0.98\textwidth}{!}{\input{sekiller/genel_sistem_mimarisi}}
   \caption{Genel sistem mimarisi: güç yolu, geri besleme yolu ve Sin\textsuperscript{3} kompanzasyonu.}
   \label{fig:genel-sistem-mimarisi}
 \end{figure}
