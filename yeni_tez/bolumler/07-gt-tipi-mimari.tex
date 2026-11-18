@@ -1,25 +1,25 @@
 \chapter{GT-TİPİ YENİDEN YAPILANDIRILABİLİR ENERJİ DEPOLAMA MİMARİSİ}
 \label{chap:gttipi}
 
-Bölüm~\ref{chap:anahtarlama}--\ref{chap:deney}, faz kolu ölçeğinde tezin ilk iki katkısını kurmuştur: T-tipi dönüştürücünün düşük güç davranışı, ters akım dolaşımı, nötr anahtar susturma yöntemi, Sin\textsuperscript{3} tabanlı ileri besleme kompanzasyonu ve deney düzeneği incelenmiştir. Bölüm~\ref{chap:gttipi} sistem ölçeğine geçerek tezin üçüncü katkısını, aynı T-tipi yarı iletken tabanının enerji depolama sisteminin şarj ve deşarj işlevlerinde yeniden görevlendirilmesini ele almaktadır. Anma görünür gücü \SI{20}{\kilo\volt\ampere}, tasarım güç aralığı \num{20}--\SI{25}{\kilo\watt} olan deney düzeneği GT-tipi olarak kurulmuştur: Şekil~\ref{fig:gelen-tam-topoloji} üzerindeki üç fazlı güç topolojisinde her faz hücresindeki röle ve doğrultucu diyotlar kip değişimini, alt bölümdeki transformatörler ise şarj yönündeki batarya yönetim sistemi (BYS) transformatörlerini oluşturmaktadır.
+Bölüm~\ref{chap:anahtarlama}--\ref{chap:deney}, faz kolu ölçeğinde tezin ilk iki katkısını kurmuştur. İncelenen konular T-tipi dönüştürücünün düşük güç davranışı, ters akım dolaşımı, nötr anahtar susturma yöntemi, Sin\textsuperscript{3} tabanlı ileri besleme kompanzasyonu ve deney düzeneğidir. Bölüm~\ref{chap:gttipi} sistem ölçeğine geçmektedir. Tezin üçüncü katkısı, aynı T-tipi yarı iletken tabanının enerji depolama sisteminde şarj ve deşarj işlevleri için yeniden görevlendirilmesidir. Anma görünür gücü \SI{20}{\kilo\volt\ampere}, tasarım güç aralığı \num{20}--\SI{25}{\kilo\watt} olan deney düzeneği GT-tipi olarak kurulmuştur. Şekil~\ref{fig:gelen-tam-topoloji} üzerindeki üç fazlı güç topolojisinde kip değişimini her faz hücresindeki röle ve doğrultucu diyotlar sağlamaktadır. Şeklin alt kısmındaki transformatörler ise şarj yönündeki batarya yönetim sistemi (BYS) transformatörleridir.
 
-``GT-tipi'' adı, tezde \emph{geliştirilmiş/değiştirilmiş T-tipi} enerji depolama mimarisini belirtmek için kullanılan bir adlandırmadır; literatürde standartlaşmış bağımsız bir çok seviyeli dönüştürücü ailesi değildir. Mimari; T-tipi faz kollarını, kip seçen RL1 fonksiyon anahtarını, nötr IGBT'lerle kurulan Vienna PFC katını, çok sekonderli BYS transformatörlerini ve batarya başına doğrultucu--buck şarj kollarını tek bir donanımda birleştirmektedir.
+``GT-tipi'' adı, tezde \emph{geliştirilmiş/değiştirilmiş T-tipi} enerji depolama mimarisini belirtmek için kullanılan, teze özgü bir adlandırmadır. Mimari, tek bir donanımda T-tipi faz kollarını, kip seçen RL1 fonksiyon anahtarını, nötr IGBT'lerle kurulan Vienna PFC katını, çok sekonderli BYS transformatörlerini ve batarya başına doğrultucu--buck şarj kollarını birleştirmektedir.
 
-Bölüm boyunca deney sonucu, benzetim kaydı ve tasarım tanımı birbirinden ayrılmıştır. Evirici kipinin düşük güç davranışı Bölüm~\ref{chap:deney} altındaki deneylerle, şarj yönünün işlevsel bütünlüğü Alt Bölüm~\ref{sec:gt-benzetim} altındaki benzetim kayıtlarıyla gösterilmiştir. Çalışma kipleri, geçiş kuralları ve koruma işlevleri ise tasarım tanımı olarak verilmiştir. Devre şemaları ve benzetim ekranları tez sahibinin tasarım çalışmalarından alınmış ve özgün çözünürlükleriyle verilmiştir.
+Deney sonucu, benzetim kaydı ve tasarım tanımı metin boyunca birbirinden ayrılmıştır. Evirici kipinin düşük güç davranışı Bölüm~\ref{chap:deney} altındaki deneylerle, şarj yönünün işlevsel bütünlüğü Alt Bölüm~\ref{sec:gt-benzetim} altındaki benzetim kayıtlarıyla gösterilmiştir. Çalışma kipleri, geçiş kuralları ve koruma işlevleri ise tasarım tanımı olarak verilmiştir. Devre şemaları ve benzetim ekranları tez sahibinin tasarım çalışmalarından alınmış, özgün çözünürlükleriyle verilmiştir.
 
 \section{Tasarım Gereksinimleri}
 \label{sec:gt-gereksinimler}
 
-Yüksek güçlü bir EDS'de batarya dizisi sabit ve ideal bir DA kaynak değildir. Hücre veya modül uç gerilimleri şarj durumu, sıcaklık, iç direnç, akım ve yaşlanmayla değişir; seri dizinin kullanılabilir kapasitesi zayıf birim tarafından sınırlandırılabilir \citep{Plett2015,Hannan2017,Farakhor2023}. Yeniden yapılandırılabilir batarya sistemleri, seçilen modülleri enerji yoluna alma veya yoldan çıkarma olanağıyla arıza yalıtımı, gerilim uyarlama ve kapasite kullanımını iyileştirmeyi hedefler \citep{Momayyezan2016,Farakhor2023,Huang2024}. İlave yarı iletkenler ise iletim kaybı, sürücü sayısı, koruma gereksinimi ve denetim karmaşıklığı oluşturduğundan tasarım değerlendirmesi yalnız işlev sayısına değil, kayıp ve güvenlik bedeline de dayanmalıdır.
+Yüksek güçlü bir EDS'de batarya dizisi, sabit ve ideal bir DA kaynaktan farklı davranmaktadır. Hücre veya modül uç gerilimleri şarj durumu, sıcaklık, iç direnç, akım ve yaşlanmayla değişmektedir. Seri dizinin kullanılabilir kapasitesi ise zayıf birim tarafından sınırlandırılabilir \citep{Plett2015,Hannan2017,Farakhor2023}. Yeniden yapılandırılabilir batarya sistemleri, seçilen modülleri enerji yoluna alma veya yoldan çıkarma olanağıyla arıza yalıtımını, gerilim uyarlamayı ve kapasite kullanımının iyileştirilmesini hedeflemektedir \citep{Momayyezan2016,Farakhor2023,Huang2024}. İlave yarı iletkenler ise iletim kaybını, sürücü sayısını, koruma gereksinimini ve denetim karmaşıklığını artırmaktadır. Dolayısıyla tasarım değerlendirmesi, işlev sayısıyla birlikte kayıp ve güvenlik bedeline de dayanmalıdır.
 
-GT-tipi mimarinin güç tabanı Bölüm~\ref{chap:sistem} altında tanımlanan deney düzeneğidir: üç fazlı T-tipi evirici, bölünmüş DA bara, LCL filtre ve \SI{20}{\kilo\volt\ampere} anma görünür gücü (\num{20}--\SI{25}{\kilo\watt} tasarım güç aralığı). Mimarinin amacı ayrı bir şarj dönüştürücüsü eklemek yerine aynı faz kollarını şarj yönünde de kullanmaktır; gerilim, akım ve anahtarlama frekansı sınırları evirici kipiyle ortaktır ve Tablo~\ref{tab:sistem-parametreleri} içinde verilmiştir.
+GT-tipi mimarinin güç tabanı Bölüm~\ref{chap:sistem} altında tanımlanan deney düzeneğidir: üç fazlı T-tipi evirici, bölünmüş DA bara, LCL filtre ve \SI{20}{\kilo\volt\ampere} anma görünür gücü (\num{20}--\SI{25}{\kilo\watt} tasarım güç aralığı). Mimarinin amacı, ayrı bir şarj dönüştürücüsü eklemek yerine aynı faz kollarını şarj yönünde de kullanmaktır. Gerilim, akım ve anahtarlama frekansı sınırları evirici kipiyle ortaktır ve Tablo~\ref{tab:sistem-parametreleri} içinde verilmiştir.
 
-Tasarım gereksinimleri beş işlevsel ilkeye indirgenmiştir: enerji yolunun çift yönlü olabilmesi, şarj sırasında şebeke akım kalitesinin gözetilmesi, batarya kollarının galvanik olarak ayrılması, her bataryanın güvenli akım--gerilim--sıcaklık sınırlarında tutulması ve her kip geçişinin ölçüm geri bildirimiyle güvenli biçimde tamamlanması. IEC~62619 endüstriyel ve sabit uygulamalardaki ikincil lityum hücre ve bataryaların güvenli işletimine; IEC~62477-1 güç elektroniği dönüştürücülerindeki elektrik çarpması, yangın, ısıl ve enerji tehlikelerine; IEC~62933-5-2 ise şebeke ile bütünleşik elektrokimyasal EDS'nin yaşam döngüsü boyunca alt sistem etkileşimlerinden doğan güvenlik risklerine odaklanmaktadır \citep{IEC62619,IEC62477,IEC62933_5_2}.
+Tasarım gereksinimleri beş işlevsel ilkeye indirgenmiştir. Enerji yolu çift yönlü olabilmeli, şarj sırasında şebeke akım kalitesi gözetilmelidir. Batarya kolları galvanik olarak ayrılmalı, her batarya güvenli akım--gerilim--sıcaklık sınırlarında tutulmalıdır. Her kip geçişi de ölçüm geri bildirimiyle güvenli biçimde tamamlanmalıdır. IEC~62619, endüstriyel ve sabit uygulamalardaki ikincil lityum hücre ve bataryaların güvenli işletimine odaklanmaktadır. IEC~62477-1'in odağı, güç elektroniği dönüştürücülerindeki elektrik çarpması, yangın, ısıl ve enerji tehlikeleridir. IEC~62933-5-2 ise şebeke ile bütünleşik elektrokimyasal EDS'nin yaşam döngüsü boyunca alt sistem etkileşimlerinden doğan güvenlik risklerine odaklanmaktadır \citep{IEC62619,IEC62477,IEC62933_5_2}.
 
 \section{GT-Tipi Topolojinin Yapısı}
 \label{sec:gt-yapi}
 
-GT-tipi yapı, deney düzeneğindeki T-tipi faz kollarını RL1 fonksiyon anahtarı ve doğrultucu/boost diyotlarıyla üç işlev arasında yeniden görevlendirmektedir: şebekeye güç veren evirici, BYS transformatörlerini besleyen iki seviyeli yarım köprü ve şebekeden şarj akımı çeken Vienna PFC. T-tipi faz kolunun temel yapısı Bölüm~\ref{chap:sistem} içindeki Şekil~\ref{fig:t-tipi-uc-seviye} ve Şekil~\ref{fig:t-tipi-akim-yollari} ile verildiğinden yeniden basılmamıştır. GT-tipi yapının ayırt edici alt devreleri Şekil~\ref{fig:gt-viyana-pfc}--\ref{fig:gt-pfc-modu} üzerinde sırasıyla açıklanmaktadır. Elemanların iki enerji yönündeki görevleri Tablo~\ref{tab:gt-eleman-gorevleri} üzerinde eşlenmiştir.
+GT-tipi yapı, deney düzeneğindeki T-tipi faz kollarını RL1 fonksiyon anahtarı ve doğrultucu/boost diyotlarıyla üç işlev arasında yeniden görevlendirmektedir. Faz kolları şebekeye güç veren evirici, BYS transformatörlerini besleyen iki seviyeli yarım köprü ya da şebekeden şarj akımı çeken Vienna PFC olarak çalışmaktadır. T-tipi faz kolunun temel yapısı Bölüm~\ref{chap:sistem} içindeki Şekil~\ref{fig:t-tipi-uc-seviye} ve Şekil~\ref{fig:t-tipi-akim-yollari} ile verilmiştir. GT-tipi yapının ayırt edici alt devreleri Şekil~\ref{fig:gt-viyana-pfc}--\ref{fig:gt-pfc-modu} üzerinde sırasıyla açıklanmaktadır. Elemanların iki enerji yönündeki görevleri Tablo~\ref{tab:gt-eleman-gorevleri} üzerinde eşlenmiştir.
 
 \begin{table}[H]
   \centering
@@ -39,7 +39,7 @@ GT-tipi yapı, deney düzeneğindeki T-tipi faz kollarını RL1 fonksiyon anahta
   \end{tabularx}
 \end{table}
 
-Şekil~\ref{fig:gt-viyana-pfc} üzerindeki Vienna doğrultucu; üç faz giriş endüktansları, altı doğrultma diyodu, nötr IGBT grubu ve bölünmüş DA baradan oluşmaktadır. Şarj yönünde şebekeden düşük harmonikli ve birim güç faktörüne yakın akım çekmek için Vienna katı kullanılmaktadır.
+Şekil~\ref{fig:gt-viyana-pfc} üzerindeki Vienna doğrultucu, üç fazın giriş endüktanslarından, altı doğrultma diyodundan, nötr IGBT grubundan ve bölünmüş DA baradan oluşmaktadır. Şarj yönünde şebekeden düşük harmonikli ve birim güç faktörüne yakın akım çekmek için Vienna katı kullanılmaktadır.
 
 \begin{figure}[H]
   \centering
@@ -48,7 +48,7 @@ GT-tipi yapı, deney düzeneğindeki T-tipi faz kollarını RL1 fonksiyon anahta
   \label{fig:gt-viyana-pfc}
 \end{figure}
 
-Şekil~\ref{fig:gt-cok-sekonderli-bys}, tek primer ve çok sayıda sekonder sargı üzerinden her bataryaya ayrı doğrultucu--buck kolu sağlamaktadır. Her çıkışta diyot doğrultma, DA bağlantı kondansatörü, kontrollü anahtar, serbest dolaşım diyodu, endüktans ve çıkış kondansatörü bulunmaktadır. Batarya bazında şarj akımı ve gerilimi ayarlama hedefi sekonder kollarının fiziksel ayrışmasına dayanmaktadır.
+Şekil~\ref{fig:gt-cok-sekonderli-bys} üzerindeki aktif BYS devresi, tek primer ve çok sayıda sekonder sargı üzerinden her bataryaya ayrı doğrultucu--buck kolu sağlamaktadır. Her çıkışta diyotlu doğrultucu, DA bağlantı kondansatörü, kontrollü anahtar, serbest dolaşım diyodu, endüktans ve çıkış kondansatörü bulunmaktadır. Şarj akımını ve gerilimini batarya bazında ayarlama hedefi, sekonder kollarının fiziksel ayrışmasına dayanmaktadır.
 
 \begin{figure}[H]
   \centering
@@ -66,7 +66,7 @@ GT-tipi yapı, deney düzeneğindeki T-tipi faz kollarını RL1 fonksiyon anahta
   \label{fig:gt-ana-topoloji}
 \end{figure}
 
-Şekil~\ref{fig:gt-evirici-lcl}, RL1 ve RL2'nin evirici konumunda $Q_1$--$Q_4$ grubunun üç seviyeli T-tipi kolu, $L_1$--$C_f$--$L_2$ ağının ise şebeke akımı filtresini oluşturduğu deşarj yolunu göstermektedir.
+Şekil~\ref{fig:gt-evirici-lcl}, RL1 ve RL2 evirici konumundayken oluşan deşarj yolunu göstermektedir. Deşarj yolunda $Q_1$--$Q_4$ grubu üç seviyeli T-tipi kolu, $L_1$--$C_f$--$L_2$ ağı ise şebeke akımı filtresini oluşturmaktadır.
 \kirmizinot{RL2'nin görevi bölümde tanımlanmıyor; Tablo~\ref{tab:gt-calisma-modlari}, durum makinesi ve geçiş koşulu yalnız RL1'den söz ediyor. RL2'nin kip seçimindeki rolü bir cümleyle eklenmeli ya da RL2 buradan çıkarılmalı.}
 
 \begin{figure}[H]
@@ -76,7 +76,7 @@ GT-tipi yapı, deney düzeneğindeki T-tipi faz kollarını RL1 fonksiyon anahta
   \label{fig:gt-evirici-lcl}
 \end{figure}
 
-Şekil~\ref{fig:gt-iki-seviye-trafo}, şarj yönünde üç fazın $Q_1$--$Q_2$ yarım köprülerinin üç çok sekonderli BYS transformatörünün primerlerini beslediği bağlantıyı göstermektedir.
+Şekil~\ref{fig:gt-iki-seviye-trafo}, şarj yönündeki transformatör besleme bağlantısını göstermektedir. Bağlantıda üç fazın $Q_1$--$Q_2$ yarım köprüleri, üç çok sekonderli BYS transformatörünün primerlerini beslemektedir.
 
 \begin{figure}[H]
   \centering
@@ -94,7 +94,7 @@ GT-tipi yapı, deney düzeneğindeki T-tipi faz kollarını RL1 fonksiyon anahta
   \label{fig:gt-pfc-modu}
 \end{figure}
 
-Şarjda her batarya ayrı izole buck kolundan bağımsız akım ve gerilim düzenlemesiyle beslenmekte, deşarjda ise enerji ortak DA bara ve T-tipi evirici üzerinden şebekeye aktarılmaktadır. Batarya bazında dengeleme hedefi, şarj yönündeki batarya başına düzenlemeyle sağlanmaktadır.
+Şarjda her batarya, ayrı izole buck kolundan bağımsız akım ve gerilim düzenlemesiyle beslenmektedir. Deşarjda ise enerji, ortak DA bara ve T-tipi evirici üzerinden şebekeye aktarılmaktadır. Batarya bazında dengeleme hedefi, şarj yönündeki batarya başına düzenlemeyle karşılanmaktadır.
 
 \begin{figure}[H]
   \centering
@@ -132,12 +132,12 @@ GT-tipi yapı, deney düzeneğindeki T-tipi faz kollarını RL1 fonksiyon anahta
   \label{fig:gt-sentez-mimarisi}
 \end{figure}
 
-Şekil~\ref{fig:gt-sentez-mimarisi}, farklı şekillere dağılan güç ve denetim katmanlarını tek bir işlevsel akışta birleştirmektedir. Şarj yönünde PFC katı şebeke akımı ile DA bara gerilimini, yarım köprü ve transformatör katı yalıtılmış enerji aktarımını, batarya başına buck kolları şarj akım ve gerilimlerini belirler. Deşarj yönünde T-tipi evirici, Bölüm~\ref{chap:sin3} altındaki akım denetimiyle şebekeye güç verir. Aynı anda bütün katların hızlı anahtarlanması gerekmez; RL1 kip geçişleri, güç dönüştürücü PWM'ninden daha yavaş bir üst seviye durum makinesiyle yönetilmelidir.
+Şekil~\ref{fig:gt-sentez-mimarisi}, farklı şekillere dağılan güç ve denetim katmanlarını tek bir işlevsel akışta birleştirmektedir. Şarj yönünde PFC katı şebeke akımını ve DA bara gerilimini, yarım köprü ve transformatör katı yalıtılmış enerji aktarımını, batarya başına buck kolları ise şarj akımlarını ve gerilimlerini belirlemektedir. Deşarj yönünde şebekeye güç veren kat, Bölüm~\ref{chap:sin3} altındaki akım denetimiyle çalışan T-tipi eviricidir. Bütün katların aynı anda hızlı anahtarlanması gerekmemektedir. RL1 kip geçişleri ise güç dönüştürücü PWM'den daha yavaş bir üst seviye durum makinesiyle yönetilmelidir.
 
 \section{Şarj ve Deşarj Çalışma Modları}
 \label{sec:gt-modlar}
 
-GT-tipi yapının çalışması tek bir ``çift yönlü'' komutla açıklanamaz. RL1 konumu, PFC ya da evirici olarak çalışan faz kolları, BYS transformatörlerini besleyen yarım köprüler, batarya buck kolları ve kontaktörler için izin verilen durumların birlikte tanımlanması gerekir. Tablo~\ref{tab:gt-calisma-modlari}, Şekil~\ref{fig:gt-ana-topoloji}--\ref{fig:gt-pfc-modu} üzerindeki işlevleri güvenli bir durum dizisine dönüştürmektedir.
+GT-tipi yapının çalışması, tek bir ``çift yönlü'' komuttan daha ayrıntılı bir durum tanımı gerektirmektedir. RL1 konumu, PFC ya da evirici olarak çalışan faz kolları, BYS transformatörlerini besleyen yarım köprüler, batarya buck kolları ve kontaktörler için izin verilen durumlar birlikte tanımlanmalıdır. Tablo~\ref{tab:gt-calisma-modlari}, Şekil~\ref{fig:gt-ana-topoloji}--\ref{fig:gt-pfc-modu} üzerindeki işlevleri güvenli bir durum dizisine dönüştürmektedir.
 
 \begin{table}[H]
   \centering
@@ -170,7 +170,7 @@ Batarya başına şarj referansı, CC--CV geçişini açıkça göstermek için
   \end{cases}
   \label{eq:gt-cccv-referansi}
 \end{equation}
-biçiminde tanımlanabilir. Eşitlik~\eqref{eq:gt-cccv-referansi} içinde $i_{b,k}^{\star}$ $k$ numaralı bataryanın şarj akımı referansını, $v_{b,k}$ batarya uç gerilimini, $I_{\mathrm{CC},k}$ sabit akım sınırını, $V_{\mathrm{CV},k}$ sabit gerilim eşiğini, $T_{b,k}$ ölçülen batarya sıcaklığını, $T_{\min,k}$ ve $T_{\max,k}$ izin verilen sıcaklık sınırlarını, $K_{v,k}$ gerilim düzenleyici kazancını ve $\operatorname{sat}[\cdot]$ doyum işlemini göstermektedir. Sayısal sınırlar batarya kimyası ve üretici veri sayfasından alınarak atanır.
+biçiminde tanımlanabilir. Eşitlik~\eqref{eq:gt-cccv-referansi} içinde $i_{b,k}^{\star}$ $k$ numaralı bataryanın şarj akımı referansını, $v_{b,k}$ batarya uç gerilimini, $I_{\mathrm{CC},k}$ sabit akım sınırını, $V_{\mathrm{CV},k}$ sabit gerilim eşiğini göstermektedir. $T_{b,k}$ ölçülen batarya sıcaklığı, $T_{\min,k}$ ve $T_{\max,k}$ izin verilen sıcaklık sınırlarıdır. $K_{v,k}$ gerilim düzenleyici kazancı, $\operatorname{sat}[\cdot]$ ise doyum işlemidir. Sayısal sınırlar batarya kimyasından ve üretici veri sayfasından alınarak atanmaktadır.
 
 Coulomb sayımına dayalı ayrık zamanlı şarj durumu güncellemesi
 \begin{equation}
@@ -178,12 +178,12 @@ Coulomb sayımına dayalı ayrık zamanlı şarj durumu güncellemesi
   \operatorname{SoC}_k[n]+\frac{\eta_{c,k}i_{b,k}[n]T_s}{Q_{n,k}},\,0,\,1\right]
   \label{eq:gt-soc-guncelleme}
 \end{equation}
-olarak yazılmıştır \citep{Plett2015}. Eşitlik~\eqref{eq:gt-soc-guncelleme} içinde $\operatorname{SoC}_k[n]$ $n$ örnekleme anındaki şarj durumunu, $\eta_{c,k}$ Coulomb verimini, $i_{b,k}[n]$ işaretli batarya akımını, $T_s$ BYS örnekleme süresini ve $Q_{n,k}$ güncel kullanılabilir kapasiteyi belirtmektedir; akım işareti şarj yönünde pozitif seçilmiştir. Akım sensörü ofseti ve kapasite yaşlanması nedeniyle yalnız Coulomb sayımı uzun süreli kullanımda sürüklenebilir; başlangıç düzeltmesi ve periyodik kestirim güncellemesi ayrıca tanımlanmalıdır.
+olarak yazılmıştır \citep{Plett2015}. Eşitlik~\eqref{eq:gt-soc-guncelleme} içinde $\operatorname{SoC}_k[n]$ $n$ örnekleme anındaki şarj durumunu, $\eta_{c,k}$ Coulomb verimini, $i_{b,k}[n]$ işaretli batarya akımını, $T_s$ BYS örnekleme süresini ve $Q_{n,k}$ güncel kullanılabilir kapasiteyi belirtmektedir. Akım işareti şarj yönünde pozitif seçilmiştir. Akım sensörü ofseti ve kapasite yaşlanması nedeniyle tek başına Coulomb sayımı uzun süreli kullanımda sürüklenebilir. Dolayısıyla başlangıç düzeltmesi ve periyodik kestirim güncellemesi ayrıca tanımlanmalıdır.
 
 \section{Mod Geçişleri ve Güvenlik Kısıtları}
 \label{sec:gt-gecis-guvenlik}
 
-RL1 konum değiştirirken akım taşıyan bir bağlantının açılması röle kontaklarında ark ve LCL filtre endüktanslarında aşırı gerilim oluşturabilir; farklı gerilimdeki düğümlerin birleştirilmesi ise sınırlanmamış dengeleme akımına yol açar. Kip geçişi için PWM'nin durdurulması, faz akımlarının sıfıra yaklaşması ve DA bara yarılarının dengede olması birlikte aranmalıdır. Önerilen izin koşulu
+RL1 konum değiştirirken akım taşıyan bir bağlantının açılması, röle kontaklarında ark ve LCL filtre endüktanslarında aşırı gerilim oluşturabilir. Farklı gerilimdeki düğümlerin birleştirilmesi ise sınırlanmamış dengeleme akımına yol açmaktadır. Kip geçişi için PWM'nin durdurulması, faz akımlarının sıfıra yaklaşması ve DA bara yarılarının dengede olması birlikte aranmalıdır. Önerilen izin koşulu
 \begin{equation}
   \gamma_{k\rightarrow j}=1
   \iff
@@ -196,7 +196,7 @@ RL1 konum değiştirirken akım taşıyan bir bağlantının açılması röle k
   h_{\mathrm{RL1}}=1
   \label{eq:gt-gecis-izni}
 \end{equation}
-şeklinde ifade edilmiştir. Eşitlik~\eqref{eq:gt-gecis-izni} içinde $\gamma_{k\rightarrow j}$ $k$ kipinden $j$ kipine geçiş iznini, $i_{x}$ $x\in\{a,b,c\}$ fazının akımını, $I_{\mathrm{tr}}$ geçiş için izin verilen akım eşiğini, $v_{\mathrm{dc}}^{+}$ ve $v_{\mathrm{dc}}^{-}$ bölünmüş DA baranın üst ve alt yarı gerilimlerini, $\Delta V_{\mathrm{tr}}$ izin verilen gerilim farkını, $g_{\mathrm{PWM}}=0$ bütün kapı işaretlerinin durdurulduğunu ve $h_{\mathrm{RL1}}=1$ röle konum geri bildiriminin beklenen konumu doğruladığını gösterir. Sayısal eşikler röle kontak değerleri, yarı iletken güvenli çalışma alanı, filtre endüktansları ve ölçüm belirsizliğiyle belirlenmelidir.
+şeklinde ifade edilmiştir. Eşitlik~\eqref{eq:gt-gecis-izni} içinde $\gamma_{k\rightarrow j}$ $k$ kipinden $j$ kipine geçiş iznini, $i_{x}$ $x\in\{a,b,c\}$ fazının akımını, $I_{\mathrm{tr}}$ geçiş için izin verilen akım eşiğini göstermektedir. $v_{\mathrm{dc}}^{+}$ ve $v_{\mathrm{dc}}^{-}$ bölünmüş DA baranın üst ve alt yarı gerilimleri, $\Delta V_{\mathrm{tr}}$ izin verilen gerilim farkıdır. $g_{\mathrm{PWM}}=0$ bütün kapı işaretlerinin durdurulduğunu, $h_{\mathrm{RL1}}=1$ ise röle konum geri bildiriminin beklenen konumu doğruladığını göstermektedir. Sayısal eşikler röle kontak değerleri, yarı iletken güvenli çalışma alanı, filtre endüktansları ve ölçüm belirsizliğiyle belirlenmelidir.
 
 \begin{figure}[H]
   \centering
@@ -235,7 +235,7 @@ RL1 konum değiştirirken akım taşıyan bir bağlantının açılması röle k
   \label{fig:gt-durum-makinesi}
 \end{figure}
 
-Şekil~\ref{fig:gt-durum-makinesi}, çalışma kipini doğrudan değiştirmek yerine önce enerjiyi güvenli seviyeye indiren ve RL1 geçişini ayrı bir durum olarak yürüten sıralamayı göstermektedir. Hızlı yarı iletken koruması donanım düzeyinde çevrimden çevrime çalışmalı; üst seviye durum makinesi röle, kontaktör, sıcaklık, izolasyon ve batarya uygunluk kararlarını yönetmelidir. Yazılımın hata algılama hızı, röle ve kontaktör açma süresi ve DA bara boşalma süresi aynı güvenlik zaman çizelgesinde değerlendirilmelidir.
+Şekil~\ref{fig:gt-durum-makinesi}, çalışma kipini doğrudan değiştirmek yerine önce enerjiyi güvenli seviyeye indiren ve RL1 geçişini ayrı bir durum olarak yürüten sıralamayı göstermektedir. Hızlı yarı iletken koruması donanım düzeyinde, çevrimden çevrime çalışmalıdır. Üst seviye durum makinesi ise röle, kontaktör, sıcaklık, izolasyon ve batarya uygunluk kararlarını yönetmelidir. Yazılımın hata algılama hızı, röle ve kontaktör açma süresi ile DA bara boşalma süresi aynı güvenlik zaman çizelgesinde değerlendirilmelidir.
 
 \begin{table}[H]
   \centering
@@ -258,12 +258,12 @@ RL1 konum değiştirirken akım taşıyan bir bağlantının açılması röle k
   \end{tabularx}
 \end{table}
 
-IEC standartları tek başına belirli bir devrenin güvenli olduğunu kanıtlamaz. Tablo~\ref{tab:gt-koruma-dogrulama}, ilgili standartların kapsamından türetilen tez düzeyindeki asgari kanıt listesidir; nihai uygunluk değerlendirmesi yetkili test, ayrıntılı risk analizi ve ürüne uygulanabilir bütün standartların seçilmesini gerektirir \citep{IEC62619,IEC62477,IEC62933_5_2}.
+IEC standartları, belirli bir devrenin güvenliğini göstermek için gereken kanıtın çerçevesini belirlemektedir. Tablo~\ref{tab:gt-koruma-dogrulama}, ilgili standartların kapsamından türetilen tez düzeyindeki asgari kanıt listesidir. Nihai uygunluk değerlendirmesi ise yetkili testi, ayrıntılı risk analizini ve ürüne uygulanabilir bütün standartların seçilmesini gerektirmektedir \citep{IEC62619,IEC62477,IEC62933_5_2}.
 
 \section{Şarj Yönündeki Benzetim Kayıtları}
 \label{sec:gt-benzetim}
 
-GT-tipi topolojinin şarj yönündeki işlevsel bütünlüğü; Vienna PFC, iki seviyeli transformatör besleme katı ve batarya şarj kolunu aynı Simulink modeli içinde çalıştıran bir benzetimle gösterilmiştir. Benzetim, Bölüm~\ref{chap:anahtarlama}--\ref{chap:deney} içindeki evirici kipine ait S1--S4 zincirinden ayrı tutulmuş ve çalışma modları ile geçiş kısıtları tanımlandıktan sonra verilmiştir. Şekil~\ref{fig:gt-simulink-modeli}--\ref{fig:gt-batarya-soc}, şebekeden bataryaya uzanan PFC $\rightarrow$ DA bara $\rightarrow$ transformatör primeri $\rightarrow$ sekonder $\rightarrow$ buck/batarya zincirinin her aşamasını dalga biçimleriyle belgelemektedir.
+GT-tipi topolojinin şarj yönündeki işlevsel bütünlüğü bir Simulink benzetimiyle gösterilmiştir. Benzetim, Vienna PFC'yi, iki seviyeli transformatör besleme katını ve batarya şarj kolunu aynı model içinde çalıştırmaktadır. Şarj yönü benzetimi, Bölüm~\ref{chap:anahtarlama}--\ref{chap:deney} içindeki evirici kipine ait S1--S4 zincirinden ayrı tutulmuş ve çalışma modları ile geçiş kısıtları tanımlandıktan sonra verilmiştir. Şekil~\ref{fig:gt-simulink-modeli}--\ref{fig:gt-batarya-soc}, şebekeden bataryaya uzanan PFC $\rightarrow$ DA bara $\rightarrow$ transformatör primeri $\rightarrow$ sekonder $\rightarrow$ buck/batarya zincirinin her aşamasını dalga biçimleriyle belgelemektedir.
 
 Şekil~\ref{fig:gt-simulink-modeli}, PFC denetimi, DA bara, üç fazlı dönüştürücü, çok sekonderli transformatörler ve batarya alt sistemlerinin aynı modelde kurulduğunu göstermektedir.
 
@@ -292,7 +292,7 @@ GT-tipi topolojinin şarj yönündeki işlevsel bütünlüğü; Vienna PFC, iki 
   \label{fig:gt-da-bara}
 \end{figure}
 
-İki seviyeli yüksek frekans katının transformatör primerine uyguladığı gerilim Şekil~\ref{fig:gt-primer-gerilim}, primer akımı Şekil~\ref{fig:gt-primer-akim} üzerindedir. Primer geriliminin pozitif, sıfır ve negatif seviyeler arasında değişmesi, görev oranı üzerinden transformatöre aktarılan gücün ayarlanabildiğini gösterir. Primer akımı aynı anahtarlama dizisine yanıt vermekte; kenarlardaki eğimler eşdeğer endüktans ve manyetik devre dinamiğinin etkisini göstermektedir.
+İki seviyeli yüksek frekans katının transformatör primerine uyguladığı gerilim Şekil~\ref{fig:gt-primer-gerilim}, primer akımı Şekil~\ref{fig:gt-primer-akim} üzerindedir. Primer geriliminin pozitif, sıfır ve negatif seviyeler arasında değişmesi, görev oranı üzerinden transformatöre aktarılan gücün ayarlanabildiğini göstermektedir. Primer akımı aynı anahtarlama dizisine yanıt vermektedir. Kenarlardaki eğimler ise eşdeğer endüktansın ve manyetik devre dinamiğinin etkisini yansıtmaktadır.
 
 \begin{figure}[H]
   \centering
@@ -314,7 +314,7 @@ GT-tipi topolojinin şarj yönündeki işlevsel bütünlüğü; Vienna PFC, iki 
   \label{fig:gt-primer}
 \end{figure}
 
-Şekil~\ref{fig:gt-sekonder}, bir bataryayı besleyen sekonder sargının doğrultma öncesi gerilim ve akımını göstermektedir. Gerilim işaret değiştiren darbeli yapıya sahipken akımın pozitif enerji aktarım aralıklarında belirginleşmesi, sekonder doğrultucu ve buck girişinin primer anahtarlamasıyla eşzamanlı çalıştığını gösterir.
+Şekil~\ref{fig:gt-sekonder}, bir bataryayı besleyen sekonder sargının doğrultma öncesi gerilimini ve akımını göstermektedir. Sekonder gerilimi işaret değiştiren darbeli bir yapıdadır. Akımın pozitif enerji aktarım aralıklarında belirginleşmesi ise sekonder doğrultucunun ve buck girişinin primer anahtarlamasıyla eşzamanlı çalıştığını göstermektedir.
 
 \begin{figure}[H]
   \centering
@@ -351,7 +351,7 @@ Enerji zincirinin batarya tarafındaki son kaydı Şekil~\ref{fig:gt-batarya-soc
 \section{Klasik Mimari ile Karşılaştırma}
 \label{sec:gt-karsilastirma}
 
-Geleneksel EDS mimarisinde şebeke dönüştürücüsü, merkezi DA bara, batarya dizileri ve dengeleme devreleri çoğunlukla ayrı işlevsel katmanlardır. Ayrı katlar tasarım ve servis sınırlarını açık tutarken ilave DA/DA dönüştürücü, dengeleyici, manyetik eleman ve kablolama gerektirebilir. Yeniden yapılandırılabilir sistemler seçilebilir bağlantılarla arıza yalıtımı ve enerji paylaşımı sağlayabilse de her batarya/modül için ek anahtar ve sürücü kullanımı nedeniyle iletim kaybı ile kontrol karmaşıklığı doğurur \citep{Momayyezan2016,Farakhor2023,Huang2024}.
+Geleneksel EDS mimarisinde şebeke dönüştürücüsü, merkezi DA bara, batarya dizileri ve dengeleme devreleri çoğunlukla ayrı işlevsel katmanlardır. Ayrı katlar tasarım ve servis sınırlarını açık tutarken ilave DA/DA dönüştürücü, dengeleyici, manyetik eleman ve kablolama gerektirebilir. Yeniden yapılandırılabilir sistemler, seçilebilir bağlantılarla arıza yalıtımı ve enerji paylaşımı sağlayabilir. Ancak her batarya/modül için ek anahtar ve sürücü kullanımı, iletim kaybı ile kontrol karmaşıklığı doğurmaktadır \citep{Momayyezan2016,Farakhor2023,Huang2024}.
 
 \begin{table}[H]
   \centering
@@ -373,9 +373,9 @@ Geleneksel EDS mimarisinde şebeke dönüştürücüsü, merkezi DA bara, batary
   \end{tabularx}
 \end{table}
 
-Tablo~\ref{tab:gt-mimari-karsilastirma}, GT-tipi yapının sunduğu olanakları geleneksel ve yeniden yapılandırılabilir yaklaşımlarla yan yana koymaktadır. Mimari, üç işlevi (şebekeye deşarj, şebekeden şarj ve batarya bazlı şarj denetimi) aynı yarı iletken tabanında toplamakta ve ayrı PFC ile şarj dönüştürücüsü yerine aynı IGBT'leri kullanma olanağı sunmaktadır. Başlıca bedeller ise çok sayıda yalıtılmış kanal, sürücü ve algılayıcı; RL1 rölesi ile doğrultucu/boost diyotlarının kayıpları; kip geçiş sırası ve çok sekonderli transformatörün üretilebilirliğidir.
+Tablo~\ref{tab:gt-mimari-karsilastirma}, GT-tipi yapının sunduğu olanakları geleneksel ve yeniden yapılandırılabilir yaklaşımlarla yan yana koymaktadır. Mimari, üç işlevi (şebekeye deşarj, şebekeden şarj ve batarya bazlı şarj denetimi) aynı yarı iletken tabanında toplamakta ve ayrı PFC ile şarj dönüştürücüsü yerine aynı IGBT'leri kullanma olanağı sunmaktadır. Mimarinin başlıca bedelleri ise çok sayıda yalıtılmış kanal, sürücü ve algılayıcıdır. RL1 rölesinin ve doğrultucu/boost diyotlarının kayıpları, kip geçiş sırası ve çok sekonderli transformatörün üretilebilirliği de öteki bedellerdir.
 
-Nitel karşılaştırmayı sayısal düzeye taşıyacak ölçütler de tanımlanmıştır: yarı iletken sayısı, sürücü sayısı, manyetik eleman kütlesi, toplam iletim/anahtarlama kaybı, birim başına ölçüm kanalı ve ortak mod/izolasyon gereksinimleri. Ölçütler, ayrı PFC ve şarj dönüştürücülü bir eşdeğerle aynı güç (\SI{20}{\kilo\volt\ampere}, \num{20}--\SI{25}{\kilo\watt}) ve gerilim tabanında uygulanır.
+Nitel karşılaştırmayı sayısal düzeye taşıyacak ölçütler de tanımlanmıştır: yarı iletken sayısı, sürücü sayısı, manyetik eleman kütlesi, toplam iletim/anahtarlama kaybı, birim başına ölçüm kanalı ve ortak mod/izolasyon gereksinimleri. Ölçütler, ayrı PFC ve şarj dönüştürücülü bir eşdeğerle aynı güç (\SI{20}{\kilo\volt\ampere}, \num{20}--\SI{25}{\kilo\watt}) ve gerilim tabanında karşılaştırma yapmak için tanımlanmıştır.
 
 \section{Doğrulama Durumu ve Mevcut Kanıt Düzeyi}
 \label{sec:gt-dogrulama}
@@ -408,12 +408,12 @@ GT-tipi mimarinin kanıtı iki gruptadır. Deşarj yönü, yani evirici kipi, B�
    \frac{E_{g,\mathrm{out}}}{E_{b,\mathrm{out}}}
   \label{eq:gt-roundtrip-verim}
 \end{equation}
-olarak tanımlanabilir. Eşitlik~\eqref{eq:gt-roundtrip-verim} içinde $\eta_{\mathrm{ch}}$ şebekeden bataryaya şarj verimini, $\eta_{\mathrm{dis}}$ bataryadan şebekeye deşarj verimini, $E_{g,\mathrm{in}}$ şebekeden çekilen enerjiyi, $E_{b,\mathrm{in}}$ bataryada depolanan enerjiyi, $E_{b,\mathrm{out}}$ bataryadan çekilen enerjiyi ve $E_{g,\mathrm{out}}$ şebekeye verilen enerjiyi göstermektedir. Yardımcı tüketimlerin sistem sınırına dahil edilip edilmediği her sonuçla birlikte belirtilmelidir.
+olarak tanımlanabilir. Eşitlik~\eqref{eq:gt-roundtrip-verim} içinde $\eta_{\mathrm{ch}}$ şebekeden bataryaya şarj verimini, $\eta_{\mathrm{dis}}$ bataryadan şebekeye deşarj verimini, $E_{g,\mathrm{in}}$ şebekeden çekilen enerjiyi göstermektedir. $E_{b,\mathrm{in}}$ bataryada depolanan, $E_{b,\mathrm{out}}$ bataryadan çekilen, $E_{g,\mathrm{out}}$ ise şebekeye verilen enerjidir. Yardımcı tüketimlerin sistem sınırına dâhil edilip edilmediği her sonuçla birlikte belirtilmelidir.
 
 \section{Değerlendirme}
 
-GT-tipi mimari, \num{20}--\SI{25}{\kilo\watt} tasarım hedefli T-tipi deney düzeneğinin RL1 rölesi ve doğrultucu/boost diyotlarıyla şebekeye deşarj, şebekeden şarj ve batarya bazlı şarj denetimi işlevlerine yeniden görevlendirilmesi olarak tanımlanmıştır. Vienna PFC, çok sekonderli BYS, RL1 tabanlı ana topoloji ve üç çalışma yolu devre düzeyinde açıklanmış; şarj zinciri benzetim kayıtlarıyla nitel olarak gösterilmiştir. Evirici kipi, tezin düşük güç deneyleri ve S1--S4 benzetimleriyle incelenen kiptir.
+GT-tipi mimari, \num{20}--\SI{25}{\kilo\watt} tasarım hedefli T-tipi deney düzeneğinin yeniden görevlendirilmesi olarak tanımlanmıştır. Düzenek, RL1 rölesi ve doğrultucu/boost diyotlarıyla şebekeye deşarj, şebekeden şarj ve batarya bazlı şarj denetimi işlevlerini üstlenmektedir. Vienna PFC, çok sekonderli BYS, RL1 tabanlı ana topoloji ve üç çalışma yolu devre düzeyinde açıklanmıştır. Şarj zinciri ise benzetim kayıtlarıyla nitel olarak gösterilmiştir. Evirici kipi, tezin düşük güç deneyleri ve S1--S4 benzetimleriyle incelenen kiptir.
 
-Çalışma modları; güvenli kapalı, ön şarj, PFC/CC--CV şarj, şebekeye deşarj ve RL1 kip geçişi olarak ayrılmıştır. CC--CV referansı, SoC güncellemesi, güvenli kip geçişi ve gidiş--dönüş verimi için kullanılacak denklemler tanımlanmış; bütün parametreler ilk geçtikleri yerde açıklanmıştır. Güvenli geçiş için PWM'nin durdurulması, sıfıra yakın faz akımı, DA bara dengesi ve röle geri bildirimi birlikte şart koşulmuştur.
+Çalışma modları güvenli kapalı, ön şarj, PFC/CC--CV şarj, şebekeye deşarj ve RL1 kip geçişi olarak ayrılmıştır. CC--CV referansı, SoC güncellemesi, güvenli kip geçişi ve gidiş--dönüş verimi için kullanılacak denklemler tanımlanmıştır. Bütün parametreler ilk geçtikleri yerde açıklanmıştır. Güvenli geçiş için PWM'nin durdurulması, sıfıra yakın faz akımı, DA bara dengesi ve röle geri bildirimi birlikte şart koşulmuştur.
 
-GT-tipi mimari, T-tipi deney düzeneğinin yarı iletken tabanını şarj ve deşarj işlevlerinde ortak kullanan, tanımlı çalışma kipleri ve güvenli geçiş kurallarıyla donatılmış bir enerji depolama mimarisi sunmaktadır. Evirici kipindeki deneyler ve şarj zinciri benzetim kayıtları, aynı donanımın iki enerji yönünde de işlevini yerine getirdiğini göstermiştir. Tanımlanan gidiş--dönüş verimi ve mimari karşılaştırma ölçütleri, GT-tipi yapının ayrı dönüştürücülü eşdeğerlerle aynı güç tabanında değerlendirilmesine yöntemsel bir temel oluşturmaktadır.
+GT-tipi enerji depolama mimarisi, T-tipi deney düzeneğinin yarı iletken tabanını şarj ve deşarj işlevlerinde ortak kullanmaktadır. Mimari, tanımlı çalışma kipleri ve güvenli geçiş kurallarıyla donatılmıştır. Evirici kipindeki deneyler ve şarj zinciri benzetim kayıtları, aynı donanımın iki enerji yönünde de işlevini yerine getirdiğini göstermiştir. Tanımlanan gidiş--dönüş verimi ve mimari karşılaştırma ölçütleri, GT-tipi yapının ayrı dönüştürücülü eşdeğerlerle aynı güç tabanında değerlendirilmesine yöntemsel bir temel oluşturmaktadır.
