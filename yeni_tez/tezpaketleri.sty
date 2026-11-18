@@ -13,6 +13,9 @@
 \RequirePackage{siunitx}
 \sisetup{output-decimal-marker={,}}
 \RequirePackage{subcaption}
+% Birden çok satıra taşan alt şekil yazıları dar sütunda iki yana yaslanınca sözcük araları
+% açılıyordu; alt şekil yazıları ortalanır (tek satırlıklar zaten ortalıydı).
+\captionsetup[subfigure]{format=plain,justification=centering}
 \RequirePackage{tikz}
 \RequirePackage{circuitikz}
 \usetikzlibrary{arrows.meta,positioning,fit,calc,decorations.pathmorphing}
