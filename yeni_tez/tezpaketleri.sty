@@ -83,6 +83,22 @@
   \fi
 }
 
+% KIRMIZI KONTROL NOTU: tez sahibinin bilgisi ya da kararı gereken, kaçırılmaması gereken yer
+% (proje sahibi, 18.11.2026; K-41). Ana derlemede görünür. Teslimden önce hepsi çözülmeli ve
+% \kirmizinotlarfalse ile kapatılmalıdır (çözülmemiş not kalırsa kapatmak onu gizler, çözmez).
+\newif\ifkirmizinotlar \kirmizinotlartrue
+\newcommand{\kirmizinot}[1]{%
+  \ifkirmizinotlar
+  \par\smallskip
+  \noindent\fcolorbox{red!75!black}{red!5}{%
+    \begin{minipage}{0.96\linewidth}
+      \small\color{red!75!black}\textbf{KONTROL ---} #1
+    \end{minipage}%
+  }%
+  \par\smallskip
+  \fi
+}
+
 % EKSİK ÇALIŞMA bari (tez-latex-v2 kurali; su an metinde kullanilmiyor).
 \newcommand{\eksikistek}[2]{%
   \par\medskip

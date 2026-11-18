@@ -204,6 +204,7 @@ Diyot benzetimi ile sürekli iletim kipindeki endüktör akımları Şekil~\ref{
 \section{Fotovoltaik Çalışma Profili, Kısmi Yükte Verim ve Harmonik Bozulma}
 
 T-tipi eviricinin düşük güç davranışının neden önemli olduğu, eviricinin fiilen hangi güç seviyelerinde çalıştığına bakılarak gerekçelendirilebilir. Fotovoltaik üretimin ışınım ve sıcaklığa bağlı değişimi, şebeke eviricisinin geniş bir güç aralığında çalışmasına neden olmaktadır. Şekil~\ref{fig:fv-calisma-profilleri}, günlük profil ile aylık ışınım dizisini ve iki diziden türetilen 144 çalışma noktasının güç dağılımını göstermektedir. PVGIS, konum, yönelim, eğim, sistem kaybı ve meteorolojik veri kümesi belirtilerek saatlik veya aylık üretim hesabı yapılmasına olanak tanımaktadır \citep{Taylor2025PVGIS}. Tezde kullanılan diziler, düşük güç bölgesinin işletmedeki ağırlığını göstermek amacıyla temsilî profil olarak adlandırılmıştır.
+\kirmizinot{Günlük ve aylık FV dizilerinin PVGIS'ten mi üretildiği yoksa başka bir kaynaktan mı alındığı yazmıyor; paragraf yalnız PVGIS'in ne yaptığını anlatıyor. Dizilerin kaynağı eklenmeli.}
 
 \begin{figure}[H]
   \centering
@@ -347,7 +348,7 @@ Wang ve ark. \citep{Wang2020} & \SI{250}{\kilo\watt} SiC T-tipi evirici (güç y
 Kerekes \citep{Kerekes2009} (doktora tezi) & Transformatörsüz FV eviricileri (kaçak akım ve topoloji seçimi) & Analiz ve modelleme & Verim--kaçak akım ödünleşimi incelenmiştir. Düşük güç verim--THD ödünleşimi kapsam dışıdır. & 2 \\
 \midrule
 \multicolumn{5}{@{}l}{\textit{Hafif yükte süreksiz iletim ve kompanzasyon}} \\
-Chen ve ark. \citep{Chen2010} & Senkron buck (diyot benzetimi ve sürekli iletim) & Analiz, benzetim ve deney & T-tipi şebeke eviricisinin sıfır durumu ve harmonik sonucu kapsanmamıştır. & 1, 2 \\
+Chen ve ark. \citep{Chen2010} & Senkron buck (diyot benzetimi ve sürekli iletim) & Analiz, benzetim ve deney & T-tipi şebeke eviricisinin sıfır durumu ve harmonik sonucu kapsanmamıştır. & 1, 2 \\ \pagebreak
 De Gussemé ve ark. \citep{DeGusseme2005} & Boost PFC (sürekli ve süreksiz iletimde sayısal denetim, görev oranı ileri beslemesi) & \SI{1}{\kilo\watt} prototip & Bozulma kaynağı tek anahtarlı PFC katıdır. Şebeke eviricisi ve kararlılık etkisi ele alınmamıştır. & 3 \\
 Van de Sype ve ark. \citep{VanDeSype2005} & Boost PFC (görev oranı ileri beslemesi, giriş empedansı) & Analitik model ve prototip & Sıfır geçişi bozulması hedeflenmiştir. Üçüncü harmonik ağırlıklı alternans içi bozulma kapsanmamıştır. & 3 \\
 Le ve Itoh \citep{Le2019} & Tek fazlı şebeke eviricisi (iki akım kipinde, endüktanstan bağımsız süreksiz iletim kompanzasyonu) & \SI{4}{\kilo\watt}, \SI{100}{\kilo\hertz} prototip & Süreksiz iletim küçük endüktör tasarımından gelmektedir. Nötr anahtar susturma ve T-tipi yapı ele alınmamıştır. & 2, 3 \\
