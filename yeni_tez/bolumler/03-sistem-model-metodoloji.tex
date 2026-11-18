@@ -471,7 +471,7 @@ Parametre & Değer & Birim & Kaynak & Tür \\
 \bottomrule
 \endfoot
 %
-\multicolumn{5}{@{}l}{\small\textbf{Sistem tanımı ve çalışma noktaları}} \\
+\multicolumn{5}{@{}l}{\small\textbf{Sistem tanımı ve çalışma noktaları}} \\*
 Prototip faz yapısı & Üç faz, dört telli; nötr hattı DA bara orta noktasına bağlı & -- & ŞM & Tasarım \\
 Benzetim ve deney kapsamı & Tek faz kolu; nötr dönüşü DA bara orta noktasına & -- & BM; DÖ tek faz büyüklükleri & Benzetim seçimi \\
 Tasarım güç aralığı & 20--25 & \si{\kilo\watt} & TB & Tasarım (anma akımı bölgesi S4 benzetimiyle incelenmiştir) \\
@@ -487,14 +487,14 @@ DA bara tanımı & $V_{\mathrm{dc}}$: DA$+$ ile DA$-$ arasındaki toplam gerilim
 Deney faz akımı $I_g$ (RMS) & S1 \num{2.26}; S2 \num{2.33}; S3 \num{2.31} & \si{\ampere} & DÖ; PD & Ölçülmüş \\
 S4 akım referansı $I_{\mathrm{ref}}$ (RMS) & \num{2.3}; \num{10}; \num{25} & \si{\ampere} & PD (\SI{25}{\ampere}); düşük, orta ve anma akımı taraması & Benzetim seçimi \\
 \midrule
-\multicolumn{5}{@{}l}{\small\textbf{Ölçüm ve sayısal denetim donanımı}} \\
+\multicolumn{5}{@{}l}{\small\textbf{Ölçüm ve sayısal denetim donanımı}} \\*
 DA bara ölçüm aralığı & \num{470} & \si{\volt} & TB, AMC1200 giriş bölücüsü & Tasarım \\
 Gerilim ölçümü & AMC1200, 12 bit ADC; ofset \SI{1.3}{\volt}, ADC referansı \SI{2.6}{\volt} & -- & TB, ölçüm kartı & Tasarım \\
 Akım sensörü & HLSR 20-P/SP33; \SI{23}{\milli\volt\per\ampere}; ölçülebilir tepe \SI{56.5}{\ampere} & -- & VS; TB, ölçüm kartı & Veri sayfası \\
 Aşırı akım eşiği & Yaklaşık 30,4 & \si{\ampere} & TB, pencere karşılaştırıcı eşikleri ve sensör kazancından hesap & Tasarım \\
 Sayısal denetleyici & PIC32MK ailesi, 32 bit & -- & TB, kontrol kartı & Tasarım \\
 \midrule
-\multicolumn{5}{@{}l}{\small\textbf{LCL filtre, EMC süzgeci ve DA bara}} \\
+\multicolumn{5}{@{}l}{\small\textbf{LCL filtre, EMC süzgeci ve DA bara}} \\*
 Evirici tarafı endüktansı $L_1$ & \num{600} & \si{\micro\henry} & PD; ŞM & Tasarım \\
 $L_1$ seri direnci & \num{0.03} & \si{\ohm} & PD & Tasarım \\
 $L_1$ çekirdek kaybı paralel direnci $R_p$ & S1--S3 \num{600}; S4 \num{1500} & \si{\ohm} & PD & Tasarım \\
@@ -510,7 +510,7 @@ DA bara kapasitörü eşdeğer seri direnci & \num{0.10} & \si{\ohm} & PD & Tasa
 Bara dengeleme dirençleri & \num{220} & \si{\kilo\ohm} & PD & Tasarım \\
 DA kaynak bağlantısı ve çıkış rölesi kontak direnci & \num{1} & \si{\milli\ohm} & PD & Tasarım \\
 \midrule
-\multicolumn{5}{@{}l}{\small\textbf{Yarı iletkenler ve kapı sürücüsü}} \\
+\multicolumn{5}{@{}l}{\small\textbf{Yarı iletkenler ve kapı sürücüsü}} \\*
 Dış anahtarlar $S_1$--$S_2$ & SKM100GB12T4 & -- & ŞM; VS & Veri sayfası \\
 $S_1$--$S_2$ iletim karakteristiği & $V_{CE}=\SI{0.9}{\volt}+\SI{11.5}{\milli\ohm}\cdot I_C$ (\SI{25}{\celsius}, $V_{GE}=\SI{15}{\volt}$) & -- & VS ($V_{CE0}$ ve $r_{CE}$ en büyük değerleri) & Veri sayfası \\
 $S_1$--$S_2$ anahtarlama enerjisi (1--\SI{50}{\ampere}) & $E_{\mathrm{on}}$ 0,02--1,00; $E_{\mathrm{off}}$ 0,03--1,50 & \si{\milli\joule} & PD; VS eğilimine dayalı düşük akım ara değerlemesi (VS noktası \SI{600}{\volt}, \SI{100}{\ampere}, \SI{150}{\celsius}) & Tasarım \\
@@ -525,7 +525,7 @@ PFC yükseltici diyotları $D_1$--$D_2$ & DSEI2x61-12B; $V_f=\SI{1.58}{\volt}$; 
 Kapı sürücüsü & $+15/-5$~\si{\volt}; toplam kapı direnci \SI{15}{\ohm}; çıkış yükselme ve düşme süresi \SI{20}{\nano\second}; ek açma ve kapama gecikmesi 0; IGBT kapı eşiği $V_{GE(th)}=\SI{6}{\volt}$ & -- & PD & Tasarım \\
 Jonksiyon sıcaklığı & \num{25}, sabit & \si{\celsius} & PD & Benzetim seçimi \\
 \midrule
-\multicolumn{5}{@{}l}{\small\textbf{Modülasyon ve PWM}} \\
+\multicolumn{5}{@{}l}{\small\textbf{Modülasyon ve PWM}} \\*
 Anahtarlama frekansı $f_s$ & \num{10} & \si{\kilo\hertz} & PD; PWM zamanlayıcı periyodu (PTPER $=12000$) & Tasarım \\
 Ölü zaman $t_d$ & \num{1} & \si{\micro\second} & PD (DTR $=$ ALTDTR $=120$); modelde her kapı komutunun yükselen kenarında gecikme & Tasarım \\
 Taşıyıcı ve görev oranı & Testere dişi 0--1; yarım periyot ayrımlı tek kutuplu görev oranı $d=|u|$; $V_{\mathrm{dc}}$ normalizasyonu yok & -- & BM, PWM alt sistemi & Benzetim seçimi \\
@@ -537,7 +537,7 @@ S4 ileri besleme $K_{14}$, $K_{34}$, $\varphi_4$ & Kalibre edilmiş S3 değerler
 Sin\textsuperscript{3} teriminin biçimi & $K_{3x}\sin^3\theta$ (birim genlikli referansın küpü, pozitif işaretli) & -- & BM, modülasyon toplamı & Tasarım \\
 Susturma ve Sin\textsuperscript{3} etkinleşme ölçütü & Senaryo boyunca sürekli etkin & -- & BM & Benzetim seçimi \\
 \midrule
-\multicolumn{5}{@{}l}{\small\textbf{S4 akım denetimi}} \\
+\multicolumn{5}{@{}l}{\small\textbf{S4 akım denetimi}} \\*
 Geri besleme büyüklüğü ve ölçüm süzgeci & $i_{L1}$; tek kutuplu alçak geçiren süzgeç, köşe \SI{5}{\kilo\hertz} ($f_s/2$) & -- & DT & Benzetim seçimi \\
 Akım referansı & $\sqrt{2}\,I_{\mathrm{ref}}\sin\theta_g$; şebeke fazına kilitli, ideal faz bilgisi & -- & DT & Benzetim seçimi \\
 Oransal kazanç $K_p$ & \num{0.03} & \si{\per\ampere} & PD & Tasarım \\
@@ -547,7 +547,7 @@ PIR rezonans terimi & $K_r=\SI{0.3}{\per\ampere}$ ($10K_p$); $\omega_b=2\pi\cdot
 Modülasyon ve integratör sınırı & $|u|\le1$ & -- & DT & Benzetim seçimi \\
 Denetim adımı ve hesaplama gecikmesi & \SI{1}{\micro\second}; analog eşdeğer denetim & -- & DT & Benzetim seçimi \\
 \midrule
-\multicolumn{5}{@{}l}{\small\textbf{Değerlendirme}} \\
+\multicolumn{5}{@{}l}{\small\textbf{Değerlendirme}} \\*
 Değerlendirme penceresi ve THD tanımı & Son tam şebeke periyodu (\SI{20}{\milli\second}); THD, temel bileşene göre bir periyotluk kayan pencereyle & -- & BM, ortalama, RMS ve THD blokları (\SI{50}{\hertz}) & Benzetim seçimi \\
 Güç ölçüm noktası ve işaret kuralı & Evirici çıkış uçları (EMC süzgeci sonrası, $L_2$ öncesi); evirici$\to$şebeke yönü pozitif & -- & BM, ölçüm zinciri & Benzetim seçimi \\
 \midrule
