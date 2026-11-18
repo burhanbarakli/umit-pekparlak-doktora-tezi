@@ -72,13 +72,15 @@ Her iddia, kendisini en doğrudan sınayan model katmanıyla desteklenmiştir. T
 
 Faz kolunun devre yapısı ve $Q_1$--$Q_4$ adlandırması Şekil~\ref{fig:t-tipi-faz-kolu} üzerinde verilmiştir. $Q_1$--$Q_4$, Tablo~\ref{tab:sistem-parametreleri} içindeki $S_1$--$S_4$ anahtarlarıyla birebir aynıdır. Bölünmüş bara geriliminin toplamı $V_{\mathrm{dc}}$ kabul edildiğinde ideal faz-kutup gerilimi $+V_{\mathrm{dc}}/2$, $0$ ve $-V_{\mathrm{dc}}/2$ seviyelerinden birini almaktadır. Nötr kolun eklediği sıfır seviyesi, iki seviyeli yapıya göre daha küçük gerilim basamakları oluşturmaktadır. Karşılığında komütasyon düzeninin ve nötr nokta akımının ayrıca yönetilmesi gerekmektedir \citep{Schweizer2013,Wang2020}.
 
-Sistemin tam açık güç şeması Şekil~\ref{fig:gelen-tam-topoloji} üzerinde, birinci faz hücresi ise okunabilir ölçekte Şekil~\ref{fig:gelen-faz1-hucresi} üzerinde verilmiştir. Sistem sınırı şemaya göre belirlenmiştir. Şemanın solunda dört iletkenli giriş, ortak-mod endüktansları ve şönt kapasitörlerden oluşan giriş/EMI ağı yer almaktadır. Ortada, ortak DA bağlantısına bağlanan üç tekrarlı T-tipi faz hücresi bulunmaktadır. Her hücrede dış kol anahtar modülü, çift yönlü nötr kol, PFC yükseltici (boost) diyotları, yerel kapasitörler, akım algılama elemanı ve röle vardır. Her hücrede nötr kolun faz tarafındaki anahtarı dış kolun üst anahtarıyla, orta nokta tarafındaki anahtarı alt anahtarıyla tümleyen çift oluşturmaktadır (birinci fazda $Q_1$--$Q_3$ ve $Q_2$--$Q_4$). Hücrelerin altındaki nötr hattı, üç fazın DA bara orta noktalarını birbirine ve giriş nötrüne bağlamaktadır. Şemanın en alt kısmında ise GT-tipi mimarinin şarj yönünde kullanılan batarya yönetim sistemi (BYS) transformatörleri görülmektedir. Deney düzeneği GT-tipi mimariye göre kurulmuştur. Her hücredeki röle ($RL1$) ile doğrultucu ve yükseltici diyotlar, şarj ve deşarj kipleri arasındaki geçişe hizmet etmektedir. Şemadaki $L1$, $L2$ ve $L3$ etiketleri LCL filtrenin ardışık $L_1$--$L_2$ elemanlarını değil, sırasıyla A, B ve C fazlarına ait üç eş \SI{600}{\micro\henry} bobini göstermektedir. Dolayısıyla $L2=\SI{600}{\micro\henry}$ etiketi filtrenin şebeke tarafı endüktansı değildir. Tezde bütün topoloji üç amaçla kullanılmaktadır: sistem ve ölçüm sınırını belirlemek, üç fazın aynı faz-başına modelin tekrarı olduğunu göstermek ve yarı iletken/parazit parametrelerini gerçek devre elemanlarıyla eşlemek. Anahtarlama denklemleri ve akım yolu çizimleri okunabilirlik için Şekil~\ref{fig:t-tipi-akim-yollari} altındaki tek faz eşdeğerine indirgenmiştir. Tek faz indirgemesi yalnız gösterimi sadeleştirmektedir. Giriş filtresi, diğer iki faz ve ölçüm/koruma elemanları fiziksel sistemde yer almaktadır.
+Sistemin üç fazlı güç devresi Şekil~\ref{fig:gelen-tam-topoloji} üzerinde, soldaki \texttt{L3} faz hücresinin ayrıntı şeması Şekil~\ref{fig:gelen-faz1-hucresi} üzerinde verilmiştir. Şemanın solunda üç faz ve nötr girişine bağlı ortak-mod bobinleri ile şönt kapasitörlerden oluşan giriş/EMI ağı bulunmaktadır. Bu ağın çıkışındaki giriş nötrü, soldaki \texttt{L3} faz hücresinde $C_{10}$ ile $C_{11}$ arasındaki DA bara orta noktasına bağlanmaktadır. Şemadaki \texttt{L1}, \texttt{L2} ve \texttt{L3} etiketleri sırasıyla A, B ve C fazlarına ait üç eş \SI{600}{\micro\henry} bobini göstermektedir. LCL filtre elemanları Tablo~\ref{tab:sistem-parametreleri} içinde tanımlanmıştır.
+
+Ortak DA baraya bağlı üç T-tipi faz hücresinde dış kol modülleri, çift yönlü nötr kollar, PFC yükseltici diyotları, kapasitörler ve kip değişim röleleri yer almaktadır. Proteus şemasında nötr kolun DA bara orta noktası tarafındaki anahtar $Q_4$, faz tarafındaki anahtar $Q_3$ olarak gösterilmiştir. Anahtar etiketlerindeki \texttt{\_L1}, \texttt{\_L2} ve \texttt{\_L3} ekleri ilgili fazı belirtmektedir. Şekil~\ref{fig:t-tipi-faz-kolu} üzerindeki faz kolu gösteriminde de tümleyen çiftler $Q_1$--$Q_3$ ve $Q_2$--$Q_4$'tür. Şemanın altındaki $TR1$--$TR3$, şarj yönünde kullanılan batarya yönetim sistemi (BYS) transformatörleridir. Faz hücrelerindeki röleler ile doğrultucu ve yükseltici diyotlar, şarj ve deşarj kipleri arasındaki geçişe hizmet etmektedir. Bu güç şeması, sistem sınırını belirlemek ve analizlerde kullanılan faz başına modeli fiziksel devreyle eşlemek için kullanılmıştır. Anahtarlama denklemleri ve akım yolları, Şekil~\ref{fig:t-tipi-akim-yollari} üzerindeki tek faz eşdeğeriyle açıklanmıştır.
 
 \begin{landscape}
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\linewidth,height=0.78\textheight,keepaspectratio]{umit_2026-11-09/tam_topoloji_notr_q1q3_q2q4.pdf}
-  \caption{GT-tipi olarak kurulan deney düzeneğinin üç fazlı tam güç topolojisi: ortak giriş/EMI ağı, üç tekrarlı T-tipi faz hücresi ve DA bara orta noktalarını giriş nötrüne bağlayan nötr hattı.}
+  \includegraphics[width=\linewidth,height=0.78\textheight,keepaspectratio,trim=154bp 800bp 434bp 478bp,clip]{sekiller/guc_yapi_10.pdf}
+  \caption{GT-tipi deney düzeneğinin üç fazlı güç devresi. Giriş/EMI ağı solda, T-tipi faz hücreleri ortada ve şarj yönündeki BYS transformatörleri altta gösterilmiştir.}
   \label{fig:gelen-tam-topoloji}
 \end{figure}
 \end{landscape}
@@ -86,8 +88,8 @@ Sistemin tam açık güç şeması Şekil~\ref{fig:gelen-tam-topoloji} üzerinde
 \begin{landscape}
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\linewidth,height=0.78\textheight,keepaspectratio]{umit_2026-11-09/tam_topoloji_faz1_hucresi.pdf}
-  \caption{Şekil~\ref{fig:gelen-tam-topoloji} içindeki birinci faz hücresinin büyütülmüş görünümü. Hücrede $D_1$--$D_2$ PFC yükseltici (boost) diyotları, $C_{10}$--$C_{11}$ bölünmüş DA bara kapasitörleri, dış kol modülü $Q_1$--$Q_2$ (SKM100GB12T4) ve $C_{12}$ snubber kapasitörü yer almaktadır. Hücrede ayrıca orta nokta tarafında $Q_4$ ve faz tarafında $Q_3$ nötr IGBT'leri ile $RL1$--$RL2$ kip değişim röleleri bulunmaktadır. Alttaki yatay hat, faz hücrelerinin DA bara orta noktalarını birbirine bağlayan nötr hattıdır.}
+  \includegraphics[width=\linewidth,height=0.78\textheight,keepaspectratio,trim=642bp 1166bp 1826bp 646bp,clip]{sekiller/guc_yapi_10.pdf}
+  \caption{Şekil~\ref{fig:gelen-tam-topoloji} üzerindeki \texttt{L3} faz hücresinin ayrıntısı. Bölünmüş DA bara kapasitörleri $C_{10}$--$C_{11}$, PFC diyotları $D_1$--$D_2$, dış kol anahtarları $Q_1$--$Q_2$, nötr kol anahtarları $Q_4$ ve $Q_3$, snubber kapasitörü $C_{12}$ ve kip değişim röleleri $RL1$--$RL2$ gösterilmiştir.}
   \label{fig:gelen-faz1-hucresi}
 \end{figure}
 \end{landscape}
@@ -206,7 +208,7 @@ Modülasyon, pozitif yarım periyotta $P$ ile $O$, negatif yarım periyotta ise 
 \end{figure}
 
 \begin{samepage}
-  Şekil~\ref{fig:t-tipi-akim-yollari}(a), faz kolunun işlevsel güç topolojisidir. Sensör, koruma ve giriş filtresi elemanlarının yeri Şekil~\ref{fig:gelen-tam-topoloji} üzerinde, yarı iletken parça kodları ve pasif eleman değerleri ise Tablo~\ref{tab:sistem-parametreleri} içinde verilmiştir.
+  Şekil~\ref{fig:t-tipi-akim-yollari}(a), faz kolunun işlevsel güç topolojisidir. Giriş/EMI ağının güç devresindeki yeri Şekil~\ref{fig:gelen-tam-topoloji} üzerinde, yarı iletken parça kodları ve pasif eleman değerleri ise Tablo~\ref{tab:sistem-parametreleri} içinde verilmiştir.
 \end{samepage}
 
 \section{Düşük Güç Eşdeğer Modeli}
