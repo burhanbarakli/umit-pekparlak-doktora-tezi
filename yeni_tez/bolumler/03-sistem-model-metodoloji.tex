@@ -366,43 +366,39 @@ Eşitlik~\eqref{eq:s4-denetim-yapisi} içinde $\theta$ şebekeye kilitli boyutsu
   \centering
   \resizebox{0.99\textwidth}{!}{%
   \begin{tikzpicture}[
-    node distance=5mm and 5mm,
+    node distance=5mm and 7mm,
     block/.style={draw,rounded corners=1.3pt,align=center,minimum height=9mm,minimum width=14mm,fill=blue!5},
     special/.style={draw,rounded corners=1.3pt,align=center,minimum height=9mm,minimum width=18mm,fill=orange!12},
     sum/.style={circle,draw,minimum size=7mm,inner sep=0pt},
     flow/.style={-{Latex[length=1.8mm]},line width=0.9pt},
     feedback/.style={-{Latex[length=1.8mm]},line width=0.9pt,dashed}
   ]
-    \node[block] (iref) {$i_{\mathrm{ref}}$\\üretimi};
+    \node[block] (iref) {$i_{\mathrm{ref}}$\\[0.8mm]üretimi};
     \node[sum,right=of iref] (sumi) {$\Sigma$};
-    \node[block,right=of sumi] (ci) {$C_i(s)$\\akım denetimi};
+    \node[block,right=of sumi] (ci) {$C_i(s)$\\[0.8mm]akım denetimi};
     \node[sum,right=of ci] (sumv) {$\Sigma$};
-    \node[block,right=of sumv,minimum width=24mm] (pwm) {Sınırlandırma, ölçekleme\\ve PWM üretimi};
-    \node[special,right=of pwm,minimum width=25mm] (gate) {$Q_1$--$Q_4$ kapı mantığı\\ve nötr susturma};
-    \node[block,right=of gate,minimum width=20mm] (plant) {T-tipi güç katı\\ve LCL filtre};
+    \node[block,right=of sumv,minimum width=24mm] (pwm) {Sınırlandırma, ölçekleme\\[0.8mm]ve PWM üretimi};
+    \node[special,right=of pwm,minimum width=25mm] (gate) {$Q_1$--$Q_4$ kapı mantığı\\[0.8mm]ve nötr susturma};
+    \node[block,below=11mm of gate,minimum width=25mm] (plant) {T-tipi güç katı\\[0.8mm]ve LCL filtre};
     \draw[flow] (iref) -- (sumi);
     \draw[flow] (sumi) -- node[above,font=\scriptsize] {$e_i$} (ci);
     \draw[flow] (ci) -- (sumv);
     \draw[flow] (sumv) -- node[above,font=\scriptsize] {$u$} (pwm);
     \draw[flow] (pwm) -- (gate);
-    \draw[flow] (gate) -- node[above,font=\scriptsize] {$q_1$--$q_4$} (plant);
+    \draw[flow] (gate) -- node[right,font=\scriptsize] {$q_1$--$q_4$} (plant);
 
-    \node[special,below=13mm of sumv,xshift=11mm,minimum width=20mm] (sin3) {{Sin\textsuperscript{3}} ileri besleme\\$u_{\mathrm{ff}}$};
-    \node[block,below=11mm of iref] (pll) {Faz bilgisi\\$\theta$};
-    \node[block,below=11mm of plant] (meas) {Ölçüm, ADC\\ve ölçekleme};
+    \node[special,below=13mm of sumv,xshift=11mm,minimum width=20mm] (sin3) {{Sin\textsuperscript{3}} ileri besleme\\[1.2mm]$u_{\mathrm{ff}}$};
+    \node[block,below=11mm of iref] (pll) {Faz bilgisi\\[0.8mm]$\theta$};
+    \node[block,below=6mm of plant,minimum width=25mm] (meas) {Ölçüm, ADC\\[0.8mm]ve ölçekleme};
     \draw[flow] (pll) -- (iref);
     \coordinate (phasebus) at ($(pll.south)+(0,-0.65)$);
     \draw[flow] (pll.south) -- (phasebus) -| (sin3.south);
     \draw[flow] (sin3) -- (sumv.south);
     \draw[feedback] (plant.south) -- (meas.north);
-    \coordinate (feedbackbus) at ($(sin3.south)+(0,-1.15)$);
-    \draw[feedback] (meas.south) |- (feedbackbus) -| node[pos=0.72,below,font=\scriptsize] {$H_m(s)\,i_{L1}$} (sumi.south);
+    \draw[feedback] (meas.west) -| node[pos=0.25,below,font=\scriptsize] {$H_m(s)\,i_{L1}$} (sumi.south);
     \node[font=\scriptsize] at ($(sumi)+(-0.24,0.34)$) {$+$};
     \node[font=\scriptsize] at ($(sumi)+(-0.24,-0.34)$) {$-$};
     \node[font=\scriptsize] at ($(sumv)+(-0.24,0.34)$) {$+$};
-    \pgfresetboundingbox
-    \coordinate (bboxse) at (meas.east |- feedbackbus);
-    \path[use as bounding box] ($(iref.north west)+(-0.3,0.35)$) rectangle ($(bboxse)+(0.3,-0.3)$);
   \end{tikzpicture}%
   }
   \caption{İşlevsel akım denetimi, Sin\textsuperscript{3} ileri besleme, PWM ve nötr anahtar susturma blokları.}

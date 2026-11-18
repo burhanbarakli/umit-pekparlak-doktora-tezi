@@ -241,7 +241,7 @@
   \node[font=\scriptsize,right] at (4.18,0.88) {$C_f$};
   \ifnum#5=1
     \draw[current] (l2b) -- (6.0,1.6);
-    \draw[blue!70!black,line width=1.8pt] (0.5,3.2) -- (q.north);
+    \draw[blue!70!black,line width=1.8pt] (0.5,3.2) -| (q.north);
     \draw[blue!70!black,line width=1.8pt] (q.south) -- (1.8,1.6) -- (l1a);
     \draw[freewheel] (0.5,0) -- (1.8,0) -- (da);
     \draw[freewheel] (dk) -- (1.8,1.6);
