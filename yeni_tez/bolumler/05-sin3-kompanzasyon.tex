@@ -59,7 +59,7 @@ Mekanizma, S2 çalışma noktasında Şekil~\ref{fig:harmonik-mekanizma} üzerin
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.94\textwidth]{sekiller/b5/harmonik_olusum_mekanizmasi.pdf}
-  \caption[Susturmalı faz kolunda üçüncü harmonik oluşum mekanizması]{Susturmalı faz kolunda üçüncü harmonik oluşum mekanizması, S2 çalışma noktası, pozitif alternans. Paneller: (a) sinüzoidal görev oranı ve süreksiz iletim sınırı, (b) iletimde endüktör gerilimi, (c) anahtarlama periyodu tepe akımı, (d) anahtarlama periyodu ortalama akımı, (e) anlık endüktör akımı. Analitik eğriler Eşitlik~\eqref{eq:dcm-tepe-akimi}--\eqref{eq:dcm-ccm-parcali-model} ile, gri eğriler S2 benzetim kaydından (son tam şebeke periyodu) elde edilmiştir.}
+  \caption[Susturmalı faz kolunda üçüncü harmonik oluşum mekanizması]{Susturmalı faz kolunda üçüncü harmonik oluşum mekanizması, S2 çalışma noktası, pozitif alternans. Paneller: (a) sinüzoidal görev oranı ve süreksiz iletim sınırı, (b) iletimde endüktör gerilimi, (c) anahtarlama periyodu tepe akımı, (d) anahtarlama periyodu ortalama akımı, (e) anlık endüktör akımı. Analitik eğriler Eşitlik~\eqref{eq:dcm-tepe-akimi}--\eqref{eq:dcm-ccm-parcali-model} ile, gri eğriler S2 benzetim kaydından elde edilmiştir.}
   \label{fig:harmonik-mekanizma}
 \end{figure}
 
@@ -193,7 +193,7 @@ Eşitlik~\eqref{eq:sin3-duzeltilmis-optimum} ile verilen çift, tek endüktansl�
     \end{scope}
   \end{tikzpicture}%
   }
-  \caption[Eşpotansiyel evirici ve şebeke kaynakları]{İleri beslemenin eşpotansiyel durumu: evirici eşdeğer kaynağı ile şebeke kaynağı aynı genlik ve fazda olduğunda seri $Z_1$ (filtre) ve $Z_2$ (şebeke) empedanslarından akan akım sıfırdır. Şekil, akım komutu öncesindeki başlangıç durumunun ideal çözümünü göstermektedir.}
+  \caption[Eşpotansiyel evirici ve şebeke kaynakları]{İleri beslemenin eşpotansiyel durumu: evirici eşdeğer kaynağı ile şebeke kaynağı aynı genlik ve fazda olduğunda seri $Z_1$ (filtre) ve $Z_2$ (şebeke) empedanslarından akan akım sıfırdır.}
   \label{fig:espotansiyel}
 \end{figure}
 
@@ -221,7 +221,7 @@ Senaryo~1--3 açık çevrim modülasyonla, deney donanımının yaklaşık \SI{2
 \begin{figure}[H]
   \centering
   \resizebox{\textwidth}{!}{\input{sekiller/b5_s4_anahtarlama_girisi}}
-  \caption[S4 modelinin anahtarlama girişi]{S4 modelinin anahtarlama girişi: Sin\textsuperscript{3} ileri beslemesi ($K_{14}$, $K_{34}$), $L_1$ akımı geri beslemeli oransal denetleyici ($K_p$), doyum ve kapı mantığı alt sistemi (ANAHTARLAMA). Modeldeki kapı çıkışları $Q_1$--$Q_4$ adlandırmasıyla gösterilmiştir. Güç katı ve ölçüm blokları Şekil~\ref{fig:s3-simulink-modeli} ile aynıdır. Tez sahibinin Simulink şemasından yeniden çizilmiştir.}
+  \caption[S4 modelinin anahtarlama girişi]{S4 modelinin anahtarlama girişi: Sin\textsuperscript{3} ileri beslemesi ($K_{14}$, $K_{34}$), $L_1$ akımı geri beslemeli oransal denetleyici ($K_p$), doyum ve kapı mantığı alt sistemi.}
   \label{fig:s4-anahtarlama-girisi}
 \end{figure}
 
@@ -244,7 +244,7 @@ Tablo~\ref{tab:s4-tarama}, büyütülmüş DA bara ve S3 ileri besleme değerler
 
 \begin{table}[H]
   \centering
-  \caption{S4 kapalı çevrim benzetimi: düşük, orta ve anma akımında akım izleme, harmonik, verim ve doyum (büyütülmüş DA bara, S3 ileri besleme değerleri). THD$_I$ ve $I_3/I_1$ şebeke akımına ($i_g$, C noktası, $h\leq50$) aittir. PIR benzetimleri \SI{0.2}{\second}, diğerleri \SI{0.06}{\second}.}
+  \caption{S4 kapalı çevrim benzetimi: düşük, orta ve anma akımında akım izleme, harmonik, verim ve doyum. THD$_I$ ve $I_3/I_1$ şebeke akımına ($i_g$, C noktası, $h\leq50$) aittir.}
   \label{tab:s4-tarama}
   \footnotesize
   \setlength{\tabcolsep}{2.6pt}
@@ -274,19 +274,19 @@ Tablo~\ref{tab:s4-tarama}, büyütülmüş DA bara ve S3 ileri besleme değerler
   \item \textbf{Tezdeki yeri.} Anma akımında sınırın altına inmek için akıma göre ayarlanan Sin\textsuperscript{3} genliği ya da susturmadan tamamlayıcı anahtarlamaya geçiş gerekir; ikisi de gelecek çalışma olarak önerilmiştir.
 \end{itemize}}
 
-Anma akımında PI ve PIR denetleyicileri referansı doyumsuz izlemektedir. PIR, \SI{50}{\hertz} rezonans terimiyle temel bileşen hatasını $-$\%1,0 ve $+0{,}2^{\circ}$'ye indirmektedir. PIR ile THD \%8,5, temel bileşen güç faktörü ($\cos\varphi_1$) 0,997'dir. Oransal denetleyici aynı noktada $-$\%11,4 genlik hatası bırakmaktadır. Kalıcı hatanın nedeni, \SI{50}{\hertz}'teki sonlu çevrim kazancıdır. Şekil~\ref{fig:s4-akim-izleme-25a}, \SI{25}{\ampere} noktasında üç denetleyicinin son iki şebeke periyodundaki $L_1$ akımını, referansı, çıkış akımını ve C noktası gerilimini birlikte göstermektedir. Gerilim sağ eksende, şebeke nötrüne göre çizilmiştir. Şekil~\ref{fig:s4-tarama-ozet} ise verim, THD ve genlik hatasının akıma göre değişimini özetlemektedir.
+Anma akımında PI ve PIR denetleyicileri referansı doyumsuz izlemektedir. PIR, \SI{50}{\hertz} rezonans terimiyle temel bileşen hatasını $-$\%1,0 ve $+0{,}2^{\circ}$'ye indirmektedir. PIR ile THD \%8,5, temel bileşen güç faktörü ($\cos\varphi_1$) 0,997'dir. Oransal denetleyici aynı noktada $-$\%11,4 genlik hatası bırakmaktadır. Kalıcı hatanın nedeni, \SI{50}{\hertz}'teki sonlu çevrim kazancıdır. Şekil~\ref{fig:s4-akim-izleme-25a}, \SI{25}{\ampere} noktasında üç denetleyicinin son iki şebeke periyodundaki $L_1$ akımını, referansı, çıkış akımını ve C noktası gerilimini birlikte göstermektedir. Gerilim sağ eksende, şebeke nötrüne göre çizilmiştir. Üç denetleyicide de $v_{ac}$'nin periyot ortalaması \SI{0.03}{\volt} altındadır. Şekil~\ref{fig:s4-tarama-ozet} ise verim, THD ve genlik hatasının akıma göre değişimini özetlemektedir.
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth,height=0.62\textheight,keepaspectratio]{sekiller/b5/s4_akim_izleme_25A.pdf}
-  \caption{S4 benzetiminde \SI{25}{\ampere} anma akımında P (üst), PI (orta) ve PIR (alt) denetleyicileriyle son iki şebeke periyodu. Sol eksende $L_1$ akımı (anlık ve anahtarlama periyodu ortalaması), akım referansı ile çıkış akımı, sağ eksende şebeke nötrüne göre C noktası gerilimi $v_{ac}$ yer almaktadır (eksen sıfırları hizalı). Üç denetleyicide de $v_{ac}$'nin periyot ortalaması \SI{0.03}{\volt} altındadır.}
+  \caption{S4 benzetiminde \SI{25}{\ampere} anma akımında P (üst), PI (orta) ve PIR (alt) denetleyicileriyle son iki şebeke periyodu. Sol eksende $L_1$ akımı (anlık ve anahtarlama periyodu ortalaması), akım referansı ile çıkış akımı, sağ eksende şebeke nötrüne göre C noktası gerilimi $v_{ac}$ yer almaktadır.}
   \label{fig:s4-akim-izleme-25a}
 \end{figure}
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth]{sekiller/b5/s4_tarama_ozet.pdf}
-  \caption{S4 benzetiminde verim, şebeke akımı THD'si ($h\leq50$) ve temel bileşen genlik hatasının akım referansına göre değişimi (P, PI ve PIR denetleyicileri). PIR benzetimleri \SI{10}{\ampere} ve \SI{25}{\ampere} noktalarında yürütülmüştür.}
+  \caption{S4 benzetiminde verim, şebeke akımı THD'si ($h\leq50$) ve temel bileşen genlik hatasının akım referansına göre değişimi (P, PI ve PIR denetleyicileri).}
   \label{fig:s4-tarama-ozet}
 \end{figure}
 
@@ -320,7 +320,7 @@ PI denetleyiciyle akım referansı $t=\SI{55}{\milli\second}$ anında \SI{10}{\a
 \begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth,height=0.5\textheight,keepaspectratio]{sekiller/b5/s4_basamak_PI_10_25A.pdf}
-  \caption{S4 benzetiminde PI denetleyiciyle \SI{10}{\ampere}$\rightarrow$\SI{25}{\ampere} akım referansı basamağı: $L_1$ akımı, anahtarlama periyodu ortalaması ve modülasyon komutu. Noktalı düşey çizgi basamak anını (\SI{55}{\milli\second}), noktalı yatay çizgiler $\pm1$ doyum sınırlarını göstermektedir.}
+  \caption{S4 benzetiminde PI denetleyiciyle \SI{10}{\ampere}$\rightarrow$\SI{25}{\ampere} akım referansı basamağı: $L_1$ akımı, anahtarlama periyodu ortalaması ve modülasyon komutu.}
   \label{fig:s4-basamak}
 \end{figure}
 
@@ -394,7 +394,7 @@ biçimindedir. Eşitlik~\eqref{eq:marj-tanimlari} içinde $\omega_{\pi}$ faz ge�
 
 \begin{table}[H]
   \centering
-  \caption{S4 akım çevriminin marjları (\SI{25}{\ampere}, ortalama model). Nyquist sütunu $(-\infty,-1)$ ışınının net kesişim sayısıdır ve 0 değeri Nyquist kararlılık ölçütünü sağlamaktadır. (B) ve (B2) satırları gecikme duyarlılığını göstermektedir. Bütün değerler $K_{34}$ açık ve $K_{34}=0$ için bit düzeyinde aynıdır.}
+  \caption{S4 akım çevriminin marjları (\SI{25}{\ampere}, ortalama model). Nyquist sütunu $(-\infty,-1)$ ışınının net kesişim sayısıdır.}
   \label{tab:kararlilik-marjlar}
   \scriptsize
   \setlength{\tabcolsep}{2.8pt}
@@ -421,14 +421,14 @@ Gerçekleme (A)'da anma noktasındaki PI çevriminin kritik faz marjı, \SI{3.4}
 \begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth,height=0.5\textheight,keepaspectratio]{sekiller/b5/kararlilik_L_bode_K34.pdf}
-  \caption{S4 akım çevriminin açık çevrim kazancı $L(j\omega)$, P, PI ve PIR denetleyicileri, gerçekleme (A), \SI{25}{\ampere}. $K_{34}$ açık (çizgi) ve $K_{34}=0$ (işaretçi) eğrileri örtüşmektedir.}
+  \caption{S4 akım çevriminin açık çevrim kazancı $L(j\omega)$, P, PI ve PIR denetleyicileri, gerçekleme (A), \SI{25}{\ampere}.}
   \label{fig:kararlilik-l-bode}
 \end{figure}
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth,height=0.45\textheight,keepaspectratio]{sekiller/b5/kararlilik_S_T.pdf}
-  \caption{S4 akım çevriminin duyarlılık $|S(j\omega)|$ ve tamamlayıcı duyarlılık $|T(j\omega)|$ eğrileri (\SI{50}{\hertz} ve \SI{150}{\hertz} noktaları işaretli). $K_{34}=0$ durumu işaretçiyle gösterilmiştir ve $K_{34}$ açık eğrilerle örtüşmektedir.}
+  \caption{S4 akım çevriminin duyarlılık $|S(j\omega)|$ ve tamamlayıcı duyarlılık $|T(j\omega)|$ eğrileri.}
   \label{fig:kararlilik-s-t}
 \end{figure}
 
@@ -441,7 +441,7 @@ Kararlılık sonucu, ortalama Simulink/Simscape modelinin Simulink Control Desig
 \begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth,height=0.45\textheight,keepaspectratio]{sekiller/b5/kararlilik_nyquist_A_B.pdf}
-  \caption{S4 akım çevriminin Nyquist eğrileri ve gecikme duyarlılığı: analog eşdeğerde (A) $-1$ noktası eğrinin dışında kalmaktadır. Bir periyot hesaplama gecikmeli durumda (B) ek gecikme, rezonans tepesini negatif gerçel eksende $-1$ noktasının soluna taşımaktadır. Şekil $-1$ noktası çevresini büyüterek göstermektedir. Noktalı eğriler negatif frekans dalını, noktalı çember birim çemberi, $+$ işareti $-1$ noktasını göstermektedir. (B) eğrisinin negatif gerçel ekseni kestiği nokta, Tablo~\ref{tab:kararlilik-marjlar} içindeki GM değerine karşılık gelmekte ve çizim aralığının solunda yer almaktadır.}
+  \caption{S4 akım çevriminin Nyquist eğrileri ve gecikme duyarlılığı: analog eşdeğerde (A) $-1$ noktası eğrinin dışında kalmaktadır. Bir periyot hesaplama gecikmeli durumda (B) ek gecikme, rezonans tepesini negatif gerçel eksende $-1$ noktasının soluna taşımaktadır.}
   \label{fig:kararlilik-nyquist}
 \end{figure}
 
