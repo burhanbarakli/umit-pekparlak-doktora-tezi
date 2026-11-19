@@ -42,7 +42,7 @@ Her satır şu öğeleri içerir:
 | D-09 | Tüm modeller · Capacitor6/7 (EMC X kapasitörü) | Parametre | X kapasitörü `C_emc_aux` = 1 µF ile modellenmiş; m-dosyasının kendi tek faz eşdeğeri `EMC_Cx_eq` = 0,5 µF / `EMC_Rx_eq` = 0,2 Ω hiç kullanılmıyor | doğrulandı — S3'te ölçülen ΔQ₁ −2,5 var, ΔP_ac +%0,3 (İP-4) |
 | D-10 | Tüm modeller · IGBT/diyot ısıl ve eşik parametreleri | Parametre (izlenebilirlik) | `Vth = 6`, ısıl ağ dizileri ve diyot `Tdevice = 25` değişken yerine sayı olarak yazılmış; m-dosyasındaki karşılıkları kullanılmıyor. Değerler aynı, sonuca etkisi yok | doğrulandı (29.10.2026) — değerler m-dosyasıyla aynı, sayısal etki yok; değişkene bağlama yapılmadı, tezde Kesim 3.8 izlenebilirlik notunda |
 | D-12 | `inverter_s1s2_s2onarim_d08.slx` · iki bağımsız devre | Paket (koşu yöntemi) | İki fiziksel ağ aynı ode15s çözücüsünü paylaşıyor; 0,1 s koşu ~4 saat. Diğer devre `Commented = 'on'` yapılarak ayrık kopyalar koşturuldu | doğrulandı — fark P_ac ≤ %0,017, Q₁ ≤ 0,02 var; süre 22–69 dk. Tezde yer almaz |
-| D-11 | `inverter_common_parameters.m` · `Cdc_pos/Cdc_neg` (S4) | **Parametre / topoloji boyutu** | 2 × 470 µF DC bara, 25 A'da orta noktayı ±120 V salındırıyor; S4 akımı hedefin %32 altında, modülasyon doyumda. Ümit'in "20 A civarı" tavanı bu | doğrulandı — 2 × 5,6 mF ile PI 25 A: −%31,9 → −%2,1, doyum %20,6 → %0, THD %57 → %9 |
+| D-11 | `inverter_common_parameters.m` · `Cdc_pos/Cdc_neg` (S4) | **Parametre / topoloji boyutu** | 2 × 470 µF DC bara, 25 A'da orta noktayı ±120 V salındırıyor (D-15: doğrusu ≈ ±86 V); S4 akımı hedefin %32 altında, modülasyon doyumda. Ümit'in "20 A civarı" tavanı bu | doğrulandı — 2 × 5,6 mF ile PI 25 A: −%31,9 → −%2,1, doyum %20,6 → %0, THD %57 → %9 |
 | D-13 | 12.10 paketindeki üç model ve kopyaları · model CloseFcn | Paket | MathWorks Solar Power Inverter örneğinden kalma geri çağrı, model kapanınca taban çalışma alanından `C` (Cf) ve `L`'yi siliyor | doğrulandı — betik düzeltmesi bütün İP-5/İP-6 koşularında kullanıldı; koşu sonuçlarına etkisi yok, tezde yer almaz |
 | D-14 | 12.10 modelleri ve kopyaları · ölçüm blokları, PWM Generator, nötr kapı sürücüleri, çözücü ayarları | Parametre (izlenebilirlik) | `Freq = 50`, `Ts = 1/fsw/100`, `uHigh = 4`/`uLow = 3`, `LocalSolverSampleTime = 1e-7`, powergui `SampleTime = 50e-6`, `MinStep = auto` değişken yerine sayı olarak yazılmış; değerler m-dosyasıyla aynı ya da etkisiz | doğrulandı (29.10.2026) — değerler m-dosyasıyla aynı ya da etkisiz, sayısal etki yok; değişkene bağlama yapılmadı, tezde Kesim 3.8 izlenebilirlik notunda |
 | D-15 | D-11 hesabı · tez Bölüm 5 "DA bara önkoşulu", Summary, paket README | Analiz (hesap düzeltmesi) | D-11 orta nokta salınımını faz akımının tamamı kapasitörden geçiyor varsayımıyla hesaplamış (±120 V / 10 V). Doğrusu ray akımları farkı: 25 A, 2 × 470 µF ≈ ±86 V, 2 × 5,6 mF ≈ ±7 V | doğrulandı (19.11.2026) — PIR 25 A kaydı ±7,5 V, 470 µF PI kaydı ≈ ±85 V; D-11 düzeltmesi (5,6 mF) ve koşu sonuçları değişmez |
@@ -369,7 +369,8 @@ Her satır şu öğeleri içerir:
 - **Düzeltme:**
   - Yalnız S4 koşularında: `Cdc_pos = Cdc_neg = 5,6 mF`.
   - Hesap: C₊ + C₋ ≥ 35,4 A / (314 rad/s · 10,7 V) = 10,5 mF. 25 A'da ≈ 10 V
-    salınım, Vdc/2'nin %4,7'si.
+    salınım, Vdc/2'nin %4,7'si. **(D-15 ile düzeltildi: 25 A'da ≈ 7 V, %3,4; %5 ölçütü için
+    C_dc ≥ 3,8 mF.)**
   - Uygulama: `run_s4_closed_loop_20261028.m` içinde `opts.Cdc` değeri, bellekteki
     modelin InitFcn'inin sonuna eklenir. m-dosyası ve ham paket değişmez.
   - İlk deneme (`Cb_*`, 14:35–16:07) geçersiz. Değer yalnız taban çalışma alanına
@@ -492,8 +493,18 @@ Her satır şu öğeleri içerir:
     P durumundaki kutup gerilimi son periyotta 186,7–201,7 V, yani ±7,5 V.
   - Özgün 470 µF, 25 A PI kaydı: darbe yüksekliği 270 V → 100 V, yani ≈ ±85 V.
 - **Etki:** D-11'in sonucu (470 µF anma akımına yetmez, S4'te 5,6 mF) değişmez. 5,6 mF ile
-  salınım Vdc/2'nin %5'inin altında kalır (Tablo 3.x satırı geçerli). Koşu sonuçları değişmez.
-- **Açık gözlem:** PIR 25 A kaydında P darbeleri ortalaması ≈ 194 V, N darbeleri ≈ 233 V.
+  salınım Vdc/2'nin %5'inin altında kalır (`03-sistem-model-metodoloji.tex:494`, `tab:sistem-parametreleri` S4 bara satırı geçerli). Koşu sonuçları değişmez.
+- **Açık gözlem:** PIR 25 A kaydında P darbeleri ortalaması ≈ 194 V, N darbeleri ≈ 231 V.
   Orta noktada ≈ 20 V DA kayma var, modelde orta nokta dengeleme yok. Tezde yer almıyor.
+  Kayma sabit değil, büyüyor: (P+N)/2 önceki periyotta −16,95 V, son periyotta −19,0 V
+  (≈ 2 V/periyot; orta nokta akımının DA bileşeni ≈ 1,1–1,2 A, 1,13·0,02/(2·5,6 mF) ≈ 2,0 V ile
+  tutarlı). PI 25 A: −7,7 → −8,6 V; PIR 10 A: ≈ −3,6 → −3,7 V. Tezdeki "orta noktanın
+  tutulabilmesi önkoşulu" yalnız 0,06–0,2 s penceresinde gösterilmiştir; uzun koşu ya da orta
+  nokta dengeleme yapılmadı. Tezde yer almıyor.
+- **Bağımsız denetim (19.11.2026):** türetme, 8/(3π) katsayısı ve sayılar doğrulandı. Formül
+  temel bileşen yaklaşıklığıdır, tam tepe değeri 3π²/32 ≈ 0,925 katıdır. 270 → 100 V darbe
+  yüksekliği gözleminin ham v_inv verisi yerelde yok (tek kaynak D-11 kaydı) ve o koşu oturmamış
+  olduğundan tezde "hesapla aynı büyüklükte" denmiştir. 186,7–201,7 V aralığı anahtarlama periyodu
+  başına P örnekleri ortalamasıdır (Drive paketindeki `dalga_son_periyotlar.csv`).
 - **Tezde:** Bölüm 5 "DA bara önkoşulu" paragrafı ve Summary düzeltildi (19.11.2026).
 - **Durum:** doğrulandı (19.11.2026)
