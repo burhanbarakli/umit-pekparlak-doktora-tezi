@@ -81,3 +81,6 @@ slprj/
 /.ayakaleaf.local
 /yeni_tez/fonts/
 /yeni_tez/depo/
+
+# Dışarıya paylaşılan paketler (Drive); depoda zaten olan modellerin kopyaları ve büyük .mat dosyaları
+/paylasim/
