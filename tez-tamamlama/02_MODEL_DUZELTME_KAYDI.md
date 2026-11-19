@@ -45,6 +45,7 @@ Her satır şu öğeleri içerir:
 | D-11 | `inverter_common_parameters.m` · `Cdc_pos/Cdc_neg` (S4) | **Parametre / topoloji boyutu** | 2 × 470 µF DC bara, 25 A'da orta noktayı ±120 V salındırıyor; S4 akımı hedefin %32 altında, modülasyon doyumda. Ümit'in "20 A civarı" tavanı bu | doğrulandı — 2 × 5,6 mF ile PI 25 A: −%31,9 → −%2,1, doyum %20,6 → %0, THD %57 → %9 |
 | D-13 | 12.10 paketindeki üç model ve kopyaları · model CloseFcn | Paket | MathWorks Solar Power Inverter örneğinden kalma geri çağrı, model kapanınca taban çalışma alanından `C` (Cf) ve `L`'yi siliyor | doğrulandı — betik düzeltmesi bütün İP-5/İP-6 koşularında kullanıldı; koşu sonuçlarına etkisi yok, tezde yer almaz |
 | D-14 | 12.10 modelleri ve kopyaları · ölçüm blokları, PWM Generator, nötr kapı sürücüleri, çözücü ayarları | Parametre (izlenebilirlik) | `Freq = 50`, `Ts = 1/fsw/100`, `uHigh = 4`/`uLow = 3`, `LocalSolverSampleTime = 1e-7`, powergui `SampleTime = 50e-6`, `MinStep = auto` değişken yerine sayı olarak yazılmış; değerler m-dosyasıyla aynı ya da etkisiz | doğrulandı (29.10.2026) — değerler m-dosyasıyla aynı ya da etkisiz, sayısal etki yok; değişkene bağlama yapılmadı, tezde Kesim 3.8 izlenebilirlik notunda |
+| D-15 | D-11 hesabı · tez Bölüm 5 "DA bara önkoşulu", Summary, paket README | Analiz (hesap düzeltmesi) | D-11 orta nokta salınımını faz akımının tamamı kapasitörden geçiyor varsayımıyla hesaplamış (±120 V / 10 V). Doğrusu ray akımları farkı: 25 A, 2 × 470 µF ≈ ±86 V, 2 × 5,6 mF ≈ ±7 V | doğrulandı (19.11.2026) — PIR 25 A kaydı ±7,5 V, 470 µF PI kaydı ≈ ±85 V; D-11 düzeltmesi (5,6 mF) ve koşu sonuçları değişmez |
 
 ## Ayrıntılı kayıtlar
 
@@ -343,6 +344,7 @@ Her satır şu öğeleri içerir:
   - Tek faz T-tipi bacakta şebeke dönüş akımı DC bara orta noktasına girer. Bu yüzden
     50 Hz faz akımının tamamı iki kapasitörün paralel eşdeğerinden geçer:
     ΔV_orta,tepe ≈ Î/(ω·(C₊ + C₋)).
+    **(19.11.2026: varsayım ve aşağıdaki tablo hatalı, doğru hesap D-15'te.)**
   - 2 × 470 µF ile orta nokta salınımı şöyle:
 
     | Faz akımı | Orta nokta salınımı (tepe) | Vdc/2'ye oranı |
@@ -466,3 +468,32 @@ Her satır şu öğeleri içerir:
   - Diyot eşlemesindeki sorun D-08'e taşındı.
   - Kaynak: `review/2026-10-27_TOPOLOJI_DENETIMI.md`
 - **Durum:** denetlendi — IGBT'ler uygun
+
+### D-15 — D-11 orta nokta salınımı hesabının düzeltilmesi
+
+- **Dosya / metin:** D-11 kaydı. Tez `yeni_tez/bolumler/05-sin3-kompanzasyon.tex`, "DA bara
+  önkoşulu" paragrafı. `yeni_tez/onkisim/summary.tex`. Paket
+  `paylasim/2026-11-19_makale_benzetim_paketi/00_OKU_BENI.md`, D-11 satırı.
+- **Sınıf:** Analiz (hesap düzeltmesi). Model ve koşu değişmez.
+- **Sorun:** D-11, 50 Hz faz akımının tamamının iki kapasitörün paralel eşdeğerinden geçtiğini
+  varsaymış: ΔV ≈ Î/(ω·(C₊ + C₋)). Değerler: 2,3 A'de 11 V, 25 A'de 120 V, 5,6 mF ile 10 V.
+  Bulan: makale taslağı incelemesi (tez-beyin, 19.11.2026). Daha önce
+  `18_BOLUM5_JURI_RISKI_ONERILERI.md` (satır 388) aynı ~1,4 katlık aşırı kestirimi bulmuş,
+  metin değişikliği önermemişti.
+- **Doğru hesap:**
+  - Şebeke dönüşü orta noktaya girer. Nötr anahtar iletimdeyken akım kapasitörlere uğramaz.
+  - C_dc·dv_o/dt = −(i₊ − i₋)/2, v_o = (v_C+ − v_C−)/2, C_dc tek kapasitör.
+  - d = m|sin θ|, i = Î sin θ → i₊ − i₋ = m Î sin θ |sin θ|. Temel bileşen katsayısı 8/(3π).
+  - V̂o ≈ 4·m·Î / (3π·ω0·C_dc), ω0 = 2π·50.
+  - 2 × 470 µF: 2,3 A (m ≈ 0,8) ≈ 7,5 V (Vdc/2'nin %3,5'i), 25 A (m ≈ 0,85) ≈ 86 V (%40).
+  - 2 × 5,6 mF, 25 A: ≈ 7 V (%3,4).
+- **Kanıt:**
+  - Paket `04_benzetim_sonuclari/S4_kapali_cevrim/KC_PIR_25A_02s/dalga_son_periyotlar.csv`:
+    P durumundaki kutup gerilimi son periyotta 186,7–201,7 V, yani ±7,5 V.
+  - Özgün 470 µF, 25 A PI kaydı: darbe yüksekliği 270 V → 100 V, yani ≈ ±85 V.
+- **Etki:** D-11'in sonucu (470 µF anma akımına yetmez, S4'te 5,6 mF) değişmez. 5,6 mF ile
+  salınım Vdc/2'nin %5'inin altında kalır (Tablo 3.x satırı geçerli). Koşu sonuçları değişmez.
+- **Açık gözlem:** PIR 25 A kaydında P darbeleri ortalaması ≈ 194 V, N darbeleri ≈ 233 V.
+  Orta noktada ≈ 20 V DA kayma var, modelde orta nokta dengeleme yok. Tezde yer almıyor.
+- **Tezde:** Bölüm 5 "DA bara önkoşulu" paragrafı ve Summary düzeltildi (19.11.2026).
+- **Durum:** doğrulandı (19.11.2026)
