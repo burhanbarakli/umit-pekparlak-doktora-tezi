@@ -1,0 +1,5 @@
+S1: Vdc=431.5 V, Vm=169.4 V, L1=600 uH, fs=10000 Hz, f0=50 Hz
+Tarama: 0.10 <= k1,k3 <= 0.50; adim 0.01; Irms > 2.2 A; I3/I1 < %5
+1681 cift; 23 uygun; 12 tam DCM; 11 DCM/CCM
+En iyi: k1=0.36, k3=0.42, Irms=2.243831404679 A, I3/I1=%0.315371843480, THD=%4.703879134591
+Ayni temel bilesenli saf sinus: dm=0.644232396761, I3/I1=%39.964862593716

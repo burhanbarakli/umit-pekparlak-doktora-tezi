@@ -99,13 +99,16 @@ elde edilmektedir. İntegrasyonda $\sin^3\theta$ önce Eşitlik~\eqref{eq:sin3-a
   \end{cases}
   \label{eq:dcm-ccm-parcali-model}
 \end{equation}
-ile ifade edilmektedir. Anahtarlama periyodu ortalama akımı $\bar i_L(\theta)$ tam şebeke periyodunda yarım dalga tek simetrisine sahipse $n$'inci sinüs Fourier katsayısı
+ile ifade edilmektedir. Anahtarlama periyodu ortalama akımı $\bar i_L(\theta)$ için sinüs ve kosinüs Fourier katsayıları ile $n$'inci harmonik genliği
 \begin{equation}
-  B_n=\frac{1}{\pi}\int_0^{2\pi}\bar i_L(\theta)\sin(n\theta)\,\mathrm{d}\theta,
-  \qquad n=1,2,\ldots
+  \begin{gathered}[b]
+    A_n=\frac{1}{\pi}\int_0^{2\pi}\bar i_L(\theta)\cos(n\theta)\,\mathrm{d}\theta,\\
+    B_n=\frac{1}{\pi}\int_0^{2\pi}\bar i_L(\theta)\sin(n\theta)\,\mathrm{d}\theta,\\
+    I_n=\sqrt{A_n^2+B_n^2},\qquad n=1,2,\ldots
+  \end{gathered}
   \label{eq:akim-fourier-katsayisi}
 \end{equation}
-olarak hesaplanmaktadır \citep{Oppenheim1997}. Eşitlik~\eqref{eq:akim-fourier-katsayisi} içindeki $B_1$ ve $B_3$ sırasıyla temel ve üçüncü harmonik sinüs katsayılarıdır. Yarım dalga simetrisi sağlanmadığında DA ve kosinüs katsayıları da ayrıca hesaplanmalıdır.
+olarak hesaplanmaktadır \citep{Oppenheim1997}. Eşitlik~\eqref{eq:akim-fourier-katsayisi} içindeki $I_1$ ve $I_3$, sırasıyla temel ve üçüncü harmonik tepe genlikleridir. $\bar i_L(\theta+\pi)=-\bar i_L(\theta)$ yarım dalga simetrisi DA bileşenini ve çift harmonikleri sıfırlar. DCM/CCM geçişlerinde oluşabilen faz kayması, sinüs ve kosinüs katsayıları birlikte kullanılarak harmonik genliğine katılmıştır.
 
 \section{Analitik Katsayı Taraması}
 \label{sec:sin3-yeniden-tarama}
@@ -134,29 +137,72 @@ Taramadan üç bulgu çıkmaktadır. Birincisi, saf sinüzoidal görev oranıyla
   \end{tabular}
 \end{table}
 
-İkincisi, uygun $(k_1,k_3)$ çifti çalışma noktasına bağlıdır. Karşılaştırma için alınan $(0{,}45,\ 0{,}37)$, $(0{,}44,\ 0{,}38)$ ve $(0{,}41,\ 0{,}41)$ çiftleri S1 noktasında $I_1\simeq8{,}5$--\SI{9.2}{\ampere} temel akım tepe değeri, $I_3/I_1\simeq\%50$ ve $\mathrm{THD}\simeq\%68$ üretmektedir. Üç çiftte de tepe görev oranı ($k_1+k_3=0{,}82$), S1 noktasındaki kritik görev oranının tepe değerinden ($\simeq0{,}785$) büyüktür. Dolayısıyla akım alternans ortasında CCM'ye geçmektedir. Sonuç olarak uygun katsayılar gerilim oranına, endüktansa ve akım düzeyine bağlıdır.
-\kirmizinot{Karşılaştırılan $(0{,}45,\ 0{,}37)$, $(0{,}44,\ 0{,}38)$ ve $(0{,}41,\ 0{,}41)$ çiftlerinin nereden alındığı (ön tasarım, önceki tarama ya da deney ayarı) metinde yazmıyor. Kaynağı bir cümleyle eklenmeli.}
+İkincisi, harmonik oranı ve RMS akım koşullarını birlikte sağlayan katsayılar sınırlı bir bölgede toplanmaktadır. Katsayı kombinasyonları, düşük güç bölgesindeki RMS akımı koruyup üçüncü harmonik oranını azaltmak amacıyla seçilmiştir. $0{,}10\leq k_1\leq0{,}50$ ve $0{,}10\leq k_3\leq0{,}50$ aralıkları $0{,}01$ adımlarla taranmış, toplam \num{1681} katsayı çifti hesaplanmıştır. Hesapta $V_{\mathrm{dc}}=\SI{431.5}{\volt}$, $V_h=\SI{215.75}{\volt}$, $V_m=\SI{169.4}{\volt}$, $L_1=\SI{600}{\micro\henry}$, $f_0=\SI{50}{\hertz}$ ve $f_s=\SI{10}{\kilo\hertz}$ kullanılmıştır. Her çift için Eşitlik~\eqref{eq:ccm-gorev-harmonik} ile görev oranı üretilmiş, $I_{\mathrm{rms}}>\SI{2.2}{\ampere}$ ve $100I_3/I_1<5$ koşullarını birlikte sağlayan kombinasyonlar seçilmiştir.
 
-Üçüncüsü, tarama düşük güç çalışma noktası için bir aday vermektedir. $I_{\mathrm{rms}}$ değeri deney özetindeki \SI{2.26}{\ampere} düzeyiyle uyumlu bir bantta ($2{,}0$--\SI{2.6}{\ampere}) tutulup görev oranı kırpılması dışlandığında en iyi nokta
+Bir anahtarlama periyodunun sonundaki endüktör akımı, sonraki periyodun başlangıç değeri olarak taşınmıştır. DCM'de başlangıç akımı sıfırdır. Görev oranı Eşitlik~\eqref{eq:dcm-kritik-gorev} ile verilen sınırı aştığında periyot sonunda pozitif akım kalabilmekte ve CCM'ye geçilmektedir. CCM'den DCM'ye dönüş, akımın kesim aralığında sıfıra ulaşıp periyodun kalanında sıfırda kalmasıyla belirlenmiştir. Böylece geçişlerde periyotlar arası akım sürekliliği korunmuştur. Her yarım periyot \num{100} anahtarlama aralığında çözülmüş ve negatif alternans yarım dalga simetrisiyle oluşturulmuştur. Temel ve üçüncü harmonik genlikleri sinüs ve kosinüs Fourier katsayılarından birlikte hesaplanmıştır. Tablodaki RMS değeri, anahtarlama periyodu ortalaması alınmış $L_1$ akımının tam şebeke periyodundaki RMS değeridir.
+
+\begin{table}[H]
+  \centering
+  \caption{Parçalı DCM/CCM modelinde akım ve üçüncü harmonik koşullarını sağlayan katsayı çiftleri.}
+  \label{tab:sin3-katsayi-kombinasyonlari}
+  \normalsize
+  \setlength{\tabcolsep}{12bp}
+  \renewcommand{\arraystretch}{1.15}
+  \begin{tabular}{cccc}
+    \toprule
+    $k_1$ & $k_3$ & $I_{\mathrm{rms}}$ (A) & $100I_3/I_1$ (\%) \\
+    \midrule
+    \num{0.34} & \num{0.44} & \num{2.204} & \num{1.742} \\
+    \num{0.34} & \num{0.45} & \num{2.316} & \num{4.660} \\
+    \num{0.35} & \num{0.43} & \num{2.224} & \num{0.713} \\
+    \num{0.35} & \num{0.44} & \num{2.336} & \num{3.708} \\
+    \textbf{0,36} & \textbf{0,42} & \textbf{2,244} & \textbf{0,315} \\
+    \num{0.36} & \num{0.43} & \num{2.357} & \num{2.771} \\
+    \num{0.37} & \num{0.40} & \num{2.216} & \num{1.835} \\
+    \num{0.37} & \num{0.41} & \num{2.264} & \num{1.342} \\
+    \num{0.37} & \num{0.42} & \num{2.378} & \num{1.868} \\
+    \num{0.38} & \num{0.39} & \num{2.237} & \num{2.872} \\
+    \num{0.38} & \num{0.40} & \num{2.285} & \num{2.367} \\
+    \num{0.38} & \num{0.41} & \num{2.400} & \num{1.087} \\
+    \num{0.39} & \num{0.37} & \num{2.211} & \num{4.437} \\
+    \num{0.39} & \num{0.38} & \num{2.258} & \num{3.907} \\
+    \num{0.39} & \num{0.39} & \num{2.306} & \num{3.389} \\
+    \num{0.39} & \num{0.40} & \num{2.422} & \num{0.868} \\
+    \num{0.40} & \num{0.37} & \num{2.280} & \num{4.939} \\
+    \num{0.40} & \num{0.38} & \num{2.328} & \num{4.410} \\
+    \num{0.40} & \num{0.39} & \num{2.446} & \num{1.442} \\
+    \num{0.41} & \num{0.38} & \num{2.470} & \num{2.255} \\
+    \num{0.42} & \num{0.37} & \num{2.494} & \num{3.124} \\
+    \num{0.43} & \num{0.36} & \num{2.519} & \num{4.011} \\
+    \num{0.44} & \num{0.35} & \num{2.545} & \num{4.904} \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Tablo~\ref{tab:sin3-katsayi-kombinasyonlari}, iki koşulu birlikte sağlayan \num{23} çifti vermektedir. Bu çiftlerin \num{12}'sinde pozitif alternansın tamamında DCM, \num{11}'inde ise DCM ve CCM aralıkları birlikte oluşmuştur. Uygun çiftlerde katsayı toplamı $0{,}76\leq k_1+k_3\leq0{,}79$ aralığındadır. Uygunluk, bu toplamla birlikte RMS akım ve üçüncü harmonik koşullarının her çift için ayrı değerlendirilmesiyle belirlenmiştir. Katsayıların seçimi gerilim oranına, endüktansa ve hedef akım düzeyine bağlıdır.
+
+Üçüncüsü, seçilen tarama alanında ve $I_{\mathrm{rms}}>\SI{2.2}{\ampere}$ koşulu altında en düşük üçüncü harmonik oranını veren nokta
 \begin{equation}
   \begin{gathered}
-    (k_1, k_3)=(0{,}34,\ 0{,}40)
+    (k_1,k_3)=(0{,}36,\ 0{,}42)
     \;\Longrightarrow\;
-    \frac{I_3}{I_1}=\%0{,}15,\quad \mathrm{THD}=\%4{,}72,\\
-    I_{\mathrm{rms}}=\SI{2.02}{\ampere},\quad d_{\max}=0{,}74
+    \frac{I_3}{I_1}=\%0{,}315,\quad \mathrm{THD}=\%4{,}704,\\
+    I_{\mathrm{rms}}=\SI{2.244}{\ampere},\quad d_{\max}=0{,}78
   \end{gathered}
   \label{eq:sin3-duzeltilmis-optimum}
 \end{equation}
-olarak bulunmuştur. Eşitlik~\eqref{eq:sin3-esdeger-katsayilar} ile harmonik eşdeğeri $(k_1+3k_3/4,\ -k_3/4)=(0{,}64,\ -0{,}10)$'dur. Şekil~\ref{fig:sin3-yeniden-tarama}, katsayı düzlemindeki üçüncü harmonik oranını, uygun akım bölgesini ve en iyi noktadaki akım zarfının saf sinüs görev oranına göre düzelmesini birlikte göstermektedir. Kompanzasyonlu zarfta kalan \%4,7'lik THD ağırlıkla beşinci ve yedinci harmoniklerden gelmektedir. Sin\textsuperscript{3} teriminin şekillendirdiği bileşenler ise yapısı gereği temel ve üçüncü harmoniktir.
+olarak bulunmuştur. Bu çift Tablo~\ref{tab:sin3-katsayi-kombinasyonlari} içinde koyu yazılmıştır. Görev oranının tepe değeri, kritik görev oranının tepe değerinin ($\simeq0{,}785$) altında kaldığından bu aday pozitif alternans boyunca DCM'de çalışmaktadır. Üçüncü harmonikteki azalma, Sin\textsuperscript{3} teriminin süreksiz akım darbelerinin zarfını biçimlendirmesiyle elde edilmektedir. Eşitlik~\eqref{eq:sin3-esdeger-katsayilar} ile harmonik eşdeğer $(k_1+3k_3/4,\ -k_3/4)=(0{,}675,\ -0{,}105)$'tir. THD, ikinci harmonikten \num{49}. harmoniğe kadar hesaplanmış ve kalan yaklaşık \%4,7'lik bozulma ağırlıkla beşinci ve yedinci harmoniklerden oluşmuştur.
+
+Şekil~\ref{fig:sin3-yeniden-tarama}, güncel tarama alanını ve yeni adayın akım zarfını göstermektedir. Saf sinüzoidal görev oranının genliği, iki zarfın temel akım genlikleri eşit olacak şekilde seçilmiştir. Böylece karşılaştırma aynı temel bileşen üzerinden yapılmıştır.
 
 \begin{figure}[H]
   \centering
   \panelharfli{\includegraphics[width=\textwidth]{sekiller/b5/sin3_katsayi_taramasi.pdf}}{0.226/a, 0.815/b}
-  \caption{$(k_1,k_3)$ katsayı düzleminde (a) üçüncü harmonik oranı ve (b) en iyi nokta ile saf sinüs görev oranının ortalama akım zarfı karşılaştırması. (a) panelinde beyaz noktalar \SI{2.0}{}--\SI{2.6}{\ampere} RMS bölgesini, beyaz sürekli çizgi \%5 eş-oran eğrisini, yıldız en iyi noktayı göstermektedir. Eğriler parçalı DCM/CCM analitik modelinden elde edilmiştir.}
+  \caption{$(k_1,k_3)$ katsayı düzleminde (a) üçüncü harmonik oranı ve (b) $(0{,}36,\ 0{,}42)$ adayının aynı temel akım genlikli saf sinüzoidal görev oranıyla karşılaştırılması. (a) panelinde beyaz noktalar Tablo~\ref{tab:sin3-katsayi-kombinasyonlari} içindeki \num{23} uygun çifti, beyaz sürekli çizgi \%5 eş-oran eğrisini, yıldız en iyi noktayı göstermektedir. Eğriler parçalı DCM/CCM analitik modelinden elde edilmiştir.}
   \label{fig:sin3-yeniden-tarama}
 \end{figure}
 
-Eşitlik~\eqref{eq:sin3-duzeltilmis-optimum} ile verilen çift, tek endüktanslı analitik katmanın adayıdır. Anahtarlamalı benzetimde kullanılan S3 katsayıları ($K_{13}$, $K_{33}$) Alt Bölüm~\ref{sec:kalibrasyon} içinde deney özetinin aktif ve reaktif gücüne kalibre edilmiştir. Katsayıların harmonik eşdeğerleri $(K_{13}+3K_{33}/4,\ -K_{33}/4)=(0{,}7317,\ -0{,}0961)$'dir. Tarama S1 çalışma noktasında ($V_m/V_h\simeq0{,}785$) yapılmış, kıyaslanan $K_{13}$ ve $K_{33}$ ise $V_m/V_h\simeq0{,}822$ olan S3 noktasına aittir. Temel katsayıdaki fark ($0{,}64$ ile $0{,}73$), analitik modelin içermediği $C_f$--$L_2$ ağından, ölü zamandan, kayıplardan ve köprünün süreksiz iletimdeki yumuşak kaynak davranışından kaynaklanmaktadır. Karşılaştırmada analitik adayın \SI{2.02}{\ampere}, kalibrasyon noktasının ise \SI{2.28}{\ampere} RMS akımda tanımlı olduğu da göz önünde tutulmalıdır. Çalışma noktası ve akım farklarına karşın üçüncü harmonik katsayısı iki katmanda yaklaşık \%4 içinde örtüşmektedir ($-0{,}10$ ile $-0{,}096$).
+Eşitlik~\eqref{eq:sin3-duzeltilmis-optimum} ile verilen çift, tek endüktanslı analitik katmanın adayıdır. Anahtarlamalı benzetimde kullanılan S3 katsayıları ($K_{13}$, $K_{33}$), Alt Bölüm~\ref{sec:kalibrasyon} içinde deney özetinin aktif ve reaktif gücüne kalibre edilmiştir. Analitik adayın harmonik eşdeğeri $(0{,}675,\ -0{,}105)$, kalibre edilmiş S3 katsayılarının eşdeğeri ise $(K_{13}+3K_{33}/4,\ -K_{33}/4)=(0{,}7317,\ -0{,}0961)$'dir. Analitik tarama S1 çalışma noktasında ($V_m/V_h\simeq0{,}785$), S3 kalibrasyonu ise $V_m/V_h\simeq0{,}822$ olan çalışma noktasında yapılmıştır. Analitik adayın RMS akımı \SI{2.244}{\ampere}, kalibrasyon noktasınınki yaklaşık \SI{2.28}{\ampere}'dir. Üçüncü harmonik katsayılarının farkı, kalibre edilmiş katsayı esas alındığında yaklaşık \%9,3'tür. Katsayı karşılaştırması, çalışma noktalarının farkı ve analitik modelin kapsamıyla birlikte değerlendirilmelidir. $C_f$--$L_2$ ağı, ölü zaman ve kayıplar anahtarlamalı benzetim katmanında bulunmaktadır.
 
 \section{Önerilen Yapı ve İleri Besleme Mekanizması}
 
@@ -584,7 +630,7 @@ Ortalama model, anma akımında sürekli iletim bölgesinde kritik frekans aral�
 
 \section{Değerlendirme}
 
-Sin\textsuperscript{3} özdeşliği temel ve üçüncü harmonik bileşenini tek bir anlık terimde birleştirmektedir. Dolayısıyla terimin katsayı anlamı, doğrudan $\sin(3\theta)$ enjeksiyonundan ayrılmaktadır. DCM/CCM parçalı modeli, nötr susturma sonrasında sinüzoidal görev oranıyla akımın neden sinüsten ayrıldığını göstermiştir. Aynı modelle yapılan analitik tarama, saf sinüs görev oranındaki \%39,96'lık üçüncü harmonik oranını $(k_1,k_3)=(0{,}34,\ 0{,}40)$ adayında \%0,15'e indirmiştir. Analitik adayın üçüncü harmonik katsayısı ($-0{,}10$), anahtarlamalı modelin kalibre edilmiş katsayısıyla ($-0{,}096$) yaklaşık \%4 içinde örtüşmektedir. Katsayı seçimi ise çalışma noktasına bağlıdır.
+Sin\textsuperscript{3} özdeşliği temel ve üçüncü harmonik bileşenini tek bir anlık terimde birleştirmektedir. Dolayısıyla terimin katsayı anlamı, doğrudan $\sin(3\theta)$ enjeksiyonundan ayrılmaktadır. DCM/CCM parçalı modeli, nötr susturma sonrasında sinüzoidal görev oranıyla akımın neden sinüsten ayrıldığını göstermiştir. Aynı modelle yapılan analitik taramada $I_{\mathrm{rms}}>\SI{2.2}{\ampere}$ koşuluyla seçilen $(k_1,k_3)=(0{,}36,\ 0{,}42)$ adayı, saf sinüs görev oranındaki \%39,96'lık üçüncü harmonik oranını \%0,315'e indirmiştir. Adayın RMS akımı \SI{2.244}{\ampere}, toplam THD'si \%4,704'tür. Analitik adayın üçüncü harmonik katsayısı ($-0{,}105$) ile anahtarlamalı modelin kalibre edilmiş katsayısı ($-0{,}0961$) arasındaki fark, kalibre edilmiş değer esas alındığında yaklaşık \%9,3'tür. Katsayı seçimi ise çalışma noktasına bağlıdır.
 
 S4 benzetiminde PI ve PIR akım denetimi, \SI{25}{\ampere} anma akımında referansı sırasıyla $-$\%2,1 ve $-$\%1,0 genlik hatasıyla izlemektedir. İzleme doyumsuzdur ve THD \%8,5--9,2 düzeyindedir. PI ile \SI{10}{\ampere}$\rightarrow$\SI{25}{\ampere} basamağında son kararlı zarfa göre aşım \%0,17, yerleşme \SI{0.43}{\milli\second}'dir. Anma akımı sonuçları, faz başına modelde DA bara orta noktasını tutan büyütülmüş bara kapasitansıyla elde edilmiştir. Orta akımda (\SI{10}{\ampere}) THD, nötr susturmanın yarattığı süreksiz iletim nedeniyle \%20 düzeyindedir. Nötr susturma düşük güç bölgesi için tasarlanmıştır. En uygun Sin\textsuperscript{3} genliği ise akım düzeyine bağlıdır.
 

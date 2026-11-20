@@ -3,7 +3,7 @@
 % kanit dosyalarinin uzerine yazilmaz. Ciktilar: yeni_tez/sekiller/b5/*.pdf
 %  - Sekil 5.1  harmonik mekanizma : uret_harmonik_mekanizma.m kayitli S2 verisiyle,
 %                                    "kalibre" kaldirilmis etiketlerle yeniden calisir
-%  - Sekil 5.2  katsayi taramasi   : kayitli .fig, Turkce etiketler, %0,15 ve %39,96
+%  - Sekil 5.2  katsayi taramasi   : 20.11 taramasi, Irms > 2.2 A, %0,315 ve %39,96
 %  - Sekil 5.6  S4 25 A izleme     : kayitli .fig, basliklar (a) P, (b) PI, (c) PIR
 %  - Sekil 5.7  S4 tarama ozeti    : kayitli .fig, eksen etiketleri
 %  - Sekil 5.8  PI basamagi        : kayitli .fig, gosterge "doyum oncesi"
@@ -33,7 +33,7 @@ addpath(fullfile(b5_root, 'scripts'));
 b5_s4 = fullfile(b5_root, 'runs', '2026-10-28_s4_kapali_cevrim', 'sekiller');
 
 %% Sekil 5.2: (k1,k3) katsayi taramasi
-fg = openfig(fullfile(b5_root, 'results', 'sin3_rescan_20260901', 'sin3_katsayi_taramasi_20260901.fig'), 'invisible');
+fg = openfig(fullfile(b5_root, 'results', 'sin3_rescan_20261120', 'sin3_katsayi_taramasi_20261120.fig'), 'invisible');
 for ax = findall(fg, 'Type', 'axes')'
     t = strjoin(cellstr(ax.Title.String), ' ');
     if contains(t, 'harmonik')                       % sol panel: baslik kalkar
@@ -46,10 +46,6 @@ for ax = findall(fg, 'Type', 'axes')'
     end
 end
 for cb = findall(fg, 'Type', 'colorbar')', cb.Label.String = 'I_3/I_1 (%)'; end
-for lg = findall(fg, 'Type', 'legend')'
-    lg.String = {'k_1 = 0,34, k_3 = 0,40 (I_3/I_1 = %0,15)', ...
-                 'Saf sinüs, d_m = 0,60 (I_3/I_1 = %39,96)', 'Temel bileşen'};
-end
 b5_bitir(fg, b5_font, fullfile(b5_out, 'sin3_katsayi_taramasi.pdf'));
 
 %% Sekil 5.6: S4 25 A akim izleme
@@ -231,8 +227,10 @@ function b5_bitir(fg, font, yol)
     for tl = findall(fg, 'Type', 'tiledlayout')'
         tl.XLabel.FontName = font; tl.YLabel.FontName = font; tl.Title.FontName = font;
     end
-    b5_olcek(fg, 450, 8);
     [~, ad] = fileparts(yol);
+    yazi = 8;
+    if strcmp(ad, 'sin3_katsayi_taramasi'), yazi = 10; end
+    b5_olcek(fg, 450, yazi);
     b5_son(fg, ad);
     b5_virgul(fg);
     exportgraphics(fg, yol, 'ContentType', 'vector');
