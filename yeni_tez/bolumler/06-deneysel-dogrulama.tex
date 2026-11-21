@@ -3,7 +3,9 @@
 
 Bölüm~\ref{chap:anahtarlama} ve Bölüm~\ref{chap:sin3} içinde benzetim düzeyinde incelenen klasik anahtarlama, nötr anahtar susturma ve susturma+Sin\textsuperscript{3} yöntemleri, geliştirilen üç fazlı T-tipi prototipin tek faz kolunda, düşük güç koşulunda karşılaştırılmıştır. Bölümde deney düzeneği, güç donanımı, denetim ve ölçüm zinciri, testlerin yeniden üretilebileceği ayrıntıda tanıtılmaktadır. Ardından deney kayıtları değerlendirilmekte, benzetim modelinin deney özetine kalibrasyonu (Alt Bölüm~\ref{sec:kalibrasyon}) verilmektedir. Deneyler güvenli laboratuvar koşulunda, yaklaşık \SI{2.3}{\ampere} faz akımındaki düşük güç noktasında yürütülmüştür. Anma akımındaki (\SI{25}{\ampere}) geri beslemeli (S4) çalışma, kalibre edilmiş benzetim modeliyle incelenmiştir. GT-tipi şarj yönü ise Bölüm~\ref{chap:gttipi} içinde benzetim kayıtlarıyla ele alınmıştır.
 
-\textbf{Deneysel veri kümesi.} Deneysel veri kümesi, üç yönteme ait PC yazılımı ekranları, osiloskop ekranları ve her yöntem için bir satırlık deney özet tablosundan oluşmaktadır (Tablo~\ref{tab:gelen-excel-senaryolar}). Ölçüm belirsizliği, üretici toleranslarından ve okuma çözünürlüğünden kestirilmiştir. Bölümdeki sayısal değerler deney özet tablosundan ve ekranlarda yazılı değerlerden okunmuştur. Ekran üzerinden yapılan tek ölçüm, Alt Bölüm~\ref{sec:thd-kaynaklar} içindeki faz akımı izlerinin sayısallaştırılmasıdır.
+\textbf{Deneylerin yürütülmesi ve kayıt seçimi.} Deney düzeneği, bir varyak üzerinden doğrudan üniversite kampüsünün fazlar arası \SI{400}{\volt} gerilimli üç fazlı AA şebekesine bağlanmıştır. Deneylerde varyak çıkışındaki faz--nötr gerilim, olası yalıtım veya bağlantı hatalarında donanım hasarını ve elektrik çarpmasına bağlı yaralanma riskini azaltmak amacıyla yaklaşık \SI{120}{\volt} düzeyine ayarlanmıştır. Şebeke koşullarındaki değişkenliğin daha düşük olması amaçlanarak ölçümler hafta sonu gerçekleştirilmiştir. Aynı hedef çalışma ayarları korunarak deneyler birkaç kez tekrarlanmış; dönüştürücünün çalışma davranışının tutarlı olduğu gözlendikten sonra, tezdeki sayısal değerlendirmelerde son tekrarın kayıtları esas alınmıştır. Şebeke gerilimi zamanla değişebildiğinden her kayıt, gerçekleşen gerilim ve akım değerleriyle birlikte değerlendirilmiştir.
+
+\textbf{Deneysel veri kümesi.} Karşılaştırmada kullanılan veriler, üç yöntemin son deney tekrarlarına ait PC yazılımı ekranlarından, osiloskop kayıtlarından ve deney özet tablosundan oluşmaktadır (Tablo~\ref{tab:gelen-excel-senaryolar}). Ölçüm belirsizliği, üretici toleranslarından ve okuma çözünürlüğünden kestirilmiştir. Bölümdeki sayısal karşılaştırmalar, son deney kayıtlarıyla ilişkilendirilen özet tabloya dayanmaktadır. Osiloskop kayıtlarındaki faz akımı izleri, Alt Bölüm~\ref{sec:thd-kaynaklar} içindeki Fourier analizi için sayısallaştırılmıştır.
 
 \section{Deney Düzeneği ve Güç Donanımı}
 
@@ -288,7 +290,7 @@ PC ana kumanda yazılımının amacı, EMK-01, AcuDC240 ve kontrol kartından RS
   \label{fig:deney-pc-arayuzu}
 \end{figure}
 
-Ortak hedef çalışma koşulu olarak DA bara gerilimi yaklaşık \SI{400}{\volt}, faz--nötr gerilimi yaklaşık \SI{130}{\volt}, faz akımı yaklaşık \SI{2.3}{\ampere} ve birim güç faktörüne yakın işletim tanımlanmıştır. Üç deneyde gerçekleşen DA bara gerilimleri (\num{431.5}, \num{395.0} ve \SI{427.5}{\volt}) ve şebeke gerilimleri (\num{119.8}, \num{121.0} ve \SI{124.3}{\volt}) birbirinden farklıdır (Tablo~\ref{tab:gelen-excel-senaryolar}). Her benzetim kendi deneyinin DA bara ve şebeke gerilimiyle yapılmıştır. Benzetimde verim ve THD, Eşitlik~\eqref{eq:verim-tanimi} ve Eşitlik~\eqref{eq:thd-rmse-tanimlari} ile hesaplanmıştır. Deney verimi ve THD'si deney özetinde bildirilen değerlerdir.
+Ortak hedef çalışma koşulu olarak DA bara gerilimi yaklaşık \SI{400}{\volt}, faz--nötr gerilimi yaklaşık \SI{130}{\volt}, faz akımı yaklaşık \SI{2.3}{\ampere} ve birim güç faktörüne yakın işletim tanımlanmıştır. Her senaryonun son tekrarında DA bara gerilimleri sırasıyla \num{431.5}, \num{395.0} ve \SI{427.5}{\volt}; şebeke gerilimleri ise \num{119.8}, \num{121.0} ve \SI{124.3}{\volt} olarak kaydedilmiştir (Tablo~\ref{tab:gelen-excel-senaryolar}). Her benzetim kendi deneyinin DA bara ve şebeke gerilimiyle yapılmıştır. Benzetimde verim ve THD, Eşitlik~\eqref{eq:verim-tanimi} ve Eşitlik~\eqref{eq:thd-rmse-tanimlari} ile hesaplanmıştır. Deney verimi ve THD'si deney özetinde bildirilen değerlerdir.
 
 \section{Klasik Anahtarlama Modu Deney Kayıtları}
 
@@ -413,14 +415,14 @@ Deneyde susturma verimi 1,7 puan artırırken THD'yi \%47'ye çıkarmıştır. S
 
 Üç yöntemin çalışma koşulları Tablo~\ref{tab:deney-kosullari} üzerinde karşılaştırılmıştır.
 
-Deney özet değerleri ile PC ekranlarında görünen anlık değerler arasındaki farklar Tablo~\ref{tab:deney-metin-ekran-karsilastirma} üzerinde verilmiştir. Ekran değeri görselde okunabilen tek anlık değer, özet değeri ise deney raporundaki sayıdır. Özet THD$_i$ değeri süreli kaydın ortalama düzeyidir.
+Son deney tekrarlarının özet değerleri ile PC ekranlarında görünen anlık okumalar Tablo~\ref{tab:deney-metin-ekran-karsilastirma} üzerinde birlikte verilmiştir. PC ekranı ölçüm anındaki değeri göstermekte, deney özeti ise değerlendirmede kullanılan kayıt düzeyini vermektedir. THD$_i$ özet değeri, son tekrarın süreli kaydındaki ortalama düzeydir.
 
 
 Orta ve anma akımında aynı denetim yapısının davranışı S4 benzetim taramasıyla (Alt Bölüm~\ref{sec:s4-kapali-cevrim}) incelenmiştir. Tablo~\ref{tab:deney-juri-durum}, her güç bölgesinin hangi yöntemle incelendiğini ve elde edilen sonucu özetlemektedir.
 
 \begin{table}[H]
   \centering
-  \caption{Üç yöntem için bildirilen çalışma koşulları.}
+  \caption{Üç yöntemin son deney kayıtlarındaki çalışma koşulları.}
   \label{tab:deney-kosullari}
   \footnotesize
   \begin{tabularx}{\textwidth}{L{0.19\textwidth} *{3}{>{\centering\arraybackslash}p{0.155\textwidth}} >{\teksatir\raggedright\arraybackslash}X}
@@ -443,7 +445,7 @@ Orta ve anma akımında aynı denetim yapısının davranışı S4 benzetim tara
   \footnotesize
   \begin{tabularx}{\textwidth}{L{0.19\textwidth} L{0.10\textwidth} *{2}{>{\centering\arraybackslash}p{0.10\textwidth}} >{\teksatir\raggedright\arraybackslash}X}
     \toprule
-    Yöntem & Büyüklük & Özet & PC ekranı & Farkın durumu \\
+    Yöntem & Büyüklük & Özet & PC ekranı & Kayıt açıklaması \\
     \midrule
     Klasik & Verim & \%92,5 & \%92,9 & Ekran değeri anlık okumadır. \\
     & THD$_i$ & \%15 & \%11,1 & Anlık okumadır. Eğri \%5--22 arasında dalgalanmaktadır. \\
@@ -477,13 +479,13 @@ Orta ve anma akımında aynı denetim yapısının davranışı S4 benzetim tara
   \end{tabularx}
 \end{table}
 
-\subsection{Deney Özet Tablosunun Sayısal Denetimi}
+\subsection{Deney Özetindeki Güç ve Verim Değerleri}
 
-Deney özet tablosunun kaynağı olan çalışma kitabı, Senaryo~1--3 için birer satırlık özet değerler içermektedir. Tablo~\ref{tab:gelen-excel-senaryolar}, hücrelerdeki değerleri değiştirmeden ve $\eta_{\mathrm{VI}}=100P_{\mathrm{ac}}/(V_{\mathrm{dc}}I_{\mathrm{dc}})$ bağımsız hesabını ayrıca göstererek kaynağın izini korumaktadır.
+Deney özet tablosunun kaynağı olan çalışma kitabı, Senaryo~1--3 deneylerinin son tekrar kayıtlarından elde edilen özet değerleri içermektedir. Tablo~\ref{tab:gelen-excel-senaryolar}, bu kayıtların elektriksel büyüklüklerini ve DA giriş gücü $V_{\mathrm{dc}}I_{\mathrm{dc}}$ üzerinden $\eta_{\mathrm{VI}}=100P_{\mathrm{ac}}/(V_{\mathrm{dc}}I_{\mathrm{dc}})$ ile hesaplanan verimi birlikte vermektedir.
 
 \begin{table}[H]
   \centering
-  \caption{Deney özet tablosundaki değerler ve DA giriş çarpımından yeniden hesaplanan verim.}
+  \caption{Son deney kayıtlarının özet değerleri ve DA giriş gerilim--akım çarpımına dayalı verim hesabı.}
   \label{tab:gelen-excel-senaryolar}
   \footnotesize
   \begin{tabular}{c *{7}{c}}
@@ -497,7 +499,7 @@ Deney özet tablosunun kaynağı olan çalışma kitabı, Senaryo~1--3 için bir
   \end{tabular}
 \end{table}
 
-Bildirilen verimler sırasıyla \%92,5, \%94,2 ve \%94,5'tir. Yeniden hesaplanan değerlerle farklar yaklaşık $-0{,}20$, $+0{,}48$ ve $+0{,}13$ yüzde puandır. Tablo deneysel özet olarak kullanılmıştır. Benzetim karşılaştırması ise Alt Bölüm~\ref{sec:kalibrasyon} altında modelin kendi benzetimlerinden yapılmıştır.
+Deney özetindeki verimler sırasıyla \%92,5, \%94,2 ve \%94,5'tir. Tabloda ayrıca verilen $\eta_{\mathrm{VI}}$ hesabıyla aralarındaki farklar yaklaşık $-0{,}20$, $+0{,}48$ ve $+0{,}13$ yüzde puandır. Tezde yöntemlerin deneysel karşılaştırmasında son tekrarın özet değerleri esas alınmış, gerilim--akım çarpımına dayalı hesap da aynı tabloda gösterilmiştir. Benzetim sonuçları, bu deney noktalarıyla Alt Bölüm~\ref{sec:kalibrasyon} içinde karşılaştırılmıştır.
 
 \subsection{Faz Akımı THD Değerlerinin Karşılaştırılması}
 \label{sec:thd-kaynaklar}
@@ -526,7 +528,7 @@ Analizör ve osiloskop kayıtları üç yöntemde aynı büyüklük düzeyini ve
 \section{Benzetim Modelinin Deney Özetine Kalibrasyonu}
 \label{sec:kalibrasyon}
 
-Deney özeti ile benzetim modelinin karşılaştırılabilmesi için S1--S3 benzetim modelleri deney özetinin çalışma noktalarına kalibre edilmiştir. Kalibrasyonun amacı, modelin deneyin hangi büyüklüklerini hangi hatayla yeniden ürettiğini göstermek ve deney özetine göre kalibre edilmiş benzetim modelini deney bulgusundan ayrı tutmaktır. Taban modeller, Alt Bölüm~\ref{sec:model-dogrulama-duzeltme} altında doğrulanan S1, S2 ve S3 modelleridir. Kalibre edilmiş değerler Tablo~\ref{tab:sistem-parametreleri} içinde ``Kalibre edilmiş'' türüyle verilmiştir. S4 ileri beslemesi kalibre edilmiş S3 değerlerini kullanmaktadır.
+S1--S3 benzetim modelleri, son deney kayıtlarının çalışma noktalarına kalibre edilmiştir. Böylece benzetim ve deney karşılaştırması, her senaryoda gerçekleşen gerilim ve güç koşulları esas alınarak yapılmıştır. Taban modeller, Alt Bölüm~\ref{sec:model-dogrulama-duzeltme} altında doğrulanan S1, S2 ve S3 modelleridir. Kalibre edilmiş değerler Tablo~\ref{tab:sistem-parametreleri} içinde ``Kalibre edilmiş'' türüyle verilmiştir. S4 ileri beslemesi kalibre edilmiş S3 değerlerini kullanmaktadır.
 
 \subsection{Yöntem}
 

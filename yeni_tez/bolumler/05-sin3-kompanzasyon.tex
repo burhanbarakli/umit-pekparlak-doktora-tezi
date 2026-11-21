@@ -441,7 +441,7 @@ Sin\textsuperscript{3} teriminin akıma etkisi $S(j\omega)K_{\mathrm{pwm}}G(j\om
 
 \subsection{Frekans alanı: marjlar, Bode eğrileri ve kutuplar}
 
-Gerçekleme (A), S4 modelindeki analog eşdeğerdir ve sürekli denetleyici, ölçüm süzgeci ile $T_d=\SI{2}{\micro\second}$ toplam gecikme içermektedir. Ölçüm süzgeci ve gecikmenin faz katkısı
+Gerçekleme (A), S4 modelindeki analog eşdeğerdir ve sürekli denetleyici, ölçüm süzgeci ile $T_d=\SI{2}{\micro\second}$ toplam gecikme içermektedir. Süzgeç ve gecikmenin faz etkisi
 \begin{equation}
   \begin{gathered}
     H_m(s)=\frac{1}{1+s/\omega_m},\qquad \omega_m=2\pi f_m,\\
@@ -449,17 +449,7 @@ Gerçekleme (A), S4 modelindeki analog eşdeğerdir ve sürekli denetleyici, öl
   \end{gathered}
   \label{eq:olcum-gecikme-fazi}
 \end{equation}
-ile verilmektedir. Süzgecin köşe frekansı $f_m=f_s/2=\SI{5}{\kilo\hertz}$'tir. Aynı yapının \SI{1}{\micro\second} ayrık karşılığı marjları en çok $0{,}02^{\circ}$ ve \SI{0.1}{\decibel} değiştirmektedir. Dolayısıyla ayrık karşılığı da gerçekleme (A) satırları temsil etmektedir. Gecikme duyarlılığını göstermek için çevrime örnekleme ve hesaplama gecikmesi eklenmiş iki durum da hesaplanmıştır. Gerçekleme (B)'de denetim periyodu bir PWM periyodudur ($T_s=\SI{100}{\micro\second}$). Ölçülen akım periyot boyunca ortalanarak örneklenmekte, hesaplanan komut bir periyot sonra sıfırıncı mertebe tutucuyla uygulanmaktadır. Gerçekleme (B)'nin ayrık modeli
-\begin{equation}
-  \begin{gathered}
-    P_{\mathrm{B}}(z)=z^{-1}\,\frac{1-z^{-1}}{T_s}\,
-    \mathcal{Z}\!\left\{\frac{1-e^{-sT_s}}{s}\cdot\frac{K_{\mathrm{pwm}}\,G(s)}{s}\right\},\qquad
-    L_{\mathrm{B}}(z)=C_i(z)\,P_{\mathrm{B}}(z),\\
-    T_{d,\mathrm{B}}\simeq\tfrac{T_s}{2}+T_s+\tfrac{T_s}{2}=2T_s
-  \end{gathered}
-  \label{eq:kararlilik-ayrik-model}
-\end{equation}
-biçimindedir. Eşitlik~\eqref{eq:kararlilik-ayrik-model} içinde $(1-e^{-sT_s})/s$ çarpanı tutucuyu, $1/s$ integrali ile $(1-z^{-1})/T_s$ çarpanı periyot ortalamalı örneklemeyi, $z^{-1}$ ise hesaplama gecikmesini temsil etmektedir. Periyot ortalaması ölçümü süzdüğünden $L_{\mathrm{B}}$ içinde süzme işlevini $H_m$ yerine periyot ortalaması üstlenmektedir. Ayrık denetleyici $C_i(z)$ içinde integral terimi ileri Euler, rezonans terimi ön bükmeli Tustin yöntemiyle ayrıklaştırılmıştır. (B2), aynı yapının periyotta iki güncellemeli ($T_s=\SI{50}{\micro\second}$) biçimidir. Bode eğrileri, marjlar ve Nyquist sayımı kesin gecikme $e^{-j\omega T_d}$ ile hesaplanmıştır. Gerçekleme (A)'nın kapalı çevrim kutuplarında gecikme, ikinci mertebe Padé yaklaşımıyla
+ile verilmektedir. Süzgecin köşe frekansı $f_m=f_s/2=\SI{5}{\kilo\hertz}$'tir. Aynı yapının \SI{1}{\micro\second} ayrık karşılığı marjları en çok $0{,}02^{\circ}$ ve \SI{0.1}{\decibel} değiştirmektedir. Dolayısıyla ayrık karşılığı da gerçekleme (A) satırları temsil etmektedir. Bode eğrileri, marjlar ve Nyquist sayımı kesin gecikme $e^{-j\omega T_d}$ ile hesaplanmıştır. Kapalı çevrim kutuplarında gecikme, ikinci mertebe Padé yaklaşımıyla
 \begin{equation}
   e^{-sT_d}\simeq\frac{1-sT_d/2+(sT_d)^2/12}{1+sT_d/2+(sT_d)^2/12}
   \label{eq:pade-yaklasimi}
@@ -481,27 +471,23 @@ biçimindedir. Eşitlik~\eqref{eq:marj-tanimlari} içinde $\omega_{\pi}$ faz ge�
 
 \begin{table}[H]
   \centering
-  \caption{S4 akım çevriminin marjları (\SI{25}{\ampere}, ortalama model). Nyquist sütunu $(-\infty,-1)$ ışınının net kesişim sayısıdır.}
+  \caption{S4 analog eşdeğer akım çevriminin marjları (\SI{25}{\ampere}, ortalama model). Nyquist sütunundaki $0$ (kararlı), $(-\infty,-1)$ ışınının net kesişim sayısının sıfır olduğunu göstermektedir.}
   \label{tab:kararlilik-marjlar}
-  \scriptsize
-  \setlength{\tabcolsep}{2.8pt}
-  \begin{tabular}{@{}l l c c c r r c c@{}}
+  \small
+  \setlength{\tabcolsep}{3pt}
+  \renewcommand{\arraystretch}{1.12}
+  \begin{tabular}{@{}l c c c r r c c@{}}
     \toprule
-    Gerç. & Den. & Kazanç geçişleri (Hz) & $\mathrm{PM}_i$ ($^{\circ}$) & $\mathrm{DM}_{\min}$ (\si{\micro\second}) & Faz geçişi (Hz) & GM (dB) & $\|S\|_\infty$ (dB) & Nyquist \\
+    Den. & \shortstack{Kazanç geçişleri\\(Hz)} & \shortstack{$\mathrm{PM}_i$\\($^{\circ}$)} & \shortstack{$\mathrm{DM}_{\min}$\\(\si{\micro\second})} & \shortstack{Faz geçişi\\(Hz)} & \shortstack{GM\\(dB)} & \shortstack{$\|S\|_\infty$\\(dB)} & Nyquist \\
     \midrule
-    A  & P   & 583 / 2454 / 3386 & 83,6 / 119,4 / 55,2 & 45,3 & 22\,167 & $+$35,3 & 2,28 & 0 \\
-    A  & PI  & 586 / 2454 / 3386 & 77,7 / 120,8 / 54,2 & 44,4 & 22\,029 & $+$35,2 & 2,36 & 0 \\
-    A  & PIR & 590 / 2454 / 3386 & 73,8 / 121,7 / 53,5 & 43,9 & 21\,937 & $+$35,2 & 2,42 & 0 \\
-    \midrule
-    B  & P   & 581 / 2474 / 3254 & 48,8 / 90,2 / 142,1 & 101 & 2811 & $-$30,3 & 5,12 & 1 \\
-    B  & PI  & 574 / 2479 / 3246 & 43,3 / 88,7 / 142,1 & 99  & 2811 & $-$30,1 & 5,57 & 1 \\
-    B  & PIR & 579 / 2479 / 3246 & 39,1 / 88,0 / 142,6 & 99  & 2810 & $-$30,0 & 6,02 & 1 \\
-    B2 & PI  & 583 / 2440 / 3444 & 63,7 / 179,4 / 33,3 & 204 & 2863 & $-$20,4 & 4,97 & 1 \\
+    P & \begin{tabular}[c]{@{}c@{}}583\\2454\\3386\end{tabular} & \begin{tabular}[c]{@{}c@{}}83,6\\119,4\\55,2\end{tabular} & 45,3 & 22\,167 & $+$35,3 & 2,28 & 0 (kararlı) \\ \addlinespace[4pt]
+    PI & \begin{tabular}[c]{@{}c@{}}586\\2454\\3386\end{tabular} & \begin{tabular}[c]{@{}c@{}}77,7\\120,8\\54,2\end{tabular} & 44,4 & 22\,029 & $+$35,2 & 2,36 & 0 (kararlı) \\ \addlinespace[4pt]
+    PIR & \begin{tabular}[c]{@{}c@{}}590\\2454\\3386\end{tabular} & \begin{tabular}[c]{@{}c@{}}73,8\\121,7\\53,5\end{tabular} & 43,9 & 21\,937 & $+$35,2 & 2,42 & 0 (kararlı) \\
     \bottomrule
   \end{tabular}
 \end{table}
 
-Tablo~\ref{tab:kararlilik-marjlar}, analog eşdeğer (A) ile gecikme eklenmiş (B ve B2) gerçeklemeleri P, PI ve PIR denetleyicileri için Eşitlik~\eqref{eq:marj-tanimlari} büyüklükleriyle karşılaştırmaktadır. Tasarım ölçütleri olarak her kazanç geçişinde $\mathrm{PM}_i\gtrsim45^{\circ}$, $\mathrm{GM}\gtrsim\SI{6}{\decibel}$ ve $\|S\|_\infty\lesssim\SI{6}{\decibel}$ alınmıştır. $\mathrm{DM}_{\min}$ değerinin toplam denetim gecikmesinden büyük olması da ölçütler arasındadır. Kesin kararlılık hükmü Nyquist sütunundadır. Gerçekleme (A)'nın bütün satırlarında Nyquist değeri sıfırdır. (B) ve (B2) satırları, eklenen hesaplama gecikmesine duyarlılığı GM ve Nyquist sütunlarında göstermektedir.
+Tablo~\ref{tab:kararlilik-marjlar}, S4 analog eşdeğer çevriminin P, PI ve PIR denetleyicileri için Eşitlik~\eqref{eq:marj-tanimlari} ile hesaplanan kararlılık marjlarını vermektedir. Kazanç geçiş frekansları ve bunlara karşılık gelen faz marjları hücrelerde yukarıdan aşağıya aynı sırayla gösterilmiştir. Tasarım ölçütleri olarak her kazanç geçişinde $\mathrm{PM}_i\gtrsim45^{\circ}$, $\mathrm{GM}\gtrsim\SI{6}{\decibel}$ ve $\|S\|_\infty\lesssim\SI{6}{\decibel}$ alınmıştır. Üç denetleyici de bu ölçütleri sağlamaktadır. Nyquist sütunundaki $0$ (kararlı) sonucu, açık çevrimde kararsız kutup bulunmadığı koşulda kapalı çevrimin kararlı olduğunu belirtmektedir. Kapalı çevrim kutupları da aynı sonucu doğrulamaktadır.
 
 Gerçekleme (A)'da anma noktasındaki PI çevriminin kritik faz marjı, \SI{3.4}{\kilo\hertz}'teki üçüncü kazanç geçişinde $54^{\circ}$'dir. Tek faz geçişi \SI{22}{\kilo\hertz}'tedir. Faz geçişindeki $+$\SI{35}{\decibel} kazanç marjı, çevrim kazancının 57 katına kadar artabileceğini göstermektedir. Faz, rezonans çevresinde $+60^{\circ}$'den $-121^{\circ}$'ye inmekte ve $-180^{\circ}$'nin üstünde kalmaktadır. Eşitlik~\eqref{eq:olcum-gecikme-fazi} uyarınca ölçüm süzgeci ve gecikme \SI{2.8}{\kilo\hertz}'te yalnız $-29{,}2^{\circ}-2{,}0^{\circ}\simeq-31^{\circ}$ faz katkısı getirmektedir. Rezonans tepesi de $-1$ noktasının dışındadır. Şekil~\ref{fig:kararlilik-l-bode} üç denetleyicinin $L$ Bode eğrilerini $K_{34}$ açık ve kapalı olarak, Şekil~\ref{fig:kararlilik-s-t} ise $|S|$ ve $|T|$ eğrilerini \SI{50}{\hertz} ve \SI{150}{\hertz} işaretleriyle vermektedir.
 
@@ -523,31 +509,31 @@ Kapalı çevrim kutupları kararlılık hükmünü bağımsız olarak doğrulama
 
 Kararlılık sonucu, ortalama Simulink/Simscape modelinin Simulink Control Design ile doğrusallaştırılmasıyla ayrıca doğrulanmıştır. Ortalama modelde denetleyici alt sistemi, ölçüm süzgeci, doyum, doyum önleme ve ileri besleme blokları anahtarlamalı S4 modelindekilerle aynıdır. Köprü, $K_{\mathrm{pwm}}$ kazançlı denetimli gerilim kaynağıyla temsil edilmiştir. Doğrusallaştırılan $L$ ile analitik $L$ arasındaki en büyük göreli fark P, PI ve PIR için sırasıyla $1{,}6\cdot10^{-11}$, $3{,}5\cdot10^{-10}$ ve $6{,}4\cdot10^{-4}$'tür (faz $\leq0{,}04^{\circ}$). $K_{34}$ açık ve kapalı doğrusallaştırmalar arasındaki fark sıfırdır.
 
-\textbf{Gecikme duyarlılığı.} Toplam çevrim gecikmesi, LCL rezonansındaki faz payını belirleyen tasarım büyüklüğüdür. Gecikme taraması, analog eşdeğer PI çevriminin toplam gecikme $T_d=\SI{45}{\micro\second}$ olduğunda kararlı kaldığını göstermektedir. Tarama sonucu, \SI{2}{\micro\second} gecikmeye eklenen $\mathrm{DM}_{\min}=\SI{44.4}{\micro\second}$ marjla uyumludur. Gerçekleme (A)'da gecikme 0--\SI{10}{\micro\second} aralığında değiştirildiğinde en küçük faz marjı $56{,}6^{\circ}$'den $44{,}4^{\circ}$'ye inmekte ve kararlılık hükmü korunmaktadır. Eşitlik~\eqref{eq:kararlilik-ayrik-model} uyarınca toplam gecikme gerçekleme (B)'de $2T_s=\SI{200}{\micro\second}$, (B2)'de \SI{100}{\micro\second}'dir. Rezonans frekansı $f_s/6\simeq\SI{1.67}{\kilo\hertz}$'in üstünde olan LCL filtrelerde $L_1$ akımı geri beslemesinin gecikmeye duyarlılığı literatürde ayrıntılı olarak incelenmiştir \citep{Lu2016,Wang2024}. Hesaplama gecikmeli sayısal gerçeklemelerin (B, B2) gecikme duyarlılığı ise Tablo~\ref{tab:kararlilik-marjlar} ve Şekil~\ref{fig:kararlilik-nyquist} ile verilmiştir. Şekildeki Nyquist eğrileri, analog eşdeğer (A) ile gecikmeli durumu (B) $-1$ noktası çevresinde karşılaştırmaktadır.
+\textbf{Nyquist doğrulaması.} Şekil~\ref{fig:kararlilik-nyquist}, S4 analog eşdeğer çevriminin P, PI ve PIR denetleyicileri için Nyquist eğrilerini kritik $-1$ noktası çevresinde göstermektedir. Üç eğri de $N_{\mathrm{s}}=0$ kararlılık koşulunu sağlamaktadır. Böylece Tablo~\ref{tab:kararlilik-marjlar} içindeki pozitif kazanç ve faz marjları, Nyquist ölçütüyle de doğrulanmaktadır.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth,height=0.45\textheight,keepaspectratio]{sekiller/b5/kararlilik_nyquist_A_B.pdf}
-  \caption{S4 akım çevriminin Nyquist eğrileri ve gecikme duyarlılığı: analog eşdeğerde (A) $-1$ noktası eğrinin dışında kalmaktadır. Bir periyot hesaplama gecikmeli durumda (B) ek gecikme, rezonans tepesini negatif gerçel eksende $-1$ noktasının soluna taşımaktadır.}
+  \includegraphics[width=\textwidth,height=0.45\textheight,keepaspectratio]{sekiller/b5/kararlilik_nyquist_A.pdf}
+  \caption{S4 analog eşdeğer akım çevriminin P, PI ve PIR denetleyicileri için Nyquist eğrileri, \SI{25}{\ampere}. Kritik $-1$ noktası çevresindeki görünüm, üç denetleyici için de kararlılık koşulunun sağlandığını göstermektedir.}
   \label{fig:kararlilik-nyquist}
 \end{figure}
 
-\textbf{Şebeke endüktansı duyarlılığı.} $L_2$, şebeke ve varyak endüktansını içermektedir. Zayıf şebeke ya da uzun hat etkisi için $L_2$'ye 0--\SI{5}{\milli\henry} ek endüktans $L_g$ eklenmiştir (Tablo~\ref{tab:kararlilik-lg}, Şekil~\ref{fig:kararlilik-lg}). Gerçekleme (A) bütün aralıkta kararlıdır. Kritik geçişin faz marjı $54^{\circ}$'den $56^{\circ}$'ye hafifçe artmaktadır. Yüksek frekansta $L$, $L_1$ ile belirlendiğinden kazanç marjı sabittir. Ek endüktansın bedeli izleme bant genişliğidir. $L_g$ büyüdükçe antirezonans aşağı inmekte ve birinci geçiş \SI{586}{\hertz}'ten \SI{158}{\hertz}'e düşmektedir. Tablonun son sütunu, gecikme duyarlılığı için gerçekleme (B)'deki en büyük kapalı çevrim kutup modülünü vermektedir.
+\textbf{Şebeke endüktansı duyarlılığı.} Nominal $L_2=\SI{1}{\milli\henry}$, şebeke ve varyak endüktansının modeldeki toplam eşdeğeridir. Ek endüktans $L_g=0$--\SI{5}{\milli\henry} taraması, bu eşdeğerin \SI{1}{}--\SI{6}{\milli\henry} aralığındaki değişimine karşı çevrimin duyarlılığını incelemek için kullanılmıştır (Tablo~\ref{tab:kararlilik-lg}, Şekil~\ref{fig:kararlilik-lg}). İncelenen analog eşdeğer çevrim bütün aralıkta kararlıdır; Nyquist sonucu tabloda $0$ (kararlı) olarak gösterilmiştir. Kritik geçişin faz marjı $54^{\circ}$'den $56^{\circ}$'ye hafifçe artmaktadır. Yüksek frekansta $L$, $L_1$ ile belirlendiğinden kazanç marjı sabittir. Ek endüktansın bedeli izleme bant genişliğidir. $L_g$ büyüdükçe antirezonans aşağı inmekte ve birinci geçiş \SI{586}{\hertz}'ten \SI{158}{\hertz}'e düşmektedir.
 
 \begin{table}[H]
   \centering
-  \caption{Ek şebeke endüktansının S4 PI çevrimine etkisi.}
+  \caption{Ek şebeke endüktansının S4 PI analog eşdeğer çevrimine etkisi.}
   \label{tab:kararlilik-lg}
   \small
   \begin{tabular}{@{}c c c c c c@{}}
     \toprule
-    $L_g$ (mH) & $f_{\mathrm{res}}$ / $f_{\mathrm{ar}}$ (Hz) & 1. geçiş (Hz) & $\mathrm{PM}_{\min}$ ($^{\circ}$) & GM (dB) & (B) $\max|z|$ \\
+    $L_g$ (mH) & $f_{\mathrm{res}}$ / $f_{\mathrm{ar}}$ (Hz) & 1. geçiş (Hz) & $\mathrm{PM}_{\min}$ ($^{\circ}$) & GM (dB) & Nyquist \\
     \midrule
-    0   & 2815 / 1720 & 586 & 54,2 & 35,2 & 1,175 \\
-    0,5 & 2635 / 1406 & 450 & 54,9 & 35,2 & 1,215 \\
-    1   & 2540 / 1218 & 367 & 55,3 & 35,2 & 1,236 \\
-    2   & 2441 / 995  & 271 & 55,7 & 35,2 & 1,257 \\
-    5   & 2337 / 704  & 158 & 56,1 & 35,2 & 1,277 \\
+    0   & 2815 / 1720 & 586 & 54,2 & 35,2 & 0 (kararlı) \\
+    0,5 & 2635 / 1406 & 450 & 54,9 & 35,2 & 0 (kararlı) \\
+    1   & 2540 / 1218 & 367 & 55,3 & 35,2 & 0 (kararlı) \\
+    2   & 2441 / 995  & 271 & 55,7 & 35,2 & 0 (kararlı) \\
+    5   & 2337 / 704  & 158 & 56,1 & 35,2 & 0 (kararlı) \\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -626,7 +612,7 @@ Orta ve düşük akımda köprünün etkin kazancı düşmekte ve faz öndeliği
 
 \subsection{Kararlılık analizinin dayandığı model ve varsayımlar}
 
-Ortalama model, anma akımında sürekli iletim bölgesinde kritik frekans aralığını $\pm$\SI{0.2}{\decibel} ve $\pm1^{\circ}$ içinde vermektedir. Orta ve düşük akımda köprünün etkin kazancı frekansa bağlı değişmektedir. Orta ve düşük akımın izleme başarımı ise anahtarlamalı modelden alınmıştır. Anahtarlamalı modelde enjeksiyon ölçümü PI denetleyiciyle, \SI{2.3}{\ampere}'de ise \SI{212}{}--\SI{1037}{\hertz} aralığında yapılmıştır. Denetlenen sistemin yanıtı ölçüldüğü ve denetleyicinin doğrusal olduğu doğrulandığı için P ve PIR çevrim kazançları ölçülen denetlenen sistem yanıtından yazılabilir. Gecikme $T_d=\SI{2}{\micro\second}$ bir üst sınırdır. Analog eşdeğerin kararlılığı 0--\SI{10}{\micro\second} gecikme aralığında doğrulanmış ve gecikme marjı \SI{44}{\micro\second} bulunmuştur. Harmonikler arası bağlaşımın genel çerçevesi harmonik aktarım fonksiyonudur (harmonic transfer function, HTF) \citep{Wereley1991,Liao2022}. Anma akımında $K_{34}$ açık ve kapalı benzetimlerin $L_1$ akımı farkı, anahtarlamalı modelde \SI{4.44}{\ampere} ve \SI{2.32}{\ampere} RMS'dir (temel ve üçüncü harmonik). Çapraz harmonik terimi içermeyen ortalama model aynı farkı \SI{4.51}{\ampere} ve \SI{2.23}{\ampere} olarak öngörmektedir. Dolayısıyla HTF'deki köşegen dışı terimlerin, yani harmonikler arası bağlaşımın katkısı temel bileşende en çok \%1,5, üçüncü harmonikte en çok \%3,8 düzeyindedir. Anahtarlamalı modeldeki kararlılık ölçümleri, S4 benzetimlerindeki büyütülmüş bara kapasitansıyla (2$\times$\SI{5.6}{\milli\farad}) yapılmıştır.
+Ortalama model, anma akımında sürekli iletim bölgesinde kritik frekans aralığını $\pm$\SI{0.2}{\decibel} ve $\pm1^{\circ}$ içinde vermektedir. Orta ve düşük akımda köprünün etkin kazancı frekansa bağlı değişmektedir. Orta ve düşük akımın izleme başarımı ise anahtarlamalı modelden alınmıştır. Anahtarlamalı modelde enjeksiyon ölçümü PI denetleyiciyle, \SI{2.3}{\ampere}'de ise \SI{212}{}--\SI{1037}{\hertz} aralığında yapılmıştır. Denetlenen sistemin yanıtı ölçüldüğü ve denetleyicinin doğrusal olduğu doğrulandığı için P ve PIR çevrim kazançları ölçülen denetlenen sistem yanıtından yazılabilir. Frekans alanı analizinde S4 analog eşdeğer modelinin toplam gecikmesi $T_d=\SI{2}{\micro\second}$ olarak alınmıştır. Analog eşdeğerin kararlılığı 0--\SI{10}{\micro\second} gecikme aralığında doğrulanmış ve gecikme marjı \SI{44}{\micro\second} bulunmuştur. Harmonikler arası bağlaşımın genel çerçevesi harmonik aktarım fonksiyonudur (harmonic transfer function, HTF) \citep{Wereley1991,Liao2022}. Anma akımında $K_{34}$ açık ve kapalı benzetimlerin $L_1$ akımı farkı, anahtarlamalı modelde \SI{4.44}{\ampere} ve \SI{2.32}{\ampere} RMS'dir (temel ve üçüncü harmonik). Çapraz harmonik terimi içermeyen ortalama model aynı farkı \SI{4.51}{\ampere} ve \SI{2.23}{\ampere} olarak öngörmektedir. Dolayısıyla HTF'deki köşegen dışı terimlerin, yani harmonikler arası bağlaşımın katkısı temel bileşende en çok \%1,5, üçüncü harmonikte en çok \%3,8 düzeyindedir. Anahtarlamalı modeldeki kararlılık ölçümleri, S4 benzetimlerindeki büyütülmüş bara kapasitansıyla (2$\times$\SI{5.6}{\milli\farad}) yapılmıştır.
 
 \section{Değerlendirme}
 

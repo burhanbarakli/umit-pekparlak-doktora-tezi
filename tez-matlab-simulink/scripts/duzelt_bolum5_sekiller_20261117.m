@@ -159,7 +159,7 @@ close all force
 b5_root = fileparts(fileparts(mfilename('fullpath')));
 b5_out  = fullfile(fileparts(b5_root), 'yeni_tez', 'sekiller', 'b5');
 b5_kd   = fullfile(b5_root, 'results', 'bolum5_sekiller_20261117', 'kararlilik');
-copyfile(fullfile(b5_kd, 'kararlilik_nyquist_A_B.pdf'), fullfile(b5_out, 'kararlilik_nyquist_A_B.pdf'));
+uret_s4_nyquist_20261121;  % Tezde yalniz incelenen analog esdegerin Nyquist egrisi.
 copyfile(fullfile(b5_kd, 'kararlilik_Lg_taramasi.pdf'), fullfile(b5_out, 'kararlilik_Lg_taramasi.pdf'));
 copyfile(fullfile(b5_kd, 'kararlilik_L_bode_K34.pdf'), fullfile(b5_out, 'kararlilik_L_bode_K34.pdf'));
 copyfile(fullfile(b5_kd, 'kararlilik_S_T.pdf'), fullfile(b5_out, 'kararlilik_S_T.pdf'));
