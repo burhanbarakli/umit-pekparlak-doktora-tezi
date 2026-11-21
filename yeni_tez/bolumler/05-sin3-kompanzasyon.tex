@@ -92,14 +92,17 @@ biçimindedir \citep{Erickson2001,Mohan2003}. Eşitlik~\eqref{eq:ccm-diferansiye
 \end{equation}
 elde edilmektedir. İntegrasyonda $\sin^3\theta$ önce Eşitlik~\eqref{eq:sin3-acilimi} ile harmonik bileşenlerine ayrılmıştır. $I_0$, DCM--CCM geçişinde akım sürekliliğinden belirlenen integrasyon sabitidir. Anahtarlama periyodu ortalama akımının parçalı modeli
 \begin{equation}
-  \bar i_L(\theta)=
-  \begin{cases}
-    \bar i_{L,\mathrm{DCM}}(\theta), & i_{L,0}=0\ \text{ve}\ d(\theta)<d_{\mathrm{krit}}(\theta),\\
-    \bar i_{L,\mathrm{CCM}}(\theta), & i_{L,0}>0\ \text{ya da}\ d(\theta)\geq d_{\mathrm{krit}}(\theta)
-  \end{cases}
+  \begin{gathered}
+    \bar i_L(\theta)=
+    \begin{cases}
+      \bar i_{L,\mathrm{DCM}}(\theta), & i_{L,1}=0,\\
+      \bar i_{L,\mathrm{CCM}}(\theta), & i_{L,1}>0,
+    \end{cases}\\
+    i_{L,1}=\max\left\{0,\ i_{L,0}+\frac{T_s}{L_1}\bigl[V_hd(\theta)-v_g(\theta)\bigr]\right\}
+  \end{gathered}
   \label{eq:dcm-ccm-parcali-model}
 \end{equation}
-ile ifade edilmektedir. Eşitlikte $i_{L,0}$, anahtarlama periyodunun başlangıcındaki endüktör akımını göstermektedir. Anahtarlama periyodu ortalama akımı $\bar i_L(\theta)$ için sinüs ve kosinüs Fourier katsayıları ile $n$'inci harmonik genliği
+ile ifade edilmektedir. Eşitlikte $i_{L,0}$ ve $i_{L,1}$, anahtarlama periyodunun başlangıcındaki ve sonundaki endüktör akımlarını göstermektedir. Periyot, akımın periyot içinde sıfıra inip inmemesine göre sınıflandırılmaktadır. Başlangıç akımının pozitif olması, akımın periyodun tamamında sürekli kalmasını gerektirmemektedir. $i_{L,1}=0$ koşulu $d(\theta)\leq d_{\mathrm{krit}}(\theta)-L_1i_{L,0}/(V_hT_s)$ biçimindedir ve $i_{L,0}=0$ için Eşitlik~\eqref{eq:dcm-kritik-gorev} koşuluna indirgenmektedir. $i_{L,0}>0$ iken akımın periyot içinde sıfıra indiği geçiş periyotlarında $\bar i_{L,\mathrm{DCM}}$, Eşitlik~\eqref{eq:dcm-ortalama-akim} üçgeni yerine $i_{L,0}$'dan başlayan yamuk ile kesim aralığındaki üçgenin alanından hesaplanmaktadır. Anahtarlama periyodu ortalama akımı $\bar i_L(\theta)$ için sinüs ve kosinüs Fourier katsayıları ile $n$'inci harmonik genliği
 \begin{equation}
   \begin{gathered}[b]
     A_n=\frac{1}{\pi}\int_0^{2\pi}\bar i_L(\theta)\cos(n\theta)\,\mathrm{d}\theta,\\
