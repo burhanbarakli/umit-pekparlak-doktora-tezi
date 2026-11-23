@@ -1,0 +1,151 @@
+%% Jüri önerilerine yanıt (tez_guncel_2026-11-23.pdf sayfa ve numaralarıyla)
+%% Derleme: lualatex 34_JURI_ONERILERINE_YANIT_2026-11-23.tex
+\documentclass[11pt,a4paper]{article}
+\usepackage{fontspec}
+\usepackage[turkish]{babel}
+\usepackage[a4paper,margin=2.3cm]{geometry}
+\usepackage{booktabs,tabularx,array}
+\usepackage[most]{tcolorbox}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[locale=DE]{siunitx}
+\usepackage[hidelinks]{hyperref}
+\setmainfont{Times New Roman}
+\setlength{\parskip}{4pt}
+\setlength{\parindent}{0pt}
+\newcommand{\Sin}{Sin\textsuperscript{3}}
+\newtcolorbox{juri}[1]{colback=gray!7,colframe=gray!55,boxrule=0.5pt,arc=1pt,
+  left=6pt,right=6pt,top=4pt,bottom=4pt,fonttitle=\bfseries,title={Öneri #1}}
+\newcommand{\yer}[1]{\par\smallskip{\small\textbf{Tezdeki yeri:} #1}\par}
+
+\begin{document}
+
+\begin{center}
+{\Large\bfseries Tez İzleme Jürisi Önerilerine Yanıtlar}\\[4pt]
+Ümit PEKPARLAK --- Doktora Tezi\\[2pt]
+{\small Sayfa ve numaralar tezin 23.11.2026 tarihli sürümüne (205 sayfa) göredir.}
+\end{center}
+
+Jürinin on bir önerisinin her biri tezin yeniden yapılandırılmasında ayrı bir iş kalemi olarak ele alınmıştır. Aşağıda her önerinin metni, öneriye karşılık yapılan çalışma ve tezdeki yeri sırasıyla verilmektedir. Benzetim sonuçları ile deney sonuçları tez boyunca ayrı tutulmuş, benzetim modelleri deney verisine kalibre edilmiştir.
+
+\begin{juri}{1 --- Başlık}
+Tez başlığı değiştirilerek daha anlaşılır ve içeriği daha iyi ifade eder bir başlık önerilmeli.
+\end{juri}
+Önceki başlık, ``Enerji Depolama Sistemleri için geliştirilmiş T-tipi topoloji ile yeni nesil şarj-deşarj mimarisi ve ileri beslemeli kontrol stratejisi'' biçimindeydi. ``İleri beslemeli kontrol stratejisi'' ifadesi tezin ikincil katkısını ana konu gibi gösterdiğinden başlıktan çıkarılmıştır. Yeni başlık, tezin üç katkısını adlandırmaktadır:
+
+\begin{itemize}[nosep]
+  \item \textit{Enerji Depolama Sistemleri İçin Geliştirilmiş T-Tipi Dönüştürücü Mimarisi ve Düşük Güç Performansını İyileştiren Anahtarlama ve \Sin{} Tabanlı Kompanzasyon Yöntemleri}
+  \item \textit{Improved T-Type Converter Architecture for Energy Storage Systems with Switching and \Sin-Based Compensation Methods Improving Low-Power Performance}
+\end{itemize}
+Başlığın ilk bileşeni GT-tipi mimariye, ikinci bileşeni nötr anahtar susturma yöntemine, üçüncü bileşeni \Sin{} ileri besleme kompanzasyonuna karşılık gelmektedir. Eşleme Bölüm~1'de açıkça yazılmıştır.
+\yer{Kapak, onay sayfası, Özet ve Summary · Alt Bölüm~1.3 ``Özgün Katkılar'' (s.~5).}
+
+\begin{juri}{2 --- Genelden özele akış}
+Tezin genel olarak bölüm ve akış sırasının düzenlenerek ters üçgen dediğimiz genelden özele doğru bir akış/anlatıma uygun hale getirilmeli. (literatür, sonrasında analiz, sonrasında simülasyon ve uygulama çalışmaları verilerek tekrar simülasyon ve uygulama sonuçlarına dönmek ve sonra tekrar analizler vermek akışı çok bozuyor.)
+\end{juri}
+Tez baştan yeniden düzenlenmiş, bölümler tek yönlü bir zincire dizilmiştir. Analiz, benzetim ve deney artık iç içe geçmemekte, her bölüm bir öncekinin sonucuyla açılmaktadır:
+
+\smallskip
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X r@{}}
+\toprule
+Bölüm & İçerik & Sayfa \\
+\midrule
+1 & Giriş: problem, araştırma soruları, üç katkı, tez akışı (Şekil~1.1) & 1 \\
+2 & Literatür, kuramsal temel ve araştırma boşluğu & 9 \\
+3 & Sistem mimarisi, model ve metodoloji (parametreler, doğrulama yöntemi) & 27 \\
+4 & Düşük güçte ters akım mekanizması ve nötr anahtar susturma yöntemi & 53 \\
+5 & \Sin{} ileri besleme kompanzasyonu, kapalı çevrim ve kararlılık analizi & 63 \\
+6 & Deneysel doğrulama ve benzetim modelinin deneye kalibrasyonu & 95 \\
+7 & GT-tipi yeniden yapılandırılabilir enerji depolama mimarisi & 123 \\
+8 & Sonuçlar ve gelecek çalışmalar & 139 \\
+\bottomrule
+\end{tabularx}
+\smallskip
+
+Analiz ve benzetimin hangi sırayla ve hangi ölçütle yürütüldüğü Bölüm~3'te tek yerde tanımlanmıştır. Bölüm~4--6 aynı sırayı izlemektedir.
+\yer{İçindekiler · Şekil~1.1 tez akışı (s.~7) · Alt Bölüm~1.5 ``Tezin Düzeni'' (s.~7) · Alt Bölüm~3.7 doğrulama metodolojisi ve Tablo~3.5 (s.~46) · Tablo~3.1 model katmanları (s.~32).}
+
+\begin{juri}{3 --- T-tipi katkının öne çıkarılması}
+Tez kabaca incelendiğinde odağı sin3 ile yapılmış FF tekniği gibi duruyor. Oysaki tezde T-tipi topoloji ile ilgili önemli bir gelişmede vardır. Buna göre içerik ve/veya içerik sıralaması düzenlenmeli.
+\end{juri}
+Tezin üç katkısı Bölüm~1'in başında ilan edilmekte ve üçünün de ortak tabanının T-tipi topoloji olduğu vurgulanmaktadır:
+\begin{enumerate}[nosep]
+  \item T-tipi faz kolunda düşük güçte ters akım dolaşımını kesen nötr anahtar susturma yöntemi,
+  \item susturmanın üçüncü harmonik bedelini azaltan \Sin{} tabanlı ileri besleme kompanzasyonu,
+  \item aynı T-tipi yarı iletkenleri evirici, Vienna PFC ve aktif batarya yönetimi işlevlerinde yeniden görevlendiren GT-tipi mimari.
+\end{enumerate}
+İlk iki katkı faz kolu ölçeğinde, üçüncüsü sistem ölçeğindedir. \Sin{} terimi tezde artık bir ``kontrol stratejisi'' olarak değil, susturma yöntemini tamamlayan bir ileri besleme bileşeni olarak konumlandırılmıştır. T-tipi anahtarlama yöntemine ayrı bir bölüm (Bölüm~4), GT-tipi mimariye ayrı bir bölüm (Bölüm~7) ayrılmıştır. Katkıların her biri Bölüm~8'de yöntem ve kanıt düzeyiyle birlikte ayrıca değerlendirilmektedir.
+\yer{Alt Bölüm~1.2--1.3 (s.~4--5) · Bölüm~4 (s.~53) · Bölüm~7 (s.~123) · Tablo~8.1 araştırma sorusu--kanıt matrisi (s.~139) · Tablo~8.2 katkı--yöntem--kanıt (s.~141) · Alt Bölüm~8.2 (s.~141--143).}
+
+\begin{juri}{4 --- Blok diyagramlar}
+Tez konusu sistemin genel bir blok diyagramı olmalı. Gerekir ise bazı bölümlerde de ekstra blok diyagramları eklenmeli.
+\end{juri}
+Sistemin genel blok diyagramı ile bölüm düzeyindeki diyagramlar vektörel olarak (TikZ) yeniden çizilmiştir:
+\begin{itemize}[nosep]
+  \item Şekil~1.1: problem--yöntem--katkı akışı (s.~7)
+  \item Şekil~3.1: sistemin genel mimarisi, güç ve işaret akışı (s.~28)
+  \item Şekil~3.7: faz başına LCL filtre ve şebeke modeli (s.~37)
+  \item Şekil~3.8: denetim ve modülasyon blok diyagramı (s.~40)
+  \item Şekil~6.15: deney düzeneği ölçüm zinciri (s.~106)
+  \item Şekil~7.7: GT-tipi mimarinin sentez diyagramı (s.~129)
+  \item Şekil~7.8: GT-tipi kip geçişi durum makinesi (s.~131)
+\end{itemize}
+\yer{Yukarıdaki şekiller.}
+
+\begin{juri}{5 --- Şekil çözünürlüğü}
+Bazı şekillerde çözünürlükler düşük ve yazıları anlaşılır değil. Bunlar güncellenebilir. matlab scope arka planı beyaz yapmak ve puntolarını büyütmek gibi küçük değişiklikler atlanmamalı.
+\end{juri}
+Bölüm~4 ve~5'teki benzetim kayıtları, kalibre edilmiş modellerin yeniden koşturulmasıyla elde edilen verilerden yeniden çizilmiştir. MATLAB grafikleri beyaz zeminde, okunur puntoyla ve vektör PDF olarak üretilmiştir. Dalga biçimleri, akım izleme ve tarama şekilleri ile Bode, Nyquist ve basamak yanıtı şekillerinin tamamı aynı biçimdedir. Devre ve blok şemaları vektörel olarak (TikZ) yeniden çizilmiştir. Düşük çözünürlüklü eski Simulink scope ekranları tezden çıkarılmıştır. Raster olarak kalan görseller deney düzeneği fotoğrafları, osiloskop ve güç analizörü ekranları, donanım şemaları ve Bölüm~7'deki GT-tipi şarj yönü benzetim çıktılarıdır. Söz konusu görseller ilgili bölümde kaynak notuyla verilmiştir.
+\yer{Şekil~4.2--4.4 (s.~58--61) · Şekil~5.1--5.16 (s.~66--93) · Şekil~3.1, 3.7, 3.8 (s.~28--40).}
+
+\begin{juri}{6 --- T-tipi çalışma modları}
+T-tipi yapının tezde nasıl kullanıldığını anlamak zor. Şekiller dağınık halde ve renksiz olduğu için çalışma modlarının anlaşılması güç olmuş.
+\end{juri}
+Dağınık ve renksiz mod şekilleri, aynı devre tabanı üzerinde çizilen renkli ve lejantlı şekillerle değiştirilmiştir. Her şekilde iletimdeki anahtarlar, akım yolu ve akım yönü aynı renk diliyle gösterilmektedir. Anahtar adlandırması tez boyunca tek biçime getirilmiştir ($Q_1$--$Q_3$ ve $Q_2$--$Q_4$ tümleyen çiftler).
+\begin{itemize}[nosep]
+  \item Şekil~3.4 ve Tablo~3.2: üç gerilim durumu ve kapı durumları (s.~33)
+  \item Şekil~3.5: aynı devre tabanında dört temel akım yolu (s.~35)
+  \item Şekil~3.6: faz kolunun senkron buck eşdeğeri (s.~36)
+  \item Tablo~4.2 ve Şekil~4.2: benzetim modelinden okunan kapı mantığı ve kapı işaretleri (s.~57--58)
+  \item Tablo~7.1, Şekil~7.4--7.6: GT-tipi yapıda evirici, iki seviyeli yarım köprü ve Vienna PFC kipleri (s.~124--128)
+\end{itemize}
+\yer{Alt Bölüm~3.2 (s.~32--35) · Alt Bölüm~4.3 (s.~55--58) · Alt Bölüm~7.2--7.3 (s.~124--130).}
+
+\begin{juri}{7 --- \Sin{} için kararlılık analizi}
+Sin3 ile yapılan FF tekniğinin stabilite analizi yapılmalı. Bunun için closed-loop modeli çıkartılarak (herhangi bir kontrolcü için) bode diyagramları verilmeli.
+\end{juri}
+Akım geri beslemeli kapalı çevrim modeli (Senaryo~4) kurulmuş ve kararlılık üç katmanda incelenmiştir:
+\begin{enumerate}[nosep]
+  \item \textbf{Analitik katman:} \Sin{} terimi hatadan üretilmeyen, çevrimin dışından eklenen bilinen bir giriştir. Karakteristik denklem $1+L(s)=0$ terimi içermemektedir. Sonuç denetleyiciden bağımsızdır, dolayısıyla herhangi bir $C(s)$ için geçerlidir.
+  \item \textbf{Frekans alanı:} P, PI ve PIR denetleyicileri için çevrim kazancı $L$, duyarlılık $S$ ve tümleyen duyarlılık $T$ Bode eğrileri, Nyquist eğrisi ve kapalı çevrim kutupları verilmiştir. Eğriler \Sin{} terimi açıkken ve kapalıyken aynıdır. PI denetimli \SI{25}{A} çalışmada kritik faz marjı \SI{3.4}{kHz}'de 54°, kazanç marjı +35~dB, gecikme marjı \SI{44}{\micro s}, duyarlılık tepesi 2,4~dB'dir. Çevrim 0--5~mH ek şebeke endüktansında kararlı kalmaktadır.
+  \item \textbf{Zaman alanı:} Anahtarlamalı modelde çevrim kazancı enjeksiyonla ölçülmüş, basamak yanıtları terim açıkken ve kapalıyken karşılaştırılmıştır. İki durum arasındaki farklar ölçüm belirsizliği düzeyinde kalmaktadır.
+\end{enumerate}
+\yer{Alt Bölüm~5.7 (s.~82--94): Tablo~5.5 marjlar (s.~85), Şekil~5.11 $L$ Bode (s.~86), Şekil~5.12 $S$ ve $T$ (s.~87), Şekil~5.13 Nyquist (s.~88), Tablo~5.6 ve Şekil~5.14 şebeke endüktansı duyarlılığı (s.~88--89), Tablo~5.7 ve Şekil~5.15 ölçülen $L$ (s.~90--91), Tablo~5.8 ve Şekil~5.16 basamak yanıtı (s.~92--93), Alt Bölüm~5.7.4 varsayımlar (s.~93).}
+
+\begin{juri}{8 --- Nominal güçte kapalı çevrim}
+Önerilen FF tekniğinin düşük güçlerde etkili olduğu öne sürülmüş, fakat closed-loop olarak sistemin nominal gücünde de çalıştırıldığı gösterilmeli.
+\end{juri}
+Deneye kalibre edilen Senaryo~3 modeline akım geri beslemesi eklenerek Senaryo~4 kapalı çevrim modeli kurulmuştur. Model, aynı denetim yapısıyla düşük (\SI{2.3}{A}), orta (\SI{10}{A}) ve anma (\SI{25}{A}) faz akımında P, PI ve PIR denetleyicileriyle koşturulmuştur. Anma akımında PI ve PIR denetleyicileri referansı sırasıyla $-$\%2,1 ve $-$\%1,0 genlik hatasıyla, doyuma girmeden ve \%8,5--9,2 THD ile izlemektedir. P denetleyicisinde hata $-$\%11,4'tür. \SI{10}{A}'den \SI{25}{A}'e referans basamağında aşım \%0,17, yerleşme süresi \SI{0.43}{ms}'dir. Anma akımı sonuçları benzetimle elde edilmiştir. Donanımda anma gücünde deney yapılmamıştır (Öneri~10).
+\yer{Alt Bölüm~5.6 (s.~74--82): Tablo~5.3 tarama sonuçları (s.~79), Şekil~5.8 \SI{25}{A} akım izleme (s.~80), Şekil~5.9 tarama özeti (s.~80), Tablo~5.4 ve Şekil~5.10 basamak yanıtı (s.~82) · Tablo~6.8 güç bölgelerine göre inceleme yöntemi (s.~116).}
+
+\begin{juri}{9 --- Elektriksel parametre tablosu}
+Bağlanılan şebeke gerilimi, sistem nominal gücü, LCL parametreler gibi sistemin önemli elektriksel parametreleri bir tablo ile verilmeli.
+\end{juri}
+Şebeke, anma gücü, DA bara, anahtarlama ve örnekleme, LCL filtre, yarı iletken, ölçüm, modülasyon, denetleyici ve çözücü parametreleri tek bir tabloda toplanmıştır. Her satırda değer, birim, kaynak ve tür (ölçülen, veri sayfası, tasarım, kalibre edilen, benzetim seçimi, düzeltilen) yer almaktadır. Şebeke tarafı endüktansının tanımı ayrı bir alt bölümde verilmiştir.
+\yer{Alt Bölüm~3.6 ve Tablo~3.4 (s.~41--46) · Alt Bölüm~3.4.1 $L_2$ tanımı (s.~38).}
+
+\begin{juri}{10 --- Deneysel testler}
+Tezin son kısmı için deneysel testlerin yapılarak sonuçların eklenmesi gerekir.
+\end{juri}
+Deşarj (evirici) yönündeki deneysel sonuçlar ayrı bir bölümde toplanmıştır. Bölüm~6, deney düzeneğini, kontrol ve ölçüm donanımını, üç anahtarlama yönteminin deney kayıtlarını ve deney özet tablosunu içermektedir. Yaklaşık \SI{2.3}{A} faz akımında susturma verimi \%92,5'ten \%94,2'ye çıkarmış, şebeke akımı THD'sini \%15'ten \%47'ye yükseltmiştir. \Sin{} terimi THD'yi \%14'e indirmiş, verim \%94,5'e ulaşmıştır. Benzetim modelleri yalnız iki serbest değişkenle (modülasyon genliği ve referans fazı) deneydeki aktif ve reaktif güce kalibre edilmiştir. Kalibre edilmiş S3 modeli, kalibrasyon hedefi olmayan AA akımını \%1,4, verimi 0,25 puan içinde, akım THD'sini ise \%14,8 olarak yeniden üretmektedir.
+
+Tezin deney düzeneği GT-tipi olarak kurulmuştur ve deneyler evirici kipinde yapılmıştır. Şarj zinciri (PFC, DA bara, transformatör ve batarya katı) benzetimle gösterilmiştir. Şarj kipi deneyinin yapılamamasının gerekçesi tezde açıkça yazılmıştır. T-tipi evirici kipinde PWM çıkışları $Q_1$--$Q_3$ ve $Q_2$--$Q_4$ tümleyen çiftleri olarak, şarj kipinde ise $Q_1$--$Q_2$ ve $Q_3$--$Q_4$ çiftleri olarak sürülmektedir. Donanımın üç fazında toplam 12 IGBT bulunmakta, IGBT'ler mikrodenetleyiciye T-tipi eviriciye göre düzenlenen PWM bağlantılarıyla bağlı bulunmaktadır. Deneylerde aynı bağlantılarla tek faz kolu sürülmüştür. Şarj kipinde ise 12 IGBT'nin PWM bağlantıları değiştirilmeden eşzamanlı PFC ve iki seviyeli evirici olarak birlikte çalışması gerekmektedir. Aynı fiziksel PWM bağlantılarının kipe göre farklı tümleyen eşleşmeleri sağlaması yerleşik topolojilerde karşılaşılan bir gereksinim değildir. Mevcut denetim kartının PWM yapılandırması eşleşme değişikliğini doğrudan gerçekleştirmemektedir. Şarj kipinin deneysel gerçeklenmesi için gereken yazılım düzenlemeleri ve yardımcı donanım eklentileri gelecek çalışmalarda tanımlanmıştır. Anma gücündeki sonuçlar benzetimle verilmiş, deneyler güvenli laboratuvar koşulunda şebeke gerilimi varyakla yaklaşık \SI{120}{V}'a düşürülerek yapılmıştır.
+\yer{Bölüm~6 (s.~95--122): Alt Bölüm~6.2 mikrodenetleyici ADC ve PWM yapısı (s.~100), Tablo~6.5 deney özeti (s.~114), Tablo~6.8 güç bölgelerine göre inceleme yöntemi (s.~116), Alt Bölüm~6.10 ve Tablo~6.12 kalibrasyon (s.~117--119) · Alt Bölüm~7.5 şarj yönü benzetim kayıtları (s.~132--135) · Alt Bölüm~8.3 sonuçların elde edildiği koşullar (s.~143) · Alt Bölüm~8.4 gelecek çalışmalar (s.~144).}
+
+\begin{juri}{11 --- Akademik temel}
+Genel olarak tez içeriğinin ve anlatımının akademik bir temele oturtulması gerekir. Bunun için yukarıdaki önerileri daha iyi anlamak adına ulusal tez merkezinden doktora tezleri incelenebilir.
+\end{juri}
+Literatür bölümü, kaynak özetlerinden karşılaştırmalı bir senteze dönüştürülmüştür. Bölüm~2, enerji depolama mimarilerini, T-tipi dönüştürücünün kuramsal temelini, kısmi yükte verim ve harmonik konusunu, şebeke akım denetimini ve ileri besleme yaklaşımlarını ele almakta, dört kümede tanımlanan araştırma boşluğuyla kapanmaktadır. Konuyla ilgili doktora tezleri (Kerekes 2009, Hartmann 2011, Dong 2012) karşılaştırma tablosuna eklenmiş, harmonik aktarım fonksiyonu çerçevesi için Wereley (1991) doktora tezine başvurulmuştur. Tezin yapısı da söz konusu örnekler gözetilerek kurulmuştur. Tezde 59 kaynağa atıf yapılmaktadır. Tez, araştırma sorusu, katkı, yöntem ve kanıt zinciri üzerine kurulmuş, her bulgunun deney mi benzetim mi olduğu belirtilmiştir.
+\yer{Bölüm~2 (s.~9--26) · Tablo~2.5 literatür karşılaştırması (s.~24) · Alt Bölüm~2.6 araştırma boşluğu (s.~26) · Alt Bölüm~1.2 araştırma soruları (s.~4) · Tablo~8.1 ve Tablo~8.2 (s.~139--141).}
+
+\end{document}
