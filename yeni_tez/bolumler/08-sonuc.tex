@@ -5,22 +5,22 @@ Tezde T-tipi dönüştürücünün düşük güç davranışı, nötr anahtar su
 
 \section{Araştırma Sorularının Yanıtları}
 
-Giriş bölümünde tanımlanan dört araştırma sorusunun yanıtları ve tezde incelendiği yerler Tablo~\ref{tab:arastirma-sorusu-kanit} üzerinde verilmiştir.
+Giriş bölümünde tanımlanan dört araştırma sorusunun yanıtlanma düzeyi ve tezde incelendiği yerler Tablo~\ref{tab:arastirma-sorusu-kanit} üzerinde verilmiştir.
 
 \begingroup
 \setlength{\tabcolsep}{3pt}
 \begin{longtable}{@{}>{\footnotesize\raggedright\arraybackslash}p{0.06\textwidth}%
                      >{\footnotesize\raggedright\arraybackslash}p{0.40\textwidth}%
                      >{\footnotesize\raggedright\arraybackslash}p{0.51\textwidth}@{}}
-  \caption{Araştırma soruları ve yanıtları.}
+  \caption{Araştırma sorularının yanıtlanma düzeyi ve incelendiği yer.}
   \label{tab:arastirma-sorusu-kanit}\\
   \toprule
-  \textbf{Soru} & \textbf{Yanıt} & \textbf{İncelendiği yer} \\
+  \textbf{Soru} & \textbf{Yanıtlanma düzeyi} & \textbf{İncelendiği yer} \\
   \midrule
   \endfirsthead
-  \caption[]{Araştırma soruları ve yanıtları (devamı).}\\
+  \caption[]{Araştırma sorularının yanıtlanma düzeyi ve incelendiği yer (devamı).}\\
   \toprule
-  \textbf{Soru} & \textbf{Yanıt} & \textbf{İncelendiği yer} \\
+  \textbf{Soru} & \textbf{Yanıtlanma düzeyi} & \textbf{İncelendiği yer} \\
   \midrule
   \endhead
   \bottomrule
@@ -86,11 +86,11 @@ T-tipi eviricinin düşük güçteki ters akım sorunu, genel bir hafif yük kay
 
 \subsection{Sin\textsuperscript{3} İleri Besleme Katkısı}
 
-Sin\textsuperscript{3} terimi bağımsız bir geri besleme denetleyicisi ya da genel amaçlı bir harmonik süzgeç değil, nötr susturmanın ürettiği üçüncü harmoniği azaltan bir modülasyon ileri beslemesidir. $\sin^3(\theta)$ ile $\sin(3\theta)$ katsayıları farklı anlam taşımaktadır. Katsayıların çalışma noktasına bağlı olduğu parçalı model taramasıyla ortaya konmuş, analitik katsayılar doğrulanmış parametre setiyle hesaplanmıştır. İleri besleme genliği, akım düzeyine göre ayarlanabilen bir tasarım parametresidir. Sin\textsuperscript{3} terimi modülasyon referansına eklenen tek bir ileri besleme bileşeni olduğundan akım denetleyicisi değiştirilmeden uygulanabilmektedir.
+Sin\textsuperscript{3} terimi, nötr susturmanın ürettiği üçüncü harmoniği azaltan bir modülasyon ileri beslemesidir. Terim geri besleme yolunda yer almamakta, denetleyici ya da genel amaçlı harmonik süzgeç işlevi görmemektedir. $\sin^3(\theta)$ ile $\sin(3\theta)$ katsayıları farklı anlam taşımaktadır. Katsayıların çalışma noktasına bağlı olduğu parçalı model taramasıyla ortaya konmuş, analitik katsayılar doğrulanmış parametre setiyle hesaplanmıştır. İleri besleme genliği, akım düzeyine göre ayarlanabilen bir tasarım parametresidir. Sin\textsuperscript{3} terimi modülasyon referansına eklenen tek bir ileri besleme bileşeni olduğundan akım denetleyicisi değiştirilmeden uygulanabilmektedir.
 
 \subsection{GT-Tipi Mimari Katkısı}
 
-GT-tipi yaklaşım, patentlerde de tanımlanan yeniden görevlendirme ilkesine dayanmaktadır. T-tipi eviricinin her faz hücresine iki kip değişim rölesi ve iki hızlı PFC yükseltici diyot ($D_1$--$D_2$) eklenmiştir. Şarj kipinde aynı IGBT'ler, $D_1$--$D_2$ ile birlikte bir Vienna PFC ve BYS transformatörünü besleyen iki seviyeli bir yarım köprü oluşturmaktadır. Yaklaşımın kullanım alanı, PFC, yarım köprü ve transformatör tabanlı BYS'den oluşan şarj zinciri üzerinden örneklenmiştir. Şarj zincirinin birlikte çalışması benzetimle gösterilmiştir. Yeniden görevlendirilen IGBT'ler sürücü, koruma ve soğutma altyapısının ortak kullanılmasına olanak sağlamaktadır.
+GT-tipi yaklaşımın özgün yanı, tez kapsamındaki patentlerin de konusu olan yeniden görevlendirme ilkesidir. T-tipi eviricinin her faz hücresine iki kip değişim rölesi ve iki hızlı PFC yükseltici diyot ($D_1$--$D_2$) eklenmiştir. Şarj kipinde aynı IGBT'ler, $D_1$--$D_2$ ile birlikte bir Vienna PFC ve BYS transformatörünü besleyen iki seviyeli bir yarım köprü oluşturmaktadır. Yaklaşımın kullanım alanı, PFC, yarım köprü ve transformatör tabanlı BYS'den oluşan şarj zinciri üzerinden örneklenmiştir. Şarj zincirinin birlikte çalışması benzetimle gösterilmiştir. Yeniden görevlendirilen IGBT'ler sürücü, koruma ve soğutma altyapısının ortak kullanılmasına olanak sağlamaktadır.
 
 \subsection{Fikrî Mülkiyet Çıktıları}
 
