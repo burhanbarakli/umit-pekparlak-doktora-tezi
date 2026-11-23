@@ -1,7 +1,7 @@
 \chapter{GT-TİPİ YENİDEN YAPILANDIRILABİLİR ENERJİ DEPOLAMA MİMARİSİ}
 \label{chap:gttipi}
 
-GT-tipi mimari, faz kolu bölümlerinde incelenen T-tipi yarı iletken tabanını enerji depolama sisteminde şarj ve deşarj işlevleri için yeniden görevlendirmektedir. Deney düzeneği GT-tipi olarak kurulmuştur. Şekil~\ref{fig:gelen-tam-topoloji} üzerindeki faz hücresi röleleri, PFC yükseltici diyotları ve BYS transformatörleri, yeniden görevlendirmenin donanım karşılığıdır.
+GT-tipi mimari, faz kolu bölümlerinde incelenen T-tipi yarı iletken tabanını enerji depolama sisteminde şarj ve deşarj işlevleri için yeniden görevlendirmektedir. Deney düzeneği GT-tipi olarak kurulmuştur. Şekil~\ref{fig:gelen-tam-topoloji} üzerindeki faz hücresi röleleri, PFC yükseltici diyotları ve BYS transformatörleri, işlev paylaşımının donanım karşılığıdır.
 
 ``GT-tipi'' adı, tezde \emph{geliştirilmiş T-tipi} enerji depolama mimarisini belirtmek için kullanılan, teze özgü bir adlandırmadır. Mimari, tek bir donanımda T-tipi faz kollarını, kip değişim rölelerini, nötr IGBT'lerle kurulan Vienna PFC katını, çok sekonderli BYS transformatörlerini ve batarya başına doğrultucu--buck şarj kollarını birleştirmektedir.
 
@@ -19,7 +19,7 @@ Tasarım gereksinimleri beş işlevsel ilkeye indirgenmiştir. Enerji iki yönde
 \section{GT-Tipi Topolojinin Yapısı}
 \label{sec:gt-yapi}
 
-GT-tipi yapı, deney düzeneğindeki T-tipi faz kollarını kip değişim röleleri ve PFC yükseltici diyotlarıyla ($D_1$--$D_2$) üç işlev arasında yeniden görevlendirmektedir. Faz kolları şebekeye güç veren evirici, BYS transformatörlerini besleyen iki seviyeli yarım köprü ya da şebekeden şarj akımı çeken Vienna PFC olarak çalışmaktadır. T-tipi faz kolunun temel yapısı Bölüm~\ref{chap:sistem} içindeki Şekil~\ref{fig:t-tipi-uc-seviye} ve Şekil~\ref{fig:t-tipi-akim-yollari} ile verilmiştir. GT-tipi yapının ayırt edici alt devreleri Şekil~\ref{fig:gt-viyana-pfc}--\ref{fig:gt-pfc-modu} üzerinde sırasıyla açıklanmaktadır. Elemanların iki enerji yönündeki görevleri Tablo~\ref{tab:gt-eleman-gorevleri} üzerinde eşlenmiştir.
+GT-tipi yapı, deney düzeneğindeki T-tipi faz kollarını kip değişim röleleri ve PFC yükseltici diyotlarıyla ($D_1$--$D_2$) üç işlevde kullanmaktadır. Faz kolları şebekeye güç veren evirici, BYS transformatörlerini besleyen iki seviyeli yarım köprü ya da şebekeden şarj akımı çeken Vienna PFC olarak çalışmaktadır. T-tipi faz kolunun temel yapısı Bölüm~\ref{chap:sistem} içindeki Şekil~\ref{fig:t-tipi-uc-seviye} ve Şekil~\ref{fig:t-tipi-akim-yollari} ile verilmiştir. GT-tipi yapının ayırt edici alt devreleri Şekil~\ref{fig:gt-viyana-pfc}--\ref{fig:gt-pfc-modu} üzerinde sırasıyla açıklanmaktadır. Elemanların iki enerji yönündeki görevleri Tablo~\ref{tab:gt-eleman-gorevleri} üzerinde eşlenmiştir.
 
 \begin{table}[H]
   \centering
@@ -57,7 +57,7 @@ GT-tipi yapı, deney düzeneğindeki T-tipi faz kollarını kip değişim rölel
   \label{fig:gt-cok-sekonderli-bys}
 \end{figure}
 
-Şekil~\ref{fig:gt-ana-topoloji}, $Q_1$--$Q_2$ ile $Q_3$--$Q_4$ anahtarlarının ortak T-tipi çıkış düğümündeki bağlantısını RL1 konumuna göre değiştiren ana topolojiyi göstermektedir (Tablo~\ref{tab:gt-eleman-gorevleri}). Donanımda her faz hücresinde iki röle bulunmaktadır (Şekil~\ref{fig:gelen-faz1-hucresi}). RL2, $Q_1$--$Q_2$ orta noktasını $D_1$--$D_2$--$Q_3$ düğümüne bağlamakta, RL1 ise aynı orta noktayı BYS transformatörüne bağlamaktadır.
+Ana topolojide RL1 konumu, $Q_1$--$Q_2$ ile $Q_3$--$Q_4$ anahtarlarının ortak T-tipi çıkış düğümündeki bağlantısını değiştirmektedir (Şekil~\ref{fig:gt-ana-topoloji}, Tablo~\ref{tab:gt-eleman-gorevleri}). Donanımda her faz hücresinde iki röle bulunmaktadır (Şekil~\ref{fig:gelen-faz1-hucresi}). RL2, $Q_1$--$Q_2$ orta noktasını $D_1$--$D_2$--$Q_3$ düğümüne bağlamakta, RL1 ise aynı orta noktayı BYS transformatörüne bağlamaktadır.
 
 \begin{figure}[H]
   \centering
@@ -66,7 +66,7 @@ GT-tipi yapı, deney düzeneğindeki T-tipi faz kollarını kip değişim rölel
   \label{fig:gt-ana-topoloji}
 \end{figure}
 
-Şekil~\ref{fig:gt-evirici-lcl}, röleler evirici konumundayken oluşan deşarj yolunu göstermektedir. Deşarj yolunda $Q_1$--$Q_4$ grubu üç seviyeli T-tipi kolu, $L_1$--$C_f$--$L_2$ ağı ise şebeke akımı filtresini oluşturmaktadır.
+Röleler evirici konumundayken oluşan deşarj yolunda $Q_1$--$Q_4$ grubu üç seviyeli T-tipi kolu, $L_1$--$C_f$--$L_2$ ağı ise şebeke akımı filtresini oluşturmaktadır (Şekil~\ref{fig:gt-evirici-lcl}).
 
 \begin{figure}[H]
   \centering
@@ -75,7 +75,7 @@ GT-tipi yapı, deney düzeneğindeki T-tipi faz kollarını kip değişim rölel
   \label{fig:gt-evirici-lcl}
 \end{figure}
 
-Şekil~\ref{fig:gt-iki-seviye-trafo}, şarj yönündeki transformatör besleme bağlantısını göstermektedir (şekilde röleler faz sırasıyla numaralandırılmıştır). Bağlantıda üç fazın $Q_1$--$Q_2$ yarım köprüleri, faz arası (üçgen) bağlı üç çok sekonderli BYS transformatörünün primerlerini beslemektedir.
+Şarj yönündeki transformatör besleme bağlantısında üç fazın $Q_1$--$Q_2$ yarım köprüleri, faz arası (üçgen) bağlı üç çok sekonderli BYS transformatörünün primerlerini beslemektedir (Şekil~\ref{fig:gt-iki-seviye-trafo}). Şekilde röleler faz sırasıyla numaralandırılmıştır.
 
 \begin{figure}[H]
   \centering
@@ -84,7 +84,7 @@ GT-tipi yapı, deney düzeneğindeki T-tipi faz kollarını kip değişim rölel
   \label{fig:gt-iki-seviye-trafo}
 \end{figure}
 
-Şekil~\ref{fig:gt-pfc-modu}, nötr IGBT çiftlerinin PFC yükseltici diyotları ($D_1$--$D_2$) ve LCL elemanlarıyla üç fazlı Vienna PFC kollarına dönüştürüldüğü şarj yolunu göstermektedir. Her fazda $Q_4$ DA bara orta noktası (şekilde NOTR) tarafındaki, $Q_3$ ise faz düğümü tarafındaki nötr IGBT'dir.
+Şekil~\ref{fig:gt-pfc-modu} üzerindeki şarj yolunda nötr IGBT çiftleri, PFC yükseltici diyotları ($D_1$--$D_2$) ve LCL elemanlarıyla üç fazlı Vienna PFC kollarına dönüştürülmektedir. Her fazda $Q_4$ DA bara orta noktası (şekilde NOTR) tarafındaki, $Q_3$ ise faz düğümü tarafındaki nötr IGBT'dir.
 
 \begin{figure}[H]
   \centering
@@ -171,7 +171,7 @@ Batarya başına şarj referansı, CC--CV geçişini açıkça göstermek için
   \end{cases}
   \label{eq:gt-cccv-referansi}
 \end{equation}
-biçiminde tanımlanabilir. Gerilim hatası büyükken referans $I_{\mathrm{CC},k}$ sınırında kalmakta (CC), $v_{b,k}$ eşiğe yaklaştıkça akım azalmaktadır (CV). Eşitlik~\eqref{eq:gt-cccv-referansi} içinde $i_{b,k}^{\star}$ $k$ numaralı bataryanın şarj akımı referansını, $v_{b,k}$ batarya uç gerilimini, $I_{\mathrm{CC},k}$ sabit akım sınırını, $V_{\mathrm{CV},k}$ sabit gerilim eşiğini göstermektedir. $T_{b,k}$ ölçülen batarya sıcaklığı, $T_{\min,k}$ ve $T_{\max,k}$ izin verilen sıcaklık sınırlarıdır. $K_{v,k}$ gerilim düzenleyici kazancı, $\operatorname{sat}[\cdot]$ ise doyum işlemidir. Sayısal sınırlar batarya kimyasından ve üretici veri sayfasından alınarak atanmaktadır.
+biçiminde tanımlanabilir. Gerilim hatası büyükken referans $I_{\mathrm{CC},k}$ sınırında kalmakta (CC), $v_{b,k}$ eşiğe yaklaştıkça akım azalmaktadır (CV). Eşitlik~\eqref{eq:gt-cccv-referansi} içinde $i_{b,k}^{\star}$ $k$ numaralı bataryanın şarj akımı referansı, $v_{b,k}$ batarya uç gerilimi, $I_{\mathrm{CC},k}$ sabit akım sınırı, $V_{\mathrm{CV},k}$ sabit gerilim eşiğidir. $T_{b,k}$ ölçülen batarya sıcaklığı, $T_{\min,k}$ ve $T_{\max,k}$ izin verilen sıcaklık sınırlarıdır. $K_{v,k}$ gerilim düzenleyici kazancı, $\operatorname{sat}[\cdot]$ ise doyum işlemidir. Sayısal sınırlar batarya kimyasından ve üretici veri sayfasından alınarak atanmaktadır.
 
 \section{Kip Geçişleri ve Güvenlik Kısıtları}
 \label{sec:gt-gecis-guvenlik}
@@ -189,7 +189,7 @@ RL1 konum değiştirirken akım taşıyan bir bağlantının açılması, röle 
   h_{\mathrm{RL1}}=1
   \label{eq:gt-gecis-izni}
 \end{equation}
-şeklinde ifade edilmiştir. Eşitlik~\eqref{eq:gt-gecis-izni} içinde $\gamma_{k\rightarrow j}$ $k$ kipinden $j$ kipine geçiş iznini, $i_{x}$ $x\in\{a,b,c\}$ fazının akımını, $I_{\mathrm{tr}}$ geçiş için izin verilen akım eşiğini göstermektedir. $v_{\mathrm{dc}}^{+}$ ve $v_{\mathrm{dc}}^{-}$ bölünmüş DA baranın üst ve alt yarı gerilimleri, $\Delta V_{\mathrm{tr}}$ izin verilen gerilim farkıdır. $g_{\mathrm{PWM}}=0$ bütün kapı işaretlerinin durdurulduğunu, $h_{\mathrm{RL1}}=1$ ise röle konum geri bildiriminin $k$ kipine ait konumu doğruladığını göstermektedir. Yeni konumun doğrulanması Şekil~\ref{fig:gt-durum-makinesi} üzerindeki ayrı bir geçiştir. Sayısal eşikler röle kontak değerleri, yarı iletken güvenli çalışma alanı, filtre endüktansları ve ölçüm belirsizliğiyle belirlenmelidir.
+şeklinde ifade edilmiştir. Eşitlik~\eqref{eq:gt-gecis-izni} içinde $\gamma_{k\rightarrow j}$ $k$ kipinden $j$ kipine geçiş izni, $i_{x}$ $x\in\{a,b,c\}$ fazının akımı, $I_{\mathrm{tr}}$ geçiş için izin verilen akım eşiğidir. $v_{\mathrm{dc}}^{+}$ ve $v_{\mathrm{dc}}^{-}$ bölünmüş DA baranın üst ve alt yarı gerilimleri, $\Delta V_{\mathrm{tr}}$ izin verilen gerilim farkıdır. $g_{\mathrm{PWM}}=0$ bütün kapı işaretlerinin durdurulduğunu, $h_{\mathrm{RL1}}=1$ ise röle konum geri bildiriminin $k$ kipine ait konumu doğruladığını göstermektedir. Yeni konumun doğrulanması Şekil~\ref{fig:gt-durum-makinesi} üzerindeki ayrı bir geçiştir. Sayısal eşikler röle kontak değerleri, yarı iletken güvenli çalışma alanı, filtre endüktansları ve ölçüm belirsizliğiyle belirlenmelidir.
 
 \begin{figure}[H]
   \centering
@@ -227,7 +227,7 @@ RL1 konum değiştirirken akım taşıyan bir bağlantının açılması, röle 
   \label{fig:gt-durum-makinesi}
 \end{figure}
 
-Şekil~\ref{fig:gt-durum-makinesi}, çalışma kipini doğrudan değiştirmek yerine önce enerjiyi güvenli seviyeye indiren ve RL1 geçişini ayrı bir durum olarak yürüten sıralamayı göstermektedir. Hızlı yarı iletken koruması donanım düzeyinde, çevrimden çevrime çalışmalıdır. Üst seviye durum makinesi ise röle, kontaktör, sıcaklık, izolasyon ve batarya uygunluk kararlarını yönetmelidir. Yazılımın hata algılama hızı, röle ve kontaktör açma süresi ile DA bara boşalma süresi aynı güvenlik zaman çizelgesinde değerlendirilmelidir. Tablo~\ref{tab:gt-koruma-dogrulama}, asgari koruma işlevlerini ve kabul ölçütlerini vermektedir.
+Durum makinesi (Şekil~\ref{fig:gt-durum-makinesi}), çalışma kipini doğrudan değiştirmek yerine önce enerjiyi güvenli seviyeye indirmekte ve RL1 geçişini ayrı bir durum olarak yürütmektedir. Hızlı yarı iletken koruması donanım düzeyinde, çevrimden çevrime çalışmalıdır. Üst seviye durum makinesi ise röle, kontaktör, sıcaklık, izolasyon ve batarya uygunluk kararlarını yönetmelidir. Yazılımın hata algılama hızı, röle ve kontaktör açma süresi ile DA bara boşalma süresi aynı güvenlik zaman çizelgesinde değerlendirilmelidir. Tablo~\ref{tab:gt-koruma-dogrulama}, asgari koruma işlevlerini ve kabul ölçütlerini vermektedir.
 
 \begin{table}[H]
   \centering
@@ -255,7 +255,7 @@ RL1 konum değiştirirken akım taşıyan bir bağlantının açılması, röle 
 
 GT-tipi topolojinin şarj kipindeki eşdeğer devresi Simulink'te benzetilmiştir. Model, Vienna PFC'yi, iki seviyeli transformatör besleme katını ve batarya şarj kollarını aynı devrede birleştirmektedir. Şekil~\ref{fig:gt-simulink-modeli}--\ref{fig:gt-batarya-soc}, şebekeden bataryaya uzanan PFC $\rightarrow$ DA bara $\rightarrow$ transformatör primeri $\rightarrow$ sekonder $\rightarrow$ buck/batarya zincirinin her aşamasını dalga biçimleriyle belgelemektedir.
 
-Şekil~\ref{fig:gt-simulink-modeli}, PFC denetimi, DA bara, üç fazlı dönüştürücü, çok sekonderli transformatörler ve batarya alt sistemlerinin aynı modelde kurulduğunu göstermektedir.
+Simulink modelinin (Şekil~\ref{fig:gt-simulink-modeli}) alt sistemleri PFC denetimi, DA bara, üç fazlı dönüştürücü, çok sekonderli transformatörler ve bataryalardır.
 
 \begin{figure}[H]
   \centering
@@ -264,7 +264,7 @@ GT-tipi topolojinin şarj kipindeki eşdeğer devresi Simulink'te benzetilmişti
   \label{fig:gt-simulink-modeli}
 \end{figure}
 
-Şekil~\ref{fig:gt-pfc-akimlari}, PFC sonrasında üç faz akımının dengeli ve yaklaşık sinüzoidal biçimde oluştuğunu göstermektedir.
+PFC sonrasında üç faz akımı dengeli ve yaklaşık sinüzoidaldir (Şekil~\ref{fig:gt-pfc-akimlari}).
 
 \begin{figure}[H]
   \centering
@@ -273,7 +273,7 @@ GT-tipi topolojinin şarj kipindeki eşdeğer devresi Simulink'te benzetilmişti
   \label{fig:gt-pfc-akimlari}
 \end{figure}
 
-Şekil~\ref{fig:gt-da-bara}, DA bara gerilimlerinin başlangıç geçicisinden sonra birbirine yakın bir çalışma bandına yerleştiğini göstermektedir.
+DA bara gerilimleri, başlangıç geçicisinden sonra birbirine yakın bir çalışma bandına yerleşmektedir (Şekil~\ref{fig:gt-da-bara}).
 
 \begin{figure}[H]
   \centering
@@ -326,7 +326,7 @@ GT-tipi topolojinin şarj kipindeki eşdeğer devresi Simulink'te benzetilmişti
   \label{fig:gt-sekonder}
 \end{figure}
 
-Enerji zincirinin batarya tarafındaki son kaydı Şekil~\ref{fig:gt-batarya-soc} üzerindedir. Kayıtta buck çıkışındaki bir bataryanın şarj durumu (State of Charge, SoC), uç gerilimi ve akımı aynı zaman ekseninde verilmiştir. Benzetim modelinin batarya bloğunda şarj akımı negatif işaretlidir. Kayıt, şarj akımının sabit akım düzeyinde düzenlendiğini göstermektedir.
+Enerji zincirinin batarya tarafındaki son kaydı Şekil~\ref{fig:gt-batarya-soc} üzerindedir. Kayıtta buck çıkışındaki bir bataryanın şarj durumu (State of Charge, SoC), uç gerilimi ve akımı aynı zaman ekseninde verilmiştir. Benzetim modelinin batarya bloğunda şarj akımı negatif işaretlidir. Kayıtta şarj akımı sabit akım düzeyinde düzenlenmektedir.
 
 \begin{figure}[H]
   \centering
