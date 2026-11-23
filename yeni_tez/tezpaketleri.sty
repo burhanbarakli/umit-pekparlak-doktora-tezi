@@ -84,6 +84,12 @@
   \fi
 }
 
+% ŞEKİL SONRASI BÖLÜM BAŞLIĞI: [H] şeklin hemen ardından gelen \section için üst boşluk.
+% Şeklin \intextsep (12bp) boşluğu ile başlığın 12bp üst boşluğu \addvspace ile birleşip 12bp
+% kaldığından, kılavuzdaki şekil sonrası başlık boşluğu için 18bp verilir (990172d).
+% Kullanım: \end{figure} satırından sonra, \section satırından önce \sekilsonrabaslik.
+\newcommand{\sekilsonrabaslik}{\addvspace{18bp}}
+
 % KIRMIZI KONTROL NOTU: tez sahibinin bilgisi ya da kararı gereken, kaçırılmaması gereken yer
 % (proje sahibi, 18.11.2026; K-41). Ana derlemede görünür. Teslimden önce hepsi çözülmeli ve
 % \kirmizinotlarfalse ile kapatılmalıdır (çözülmemiş not kalırsa kapatmak onu gizler, çözmez).

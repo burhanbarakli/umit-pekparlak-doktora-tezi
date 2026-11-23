@@ -334,7 +334,7 @@ olmaktadır \citep{Zhang2014PR,Lu2016}. Eşitlik~\eqref{eq:lcl-yuksek-frekans} u
 \subsection{Şebeke tarafı endüktansı $L_2$}
 \label{sec:l2-tanimi}
 
-LCL filtrenin şebeke tarafı endüktansı ayrı bir filtre bobini değildir. $L_2=\SI{1000}{\micro\henry}$, şebeke empedansı ile deney düzeneğindeki varyak kaçak endüktansının toplam eşdeğeri olarak parametre dosyasında tanımlanmıştır ve tasarım türünde bir değerdir (Tablo~\ref{tab:sistem-parametreleri}). Tam topoloji şemasındaki \SI{600}{\micro\henry} etiketleri ise üç fazın $L_1$ bobinleridir. Donanımdaki fiziksel süzgeç, EMC süzgeciyle birlikte $L_1$--$C_f$ yapısındadır.
+LCL filtrenin şebeke tarafı endüktansı ayrı bir filtre bobini değildir. $L_2=\SI{1000}{\micro\henry}$, şebeke empedansı ile deney düzeneğindeki varyak kaçak endüktansının toplam eşdeğeridir ve deney sonuçları esas alınarak kestirilmiştir (Tablo~\ref{tab:sistem-parametreleri}). Tam topoloji şemasındaki \SI{600}{\micro\henry} etiketleri ise üç fazın $L_1$ bobinleridir. Donanımdaki fiziksel süzgeç, EMC süzgeciyle birlikte $L_1$--$C_f$ yapısındadır.
 
 $L_2$ değerinin modelde iki etkisi vardır. Eşitlik~\eqref{eq:lcl-rezonans} ile hesaplanan ideal rezonans frekansı $L_2$'ye bağlıdır. EMC süzgecini ve kayıpları içeren fiziksel modelde rezonans \SI{2.8}{\kilo\hertz} çevresindedir (Alt Bölüm~\ref{sec:kararlilik-bode}). Rezonans frekansı anahtarlama frekansının altıda birinden büyük olduğundan $L_2$, akım denetiminin gecikme duyarlılığını belirleyen bir tasarım parametresidir. Şebeke endüktansının \num{0}--\SI{5}{\milli\henry} aralığındaki etkisi de kararlılık analizinde taranmıştır. Açık çevrim deney senaryolarında ise $L_2$, C noktasındaki gerilim ile şebeke iç gerilimi arasındaki küçük temel frekans farkını belirlemektedir. Kalibre edilen aktif ve reaktif güç değerleri, şebeke tarafı endüktansından yalnızca ikinci mertebede etkilenmektedir.
 
@@ -438,7 +438,7 @@ Donanımın PWM zamanlayıcı yazmaçlarından periyot ve ölü zaman değerleri
 
 \section{Elektriksel ve Denetim Parametreleri}
 
-Benzetim modellerinin ve deney düzeneğinin elektriksel, yarı iletken, modülasyon, denetim ve değerlendirme parametreleri Tablo~\ref{tab:sistem-parametreleri} altında tek yerde toplanmıştır. Diğer bölümlerde parametre değerleri için tabloya başvurulmaktadır. Kaynak sütunundaki kısaltmalar tablo notunda açıklanmıştır. Tür sütunu her değerin dayanağını altı sınıftan birine bağlamaktadır. \emph{Ölçülmüş} değer, deney düzeneğinin güç analizörü ya da ölçüm ekranından okunan çalışma noktasıdır. \emph{Veri sayfası} değeri, üretici veri sayfasından okunan ya da veri sayfası eğrisine oturtulan cihaz büyüklüğüdür. \emph{Tasarım} değeri, parametre dosyasında ya da donanım tasarım belgelerinde tanımlanan büyüklüktür. \emph{Kalibre edilmiş} değer, benzetim modelini deney özetinin aktif ve reaktif gücüne oturtmak için ayarlanmıştır. \emph{Benzetim seçimi} yalnız benzetime ait modelleme ya da denetim kararını göstermektedir. \emph{Model düzeltmesi} değeri, benzetim modelinin devre şemasıyla karşılaştırılmasında düzeltilen büyüklüktür (Tablo~\ref{tab:model-duzeltme-ozeti}).
+Benzetim modellerinin ve deney düzeneğinin elektriksel, yarı iletken, modülasyon, denetim ve değerlendirme parametreleri Tablo~\ref{tab:sistem-parametreleri} altında tek yerde toplanmıştır. Diğer bölümlerde parametre değerleri için tabloya başvurulmaktadır. Kaynak sütunundaki kısaltmalar tablo notunda açıklanmıştır. Tür sütunu her değerin dayanağını yedi sınıftan birine bağlamaktadır. \emph{Ölçülmüş} değer, deney düzeneğinin güç analizörü ya da ölçüm ekranından okunan çalışma noktasıdır. \emph{Veri sayfası} değeri, üretici veri sayfasından okunan ya da veri sayfası eğrisine oturtulan cihaz büyüklüğüdür. \emph{Tasarım} değeri, parametre dosyasında ya da donanım tasarım belgelerinde tanımlanan büyüklüktür. \emph{Deneysel kestirim} değeri, deney sonuçları esas alınarak kestirilen eşdeğer büyüklüktür (Alt Bölüm~\ref{sec:kalibrasyon}). \emph{Kalibre edilmiş} değer, benzetim modelini deney özetinin aktif ve reaktif gücüne oturtmak için ayarlanmıştır. \emph{Benzetim seçimi} yalnız benzetime ait modelleme ya da denetim kararını göstermektedir. \emph{Model düzeltmesi} değeri, benzetim modelinin devre şemasıyla karşılaştırılmasında düzeltilen büyüklüktür (Tablo~\ref{tab:model-duzeltme-ozeti}).
 
 \newpage
 \begingroup
@@ -483,11 +483,11 @@ Sayısal denetleyici & PIC32MK ailesi, 32 bit & -- & TB, kontrol kartı & Tasar�
 \multicolumn{5}{@{}l}{\small\textbf{LCL filtre, EMC süzgeci ve DA bara}} \\*
 Evirici tarafı endüktansı $L_1$ & \num{600} & \si{\micro\henry} & PD; ŞM & Tasarım \\
 $L_1$ seri direnci & \num{0.03} & \si{\ohm} & PD & Tasarım \\
-$L_1$ çekirdek kaybı paralel direnci $R_p$ & S1--S3 \num{600}; S4 \num{1500} & \si{\ohm} & PD & Tasarım \\
+$L_1$ çekirdek kaybı paralel direnci $R_p$ & S1--S3 \num{600}; S4 \num{1500} & \si{\ohm} & PD & Deneysel kestirim \\
 Filtre kapasitörü $C_f$ & \num{8} & \si{\micro\farad} & PD; ŞM & Tasarım \\
 $C_f$ seri direnci & \num{0.01} & \si{\ohm} & PD & Tasarım \\
-Şebeke tarafı endüktansı $L_2$ (şebeke ve varyak eşdeğeri) & \num{1000} & \si{\micro\henry} & PD & Tasarım (Alt Bölüm~\ref{sec:l2-tanimi}) \\
-$L_2$ seri direnci & \num{0.01} & \si{\ohm} & PD & Tasarım \\
+Şebeke tarafı endüktansı $L_2$ (şebeke ve varyak eşdeğeri) & \num{1000} & \si{\micro\henry} & PD & Deneysel kestirim (Alt Bölüm~\ref{sec:l2-tanimi}) \\
+$L_2$ seri direnci & \num{0.01} & \si{\ohm} & PD & Deneysel kestirim \\
 Ortak kip bobinleri (iki kademe) & Sargı \SI{400}{\micro\henry}; karşılıklı \SI{398}{\micro\henry} ($k=\num{0.995}$); sargı direnci \SI{5}{\milli\ohm}; çekirdek kaybı \SI{100}{\kilo\ohm}; diferansiyel eşdeğer kademe başına \SI{4}{\micro\henry} & -- & PD; ŞM ilk kademe \SI{460}{\micro\henry} & Tasarım \\
 X kapasitörü ağı (tek faz eşdeğeri) & \SI{0.5}{\micro\farad}, \SI{0.2}{\ohm} (iki seri \SI{1}{\micro\farad}/\SI{0.1}{\ohm} kol) & -- & PD & Model düzeltmesi \\
 DA bara kapasitörleri $C_{\mathrm{dc}+}=C_{\mathrm{dc}-}$ & \num{470} & \si{\micro\farad} & PD; ŞM \SI{470}{\micro\farad}/\SI{450}{\volt} & Tasarım (S1--S3, deney donanımı) \\
