@@ -1,26 +1,26 @@
 \chapter{SONUÇLAR VE GELECEK ÇALIŞMALAR}
 \label{chap:sonuc}
 
-Tezde T-tipi dönüştürücünün düşük güç davranışı, nötr anahtar susturma yöntemi, Sin\textsuperscript{3} tabanlı ileri besleme kompanzasyonu ve GT-tipi yeniden yapılandırılabilir enerji depolama mimarisi tek bir araştırma zinciri altında ele alınmıştır. Sonuçlar birbirini tamamlayan kanıt türlerine dayanmaktadır. Düşük güç anahtarlama ve Sin\textsuperscript{3} incelemelerinin dayanakları analitik model, deney özetine kalibre edilmiş anahtarlamalı benzetim, kapalı çevrim S4 benzetimi ve prototip deney kayıtlarıdır. GT-tipi inceleme ise aynı deney düzeneğinin evirici kipindeki deneylerini, şarj zinciri benzetim kayıtlarını ve topoloji tanımını temel almaktadır.
+Tezde T-tipi dönüştürücünün düşük güç davranışı, nötr anahtar susturma yöntemi, Sin\textsuperscript{3} tabanlı ileri besleme kompanzasyonu ve GT-tipi yeniden yapılandırılabilir enerji depolama mimarisi incelenmiştir. Düşük güç anahtarlama ve Sin\textsuperscript{3} sonuçları analitik modelden, deney özetine kalibre edilmiş anahtarlamalı benzetimden, kapalı çevrim S4 benzetiminden ve prototip deney kayıtlarından elde edilmiştir. GT-tipi inceleme ise aynı deney düzeneğinin evirici kipindeki deneylerini, şarj zinciri benzetim kayıtlarını ve topoloji tanımını temel almaktadır.
 
 \section{Araştırma Sorularının Yanıtları}
 
-Tablo~\ref{tab:arastirma-sorusu-kanit}, Giriş bölümünde tanımlanan dört araştırma sorusunu yanıtlarıyla ve dayanaklarıyla eşleştirmektedir.
+Giriş bölümünde tanımlanan dört araştırma sorusunun yanıtları ve tezde incelendiği yerler Tablo~\ref{tab:arastirma-sorusu-kanit} üzerinde verilmiştir.
 
 \begingroup
 \setlength{\tabcolsep}{3pt}
 \begin{longtable}{@{}>{\footnotesize\raggedright\arraybackslash}p{0.06\textwidth}%
                      >{\footnotesize\raggedright\arraybackslash}p{0.40\textwidth}%
                      >{\footnotesize\raggedright\arraybackslash}p{0.51\textwidth}@{}}
-  \caption{Araştırma sorusu--kanıt--sonuç matrisi.}
+  \caption{Araştırma soruları ve yanıtları.}
   \label{tab:arastirma-sorusu-kanit}\\
   \toprule
-  \textbf{Soru} & \textbf{Sonuç düzeyi} & \textbf{Başlıca dayanak} \\
+  \textbf{Soru} & \textbf{Yanıt} & \textbf{İncelendiği yer} \\
   \midrule
   \endfirsthead
-  \caption[]{Araştırma sorusu--kanıt--sonuç matrisi (devamı).}\\
+  \caption[]{Araştırma soruları ve yanıtları (devamı).}\\
   \toprule
-  \textbf{Soru} & \textbf{Sonuç düzeyi} & \textbf{Başlıca dayanak} \\
+  \textbf{Soru} & \textbf{Yanıt} & \textbf{İncelendiği yer} \\
   \midrule
   \endhead
   \bottomrule
@@ -34,15 +34,15 @@ Tablo~\ref{tab:arastirma-sorusu-kanit}, Giriş bölümünde tanımlanan dört ar
 
 \textbf{AS1 -- Ters akım mekanizması.} T-tipi faz kolunda sıfır gerilim durumunu oluşturan nötr anahtarın, endüktör akımı sıfıra ulaştıktan sonra iletimde tutulması senkron-buck benzeri çift yönlü bir akım yolu oluşturmaktadır. Akım referansla aynı yönde yararlı güç taşımak yerine ters yönde büyüyebildiği için RMS akım ve iletim kaybı artmaktadır. Klasik anahtarlamada akımın her anahtarlama periyodunda sıfırı kesmesi, ölü zamanın akıma bağlı bir gerilim hatası üretmesine yol açmaktadır (Alt Bölüm~\ref{sec:kalibrasyon}).
 
-\textbf{AS2 -- Nötr anahtar susturmanın verim--harmonik ödünleşimi.} Ters akım, anlık akımın mutlak değeri akım dalgalanmasının yarısı olan sınır akımının altında kaldığında oluşmaktadır. Sınır akımı en çok yaklaşık \SI{4.5}{\ampere}'dir. Susturmanın etkili olduğu çalışma aralığı da sınır akımıyla belirlenmektedir. Yaklaşık \SI{2.3}{\ampere} faz akımında susturma, klasik anahtarlamaya göre verimi deneyde \%92,5'ten \%94,2'ye (1,7 puan) yükseltmiştir. Deneyin aktif ve reaktif gücüne kalibre edilmiş benzetimde verim \%91,15'ten \%93,93'e (2,78 puan) yükselmiştir (Tablo~\ref{tab:kalibrasyon-karsilastirma}). Verim sıralaması iki kaynakta aynıdır. Benzetimdeki fazla artış S1 verimindeki $-1{,}35$ puanlık sapmadan gelmektedir. Harmonik bedel iki kaynakta da açıktır: şebeke akımı THD'si deneyde \%15'ten \%47'ye, benzetimde \%39,5'ten \%56,7'ye çıkmıştır. S4 benzetiminde \SI{10}{\ampere}'de susturmalı köprü çevrimin büyük kısmında süreksiz iletimdedir ve THD \%19,6--22,6 düzeyindedir (Tablo~\ref{tab:s4-tarama}). Ulaşılan sonuç, susturmanın ters akım yolunu keserek düşük güçte verimi artırdığı ve aynı noktada üçüncü harmonik ağırlıklı bir bozulma oluşturduğudur.
+\textbf{AS2 -- Nötr anahtar susturmanın verim--harmonik ödünleşimi.} Ters akım, anlık akımın mutlak değeri akım dalgalanmasının yarısı olan sınır akımının altında kaldığında oluşmaktadır. Sınır akımı en çok yaklaşık \SI{4.5}{\ampere}'dir. Susturmanın etkili olduğu çalışma aralığı da sınır akımıyla belirlenmektedir. Yaklaşık \SI{2.3}{\ampere} faz akımında susturma, klasik anahtarlamaya göre verimi deneyde \%92,5'ten \%94,2'ye (1,7 puan) yükseltmiştir. Deneyin aktif ve reaktif gücüne kalibre edilmiş benzetimde verim \%91,15'ten \%93,93'e (2,78 puan) yükselmiştir (Tablo~\ref{tab:kalibrasyon-karsilastirma}). Verim sıralaması iki kaynakta aynıdır. Benzetimdeki fazla artış S1 verimindeki $-1{,}35$ puanlık sapmadan gelmektedir. Harmonik bedel iki kaynakta da açıktır: şebeke akımı THD'si deneyde \%15'ten \%47'ye, benzetimde \%39,5'ten \%56,7'ye çıkmıştır. S4 benzetiminde \SI{10}{\ampere}'de susturmalı köprü çevrimin büyük kısmında süreksiz iletimdedir ve THD \%19,6--22,6 düzeyindedir (Tablo~\ref{tab:s4-tarama}). Susturma, ters akım yolunu keserek düşük güçte verimi artırmakta, aynı noktada üçüncü harmonik ağırlıklı bir bozulma oluşturmaktadır.
 
 \textbf{AS3 -- Sin\textsuperscript{3} kompanzasyonu ve kararlılık.} Susturma ile birlikte kullanılan Sin\textsuperscript{3} terimi, aynı düşük güç noktasında deneyde akım THD'sini \%47'den \%14'e indirmiş ve verimi \%94,5 düzeyinde korumuştur. THD klasik anahtarlamanın \%15 düzeyine dönerken verim klasik anahtarlamadakinden 2,0 puan yüksek kalmıştır. Karşılaştırılan S1 ve S3 deneyleri sırasıyla \SI{431.5}{\volt} ve \SI{427.5}{\volt} DA bara geriliminde yürütülmüştür. Osiloskop kayıtlarında üçüncü harmonik oranı yaklaşık \%47'den yaklaşık \%9'a inmektedir (Alt Bölüm~\ref{sec:thd-kaynaklar}). Deney özetine kalibre edilen S3 modeli, kalibrasyon hedefi olmayan akım THD'sini deneydeki \%14 değerine karşılık \%14,8 olarak vermektedir. Model, deneyin verimini 0,25 puan, AA akımını \%1,4 içinde yeniden üretmektedir (Alt Bölüm~\ref{sec:kalibrasyon}). Analitik taramada $I_{\mathrm{rms}}>\SI{2.2}{\ampere}$ koşuluyla seçilen $(k_1,k_3)=(0{,}36,\ 0{,}42)$ çifti, \SI{2.244}{\ampere} RMS akımda üçüncü harmonik oranını \%39,96'dan \%0,315'e düşürmüştür (Alt Bölüm~\ref{sec:sin3-yeniden-tarama}). S4 kapalı çevrim modelinde PI ve PIR denetimi, anma akımında (\SI{25}{\ampere}) doyuma girmeden sırasıyla $-$\%2,1 ve $-$\%1,0 genlik hatasında kalmıştır (Alt Bölüm~\ref{sec:s4-kapali-cevrim}). Anma akımında üçüncü harmoniğin kaynağı, \SI{2.3}{\ampere} noktasına göre kalibre edilmiş Sin\textsuperscript{3} teriminin kendisidir. Uygun ileri besleme genliği akım düzeyine bağlıdır. Kararlılık analizi, Sin\textsuperscript{3} teriminin karakteristik denklemde yer almadığını göstermiştir. Ortalama modelde $L$, $S$ ve $T$ fonksiyonları $K_{34}$ açıkken de kapalıyken de aynıdır. Analog eşdeğer çevrim, anma akımındaki kritik geçişte \SI{54}{\degree} faz marjı ve $+$\SI{35}{\decibel} kazanç marjıyla kararlıdır (Alt Bölüm~\ref{sec:kararlilik-bode}).
 
-\textbf{AS4 -- GT-tipi yeniden görevlendirme.} İşlev paylaşım topolojisi, evirici/LCL, iki seviyeli evirici--transformatör ve PFC yollarında aynı yarı iletken tabanının farklı kiplerde kullanılabileceğini devre düzeyinde göstermektedir. Deney düzeneği GT-tipi olarak kurulmuştur. Düşük güç deneyleri donanımın evirici kipinde yapılmış, şarj yönünün işlevsel bütünlüğü benzetim kayıtlarıyla gösterilmiştir. Kip değişim röleleriyle yapılan geçişin güvenliği PWM'nin durdurulmasına, faz akımlarının sıfıra yaklaşmasına, DA bara dengesine ve röle geri bildirimine birlikte bağlanmıştır.
+\textbf{AS4 -- GT-tipi yeniden görevlendirme.} İşlev paylaşım topolojisi, evirici/LCL, iki seviyeli evirici--transformatör ve PFC yollarında aynı yarı iletken tabanının farklı kiplerde kullanılabileceğini devre düzeyinde göstermektedir. Deney düzeneği GT-tipi olarak kurulmuştur. Düşük güç deneyleri donanımın evirici kipinde yapılmış, şarj yönündeki işleyiş benzetim kayıtlarıyla gösterilmiştir. Kip değişim röleleriyle yapılan geçişin güvenliği PWM'nin durdurulmasına, faz akımlarının sıfıra yaklaşmasına, DA bara dengesine ve röle geri bildirimine birlikte bağlanmıştır.
 
 \section{Özgün Katkıların Değerlendirilmesi}
 
-Tablo~\ref{tab:katki-yontem-kanit}, üç katkıyı tez başlığının üç bileşeniyle, yöntemle, başlıca bulguyla ve kanıtla eşleştirmektedir. Tablodaki deney değerleri, prototipin tek faz kolunda, yaklaşık \SI{2.3}{\ampere} faz akımında, \num{250}--\SI{280}{\watt} AA güçte ve yaklaşık \SI{120}{\volt} şebeke geriliminde elde edilmiştir (Alt Bölüm~\ref{sec:sonuc-kosullar}).
+Üç katkının yöntemi, başlıca bulgusu ve tezde incelendiği yer Tablo~\ref{tab:katki-yontem-kanit} üzerinde verilmiştir. Tablodaki deney değerleri, prototipin tek faz kolunda, yaklaşık \SI{2.3}{\ampere} faz akımında, \num{250}--\SI{280}{\watt} AA güçte ve yaklaşık \SI{120}{\volt} şebeke geriliminde elde edilmiştir (Alt Bölüm~\ref{sec:sonuc-kosullar}).
 
 \begingroup
 \setlength{\tabcolsep}{3pt}
@@ -50,33 +50,33 @@ Tablo~\ref{tab:katki-yontem-kanit}, üç katkıyı tez başlığının üç bile
                      >{\footnotesize\raggedright\arraybackslash}p{0.20\textwidth}%
                      >{\footnotesize\raggedright\arraybackslash}p{0.405\textwidth}%
                      >{\footnotesize\raggedright\arraybackslash}p{0.18\textwidth}@{}}
-  \caption{Özgün katkılar: başlıktaki karşılık, yöntem, başlıca bulgu ve kanıt.}
+  \caption{Özgün katkılar: yöntem, başlıca bulgu ve incelendiği yer.}
   \label{tab:katki-yontem-kanit}\\
   \toprule
-  \textbf{Katkı ve başlıktaki karşılığı} & \textbf{Yöntem} & \textbf{Başlıca bulgu ve koşulu} & \textbf{Kanıtın yeri ve türü} \\
+  \textbf{Katkı} & \textbf{Yöntem} & \textbf{Başlıca bulgu ve koşulu} & \textbf{İncelendiği yer} \\
   \midrule
   \endfirsthead
-  \caption[]{Özgün katkılar: başlıktaki karşılık, yöntem, başlıca bulgu ve kanıt (devamı).}\\
+  \caption[]{Özgün katkılar: yöntem, başlıca bulgu ve incelendiği yer (devamı).}\\
   \toprule
-  \textbf{Katkı ve başlıktaki karşılığı} & \textbf{Yöntem} & \textbf{Başlıca bulgu ve koşulu} & \textbf{Kanıtın yeri ve türü} \\
+  \textbf{Katkı} & \textbf{Yöntem} & \textbf{Başlıca bulgu ve koşulu} & \textbf{İncelendiği yer} \\
   \midrule
   \endhead
   \bottomrule
   \endfoot
-    1. Nötr anahtar susturma (``düşük güç performansını iyileştiren anahtarlama'') &
+    1. Nötr anahtar susturma &
     Kip ve akım yolu analizi ile senkron-buck eşdeğeri, deneyin aktif ve reaktif gücüne kalibre edilmiş anahtarlamalı benzetim, deney özet kayıtları &
-    Klasik anahtarlamaya (S1) göre susturma (S2) verimi deneyde \%92,5'ten \%94,2'ye yükseltmektedir. Bedeli süreksiz iletim ve üçüncü harmoniktir: akım THD'si deneyde \%15'ten \%47'ye çıkmaktadır. Susturma, düşük güç bölgesi için tasarlanmış bir yöntemdir. &
-    Alt Bölüm~\ref{sec:s1-s2-kalibre}, Bölüm~\ref{chap:deney}, Tablo~\ref{tab:s4-tarama} ve \ref{tab:kalibrasyon-karsilastirma}.\newline Mekanizma doğrulanmış, verim kazancı deney ve benzetimde aynı yönde. \\
+    Klasik anahtarlamaya (S1) göre susturma (S2) verimi deneyde \%92,5'ten \%94,2'ye yükseltmektedir. Bedeli süreksiz iletim ve üçüncü harmoniktir: akım THD'si deneyde \%15'ten \%47'ye çıkmaktadır. &
+    Alt Bölüm~\ref{sec:s1-s2-kalibre}, Bölüm~\ref{chap:deney}, Tablo~\ref{tab:s4-tarama} ve \ref{tab:kalibrasyon-karsilastirma}. \\
     \addlinespace
-    2. Sin\textsuperscript{3} ileri besleme kompanzasyonu (``Sin\textsuperscript{3} tabanlı kompanzasyon'') &
+    2. Sin\textsuperscript{3} ileri besleme kompanzasyonu &
     Parçalı DCM--CCM katsayı taraması, kalibre edilmiş S3 benzetimi, akım geri beslemeli S4 benzetimi, kararlılık analizi (analitik, frekans alanı, zaman alanı) &
     Susturma ile birlikte (S3) deneyde THD \%14, verim \%94,5'tir. Kalibre edilmiş model, kalibrasyon hedefi olmayan THD'yi \%14,8 olarak vermektedir. S4'te PI denetimi \SI{25}{\ampere}'i $-$\%2,1 genlik hatasıyla, doyumsuz izlemektedir. Sin\textsuperscript{3} terimi akım çevriminin dışında kaldığı için analog eşdeğer çevrimin kararlılık marjlarını korumaktadır (faz marjı \SI{54}{\degree}, kazanç marjı \SI{35}{\decibel}). &
-    Alt Bölüm~\ref{sec:sin3-yeniden-tarama}, \ref{sec:s4-kapali-cevrim}, \ref{sec:kararlilik-bode}, \ref{sec:kalibrasyon}; Tablo~\ref{tab:kararlilik-marjlar}, \ref{tab:kalibrasyon-karsilastirma}.\newline Düşük güçte deney ve kalibre edilmiş benzetim, anma akımında S4 benzetimi, kararlılıkta analitik, frekans alanı ve zaman alanı incelemesi. \\
+    Alt Bölüm~\ref{sec:sin3-yeniden-tarama}, \ref{sec:s4-kapali-cevrim}, \ref{sec:kararlilik-bode}, \ref{sec:kalibrasyon}; Tablo~\ref{tab:kararlilik-marjlar}, \ref{tab:kalibrasyon-karsilastirma}. \\
     \addlinespace
-    3. GT-tipi mimari (``enerji depolama sistemleri için geliştirilmiş \mbox{T-tipi} dönüştürücü mimarisi'') &
+    3. GT-tipi mimari &
     Tanımlar (işlev paylaşım topolojisi, çalışma kipleri, geçiş kısıtları), şarj zinciri benzetim kayıtları, evirici kipinde düşük güç deneyleri, klasik ayrık mimariyle nitel karşılaştırma &
     Aynı T-tipi yarı iletken tabanı evirici, Vienna PFC ve aktif batarya yönetimi işlevlerinde kullanılabilir. Güvenli kip geçişi PWM'nin durdurulması, sıfıra yakın faz akımı, DA bara dengesi ve röle geri bildirimi koşuluna bağlıdır. Ortak donanım, ayrı güç katlarına göre eleman sayısını azaltma olanağı sunmaktadır. &
-    Bölüm~\ref{chap:gttipi}.\newline GT-tipi deney düzeneği, evirici kipinde düşük güç deneyi, şarj yönünde benzetim kaydı. \\
+    Bölüm~\ref{chap:gttipi}. \\
 \end{longtable}
 \endgroup
 
@@ -86,11 +86,11 @@ T-tipi eviricinin düşük güçteki ters akım sorunu, genel bir hafif yük kay
 
 \subsection{Sin\textsuperscript{3} İleri Besleme Katkısı}
 
-Sin\textsuperscript{3} terimi, bağımsız bir geri besleme denetleyicisi ya da genel amaçlı bir harmonik süzgeç yerine, nötr susturmanın ürettiği üçüncü harmonik cezasını azaltan bir modülasyon ileri beslemesi olarak konumlandırılmıştır. Tez, $\sin^3(\theta)$ ile $\sin(3\theta)$ katsayılarının farklı anlam taşıdığını göstermiştir. Katsayıların çalışma noktasına bağlı olduğu parçalı model taramasıyla ortaya konmuş, analitik katsayılar doğrulanmış parametre setiyle hesaplanmıştır. İleri besleme genliği, akım düzeyine göre ayarlanabilen bir tasarım parametresidir. Sin\textsuperscript{3} terimi modülasyon referansına eklenen tek bir ileri besleme bileşeni olduğundan akım denetleyicisi değiştirilmeden uygulanabilmektedir.
+Sin\textsuperscript{3} terimi bağımsız bir geri besleme denetleyicisi ya da genel amaçlı bir harmonik süzgeç değil, nötr susturmanın ürettiği üçüncü harmoniği azaltan bir modülasyon ileri beslemesidir. $\sin^3(\theta)$ ile $\sin(3\theta)$ katsayıları farklı anlam taşımaktadır. Katsayıların çalışma noktasına bağlı olduğu parçalı model taramasıyla ortaya konmuş, analitik katsayılar doğrulanmış parametre setiyle hesaplanmıştır. İleri besleme genliği, akım düzeyine göre ayarlanabilen bir tasarım parametresidir. Sin\textsuperscript{3} terimi modülasyon referansına eklenen tek bir ileri besleme bileşeni olduğundan akım denetleyicisi değiştirilmeden uygulanabilmektedir.
 
 \subsection{GT-Tipi Mimari Katkısı}
 
-GT-tipi yaklaşımın özgünlüğü, patentlerin de odak noktası olan yeniden görevlendirme ilkesidir. T-tipi eviricinin her faz hücresine iki kip değişim rölesi ve iki hızlı PFC yükseltici diyot ($D_1$--$D_2$) eklenmiştir. Şarj kipinde aynı IGBT'ler, $D_1$--$D_2$ ile birlikte bir Vienna PFC ve BYS transformatörünü besleyen iki seviyeli bir yarım köprü oluşturmaktadır. Yaklaşımın kullanım alanı, PFC, yarım köprü ve transformatör tabanlı BYS'den oluşan şarj zinciri üzerinden örneklenmiştir. Şarj zincirinin birlikte çalışması benzetimle gösterilmiştir. Yeniden görevlendirilen IGBT'ler sürücü, koruma ve soğutma altyapısının ortak kullanılmasına olanak sağlamaktadır.
+GT-tipi yaklaşım, patentlerde de tanımlanan yeniden görevlendirme ilkesine dayanmaktadır. T-tipi eviricinin her faz hücresine iki kip değişim rölesi ve iki hızlı PFC yükseltici diyot ($D_1$--$D_2$) eklenmiştir. Şarj kipinde aynı IGBT'ler, $D_1$--$D_2$ ile birlikte bir Vienna PFC ve BYS transformatörünü besleyen iki seviyeli bir yarım köprü oluşturmaktadır. Yaklaşımın kullanım alanı, PFC, yarım köprü ve transformatör tabanlı BYS'den oluşan şarj zinciri üzerinden örneklenmiştir. Şarj zincirinin birlikte çalışması benzetimle gösterilmiştir. Yeniden görevlendirilen IGBT'ler sürücü, koruma ve soğutma altyapısının ortak kullanılmasına olanak sağlamaktadır.
 
 \subsection{Fikrî Mülkiyet Çıktıları}
 
@@ -116,8 +116,6 @@ GT-tipi mimarinin temelini oluşturan değiştirilmiş T-tipi iki yönlü dönü
     \bottomrule
   \end{tabularx}
 \end{table}
-
-Fikrî mülkiyet çıktıları, tezin teknolojik yenilik katkısını tamamlamaktadır.
 
 \section{Sonuçların Elde Edildiği Koşullar}
 \label{sec:sonuc-kosullar}
@@ -147,6 +145,6 @@ Yöntemlerin elektrikli araç şarj altyapısı gibi çift yönlü uygulamalara 
 
 \section{Genel Sonuç}
 
-Tezin genel sonucuna göre T-tipi dönüştürücünün düşük güçteki nötr kol davranışı bir iyileştirme olanağı sunmaktadır. Susturmanın getirdiği verim--harmonik ödünleşimi, deney noktasında Sin\textsuperscript{3} ileri beslemesiyle dengelenmektedir. Susturma verimi 1,7 puan artırmış, şebeke akımı THD'sini ise \%15'ten \%47'ye çıkarmıştır. Sin\textsuperscript{3} ileri beslemesi THD'yi \%14'e, yani klasik anahtarlama düzeyine indirmiş, verimi \%94,5 düzeyinde korumuştur. Sin\textsuperscript{3} teriminin kararlılık marjlarını değiştirmediği analitik, frekans alanı ve zaman alanı kanıtlarıyla gösterilmiştir. GT-tipi yaklaşım, aynı T-tipi donanımı evirici (şebekeye deşarj), Vienna PFC (şebekeden şarj) ve aktif batarya yönetimi (batarya bazlı şarj denetimi) işlevlerinde yeniden görevlendiren bir enerji depolama mimarisi olarak tanımlanmıştır. Deşarj yönü deneyle, şarj zinciri benzetimle gösterilmiştir.
+T-tipi dönüştürücüde nötr kolun düşük güçteki davranışı bir iyileştirme olanağı sunmaktadır. Susturmanın getirdiği verim--harmonik ödünleşimi, deney noktasında Sin\textsuperscript{3} ileri beslemesiyle dengelenmektedir. Susturma verimi 1,7 puan artırmış, şebeke akımı THD'sini ise \%15'ten \%47'ye çıkarmıştır. Sin\textsuperscript{3} ileri beslemesi THD'yi \%14'e, yani klasik anahtarlama düzeyine indirmiş, verimi \%94,5 düzeyinde korumuştur. Sin\textsuperscript{3} teriminin kararlılık marjlarını değiştirmediği analitik, frekans alanı ve zaman alanı incelemeleriyle gösterilmiştir. GT-tipi yaklaşım, aynı T-tipi donanımı evirici (şebekeye deşarj), Vienna PFC (şebekeden şarj) ve aktif batarya yönetimi (batarya bazlı şarj denetimi) işlevlerinde yeniden görevlendiren bir enerji depolama mimarisi olarak tanımlanmıştır. Deşarj yönü deneyle, şarj zinciri benzetimle gösterilmiştir.
 
-Üç katkı birlikte değerlendirildiğinde tezin ana ekseni, T-tipi donanımın iki ölçekte yeniden kullanılması ve faz kolu ölçeğindeki değişikliğin Sin\textsuperscript{3} ileri beslemesiyle tamamlanmasıdır. Faz kolu ölçeğinde nötr kolun düşük güçteki görevi değiştirilmekte, sistem ölçeğinde dönüştürücü anahtarları şarj--deşarj mimarisi içinde yeniden görevlendirilmektedir. Sonuç olarak tez, T-tipi dönüştürücü için bütünlüklü bir yaklaşım ortaya koymuştur. Yaklaşım, deney noktasında düşük güç verimini artırırken şebeke akımının harmonik kalitesini korumakta ve aynı donanımı enerji depolama sisteminin şarj--deşarj işlevlerinde birleştirmektedir.
+Üç katkının ortak noktası, T-tipi donanımın iki ölçekte yeniden kullanılması ve faz kolu ölçeğindeki değişikliğin Sin\textsuperscript{3} ileri beslemesiyle tamamlanmasıdır. Faz kolu ölçeğinde nötr kolun düşük güçteki görevi değiştirilmekte, sistem ölçeğinde dönüştürücü anahtarları şarj--deşarj mimarisi içinde yeniden görevlendirilmektedir. Önerilen yaklaşım, deney noktasında düşük güç verimini artırırken şebeke akımının harmonik kalitesini korumakta ve aynı donanımı enerji depolama sisteminin şarj--deşarj işlevlerinde birleştirmektedir.

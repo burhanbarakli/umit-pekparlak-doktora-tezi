@@ -41,7 +41,7 @@ Ortak DA baraya bağlı üç T-tipi faz hücresinde dış kol modülleri, çift 
 \end{figure}
 \end{landscape}
 
-Her iddia, kendisini en doğrudan sınayan model katmanıyla desteklenmiştir. Tablo~\ref{tab:model-katmanlari}, bölümde kullanılan model katmanlarını, her katmanın kapsadığı etkileri, sınadığı konuyu ve tamamlayıcı katmanını birlikte vermektedir. Katman ayrımı, ortalama değerli denetim modelinden elde edilen kararlılık sonucunu anahtarlama kaybı ve deneysel verim kanıtından ayrı tutmaktadır.
+Tablo~\ref{tab:model-katmanlari}, bölümde kullanılan model katmanlarını, her katmanın kapsadığı etkileri, sınadığı konuyu ve tamamlayıcı katmanını birlikte vermektedir. Kararlılık sonuçları ortalama değerli denetim modelinden, anahtarlama kaybı ve verim ise anahtarlamalı benzetimden ve deneyden elde edilmektedir.
 
 \begin{table}[H]
   \centering
@@ -548,16 +548,16 @@ Tablodaki yarı iletkenlerden $D_1$--$D_2$ diyotları faz kolunda faz--DA rayı 
 
 Önerilen anahtarlama ve kompanzasyon yöntemleri aynı model, çalışma noktası ve ölçüm tanımları altında karşılaştırılmıştır. Karşılaştırma kolları S1--S4, Alt Bölüm~\ref{sec:denetim-modulasyon} başında tanımlanmıştır. Deneylerde her kol için ayrı bir DA bara ve şebeke gerilimi ölçülmüştür. Her senaryonun benzetimi, ölçülen çalışma noktasında yapılmıştır.
 
-Tablo~\ref{tab:dogrulama-matrisi}, üç akım bölgesinde (düşük, orta ve anma) karşılaştırılan yöntemleri, her bölgenin kanıt türünü ve sonucun raporlandığı bölümü birleştirmektedir. Deneyler düşük güç noktasında yürütülmüştür. Orta ve anma akımı bölgesi ile geçici rejim, deney özetine göre kalibre edilmiş benzetim modelinden türetilen S4 benzetimiyle incelenmiştir. Benzetim ve deney sonuçları ayrı raporlanmaktadır. Kalibre edilmiş model, deneyin kalibre edilmeyen büyüklüklerini hangi hatayla yeniden ürettiği üzerinden değerlendirilmektedir.
+Tablo~\ref{tab:dogrulama-matrisi}, üç akım bölgesinde (düşük, orta ve anma) karşılaştırılan yöntemleri, her bölgenin inceleme biçimini ve sonucun raporlandığı bölümü vermektedir. Deneyler düşük güç noktasında yürütülmüştür. Orta ve anma akımı bölgesi ile geçici rejim, deney özetine göre kalibre edilmiş benzetim modelinden türetilen S4 benzetimiyle incelenmiştir. Kalibre edilmiş model, deneyin kalibre edilmeyen büyüklüklerini hangi hatayla yeniden ürettiği üzerinden değerlendirilmektedir.
 
 \begin{table}[H]
   \centering
-  \caption{Karşılaştırmalı doğrulama matrisi: çalışma bölgesi, yöntem, kanıt türü ve raporlandığı bölüm.}
+  \caption{Karşılaştırmalı doğrulama matrisi: çalışma bölgesi, yöntem, inceleme biçimi ve raporlandığı bölüm.}
   \label{tab:dogrulama-matrisi}
   \small
   \begin{tabularx}{\textwidth}{p{0.19\textwidth} p{0.22\textwidth} X p{0.17\textwidth}}
     \toprule
-    Çalışma bölgesi & Yöntemler & Kanıt türü ve ölçütler & Bölüm \\
+    Çalışma bölgesi & Yöntemler & İnceleme biçimi ve ölçütler & Bölüm \\
     \midrule
     Düşük güç (\SI{2.3}{\ampere}) & S1, S2, S3 & Deney özet tablosu ve ekranları ile kalibre edilmiş benzetim. Verim, THD, $P_{\mathrm{dc}}$, $P_{\mathrm{ac}}$, $|Q_{g,1}|$, cos$\varphi_1$ & Bölüm~\ref{chap:anahtarlama}, Bölüm~\ref{chap:deney} \\
     Düşük güç, kapalı çevrim & S4: P, PI & Benzetim. Akım izleme, THD, doyum & Alt Bölüm~\ref{sec:s4-kapali-cevrim} \\

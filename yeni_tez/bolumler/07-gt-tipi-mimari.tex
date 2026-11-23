@@ -1,11 +1,11 @@
 \chapter{GT-TİPİ YENİDEN YAPILANDIRILABİLİR ENERJİ DEPOLAMA MİMARİSİ}
 \label{chap:gttipi}
 
-Bölüm~\ref{chap:anahtarlama}--\ref{chap:deney}, faz kolu ölçeğinde tezin ilk iki katkısını kurmuştur. İncelenen konular T-tipi dönüştürücünün düşük güç davranışı, ters akım dolaşımı, nötr anahtar susturma yöntemi, Sin\textsuperscript{3} tabanlı ileri besleme kompanzasyonu ve deney düzeneğidir. Bölüm~\ref{chap:gttipi} sistem ölçeğine geçmektedir. Tezin üçüncü katkısı, aynı T-tipi yarı iletken tabanının enerji depolama sisteminde şarj ve deşarj işlevleri için yeniden görevlendirilmesidir. Deney düzeneği GT-tipi olarak kurulmuştur. Şekil~\ref{fig:gelen-tam-topoloji} üzerindeki faz hücresi röleleri, PFC yükseltici diyotları ve BYS transformatörleri, yeniden görevlendirmenin donanım karşılığıdır.
+GT-tipi mimari, aynı T-tipi yarı iletken tabanını enerji depolama sisteminde şarj ve deşarj işlevleri için yeniden görevlendirmektedir. Deney düzeneği GT-tipi olarak kurulmuştur. Şekil~\ref{fig:gelen-tam-topoloji} üzerindeki faz hücresi röleleri, PFC yükseltici diyotları ve BYS transformatörleri, yeniden görevlendirmenin donanım karşılığıdır.
 
 ``GT-tipi'' adı, tezde \emph{geliştirilmiş T-tipi} enerji depolama mimarisini belirtmek için kullanılan, teze özgü bir adlandırmadır. Mimari, tek bir donanımda T-tipi faz kollarını, kip değişim rölelerini, nötr IGBT'lerle kurulan Vienna PFC katını, çok sekonderli BYS transformatörlerini ve batarya başına doğrultucu--buck şarj kollarını birleştirmektedir.
 
-Deney sonucu, benzetim kaydı ve tasarım tanımı metin boyunca birbirinden ayrılmıştır. Evirici kipinin düşük güç davranışı Bölüm~\ref{chap:deney} altındaki deneylerle, şarj yönünün işlevsel bütünlüğü Alt Bölüm~\ref{sec:gt-benzetim} altındaki benzetim kayıtlarıyla gösterilmiştir. Çalışma kipleri, geçiş kuralları ve koruma işlevleri ise tasarım tanımı olarak verilmiştir.
+Evirici kipinin düşük güç davranışı Bölüm~\ref{chap:deney} altındaki deneylerle, şarj yönündeki işleyiş Alt Bölüm~\ref{sec:gt-benzetim} altındaki benzetim kayıtlarıyla gösterilmiştir. Çalışma kipleri, geçiş kuralları ve koruma işlevleri ise tasarım tanımı olarak verilmiştir.
 
 \section{Tasarım Gereksinimleri}
 \label{sec:gt-gereksinimler}
@@ -356,7 +356,7 @@ Geleneksel ve yeniden yapılandırılabilir EDS mimarilerinin ödünleşimleri B
     Arızalı birimi ayırma & Kontaktör veya servis müdahalesi, topolojiye bağlı & Birçok yapıda modül/hücre devre dışı bırakma (bypass) olanağı & Şarjda ilgili buck kolu durdurulmaktadır \\
     Galvanik yalıtım & Merkezi veya modüler DA/DA katında sağlanabilir & Topolojiye göre var/yok & Çok sekonderli BYS transformatörüyle batarya kollarında \\
     Yarı iletken/kontrol yükü & İşlevsel kat sayısına bağlı & Yeniden yapılandırma anahtarlarıyla artabilir & Ayrı PFC ve şarj katı yerine aynı IGBT'ler rölelerle yeniden kullanılmakta, röle, diyot ve buck kolları ise eklenmektedir \\
-    Kanıt düzeyi & Olgun ticari ve akademik örnekler mevcut & Benzetim ve ölçekli prototip sonuçları mevcut \citep{Momayyezan2016,Farakhor2023,Huang2024} & Evirici kipinde düşük güç deneyi, şarj yönünde benzetim kayıtları \\
+    Olgunluk düzeyi & Olgun ticari ve akademik örnekler mevcut & Benzetim ve ölçekli prototip sonuçları mevcut \citep{Momayyezan2016,Farakhor2023,Huang2024} & Evirici kipinde düşük güç deneyi, şarj yönünde benzetim kayıtları \\
     \bottomrule
   \end{tabularx}
 \end{table}
@@ -366,16 +366,16 @@ Tablo~\ref{tab:gt-mimari-karsilastirma}, GT-tipi yapının sunduğu olanakları 
 \section{Doğrulama Matrisi}
 \label{sec:gt-dogrulama}
 
-Tablo~\ref{tab:gt-dogrulama-matrisi}, her doğrulama katmanında gösterilen işlevi ve dayandığı kanıt türünü vermektedir.
+Tablo~\ref{tab:gt-dogrulama-matrisi}, her doğrulama katmanında gösterilen işlevi ve inceleme biçimini vermektedir.
 
 \begin{table}[H]
   \centering
-  \caption{GT-tipi mimari doğrulama matrisi: gösterilen işlevler ve kanıt türleri.}
+  \caption{GT-tipi mimari doğrulama matrisi: gösterilen işlevler ve inceleme biçimleri.}
   \label{tab:gt-dogrulama-matrisi}
   \small
   \begin{tabularx}{\textwidth}{@{}L{0.20\textwidth}L{0.38\textwidth}>{\teksatir\raggedright\arraybackslash}X@{}}
     \toprule
-    Doğrulama katmanı & Gösterilen işlev/çıktı & Kanıt türü \\
+    Doğrulama katmanı & Gösterilen işlev/çıktı & İnceleme biçimi \\
     \midrule
     Bağlantı ve durum denetimi & Her kip için iletim yolu, yasak durumlar, kapı/röle/kontaktör sırası & Tasarım tanımı: topoloji şemaları ve durum makinesi \\
     Evirici kipi (deşarj) & Düşük güçte verim, akım THD'si, temel bileşen güç faktörü & Deney (S1--S3) ve kalibre edilmiş benzetim (Bölüm~\ref{chap:deney}) \\
