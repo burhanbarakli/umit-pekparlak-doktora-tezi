@@ -146,7 +146,7 @@ Dört telli T-tipi yapıda nötr noktasının kayması, iki DA bara kondansatör
 
 Akım ölçümünde HLSR 20-P/SP33 Hall etkili sensör kullanılmıştır. Sensör kazancı ve ölçülebilir simetrik tepe akımı Tablo~\ref{tab:sistem-parametreleri} içindedir. Tepe sınırın RMS karşılığı yaklaşık \SI{39.9}{\ampere}'dir. Faz başına akım tasarım değeri ve yüzde 20 paylı üst sınırı aynı tabloda verilmiştir. Hesaplar nominal direnç değerlerine dayanmaktadır.
 
-Ani faz ve kondansatör akımlarının sınırlandırılması amacıyla kullanılan pencere karşılaştırıcı devre Şekil~\ref{fig:deney-pencere-karsilastirici} üzerinde verilmiştir. Devrede üst eşik \SI{2.0}{\volt}, alt eşik \SI{0.6}{\volt} olarak, sensör referansına simetrik ayarlanmıştır. Eşiklerin referanstan uzaklığı, sensör kazancıyla Tablo~\ref{tab:sistem-parametreleri} içindeki aşırı akım eşiğine karşılık gelmektedir. Eşik dışına çıkıldığında FAULT işareti kontrol kartında harici kesme oluşturarak PWM çıkışlarını kesmektedir.
+Ani faz ve kondansatör akımları bir pencere karşılaştırıcı devreyle sınırlandırılmaktadır (Şekil~\ref{fig:deney-pencere-karsilastirici}). Devrede üst eşik \SI{2.0}{\volt}, alt eşik \SI{0.6}{\volt} olarak, sensör referansına simetrik ayarlanmıştır. Eşiklerin referanstan uzaklığı, sensör kazancıyla Tablo~\ref{tab:sistem-parametreleri} içindeki aşırı akım eşiğine karşılık gelmektedir. Eşik dışına çıkıldığında FAULT işareti kontrol kartında harici kesme oluşturarak PWM çıkışlarını kesmektedir.
 
 \begin{figure}[H]
   \centering
@@ -195,7 +195,7 @@ DA bara gerilimi, akımı ve gücü Accuenergy AcuDC240 analizörüyle ölçülm
   \label{fig:deney-acudc240}
 \end{figure}
 
-Prototipte şönt direnci DA baranın negatif terminaline bağlanarak alçak-taraf akım ölçümü yapılmıştır. \SI{20}{\ampere}/\SI{60}{\milli\volt} şönt direncin fiziksel bağlantısı Şekil~\ref{fig:deney-sont-baglanti} üzerindedir. Şöntün ölçüm uçları koaksiyel ve ekranlı kabloyla analizöre taşınmıştır. DA gerilim girişinde yüksek izolasyon dayanımlı kablo kullanılmıştır.
+Prototipte şönt direnci DA baranın negatif terminaline bağlanarak alçak-taraf akım ölçümü yapılmıştır. \SI{20}{\ampere}/\SI{60}{\milli\volt} şönt direncin fiziksel bağlantısı Şekil~\ref{fig:deney-sont-baglanti}'da görülmektedir. Şöntün ölçüm uçları koaksiyel ve ekranlı kabloyla analizöre taşınmıştır. DA gerilim girişinde yüksek izolasyon dayanımlı kablo kullanılmıştır.
 
 \begin{figure}[H]
   \centering
@@ -283,7 +283,7 @@ Deneysel verimin belirsizliği, DA analizörünün bildirilen yüzde 0,5 güç t
 
 \section{PC Ana Kumanda Yazılımı ve Veri Toplama}
 
-PC ana kumanda yazılımının amacı, EMK-01, AcuDC240 ve kontrol kartından RS485/Modbus RTU üzerinden veri almak, anlık değerleri grafikleştirmek ve verim hesabına temel oluşturmaktır. Yazılımın arayüzü Şekil~\ref{fig:deney-pc-arayuzu} üzerindedir. Bir veri çevrimi yaklaşık \SI{1}{\second} sürmektedir. Her çevrimde önce DA analizörü, en fazla yaklaşık \SI{50}{\milli\second} sonra AA analizörü okunmaktadır. Kayıt yapısı kararlı durum eğilimlerini izlemek ve verimi hesaplamak için kullanılmıştır. Yazılımın karşılaştırma seti verim, THD, güç faktörü, faz akımı, faz--nötr gerilimi ve DA bara geriliminden oluşmaktadır.
+PC ana kumanda yazılımının amacı, EMK-01, AcuDC240 ve kontrol kartından RS485/Modbus RTU üzerinden veri almak, anlık değerleri grafikleştirmek ve verim hesabına temel oluşturmaktır. Şekil~\ref{fig:deney-pc-arayuzu}, yazılımın arayüzünü göstermektedir. Bir veri çevrimi yaklaşık \SI{1}{\second} sürmektedir. Her çevrimde önce DA analizörü, en fazla yaklaşık \SI{50}{\milli\second} sonra AA analizörü okunmaktadır. Kayıt yapısı kararlı durum eğilimlerini izlemek ve verimi hesaplamak için kullanılmıştır. Yazılımın karşılaştırma seti verim, THD, güç faktörü, faz akımı, faz--nötr gerilimi ve DA bara geriliminden oluşmaktadır.
 
 \begin{figure}[H]
   \centering
@@ -298,7 +298,7 @@ Ortak hedef çalışma koşulu olarak DA bara gerilimi yaklaşık \SI{400}{\volt
 
 Klasik yöntemde bütün anahtarlar tamamlayıcı sürülmekte ve düşük akımda senkron alçaltıcı benzeri ters akım yolu açık kalmaktadır. Deney özeti yüzde 92,5 verim, yüzde 15 faz akımı THD'si, yaklaşık \SI{2.3}{\ampere} faz akımı, \SI{120}{\volt} faz--nötr gerilimi ve \SI{430}{\volt} DA bara gerilimi bildirmektedir.
 
-Klasik anahtarlama sırasında PC yazılımında elde edilen grafiklerin tamamı Şekil~\ref{fig:deney-klasik-pc} üzerindedir. AA/DA analizör değerleri ile güç ve THD eğilimleri aynı arayüzde izlenmektedir. THD$_i$ eğrisi yaklaşık 100 saniyelik kayıt boyunca \%5--22 arasında dalgalanmaktadır.
+Klasik anahtarlama sırasında PC yazılımında elde edilen grafikler Şekil~\ref{fig:deney-klasik-pc}'de toplanmıştır. AA/DA analizör değerleri ile güç ve THD eğilimleri aynı arayüzde izlenmektedir. THD$_i$ eğrisi yaklaşık 100 saniyelik kayıt boyunca \%5--22 arasında dalgalanmaktadır.
 
 \begin{figure}[H]
   \centering

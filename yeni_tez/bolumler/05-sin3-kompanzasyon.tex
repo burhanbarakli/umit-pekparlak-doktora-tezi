@@ -205,7 +205,7 @@ olarak bulunmuştur. $(0{,}36,\ 0{,}42)$ çifti Tablo~\ref{tab:sin3-katsayi-komb
 
 Verilen koşullardaki tarama alanı ve en uygun adayın akım zarfı Şekil~\ref{fig:sin3-yeniden-tarama} üzerinde verilmiştir. Şekil~\ref{fig:sin3-yeniden-tarama}a üzerindeki beyaz noktalar Tablo~\ref{tab:sin3-katsayi-kombinasyonlari} içindeki \num{23} uygun çifti, beyaz sürekli çizgi \%5 eş-oran eğrisini, yıldız ise en iyi noktayı göstermektedir. Eğriler parçalı DCM/CCM analitik modelinden elde edilmiştir. Saf sinüzoidal görev oranının genliği, iki zarfın temel akım genlikleri eşit olacak şekilde seçilmiş ve karşılaştırma aynı temel bileşen üzerinden yapılmıştır.
 
-Eşitlik~\eqref{eq:sin3-duzeltilmis-optimum} ile verilen çift, tek endüktanslı analitik katmanın adayıdır. Anahtarlamalı benzetimde kullanılan S3 katsayıları ($K_{13}$, $K_{33}$), Alt Bölüm~\ref{sec:kalibrasyon} içinde deney özetinin aktif ve reaktif gücüne kalibre edilmiştir. Analitik adayın harmonik eşdeğeri $(0{,}675,\ -0{,}105)$, kalibre edilmiş S3 katsayılarının eşdeğeri ise $(K_{13}+3K_{33}/4,\ -K_{33}/4)=(0{,}7317,\ -0{,}0961)$'dir. Analitik tarama S1 çalışma noktasında ($V_m/V_h\simeq0{,}785$), S3 kalibrasyonu ise $V_m/V_h\simeq0{,}822$ olan çalışma noktasında yapılmıştır. Analitik adayın \SI{2.244}{\ampere} RMS değeri ortalama $L_1$ akımına aittir. Kalibre edilmiş S3 benzetiminin AA faz akımı ise \SI{2.279}{\ampere}'dir (Tablo~\ref{tab:kalibrasyon-karsilastirma}). Temel bileşene oranlanmış üçüncü harmonik eşdeğer katsayısı analitik adayda $-0{,}156$, kalibre edilmiş katsayılarda $-0{,}131$'dir.
+Eşitlik~\eqref{eq:sin3-duzeltilmis-optimum} ile verilen çift, tek endüktanslı analitik modelin adayıdır. Anahtarlamalı benzetimde kullanılan S3 katsayıları ($K_{13}$, $K_{33}$), Alt Bölüm~\ref{sec:kalibrasyon} içinde deney özetinin aktif ve reaktif gücüne kalibre edilmiştir. Analitik adayın harmonik eşdeğeri $(0{,}675,\ -0{,}105)$, kalibre edilmiş S3 katsayılarının eşdeğeri ise $(K_{13}+3K_{33}/4,\ -K_{33}/4)=(0{,}7317,\ -0{,}0961)$'dir. Analitik tarama S1 çalışma noktasında ($V_m/V_h\simeq0{,}785$), S3 kalibrasyonu ise $V_m/V_h\simeq0{,}822$ olan çalışma noktasında yapılmıştır. Analitik adayın \SI{2.244}{\ampere} RMS değeri ortalama $L_1$ akımına aittir. Kalibre edilmiş S3 benzetiminin AA faz akımı ise \SI{2.279}{\ampere}'dir (Tablo~\ref{tab:kalibrasyon-karsilastirma}). Temel bileşene oranlanmış üçüncü harmonik eşdeğer katsayısı analitik adayda $-0{,}156$, kalibre edilmiş katsayılarda $-0{,}131$'dir.
 
 \section{Önerilen Yapı ve İleri Besleme Mekanizması}
 
@@ -425,7 +425,7 @@ PI denetleyiciyle akım referansı $t=\SI{55}{\milli\second}$ anında \SI{10}{\a
 
 Sin\textsuperscript{3} yönteminin kapalı çevrim kararlılığı analitik olarak, frekans alanında ve zaman alanında incelenmiştir. Analitik incelemede Sin\textsuperscript{3} teriminin karakteristik denklemin dışında kaldığı gösterilmiştir. Frekans alanı incelemesi, S4 akım çevriminin açık çevrim kazancı $L$ (loop gain), duyarlılık fonksiyonu $S$ (sensitivity function) ve tamamlayıcı duyarlılık fonksiyonu $T$ (complementary sensitivity function) üzerine kuruludur. Bode eğrileri, kazanç ve faz marjları ile kapalı çevrim kutupları $K_{34}$ açık ve kapalı hesaplanmıştır. Zaman alanında ise anahtarlamalı S4 modelinde küçük işaret enjeksiyonuyla ölçülen çevrim kazancı ve basamak yanıtı ortalama modelle karşılaştırılmaktadır.
 
-\subsection{Analitik katman: Sin\texorpdfstring{\textsuperscript{3}}{3} terimi çevrimin dışındadır}
+\subsection{Analitik inceleme: Sin\texorpdfstring{\textsuperscript{3}}{3} terimi çevrimin dışındadır}
 
 Denetlenen sistem $G(s)=i_{L1}/v_{\mathrm{inv}}$, evirici kutup geriliminden $L_1$ akımına ortalama aktarım fonksiyonudur. Güç ağı anahtarlamalı modeldeki sırayla kurulmuştur: $L_1$ ve çekirdek kaybı direnci, $C_f$, EMC süzgecinin diferansiyel kip endüktansları ile X kapasitörü, $L_2$ ve şebeke. Ortalama modeldeki denetlenen sistemin rezonansı \SI{2815}{\hertz} ($\zeta=0{,}0041$), antirezonansı (anti-resonance) \SI{1720}{\hertz}'tir. Antirezonans, evirici geriliminden $L_1$ akımına giden yolun kazancının çöktüğü frekanstır. Ortalama modeldeki değer, $C_f$'ye EMC süzgecinin X kapasitörü eklendiği için Eşitlik~\eqref{eq:lcl-rezonans} ile verilen $f_{\mathrm{ar}}=\omega_{\mathrm{ar}}/2\pi\simeq\SI{1.78}{\kilo\hertz}$ değerinin biraz altında kalmaktadır. Normalize edilmiş modülasyon komutunu kutup gerilimine dönüştüren PWM kazancı $K_{\mathrm{pwm}}=V_{\mathrm{dc}}/2$, toplam gecikme $T_d$ ve şebeke geriliminden akıma aktarım $G_g(s)$ ile gösterilsin. Doyum dışında Eşitlik~\eqref{eq:s4-denetim-yapisi} çevriminin açık çevrim kazancı
 \begin{equation}
@@ -450,7 +450,7 @@ Sin\textsuperscript{3} teriminin akıma etkisi $S(j\omega)K_{\mathrm{pwm}}G(j\om
 
 \subsection{Frekans alanı: marjlar, Bode eğrileri ve kutuplar}
 
-Gerçekleme (A), S4 modelindeki analog eşdeğerdir ve sürekli denetleyici, ölçüm süzgeci ile $T_d=\SI{2}{\micro\second}$ toplam gecikme içermektedir. Süzgeç ve gecikmenin faz etkisi
+İncelenen akım çevrimi S4 modelindeki analog eşdeğerdir ve sürekli denetleyici, ölçüm süzgeci ile $T_d=\SI{2}{\micro\second}$ toplam gecikme içermektedir. Süzgeç ve gecikmenin faz etkisi
 \begin{equation}
   \begin{gathered}
     H_m(s)=\frac{1}{1+s/\omega_m},\qquad \omega_m=2\pi f_m,\\
@@ -458,7 +458,7 @@ Gerçekleme (A), S4 modelindeki analog eşdeğerdir ve sürekli denetleyici, öl
   \end{gathered}
   \label{eq:olcum-gecikme-fazi}
 \end{equation}
-ile verilmektedir. Süzgecin köşe frekansı $f_m=f_s/2=\SI{5}{\kilo\hertz}$'tir. Aynı yapının \SI{1}{\micro\second} ayrık karşılığı marjları en çok $0{,}02^{\circ}$ ve \SI{0.1}{\decibel} değiştirmektedir. Gerçekleme (A) satırları ayrık karşılığı da temsil etmektedir. Bode eğrileri, marjlar ve Nyquist sayımı kesin gecikme $e^{-j\omega T_d}$ ile hesaplanmıştır. Kapalı çevrim kutuplarında gecikme, ikinci mertebe Padé yaklaşımıyla
+ile verilmektedir. Süzgecin köşe frekansı $f_m=f_s/2=\SI{5}{\kilo\hertz}$'tir. Aynı yapının \SI{1}{\micro\second} ayrık karşılığı marjları en çok $0{,}02^{\circ}$ ve \SI{0.1}{\decibel} değiştirmektedir. Tablodaki analog eşdeğer satırları ayrık karşılığı da temsil etmektedir. Bode eğrileri, marjlar ve Nyquist sayımı kesin gecikme $e^{-j\omega T_d}$ ile hesaplanmıştır. Kapalı çevrim kutuplarında gecikme, ikinci mertebe Padé yaklaşımıyla
 \begin{equation}
   e^{-sT_d}\simeq\frac{1-sT_d/2+(sT_d)^2/12}{1+sT_d/2+(sT_d)^2/12}
   \label{eq:pade-yaklasimi}
@@ -476,7 +476,7 @@ Denetlenen sistemdeki LCL filtre nedeniyle $|L(j\omega)|$ eğrisi 0~dB eksenini 
   \end{aligned}
   \label{eq:marj-tanimlari}
 \end{equation}
-biçimindedir. Eşitlik~\eqref{eq:marj-tanimlari} içinde $\omega_{\pi}$ faz geçiş açısal frekansı, $N_{\mathrm{s}}$ $(-\infty,-1)$ ışınının net kesişim sayısı, $P_{\mathrm{a}}$ ve $Z_{\mathrm{k}}$ sırasıyla açık ve kapalı çevrimin sağ yarı düzlemdeki kutup sayısıdır. Modül marjı $1/M_s$'dir. $\mathrm{DM}_i$ ifadesi fazın negatif olduğu geçişlerde geçerlidir. Gerçekleme (A)'nın ikinci kazanç geçişinde faz pozitiftir. $-1$ noktasına ulaşmak için gereken dönüş $\angle L+180^{\circ}$ olduğundan ikinci geçişin gecikme marjı büyüktür. Gerçekleme (A)'da $\mathrm{DM}_{\min}$ değerini üçüncü geçiş belirlemektedir. PI satırındaki değer Eşitlik~\eqref{eq:marj-tanimlari} ile yeniden üretilmektedir: $54{,}2^{\circ}/(360^{\circ}\cdot\SI{3386}{\hertz})\simeq\SI{44.5}{\micro\second}$. Tablodaki değerle fark yuvarlamadan gelmektedir. LCL rezonansında $L$'nin fazı $0^{\circ}$'dan geçmektedir. Aynı noktada $|L|\simeq\SI{30}{\decibel}$'dir. Nokta pozitif gerçel eksendedir ve faz geçişi tanımının dışında kalmaktadır. Açık çevrimin bütün kutupları kararlı olduğundan ($P_{\mathrm{a}}=0$) kararlılık koşulu $N_{\mathrm{s}}=0$'dır. Kapalı çevrim kutupları ayrıca doğrudan hesaplanmıştır. Nyquist sayımı, kutuplar ve modül marjı her satırda aynı sonucu vermektedir.
+biçimindedir. Eşitlik~\eqref{eq:marj-tanimlari} içinde $\omega_{\pi}$ faz geçiş açısal frekansı, $N_{\mathrm{s}}$ $(-\infty,-1)$ ışınının net kesişim sayısı, $P_{\mathrm{a}}$ ve $Z_{\mathrm{k}}$ sırasıyla açık ve kapalı çevrimin sağ yarı düzlemdeki kutup sayısıdır. Modül marjı $1/M_s$'dir. $\mathrm{DM}_i$ ifadesi fazın negatif olduğu geçişlerde geçerlidir. Analog eşdeğer çevrimin ikinci kazanç geçişinde faz pozitiftir. $-1$ noktasına ulaşmak için gereken dönüş $\angle L+180^{\circ}$ olduğundan ikinci geçişin gecikme marjı büyüktür. Analog eşdeğerde $\mathrm{DM}_{\min}$ değerini üçüncü geçiş belirlemektedir. PI satırındaki değer Eşitlik~\eqref{eq:marj-tanimlari} ile yeniden üretilmektedir: $54{,}2^{\circ}/(360^{\circ}\cdot\SI{3386}{\hertz})\simeq\SI{44.5}{\micro\second}$. Tablodaki değerle fark yuvarlamadan gelmektedir. LCL rezonansında $L$'nin fazı $0^{\circ}$'dan geçmektedir. Aynı noktada $|L|\simeq\SI{30}{\decibel}$'dir. Nokta pozitif gerçel eksendedir ve faz geçişi tanımının dışında kalmaktadır. Açık çevrimin bütün kutupları kararlı olduğundan ($P_{\mathrm{a}}=0$) kararlılık koşulu $N_{\mathrm{s}}=0$'dır. Kapalı çevrim kutupları ayrıca doğrudan hesaplanmıştır. Nyquist sayımı, kutuplar ve modül marjı her satırda aynı sonucu vermektedir.
 
 \begin{table}[H]
   \centering
@@ -498,7 +498,7 @@ biçimindedir. Eşitlik~\eqref{eq:marj-tanimlari} içinde $\omega_{\pi}$ faz ge�
 
 Tablo~\ref{tab:kararlilik-marjlar}, S4 analog eşdeğer çevriminin P, PI ve PIR denetleyicileri için Eşitlik~\eqref{eq:marj-tanimlari} ile hesaplanan kararlılık marjlarını vermektedir. Kazanç geçiş frekansları ve bunlara karşılık gelen faz marjları hücrelerde yukarıdan aşağıya aynı sırayla gösterilmiştir. Tasarım ölçütleri olarak her kazanç geçişinde $\mathrm{PM}_i\gtrsim45^{\circ}$, $\mathrm{GM}\gtrsim\SI{6}{\decibel}$ ve $\|S\|_\infty\lesssim\SI{6}{\decibel}$ alınmıştır. Üç denetleyici de ölçütleri sağlamaktadır.
 
-Gerçekleme (A)'da anma noktasındaki PI çevriminin kritik faz marjı, \SI{3.4}{\kilo\hertz}'teki üçüncü kazanç geçişinde $54^{\circ}$'dir. Tek faz geçişi \SI{22}{\kilo\hertz}'tedir. Faz geçişindeki $+$\SI{35}{\decibel} kazanç marjı, çevrim kazancının 57 katına kadar artabileceğini göstermektedir. Faz, rezonans çevresinde $+60^{\circ}$'den $-121^{\circ}$'ye inmekte ve $-180^{\circ}$'nin üstünde kalmaktadır. Eşitlik~\eqref{eq:olcum-gecikme-fazi} uyarınca ölçüm süzgeci ve gecikme \SI{2.8}{\kilo\hertz}'te yalnız $-29{,}2^{\circ}-2{,}0^{\circ}\simeq-31^{\circ}$ faz katkısı getirmektedir. Rezonans tepesi de $-1$ noktasının dışındadır. Şekil~\ref{fig:kararlilik-l-bode} üç denetleyicinin $L$ Bode eğrilerini $K_{34}$ açık ve kapalı olarak, Şekil~\ref{fig:kararlilik-s-t} ise $|S|$ ve $|T|$ eğrilerini \SI{50}{\hertz} ve \SI{150}{\hertz} işaretleriyle vermektedir.
+Analog eşdeğerde anma noktasındaki PI çevriminin kritik faz marjı, \SI{3.4}{\kilo\hertz}'teki üçüncü kazanç geçişinde $54^{\circ}$'dir. Tek faz geçişi \SI{22}{\kilo\hertz}'tedir. Faz geçişindeki $+$\SI{35}{\decibel} kazanç marjı, çevrim kazancının 57 katına kadar artabileceğini göstermektedir. Faz, rezonans çevresinde $+60^{\circ}$'den $-121^{\circ}$'ye inmekte ve $-180^{\circ}$'nin üstünde kalmaktadır. Eşitlik~\eqref{eq:olcum-gecikme-fazi} uyarınca ölçüm süzgeci ve gecikme \SI{2.8}{\kilo\hertz}'te yalnız $-29{,}2^{\circ}-2{,}0^{\circ}\simeq-31^{\circ}$ faz katkısı getirmektedir. Rezonans tepesi de $-1$ noktasının dışındadır. Şekil~\ref{fig:kararlilik-l-bode} üç denetleyicinin $L$ Bode eğrilerini $K_{34}$ açık ve kapalı olarak, Şekil~\ref{fig:kararlilik-s-t} ise $|S|$ ve $|T|$ eğrilerini \SI{50}{\hertz} ve \SI{150}{\hertz} işaretleriyle vermektedir.
 
 \begin{figure}[H]
   \centering
@@ -514,7 +514,7 @@ Gerçekleme (A)'da anma noktasındaki PI çevriminin kritik faz marjı, \SI{3.4}
   \label{fig:kararlilik-s-t}
 \end{figure}
 
-Gerçekleme (A)'da en az sönümlü kapalı çevrim kutup çifti P için \SI{3097}{\hertz} ($\zeta=0{,}184$), PI için \SI{3109}{\hertz} ($\zeta=0{,}181$), PIR için \SI{3117}{\hertz} ($\zeta=0{,}179$) çevresindedir. PI'de PI sıfırına yakın \SI{66}{\hertz}'lik gerçel bir kutup, PIR'de ise rezonans teriminden gelen \SI{40.1}{\hertz}, $\zeta=0{,}155$ yavaş bir çift bulunmaktadır. Yavaş çiftin yaklaşık \SI{26}{\milli\second} zaman sabiti, PIR benzetimlerinin oturması için \SI{0.06}{\second} yerine \SI{0.2}{\second} gerekmesinin nedenidir.
+Analog eşdeğerde en az sönümlü kapalı çevrim kutup çifti P için \SI{3097}{\hertz} ($\zeta=0{,}184$), PI için \SI{3109}{\hertz} ($\zeta=0{,}181$), PIR için \SI{3117}{\hertz} ($\zeta=0{,}179$) çevresindedir. PI'de PI sıfırına yakın \SI{66}{\hertz}'lik gerçel bir kutup, PIR'de ise rezonans teriminden gelen \SI{40.1}{\hertz}, $\zeta=0{,}155$ yavaş bir çift bulunmaktadır. Yavaş çiftin yaklaşık \SI{26}{\milli\second} zaman sabiti, PIR benzetimlerinin oturması için \SI{0.06}{\second} yerine \SI{0.2}{\second} gerekmesinin nedenidir.
 
 Kararlılık sonucu, ortalama Simulink/Simscape modelinin Simulink Control Design ile doğrusallaştırılmasıyla ayrıca doğrulanmıştır. Ortalama modelde denetleyici alt sistemi, ölçüm süzgeci, doyum, doyum önleme ve ileri besleme blokları anahtarlamalı S4 modelindekilerle aynıdır. Köprü, $K_{\mathrm{pwm}}$ kazançlı denetimli gerilim kaynağıyla temsil edilmiştir. Doğrusallaştırılan $L$ ile analitik $L$ arasındaki en büyük göreli fark P, PI ve PIR için sırasıyla $1{,}6\cdot10^{-11}$, $3{,}5\cdot10^{-10}$ ve $6{,}4\cdot10^{-4}$'tür (faz $\leq0{,}04^{\circ}$). $K_{34}$ açık ve kapalı doğrusallaştırmalar arasındaki fark sıfırdır.
 
@@ -562,7 +562,7 @@ Anahtarlamalı modelde PWM karşılaştırıcısının ve kip mantığının yer
 
 \begin{table}[H]
   \centering
-  \caption{S4 PI çevrim kazancı $L(j\omega)$: analitik gerçekleme (A) ile anahtarlamalı modelde enjeksiyonla ölçülen değerler. Hücrelerde $|L|$ (dB) / $\angle L$ ($^{\circ}$) verilmiştir.}
+  \caption{S4 PI çevrim kazancı $L(j\omega)$: analog eşdeğerin analitik modeli ile anahtarlamalı modelde enjeksiyonla ölçülen değerler. Hücrelerde $|L|$ (dB) / $\angle L$ ($^{\circ}$) verilmiştir.}
   \label{tab:kararlilik-olcum}
   \scriptsize
   \setlength{\tabcolsep}{3pt}
