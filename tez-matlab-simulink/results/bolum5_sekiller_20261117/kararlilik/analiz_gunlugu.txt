@@ -1,0 +1,11 @@
+analiz_kararlilik_20261028 — 18-Nov-2026 01:21:23 — 23.2.0.2515942 (R2023b) Update 7
+Kpwm = 213.750 V, Td(A) = 2.0 us, f_lp = 5000 Hz, Kp = 0.030, Ki = 11.3097, Kr = 0.300, wb = 12.566
+bitki: max|G_tam/G_toplu - 1| (f<=10 kHz) = 0.128; max|G_toplu/G_empedans - 1| = 9.55e-12
+G_tam kutuplari (ust yari) f_n [Hz]: [1.1621e+05 2815.4]; zeta: [0.0378 0.00411]
+G_tam sifirlari (ust yari) f_n [Hz]: [1.1621e+05 1719.8]; zeta: [0.0378 0.00176]
+P: K34 acik/kapali max goreli fark |dL|/|L| = 0, |dS|/|S| = 0, |dT|/|T| = 0; kapali cevrim kutuplari ayni: 1 (max fark 0 1/s)
+PI: K34 acik/kapali max goreli fark |dL|/|L| = 0, |dS|/|S| = 0, |dT|/|T| = 0; kapali cevrim kutuplari ayni: 1 (max fark 0 1/s)
+PIR: K34 acik/kapali max goreli fark |dL|/|L| = 0, |dS|/|S| = 0, |dT|/|T| = 0; kapali cevrim kutuplari ayni: 1 (max fark 0 1/s)
+A P: max|L_kesin - L_pade2|/|L| (f<=10 kHz) = 4.34e-08
+A PI: max|L_kesin - L_pade2|/|L| (f<=10 kHz) = 4.34e-08
+A PIR: max|L_kesin - L_pade2|/|L| (f<=10 kHz) = 4.34e-08
