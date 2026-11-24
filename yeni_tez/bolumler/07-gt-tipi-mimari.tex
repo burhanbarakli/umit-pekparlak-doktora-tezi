@@ -1,20 +1,18 @@
 \chapter{GT-TİPİ YENİDEN YAPILANDIRILABİLİR ENERJİ DEPOLAMA MİMARİSİ}
 \label{chap:gttipi}
 
-GT-tipi mimari, faz kolu bölümlerinde incelenen T-tipi yarı iletken tabanını enerji depolama sisteminde şarj ve deşarj işlevleri için yeniden görevlendirmektedir. Deney düzeneği GT-tipi olarak kurulmuştur. Şekil~\ref{fig:gelen-tam-topoloji} üzerindeki faz hücresi röleleri, PFC yükseltici diyotları ve BYS transformatörleri, işlev paylaşımının donanım karşılığıdır.
+``GT-tipi'' adı, tezde \emph{geliştirilmiş T-tipi} enerji depolama mimarisini belirtmek için kullanılan, teze özgü bir adlandırmadır. Söz konusu mimari, faz kolu bölümlerinde incelenen T-tipi yarı iletken tabanını enerji depolama sisteminde şarj ve deşarj işlevleri için yeniden görevlendirmekte; bu amaçla tek bir donanımda T-tipi faz kollarını, kip değişim rölelerini, nötr IGBT'lerle kurulan Vienna PFC katını, çok sekonderli BYS transformatörlerini ve batarya başına doğrultucu--alçaltıcı şarj kollarını birleştirmektedir.
 
-``GT-tipi'' adı, tezde \emph{geliştirilmiş T-tipi} enerji depolama mimarisini belirtmek için kullanılan, teze özgü bir adlandırmadır. Mimari, tek bir donanımda T-tipi faz kollarını, kip değişim rölelerini, nötr IGBT'lerle kurulan Vienna PFC katını, çok sekonderli BYS transformatörlerini ve batarya başına doğrultucu--buck şarj kollarını birleştirmektedir.
-
-Evirici kipinin düşük güç davranışı Bölüm~\ref{chap:deney} altındaki deneylerle, şarj yönündeki işleyiş Alt Bölüm~\ref{sec:gt-benzetim} altındaki benzetim kayıtlarıyla gösterilmiştir. Çalışma kipleri, geçiş kuralları ve koruma işlevleri ise tasarım tanımı olarak verilmiştir.
+Deney düzeneği de GT-tipi olarak kurulmuştur; Şekil~\ref{fig:gelen-tam-topoloji} üzerindeki faz hücresi röleleri, PFC yükseltici diyotları ve BYS transformatörleri işlev paylaşımının donanım karşılığıdır. Evirici kipinin düşük güç davranışı Bölüm~\ref{chap:deney} altındaki deneylerle, şarj yönündeki işleyiş Alt Bölüm~\ref{sec:gt-benzetim} altındaki benzetim kayıtlarıyla gösterilmiş; çalışma kipleri, geçiş kuralları ve koruma işlevleri ise tasarım tanımı olarak verilmiştir.
 
 \section{Tasarım Gereksinimleri}
 \label{sec:gt-gereksinimler}
 
-Yüksek güçlü bir EDS'de batarya dizisi, sabit ve ideal bir DA kaynaktan farklı davranmaktadır. Hücre veya modül uç gerilimleri şarj durumu, sıcaklık, iç direnç, akım ve yaşlanmayla değişmektedir. Seri dizinin kullanılabilir kapasitesi ise zayıf birim tarafından sınırlandırılabilir \citep{Plett2015,Hannan2017,Farakhor2023}. Yeniden yapılandırılabilir yapılarda tasarım değerlendirmesi, işlev sayısıyla birlikte kayıp ve güvenlik bedeline de dayanmalıdır \citep{Momayyezan2016,Farakhor2023,Huang2024}.
+Yüksek güçlü bir EDS'de batarya dizisi, sabit ve ideal bir DA kaynaktan farklı davranmaktadır: hücre veya modül uç gerilimleri şarj durumu, sıcaklık, iç direnç, akım ve yaşlanmayla değişmekte, seri dizinin kullanılabilir kapasitesi ise zayıf birim tarafından sınırlandırılabilmektedir \citep{Plett2015,Hannan2017,Farakhor2023}. Söz konusu değişkenliği yönetmeye yönelik yeniden yapılandırılabilir yapılarda ise tasarım değerlendirmesi, işlev sayısının yanında kayıp ve güvenlik bedeline de dayanmalıdır \citep{Momayyezan2016,Farakhor2023,Huang2024}.
 
-GT-tipi mimarinin güç tabanı Bölüm~\ref{chap:sistem} altında tanımlanan deney düzeneğidir: üç fazlı T-tipi evirici, bölünmüş DA bara, LCL filtre ve \SI{20}{\kilo\voltampere} anma görünür gücü (\num{20}--\SI{25}{\kilo\watt} tasarım güç aralığı). Gerilim ve akım sınırları Tablo~\ref{tab:sistem-parametreleri} içinde verilmiştir.
+GT-tipi mimarinin güç tabanı, Bölüm~\ref{chap:sistem} altında tanımlanan deney düzeneğidir: üç fazlı T-tipi evirici, bölünmüş DA bara, LCL filtre ve \SI{20}{\kilo\voltampere} anma görünür gücü (\num{20}--\SI{25}{\kilo\watt} tasarım güç aralığı). Düzeneğin gerilim ve akım sınırları Tablo~\ref{tab:sistem-parametreleri} içinde verilmiştir.
 
-Tasarım gereksinimleri beş işlevsel ilkeye indirgenmiştir. Enerji iki yönde aktarılabilmeli, şarj sırasında şebeke akım kalitesi gözetilmelidir. Batarya kolları galvanik olarak ayrılmalı, her batarya güvenli akım--gerilim--sıcaklık sınırlarında tutulmalıdır. Her kip geçişi de ölçüm geri bildirimiyle güvenli biçimde tamamlanmalıdır. Koruma işlevleri IEC~62619, IEC~62477-1 ve IEC~62933-5-2'nin kapsadığı batarya, dönüştürücü ve sistem tehlikelerinden türetilmiştir \citep{IEC62619,IEC62477,IEC62933_5_2}.
+Tasarım gereksinimleri beş işlevsel ilkeye indirgenmiştir. İlkelere göre enerji iki yönde aktarılabilmeli ve şarj sırasında şebeke akım kalitesi gözetilmeli; batarya kolları galvanik olarak ayrılmalı ve her batarya güvenli akım--gerilim--sıcaklık sınırlarında tutulmalı; son olarak her kip geçişi ölçüm geri bildirimiyle güvenli biçimde tamamlanmalıdır. Koruma işlevleri ise IEC~62619, IEC~62477-1 ve IEC~62933-5-2'nin kapsadığı batarya, dönüştürücü ve sistem tehlikelerinden türetilmiştir \citep{IEC62619,IEC62477,IEC62933_5_2}.
 
 \section{GT-Tipi Topolojinin Yapısı}
 \label{sec:gt-yapi}
