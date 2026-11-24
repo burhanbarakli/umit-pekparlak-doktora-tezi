@@ -29,6 +29,8 @@ Kısaltma: `IRD` = `tez-matlab-simulink/incoming_real_data`
 | `2026-11-16_degisiklik_cevaplari/` | 15.11 değişiklik işaretli PDF'e yanıt notları (74 not, "Lenovo" yazarlı) ve mail metni: jüri listesinin işlenmediği hatırlatması, ayrıntı/uzunluk endişesi | K-36 ile teze işlendi (16.11.2026) |
 | `2026-11-22_sarj_modu_gelecek_calismalar/` | Şarj kipi deneylerinin yapılmama gerekçesi: PIC32MK ADC/PWM yapısı, T-tipi (Q1–Q3, Q2–Q4) ve şarj kipi (Q1–Q2, Q3–Q4) PWM çiftlerinin farkı; Ümit kendi kopyasında gelecek çalışmalara eklemiş (mail metni) | `yeni_tez` Alt Bölüm 6.2 (ADC/PWM), 8.3 ve 8.4'e işlendi (81edc0a, 8e2d964). Tez metninde deneyde tek faz kolunun sürüldüğü yazılıdır; maildeki "12 IGBT T-type sürüldü" ifadesi alınmadı. "Q2-A4" → Q2–Q4 |
 
+| `2026-11-24_ilk_doktora_sunumu/` | İlk doktora (tez izleme) sunumu `upekparlak_doktora_sunumu.pptx`, 27 slayt, oluşturma 30.06.2026, son değişiklik 02.07.2026. Eski başlık, "üç aşama" (BYS, düşük güç verim/THD, topoloji), eski benzetim sayıları (S1 %90,45/%2,1; S2 %93/%46,3; S3 %93,7/%7,8), deney sayıları (%92,5/%15, %94,2/%46, %94,5/%14), şarj yönü benzetim ekranları | Proje sahibinden 24.11.2026'da alındı (Downloads kopyası, SHA-256 aynı). Jüri önerileri (`tez-tamamlama/34_JURI_ONERILERINE_YANIT_*`) bu sunuma verilmiştir; yeni sunumun karşılaştırma tabanıdır |
+
 ## Çalışma kopyasına alınanlar (27.10.2026)
 
 | Kaynak | IRD hedefi |
