@@ -267,7 +267,7 @@ S3 benzetimindeki $L_1$ akımı ve şebeke akımı Şekil~\ref{fig:s3-kalibre-l1
 
 Kayıtların alındığı kalibre edilmiş S3 modeli, kalibrasyon hedefleri dışında kalan akım THD'sini deneydeki \%14 değerine yakın, \%14,8 olarak vermektedir (Alt Bölüm~\ref{sec:kalibrasyon}).
 
-\section{Senaryo~4: Akım Geri Beslemeli Kapalı Çevrim}
+\section{Senaryo~4 Akım Geri Beslemeli Kapalı Çevrim Benzetimi}
 \label{sec:s4-kapali-cevrim}
 
 Senaryo~1--3 açık çevrim modülasyonla, deney donanımının yaklaşık \SI{2.3}{\ampere} faz akımında çalışmaktadır. Nötr susturma ile Sin\textsuperscript{3} ileri beslemesinin anma akımına taşınması ve akım denetimiyle birlikte davranışı Senaryo~4 (S4) ile incelenmiştir. S4 benzetiminin anma noktası, \SI{120}{\volt} şebeke geriliminde \SI{25}{\ampere} akım referansıdır. Anma noktası faz başına yaklaşık \SI{3}{\kilo\watt} aktif güce karşılık gelmektedir. S4, kalibre edilmiş S3 benzetim modeline $L_1$ akımı geri beslemesi eklenerek kurulmuştur. Güç katı ve ölçüm blokları S3 ile aynıdır (Şekil~\ref{fig:s3-simulink-modeli}). Fark, anahtarlama girişindedir (Şekil~\ref{fig:s4-anahtarlama-girisi}). Model çiziminde geri besleme oransal kazançla gösterilmiştir. Tezdeki S4 benzetimlerinde denetleyici S3 tabanına betikle eklenmiş ve oransal denetleyiciye ek olarak PI ve PIR seçenekleriyle kurulmuştur.
@@ -423,7 +423,7 @@ PI denetleyiciyle akım referansı $t=\SI{55}{\milli\second}$ anında \SI{10}{\a
 
 Sin\textsuperscript{3} yönteminin kapalı çevrim kararlılığı analitik olarak, frekans alanında ve zaman alanında incelenmiştir. Analitik incelemede Sin\textsuperscript{3} teriminin karakteristik denklemin dışında kaldığı gösterilmiştir. Frekans alanı incelemesi ise S4 akım çevriminin açık çevrim kazancı $L$ (loop gain), duyarlılık fonksiyonu $S$ (sensitivity function) ve tamamlayıcı duyarlılık fonksiyonu $T$ (complementary sensitivity function) üzerine kurulmuştur. Bode eğrileri, kazanç ve faz marjları ile kapalı çevrim kutupları $K_{34}$ açık ve kapalıyken hesaplanmıştır. Son olarak zaman alanında, anahtarlamalı S4 modelinde küçük işaret enjeksiyonuyla ölçülen çevrim kazancı ve basamak yanıtı ortalama modelle karşılaştırılmaktadır.
 
-\subsection{Analitik inceleme: Sin\texorpdfstring{\textsuperscript{3}}{3} terimi çevrimin dışındadır}
+\subsection{Sin\texorpdfstring{\textsuperscript{3}}{3} teriminin çevrimdeki konumu}
 
 Denetlenen sistem $G(s)=i_{L1}/v_{\mathrm{inv}}$, evirici kutup geriliminden $L_1$ akımına ortalama aktarım fonksiyonudur. Güç ağı anahtarlamalı modeldeki sırayla kurulmuştur: $L_1$ ve çekirdek kaybı direnci, $C_f$, EMC süzgecinin diferansiyel kip endüktansları ile X kapasitörü, $L_2$ ve şebeke. Ortalama modeldeki denetlenen sistemin rezonansı \SI{2815}{\hertz} ($\zeta=0{,}0041$), antirezonansı (anti-resonance) \SI{1720}{\hertz}'tir. Antirezonans, evirici geriliminden $L_1$ akımına giden yolun kazancının çöktüğü frekanstır. Ortalama modeldeki değer, $C_f$'ye EMC süzgecinin X kapasitörü eklendiği için Eşitlik~\eqref{eq:lcl-rezonans} ile verilen $f_{\mathrm{ar}}=\omega_{\mathrm{ar}}/2\pi\simeq\SI{1.78}{\kilo\hertz}$ değerinin biraz altında kalmaktadır. Normalize edilmiş modülasyon komutunu kutup gerilimine dönüştüren PWM kazancı $K_{\mathrm{pwm}}=V_{\mathrm{dc}}/2$, toplam gecikme $T_d$ ve şebeke geriliminden akıma aktarım $G_g(s)$ ile gösterilsin. Doyum dışında Eşitlik~\eqref{eq:s4-denetim-yapisi} çevriminin açık çevrim kazancı
 \begin{equation}
@@ -446,7 +446,7 @@ olarak yazılmaktadır. Analizde $\theta$, ideal PLL ile şebeke kaynağına kil
 
 Sin\textsuperscript{3} teriminin akıma etkisi $S(j\omega)K_{\mathrm{pwm}}G(j\omega)$ ile belirlenmektedir. Eşitlik~\eqref{eq:sin3-esdeger-katsayilar} ile S4 ileri beslemesi $0{,}7317\sin(\theta+\varphi_4)-0{,}0961\sin(3\theta+3\varphi_4)$ biçimindedir. PI denetleyicide $|S(j2\pi\cdot\SI{150}{\hertz})|=0{,}234$ ($-12{,}6$~dB) olduğundan, çevrim üçüncü harmonik modülasyonun çevrimsiz durumda üreteceği \SI{9.53}{\ampere} RMS \SI{150}{\hertz} akımını \SI{2.23}{\ampere} RMS'ye indirmektedir. P ve PIR için oran 0,231 ve 0,214'tür. Temel bileşende Sin\textsuperscript{3}'ün payı ($3K_{34}/4$), ortalama modelde PI ile $L_1$ temel akımını \SI{22.71}{\ampere}'den \SI{25.18}{\ampere} RMS'ye taşımaktadır. Kapalı çevrimde ileri besleme, denetleyicinin karşılaması gereken temel bileşeni azaltmaktadır.
 
-\subsection{Frekans alanı: marjlar, Bode eğrileri ve kutuplar}
+\subsection{Frekans alanında kararlılık marjları ve kutuplar}
 
 İncelenen akım çevrimi S4 modelindeki analog eşdeğerdir ve sürekli denetleyici, ölçüm süzgeci ile $T_d=\SI{2}{\micro\second}$ toplam gecikme içermektedir. Süzgeç ve gecikmenin faz etkisi
 \begin{equation}
@@ -554,7 +554,7 @@ Kararlılık sonucu, ortalama Simulink/Simscape modelinin Simulink Control Desig
 
 Köprünün etkin küçük işaret kazancı süreksiz iletimde değişmektedir. PWM kazancı $\lambda K_{\mathrm{pwm}}$ ile ölçeklendiğinde çevrim $\lambda=0{,}05$--50 aralığında kararlıdır. Kararlılık sınırı $\lambda=50$--60 arasındadır ve $+$\SI{35.2}{\decibel} kazanç marjıyla tutarlıdır. Kazanç azalmasında kararlılık korunmakta, birinci geçiş aşağı inmekte ($\lambda=0{,}1$'de \SI{79}{\hertz}) ve izleme hatası büyümektedir.
 
-\subsection{Zaman alanı: anahtarlamalı modelde doğrulama}
+\subsection{Anahtarlamalı modelde zaman alanı doğrulaması}
 
 Anahtarlamalı modelde PWM karşılaştırıcısının ve kip mantığının yerel türevi hemen her yerde sıfır olduğundan, doğrudan doğrusallaştırma denetlenen sistemin yolunu kesmektedir. Çevrim kazancı, doğrusallaştırma yerine enjeksiyonla ölçülmüştür. Anahtarlamalı S4 modelinin ölçüm amaçlı bir kopyasında modülasyon toplamına küçük bir işaret $u_{\mathrm{inj}}$ eklenmiştir ($u_x=u_{\mathrm{fb}}+u_{\mathrm{inj}}$). Enjeksiyon sıfırken ($u_{\mathrm{inj}}=0$) model taramadaki modelle matematiksel olarak aynıdır. Enjeksiyon işareti, her biri 0,015 genlikli üç tondan oluşan Schroeder fazlı bir toplamdır. Tonlar \SI{80}{\milli\second} pencerede \SI{50}{\hertz} harmoniklerine ve \SI{100}{\hertz} dönüşüm ürünlerine dik seçilmiştir (212,5 / 525 / 1037,5~Hz ve 587,5 / 2025 / 3362,5~Hz). Çevrim kazancı $L=-U_{\mathrm{fb}}/U_x$ olarak kestirilmiştir. Belirsizlik, tona komşu ve ton taşımayan ızgara noktalarındaki $u_x$ düzeyinden, yani anahtarlama ve kip dönüşümü kaynaklı arka plandan hesaplanmıştır. Son olarak enjeksiyonlu benzetimlerin temel bileşeni enjeksiyonsuz benzetimlerle aynı olduğundan (PI, \SI{25}{\ampere}: \SI{24.46}{\ampere} ve \SI{24.47}{\ampere}), enjeksiyonun çalışma noktasını koruduğu görülmektedir.
 
