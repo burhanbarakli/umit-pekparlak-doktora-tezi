@@ -161,8 +161,16 @@
   \hbox{}\thispagestyle{plain}\newpage\if@twocolumn\hbox{}\newpage\fi\fi\fi}
 
 %------------------------------------------------------------------ bilgiler
-\newcommand\sau@def[2]{\expandafter\newcommand\csname #1\endcsname[1]{\expandafter\def\csname sau@#1\endcsname{##1}}%
-  \expandafter\def\csname sau@#1\endcsname{#2}}
+% Bir alan, sablondaki varsayilan metinden farkli bir degerle verildiyse "ayarlanmis" sayilir.
+\newcommand\sau@def[2]{\expandafter\newcommand\csname #1\endcsname[1]{\expandafter\def\csname sau@#1\endcsname{##1}%
+    \def\sau@tmpa{##1}\expandafter\ifx\csname sau@#1@default\endcsname\sau@tmpa\else
+    \expandafter\let\csname sau@#1@set\endcsname\@empty\fi}%
+  \expandafter\def\csname sau@#1\endcsname{#2}\expandafter\def\csname sau@#1@default\endcsname{#2}}
+% \sau@ifset{alan}{ayarlandiysa}{ayarlanmadiysa}
+\newcommand\sau@ifset[1]{\ifcsname sau@#1@set\endcsname\expandafter\@firstoftwo\else\expandafter\@secondoftwo\fi}
+% \sau@varsa{alan}{icerik}: "(varsa)" alanlar. Ayarlandiysa ya da notlar acikken basilir; notsuz ciktida
+% ayarlanmamis alan hic basilmaz (ornek: bilim dali, ortak danisman).
+\newcommand\sau@varsa[2]{\sau@ifset{#1}{#2}{\ifsau@notlar#2\fi}}
 \sau@def{tezbasligi}{TEZ BAŞLIĞI BURAYA YAZILIR\\GEREKLİ İSE İKİNCİ VE ÜÇÜNCÜ SATIR KULLANILABİLİR\\ ÜÇ SATIRA SIĞDIRINIZ}
 \sau@def{tezbasligitr}{TÜRKÇE TEZ BAŞLIĞI BURAYA YAZILIR}
 \sau@def{tezbasligien}{THESIS TITLE IN ENGLISH IS WRITTEN HERE}
@@ -175,12 +183,17 @@
 \sau@def{danisman}{Unvan Ad SOYAD}
 \sau@def{ortakdanisman}{Unvan Ad SOYAD}
 \sau@def{kapaktarihi}{AY YIL}
-\sau@def{kapaktarihiornek}{ \sau@kirmizi{(OCAK 2022)}}
+\sau@def{kapaktarihiornek}{\sau@not{\ (OCAK 2022)}}
 \sau@def{savunmatarihi}{16.06.2022}
 \sau@def{tesekkurimza}{Ad Soyad}
-\sau@def{onayyazar}{\sau@gri{Metin girmek için burayı tıklatın.}}
-\sau@def{onaybaslik}{\sau@gri{Metin girmek için burayı tıklatın.}}
-\sau@def{onayteztipi}{\sau@gri{Bir öğe seçin.}}
+% Onay sayfasi metni: ayarlanmazsa \yazar, \tezbasligibeyan ve tez turunden (doktora/yukseklisans) alinir.
+\sau@def{onayyazar}{\sau@ifset{yazar}{\sau@yazar}{\sau@gri{Metin girmek için burayı tıklatın.}}}
+\sau@def{onaybaslik}{\sau@ifset{tezbasligibeyan}{\sau@tezbasligibeyan}{\sau@gri{Metin girmek için burayı tıklatın.}}}
+\sau@def{onayteztipi}{\sau@ifset{teztipi}{\sau@teztipiyazi}{\ifsau@notlar\sau@gri{Bir öğe seçin.}\else\sau@teztipiyazi\fi}}
+\newcommand\sau@teztipiyazi{\ifsau@doktora Doktora Tezi\else Yüksek Lisans Tezi\fi}
+\sau@def{beyantarihi}{(……/……/20…..).}
+\newif\ifsau@etikonay \sau@etikonaytrue
+\newcommand\etikonayyok{\sau@etikonayfalse}   % etik kurul onayi gerekmiyorsa beyannamedeki cumle cikar
 
 %------------------------------------------------------------------ mutlak konumlandirma
 % \sau@put{x}{y}{l|c|r}{metin}: (x,y) sayfa sol-ust kosesinden pt; y taban cizgisi.
@@ -192,6 +205,9 @@
 \newcommand\ogrencino[1]{\renewcommand\sau@ogrencino{#1}}
 \newcommand\sau@kirmizi[1]{\ifsau@notlar\textcolor[HTML]{FF0000}{#1}\else#1\fi}
 \newcommand\sau@mavi[1]{\ifsau@notlar\textcolor[HTML]{3366FF}{#1}\else#1\fi}
+% Yalniz sablon notu olan metin: notlar acikken renkli basilir, notsuz ciktida hic basilmaz.
+\newcommand\sau@not[1]{\ifsau@notlar\textcolor[HTML]{FF0000}{#1}\fi}
+\newcommand\sau@notmavi[1]{\ifsau@notlar\textcolor[HTML]{3366FF}{#1}\fi}
 \newcommand\notrenk[2]{\ifsau@notlar\textcolor[HTML]{#1}{#2}\else#2\fi}  % sablon notlari (notsuz: siyah)
 \newcommand\sau@gri[1]{\textcolor[HTML]{808080}{#1}}   % Word icerik denetimi yer tutucusu
 
@@ -215,7 +231,7 @@
   \thispagestyle{sauempty}%
   \sau@kapakortak{1}%
   \sau@put{297.64}{438.6}{c}{\bfseries \sau@teztipi}%
-  \sau@put{297.64}{612.7}{c}{\sau@bilimdali\ \textbf{Bilim Dalı \sau@kirmizi{(Varsa)}}}%
+  \sau@varsa{bilimdali}{\sau@put{297.64}{612.7}{c}{\sau@bilimdali\ \textbf{Bilim Dalı\sau@not{\ (Varsa)}}}}%
   \sau@put{297.64}{754.4}{c}{\bfseries \sau@kapaktarihi\sau@kapaktarihiornek}%
   \ifsau@notlar
     \AddToShipoutPictureFG*{\setlength\unitlength{1bp}%
@@ -236,9 +252,9 @@
   \sau@kapakortak{0}%
   \sau@put{318.9}{442.5}{c}{\bfseries \sau@teztipi}%
   \sau@put{318.9}{484.6}{c}{\bfseries \sau@ogrencino}%
-  \sau@put{318.9}{612.8}{c}{\sau@bilimdali\ \textbf{Bilim Dalı} \textbf{\sau@kirmizi{(Varsa)}}}%
+  \sau@varsa{bilimdali}{\sau@put{318.9}{612.8}{c}{\sau@bilimdali\ \textbf{Bilim Dalı}\textbf{\sau@not{\ (Varsa)}}}}%
   \sau@put{318.9}{672.0}{c}{\bfseries Tez Danışmanı: \sau@danisman}%
-  \sau@put{318.9}{699.0}{c}{\bfseries \sau@kirmizi{(Varsa)} Ortak Danışman: \sau@ortakdanisman}%
+  \sau@varsa{ortakdanisman}{\sau@put{318.9}{699.0}{c}{\bfseries \sau@not{(Varsa) }Ortak Danışman: \sau@ortakdanisman}}%
   \sau@put{318.9}{754.4}{c}{\bfseries \sau@kapaktarihi}%
   \null\clearpage
   \thispagestyle{sauempty}\null\clearpage   % ic kapak arkasi (ii): numarasiz
@@ -254,8 +270,27 @@
   \sau@put{113.8}{#1}{l}{\textbf{Jüri Üyesi :}}%
   \sau@put{220.1}{#1}{l}{\textbf{#2}}%
   \sau@put{432.9}{#1}{l}{..............................}%
-  \sau@put{113.8}{\fpeval{#1+13.8}}{l}{\textbf{\sau@mavi{(Gerekliyse)}}}%
+  \sau@put{113.8}{\fpeval{#1+13.8}}{l}{\textbf{\sau@notmavi{(Gerekliyse)}}}%
   \sau@put{220.1}{\fpeval{#1+13.8}}{l}{#3}}
+% Juri: \juribaskani{Unvan Ad SOYAD}{Kurum}, \juridanisman{..}{..}, \juriortakdanisman{..}{..},
+% \juriuyesi{..}{..} (en fazla 3 kez: 18, 20, 22 cm). Konumlar kilavuz 3.8.3: 12/14/16/18/20/22 cm.
+% Danisman ve ortak danisman adlari verilmezse \danisman ve \ortakdanisman kullanilir.
+\def\sau@jA{Unvan Adı SOYADI}\def\sau@jAk{Sakarya Üniversitesi}
+\def\sau@jB{\sau@ifset{danisman}{\sau@danisman}{Unvan Adı SOYADI}}\def\sau@jBk{Sakarya Üniversitesi}
+\def\sau@jC{\sau@ifset{ortakdanisman}{\sau@ortakdanisman}{Unvan Adı SOYADI}}\def\sau@jCk{Sakarya Üniversitesi}
+\def\sau@jD{Unvan Adı SOYADI}\def\sau@jDk{……\ \ \ \ Üniversitesi}
+\newcommand\juribaskani[2]{\def\sau@jA{#1}\def\sau@jAk{#2}}
+\newcommand\juridanisman[2]{\def\sau@jB{#1}\def\sau@jBk{#2}}
+\newcommand\juriortakdanisman[2]{\def\sau@jC{#1}\def\sau@jCk{#2}\let\sau@jortak@set\@empty}
+\newcounter{sau@juri}
+\newcommand\juriuyesi[2]{\stepcounter{sau@juri}%
+  \ifcase\value{sau@juri}\or\def\sau@jD{#1}\def\sau@jDk{#2}%
+  \or\def\sau@jE{#1}\def\sau@jEk{#2}\or\def\sau@jF{#1}\def\sau@jFk{#2}%
+  \else\ClassWarning{sauthesis}{Onay sayfasinda en fazla 3 \string\juriuyesi\space yeri var}\fi}
+\newcommand\sau@juriopt[2]{% y, E|F: verildiyse uye, verilmediyse (notlarda) "Gerekliyse" yeri
+  \ifcsname sau@j#2\endcsname
+    \sau@juri{#1}{\textbf{\csname sau@j#2\endcsname}}{}{\csname sau@j#2k\endcsname}{Jüri Üyesi :}%
+  \else\ifsau@notlar\sau@juriek{#1}{Unvan Adı SOYADI}{……\ \ \ \ Üniversitesi}\fi\fi}
 \newcommand\onaysayfasi{%
   \cleardoublepage\sau@onkisimgeometri
   \pagenumbering{roman}\setcounter{page}{3}%
@@ -265,18 +300,19 @@
   \yazar@onaymetni\par
   \endgroup
   \sau@put{318.9}{295.0}{c}{\textbf{Tez Jürisi}}%
-  \sau@juri{351.8}{\textbf{Unvan Adı SOYADI}}{}{Sakarya Üniversitesi}{Jüri Başkanı :}%
-  \sau@juri{409.3}{\textbf{Unvan Adı SOYADI} \sau@kirmizi{(Danışman)}}{}{Sakarya Üniversitesi}{Jüri Üyesi :}%
-  \sau@juri{465.2}{\textbf{Unvan Adı SOYADI} \sau@kirmizi{(Ortak Danışman)}}{}{Sakarya Üniversitesi}{Jüri Üyesi :}%
-  \sau@juri{521.8}{\textbf{Unvan Adı SOYADI}}{}{……\ \ \ \ Üniversitesi}{Jüri Üyesi :}%
-  \sau@juriek{578.6}{Unvan Adı SOYADI}{……\ \ \ \ Üniversitesi}%
-  \sau@juriek{635.3}{Unvan Adı SOYADI}{……\ \ \ \ Üniversitesi}%
+  \sau@juri{351.8}{\textbf{\sau@jA}}{}{\sau@jAk}{Jüri Başkanı :}%
+  \sau@juri{409.3}{\textbf{\sau@jB}\sau@not{\ (Danışman)}}{}{\sau@jBk}{Jüri Üyesi :}%
+  \ifcsname sau@jortak@set\endcsname\def\sau@tmp{1}\else\sau@ifset{ortakdanisman}{\def\sau@tmp{1}}{\def\sau@tmp{\ifsau@notlar1\else0\fi}}\fi
+  \ifnum\sau@tmp=1 \sau@juri{465.2}{\textbf{\sau@jC}\sau@not{\ (Ortak Danışman)}}{}{\sau@jCk}{Jüri Üyesi :}\fi
+  \sau@juri{521.8}{\textbf{\sau@jD}}{}{\sau@jDk}{Jüri Üyesi :}%
+  \sau@juriopt{578.6}{E}%
+  \sau@juriopt{635.3}{F}%
   \clearpage}
 \newcommand\yazar@onaymetni{%
   \sau@onayyazar\ tarafından hazırlanan “\sau@onaybaslik” adlı tez çalışması \sau@savunmatarihi\
   tarihinde aşağıdaki jüri tarafından oy birliği/oy çokluğu ile Sakarya Üniversitesi Fen
-  Bilimleri Enstitüsü \sau@anabilimdali\ \ Anabilim \sau@kirmizi{Dalı} \sau@bilimdali\sau@kirmizi{\ Bilim }Dalı’nda
-  \sau@kirmizi{(varsa)} \sau@onayteztipi\ olarak kabul edilmiştir.}
+  Bilimleri Enstitüsü \sau@anabilimdali\ \ifsau@notlar\ \fi Anabilim \sau@kirmizi{Dalı}\sau@varsa{bilimdali}{ \sau@bilimdali\sau@kirmizi{\ Bilim }Dalı}’nda\sau@not{\
+  (varsa)} \sau@onayteztipi\ olarak kabul edilmiştir.}
 
 %------------------------------------------------------------------ basliklar
 % Birinci derece: once 72 nk, sonra 18 nk, tek satir, koyu, BUYUK harf, "1. " numara,
@@ -391,11 +427,10 @@
   akademik amaç ve unvan almak amacıyla vermediğimi ve 20.04.2016 tarihli Resmi Gazete’de
   yayımlanan Lisansüstü Eğitim ve Öğretim Yönetmeliğinin 9/2 ve 22/2 maddeleri gereğince Sakarya
   Üniversitesi’nin abonesi olduğu intihal yazılım programı kullanılarak Enstitü tarafından
-  belirlenmiş ölçütlere uygun rapor alındığını, \sau@kirmizi{etik kurul onay belgesi aldığımı
-  (etik onayı gerekmiyorsa bu cümle metinden çıkartılır)},
+  belirlenmiş ölçütlere uygun rapor alındığını, \ifsau@etikonay\sau@kirmizi{etik kurul onay belgesi aldığımı\sau@not{\ (etik onayı gerekmiyorsa bu cümle metinden çıkartılır)}}, \fi
   çalışmamla ilgili yaptığım bu beyana aykırı bir durumun ortaya çıkması halinde doğabilecek her
   türlü hukuki sorumluluğu kabul ettiğimi beyan ederim.\par
-  {\raggedleft (……/……/20…..).\par}
+  {\raggedleft \sau@beyantarihi\par}
   {\raggedleft (imza)\hspace*{35.35bp}\par}
   {\raggedleft \sau@yazarbeyan\par}%
   \clearpage}
@@ -496,19 +531,18 @@
 \newenvironment{alinti}{\par\begingroup\fontsize{10bp}{7.17bp}\selectfont\sau@asc{9.35bp}%
   \sau@setline{17.25bp}\leftskip=36bp\relax}{\par\endgroup}
 
-%------------------------------------------------------------------ denklem (Word denklem tablosu karsiligi)
-% Word: onceki metin -> denklem taban cizgisi 38.8 bp, denklem -> denklem 44.6 bp,
-% denklem -> sonraki metin 38.7 bp. Denklem ortali, numara (3.1) sag kenarda, normal yazi.
-\newcommand\sau@denklemsonu{6.2bp}
+%------------------------------------------------------------------ denklem
+% Kilavuz 3.7 / teslim formu 15: denklemler 1,5 satir aralikli, once ve sonra 6 nk, bos satir yok,
+% metin bloguna ortali; numara (3.1) sag kenarda, normal yazi. Denklem kendi paragrafidir: once ve
+% sonra \parskip (6 bp), satir kutusu metinle ayni (1,5 satir: ust 11.22 + alt 9.48 bp; sauwordline).
+% Normal boydaki denklemde taban cizgileri arasi metin paragraflarindaki gibi 26.7 bp olur; kesirli
+% ya da cok satirli (aligned) denklemde satir kendiliginden buyur, 6 nk aralik korunur.
+% (Word sablonu denklemleri tabloya koydugu icin bu araliklar Word ciktisinda ~12 bp daha genistir:
+% metin -> denklem 38.6, denklem -> denklem 44.3 bp. Kilavuzdaki 6 nk esas alinmistir.)
 \newenvironment{denklem}{\par
-  \ifdim\lastskip=\sau@denklemsonu\vskip-\sau@denklemsonu\relax\fi
-  \vskip6bp\relax
   \refstepcounter{equation}%
-  \setbox\z@\hbox\bgroup\rule[-9.28bp]{0bp}{32.6bp}$\displaystyle}{$\egroup
-  \noindent\hbox to\linewidth{\hfil\box\z@\hfil\llap{\normalfont(\theequation)}}\par
-  \vskip6bp\relax\vskip\sau@denklemsonu\relax}
-% \noindent\hbox ... \par paragraf olusturur; parskip etkisini nötrlemek icin:
-\AtBeginEnvironment{denklem}{\parskip=0bp\relax}
+  \setbox\z@\hbox\bgroup$\displaystyle}{$\egroup
+  \noindent\hbox to\linewidth{\hfil\box\z@\hfil\llap{\normalfont(\theequation)}}\par}
 
 %------------------------------------------------------------------ numarali kaynak listesi
 % Word: [1] bicimi, tek satir, metin girintisi 1037 tw (51.85 bp), asili 680 tw

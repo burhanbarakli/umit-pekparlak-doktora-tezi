@@ -26,7 +26,7 @@ Süre yaklaşık 1 dakika, yaklaşık 231 sayfa. Betik sonunda `Output written` 
 |---|---|
 | `tez.tex` | Tez bilgileri (başlıklar, yazar, öğrenci no, danışman, jüri, tarihler) ve bölüm sırası |
 | `sauthesis.cls`, `sauwordline.lua` | Şablondan **aynen** alındı; değiştirilmez. Şablon güncellenirse yalnız bu ikisi değişir. |
-| `tezpaketleri.sty` | Tezin ek paketleri (siunitx, booktabs, tabularx, subcaption, TikZ, natbib), `\umitnot`, `\eksikistek` ve şablonun notsuz çıktıdaki küçük aksaklıklarının düzeltmeleri (kapaklarda "(Varsa)", onay sayfası jüri yuvaları, beyanname, kaynakça biçimi) |
+| `tezpaketleri.sty` | Tezin ek paketleri (siunitx, booktabs, tabularx, subcaption, TikZ, natbib), `\umitnot`, `\eksikistek` ve natbib kaynakça biçimi. Kapaklar, onay sayfası, jüri ve beyanname şablonun kendi `sauthesis.cls` dosyasından gelir (25.11.2026'dan beri 7ae7a3d sürümü) |
 | `onkisim/` | Teşekkür, kısaltmalar, simgeler, özet, summary |
 | `bolumler/` | Bölüm 1–8, kaynaklar, ekler, özgeçmiş |
 | `sekiller/t_tipi_vektor_cizimler.tex` | T-tipi TikZ çizim tabanı (Bölüm 3) |
@@ -70,9 +70,9 @@ derleme ~3 dk; kullanıcının derleme zaman sınırı 600 sn'ye çıkarıldı).
   (3.2, 3.3, 4.4) şablonun yatay sayfasında; sayfa numarası okuma yönünde.
 - Ekler şablon biçiminde: "EK A. …", Şekil A.1; metinde "EK-A" yerine "EK A".
 - Beyanname şablonun resmî metniyle; etik kurul onayı gerektirmeyen çalışma olduğu
-  için "etik kurul onay belgesi aldığımı" cümlesi çıkarıldı.
-- Onay sayfası: danışman yuvası dolu, öteki yuvalar gri yer tutucu (K-31). Jüri belli
-  olunca `tez.tex` içinde `\juribaskani{…}{…}`, `\juriuyesiA/B/C{…}{…}` doldurulur.
+  için `tez.tex`'teki `\etikonayyok` ile "etik kurul onay belgesi aldığımı" cümlesi çıkar.
+- Onay sayfası: jüri `tez.tex` içinde şablonun komutlarıyla verilir: `\juribaskani{…}{…}`,
+  `\juridanisman{…}{…}` ve en fazla üç kez `\juriuyesi{…}{…}` (K-31, K-36).
 - Özgeçmiş şablon başlıklarıyla: patentler "Tezden türetilen yayınlar", makaleler
   "Diğer eserler". Mezuniyet yılları ve mesleki deneyim belgelenmediği için yok.
 
